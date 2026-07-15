@@ -4,8 +4,7 @@
 -- 個人情報テーブル（claims/leads/reports/articles）は管理権限のみ参照可（§7）。
 -- ============================================================================
 -- すべて mishiru_ 接頭辞を付け、同一Supabaseプロジェクト内の既存テーブルと衝突させない。
--- 途中で1件でも失敗した場合はCOMMITされず、部分作成状態を残さない。
-begin;
+-- すべてIF NOT EXISTS／CREATE OR REPLACEで再実行可能。Supabase SQL Editorでは新しいQueryから全体を実行する。
 
 -- ---------- マスタ：大学・専攻・研究室・カード ----------
 create table if not exists mishiru_universities (
@@ -298,5 +297,3 @@ create policy "anon insert claims" on mishiru_claims for insert with check (true
 
 -- card_actions / interest_profiles / events：セッション本人のみ（アプリ側でsession_id一致を強制）
 -- leads/reports/articles には公開ポリシーを作らない = admin(service role)のみ参照可（PII保護）。
-
-commit;

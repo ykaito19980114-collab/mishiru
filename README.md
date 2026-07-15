@@ -33,7 +33,7 @@ pnpm run dev
 1. **Supabaseの設定**
    - Supabaseで新しいプロジェクトを作成し、データベースを構築します。
    - `supabase/schema.sql` の内容をSupabaseのSQLエディタで実行して、テーブルとRLSポリシーを作成します。
-   - テーブルはすべて `mishiru_` から始まります。既存の `universities` などは変更・削除しません。SQL全体が1トランザクションのため、途中で失敗した場合は部分作成されません。
+   - テーブルはすべて `mishiru_` から始まります。既存の `universities` などは変更・削除しません。各DDLは再実行可能なので、エラー時は修正後に新しいQueryから全体を再実行できます。
    - 続けて `supabase/verify-schema.sql` を実行します。必須テーブル不足・RLS未設定・回数制限関数不足があれば、SQLが明示的にエラーを返します。
    - Supabase Auth の Email プロバイダーを有効にします。
    - プロジェクトの Settings > API から、Project URL、Anon Key、Service Role Key を取得します。
