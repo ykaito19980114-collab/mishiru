@@ -1,0 +1,3522 @@
+[
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "entityName": "強相関系理論（藤本研究室）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-41461c2ec17b",
+        "name": "強相関系理論（藤本研究室）",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07aff3ff218c",
+        "name": "ニューラル配列モデリング研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0915265e2f50",
+        "name": "地域連携経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a1fd3e01a78",
+        "name": "データ科学研究室（経営工学分野）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0ad99ee6e612",
+        "name": "並行計算理論研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0b12b9925c45",
+        "name": "千田研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0ce75fdc53de",
+        "name": "朝田研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0d04a2bec01e",
+        "name": "グラフ理論研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0d3d07ef120e",
+        "name": "デジタルヒューマン学研究室",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-41461c2ec17b",
+        "name": "強相関系理論（藤本研究室）",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07aff3ff218c",
+        "name": "ニューラル配列モデリング研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0915265e2f50",
+        "name": "地域連携経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a1fd3e01a78",
+        "name": "データ科学研究室（経営工学分野）",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "entityName": "分子生体計測（出口研究室）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-470a48ca9298",
+        "name": "分子生体計測（出口研究室）",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-d1b58630b634",
+        "name": "ロボット機構学（多田隈研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0002b4b2154e",
+        "name": "固体物理学研究室（理論系）",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-000372acdb13",
+        "name": "有機反応化学研究グループ",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-0004e66e07fb",
+        "name": "安富研究室",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-0005836e99e5",
+        "name": "川畑グループ（原子核実験）",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-000d0b25b2d0",
+        "name": "中村信大研究室",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-000dbf3990c3",
+        "name": "高性能物理演算研究室",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-00115a7da728",
+        "name": "掛井研究室",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-00159706352f",
+        "name": "藤原研究室",
+        "score": 0
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-470a48ca9298",
+        "name": "分子生体計測（出口研究室）",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-d1b58630b634",
+        "name": "ロボット機構学（多田隈研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0002b4b2154e",
+        "name": "固体物理学研究室（理論系）",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-000372acdb13",
+        "name": "有機反応化学研究グループ",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-lab-0004e66e07fb",
+        "name": "安富研究室",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "entityName": "電磁エネルギー工学（松尾研究室）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-59f30ac6858e",
+        "name": "電磁エネルギー工学（松尾研究室）",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-8010b6e7559a",
+        "name": "先端エネルギーシステム",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-b4d07745b726",
+        "name": "佐藤研究室",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-01f495dea926",
+        "name": "生物物理工学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-03880e964eb7",
+        "name": "吉谷研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-08d1a7cb9582",
+        "name": "小槻研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-090b270c8cf4",
+        "name": "柳本研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-095a06215f84",
+        "name": "電磁エネルギー応用研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0b12b9925c45",
+        "name": "千田研究室",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-59f30ac6858e",
+        "name": "電磁エネルギー工学（松尾研究室）",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-8010b6e7559a",
+        "name": "先端エネルギーシステム",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-b4d07745b726",
+        "name": "佐藤研究室",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-01f495dea926",
+        "name": "生物物理工学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-03880e964eb7",
+        "name": "吉谷研究室",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "entityName": "ナノ材料光計測研究室",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-4dee53c438a0",
+        "name": "ナノ材料光計測研究室",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-lab-0a64e5a48256",
+        "name": "白井研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0dca02346edd",
+        "name": "プラズマ理工学（金子・佐々木研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0dcedc8baf7c",
+        "name": "瀨尾研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0f9738e5f367",
+        "name": "生命機能制御物質化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-14bfe176b068",
+        "name": "山﨑研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-16ec8067222a",
+        "name": "生命機能制御物質化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-173e19e7602b",
+        "name": "生命機能制御物質化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-23fafcd65bb0",
+        "name": "環境材料",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-2a6c28932556",
+        "name": "ナノ・マイクロ計測化学",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-4dee53c438a0",
+        "name": "ナノ材料光計測研究室",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-lab-0a64e5a48256",
+        "name": "白井研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0dca02346edd",
+        "name": "プラズマ理工学（金子・佐々木研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0dcedc8baf7c",
+        "name": "瀨尾研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0f9738e5f367",
+        "name": "生命機能制御物質化学",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "entityName": "大森研究室",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-40446adcb967",
+        "name": "大森研究室",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-364153b4119b",
+        "name": "数理モデリング研究室",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-cabed17ff2b8",
+        "name": "数理モデリング研究室（応用数学分野）",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-022abe0f4846",
+        "name": "応用可積分系研究室（数理システム分野）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-057435a8cdcb",
+        "name": "森研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07aff3ff218c",
+        "name": "ニューラル配列モデリング研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0915265e2f50",
+        "name": "地域連携経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a1fd3e01a78",
+        "name": "データ科学研究室（経営工学分野）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0b12b9925c45",
+        "name": "千田研究室",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-40446adcb967",
+        "name": "大森研究室",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-364153b4119b",
+        "name": "数理モデリング研究室",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-cabed17ff2b8",
+        "name": "数理モデリング研究室（応用数学分野）",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-lab-022abe0f4846",
+        "name": "応用可積分系研究室（数理システム分野）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "entityName": "数理創発システム（西成研究室）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-b51364f6513f",
+        "name": "数理創発システム（西成研究室）",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07aff3ff218c",
+        "name": "ニューラル配列モデリング研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0915265e2f50",
+        "name": "地域連携経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a1fd3e01a78",
+        "name": "データ科学研究室（経営工学分野）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0b12b9925c45",
+        "name": "千田研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0d3d07ef120e",
+        "name": "デジタルヒューマン学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0e26f8be3a1f",
+        "name": "森吉研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-1055d4c0206c",
+        "name": "生体工学領域 ニューロメカニクスグループ（青井研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-11933bcf9835",
+        "name": "玉置研究室",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-b51364f6513f",
+        "name": "数理創発システム（西成研究室）",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-lab-04092edef091",
+        "name": "中野研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07aff3ff218c",
+        "name": "ニューラル配列モデリング研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0915265e2f50",
+        "name": "地域連携経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a1fd3e01a78",
+        "name": "データ科学研究室（経営工学分野）",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "entityName": "伊井研究室",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-46e67b3d62b0",
+        "name": "伊井研究室",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-00a54bce0ed4",
+        "name": "平川(知)研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-012c9f05fbb9",
+        "name": "反応性流体工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-01969583ceb7",
+        "name": "数理解析研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-02fb98937175",
+        "name": "天谷研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0404047d899c",
+        "name": "飯尾研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0509e73b940a",
+        "name": "機能性シミュレーション研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0730565e5b8e",
+        "name": "固体物理学講座",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-074cc1ca9853",
+        "name": "渕脇正樹研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-082c90425eb6",
+        "name": "可積分系",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-46e67b3d62b0",
+        "name": "伊井研究室",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-lab-00a54bce0ed4",
+        "name": "平川(知)研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-012c9f05fbb9",
+        "name": "反応性流体工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-01969583ceb7",
+        "name": "数理解析研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-02fb98937175",
+        "name": "天谷研究室",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "entityName": "プラズマ理工学（金子・佐々木研究室）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-0dca02346edd",
+        "name": "プラズマ理工学（金子・佐々木研究室）",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-lab-02c8fcd188cc",
+        "name": "滝沢研究室（応用環境情報学）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-04fc6e8aadf9",
+        "name": "国際生物資源学－岡崎研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07ae2a55ed16",
+        "name": "開発経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-09c307f13a5b",
+        "name": "農業生産工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a1e0a3f8413",
+        "name": "農業構造・経営学（安藤光義研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a3dc257e69b",
+        "name": "長岡研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0ae4ecd2a4cc",
+        "name": "環境経済学研究室（環境経済学分野）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0b21a8d10a52",
+        "name": "農業構造・経営学（小嶋大造研究室）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0bed97948211",
+        "name": "知的システム工学研究室（ロボティクス・AI研究室）",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-0dca02346edd",
+        "name": "プラズマ理工学（金子・佐々木研究室）",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-lab-02c8fcd188cc",
+        "name": "滝沢研究室（応用環境情報学）",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-04fc6e8aadf9",
+        "name": "国際生物資源学－岡崎研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-07ae2a55ed16",
+        "name": "開発経済学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-09c307f13a5b",
+        "name": "農業生産工学研究室",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-90b4b3a37829",
+    "entityName": "環境・エネルギー工学（成瀬研究室）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-90b4b3a37829",
+        "name": "環境・エネルギー工学（成瀬研究室）",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-lab-012c9f05fbb9",
+        "name": "反応性流体工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-01a03de3b2cc",
+        "name": "エネルギー変換工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-020a25cbfae7",
+        "name": "石井研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-024a70b65ced",
+        "name": "小澤晃平研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-05a691543b8e",
+        "name": "青木研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-095c918dc903",
+        "name": "北川幸樹研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-0a014637b58b",
+        "name": "髙橋研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-12ebc3d83933",
+        "name": "動力工学研究グループ",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-131ae982f7d8",
+        "name": "燃焼エネルギー研究室",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-90b4b3a37829",
+        "name": "環境・エネルギー工学（成瀬研究室）",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-lab-012c9f05fbb9",
+        "name": "反応性流体工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-01a03de3b2cc",
+        "name": "エネルギー変換工学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-020a25cbfae7",
+        "name": "石井研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-024a70b65ced",
+        "name": "小澤晃平研究室",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "lab",
+    "sourceId": "sample-lab-f0e46eb2cbf5",
+    "entityName": "有機合成化学研究室",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 19785,
+    "mixedPoolSize": 19785,
+    "nearTop": [
+      {
+        "sourceId": "sample-lab-f0e46eb2cbf5",
+        "name": "有機合成化学研究室",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-lab-338c2d417fa2",
+        "name": "北本研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-539a6285810a",
+        "name": "有機元素材料化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-62a2ef8ae69f",
+        "name": "有機超分子化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-6efc3b2109b5",
+        "name": "中田・太田研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-85c13686b6a4",
+        "name": "岩﨑研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-8b6e21fe6f84",
+        "name": "有機超分子化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-9125acf60c26",
+        "name": "有機元素材料化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-c716327b19ad",
+        "name": "細胞情報制御学研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-d66721b25949",
+        "name": "林﨑研究室",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-lab-f0e46eb2cbf5",
+        "name": "有機合成化学研究室",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-lab-338c2d417fa2",
+        "name": "北本研究室",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-539a6285810a",
+        "name": "有機元素材料化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-62a2ef8ae69f",
+        "name": "有機超分子化学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-lab-6efc3b2109b5",
+        "name": "中田・太田研究室",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "entityName": "形式科学",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-d0929ad7a3a1",
+        "name": "形式科学",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-10ae5561f2f9",
+        "name": "基礎・代数系",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-4e485f9fb52e",
+        "name": "数理論理学",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-881cfd896a51",
+        "name": "数学",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-c7528d211bec",
+        "name": "モデル理論",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-4e07cc695aa3",
+        "name": "集合論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-5cea8269b2ab",
+        "name": "代数学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-4ab9bd00503b",
+        "name": "非古典論理",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-621591ff97a8",
+        "name": "一般位相・集合論的位相",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-66bf86e2e275",
+        "name": "幾何学",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-d0929ad7a3a1",
+        "name": "形式科学",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-10ae5561f2f9",
+        "name": "基礎・代数系",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-4e485f9fb52e",
+        "name": "数理論理学",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-881cfd896a51",
+        "name": "数学",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-c7528d211bec",
+        "name": "モデル理論",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "entityName": "非古典論理",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-4ab9bd00503b",
+        "name": "非古典論理",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-089496197073",
+        "name": "哲学的論理学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-426d2508dd12",
+        "name": "論理学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-c5b78a6dc29b",
+        "name": "記号論理学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-eaf48d1e93f8",
+        "name": "証明論",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-0138810efb75",
+        "name": "組合せ論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-01a521115bd7",
+        "name": "情報理論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-04f64b8c4247",
+        "name": "解析学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-08dcc90243e1",
+        "name": "数論幾何",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-0a0f9070c33e",
+        "name": "位相幾何学",
+        "score": 0
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-4ab9bd00503b",
+        "name": "非古典論理",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-089496197073",
+        "name": "哲学的論理学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-426d2508dd12",
+        "name": "論理学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-521f89cb1d69",
+        "name": "弦理論・超対称性",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-c5b78a6dc29b",
+        "name": "記号論理学",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "entityName": "表現論",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-c272ac81b5ef",
+        "name": "表現論",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-field-0138810efb75",
+        "name": "組合せ論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-01a521115bd7",
+        "name": "情報理論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-04f64b8c4247",
+        "name": "解析学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-089496197073",
+        "name": "哲学的論理学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-08dcc90243e1",
+        "name": "数論幾何",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-0a0f9070c33e",
+        "name": "位相幾何学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-0a79a5a8dd9b",
+        "name": "数値解析",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-0c234e04d8fa",
+        "name": "形式言語・オートマトン理論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-0dd198610148",
+        "name": "離散数学",
+        "score": 0
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-c272ac81b5ef",
+        "name": "表現論",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-field-0062a9a2e359",
+        "name": "不整脈学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-00827d963414",
+        "name": "岩石学・鉱物学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-00b268860724",
+        "name": "木材科学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-0138810efb75",
+        "name": "組合せ論",
+        "score": 0
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "entityName": "位相幾何学",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-0a0f9070c33e",
+        "name": "位相幾何学",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-621591ff97a8",
+        "name": "一般位相・集合論的位相",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-79349d67764f",
+        "name": "幾何学・位相",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-c368a1bac3f7",
+        "name": "代数的位相幾何学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-0e6e6ac9a3a9",
+        "name": "線形代数",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-0138810efb75",
+        "name": "組合せ論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-01a521115bd7",
+        "name": "情報理論",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-04f64b8c4247",
+        "name": "解析学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-089496197073",
+        "name": "哲学的論理学",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-field-08dcc90243e1",
+        "name": "数論幾何",
+        "score": 0
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-0a0f9070c33e",
+        "name": "位相幾何学",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-621591ff97a8",
+        "name": "一般位相・集合論的位相",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-79349d67764f",
+        "name": "幾何学・位相",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-c368a1bac3f7",
+        "name": "代数的位相幾何学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-0e6e6ac9a3a9",
+        "name": "線形代数",
+        "score": 1
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "entityName": "力学系理論",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-5cce956a2700",
+        "name": "力学系理論",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-field-0a79a5a8dd9b",
+        "name": "数値解析",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-96637da996f9",
+        "name": "時系列解析",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-c501f8a19346",
+        "name": "システム・制御理論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-c9db6be5a43b",
+        "name": "システム理論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-d8eafdbeab2d",
+        "name": "ゲーム理論(数理)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-e1e18c22e52c",
+        "name": "制御理論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-10d3dc922072",
+        "name": "システム科学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-534ebf41ae28",
+        "name": "サイバネティクス",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-7870bd3e23ff",
+        "name": "オペレーションズ・リサーチ",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-5cce956a2700",
+        "name": "力学系理論",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-field-0a79a5a8dd9b",
+        "name": "数値解析",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-96637da996f9",
+        "name": "時系列解析",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-c501f8a19346",
+        "name": "システム・制御理論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-c9db6be5a43b",
+        "name": "システム理論",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "entityName": "統計学",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 83,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-debed2db00ba",
+        "name": "統計学",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-field-347c7af4ced8",
+        "name": "推測統計学",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-620423279c67",
+        "name": "統計科学",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-7891dc20d8c1",
+        "name": "ベイズ統計学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-9bf1692fdc83",
+        "name": "数理統計学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-e7a9bb0eef60",
+        "name": "応用統計・データ科学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-bb49f8dc09a8",
+        "name": "確率論",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-01a521115bd7",
+        "name": "情報理論",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-0dd198610148",
+        "name": "離散数学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-41734f8a7122",
+        "name": "多変量解析",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-debed2db00ba",
+        "name": "統計学",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-field-347c7af4ced8",
+        "name": "推測統計学",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-620423279c67",
+        "name": "統計科学",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-7891dc20d8c1",
+        "name": "ベイズ統計学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-9bf1692fdc83",
+        "name": "数理統計学",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "entityName": "理論計算機科学",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-444b4ac889a8",
+        "name": "理論計算機科学",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-0c234e04d8fa",
+        "name": "形式言語・オートマトン理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-2061a14fd474",
+        "name": "計算の理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-238c07fed541",
+        "name": "計算複雑性理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-b9a36748eb8a",
+        "name": "計算理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-01a521115bd7",
+        "name": "情報理論",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-6225355c82d8",
+        "name": "プログラミング言語理論",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-9a4f67491b9c",
+        "name": "アルゴリズム論",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-cab15c368a00",
+        "name": "暗号理論",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-ce8b5b84dac6",
+        "name": "計算可能性理論(再帰理論)",
+        "score": 3
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-444b4ac889a8",
+        "name": "理論計算機科学",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-field-0c234e04d8fa",
+        "name": "形式言語・オートマトン理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-2061a14fd474",
+        "name": "計算の理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-238c07fed541",
+        "name": "計算複雑性理論",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-field-b9a36748eb8a",
+        "name": "計算理論",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "entityName": "システム・制御理論",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 82,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-c501f8a19346",
+        "name": "システム・制御理論",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-field-10d3dc922072",
+        "name": "システム科学",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-c9db6be5a43b",
+        "name": "システム理論",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-e1e18c22e52c",
+        "name": "制御理論",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-534ebf41ae28",
+        "name": "サイバネティクス",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-7870bd3e23ff",
+        "name": "オペレーションズ・リサーチ",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-ebeff3ade0ec",
+        "name": "複雑系科学(理論)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-9a4f67491b9c",
+        "name": "アルゴリズム論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-0dd198610148",
+        "name": "離散数学",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-field-5cce956a2700",
+        "name": "力学系理論",
+        "score": 1
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-c501f8a19346",
+        "name": "システム・制御理論",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-field-10d3dc922072",
+        "name": "システム科学",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-c9db6be5a43b",
+        "name": "システム理論",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-e1e18c22e52c",
+        "name": "制御理論",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-534ebf41ae28",
+        "name": "サイバネティクス",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "entityName": "弦理論・超対称性",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 85,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-521f89cb1d69",
+        "name": "弦理論・超対称性",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-1fc843413fc3",
+        "name": "自然科学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-2dc0a27b5ace",
+        "name": "場の量子論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-407256866ea7",
+        "name": "素粒子物理学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-4603f4adc666",
+        "name": "理論・素粒子・原子核",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-587737e44566",
+        "name": "量子力学(基礎)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-5bf7287fb281",
+        "name": "標準模型・現象論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-820ba04ca572",
+        "name": "ハドロン物理",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-8b6b7da5ee6f",
+        "name": "理論物理学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-9d45d0f5d383",
+        "name": "物性物理学",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-521f89cb1d69",
+        "name": "弦理論・超対称性",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-field-1fc843413fc3",
+        "name": "自然科学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-2dc0a27b5ace",
+        "name": "場の量子論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-407256866ea7",
+        "name": "素粒子物理学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-4603f4adc666",
+        "name": "理論・素粒子・原子核",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "entityName": "固体物理・半導体物理",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 84,
+    "mixedPoolSize": 606,
+    "nearTop": [
+      {
+        "sourceId": "sample-field-c61fedefcf07",
+        "name": "固体物理・半導体物理",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-field-9d45d0f5d383",
+        "name": "物性物理学",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-1fc843413fc3",
+        "name": "自然科学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-2dc0a27b5ace",
+        "name": "場の量子論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-407256866ea7",
+        "name": "素粒子物理学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-4603f4adc666",
+        "name": "理論・素粒子・原子核",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-521f89cb1d69",
+        "name": "弦理論・超対称性",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-587737e44566",
+        "name": "量子力学(基礎)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-5bf7287fb281",
+        "name": "標準模型・現象論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-820ba04ca572",
+        "name": "ハドロン物理",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-field-c61fedefcf07",
+        "name": "固体物理・半導体物理",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-field-9d45d0f5d383",
+        "name": "物性物理学",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-field-1fc843413fc3",
+        "name": "自然科学",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-2dc0a27b5ace",
+        "name": "場の量子論",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-field-407256866ea7",
+        "name": "素粒子物理学",
+        "score": 2
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-d703e1c50d2e",
+    "entityName": "システム制御情報学会",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 54,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-d703e1c50d2e",
+        "name": "システム制御情報学会",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-48333f7596d8",
+        "name": "日本応用数理学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-6f8a9edb2d85",
+        "name": "計測自動制御学会 (SICE)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-7a33789e41db",
+        "name": "一般社団法人システム制御情報学会 (ISCIE)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-91c147b24d2b",
+        "name": "計測自動制御学会システム・情報部門 (SANDI)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-c62d6c84460a",
+        "name": "日本応用数理学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-157b6a303ff5",
+        "name": "日本計算機統計学会",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-20f88c725484",
+        "name": "日本オペレーションズ・リサーチ学会 (ORSJ)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-5af8d435bfe9",
+        "name": "応用統計学会",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-874184365957",
+        "name": "情報処理学会",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-d703e1c50d2e",
+        "name": "システム制御情報学会",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-2bfad22e0b79",
+        "name": "日本応用数理学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-48333f7596d8",
+        "name": "日本応用数理学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-6f8a9edb2d85",
+        "name": "計測自動制御学会 (SICE)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-7a33789e41db",
+        "name": "一般社団法人システム制御情報学会 (ISCIE)",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-1119546fbd7d",
+    "entityName": "ACM",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 358,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-1119546fbd7d",
+        "name": "ACM",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-80dc14b0492b",
+        "name": "Association for Computing Machinery (ACM)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-1890054911e2",
+        "name": "ACM SIGMOD",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-21a8186f2d5b",
+        "name": "ACM PLDI",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-a0dd843f106b",
+        "name": "ACM POPL",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-a15e073d6c4e",
+        "name": "日本ソフトウェア科学会 (JSSST)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-b1099c542fa3",
+        "name": "人工知能学会 (JSAI)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-bbf1da0c2468",
+        "name": "情報処理学会 (IPSJ)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-c5dfa9c3c460",
+        "name": "VLDB",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-0343e0846e7a",
+        "name": "電子情報通信学会 (IEICE)",
+        "score": 5
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-1119546fbd7d",
+        "name": "ACM",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-80dc14b0492b",
+        "name": "Association for Computing Machinery (ACM)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-1890054911e2",
+        "name": "ACM SIGMOD",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-21a8186f2d5b",
+        "name": "ACM PLDI",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-56d6eb0a7b14",
+        "name": "Association for Computing Machinery (ACM)",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-87e1eaed1a84",
+    "entityName": "日本刑法学会",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 301,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-87e1eaed1a84",
+        "name": "日本刑法学会",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-00494555a5f5",
+        "name": "日本社会保障法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-016c6166f765",
+        "name": "日本公法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-4e2cbe8c36c9",
+        "name": "日本私法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-50ca7c9818a2",
+        "name": "日米法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-7834641b4037",
+        "name": "日本法社会学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-c9b8993f3995",
+        "name": "国際法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-e20432eaebda",
+        "name": "日本労働法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-2be99e1737a0",
+        "name": "American Society of International Law (ASIL)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-85b3364148b5",
+        "name": "法制史学会",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-87e1eaed1a84",
+        "name": "日本刑法学会",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-00494555a5f5",
+        "name": "日本社会保障法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-016c6166f765",
+        "name": "日本公法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-4e2cbe8c36c9",
+        "name": "日本私法学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-50ca7c9818a2",
+        "name": "日米法学会",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-25a7865f4ff8",
+    "entityName": "American Anthropological Association (AAA)",
+    "nearRank": 1,
+    "mixedRank": 2,
+    "nearPoolSize": 153,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-25a7865f4ff8",
+        "name": "American Anthropological Association (AAA)",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-society-df299abe0bde",
+        "name": "International Union of Anthropological and Ethnological Sciences (IUAES)",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-8da2b27feaf0",
+        "name": "日本文化人類学会",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-society-ce3d86d1c1fd",
+        "name": "Society for Cultural Anthropology (SCA)",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-society-e7457acafb66",
+        "name": "European Association of Social Anthropologists (EASA)",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-society-30330cae5c79",
+        "name": "Association of Social Anthropologists of the UK (ASA)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-54276955cc5b",
+        "name": "Latin American Studies Association (LASA)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-d4e692d37a11",
+        "name": "Association for Asian Studies (AAS)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-3affd14a9321",
+        "name": "日本ラテンアメリカ学会",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-society-47295f12ba3e",
+        "name": "Society for Ethnomusicology (SEM)",
+        "score": 5
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-1b2fa2350604",
+        "name": "American Anthropological Association (AAA)",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-society-25a7865f4ff8",
+        "name": "American Anthropological Association (AAA)",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-society-a23fb8fc8ca8",
+        "name": "International Union of Anthropological and Ethnological Sciences (IUAES)",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-society-df299abe0bde",
+        "name": "International Union of Anthropological and Ethnological Sciences (IUAES)",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-86fb3afb2096",
+        "name": "European Association of Social Anthropologists (EASA)",
+        "score": 10
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-54143c54fbfa",
+    "entityName": "日本動脈硬化学会",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 443,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-54143c54fbfa",
+        "name": "日本動脈硬化学会",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-society-d329d92f63bf",
+        "name": "European Atherosclerosis Society (EAS)",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-154973684b0d",
+        "name": "日本肝臓学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-26d46a1429ce",
+        "name": "日本アレルギー学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-305d9b94d545",
+        "name": "日本糖尿病学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-4055acf54ad4",
+        "name": "日本高血圧学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-5077cd8e4166",
+        "name": "日本消化器病学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-89eefe27b963",
+        "name": "日本循環器学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-a6057db86da3",
+        "name": "日本呼吸器学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-c0aa54f9212d",
+        "name": "日本腎臓学会",
+        "score": 3
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-54143c54fbfa",
+        "name": "日本動脈硬化学会",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-society-d329d92f63bf",
+        "name": "European Atherosclerosis Society (EAS)",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-154973684b0d",
+        "name": "日本肝臓学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-26d46a1429ce",
+        "name": "日本アレルギー学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-305d9b94d545",
+        "name": "日本糖尿病学会",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-db13fc2d3f84",
+    "entityName": "日本生化学会",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 443,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-db13fc2d3f84",
+        "name": "日本生化学会",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-society-223d9af5ccdd",
+        "name": "Federation of European Biochemical Societies (FEBS)",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-society-283c27a71fb6",
+        "name": "American Society for Biochemistry and Molecular Biology (ASBMB)",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-society-3a89ecdd60e1",
+        "name": "日本細胞生物学会",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-society-1922a24e1f33",
+        "name": "日本遺伝学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-222ede77ea8c",
+        "name": "日本分子生物学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-2ceeb6ed48f9",
+        "name": "日本分子生物学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-4153bc8e811a",
+        "name": "日本分子生物学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-f825ae1d191f",
+        "name": "日本分子生物学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-f84222fc1b42",
+        "name": "日本分子生物学会",
+        "score": 4
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-db13fc2d3f84",
+        "name": "日本生化学会",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-society-223d9af5ccdd",
+        "name": "Federation of European Biochemical Societies (FEBS)",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-society-283c27a71fb6",
+        "name": "American Society for Biochemistry and Molecular Biology (ASBMB)",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-society-3a89ecdd60e1",
+        "name": "日本細胞生物学会",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-society-1922a24e1f33",
+        "name": "日本遺伝学会",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-18b049282fe4",
+    "entityName": "日本薬剤疫学会",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 443,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-18b049282fe4",
+        "name": "日本薬剤疫学会",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-2563002d96ee",
+        "name": "日本疫学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-70c690da86ee",
+        "name": "日本疫学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-13c6623a7223",
+        "name": "International Epidemiological Association (IEA)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-4ced748fa4aa",
+        "name": "Society for Epidemiologic Research (SER)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-9722f68cabd7",
+        "name": "International Epidemiological Association (IEA)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-11b84d18e2a6",
+        "name": "日本応用糖質科学会",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-129c70604367",
+        "name": "日本外科学会",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-1b6c574cf4db",
+        "name": "日本脳神経外科学会",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-20e7bc6a6ebd",
+        "name": "日本医学会",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-18b049282fe4",
+        "name": "日本薬剤疫学会",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-society-2563002d96ee",
+        "name": "日本疫学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-70c690da86ee",
+        "name": "日本疫学会",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-society-13c6623a7223",
+        "name": "International Epidemiological Association (IEA)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-4ced748fa4aa",
+        "name": "Society for Epidemiologic Research (SER)",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-4495879934d1",
+    "entityName": "Society for Mining, Metallurgy & Exploration (SME)",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 358,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-4495879934d1",
+        "name": "Society for Mining, Metallurgy & Exploration (SME)",
+        "score": 15
+      },
+      {
+        "sourceId": "sample-society-317afe135760",
+        "name": "International Astronautical Federation (IAF)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-3f245551dfa2",
+        "name": "International Tunnelling Association (ITA)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-c3f36d991abe",
+        "name": "資源・素材学会 (MMIJ)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-e0e68cd29252",
+        "name": "American Institute of Mining, Metallurgical, and Petroleum Engineers (AIME)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-eedeb18b5b5b",
+        "name": "資源・素材学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-fe8cb90532f0",
+        "name": "Society of Petroleum Engineers (SPE)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-053afbfc4544",
+        "name": "Asian Pacific Confederation of Chemical Engineering (APCChE)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-059c3ab1ffac",
+        "name": "IACR",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-07737ac30be6",
+        "name": "IEEE",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-4495879934d1",
+        "name": "Society for Mining, Metallurgy & Exploration (SME)",
+        "score": 15
+      },
+      {
+        "sourceId": "sample-society-317afe135760",
+        "name": "International Astronautical Federation (IAF)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-3f245551dfa2",
+        "name": "International Tunnelling Association (ITA)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-5c06f7063c81",
+        "name": "日本地熱学会",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-c3f36d991abe",
+        "name": "資源・素材学会 (MMIJ)",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-50334f1b65ba",
+    "entityName": "American Astronautical Society",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 248,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-50334f1b65ba",
+        "name": "American Astronautical Society",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-society-de646d4642f1",
+        "name": "International Academy of Astronautics (IAA)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-92f8e4fbb114",
+        "name": "日本航空宇宙学会",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-society-28e09e3c8559",
+        "name": "International Astronautical Federation (IAF)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-society-06444bc145e7",
+        "name": "Public Communication of Science and Technology Network (PCST)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-07c0010f297f",
+        "name": "Society for Conservation Biology (SCB)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-08050433d705",
+        "name": "Philosophy of Science Association (PSA)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-1b79629a1658",
+        "name": "Royal Astronomical Society (RAS)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-23d9ea3b20ee",
+        "name": "International Solid Waste Association (ISWA)",
+        "score": 2
+      },
+      {
+        "sourceId": "sample-society-261f1f17b77c",
+        "name": "World Design Organization (WDO)",
+        "score": 2
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-50334f1b65ba",
+        "name": "American Astronautical Society",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-society-317afe135760",
+        "name": "International Astronautical Federation (IAF)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-de646d4642f1",
+        "name": "International Academy of Astronautics (IAA)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-society-279f3683574b",
+        "name": "Society of Naval Architects and Marine Engineers (SNAME)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-society-49a5189f189c",
+        "name": "American Institute of Aeronautics and Astronautics (AIAA)",
+        "score": 5
+      }
+    ]
+  },
+  {
+    "sourceType": "society",
+    "sourceId": "sample-society-97696e16fe66",
+    "entityName": "日本臨床腫瘍学会",
+    "nearRank": null,
+    "mixedRank": 2,
+    "nearPoolSize": 300,
+    "mixedPoolSize": 1700,
+    "nearTop": [
+      {
+        "sourceId": "sample-society-d703e1c50d2e",
+        "name": "システム制御情報学会",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-7a33789e41db",
+        "name": "一般社団法人システム制御情報学会 (ISCIE)",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-60d1c55560fa",
+        "name": "一般社団法人日本シミュレーション学会 (JSST)",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-346241de1fe1",
+        "name": "公益社団法人計測自動制御学会 (SICE)",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-20f88c725484",
+        "name": "日本オペレーションズ・リサーチ学会 (ORSJ)",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-627870e84b55",
+        "name": "日本システム・ダイナミクス学会 (JSD)",
+        "score": 1
+      },
+      {
+        "sourceId": "sample-society-6f8a9edb2d85",
+        "name": "計測自動制御学会 (SICE)",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-91c147b24d2b",
+        "name": "計測自動制御学会システム・情報部門 (SANDI)",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-ff9c26aec967",
+        "name": "IEEE Control Systems Society",
+        "score": 0
+      },
+      {
+        "sourceId": "sample-society-84d5e9936b27",
+        "name": "IEEE Systems, Man, and Cybernetics Society (SMCS)",
+        "score": 0
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-society-97696e16fe66",
+        "name": "日本臨床腫瘍学会",
+        "score": 14
+      },
+      {
+        "sourceId": "sample-society-e0e80933bbf4",
+        "name": "日本臨床腫瘍学会",
+        "score": 14
+      },
+      {
+        "sourceId": "sample-society-213380a6574e",
+        "name": "European Society for Medical Oncology (ESMO)",
+        "score": 12
+      },
+      {
+        "sourceId": "sample-society-f5eefb1c3578",
+        "name": "ESMO",
+        "score": 12
+      },
+      {
+        "sourceId": "sample-society-2c5d052cb9fb",
+        "name": "American Society of Clinical Oncology (ASCO)",
+        "score": 3
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "entityName": "システム/制御/情報（システム制御情報学会誌）",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 53,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-c01e826c2723",
+        "name": "システム/制御/情報（システム制御情報学会誌）",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-journal-6bc566877a1a",
+        "name": "日本オペレーションズ・リサーチ学会論文誌",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-0dcde54052a6",
+        "name": "Behaviormetrika",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-1c1316e150b1",
+        "name": "Journal of the Royal Statistical Society (JRSS)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-28c3d0c037bc",
+        "name": "Statistica Sinica",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-3c36061354fa",
+        "name": "Annals of the Institute of Statistical Mathematics (AISM)",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-542566e53cf9",
+        "name": "Bernoulli",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-5551e4086bd7",
+        "name": "Annals of Statistics",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-854f78d53d61",
+        "name": "IEEE Transactions on Systems, Man, and Cybernetics: Systems",
+        "score": 3
+      },
+      {
+        "sourceId": "sample-journal-a758dc5157ac",
+        "name": "Japanese Journal of Statistics and Data Science (JJSD)",
+        "score": 3
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-c01e826c2723",
+        "name": "システム/制御/情報（システム制御情報学会誌）",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-journal-265fc9c1f2a8",
+        "name": "日本応用数理学会論文誌",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-9cffd014116b",
+        "name": "Transportation Science",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-d05297ac34c8",
+        "name": "Computers & Industrial Engineering",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-376fa6050c0d",
+        "name": "Transactions in GIS",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "entityName": "Clinical and Experimental Nephrology",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 559,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-bfe13a915e84",
+        "name": "Clinical and Experimental Nephrology",
+        "score": 21
+      },
+      {
+        "sourceId": "sample-journal-2cff1afb365f",
+        "name": "Journal of the American Society of Nephrology (JASN)",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-journal-1ba51a1973fd",
+        "name": "Kidney International",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-journal-5b3f2a1357ba",
+        "name": "Clinical and Experimental Nephrology (日本腎臓学会)",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-journal-88373288259b",
+        "name": "Journal of Gastroenterology",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-journal-0fa26421012d",
+        "name": "Blood",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-journal-54990eaebc8d",
+        "name": "International Journal of Hematology",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-journal-363fc1018a64",
+        "name": "Journal of Pharmacology and Experimental Therapeutics (JPET)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-7f49a02348eb",
+        "name": "Journal of Periodontology",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-87fdae69ca2f",
+        "name": "Modern Rheumatology (日本リウマチ学会)",
+        "score": 7
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-bfe13a915e84",
+        "name": "Clinical and Experimental Nephrology",
+        "score": 21
+      },
+      {
+        "sourceId": "sample-journal-2cff1afb365f",
+        "name": "Journal of the American Society of Nephrology (JASN)",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-journal-1ba51a1973fd",
+        "name": "Kidney International",
+        "score": 11
+      },
+      {
+        "sourceId": "sample-journal-5b3f2a1357ba",
+        "name": "Clinical and Experimental Nephrology (日本腎臓学会)",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-journal-88373288259b",
+        "name": "Journal of Gastroenterology",
+        "score": 9
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "entityName": "Plant Physiology",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 559,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-1fdf5d10b81a",
+        "name": "Plant Physiology",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-journal-c33ee3e8ac06",
+        "name": "Plant and Cell Physiology",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-a132e5d1b9cd",
+        "name": "Journal of Experimental Botany",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-journal-332c4586e89d",
+        "name": "Plant, Cell & Environment",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-journal-031d8fbbf8f3",
+        "name": "The Journal of Biochemistry",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-41569e63cbe5",
+        "name": "The Plant Journal",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-8b307e78312b",
+        "name": "The Journal of Biochemistry (日本生化学会)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-b8414b532425",
+        "name": "Zoological Science",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-be8e464ff244",
+        "name": "Journal of Plant Research",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-eb94f0ddf050",
+        "name": "RNA",
+        "score": 6
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-1fdf5d10b81a",
+        "name": "Plant Physiology",
+        "score": 13
+      },
+      {
+        "sourceId": "sample-journal-c33ee3e8ac06",
+        "name": "Plant and Cell Physiology",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-a132e5d1b9cd",
+        "name": "Journal of Experimental Botany",
+        "score": 9
+      },
+      {
+        "sourceId": "sample-journal-332c4586e89d",
+        "name": "Plant, Cell & Environment",
+        "score": 8
+      },
+      {
+        "sourceId": "sample-journal-031d8fbbf8f3",
+        "name": "The Journal of Biochemistry",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "entityName": "エネルギー・資源",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 345,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-08b9a8007a15",
+        "name": "エネルギー・資源",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-c099f0d04f1d",
+        "name": "Applied Energy",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-258eff08c3b4",
+        "name": "水環境学会誌",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-30e3f3df0a72",
+        "name": "日本建築仕上学会誌 (Finex)",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-55be420db966",
+        "name": "Materials Today",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-a4ec58068af6",
+        "name": "Transportation Research Part E: Logistics and Transportation Review",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-d5bbd48cd329",
+        "name": "Transportation Research Part E",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-e7b4d94a0297",
+        "name": "Energy (Elsevier)",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-f480136e3928",
+        "name": "化学工学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-03d79577f3db",
+        "name": "材料 (JSMS)",
+        "score": 3
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-08b9a8007a15",
+        "name": "エネルギー・資源",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-c099f0d04f1d",
+        "name": "Applied Energy",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-258eff08c3b4",
+        "name": "水環境学会誌",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-30e3f3df0a72",
+        "name": "日本建築仕上学会誌 (Finex)",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-4380fc3ddb92",
+        "name": "ぶんせき",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "entityName": "Journal of Geophysical Research: Atmospheres",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 230,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-26aae0d9e8a8",
+        "name": "Journal of Geophysical Research: Atmospheres",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-journal-57756dcda190",
+        "name": "Global Biogeochemical Cycles",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-bf8d37876fdb",
+        "name": "Journal of the Atmospheric Sciences",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-139c68a84c9b",
+        "name": "Journal of Climate",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-180fe072a70d",
+        "name": "Climate Dynamics",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-9f90b15b37bc",
+        "name": "Atmospheric Environment",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-acf91bb11ce1",
+        "name": "Quarterly Journal of the Royal Meteorological Society",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-e16341283977",
+        "name": "Journal of Physical Oceanography",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-0e8ee9c2d508",
+        "name": "Arteriosclerosis, Thrombosis, and Vascular Biology",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-0e8fe31d2224",
+        "name": "Taxon",
+        "score": 5
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-26aae0d9e8a8",
+        "name": "Journal of Geophysical Research: Atmospheres",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-journal-57756dcda190",
+        "name": "Global Biogeochemical Cycles",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-bf8d37876fdb",
+        "name": "Journal of the Atmospheric Sciences",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-ecbede8337db",
+        "name": "Publications of the Astronomical Society of Japan (PASJ)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-074adc65ad29",
+        "name": "Journal of the American Chemical Society (JACS)",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "entityName": "PNAS",
+    "nearRank": 2,
+    "mixedRank": 2,
+    "nearPoolSize": 559,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-0badcbce964f",
+        "name": "PNAS",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-f095eb625da9",
+        "name": "PNAS",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-045daaed2fe9",
+        "name": "Bioscience, Biotechnology, and Biochemistry",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-0a282d0ed651",
+        "name": "Cell",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-8a7c1126d4db",
+        "name": "Nature",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-c51dd3af2944",
+        "name": "Cell",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-ccce78d779f8",
+        "name": "Bioscience, Biotechnology, and Biochemistry (BBB)",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-dd317650d4ac",
+        "name": "Nature",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-1c04d4b5afa6",
+        "name": "Cell",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-24c1bc14fd9f",
+        "name": "The FEBS Journal",
+        "score": 4
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-0badcbce964f",
+        "name": "PNAS",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-f095eb625da9",
+        "name": "PNAS",
+        "score": 10
+      },
+      {
+        "sourceId": "sample-journal-6f5eb7cf7fdd",
+        "name": "Analytical Chemistry (ACS)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-045daaed2fe9",
+        "name": "Bioscience, Biotechnology, and Biochemistry",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-0a282d0ed651",
+        "name": "Cell",
+        "score": 5
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "entityName": "Digital Creativity",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 345,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-1a647b5bd771",
+        "name": "Digital Creativity",
+        "score": 15
+      },
+      {
+        "sourceId": "sample-journal-47b4bd85a156",
+        "name": "Design Studies",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-a58d867673c3",
+        "name": "CoDesign",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-20519bdd570c",
+        "name": "The Design Journal",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-2a3ec96136ce",
+        "name": "International Journal of Design Creativity and Innovation",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-30a391db610d",
+        "name": "AI EDAM",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-3a5e4b74ab45",
+        "name": "International Journal of Cartography",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-ae52aefa052f",
+        "name": "International Journal of Technology and Design Education",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-b15f74306023",
+        "name": "Journal of Design Research",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-e37bab3d04e3",
+        "name": "Cartography and Geographic Information Science",
+        "score": 5
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-1a647b5bd771",
+        "name": "Digital Creativity",
+        "score": 15
+      },
+      {
+        "sourceId": "sample-journal-7dc7df27a6b4",
+        "name": "Design Studies",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-3b2abeac4740",
+        "name": "Leonardo",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-47b4bd85a156",
+        "name": "Design Studies",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-8060e45ebde6",
+        "name": "Journal of Design Research",
+        "score": 6
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "entityName": "Pain Medicine",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 230,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-483097bb38b1",
+        "name": "Pain Medicine",
+        "score": 15
+      },
+      {
+        "sourceId": "sample-journal-d038ba6f756c",
+        "name": "The Journal of Pain",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-eb9f2d02bbfc",
+        "name": "Seizure",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-fc4edc65a5ff",
+        "name": "Pain",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-35814c31eb6b",
+        "name": "Sleep Medicine",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-5dad519a8766",
+        "name": "Neurotherapeutics",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-0a8e2660cd07",
+        "name": "Respirology",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-2c0eb64bde2d",
+        "name": "Journal of Antimicrobial Chemotherapy",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-3479e91beb40",
+        "name": "World Neurosurgery",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-3c51aa98f253",
+        "name": "Neuro-Oncology",
+        "score": 5
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-483097bb38b1",
+        "name": "Pain Medicine",
+        "score": 15
+      },
+      {
+        "sourceId": "sample-journal-ab6c2132b3cd",
+        "name": "Breast Cancer",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-d038ba6f756c",
+        "name": "The Journal of Pain",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-eb9f2d02bbfc",
+        "name": "Seizure",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-fc4edc65a5ff",
+        "name": "Pain",
+        "score": 7
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "entityName": "デザイン学研究",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 156,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-e0fb7e6148f2",
+        "name": "デザイン学研究",
+        "score": 12
+      },
+      {
+        "sourceId": "sample-journal-10cdc0914f4a",
+        "name": "環境化学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-23bdcd98dfec",
+        "name": "人間中心設計",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-252bc20dbdbc",
+        "name": "Ecological Economics",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-409a7b5c1182",
+        "name": "International Journal of Design",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-67aa75a250c3",
+        "name": "環境科学会誌",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-77b8fe820e2f",
+        "name": "感性工学",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-7b2b29f2d624",
+        "name": "CoDesign",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-7eede56150f4",
+        "name": "環境経済・政策研究",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-8060e45ebde6",
+        "name": "Journal of Design Research",
+        "score": 4
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-e0fb7e6148f2",
+        "name": "デザイン学研究",
+        "score": 12
+      },
+      {
+        "sourceId": "sample-journal-cac195361d0c",
+        "name": "デザイン学研究 (日本デザイン学会)",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-20519bdd570c",
+        "name": "The Design Journal",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-b15f74306023",
+        "name": "Journal of Design Research",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-10cdc0914f4a",
+        "name": "環境化学",
+        "score": 4
+      }
+    ]
+  },
+  {
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "entityName": "The Lancet Oncology",
+    "nearRank": 1,
+    "mixedRank": 1,
+    "nearPoolSize": 29,
+    "mixedPoolSize": 1648,
+    "nearTop": [
+      {
+        "sourceId": "sample-journal-4cc37a9f577d",
+        "name": "The Lancet Oncology",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-journal-63ef5257d145",
+        "name": "International Journal of Clinical Oncology",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-87b5fae68cc7",
+        "name": "Japanese Journal of Clinical Oncology",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-bde841566cd0",
+        "name": "Annals of Oncology",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-d4e06d865fdb",
+        "name": "Journal of Clinical Oncology (JCO)",
+        "score": 5
+      },
+      {
+        "sourceId": "sample-journal-381c457497ea",
+        "name": "Clinical Cancer Research",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-51ab05f481f5",
+        "name": "Cancer Discovery",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-68f42aa9fb82",
+        "name": "International Journal of Radiation Oncology Biology Physics",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-69fe5b3a4c51",
+        "name": "Radiotherapy and Oncology",
+        "score": 4
+      },
+      {
+        "sourceId": "sample-journal-9f482b34c8db",
+        "name": "Cancer Cell",
+        "score": 4
+      }
+    ],
+    "mixedTop": [
+      {
+        "sourceId": "sample-journal-4cc37a9f577d",
+        "name": "The Lancet Oncology",
+        "score": 16
+      },
+      {
+        "sourceId": "sample-journal-5420a7d710b1",
+        "name": "Lancet Neurology",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-96ef05f5c550",
+        "name": "JAMA",
+        "score": 7
+      },
+      {
+        "sourceId": "sample-journal-16ff8e38b005",
+        "name": "The American Journal of Psychiatry (AJP)",
+        "score": 6
+      },
+      {
+        "sourceId": "sample-journal-2ee3eef14803",
+        "name": "Pediatrics",
+        "score": 6
+      }
+    ]
+  }
+]

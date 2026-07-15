@@ -1,0 +1,245 @@
+candidate_term,surface例,entity_count,sourceType,proposed_controlled,proposed_relation,ambiguity,recommendation,evidence_examples,reviewStatus,note
+確認中,確認中,8,journal,確認中〈要限定〉,needs_qualifier,medium,add_qualifier,,pending,多義の可能性
+購読型／一部OA,購読型／一部OA,7,journal,購読型／一部OA,candidate_concept,medium,keep_candidate,,pending,人間レビュー後に統制語化を判断
+国内,国内,5,society,国内〈要限定〉,needs_qualifier,medium,add_qualifier,,pending,多義の可能性
+科,科,5,field,科〈要限定〉,needs_qualifier,medium,add_qualifier,,pending,多義の可能性
+国際,国際,4,society,国際〈要限定〉,needs_qualifier,medium,add_qualifier,,pending,多義の可能性
+OA,OA,2,journal,OA〈要限定〉,needs_qualifier,medium,add_qualifier,,pending,多義の可能性
+エネルギー,エネルギー,2,journal|lab,エネルギー,candidate_concept,medium,keep_candidate,燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、,pending,人間レビュー後に統制語化を判断
+目,目,2,field,目〈要限定〉,needs_qualifier,medium,add_qualifier,,pending,多義の可能性
+AGUが発行する、大気科学を扱う国際主要誌。,AGUが発行する、大気科学を扱う国際主要誌。,1,journal,,sentence_fragment,low,reject,AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、,pending,文章断片は統制語候補にしない
+Academy,Academy,1,journal,,isolated_term,low,needs_review,National Academy of Sciencesが発,pending,単発出現のため採否保留
+American,American,1,journal,,isolated_term,low,needs_review,American Society of Plant Biol,pending,単発出現のため採否保留
+American Society of Plant Biologists系の、植物生理学・植物分子生物学を扱う国際主要誌。,American Society of Plant Biologists系の、植物生理学・植物分子生物学を扱う国際主要誌。,1,journal,,sentence_fragment,low,reject,American Society of Plant Biol,pending,文章断片は統制語候補にしない
+DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命現象をどのように支えているのか？,DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命現象をどのように支えているのか？,1,society,,redundant_question,low,reject,DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+Lancet系の国際主要誌,Lancet系の国際主要誌,1,journal,,isolated_term,low,needs_review,臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床,pending,単発出現のため採否保留
+MRIで測った流れと数値計算を組み合わせると、患者ごとの血流をどこまで正確に再現できるのか？,MRIで測った流れと数値計算を組み合わせると、患者ごとの血流をどこまで正確に再現できるのか？,1,lab,,redundant_question,low,reject,脳の血管の形が人によって異なると、血液の流れや血管壁への力は,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+National,National,1,journal,,isolated_term,low,needs_review,National Academy of Sciencesが発,pending,単発出現のため採否保留
+National Academy of Sciencesが発行する、自然科学・社会科学・医学を横断する国際主要誌。,National Academy of Sciencesが発行する、自然科学・社会科学・医学を横断する国際主要誌。,1,journal,,sentence_fragment,low,reject,National Academy of Sciencesが発,pending,文章断片は統制語候補にしない
+Plant,Plant,1,journal,,isolated_term,low,needs_review,American Society of Plant Biol,pending,単発出現のため採否保留
+Society,Society,1,journal,,isolated_term,low,needs_review,American Society of Plant Biol,pending,単発出現のため採否保留
+がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカムの観点からどう改善できるのか？,がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカムの観点からどう改善できるのか？,1,journal,,redundant_question,low,reject,がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカム,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+がん臨床試験,がん臨床試験,1,journal,,isolated_term,low,needs_review,臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床,pending,単発出現のため採否保留
+がん薬物療法,がん薬物療法,1,society,,isolated_term,low,needs_review,臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的,pending,単発出現のため採否保留
+がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目標によってどのように選択されているのか？,がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目標によってどのように選択されているのか？,1,society,,redundant_question,low,reject,がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+すべての状態を直接測れないシステムを、限られた観測からどう制御できるのか？,すべての状態を直接測れないシステムを、限られた観測からどう制御できるのか？,1,field,,redundant_question,low,reject,すべての状態を直接測れないシステムを、限られた観測からどう制,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+どのような行為を犯罪とし、刑罰を科すことはどのように正当化されるのか？,どのような行為を犯罪とし、刑罰を科すことはどのように正当化されるのか？,1,society,,redundant_question,low,reject,どのような行為を犯罪とし、刑罰を科すことはどのように正当化さ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+わずかな不純物や界面の設計によって、半導体の電気的・光学的性質をどこまで変えられるのか？,わずかな不純物や界面の設計によって、半導体の電気的・光学的性質をどこまで変えられるのか？,1,field,,redundant_question,low,reject,電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+アルゴリズム,アルゴリズム,1,field,,isolated_term,low,needs_review,計算問題 / アルゴリズム / 計算モデル / 言語 / 証,pending,単発出現のため採否保留
+エアロゾル,エアロゾル,1,journal,,isolated_term,low,needs_review,AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、,pending,単発出現のため採否保留
+エネルギーと資源の利用は、技術、経済、環境、政策の中でどのように最適化できるのか？,エネルギーと資源の利用は、技術、経済、環境、政策の中でどのように最適化できるのか？,1,journal,,redundant_question,low,reject,エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+エネルギーを効率よく取り出しながら、有害物質や二酸化炭素を減らす燃焼条件をどう設計するのか？,エネルギーを効率よく取り出しながら、有害物質や二酸化炭素を減らす燃焼条件をどう設計するのか？,1,lab,,redundant_question,low,reject,燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+エネルギー・資源学会系の,エネルギー・資源学会系の,1,journal,,isolated_term,low,needs_review,エネルギー・資源学会系の、エネルギー、資源、環境、社会システ,pending,単発出現のため採否保留
+エネルギー・資源学会系の、エネルギー、資源、環境、社会システムに関する和文誌。,エネルギー・資源学会系の、エネルギー、資源、環境、社会システムに関する和文誌。,1,journal,,sentence_fragment,low,reject,エネルギー・資源学会系の、エネルギー、資源、環境、社会システ,pending,文章断片は統制語候補にしない
+コンピュータの方式が変わっても変わらない、計算の根本的な限界は何か？,コンピュータの方式が変わっても変わらない、計算の根本的な限界は何か？,1,field,,redundant_question,low,reject,問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+サービス,サービス,1,journal,,isolated_term,low,needs_review,デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感,pending,単発出現のため採否保留
+システム、制御、情報、計測、最適化、知能情報処理などを横断的に扱う国内学会。,システム、制御、情報、計測、最適化、知能情報処理などを横断的に扱う国内学会。,1,society,,sentence_fragment,low,reject,システム、制御、情報、計測、最適化、知能情報処理などを横断的,pending,文章断片は統制語候補にしない
+システム制御情報学会が発行する、システム、制御、情報に関する研究成果を扱う査読付き学術誌。,システム制御情報学会が発行する、システム、制御、情報に関する研究成果を扱う査読付き学術誌。,1,journal,,sentence_fragment,low,reject,システム制御情報学会が発行する、システム、制御、情報に関する,pending,文章断片は統制語候補にしない
+システム科学,システム科学,1,journal,,isolated_term,low,needs_review,システム制御情報学会が発行する、システム、制御、情報に関する,pending,単発出現のため採否保留
+ソフトウェア,ソフトウェア,1,society,,isolated_term,low,needs_review,計算機科学に関する国際的な主要学会組織。ソフトウェア、データ,pending,単発出現のため採否保留
+デザイン,デザイン,1,journal,,isolated_term,low,needs_review,デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、,pending,単発出現のため採否保留
+デザイン学を扱う国内誌,デザイン学を扱う国内誌,1,journal,,isolated_term,low,needs_review,デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感,pending,単発出現のため採否保留
+デザイン学を扱う国内誌。,デザイン学を扱う国内誌。,1,journal,,sentence_fragment,low,reject,デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感,pending,文章断片は統制語候補にしない
+デザイン方法論、評価、事例研究を通じて、人工物・サービス・環境の質をどう高められるのか？,デザイン方法論、評価、事例研究を通じて、人工物・サービス・環境の質をどう高められるのか？,1,journal,,redundant_question,low,reject,人間の経験や社会課題に対して、デザインはどのような方法で解決,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+デザイン研究、メディア研究、実践研究を通じて、デジタル創作の方法と価値をどう理解できるのか？,デザイン研究、メディア研究、実践研究を通じて、デジタル創作の方法と価値をどう理解できるのか？,1,journal,,redundant_question,low,reject,デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのよ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+デジタルアート,デジタルアート,1,journal,,isolated_term,low,needs_review,デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、,pending,単発出現のため採否保留
+デジタル技術と創造性を扱う国際誌,デジタル技術と創造性を扱う国際誌,1,journal,,isolated_term,low,needs_review,デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、,pending,単発出現のため採否保留
+デジタル技術と創造性を扱う国際誌。,デジタル技術と創造性を扱う国際誌。,1,journal,,sentence_fragment,low,reject,デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、,pending,文章断片は統制語候補にしない
+デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのように変えるのか？,デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのように変えるのか？,1,journal,,redundant_question,low,reject,デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのよ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+データ,データ,1,field,,isolated_term,low,needs_review,データ / 標本 / 母集団 / 確率分布 / 統計量 / ,pending,単発出現のため採否保留
+データ、モデル、最適化、制御理論を組み合わせることで、実システムの性能・安全性・信頼性をどう高められるのか？,データ、モデル、最適化、制御理論を組み合わせることで、実システムの性能・安全性・信頼性をどう高められるのか？,1,journal,,redundant_question,low,reject,複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+データに見える差は、本当の違いなのか、それとも偶然のばらつきなのか？,データに見える差は、本当の違いなのか、それとも偶然のばらつきなのか？,1,field,,redundant_question,low,reject,データに見える差は、本当の違いなのか、それとも偶然のばらつき,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+データのばらつきを整理し、背後にある傾向や関係を明らかにする分野。,データのばらつきを整理し、背後にある傾向や関係を明らかにする分野。,1,field,,sentence_fragment,low,reject,データのばらつきを整理し、背後にある傾向や関係を明らかにする,pending,文章断片は統制語候補にしない
+データベース,データベース,1,society,,isolated_term,low,needs_review,計算機科学に関する国際的な主要学会組織。ソフトウェア、データ,pending,単発出現のため採否保留
+ブレーン,ブレーン,1,field,,isolated_term,low,needs_review,弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ,pending,単発出現のため採否保留
+プラズマが水と触れる境界では、どのような反応性の高い物質が生まれるのか？,プラズマが水と触れる境界では、どのような反応性の高い物質が生まれるのか？,1,lab,,redundant_question,low,reject,プラズマが水と触れる境界では、どのような反応性の高い物質が生,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+プラズマで作る物質の種類や量を制御すると、滅菌・農業・材料合成へどのように使い分けられるのか？,プラズマで作る物質の種類や量を制御すると、滅菌・農業・材料合成へどのように使い分けられるのか？,1,lab,,redundant_question,low,reject,プラズマが水と触れる境界では、どのような反応性の高い物質が生,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+プロダクト,プロダクト,1,journal,,isolated_term,low,needs_review,デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感,pending,単発出現のため採否保留
+ホウ素,ホウ素,1,lab,,isolated_term,low,needs_review,ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有,pending,単発出現のため採否保留
+ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有機分子の作り方を研究する研究室。,ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有機分子の作り方を研究する研究室。,1,lab,,sentence_fragment,low,reject,ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有,pending,文章断片は統制語候補にしない
+モデルが現実と少し違っていても、安定して目的を達成する制御はどう設計できるのか？,モデルが現実と少し違っていても、安定して目的を達成する制御はどう設計できるのか？,1,field,,redundant_question,low,reject,すべての状態を直接測れないシステムを、限られた観測からどう制,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+モータ,モータ,1,lab,,isolated_term,low,needs_review,モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の,pending,単発出現のため採否保留
+モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の複雑な振る舞いをコンピュータで再現する研究室。,モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の複雑な振る舞いをコンピュータで再現する研究室。,1,lab,,sentence_fragment,low,reject,モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の,pending,文章断片は統制語候補にしない
+モータや変圧器の内部では、電気と磁気の作用がどのように力や熱へ変わるのか？,モータや変圧器の内部では、電気と磁気の作用がどのように力や熱へ変わるのか？,1,lab,,redundant_question,low,reject,モータや変圧器の内部では、電気と磁気の作用がどのように力や熱,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+リー群,リー群,1,field,,isolated_term,low,needs_review,群 / 環 / リー群 / リー環 / 加群 / 表現 / ,pending,単発出現のため採否保留
+一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微鏡や分光技術で測る研究室。,一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微鏡や分光技術で測る研究室。,1,lab,,sentence_fragment,low,reject,一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微,pending,文章断片は統制語候補にしない
+一つの分子やナノ材料は、光を受けるとどのように発光したり反応したりするのか？,一つの分子やナノ材料は、光を受けるとどのように発光したり反応したりするのか？,1,lab,,redundant_question,low,reject,一つの分子やナノ材料は、光を受けるとどのように発光したり反応,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑が生まれるのか？,一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑が生まれるのか？,1,lab,,redundant_question,low,reject,一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+一部OA,一部OA,1,journal,,isolated_term,low,needs_review,,pending,単発出現のため採否保留
+不確実さや個人差を含むデータから、現象を説明する数理モデルをどのように作るのか？,不確実さや個人差を含むデータから、現象を説明する数理モデルをどのように作るのか？,1,lab,,redundant_question,low,reject,観測された行動や信号から、直接見えない内部状態をどのように推,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+人の混雑,人の混雑,1,lab,,isolated_term,low,needs_review,道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く,pending,単発出現のため採否保留
+人や車の動き方を少し変えるだけで、流れ全体を滑らかにするにはどこへ働きかければよいのか？,人や車の動き方を少し変えるだけで、流れ全体を滑らかにするにはどこへ働きかければよいのか？,1,lab,,redundant_question,low,reject,一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+人間の経験や社会課題に対して、デザインはどのような方法で解決案を形にするのか？,人間の経験や社会課題に対して、デザインはどのような方法で解決案を形にするのか？,1,journal,,redundant_question,low,reject,人間の経験や社会課題に対して、デザインはどのような方法で解決,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどのように多様化してきたのか？,人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどのように多様化してきたのか？,1,society,,redundant_question,low,reject,人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどの,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+人類学に関する国際的な主要学会,人類学に関する国際的な主要学会,1,society,,isolated_term,low,needs_review,人類学に関する国際的な主要学会。文化人類学、社会人類学、言語,pending,単発出現のため採否保留
+人類学に関する国際的な主要学会。,人類学に関する国際的な主要学会。,1,society,,sentence_fragment,low,reject,人類学に関する国際的な主要学会。文化人類学、社会人類学、言語,pending,文章断片は統制語候補にしない
+人類学を発展させるには、民族誌、現地調査、比較、言語、歴史、倫理をどう結びつける必要があるのか？,人類学を発展させるには、民族誌、現地調査、比較、言語、歴史、倫理をどう結びつける必要があるのか？,1,society,,redundant_question,low,reject,人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどの,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+位相空間,位相空間,1,field,,isolated_term,low,needs_review,位相空間 / 連続写像 / 同相 / コンパクト性 / 連結,pending,単発出現のため採否保留
+余剰次元,余剰次元,1,field,,isolated_term,low,needs_review,弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ,pending,単発出現のため採否保留
+働きを変えるのかを研究する研究室,働きを変えるのかを研究する研究室,1,lab,,isolated_term,low,needs_review,細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える,pending,単発出現のため採否保留
+光を非常に小さな領域へ集めると、通常は見えない分子の動きや反応をどう観察できるのか？,光を非常に小さな領域へ集めると、通常は見えない分子の動きや反応をどう観察できるのか？,1,lab,,redundant_question,low,reject,一つの分子やナノ材料は、光を受けるとどのように発光したり反応,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+入力,入力,1,field,,isolated_term,low,needs_review,状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /,pending,単発出現のため採否保留
+公理,公理,1,field,,isolated_term,low,needs_review,記号体系 / 公理 / 数学的構造 / アルゴリズム / 確,pending,単発出現のため採否保留
+出力,出力,1,field,,isolated_term,low,needs_review,状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /,pending,単発出現のため採否保留
+分子生物学,分子生物学,1,society,,isolated_term,low,needs_review,生化学に関する国内学会。元データでは分子生物学にも紐づき、遺,pending,単発出現のため採否保留
+分子生物学、生理学、ゲノム解析を通じて、植物の成長や環境応答をどう理解できるのか？,分子生物学、生理学、ゲノム解析を通じて、植物の成長や環境応答をどう理解できるのか？,1,journal,,redundant_question,low,reject,植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+分子生物学と生化学を組み合わせると、遺伝子発現、タンパク質機能、代謝異常をどのように理解できるのか？,分子生物学と生化学を組み合わせると、遺伝子発現、タンパク質機能、代謝異常をどのように理解できるのか？,1,society,,redundant_question,low,reject,DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+分散処理,分散処理,1,society,,isolated_term,low,needs_review,計算機科学に関する国際的な主要学会組織。ソフトウェア、データ,pending,単発出現のため採否保留
+分野を横断する科学的発見は、生命、物質、環境、社会の理解をどのように更新するのか？,分野を横断する科学的発見は、生命、物質、環境、社会の理解をどのように更新するのか？,1,journal,,redundant_question,low,reject,分野を横断する科学的発見は、生命、物質、環境、社会の理解をど,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+刑事政策,刑事政策,1,society,,isolated_term,low,needs_review,刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策,pending,単発出現のため採否保留
+刑事法を研究するには、刑法理論、判例、刑事手続、犯罪学、刑事政策をどう組み合わせる必要があるのか？,刑事法を研究するには、刑法理論、判例、刑事手続、犯罪学、刑事政策をどう組み合わせる必要があるのか？,1,society,,redundant_question,low,reject,どのような行為を犯罪とし、刑罰を科すことはどのように正当化さ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+刑法・刑事法に関する国内学会,刑法・刑事法に関する国内学会,1,society,,isolated_term,low,needs_review,刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策,pending,単発出現のため採否保留
+刑法・刑事法に関する国内学会。,刑法・刑事法に関する国内学会。,1,society,,sentence_fragment,low,reject,刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策,pending,文章断片は統制語候補にしない
+刑法理論,刑法理論,1,society,,isolated_term,low,needs_review,刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策,pending,単発出現のため採否保留
+制御理論,制御理論,1,journal,,isolated_term,low,needs_review,システム制御情報学会が発行する、システム、制御、情報に関する,pending,単発出現のため採否保留
+動くシステムの状態を理解し、望ましい動きへ導く方法を研究する分野。,動くシステムの状態を理解し、望ましい動きへ導く方法を研究する分野。,1,field,,sentence_fragment,low,reject,動くシステムの状態を理解し、望ましい動きへ導く方法を研究する,pending,文章断片は統制語候補にしない
+動脈硬化と脂質代謝に関する国内学会,動脈硬化と脂質代謝に関する国内学会,1,society,,isolated_term,low,needs_review,動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ,pending,単発出現のため採否保留
+動脈硬化と脂質代謝に関する国内学会。,動脈硬化と脂質代謝に関する国内学会。,1,society,,sentence_fragment,low,reject,動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ,pending,文章断片は統制語候補にしない
+化学反応,化学反応,1,lab,,isolated_term,low,needs_review,一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微,pending,単発出現のため採否保留
+医薬品の有効性,医薬品の有効性,1,society,,isolated_term,low,needs_review,薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、,pending,単発出現のため採否保留
+同じデータから異なる結論が出るとき、どの判断がより信頼できるかをどう比べるのか？,同じデータから異なる結論が出るとき、どの判断がより信頼できるかをどう比べるのか？,1,field,,redundant_question,low,reject,データに見える差は、本当の違いなのか、それとも偶然のばらつき,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？,同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？,1,field,,redundant_question,low,reject,同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？ ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+同相,同相,1,field,,isolated_term,low,needs_review,位相空間 / 連続写像 / 同相 / コンパクト性 / 連結,pending,単発出現のため採否保留
+問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較できるのか？,問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較できるのか？,1,field,,redundant_question,low,reject,問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+図形を切ったり貼ったりせず、連続的に変形しても変わらない性質を研究する分野。,図形を切ったり貼ったりせず、連続的に変形しても変わらない性質を研究する分野。,1,field,,sentence_fragment,low,reject,図形を切ったり貼ったりせず、連続的に変形しても変わらない性質,pending,文章断片は統制語候補にしない
+図形を切らずに変形するとき、変わらずに残る性質は何か？,図形を切らずに変形するとき、変わらずに残る性質は何か？,1,field,,redundant_question,low,reject,図形を切らずに変形するとき、変わらずに残る性質は何か？ / ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+固定点,固定点,1,field,,isolated_term,low,needs_review,状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ,pending,単発出現のため採否保留
+変圧器などの内部で生じる電磁界と,変圧器などの内部で生じる電磁界と,1,lab,,isolated_term,low,needs_review,モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の,pending,単発出現のため採否保留
+多値真理,多値真理,1,field,,isolated_term,low,needs_review,多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非,pending,単発出現のため採否保留
+多数の電子の動きを数理モデルで表すと、まだ知られていない物質の状態をどのように予測できるのか？,多数の電子の動きを数理モデルで表すと、まだ知られていない物質の状態をどのように予測できるのか？,1,lab,,redundant_question,low,reject,電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+多様な研究成果を広く共有することで、科学コミュニティ全体の議論や応用をどう促進できるのか？,多様な研究成果を広く共有することで、科学コミュニティ全体の議論や応用をどう促進できるのか？,1,journal,,redundant_question,low,reject,分野を横断する科学的発見は、生命、物質、環境、社会の理解をど,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互作用でどう決まるのか？,大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互作用でどう決まるのか？,1,journal,,redundant_question,low,reject,大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+大気物理,大気物理,1,journal,,isolated_term,low,needs_review,AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、,pending,単発出現のため採否保留
+大気科学を扱う国際主要誌,大気科学を扱う国際主要誌,1,journal,,isolated_term,low,needs_review,AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、,pending,単発出現のため採否保留
+宇宙ミッション,宇宙ミッション,1,society,,isolated_term,low,needs_review,宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇,pending,単発出現のため採否保留
+宇宙機,宇宙機,1,society,,isolated_term,low,needs_review,宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇,pending,単発出現のため採否保留
+宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計をどのように組み合わせて実現されているのか？,宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計をどのように組み合わせて実現されているのか？,1,society,,redundant_question,low,reject,宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計を,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+宇宙航行を発展させるには、宇宙工学、ミッション設計、軌道力学、政策、運用技術をどう結びつける必要があるのか？,宇宙航行を発展させるには、宇宙工学、ミッション設計、軌道力学、政策、運用技術をどう結びつける必要があるのか？,1,society,,redundant_question,low,reject,宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計を,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+宇宙航行・宇宙工学に関する国際学会,宇宙航行・宇宙工学に関する国際学会,1,society,,isolated_term,low,needs_review,宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇,pending,単発出現のため採否保留
+宇宙航行・宇宙工学に関する国際学会。,宇宙航行・宇宙工学に関する国際学会。,1,society,,sentence_fragment,low,reject,宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇,pending,文章断片は統制語候補にしない
+安全性,安全性,1,society,,isolated_term,low,needs_review,薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、,pending,単発出現のため採否保留
+実際の医療現場で使われる薬は、集団の中でどのような効果や副作用、使用パターンを示しているのか？,実際の医療現場で使われる薬は、集団の中でどのような効果や副作用、使用パターンを示しているのか？,1,society,,redundant_question,low,reject,実際の医療現場で使われる薬は、集団の中でどのような効果や副作,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+弦,弦,1,field,,isolated_term,low,needs_review,弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ,pending,単発出現のため採否保留
+形や動き,形や動き,1,lab,,isolated_term,low,needs_review,細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える,pending,単発出現のため採否保留
+心筋梗塞や脳卒中を防ぐには、脂質管理、生活習慣、薬物療法、リスク評価をどのように組み合わせる必要があるのか？,心筋梗塞や脳卒中を防ぐには、脂質管理、生活習慣、薬物療法、リスク評価をどのように組み合わせる必要があるのか？,1,society,,redundant_question,low,reject,血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのよう,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+慢性疼痛,慢性疼痛,1,journal,,isolated_term,low,needs_review,疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介,pending,単発出現のため採否保留
+慢性腎臓病,慢性腎臓病,1,journal,,isolated_term,low,needs_review,日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。,pending,単発出現のため採否保留
+抽象的な対称性は、行列やベクトルの変換としてどのように表せるのか？,抽象的な対称性は、行列やベクトルの変換としてどのように表せるのか？,1,field,,redundant_question,low,reject,抽象的な対称性は、行列やベクトルの変換としてどのように表せる,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+数、図形、論理、計算、確率などを、観察や実験ではなく、定義・記号・基本ルールによって研究する学問群。,数、図形、論理、計算、確率などを、観察や実験ではなく、定義・記号・基本ルールによって研究する学問群。,1,field,,sentence_fragment,low,reject,数、図形、論理、計算、確率などを、観察や実験ではなく、定義・,pending,文章断片は統制語候補にしない
+数学的構造,数学的構造,1,field,,isolated_term,low,needs_review,記号体系 / 公理 / 数学的構造 / アルゴリズム / 確,pending,単発出現のため採否保留
+数理モデル,数理モデル,1,lab,,isolated_term,low,needs_review,脳や人の行動、社会・生命現象などのデータから、観測できない内,pending,単発出現のため採否保留
+文化人類学,文化人類学,1,society,,isolated_term,low,needs_review,人類学に関する国際的な主要学会。文化人類学、社会人類学、言語,pending,単発出現のため採否保留
+日本腎臓学会が関わる,日本腎臓学会が関わる,1,journal,,isolated_term,low,needs_review,日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。,pending,単発出現のため採否保留
+日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。,日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。,1,journal,,sentence_fragment,low,reject,日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。,pending,文章断片は統制語候補にしない
+時空そのものが、より基本的な量子情報や場の関係から生まれる可能性はあるのか？,時空そのものが、より基本的な量子情報や場の関係から生まれる可能性はあるのか？,1,field,,redundant_question,low,reject,粒子と力をすべて同じ基本的なひもの振動として説明することは可,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+時間とともに状態が変わる仕組みを研究する分野。,時間とともに状態が変わる仕組みを研究する分野。,1,field,,sentence_fragment,low,reject,時間とともに状態が変わる仕組みを研究する分野。安定した状態、,pending,文章断片は統制語候補にしない
+最初の状態の小さな違いが、長期的な結果を大きく変えるのはなぜか？,最初の状態の小さな違いが、長期的な結果を大きく変えるのはなぜか？,1,field,,redundant_question,low,reject,同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？ ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+最適化,最適化,1,society,,isolated_term,low,needs_review,システム、制御、情報、計測、最適化、知能情報処理などを横断的,pending,単発出現のため採否保留
+月刊,月刊,1,journal,,isolated_term,low,needs_review,,pending,単発出現のため採否保留
+材料の発光,材料の発光,1,lab,,isolated_term,low,needs_review,一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微,pending,単発出現のため採否保留
+植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどのように調整するのか？,植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどのように調整するのか？,1,journal,,redundant_question,low,reject,植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+植物への窒素供給,植物への窒素供給,1,lab,,isolated_term,low,needs_review,空気中で発生させたプラズマを水などの液体に接触させ、その境界,pending,単発出現のため採否保留
+標本,標本,1,field,,isolated_term,low,needs_review,データ / 標本 / 母集団 / 確率分布 / 統計量 / ,pending,単発出現のため採否保留
+正孔,正孔,1,field,,isolated_term,low,needs_review,結晶格子 / 電子バンド / 正孔 / フォノン / 不純物,pending,単発出現のため採否保留
+母集団,母集団,1,field,,isolated_term,low,needs_review,データ / 標本 / 母集団 / 確率分布 / 統計量 / ,pending,単発出現のため採否保留
+炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ作れるのか？,炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ作れるのか？,1,lab,,redundant_question,low,reject,炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変化するのか？,燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変化するのか？,1,lab,,redundant_question,low,reject,燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、エネルギーを効率よく取り出しながら環境への負荷を減らす方法を開発する研究室。,燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、エネルギーを効率よく取り出しながら環境への負荷を減らす方法を開発する研究室。,1,lab,,sentence_fragment,low,reject,燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、,pending,文章断片は統制語候補にしない
+燃焼,燃焼,1,lab,,isolated_term,low,needs_review,燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、,pending,単発出現のため採否保留
+状態,状態,1,field,,isolated_term,low,needs_review,状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /,pending,単発出現のため採否保留
+状態空間,状態空間,1,field,,isolated_term,low,needs_review,状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ,pending,単発出現のため採否保留
+理論と数理モデルから研究する研究室,理論と数理モデルから研究する研究室,1,lab,,isolated_term,low,needs_review,電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊,pending,単発出現のため採否保留
+環,環,1,field,,isolated_term,low,needs_review,群 / 環 / リー群 / リー環 / 加群 / 表現 / ,pending,単発出現のため採否保留
+生化学に関する国内学会。,生化学に関する国内学会。,1,society,,sentence_fragment,low,reject,生化学に関する国内学会。元データでは分子生物学にも紐づき、遺,pending,文章断片は統制語候補にしない
+生命科学,生命科学,1,journal,,isolated_term,low,needs_review,National Academy of Sciencesが発,pending,単発出現のため採否保留
+生物の集団など,生物の集団など,1,lab,,isolated_term,low,needs_review,道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く,pending,単発出現のため採否保留
+界,界,1,field,,isolated_term,low,needs_review,,pending,単発出現のため採否保留
+異なる数学的対象を、同じ形式や構造として扱えるのはどのような場合か？,異なる数学的対象を、同じ形式や構造として扱えるのはどのような場合か？,1,field,,redundant_question,low,reject,記号と基本ルールから、どのような結論を正しく導けるのか？ /,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+疼痛医学を扱う国際誌,疼痛医学を扱う国際誌,1,journal,,isolated_term,low,needs_review,疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介,pending,単発出現のため採否保留
+疼痛医学を扱う国際誌。,疼痛医学を扱う国際誌。,1,journal,,sentence_fragment,low,reject,疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介,pending,文章断片は統制語候補にしない
+疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように組み合わせるべきか？,疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように組み合わせるべきか？,1,journal,,redundant_question,low,reject,疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+病気との関係を研究する研究室,病気との関係を研究する研究室,1,lab,,isolated_term,low,needs_review,血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、,pending,単発出現のため採否保留
+発電機,発電機,1,lab,,isolated_term,low,needs_review,モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の,pending,単発出現のため採否保留
+真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。,真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。,1,field,,sentence_fragment,low,reject,真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。,pending,文章断片は統制語候補にしない
+真か偽か以外の値を認めると、推論の仕組みはどのように変わるのか？,真か偽か以外の値を認めると、推論の仕組みはどのように変わるのか？,1,field,,redundant_question,low,reject,矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+矛盾,矛盾,1,field,,isolated_term,low,needs_review,多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非,pending,単発出現のため採否保留
+矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？,矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？,1,field,,redundant_question,low,reject,矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+磁性材料の複雑な性質を計算に取り入れると、電気機器の損失や性能をどこまで正確に予測できるのか？,磁性材料の複雑な性質を計算に取り入れると、電気機器の損失や性能をどこまで正確に予測できるのか？,1,lab,,redundant_question,low,reject,モータや変圧器の内部では、電気と磁気の作用がどのように力や熱,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+社会システムに関する和文誌,社会システムに関する和文誌,1,journal,,isolated_term,low,needs_review,エネルギー・資源学会系の、エネルギー、資源、環境、社会システ,pending,単発出現のため採否保留
+社会・生命現象などのデータから,社会・生命現象などのデータから,1,lab,,isolated_term,low,needs_review,脳や人の行動、社会・生命現象などのデータから、観測できない内,pending,単発出現のため採否保留
+社会人類学,社会人類学,1,society,,isolated_term,low,needs_review,人類学に関する国際的な主要学会。文化人類学、社会人類学、言語,pending,単発出現のため採否保留
+神経障害性疼痛,神経障害性疼痛,1,journal,,isolated_term,low,needs_review,疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介,pending,単発出現のため採否保留
+穴の数やつながり方を使うと、空間をどのように分類できるのか？,穴の数やつながり方を使うと、空間をどのように分類できるのか？,1,field,,redundant_question,low,reject,図形を切らずに変形するとき、変わらずに残る性質は何か？ / ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+空気と水から反応性の高い物質を作り,空気と水から反応性の高い物質を作り,1,lab,,isolated_term,low,needs_review,空気中で発生させたプラズマを水などの液体に接触させ、その境界,pending,単発出現のため採否保留
+空気中で発生させたプラズマを水などの液体に接触させ、その境界で短時間に起こる化学反応を研究する研究室。,空気中で発生させたプラズマを水などの液体に接触させ、その境界で短時間に起こる化学反応を研究する研究室。,1,lab,,sentence_fragment,low,reject,空気中で発生させたプラズマを水などの液体に接触させ、その境界,pending,文章断片は統制語候補にしない
+粒子と力をすべて同じ基本的なひもの振動として説明することは可能か？,粒子と力をすべて同じ基本的なひもの振動として説明することは可能か？,1,field,,redundant_question,low,reject,粒子と力をすべて同じ基本的なひもの振動として説明することは可,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力を統一しようとする理論と、粒子間の新しい対称性を研究する分野。,素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力を統一しようとする理論と、粒子間の新しい対称性を研究する分野。,1,field,,sentence_fragment,low,reject,素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力,pending,文章断片は統制語候補にしない
+細胞が周囲の硬さや力をどのように感じ,細胞が周囲の硬さや力をどのように感じ,1,lab,,isolated_term,low,needs_review,細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える,pending,単発出現のため採否保留
+細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変えるのかを研究する研究室。,細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変えるのかを研究する研究室。,1,lab,,sentence_fragment,low,reject,細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える,pending,文章断片は統制語候補にしない
+細胞は周囲から受ける力を、どのように感じ取って形や動きを変えるのか？,細胞は周囲から受ける力を、どのように感じ取って形や動きを変えるのか？,1,lab,,redundant_question,low,reject,細胞は周囲から受ける力を、どのように感じ取って形や動きを変え,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+細胞や分子に働く非常に小さな力を、細胞を壊さずに測るにはどのような技術が必要なのか？,細胞や分子に働く非常に小さな力を、細胞を壊さずに測るにはどのような技術が必要なのか？,1,lab,,redundant_question,low,reject,細胞は周囲から受ける力を、どのように感じ取って形や動きを変え,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+細菌やウイルスの不活化,細菌やウイルスの不活化,1,lab,,isolated_term,low,needs_review,空気中で発生させたプラズマを水などの液体に接触させ、その境界,pending,単発出現のため採否保留
+結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物質、その中間である半導体の性質を明らかにする分野。,結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物質、その中間である半導体の性質を明らかにする分野。,1,field,,sentence_fragment,low,reject,結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物,pending,文章断片は統制語候補にしない
+結晶格子,結晶格子,1,field,,isolated_term,low,needs_review,結晶格子 / 電子バンド / 正孔 / フォノン / 不純物,pending,単発出現のため採否保留
+綱,綱,1,field,,isolated_term,low,needs_review,,pending,単発出現のため採否保留
+群,群,1,field,,isolated_term,low,needs_review,群 / 環 / リー群 / リー環 / 加群 / 表現 / ,pending,単発出現のため採否保留
+群や環などの抽象的な代数構造を、行列やベクトル空間上の変換として研究する分野。,群や環などの抽象的な代数構造を、行列やベクトル空間上の変換として研究する分野。,1,field,,sentence_fragment,low,reject,群や環などの抽象的な代数構造を、行列やベクトル空間上の変換と,pending,文章断片は統制語候補にしない
+脂質異常症,脂質異常症,1,society,,isolated_term,low,needs_review,動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ,pending,単発出現のため採否保留
+脳の血管の形が人によって異なると、血液の流れや血管壁への力はどう変わるのか？,脳の血管の形が人によって異なると、血液の流れや血管壁への力はどう変わるのか？,1,lab,,redundant_question,low,reject,脳の血管の形が人によって異なると、血液の流れや血管壁への力は,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+脳や人の行動,脳や人の行動,1,lab,,isolated_term,low,needs_review,脳や人の行動、社会・生命現象などのデータから、観測できない内,pending,単発出現のため採否保留
+脳や人の行動、社会・生命現象などのデータから、観測できない内部状態や原因を確率的に推定する研究室。,脳や人の行動、社会・生命現象などのデータから、観測できない内部状態や原因を確率的に推定する研究室。,1,lab,,sentence_fragment,low,reject,脳や人の行動、社会・生命現象などのデータから、観測できない内,pending,文章断片は統制語候補にしない
+腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのように発症・進行するのか？,腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのように発症・進行するのか？,1,journal,,redundant_question,low,reject,腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+腎臓病学の基礎・臨床研究を扱う国際誌,腎臓病学の基礎・臨床研究を扱う国際誌,1,journal,,isolated_term,low,needs_review,日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。,pending,単発出現のため採否保留
+臨床研究、症例、治療評価を通じて、疼痛管理の安全性と有効性をどう高められるのか？,臨床研究、症例、治療評価を通じて、疼痛管理の安全性と有効性をどう高められるのか？,1,journal,,redundant_question,low,reject,疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+臨床研究、腎病理、実験研究を組み合わせて、腎疾患の診断・治療・予後管理をどう改善できるのか？,臨床研究、腎病理、実験研究を組み合わせて、腎疾患の診断・治療・予後管理をどう改善できるのか？,1,journal,,redundant_question,low,reject,腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+臨床腫瘍学に関する国内学会,臨床腫瘍学に関する国内学会,1,society,,isolated_term,low,needs_review,臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的,pending,単発出現のため採否保留
+臨床腫瘍学に関する国内学会。,臨床腫瘍学に関する国内学会。,1,society,,sentence_fragment,low,reject,臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的,pending,文章断片は統制語候補にしない
+臨床腫瘍学を扱うThe,臨床腫瘍学を扱うThe,1,journal,,isolated_term,low,needs_review,臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床,pending,単発出現のため採否保留
+臨床腫瘍学を扱うThe Lancet系の国際主要誌。,臨床腫瘍学を扱うThe Lancet系の国際主要誌。,1,journal,,sentence_fragment,low,reject,臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床,pending,文章断片は統制語候補にしない
+臨床腫瘍学を進めるには、薬物療法、バイオマーカー、臨床試験、副作用管理、患者支援をどう組み合わせる必要があるのか？,臨床腫瘍学を進めるには、薬物療法、バイオマーカー、臨床試験、副作用管理、患者支援をどう組み合わせる必要があるのか？,1,society,,redundant_question,low,reject,がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+臨床試験,臨床試験,1,society,,isolated_term,low,needs_review,臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的,pending,単発出現のため採否保留
+薬剤疫学では、医療データから薬の安全性や有効性を評価するために、交絡、バイアス、因果関係をどう扱う必要があるのか？,薬剤疫学では、医療データから薬の安全性や有効性を評価するために、交絡、バイアス、因果関係をどう扱う必要があるのか？,1,society,,redundant_question,low,reject,実際の医療現場で使われる薬は、集団の中でどのような効果や副作,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+薬剤疫学に関する国内学会,薬剤疫学に関する国内学会,1,society,,isolated_term,low,needs_review,薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、,pending,単発出現のため採否保留
+薬剤疫学に関する国内学会。,薬剤疫学に関する国内学会。,1,society,,sentence_fragment,low,reject,薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、,pending,文章断片は統制語候補にしない
+血液や脳脊髄液など,血液や脳脊髄液など,1,lab,,isolated_term,low,needs_review,血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、,pending,単発出現のため採否保留
+血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、病気との関係を研究する研究室。,血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、病気との関係を研究する研究室。,1,lab,,sentence_fragment,low,reject,血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、,pending,文章断片は統制語候補にしない
+血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのように進行するのか？,血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのように進行するのか？,1,society,,redundant_question,low,reject,血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのよう,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+血管炎症,血管炎症,1,society,,isolated_term,low,needs_review,動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ,pending,単発出現のため採否保留
+複数の結合を一つの反応で組み替えると、複雑な有機分子をどのように短い工程で作れるのか？,複数の結合を一つの反応で組み替えると、複雑な有機分子をどのように短い工程で作れるのか？,1,lab,,redundant_question,low,reject,炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+複数の結合を一度に組み替える反応や,複数の結合を一度に組み替える反応や,1,lab,,isolated_term,low,needs_review,ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有,pending,単発出現のため採否保留
+複数の要素が相互作用するシステムは、どのようにモデル化すれば全体の振る舞いを理解できるのか？,複数の要素が相互作用するシステムは、どのようにモデル化すれば全体の振る舞いを理解できるのか？,1,society,,redundant_question,low,reject,複数の要素が相互作用するシステムは、どのようにモデル化すれば,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+複雑なシステムを望ましい状態へ動かすには、制御、情報処理、最適化、知能化をどのように組み合わせればよいのか？,複雑なシステムを望ましい状態へ動かすには、制御、情報処理、最適化、知能化をどのように組み合わせればよいのか？,1,society,,redundant_question,low,reject,複数の要素が相互作用するシステムは、どのようにモデル化すれば,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+複雑な対象をシステムとしてモデル化し、その状態や振る舞いをどのように解析・制御できるのか？,複雑な対象をシステムとしてモデル化し、その状態や振る舞いをどのように解析・制御できるのか？,1,journal,,redundant_question,low,reject,複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+複雑な対象をモデル化し,複雑な対象をモデル化し,1,society,,isolated_term,low,needs_review,システム、制御、情報、計測、最適化、知能情報処理などを横断的,pending,単発出現のため採否保留
+複雑な表現を基本的な成分へ分けると、元の対称性をどう理解できるのか？,複雑な表現を基本的な成分へ分けると、元の対称性をどう理解できるのか？,1,field,,redundant_question,low,reject,抽象的な対称性は、行列やベクトルの変換としてどのように表せる,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+観測、理論、モデル解析を通じて、大気現象と気候への影響をどう理解できるのか？,観測、理論、モデル解析を通じて、大気現象と気候への影響をどう理解できるのか？,1,journal,,redundant_question,low,reject,大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+観測された行動や信号から、直接見えない内部状態をどのように推定するのか？,観測された行動や信号から、直接見えない内部状態をどのように推定するのか？,1,lab,,redundant_question,low,reject,観測された行動や信号から、直接見えない内部状態をどのように推,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+解説、研究、実践報告を通じて、脱炭素、資源循環、エネルギー政策をどう考えられるのか？,解説、研究、実践報告を通じて、脱炭素、資源循環、エネルギー政策をどう考えられるのか？,1,journal,,redundant_question,low,reject,エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+計算とは何か、問題を効率よく解くには何が必要かを数学的に研究する学問群。,計算とは何か、問題を効率よく解くには何が必要かを数学的に研究する学問群。,1,field,,sentence_fragment,low,reject,計算とは何か、問題を効率よく解くには何が必要かを数学的に研究,pending,文章断片は統制語候補にしない
+計算モデル,計算モデル,1,field,,isolated_term,low,needs_review,計算問題 / アルゴリズム / 計算モデル / 言語 / 証,pending,単発出現のため採否保留
+計算問題,計算問題,1,field,,isolated_term,low,needs_review,計算問題 / アルゴリズム / 計算モデル / 言語 / 証,pending,単発出現のため採否保留
+計算機システムは、ハードウェア、OS、プログラム、データ、ネットワークをどのように組み合わせて動いているのか？,計算機システムは、ハードウェア、OS、プログラム、データ、ネットワークをどのように組み合わせて動いているのか？,1,society,,redundant_question,low,reject,計算機システムは、ハードウェア、OS、プログラム、データ、ネ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+計算機科学に関する国際的な主要学会組織。,計算機科学に関する国際的な主要学会組織。,1,society,,sentence_fragment,low,reject,計算機科学に関する国際的な主要学会組織。ソフトウェア、データ,pending,文章断片は統制語候補にしない
+計算機科学を発展させるには、アルゴリズム、システム、ソフトウェア、データ管理、ユーザーとの関係をどのように結びつける必要があるのか？,計算機科学を発展させるには、アルゴリズム、システム、ソフトウェア、データ管理、ユーザーとの関係をどのように結びつける必要があるのか？,1,society,,redundant_question,low,reject,計算機システムは、ハードウェア、OS、プログラム、データ、ネ,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+記号と基本ルールから、どのような結論を正しく導けるのか？,記号と基本ルールから、どのような結論を正しく導けるのか？,1,field,,redundant_question,low,reject,記号と基本ルールから、どのような結論を正しく導けるのか？ /,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+記号体系,記号体系,1,field,,isolated_term,low,needs_review,記号体系 / 公理 / 数学的構造 / アルゴリズム / 確,pending,単発出現のため採否保留
+軌道,軌道,1,field,,isolated_term,low,needs_review,状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ,pending,単発出現のため採否保留
+連続写像,連続写像,1,field,,isolated_term,low,needs_review,位相空間 / 連続写像 / 同相 / コンパクト性 / 連結,pending,単発出現のため採否保留
+週刊相当,週刊相当,1,journal,,isolated_term,low,needs_review,,pending,単発出現のため採否保留
+道路の渋滞,道路の渋滞,1,lab,,isolated_term,low,needs_review,道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く,pending,単発出現のため採否保留
+道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動くことで生じる詰まりや流れを数理モデルから研究する研究室。,道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動くことで生じる詰まりや流れを数理モデルから研究する研究室。,1,lab,,sentence_fragment,low,reject,道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く,pending,文章断片は統制語候補にしない
+鉱山安全,鉱山安全,1,society,,isolated_term,low,needs_review,鉱業・冶金・資源探査に関する国際的な専門組織。採鉱、選鉱、鉱,pending,単発出現のため採否保留
+鉱業を持続可能に行うには、資源評価、採掘技術、安全、環境対策、経済性をどう組み合わせる必要があるのか？,鉱業を持続可能に行うには、資源評価、採掘技術、安全、環境対策、経済性をどう組み合わせる必要があるのか？,1,society,,redundant_question,low,reject,鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのよう,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+鉱業・冶金・資源探査に関する国際的な専門組織。,鉱業・冶金・資源探査に関する国際的な専門組織。,1,society,,sentence_fragment,low,reject,鉱業・冶金・資源探査に関する国際的な専門組織。採鉱、選鉱、鉱,pending,文章断片は統制語候補にしない
+鉱物資源,鉱物資源,1,society,,isolated_term,low,needs_review,鉱業・冶金・資源探査に関する国際的な専門組織。採鉱、選鉱、鉱,pending,単発出現のため採否保留
+鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのように開発されるのか？,鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのように開発されるのか？,1,society,,redundant_question,low,reject,鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのよう,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+門,門,1,field,,isolated_term,low,needs_review,,pending,単発出現のため採否保留
+関連性,関連性,1,field,,isolated_term,low,needs_review,多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非,pending,単発出現のため採否保留
+電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生じるのはなぜか？,電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生じるのはなぜか？,1,field,,redundant_question,low,reject,電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+電子バンド,電子バンド,1,field,,isolated_term,low,needs_review,結晶格子 / 電子バンド / 正孔 / フォノン / 不純物,pending,単発出現のため採否保留
+電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が現れるのか？,電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が現れるのか？,1,lab,,redundant_question,low,reject,電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が,pending,問い文はQタグsurfaceとして保持し、統制語にはしない
+電子同士が強く影響し合う物質で,電子同士が強く影響し合う物質で,1,lab,,isolated_term,low,needs_review,電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊,pending,単発出現のため採否保留
+電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊な磁性、物質の表面に特徴的な電子状態が現れる仕組みを、理論と数理モデルから研究する研究室。,電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊な磁性、物質の表面に特徴的な電子状態が現れる仕組みを、理論と数理モデルから研究する研究室。,1,lab,,sentence_fragment,low,reject,電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊,pending,文章断片は統制語候補にしない
+電気抵抗が消える超伝導や特殊な磁性,電気抵抗が消える超伝導や特殊な磁性,1,lab,,isolated_term,low,needs_review,電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊,pending,単発出現のため採否保留
+高感度な顕微鏡や分光技術で測る研究室,高感度な顕微鏡や分光技術で測る研究室,1,lab,,isolated_term,low,needs_review,一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微,pending,単発出現のため採否保留
+高水準の臨床研究、レビュー、政策論文を通じて、がん治療とがん対策の方向性をどう示せるのか？,高水準の臨床研究、レビュー、政策論文を通じて、がん治療とがん対策の方向性をどう示せるのか？,1,journal,,redundant_question,low,reject,がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカム,pending,問い文はQタグsurfaceとして保持し、統制語にはしない

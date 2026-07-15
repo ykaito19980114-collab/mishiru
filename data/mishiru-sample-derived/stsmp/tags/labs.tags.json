@@ -1,0 +1,3594 @@
+[
+  {
+    "tag_id": "tag:1f3e0380-59e0-5dde-8b3e-aa23844d0816",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊な磁性、物質の表面に特徴的な電子状態が現れる仕組みを、理論と数理モデルから研究する研究室。",
+    "controlled": null,
+    "candidate_term": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊な磁性、物質の表面に特徴的な電子状態が現れる仕組みを、理論と数理モデルから研究する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085471Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085538Z",
+    "updatedAt": "2026-07-12T12:00:35.085540Z"
+  },
+  {
+    "tag_id": "tag:af7d1ed6-cf78-567b-91f9-7f33bf924128",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "電子同士が強く影響し合う物質で",
+    "controlled": null,
+    "candidate_term": "電子同士が強く影響し合う物質で",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085572Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085616Z",
+    "updatedAt": "2026-07-12T12:00:35.085617Z"
+  },
+  {
+    "tag_id": "tag:476de20e-19ec-5c40-906b-b3514fc02521",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "電気抵抗が消える超伝導や特殊な磁性",
+    "controlled": null,
+    "candidate_term": "電気抵抗が消える超伝導や特殊な磁性",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085632Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085670Z",
+    "updatedAt": "2026-07-12T12:00:35.085672Z"
+  },
+  {
+    "tag_id": "tag:f40859ef-3b80-5d0d-8894-2d1ae6633ea1",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "理論と数理モデルから研究する研究室",
+    "controlled": null,
+    "candidate_term": "理論と数理モデルから研究する研究室",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085683Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085722Z",
+    "updatedAt": "2026-07-12T12:00:35.085723Z"
+  },
+  {
+    "tag_id": "tag:a5c496a9-a56d-5a14-a0d8-adcf0ca83122",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が現れるのか？",
+    "controlled": null,
+    "candidate_term": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が現れるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085736Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:researchQuestions",
+        "quote": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085766Z",
+    "updatedAt": "2026-07-12T12:00:35.085768Z"
+  },
+  {
+    "tag_id": "tag:23461739-ec30-518d-8e76-0f9ce1596cf7",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "多数の電子の動きを数理モデルで表すと、まだ知られていない物質の状態をどのように予測できるのか？",
+    "controlled": null,
+    "candidate_term": "多数の電子の動きを数理モデルで表すと、まだ知られていない物質の状態をどのように予測できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085778Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:researchQuestions",
+        "quote": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085806Z",
+    "updatedAt": "2026-07-12T12:00:35.085807Z"
+  },
+  {
+    "tag_id": "tag:cabb2ca4-8b8a-5ad9-aedc-467772b7a25b",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "理論的分析",
+    "controlled": "理論研究",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085827Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085855Z",
+    "updatedAt": "2026-07-12T12:00:35.085856Z"
+  },
+  {
+    "tag_id": "tag:16c81d1c-cb8d-58f6-8710-9df463ea86c2",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "数理モデリング",
+    "controlled": "モデリング",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.085866Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-41461c2ec17b",
+    "sourceHash": "9e37360ed330bb99c98591e7b016c237c5c99259c21d3d19ebf3def121815cf4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.085894Z",
+    "updatedAt": "2026-07-12T12:00:35.085895Z"
+  },
+  {
+    "tag_id": "tag:28fcc832-812c-5374-be58-7f6b0efea63e",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変えるのかを研究する研究室。",
+    "controlled": null,
+    "candidate_term": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変えるのかを研究する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086013Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086045Z",
+    "updatedAt": "2026-07-12T12:00:35.086047Z"
+  },
+  {
+    "tag_id": "tag:1a5f4e87-65fe-5383-8d36-45c0328cc54e",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "細胞が周囲の硬さや力をどのように感じ",
+    "controlled": null,
+    "candidate_term": "細胞が周囲の硬さや力をどのように感じ",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086064Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086093Z",
+    "updatedAt": "2026-07-12T12:00:35.086094Z"
+  },
+  {
+    "tag_id": "tag:744dd8d1-1e6d-5122-a9b0-7589e0d756e3",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "形や動き",
+    "controlled": null,
+    "candidate_term": "形や動き",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086102Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086129Z",
+    "updatedAt": "2026-07-12T12:00:35.086131Z"
+  },
+  {
+    "tag_id": "tag:7fc836b1-9947-5c59-8ea9-502ab046bba7",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "働きを変えるのかを研究する研究室",
+    "controlled": null,
+    "candidate_term": "働きを変えるのかを研究する研究室",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086139Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086166Z",
+    "updatedAt": "2026-07-12T12:00:35.086167Z"
+  },
+  {
+    "tag_id": "tag:0fa57ab6-9aa6-5163-b5d9-935137584013",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変えるのか？",
+    "controlled": null,
+    "candidate_term": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変えるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086177Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:researchQuestions",
+        "quote": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変え",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086203Z",
+    "updatedAt": "2026-07-12T12:00:35.086205Z"
+  },
+  {
+    "tag_id": "tag:d8003a41-8547-5860-99be-24a375d26fe7",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "細胞や分子に働く非常に小さな力を、細胞を壊さずに測るにはどのような技術が必要なのか？",
+    "controlled": null,
+    "candidate_term": "細胞や分子に働く非常に小さな力を、細胞を壊さずに測るにはどのような技術が必要なのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086212Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:researchQuestions",
+        "quote": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変え",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086242Z",
+    "updatedAt": "2026-07-12T12:00:35.086243Z"
+  },
+  {
+    "tag_id": "tag:08ffee24-65e0-5033-83e4-229f95ccaa4d",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "計測",
+    "controlled": "計測",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086258Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-470a48ca9298",
+    "sourceHash": "fe60c2ca1b7a1c64e4ada07942794e1d02d0421b2440d092ead2d4418912ac2f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086290Z",
+    "updatedAt": "2026-07-12T12:00:35.086292Z"
+  },
+  {
+    "tag_id": "tag:2f0663f5-007a-5ca4-b184-425fab7f4b3a",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の複雑な振る舞いをコンピュータで再現する研究室。",
+    "controlled": null,
+    "candidate_term": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の複雑な振る舞いをコンピュータで再現する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086388Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086423Z",
+    "updatedAt": "2026-07-12T12:00:35.086424Z"
+  },
+  {
+    "tag_id": "tag:6716eb1b-dc35-5451-bfe0-eccc80d90ac0",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "モータ",
+    "controlled": null,
+    "candidate_term": "モータ",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086439Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086469Z",
+    "updatedAt": "2026-07-12T12:00:35.086470Z"
+  },
+  {
+    "tag_id": "tag:f31e2623-335b-5c0f-8744-3ca19baa5556",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "発電機",
+    "controlled": null,
+    "candidate_term": "発電機",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086478Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086515Z",
+    "updatedAt": "2026-07-12T12:00:35.086517Z"
+  },
+  {
+    "tag_id": "tag:65741f3d-3019-5f34-860a-f4b51d9bd6b9",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "変圧器などの内部で生じる電磁界と",
+    "controlled": null,
+    "candidate_term": "変圧器などの内部で生じる電磁界と",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086525Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086575Z",
+    "updatedAt": "2026-07-12T12:00:35.086581Z"
+  },
+  {
+    "tag_id": "tag:0ebcbdc7-dda0-5cdb-8188-7d2ac05c8e32",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱へ変わるのか？",
+    "controlled": null,
+    "candidate_term": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱へ変わるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086631Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:researchQuestions",
+        "quote": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086700Z",
+    "updatedAt": "2026-07-12T12:00:35.086702Z"
+  },
+  {
+    "tag_id": "tag:95e35dae-4411-58c1-8399-fb3969928075",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "磁性材料の複雑な性質を計算に取り入れると、電気機器の損失や性能をどこまで正確に予測できるのか？",
+    "controlled": null,
+    "candidate_term": "磁性材料の複雑な性質を計算に取り入れると、電気機器の損失や性能をどこまで正確に予測できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086719Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:researchQuestions",
+        "quote": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086769Z",
+    "updatedAt": "2026-07-12T12:00:35.086770Z"
+  },
+  {
+    "tag_id": "tag:108b4e5d-e16a-51f1-87e8-a0f809a7ad71",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "予測",
+    "controlled": "予測",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086812Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-59f30ac6858e",
+    "sourceHash": "be8e3d27c418e4b16b5bc964b871eed55e55dafc7ec9be25eaa5ac6c16af03a1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086846Z",
+    "updatedAt": "2026-07-12T12:00:35.086847Z"
+  },
+  {
+    "tag_id": "tag:89c469b0-45be-5a4f-a559-1c5864d632ac",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微鏡や分光技術で測る研究室。",
+    "controlled": null,
+    "candidate_term": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微鏡や分光技術で測る研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086939Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.086971Z",
+    "updatedAt": "2026-07-12T12:00:35.086972Z"
+  },
+  {
+    "tag_id": "tag:27791617-8081-5c92-99bb-e89c91c8f484",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "高感度な顕微鏡や分光技術で測る研究室",
+    "controlled": null,
+    "candidate_term": "高感度な顕微鏡や分光技術で測る研究室",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.086987Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087015Z",
+    "updatedAt": "2026-07-12T12:00:35.087017Z"
+  },
+  {
+    "tag_id": "tag:d58fe5f4-7e0f-5c34-8557-f5d88acc0f29",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "材料の発光",
+    "controlled": null,
+    "candidate_term": "材料の発光",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087025Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087057Z",
+    "updatedAt": "2026-07-12T12:00:35.087058Z"
+  },
+  {
+    "tag_id": "tag:a5dc3bf1-028b-56a2-b826-36a065ae4c37",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "化学反応",
+    "controlled": null,
+    "candidate_term": "化学反応",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087066Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087100Z",
+    "updatedAt": "2026-07-12T12:00:35.087101Z"
+  },
+  {
+    "tag_id": "tag:5bbe98ee-6379-52e7-81aa-fe42696abb8a",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応したりするのか？",
+    "controlled": null,
+    "candidate_term": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応したりするのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087111Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:researchQuestions",
+        "quote": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087137Z",
+    "updatedAt": "2026-07-12T12:00:35.087139Z"
+  },
+  {
+    "tag_id": "tag:0e204899-a1e8-5f7b-b33f-1febf663c7e0",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "光を非常に小さな領域へ集めると、通常は見えない分子の動きや反応をどう観察できるのか？",
+    "controlled": null,
+    "candidate_term": "光を非常に小さな領域へ集めると、通常は見えない分子の動きや反応をどう観察できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087147Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:researchQuestions",
+        "quote": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087173Z",
+    "updatedAt": "2026-07-12T12:00:35.087174Z"
+  },
+  {
+    "tag_id": "tag:395f3a2b-218d-5583-8b72-dc8035467007",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "分光測定",
+    "controlled": "計測",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087188Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087214Z",
+    "updatedAt": "2026-07-12T12:00:35.087216Z"
+  },
+  {
+    "tag_id": "tag:f091e50d-0cda-58a2-9247-bfa033e387e4",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "計測",
+    "controlled": "計測",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087223Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-4dee53c438a0",
+    "sourceHash": "a0d647fa8eb73cb9bd2ac6230307d27a22e3e086da40b90267870675285fb75f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087254Z",
+    "updatedAt": "2026-07-12T12:00:35.087256Z"
+  },
+  {
+    "tag_id": "tag:42cb18e8-c3da-5ec4-857c-b5ed98d1a690",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "脳や人の行動、社会・生命現象などのデータから、観測できない内部状態や原因を確率的に推定する研究室。",
+    "controlled": null,
+    "candidate_term": "脳や人の行動、社会・生命現象などのデータから、観測できない内部状態や原因を確率的に推定する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087347Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087388Z",
+    "updatedAt": "2026-07-12T12:00:35.087389Z"
+  },
+  {
+    "tag_id": "tag:e07ecfd6-dd15-54f9-8dca-4071fffe4d0f",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "脳や人の行動",
+    "controlled": null,
+    "candidate_term": "脳や人の行動",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087405Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087432Z",
+    "updatedAt": "2026-07-12T12:00:35.087433Z"
+  },
+  {
+    "tag_id": "tag:9f525067-96fe-53a0-8399-71cd68d9adf6",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "社会・生命現象などのデータから",
+    "controlled": null,
+    "candidate_term": "社会・生命現象などのデータから",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087441Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087467Z",
+    "updatedAt": "2026-07-12T12:00:35.087468Z"
+  },
+  {
+    "tag_id": "tag:d5a65017-0fac-5ab1-916d-cd7591320460",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "数理モデル",
+    "controlled": null,
+    "candidate_term": "数理モデル",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087475Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087501Z",
+    "updatedAt": "2026-07-12T12:00:35.087502Z"
+  },
+  {
+    "tag_id": "tag:bee2f69e-cc16-5fe9-b2c3-f55f6c097b2e",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "観測された行動や信号から、直接見えない内部状態をどのように推定するのか？",
+    "controlled": null,
+    "candidate_term": "観測された行動や信号から、直接見えない内部状態をどのように推定するのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087516Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:researchQuestions",
+        "quote": "観測された行動や信号から、直接見えない内部状態をどのように推",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087546Z",
+    "updatedAt": "2026-07-12T12:00:35.087547Z"
+  },
+  {
+    "tag_id": "tag:2b7b99c4-e5c9-5ac2-906d-5b1da62497d4",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "不確実さや個人差を含むデータから、現象を説明する数理モデルをどのように作るのか？",
+    "controlled": null,
+    "candidate_term": "不確実さや個人差を含むデータから、現象を説明する数理モデルをどのように作るのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087555Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:researchQuestions",
+        "quote": "観測された行動や信号から、直接見えない内部状態をどのように推",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087580Z",
+    "updatedAt": "2026-07-12T12:00:35.087581Z"
+  },
+  {
+    "tag_id": "tag:017c6ee7-4311-534f-95f0-b671945270c0",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "数理モデリング",
+    "controlled": "モデリング",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087595Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-40446adcb967",
+    "sourceHash": "21cb5bfdbe5716fa44d064bacbfb4a6c1ffd82af3ccc33e2be925821bff21679",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087620Z",
+    "updatedAt": "2026-07-12T12:00:35.087622Z"
+  },
+  {
+    "tag_id": "tag:c37a2459-1c90-5734-8005-3de1da65d945",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動くことで生じる詰まりや流れを数理モデルから研究する研究室。",
+    "controlled": null,
+    "candidate_term": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動くことで生じる詰まりや流れを数理モデルから研究する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087715Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087745Z",
+    "updatedAt": "2026-07-12T12:00:35.087747Z"
+  },
+  {
+    "tag_id": "tag:8b6220cf-46c8-5050-b717-6692242c3370",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "道路の渋滞",
+    "controlled": null,
+    "candidate_term": "道路の渋滞",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087761Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087789Z",
+    "updatedAt": "2026-07-12T12:00:35.087790Z"
+  },
+  {
+    "tag_id": "tag:90ac3fcf-9d23-5b71-a5bf-fbb831df0e29",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "人の混雑",
+    "controlled": null,
+    "candidate_term": "人の混雑",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087798Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087830Z",
+    "updatedAt": "2026-07-12T12:00:35.087832Z"
+  },
+  {
+    "tag_id": "tag:77794127-1d5a-5a92-87ae-4c53f36584b1",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "生物の集団など",
+    "controlled": null,
+    "candidate_term": "生物の集団など",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087839Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087866Z",
+    "updatedAt": "2026-07-12T12:00:35.087867Z"
+  },
+  {
+    "tag_id": "tag:383f4674-2c67-5509-a598-86a0ae060234",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑が生まれるのか？",
+    "controlled": null,
+    "candidate_term": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑が生まれるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087875Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:researchQuestions",
+        "quote": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087902Z",
+    "updatedAt": "2026-07-12T12:00:35.087903Z"
+  },
+  {
+    "tag_id": "tag:3be0dd0d-830e-5013-8365-b776e1ec5857",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "人や車の動き方を少し変えるだけで、流れ全体を滑らかにするにはどこへ働きかければよいのか？",
+    "controlled": null,
+    "candidate_term": "人や車の動き方を少し変えるだけで、流れ全体を滑らかにするにはどこへ働きかければよいのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087911Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:researchQuestions",
+        "quote": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.087970Z",
+    "updatedAt": "2026-07-12T12:00:35.087971Z"
+  },
+  {
+    "tag_id": "tag:ce09478a-f4df-5ca7-bf0d-e0a2835bae93",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "数理モデリング",
+    "controlled": "モデリング",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.087986Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-b51364f6513f",
+    "sourceHash": "e76d68834dbe1fbff623282e4fd149a6223b2ebfdd8f0731e7bc0b40a64bdd9d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088012Z",
+    "updatedAt": "2026-07-12T12:00:35.088013Z"
+  },
+  {
+    "tag_id": "tag:ad9941fa-e246-5aae-bee5-f7dcec26e6d9",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、病気との関係を研究する研究室。",
+    "controlled": null,
+    "candidate_term": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、病気との関係を研究する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088108Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "sourceHash": "7020fdae28e1803a8f4003c2f96632d78fd78bcb67e2b86436e115dfd42c2b49",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088137Z",
+    "updatedAt": "2026-07-12T12:00:35.088138Z"
+  },
+  {
+    "tag_id": "tag:40fe767a-7368-55f0-bc04-c873a8bb9993",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "血液や脳脊髄液など",
+    "controlled": null,
+    "candidate_term": "血液や脳脊髄液など",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088153Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "sourceHash": "7020fdae28e1803a8f4003c2f96632d78fd78bcb67e2b86436e115dfd42c2b49",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088180Z",
+    "updatedAt": "2026-07-12T12:00:35.088182Z"
+  },
+  {
+    "tag_id": "tag:2cfa703b-8505-5499-a895-e7987e067ff6",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "病気との関係を研究する研究室",
+    "controlled": null,
+    "candidate_term": "病気との関係を研究する研究室",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088189Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "sourceHash": "7020fdae28e1803a8f4003c2f96632d78fd78bcb67e2b86436e115dfd42c2b49",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088216Z",
+    "updatedAt": "2026-07-12T12:00:35.088217Z"
+  },
+  {
+    "tag_id": "tag:f329fe56-8319-5169-8a36-07c4e4ecee4c",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "脳の血管の形が人によって異なると、血液の流れや血管壁への力はどう変わるのか？",
+    "controlled": null,
+    "candidate_term": "脳の血管の形が人によって異なると、血液の流れや血管壁への力はどう変わるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088226Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:researchQuestions",
+        "quote": "脳の血管の形が人によって異なると、血液の流れや血管壁への力は",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "sourceHash": "7020fdae28e1803a8f4003c2f96632d78fd78bcb67e2b86436e115dfd42c2b49",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088252Z",
+    "updatedAt": "2026-07-12T12:00:35.088253Z"
+  },
+  {
+    "tag_id": "tag:d2df1e1f-afba-5838-a742-5f4dffbd7098",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "MRIで測った流れと数値計算を組み合わせると、患者ごとの血流をどこまで正確に再現できるのか？",
+    "controlled": null,
+    "candidate_term": "MRIで測った流れと数値計算を組み合わせると、患者ごとの血流をどこまで正確に再現できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088261Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:researchQuestions",
+        "quote": "脳の血管の形が人によって異なると、血液の流れや血管壁への力は",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "sourceHash": "7020fdae28e1803a8f4003c2f96632d78fd78bcb67e2b86436e115dfd42c2b49",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088286Z",
+    "updatedAt": "2026-07-12T12:00:35.088288Z"
+  },
+  {
+    "tag_id": "tag:46202932-05ef-5340-91c4-128a655cbc84",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "シミュレーション",
+    "controlled": "シミュレーション",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088301Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-46e67b3d62b0",
+    "sourceHash": "7020fdae28e1803a8f4003c2f96632d78fd78bcb67e2b86436e115dfd42c2b49",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088327Z",
+    "updatedAt": "2026-07-12T12:00:35.088328Z"
+  },
+  {
+    "tag_id": "tag:94dab51a-bb4f-5ddf-8135-a5c415706305",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "空気中で発生させたプラズマを水などの液体に接触させ、その境界で短時間に起こる化学反応を研究する研究室。",
+    "controlled": null,
+    "candidate_term": "空気中で発生させたプラズマを水などの液体に接触させ、その境界で短時間に起こる化学反応を研究する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088409Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "sourceHash": "60fe709ec6a025d7e691f98c89edc2ca459cddb3f522addd3a4610bcd169e4a4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088438Z",
+    "updatedAt": "2026-07-12T12:00:35.088440Z"
+  },
+  {
+    "tag_id": "tag:92cff5a5-2b88-586b-bdd5-27cd40e970ea",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "空気と水から反応性の高い物質を作り",
+    "controlled": null,
+    "candidate_term": "空気と水から反応性の高い物質を作り",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088454Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "sourceHash": "60fe709ec6a025d7e691f98c89edc2ca459cddb3f522addd3a4610bcd169e4a4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088481Z",
+    "updatedAt": "2026-07-12T12:00:35.088482Z"
+  },
+  {
+    "tag_id": "tag:520e48d9-85ec-52de-ae43-ada400b47b65",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "細菌やウイルスの不活化",
+    "controlled": null,
+    "candidate_term": "細菌やウイルスの不活化",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088490Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "sourceHash": "60fe709ec6a025d7e691f98c89edc2ca459cddb3f522addd3a4610bcd169e4a4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088517Z",
+    "updatedAt": "2026-07-12T12:00:35.088518Z"
+  },
+  {
+    "tag_id": "tag:4de9548e-2693-54b4-b0ec-d72d7ca0d522",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "植物への窒素供給",
+    "controlled": null,
+    "candidate_term": "植物への窒素供給",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088526Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "sourceHash": "60fe709ec6a025d7e691f98c89edc2ca459cddb3f522addd3a4610bcd169e4a4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088552Z",
+    "updatedAt": "2026-07-12T12:00:35.088553Z"
+  },
+  {
+    "tag_id": "tag:6632da29-8acc-5bff-abd4-126489e96b21",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "プラズマが水と触れる境界では、どのような反応性の高い物質が生まれるのか？",
+    "controlled": null,
+    "candidate_term": "プラズマが水と触れる境界では、どのような反応性の高い物質が生まれるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088562Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:researchQuestions",
+        "quote": "プラズマが水と触れる境界では、どのような反応性の高い物質が生",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "sourceHash": "60fe709ec6a025d7e691f98c89edc2ca459cddb3f522addd3a4610bcd169e4a4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088588Z",
+    "updatedAt": "2026-07-12T12:00:35.088589Z"
+  },
+  {
+    "tag_id": "tag:78c5d784-df78-5282-85d3-6fd6962cc76a",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "プラズマで作る物質の種類や量を制御すると、滅菌・農業・材料合成へどのように使い分けられるのか？",
+    "controlled": null,
+    "candidate_term": "プラズマで作る物質の種類や量を制御すると、滅菌・農業・材料合成へどのように使い分けられるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088597Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:researchQuestions",
+        "quote": "プラズマが水と触れる境界では、どのような反応性の高い物質が生",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-0dca02346edd",
+    "sourceHash": "60fe709ec6a025d7e691f98c89edc2ca459cddb3f522addd3a4610bcd169e4a4",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088623Z",
+    "updatedAt": "2026-07-12T12:00:35.088624Z"
+  },
+  {
+    "tag_id": "tag:51b42bcf-d3b1-56ec-acb3-c453cbb2bc0b",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、エネルギーを効率よく取り出しながら環境への負荷を減らす方法を開発する研究室。",
+    "controlled": null,
+    "candidate_term": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、エネルギーを効率よく取り出しながら環境への負荷を減らす方法を開発する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088708Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:sections.research_summary",
+        "quote": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-90b4b3a37829",
+    "sourceHash": "a563e9e4bf4fa5df42baa7af1c68d1c08bee4cb7a56c5e22cee687133d96c3cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088738Z",
+    "updatedAt": "2026-07-12T12:00:35.088740Z"
+  },
+  {
+    "tag_id": "tag:e5c95bac-b455-5ea4-b3dd-c81622a273c9",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "燃焼",
+    "controlled": null,
+    "candidate_term": "燃焼",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088750Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:sections.research_summary",
+        "quote": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-90b4b3a37829",
+    "sourceHash": "a563e9e4bf4fa5df42baa7af1c68d1c08bee4cb7a56c5e22cee687133d96c3cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088778Z",
+    "updatedAt": "2026-07-12T12:00:35.088780Z"
+  },
+  {
+    "tag_id": "tag:20f41476-e40a-53ec-ab41-64aaa4c0da52",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "エネルギー",
+    "controlled": null,
+    "candidate_term": "エネルギー",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088787Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:sections.research_summary",
+        "quote": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-90b4b3a37829",
+    "sourceHash": "a563e9e4bf4fa5df42baa7af1c68d1c08bee4cb7a56c5e22cee687133d96c3cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088814Z",
+    "updatedAt": "2026-07-12T12:00:35.088816Z"
+  },
+  {
+    "tag_id": "tag:ad668028-368b-5ed1-8949-4091b5a7222f",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変化するのか？",
+    "controlled": null,
+    "candidate_term": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変化するのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088824Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:researchQuestions",
+        "quote": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-90b4b3a37829",
+    "sourceHash": "a563e9e4bf4fa5df42baa7af1c68d1c08bee4cb7a56c5e22cee687133d96c3cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088853Z",
+    "updatedAt": "2026-07-12T12:00:35.088855Z"
+  },
+  {
+    "tag_id": "tag:474eecb7-29b8-514d-b38c-ee7c29bf457c",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "エネルギーを効率よく取り出しながら、有害物質や二酸化炭素を減らす燃焼条件をどう設計するのか？",
+    "controlled": null,
+    "candidate_term": "エネルギーを効率よく取り出しながら、有害物質や二酸化炭素を減らす燃焼条件をどう設計するのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088862Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:researchQuestions",
+        "quote": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-90b4b3a37829",
+    "sourceHash": "a563e9e4bf4fa5df42baa7af1c68d1c08bee4cb7a56c5e22cee687133d96c3cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.088889Z",
+    "updatedAt": "2026-07-12T12:00:35.088890Z"
+  },
+  {
+    "tag_id": "tag:d544a992-145e-5755-a132-fc5cf49a4124",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有機分子の作り方を研究する研究室。",
+    "controlled": null,
+    "candidate_term": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有機分子の作り方を研究する研究室。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.088977Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:sections.research_summary",
+        "quote": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-f0e46eb2cbf5",
+    "sourceHash": "63a53727f83793a2d4375a26ade8ebf6dab8e20619c5e072e947037d7859968d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.089006Z",
+    "updatedAt": "2026-07-12T12:00:35.089007Z"
+  },
+  {
+    "tag_id": "tag:f0b5f944-237e-5456-8bf5-e674e92f45bd",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "ホウ素",
+    "controlled": null,
+    "candidate_term": "ホウ素",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.089021Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:sections.research_summary",
+        "quote": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-f0e46eb2cbf5",
+    "sourceHash": "63a53727f83793a2d4375a26ade8ebf6dab8e20619c5e072e947037d7859968d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.089049Z",
+    "updatedAt": "2026-07-12T12:00:35.089050Z"
+  },
+  {
+    "tag_id": "tag:9fea0fff-c562-59e0-8c05-19ad9c889555",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "複数の結合を一度に組み替える反応や",
+    "controlled": null,
+    "candidate_term": "複数の結合を一度に組み替える反応や",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.089058Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:sections.research_summary",
+        "quote": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:e4ba46ff"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-f0e46eb2cbf5",
+    "sourceHash": "63a53727f83793a2d4375a26ade8ebf6dab8e20619c5e072e947037d7859968d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.089085Z",
+    "updatedAt": "2026-07-12T12:00:35.089086Z"
+  },
+  {
+    "tag_id": "tag:77b01b28-8332-506a-b937-02e75de041d3",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ作れるのか？",
+    "controlled": null,
+    "candidate_term": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ作れるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.089095Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:researchQuestions",
+        "quote": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-f0e46eb2cbf5",
+    "sourceHash": "63a53727f83793a2d4375a26ade8ebf6dab8e20619c5e072e947037d7859968d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.089121Z",
+    "updatedAt": "2026-07-12T12:00:35.089122Z"
+  },
+  {
+    "tag_id": "tag:700fabfa-1d95-5777-9295-8a4b4117ce2a",
+    "entity": "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "複数の結合を一つの反応で組み替えると、複雑な有機分子をどのように短い工程で作れるのか？",
+    "controlled": null,
+    "candidate_term": "複数の結合を一つの反応で組み替えると、複雑な有機分子をどのように短い工程で作れるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.089130Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:researchQuestions",
+        "quote": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:ce2d8d99"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "lab",
+    "sourceId": "sample-lab-f0e46eb2cbf5",
+    "sourceHash": "63a53727f83793a2d4375a26ade8ebf6dab8e20619c5e072e947037d7859968d",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.089155Z",
+    "updatedAt": "2026-07-12T12:00:35.089157Z"
+  }
+]

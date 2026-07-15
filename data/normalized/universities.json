@@ -1,0 +1,799 @@
+[
+  {
+    "name": "大阪大学",
+    "labCount": 332,
+    "collectionRounds": [
+      "第1回",
+      "第29回",
+      "第46回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "京都大学",
+    "labCount": 380,
+    "collectionRounds": [
+      "第1回",
+      "第28回",
+      "第46回"
+    ]
+  },
+  {
+    "name": "東北大学",
+    "labCount": 875,
+    "collectionRounds": [
+      "第19回",
+      "第1回",
+      "第20回",
+      "第21回",
+      "第22回",
+      "第23回",
+      "第24回",
+      "第25回",
+      "第26回",
+      "第27回",
+      "第29回"
+    ]
+  },
+  {
+    "name": "名古屋大学",
+    "labCount": 473,
+    "collectionRounds": [
+      "第1回",
+      "第29回",
+      "第2回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "北海道大学",
+    "labCount": 520,
+    "collectionRounds": [
+      "第1回",
+      "第28回",
+      "第46回"
+    ]
+  },
+  {
+    "name": "神戸大学",
+    "labCount": 253,
+    "collectionRounds": [
+      "第1回",
+      "第32回",
+      "第44回"
+    ]
+  },
+  {
+    "name": "東京大学",
+    "labCount": 870,
+    "collectionRounds": [
+      "第1回",
+      "第28回",
+      "第46回"
+    ]
+  },
+  {
+    "name": "九州大学",
+    "labCount": 372,
+    "collectionRounds": [
+      "第1回",
+      "第28回",
+      "第46回"
+    ]
+  },
+  {
+    "name": "筑波大学",
+    "labCount": 385,
+    "collectionRounds": [
+      "第1回",
+      "第32回"
+    ]
+  },
+  {
+    "name": "東京科学大学（旧東京工業大学）",
+    "labCount": 663,
+    "collectionRounds": [
+      "第1回",
+      "第2回",
+      "第46回"
+    ]
+  },
+  {
+    "name": "一橋大学",
+    "labCount": 190,
+    "collectionRounds": [
+      "第1回",
+      "第42回"
+    ]
+  },
+  {
+    "name": "広島大学",
+    "labCount": 323,
+    "collectionRounds": [
+      "第2回",
+      "第32回"
+    ]
+  },
+  {
+    "name": "千葉大学",
+    "labCount": 345,
+    "collectionRounds": [
+      "第2回",
+      "第32回",
+      "第45回"
+    ]
+  },
+  {
+    "name": "早稲田大学",
+    "labCount": 275,
+    "collectionRounds": [
+      "第29回",
+      "第2回"
+    ]
+  },
+  {
+    "name": "明治大学",
+    "labCount": 299,
+    "collectionRounds": [
+      "第2回",
+      "第30回"
+    ]
+  },
+  {
+    "name": "電気通信大学",
+    "labCount": 122,
+    "collectionRounds": [
+      "第2回",
+      "第34回"
+    ]
+  },
+  {
+    "name": "東京農工大学",
+    "labCount": 322,
+    "collectionRounds": [
+      "第2回",
+      "第33回",
+      "第45回"
+    ]
+  },
+  {
+    "name": "横浜国立大学",
+    "labCount": 199,
+    "collectionRounds": [
+      "第2回",
+      "第33回"
+    ]
+  },
+  {
+    "name": "上智大学",
+    "labCount": 102,
+    "collectionRounds": [
+      "第2回",
+      "第30回"
+    ]
+  },
+  {
+    "name": "東京都市大学",
+    "labCount": 157,
+    "collectionRounds": [
+      "第2回",
+      "第35回"
+    ]
+  },
+  {
+    "name": "慶應義塾大学",
+    "labCount": 381,
+    "collectionRounds": [
+      "第16回",
+      "第17回",
+      "第18回",
+      "第29回",
+      "第2回"
+    ]
+  },
+  {
+    "name": "金沢大学",
+    "labCount": 254,
+    "collectionRounds": [
+      "第2回",
+      "第32回"
+    ]
+  },
+  {
+    "name": "岡山大学",
+    "labCount": 109,
+    "collectionRounds": [
+      "第2回",
+      "第32回"
+    ]
+  },
+  {
+    "name": "東京理科大学",
+    "labCount": 343,
+    "collectionRounds": [
+      "第29回",
+      "第2回",
+      "第44回"
+    ]
+  },
+  {
+    "name": "同志社大学",
+    "labCount": 141,
+    "collectionRounds": [
+      "第30回",
+      "第3回",
+      "第44回"
+    ]
+  },
+  {
+    "name": "立命館大学",
+    "labCount": 502,
+    "collectionRounds": [
+      "第13回",
+      "第14回",
+      "第15回",
+      "第3回",
+      "第44回"
+    ]
+  },
+  {
+    "name": "奈良先端科学技術大学院大学（NAIST）",
+    "labCount": 110,
+    "collectionRounds": [
+      "第34回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "北陸先端科学技術大学院大学（JAIST）",
+    "labCount": 96,
+    "collectionRounds": [
+      "第3回",
+      "第43回"
+    ]
+  },
+  {
+    "name": "名古屋工業大学",
+    "labCount": 301,
+    "collectionRounds": [
+      "第35回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "九州工業大学",
+    "labCount": 240,
+    "collectionRounds": [
+      "第35回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "信州大学",
+    "labCount": 208,
+    "collectionRounds": [
+      "第33回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "新潟大学",
+    "labCount": 192,
+    "collectionRounds": [
+      "第33回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "岐阜大学",
+    "labCount": 162,
+    "collectionRounds": [
+      "第34回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "熊本大学",
+    "labCount": 216,
+    "collectionRounds": [
+      "第33回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "静岡大学",
+    "labCount": 290,
+    "collectionRounds": [
+      "第33回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "関西大学",
+    "labCount": 198,
+    "collectionRounds": [
+      "第31回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "関西学院大学",
+    "labCount": 137,
+    "collectionRounds": [
+      "第30回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "長崎大学",
+    "labCount": 79,
+    "collectionRounds": [
+      "第34回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "お茶の水女子大学",
+    "labCount": 80,
+    "collectionRounds": [
+      "第3回",
+      "第42回"
+    ]
+  },
+  {
+    "name": "三重大学",
+    "labCount": 151,
+    "collectionRounds": [
+      "第34回",
+      "第3回"
+    ]
+  },
+  {
+    "name": "芝浦工業大学",
+    "labCount": 207,
+    "collectionRounds": [
+      "第35回",
+      "第3回",
+      "第44回"
+    ]
+  },
+  {
+    "name": "中央大学",
+    "labCount": 243,
+    "collectionRounds": [
+      "第45回",
+      "第4回",
+      "第6回"
+    ]
+  },
+  {
+    "name": "東京電機大学",
+    "labCount": 98,
+    "collectionRounds": [
+      "第4回",
+      "第6回",
+      "第7回",
+      "第8回"
+    ]
+  },
+  {
+    "name": "大阪公立大学",
+    "labCount": 525,
+    "collectionRounds": [
+      "第31回",
+      "第45回",
+      "第4回",
+      "第5回"
+    ]
+  },
+  {
+    "name": "日本大学",
+    "labCount": 423,
+    "collectionRounds": [
+      "第35回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "東京都立大学",
+    "labCount": 243,
+    "collectionRounds": [
+      "第31回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "近畿大学",
+    "labCount": 252,
+    "collectionRounds": [
+      "第31回",
+      "第44回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "名古屋市立大学",
+    "labCount": 101,
+    "collectionRounds": [
+      "第31回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "東京薬科大学",
+    "labCount": 68,
+    "collectionRounds": [
+      "第43回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "北里大学",
+    "labCount": 83,
+    "collectionRounds": [
+      "第40回",
+      "第45回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "星薬科大学",
+    "labCount": 37,
+    "collectionRounds": [
+      "第43回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "麻布大学",
+    "labCount": 89,
+    "collectionRounds": [
+      "第42回",
+      "第4回"
+    ]
+  },
+  {
+    "name": "横浜市立大学",
+    "labCount": 2,
+    "collectionRounds": [
+      "第4回"
+    ]
+  },
+  {
+    "name": "法政大学",
+    "labCount": 340,
+    "collectionRounds": [
+      "第45回",
+      "第4回",
+      "第5回"
+    ]
+  },
+  {
+    "name": "日本獣医生命科学大学",
+    "labCount": 134,
+    "collectionRounds": [
+      "第42回",
+      "第5回"
+    ]
+  },
+  {
+    "name": "京都府立大学",
+    "labCount": 157,
+    "collectionRounds": [
+      "第6回",
+      "第7回",
+      "第9回"
+    ]
+  },
+  {
+    "name": "兵庫県立大学",
+    "labCount": 315,
+    "collectionRounds": [
+      "第10回",
+      "第11回",
+      "第12回",
+      "第7回"
+    ]
+  },
+  {
+    "name": "酪農学園大学",
+    "labCount": 99,
+    "collectionRounds": [
+      "第8回"
+    ]
+  },
+  {
+    "name": "青山学院大学",
+    "labCount": 139,
+    "collectionRounds": [
+      "第30回"
+    ]
+  },
+  {
+    "name": "立教大学",
+    "labCount": 79,
+    "collectionRounds": [
+      "第30回"
+    ]
+  },
+  {
+    "name": "学習院大学",
+    "labCount": 62,
+    "collectionRounds": [
+      "第31回"
+    ]
+  },
+  {
+    "name": "鹿児島大学",
+    "labCount": 147,
+    "collectionRounds": [
+      "第34回"
+    ]
+  },
+  {
+    "name": "京都工芸繊維大学",
+    "labCount": 186,
+    "collectionRounds": [
+      "第35回"
+    ]
+  },
+  {
+    "name": "山口大学",
+    "labCount": 185,
+    "collectionRounds": [
+      "第36回"
+    ]
+  },
+  {
+    "name": "富山大学",
+    "labCount": 215,
+    "collectionRounds": [
+      "第36回"
+    ]
+  },
+  {
+    "name": "茨城大学",
+    "labCount": 209,
+    "collectionRounds": [
+      "第36回"
+    ]
+  },
+  {
+    "name": "埼玉大学",
+    "labCount": 189,
+    "collectionRounds": [
+      "第36回"
+    ]
+  },
+  {
+    "name": "愛媛大学",
+    "labCount": 188,
+    "collectionRounds": [
+      "第36回"
+    ]
+  },
+  {
+    "name": "徳島大学",
+    "labCount": 215,
+    "collectionRounds": [
+      "第36回"
+    ]
+  },
+  {
+    "name": "山形大学",
+    "labCount": 221,
+    "collectionRounds": [
+      "第37回"
+    ]
+  },
+  {
+    "name": "岩手大学",
+    "labCount": 106,
+    "collectionRounds": [
+      "第37回"
+    ]
+  },
+  {
+    "name": "群馬大学",
+    "labCount": 77,
+    "collectionRounds": [
+      "第37回"
+    ]
+  },
+  {
+    "name": "宇都宮大学",
+    "labCount": 47,
+    "collectionRounds": [
+      "第37回"
+    ]
+  },
+  {
+    "name": "山梨大学",
+    "labCount": 49,
+    "collectionRounds": [
+      "第37回"
+    ]
+  },
+  {
+    "name": "福井大学",
+    "labCount": 162,
+    "collectionRounds": [
+      "第37回"
+    ]
+  },
+  {
+    "name": "鳥取大学",
+    "labCount": 109,
+    "collectionRounds": [
+      "第38回"
+    ]
+  },
+  {
+    "name": "島根大学",
+    "labCount": 106,
+    "collectionRounds": [
+      "第38回"
+    ]
+  },
+  {
+    "name": "香川大学",
+    "labCount": 94,
+    "collectionRounds": [
+      "第38回"
+    ]
+  },
+  {
+    "name": "高知大学",
+    "labCount": 75,
+    "collectionRounds": [
+      "第38回"
+    ]
+  },
+  {
+    "name": "佐賀大学",
+    "labCount": 199,
+    "collectionRounds": [
+      "第38回"
+    ]
+  },
+  {
+    "name": "大分大学",
+    "labCount": 97,
+    "collectionRounds": [
+      "第38回"
+    ]
+  },
+  {
+    "name": "弘前大学",
+    "labCount": 104,
+    "collectionRounds": [
+      "第39回"
+    ]
+  },
+  {
+    "name": "秋田大学",
+    "labCount": 122,
+    "collectionRounds": [
+      "第39回"
+    ]
+  },
+  {
+    "name": "福島大学",
+    "labCount": 90,
+    "collectionRounds": [
+      "第39回"
+    ]
+  },
+  {
+    "name": "宮崎大学",
+    "labCount": 97,
+    "collectionRounds": [
+      "第39回"
+    ]
+  },
+  {
+    "name": "琉球大学",
+    "labCount": 51,
+    "collectionRounds": [
+      "第39回"
+    ]
+  },
+  {
+    "name": "和歌山大学",
+    "labCount": 74,
+    "collectionRounds": [
+      "第40回"
+    ]
+  },
+  {
+    "name": "豊橋技術科学大学",
+    "labCount": 130,
+    "collectionRounds": [
+      "第40回"
+    ]
+  },
+  {
+    "name": "東海大学",
+    "labCount": 134,
+    "collectionRounds": [
+      "第40回"
+    ]
+  },
+  {
+    "name": "東京海洋大学",
+    "labCount": 63,
+    "collectionRounds": [
+      "第40回"
+    ]
+  },
+  {
+    "name": "長岡技術科学大学",
+    "labCount": 160,
+    "collectionRounds": [
+      "第41回"
+    ]
+  },
+  {
+    "name": "室蘭工業大学",
+    "labCount": 73,
+    "collectionRounds": [
+      "第41回"
+    ]
+  },
+  {
+    "name": "北見工業大学",
+    "labCount": 83,
+    "collectionRounds": [
+      "第41回"
+    ]
+  },
+  {
+    "name": "奈良女子大学",
+    "labCount": 82,
+    "collectionRounds": [
+      "第41回"
+    ]
+  },
+  {
+    "name": "帯広畜産大学",
+    "labCount": 109,
+    "collectionRounds": [
+      "第41回"
+    ]
+  },
+  {
+    "name": "愛知教育大学",
+    "labCount": 48,
+    "collectionRounds": [
+      "第42回"
+    ]
+  },
+  {
+    "name": "大阪教育大学",
+    "labCount": 49,
+    "collectionRounds": [
+      "第42回"
+    ]
+  },
+  {
+    "name": "京都教育大学",
+    "labCount": 24,
+    "collectionRounds": [
+      "第43回"
+    ]
+  },
+  {
+    "name": "福岡教育大学",
+    "labCount": 31,
+    "collectionRounds": [
+      "第43回"
+    ]
+  },
+  {
+    "name": "北海道教育大学",
+    "labCount": 42,
+    "collectionRounds": [
+      "第43回"
+    ]
+  }
+]

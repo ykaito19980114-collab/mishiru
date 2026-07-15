@@ -1,0 +1,32 @@
+[
+  {
+    "id": "method-theory",
+    "label": "理論",
+    "description": "数式・概念・モデルで仕組みを説明する"
+  },
+  {
+    "id": "method-experiment",
+    "label": "実験",
+    "description": "条件を制御し、現象や効果を確かめる"
+  },
+  {
+    "id": "method-simulation",
+    "label": "シミュレーション",
+    "description": "計算で現象や設計案を試す"
+  },
+  {
+    "id": "method-data",
+    "label": "データ解析",
+    "description": "観測・記録・テキストなどから傾向を読む"
+  },
+  {
+    "id": "method-field",
+    "label": "フィールド調査",
+    "description": "現場で観察・測定・聞き取りを行う"
+  },
+  {
+    "id": "method-design",
+    "label": "設計・制作",
+    "description": "装置・サービス・システムを作り評価する"
+  }
+]

@@ -1,0 +1,8 @@
+{
+  "name": "ラボいきたい！",
+  "description": "気になることから、会いにいける研究室を見つけるサービス。",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

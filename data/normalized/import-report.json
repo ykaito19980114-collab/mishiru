@@ -1,0 +1,18 @@
+{
+  "generatedAt": "2026-07-13",
+  "sourceFiles": [
+    "全国大学研究室データベース_第1回-第46回統合_v20.xlsx",
+    "研究領域_学会_ジャーナル_データベース_0713.xlsx"
+  ],
+  "counts": {
+    "labs": 19785,
+    "universities": 100,
+    "researchers": 19253,
+    "fields": 606,
+    "societies": 1700,
+    "journals": 1648,
+    "graphEdges": 21707
+  },
+  "strategy": "既存data/labs.jsonを壊さず、Excel由来の研究領域・学会・ジャーナルはdata/normalizedからAdapterで参照する。",
+  "notes": "0713版から初心者向け説明、研究対象、研究方法、研究目的、代表テーマ、新しい主要な問い2件を取り込み、旧問い列は使用しない。"
+}

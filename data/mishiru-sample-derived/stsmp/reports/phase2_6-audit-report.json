@@ -1,0 +1,173 @@
+{
+  "scheme_version": "mishiru-research-resource@0.1.0-draft",
+  "phase": "2.6",
+  "modeRecalculation": {
+    "RAPID": 30,
+    "FULL": 10
+  },
+  "layerModalityCounts": {
+    "CORE_asserted": 80,
+    "EXPR_asserted": 194,
+    "CORE_hypothesis": 10
+  },
+  "evidenceAudit": {
+    "total": 197,
+    "independentTrue": 0,
+    "independentFalse": 197,
+    "unknown": 0,
+    "byChain": {
+      "chain:mishiru-sample:labs.json:1": 3,
+      "chain:mishiru-sample:labs.json:18": 3,
+      "chain:mishiru-sample:labs.json:34": 3,
+      "chain:mishiru-sample:labs.json:84": 3,
+      "chain:mishiru-sample:labs.json:100": 3,
+      "chain:mishiru-sample:labs.json:117": 3,
+      "chain:mishiru-sample:labs.json:133": 3,
+      "chain:mishiru-sample:labs.json:51": 3,
+      "chain:mishiru-sample:labs.json:67": 3,
+      "chain:mishiru-sample:labs.json:150": 3,
+      "chain:mishiru-sample:fields.json:1": 6,
+      "chain:mishiru-sample:fields.json:12": 6,
+      "chain:mishiru-sample:fields.json:23": 6,
+      "chain:mishiru-sample:fields.json:34": 6,
+      "chain:mishiru-sample:fields.json:45": 6,
+      "chain:mishiru-sample:fields.json:56": 6,
+      "chain:mishiru-sample:fields.json:67": 6,
+      "chain:mishiru-sample:fields.json:78": 6,
+      "chain:mishiru-sample:fields.json:89": 6,
+      "chain:mishiru-sample:fields.json:100": 6,
+      "chain:mishiru-sample:societies.json:1": 5,
+      "chain:mishiru-sample:societies.json:756": 5,
+      "chain:mishiru-sample:societies.json:1134": 5,
+      "chain:mishiru-sample:societies.json:1322": 5,
+      "chain:mishiru-sample:societies.json:190": 5,
+      "chain:mishiru-sample:societies.json:379": 5,
+      "chain:mishiru-sample:societies.json:567": 5,
+      "chain:mishiru-sample:societies.json:945": 5,
+      "chain:mishiru-sample:societies.json:1511": 5,
+      "chain:mishiru-sample:societies.json:sample-society-97696e16fe66": 3,
+      "chain:mishiru-sample:journals.json:1": 6,
+      "chain:mishiru-sample:journals.json:184": 6,
+      "chain:mishiru-sample:journals.json:550": 6,
+      "chain:mishiru-sample:journals.json:733": 6,
+      "chain:mishiru-sample:journals.json:1099": 6,
+      "chain:mishiru-sample:journals.json:367": 6,
+      "chain:mishiru-sample:journals.json:916": 6,
+      "chain:mishiru-sample:journals.json:1282": 6,
+      "chain:mishiru-sample:journals.json:1465": 6,
+      "chain:mishiru-sample:journals.json:1648": 5
+    },
+    "missingMetadata": 0
+  },
+  "g4": {
+    "near": {
+      "top1": 0.974,
+      "top3": 1.0,
+      "mrr": 0.987
+    },
+    "mixed": {
+      "top1": 0.925,
+      "top3": 1.0,
+      "mrr": 0.963
+    },
+    "note": "固有名称・ID・URL・大学名・教授名等を除外し、IS/Q/M/ST/SC中心で比較。"
+  },
+  "gateTotals": {
+    "G1": {
+      "tested": 40,
+      "pass": 26,
+      "fail": 0,
+      "warning": 14,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    },
+    "G2": {
+      "tested": 40,
+      "pass": 40,
+      "fail": 0,
+      "warning": 0,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    },
+    "G3": {
+      "tested": 40,
+      "pass": 40,
+      "fail": 0,
+      "warning": 0,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    },
+    "G4": {
+      "tested": 40,
+      "pass": 39,
+      "fail": 1,
+      "warning": 0,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    },
+    "G5": {
+      "tested": 40,
+      "pass": 40,
+      "fail": 0,
+      "warning": 0,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    },
+    "G6": {
+      "tested": 40,
+      "pass": 40,
+      "fail": 0,
+      "warning": 0,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    },
+    "G7": {
+      "tested": 40,
+      "pass": 30,
+      "fail": 0,
+      "warning": 10,
+      "not_applicable": 0,
+      "insufficient_evidence": 0
+    }
+  },
+  "candidateTermSummary": {
+    "needs_qualifier": 6,
+    "candidate_concept": 2,
+    "sentence_fragment": 40,
+    "isolated_term": 116,
+    "redundant_question": 80
+  },
+  "candidateRecommendationSummary": {
+    "add_qualifier": 6,
+    "keep_candidate": 2,
+    "reject": 120,
+    "needs_review": 116
+  },
+  "hypothesisReasonSummary": {
+    "evidence_missing": 39
+  },
+  "relationAuditSummary": {
+    "pass": 2,
+    "term_too_broad": 2,
+    "needs_semantic_review": 3
+  },
+  "purposeViewAuditSummary": {
+    "pass": 120
+  },
+  "phase3Allowed": [
+    "normalized_descriptions",
+    "questions",
+    "sourceKeywords",
+    "approved_tags",
+    "pending_tags_as_reference",
+    "evidence_ledger",
+    "executionMode"
+  ],
+  "phase3Forbidden": [
+    "rejected_tags",
+    "unresolved_candidate_term_as_fact",
+    "HYPOTHESIS_as_asserted",
+    "unreviewed_relation_graph_as_fact",
+    "purpose_view_inference_as_fact"
+  ]
+}

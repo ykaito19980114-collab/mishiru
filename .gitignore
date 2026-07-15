@@ -1,0 +1,11 @@
+node_modules
+dist
+.env
+.env.local
+data/runtime/
+*.log
+.DS_Store
+server.js
+.backup-prototype/
+__pycache__/
+*.py[cod]

@@ -1,0 +1,201 @@
+{
+  "scheme_version": "mishiru-research-resource@0.1.0-draft",
+  "base_protocol": "STS-MP v1.0",
+  "status": "draft",
+  "entity_config": {
+    "labs": {
+      "source_type": "lab",
+      "entity_type": "COLLECTIVE",
+      "entity_prefix": "ent:COLLECTIVE:lab",
+      "file": "labs.json",
+      "required": [
+        "Σ",
+        "IS",
+        "Q"
+      ],
+      "recommended": [
+        "M",
+        "SC",
+        "ST"
+      ],
+      "tags_file": "labs.tags.json",
+      "ledger_file": "labs.evidence.json"
+    },
+    "fields": {
+      "source_type": "field",
+      "entity_type": "RESEARCH_FIELD",
+      "entity_prefix": "ent:RESEARCH_FIELD",
+      "file": "fields.json",
+      "required": [
+        "Σ",
+        "IS",
+        "Q",
+        "M"
+      ],
+      "recommended": [
+        "SC",
+        "C"
+      ],
+      "tags_file": "fields.tags.json",
+      "ledger_file": "fields.evidence.json"
+    },
+    "societies": {
+      "source_type": "society",
+      "entity_type": "COLLECTIVE",
+      "entity_prefix": "ent:COLLECTIVE:society",
+      "file": "societies.json",
+      "required": [
+        "Σ",
+        "IS",
+        "Q"
+      ],
+      "recommended": [
+        "SC",
+        "M",
+        "A"
+      ],
+      "tags_file": "societies.tags.json",
+      "ledger_file": "societies.evidence.json"
+    },
+    "journals": {
+      "source_type": "journal",
+      "entity_type": "COLLECTIVE",
+      "entity_prefix": "ent:COLLECTIVE:journal",
+      "file": "journals.json",
+      "required": [
+        "Σ",
+        "IS",
+        "Q"
+      ],
+      "recommended": [
+        "M",
+        "SC",
+        "A"
+      ],
+      "tags_file": "journals.tags.json",
+      "ledger_file": "journals.evidence.json"
+    }
+  },
+  "purpose_specs": [
+    {
+      "purpose_id": "purpose:mishiru-search",
+      "decision": "ユーザーが、自分の関心や研究したい対象に近い研究室・研究領域・学会・ジャーナルを探す。",
+      "actor": "大学院進学検討者、研究初心者、社会人大学院志望者",
+      "search_mode": "SUBJECT",
+      "error_cost": {
+        "false_positive": "M",
+        "false_negative": "H"
+      },
+      "comparison_axis": "扱う対象、問い、方法、スコープ、研究領域",
+      "action_vocabulary": [
+        "探す",
+        "比較する",
+        "保存する",
+        "詳しく見る"
+      ],
+      "time_horizon": "年〜恒久",
+      "success_signal": "検索結果の保存、詳細閲覧、研究プロジェクトへの素材利用"
+    },
+    {
+      "purpose_id": "purpose:mishiru-discover",
+      "decision": "ユーザーが、自分では検索しなかった研究世界に問いを通じて出会い、反応する。",
+      "actor": "研究初心者、大学院進学検討者",
+      "search_mode": "SERENDIPITY",
+      "error_cost": {
+        "false_positive": "M",
+        "false_negative": "H"
+      },
+      "comparison_axis": "問いの近さ、問いの意外性、対象の距離、方法の違い",
+      "action_vocabulary": [
+        "出会う",
+        "気になる",
+        "わからない",
+        "違う",
+        "保存する"
+      ],
+      "time_horizon": "年",
+      "success_signal": "気になる反応、保存、後の問い生成への利用"
+    },
+    {
+      "purpose_id": "purpose:mishiru-reflect-question",
+      "decision": "ユーザーが、保存・反応・メモから自分の関心を理解し、研究可能なRQ候補へ変換する。",
+      "actor": "大学院進学検討者、社会人大学院志望者、研究初心者",
+      "search_mode": "EXPLORE",
+      "error_cost": {
+        "false_positive": "H",
+        "false_negative": "M"
+      },
+      "comparison_axis": "ユーザー関心と研究資源の問い・対象・方法・スコープの接続",
+      "action_vocabulary": [
+        "見つめる",
+        "問いにする",
+        "比較する",
+        "研究骨子を作る",
+        "相談する"
+      ],
+      "time_horizon": "月〜年",
+      "success_signal": "RQ候補の採用、ResearchProject保存、相談セット作成"
+    }
+  ],
+  "facet_policy": {
+    "required": {
+      "labs": [
+        "Σ",
+        "IS",
+        "Q"
+      ],
+      "fields": [
+        "Σ",
+        "IS",
+        "Q",
+        "M"
+      ],
+      "societies": [
+        "Σ",
+        "IS",
+        "Q"
+      ],
+      "journals": [
+        "Σ",
+        "IS",
+        "Q"
+      ]
+    },
+    "recommended": {
+      "labs": [
+        "M",
+        "SC",
+        "ST"
+      ],
+      "fields": [
+        "SC",
+        "C"
+      ],
+      "societies": [
+        "SC",
+        "M",
+        "A"
+      ],
+      "journals": [
+        "M",
+        "SC",
+        "A"
+      ]
+    }
+  },
+  "review_policy": {
+    "actions": [
+      "approve",
+      "fix",
+      "reject",
+      "useful"
+    ],
+    "reviewStatus": [
+      "pending",
+      "approved",
+      "rejected",
+      "needs_revision"
+    ],
+    "production_use": "approved_only"
+  }
+}

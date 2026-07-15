@@ -1,0 +1,533 @@
+{
+  "scheme_version": "mishiru-research-resource@0.1.0-draft",
+  "prompt_version": "deterministic-evidence-bound@0.1.0",
+  "dataset": "mishiru-sample",
+  "generatedAt": "2026-07-12T12:00:35.966767Z",
+  "apiUsage": {
+    "provider": "none",
+    "calls": 0,
+    "estimatedCostUsd": 0
+  },
+  "pilotTargets": [
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-41461c2ec17b",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b",
+      "canonical_name": "強相関系理論（藤本研究室）",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-470a48ca9298",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-470a48ca9298",
+      "canonical_name": "分子生体計測（出口研究室）",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-59f30ac6858e",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e",
+      "canonical_name": "電磁エネルギー工学（松尾研究室）",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-4dee53c438a0",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0",
+      "canonical_name": "ナノ材料光計測研究室",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-40446adcb967",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-40446adcb967",
+      "canonical_name": "大森研究室",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-b51364f6513f",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-b51364f6513f",
+      "canonical_name": "数理創発システム（西成研究室）",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-46e67b3d62b0",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0",
+      "canonical_name": "伊井研究室",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-0dca02346edd",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-0dca02346edd",
+      "canonical_name": "プラズマ理工学（金子・佐々木研究室）",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-90b4b3a37829",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829",
+      "canonical_name": "環境・エネルギー工学（成瀬研究室）",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "lab",
+      "sourceId": "sample-lab-f0e46eb2cbf5",
+      "entity_id": "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5",
+      "canonical_name": "有機合成化学研究室",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-d0929ad7a3a1",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+      "canonical_name": "形式科学",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-4ab9bd00503b",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+      "canonical_name": "非古典論理",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-c272ac81b5ef",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+      "canonical_name": "表現論",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-0a0f9070c33e",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+      "canonical_name": "位相幾何学",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-5cce956a2700",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+      "canonical_name": "力学系理論",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-debed2db00ba",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+      "canonical_name": "統計学",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-444b4ac889a8",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+      "canonical_name": "理論計算機科学",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-c501f8a19346",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+      "canonical_name": "システム・制御理論",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-521f89cb1d69",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+      "canonical_name": "弦理論・超対称性",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "field",
+      "sourceId": "sample-field-c61fedefcf07",
+      "entity_id": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+      "canonical_name": "固体物理・半導体物理",
+      "generationMode": "FULL",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-d703e1c50d2e",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-d703e1c50d2e",
+      "canonical_name": "システム制御情報学会",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-1119546fbd7d",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-1119546fbd7d",
+      "canonical_name": "ACM",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-87e1eaed1a84",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-87e1eaed1a84",
+      "canonical_name": "日本刑法学会",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-25a7865f4ff8",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-25a7865f4ff8",
+      "canonical_name": "American Anthropological Association (AAA)",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-54143c54fbfa",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-54143c54fbfa",
+      "canonical_name": "日本動脈硬化学会",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-db13fc2d3f84",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-db13fc2d3f84",
+      "canonical_name": "日本生化学会",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-18b049282fe4",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-18b049282fe4",
+      "canonical_name": "日本薬剤疫学会",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-4495879934d1",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-4495879934d1",
+      "canonical_name": "Society for Mining, Metallurgy & Exploration (SME)",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-50334f1b65ba",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-50334f1b65ba",
+      "canonical_name": "American Astronautical Society",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "society",
+      "sourceId": "sample-society-97696e16fe66",
+      "entity_id": "ent:COLLECTIVE:society:sample-society-97696e16fe66",
+      "canonical_name": "日本臨床腫瘍学会",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-c01e826c2723",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+      "canonical_name": "システム/制御/情報（システム制御情報学会誌）",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-bfe13a915e84",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+      "canonical_name": "Clinical and Experimental Nephrology",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-1fdf5d10b81a",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+      "canonical_name": "Plant Physiology",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-08b9a8007a15",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+      "canonical_name": "エネルギー・資源",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-26aae0d9e8a8",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+      "canonical_name": "Journal of Geophysical Research: Atmospheres",
+      "generationMode": "RAPID",
+      "missingEvidence": []
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-0badcbce964f",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+      "canonical_name": "PNAS",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-1a647b5bd771",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+      "canonical_name": "Digital Creativity",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-483097bb38b1",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+      "canonical_name": "Pain Medicine",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-e0fb7e6148f2",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+      "canonical_name": "デザイン学研究",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    },
+    {
+      "sourceType": "journal",
+      "sourceId": "sample-journal-4cc37a9f577d",
+      "entity_id": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+      "canonical_name": "The Lancet Oncology",
+      "generationMode": "RAPID",
+      "missingEvidence": [
+        "method"
+      ]
+    }
+  ],
+  "modeBreakdown": {
+    "RAPID": 30,
+    "FULL": 10
+  },
+  "tagCounts": {
+    "total": 313,
+    "asserted": 274,
+    "hypothesis": 39,
+    "tension": 0,
+    "bySourceType": {
+      "labs": 66,
+      "fields": 90,
+      "societies": 71,
+      "journals": 86
+    }
+  },
+  "gates": {
+    "G1": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    },
+    "G2": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    },
+    "G3": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    },
+    "G4": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    },
+    "G5": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    },
+    "G6": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    },
+    "G7": {
+      "passed": 40,
+      "total": 40,
+      "rate": 1.0
+    }
+  },
+  "g4": {
+    "passed": 40,
+    "total": 40,
+    "rate": 1.0,
+    "v1Candidate": true,
+    "note": "v1.0候補はG4 80%以上が必要。未達の場合はv0.1のままS4/S5へ戻す。"
+  },
+  "isolatedTags": [
+    "tag:18a7ce91-7cb8-5fc5-b38d-013f3e41489c",
+    "tag:7504eb6c-a136-5dd2-8b84-e9fef0c2a5c4",
+    "tag:169efd68-eddb-5084-b4bf-0766edd3a04e",
+    "tag:e6242624-40b0-5e69-bb3f-7674f81eda07",
+    "tag:4f553690-35e2-586e-ad4a-93a88f820298",
+    "tag:91afe7fc-da70-56e9-b846-74f9d5453185",
+    "tag:3e85dbe8-d64d-5ffc-aad4-8d1a07b60ca7",
+    "tag:5e921d8c-7d42-5175-8039-68a96a6d25ea",
+    "tag:c59fc9cf-ddad-5012-ba62-b367f9e4864a",
+    "tag:5a418ed4-2247-5448-bbcb-1edd844f5d7a",
+    "tag:7d219447-8721-56d8-8f51-e4a8d6aea79d",
+    "tag:c476a572-2339-554e-86cd-a507924ac919",
+    "tag:91070981-5739-502c-92a0-9c46ee771da3",
+    "tag:6beb9fc8-39b9-58e4-bd5d-4d3d8324cb72",
+    "tag:d86ebe26-d4fe-5d6b-9e95-1cfa5920c94c",
+    "tag:a6ac703d-7ab0-51b8-a330-e13ed18c41ec",
+    "tag:bc8fcd71-8d34-564c-bff6-723f24978c9e",
+    "tag:36bc153c-23d3-586c-b0f9-c4b4ae6fff45",
+    "tag:8020a1c7-30c4-5179-b906-3d74ae4079c1",
+    "tag:3eb403c2-a6ca-59d4-90e5-bce4bc71a881",
+    "tag:e2582b9f-7294-5b11-ad4a-41a2b872185e",
+    "tag:f9b243eb-d2d9-5dec-9b62-0c1272f788cd",
+    "tag:c9f4e56d-9a5a-5ed5-be65-155767dabd22",
+    "tag:e0d23817-1556-566e-9191-244462fddf74",
+    "tag:9c23115b-7415-5016-819b-3fe4560803b9",
+    "tag:2788e674-ef51-59fa-9ce0-5f5ddf8e8569",
+    "tag:5de59565-2919-5c55-81b8-89dbd3e71a16",
+    "tag:67f36b5d-6dfa-5289-9757-f7ef88350688",
+    "tag:9fd96237-c50b-5db0-b62a-6ba4dcee3cdc",
+    "tag:87d37912-711d-5cd6-ade9-048a8a6ff185",
+    "tag:3ab21240-518c-5af8-a336-a40ccd61f746",
+    "tag:4b764282-f924-5a4a-bdf2-33d11b26432a",
+    "tag:bd442225-f7de-56c0-b9a5-985e2529e2a7",
+    "tag:ad59b3fa-775a-5aad-bd5e-76be7e44d883",
+    "tag:a5a7c858-a9d7-5baf-bd3a-0bc14f84e2ae",
+    "tag:7f732d79-9e39-5bdf-84d7-ae294d997f03",
+    "tag:db209240-5934-5e74-bbe5-4d30d8f34c2d",
+    "tag:4dce3fb1-031c-507d-a668-59d1668dfc57",
+    "tag:56f6c52c-a3eb-50e8-9ddb-2af2905d4c34"
+  ],
+  "rejectCandidates": [],
+  "missingEvidence": {
+    "ent:COLLECTIVE:lab:sample-lab-41461c2ec17b": [],
+    "ent:COLLECTIVE:lab:sample-lab-470a48ca9298": [],
+    "ent:COLLECTIVE:lab:sample-lab-59f30ac6858e": [],
+    "ent:COLLECTIVE:lab:sample-lab-4dee53c438a0": [],
+    "ent:COLLECTIVE:lab:sample-lab-40446adcb967": [],
+    "ent:COLLECTIVE:lab:sample-lab-b51364f6513f": [],
+    "ent:COLLECTIVE:lab:sample-lab-46e67b3d62b0": [],
+    "ent:COLLECTIVE:lab:sample-lab-0dca02346edd": [
+      "method"
+    ],
+    "ent:COLLECTIVE:lab:sample-lab-90b4b3a37829": [
+      "method"
+    ],
+    "ent:COLLECTIVE:lab:sample-lab-f0e46eb2cbf5": [
+      "method"
+    ],
+    "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1": [],
+    "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b": [],
+    "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef": [],
+    "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e": [],
+    "ent:RESEARCH_FIELD:sample-field-5cce956a2700": [],
+    "ent:RESEARCH_FIELD:sample-field-debed2db00ba": [],
+    "ent:RESEARCH_FIELD:sample-field-444b4ac889a8": [],
+    "ent:RESEARCH_FIELD:sample-field-c501f8a19346": [],
+    "ent:RESEARCH_FIELD:sample-field-521f89cb1d69": [],
+    "ent:RESEARCH_FIELD:sample-field-c61fedefcf07": [],
+    "ent:COLLECTIVE:society:sample-society-d703e1c50d2e": [],
+    "ent:COLLECTIVE:society:sample-society-1119546fbd7d": [],
+    "ent:COLLECTIVE:society:sample-society-87e1eaed1a84": [],
+    "ent:COLLECTIVE:society:sample-society-25a7865f4ff8": [],
+    "ent:COLLECTIVE:society:sample-society-54143c54fbfa": [
+      "method"
+    ],
+    "ent:COLLECTIVE:society:sample-society-db13fc2d3f84": [
+      "method"
+    ],
+    "ent:COLLECTIVE:society:sample-society-18b049282fe4": [
+      "method"
+    ],
+    "ent:COLLECTIVE:society:sample-society-4495879934d1": [
+      "method"
+    ],
+    "ent:COLLECTIVE:society:sample-society-50334f1b65ba": [
+      "method"
+    ],
+    "ent:COLLECTIVE:society:sample-society-97696e16fe66": [
+      "method"
+    ],
+    "ent:COLLECTIVE:journal:sample-journal-c01e826c2723": [],
+    "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84": [],
+    "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a": [],
+    "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15": [],
+    "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8": [],
+    "ent:COLLECTIVE:journal:sample-journal-0badcbce964f": [
+      "method"
+    ],
+    "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771": [
+      "method"
+    ],
+    "ent:COLLECTIVE:journal:sample-journal-483097bb38b1": [
+      "method"
+    ],
+    "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2": [
+      "method"
+    ],
+    "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d": [
+      "method"
+    ]
+  }
+}

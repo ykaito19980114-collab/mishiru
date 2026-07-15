@@ -1,0 +1,41 @@
+sourceType,sourceId,entityName,oldExecutionMode,recalculatedExecutionMode,coreAsserted,exprAsserted,coreHypothesis,nearRank,mixedRank,nearPoolSize,mixedPoolSize
+lab,sample-lab-41461c2ec17b,強相関系理論（藤本研究室）,RAPID,RAPID,0,8,0,1,1,19785,19785
+lab,sample-lab-470a48ca9298,分子生体計測（出口研究室）,RAPID,RAPID,0,7,0,1,1,19785,19785
+lab,sample-lab-59f30ac6858e,電磁エネルギー工学（松尾研究室）,RAPID,RAPID,0,7,0,1,1,19785,19785
+lab,sample-lab-4dee53c438a0,ナノ材料光計測研究室,RAPID,RAPID,0,8,0,1,1,19785,19785
+lab,sample-lab-40446adcb967,大森研究室,RAPID,RAPID,0,7,0,1,1,19785,19785
+lab,sample-lab-b51364f6513f,数理創発システム（西成研究室）,RAPID,RAPID,0,7,0,1,1,19785,19785
+lab,sample-lab-46e67b3d62b0,伊井研究室,RAPID,RAPID,0,6,0,1,1,19785,19785
+lab,sample-lab-0dca02346edd,プラズマ理工学（金子・佐々木研究室）,RAPID,RAPID,0,6,0,1,1,19785,19785
+lab,sample-lab-90b4b3a37829,環境・エネルギー工学（成瀬研究室）,RAPID,RAPID,0,5,0,1,1,19785,19785
+lab,sample-lab-f0e46eb2cbf5,有機合成化学研究室,RAPID,RAPID,0,5,0,1,1,19785,19785
+field,sample-field-d0929ad7a3a1,形式科学,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-4ab9bd00503b,非古典論理,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-c272ac81b5ef,表現論,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-0a0f9070c33e,位相幾何学,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-5cce956a2700,力学系理論,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-debed2db00ba,統計学,FULL,FULL,8,0,1,1,1,83,606
+field,sample-field-444b4ac889a8,理論計算機科学,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-c501f8a19346,システム・制御理論,FULL,FULL,8,0,1,1,1,82,606
+field,sample-field-521f89cb1d69,弦理論・超対称性,FULL,FULL,8,0,1,1,1,85,606
+field,sample-field-c61fedefcf07,固体物理・半導体物理,FULL,FULL,8,0,1,1,1,84,606
+society,sample-society-d703e1c50d2e,システム制御情報学会,RAPID,RAPID,0,7,0,1,1,54,1700
+society,sample-society-1119546fbd7d,ACM,RAPID,RAPID,0,7,0,1,1,358,1700
+society,sample-society-87e1eaed1a84,日本刑法学会,RAPID,RAPID,0,7,0,1,1,301,1700
+society,sample-society-25a7865f4ff8,American Anthropological Association (AAA),RAPID,RAPID,0,8,0,1,2,153,1700
+society,sample-society-54143c54fbfa,日本動脈硬化学会,RAPID,RAPID,0,6,0,1,1,443,1700
+society,sample-society-db13fc2d3f84,日本生化学会,RAPID,RAPID,0,4,0,1,1,443,1700
+society,sample-society-18b049282fe4,日本薬剤疫学会,RAPID,RAPID,0,6,0,1,1,443,1700
+society,sample-society-4495879934d1,"Society for Mining, Metallurgy & Exploration (SME)",RAPID,RAPID,0,5,0,1,1,358,1700
+society,sample-society-50334f1b65ba,American Astronautical Society,RAPID,RAPID,0,6,0,1,1,248,1700
+society,sample-society-97696e16fe66,日本臨床腫瘍学会,RAPID,RAPID,0,6,0,,2,300,1700
+journal,sample-journal-c01e826c2723,システム/制御/情報（システム制御情報学会誌）,RAPID,RAPID,0,7,0,1,1,53,1648
+journal,sample-journal-bfe13a915e84,Clinical and Experimental Nephrology,RAPID,RAPID,0,7,0,1,1,559,1648
+journal,sample-journal-1fdf5d10b81a,Plant Physiology,RAPID,RAPID,0,7,0,1,1,559,1648
+journal,sample-journal-08b9a8007a15,エネルギー・資源,RAPID,RAPID,0,7,0,1,1,345,1648
+journal,sample-journal-26aae0d9e8a8,Journal of Geophysical Research: Atmospheres,RAPID,RAPID,0,8,0,1,1,230,1648
+journal,sample-journal-0badcbce964f,PNAS,RAPID,RAPID,0,6,0,2,2,559,1648
+journal,sample-journal-1a647b5bd771,Digital Creativity,RAPID,RAPID,0,6,0,1,1,345,1648
+journal,sample-journal-483097bb38b1,Pain Medicine,RAPID,RAPID,0,6,0,1,1,230,1648
+journal,sample-journal-e0fb7e6148f2,デザイン学研究,RAPID,RAPID,0,6,0,1,1,156,1648
+journal,sample-journal-4cc37a9f577d,The Lancet Oncology,RAPID,RAPID,0,6,0,1,1,29,1648

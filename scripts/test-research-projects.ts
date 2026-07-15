@@ -1,0 +1,35 @@
+import fs from "fs";
+import os from "os";
+import path from "path";
+import assert from "node:assert/strict";
+import { ConsultationMemoRepository, ResearchProjectRepository, ResearchProjectVersionRepository } from "../server/research-project-repository";
+import { ResearchProjectService } from "../server/research-project-service";
+import { hasQuestionCraftEvidence, normalizeResearchMaterials } from "../server/question-craft";
+import type { RQCandidate, Step1Response, Step2Response } from "../shared/research-project";
+
+const rq: RQCandidate = { type_name:"R1",rq_title:"問い",public_rq:"何を確かめるか？",academic_rq:"対象をどう記述できるか。",what_we_learn:"構造",methods:"観察",expected_output:"記述",difficulty:"中",is_recommended:true };
+const step1: Step1Response = { decomposition:{target:"対象",phenomenon:"現象",context:"文脈",tension:"違和感",question:"問い",utility:"用途",motivation:"動機"}, research_map_position:{vertical_axis:"社会",horizontal_axis:"記述",domain_name:"社会科学",reason:"理由"}, domain_shifts:[], output_type_proposals:[rq] };
+const outline = { title_public:"研究テーマ",title_academic:"Academic title",mim:"meaning",background:"背景",problem:"問題",purpose:"目的",main_rq:"何を確かめるか？",sub_rqs:["副問い"],related_work_diff:"差分",conceptual_model:["対象","現象"],research_design:"記述研究",target_population:"対象",data_collection:"観察",analysis_method:"分析",evaluation_method:"比較",ethical_considerations:"同意",significance:{academic:"学術",practical:"実務",social:"社会"},limitations:"限界",next_steps:["読む"],interesting_points:"面白さ",difficult_points:["データ"],consultation_questions:["扱えるか"],comments:[],next_actions:[{id:"a1",text:"読む",completed:false}] };
+const step2: Step2Response = { literature_review:{knowns:[],unknowns:[],controversies:[],target_gap_deep:"gap"},search_queries:[],paper_ideas:{reference:[],competitor:[],adjacent:[]},research_outline:outline,academic_mapping:{target_domain:"社会科学",recommended_societies:[],recommended_journals:[]},reporting_guideline:{name:"未定",reason:"方法確定後"},one_sentence_summary:"要約" };
+
+const dir=fs.mkdtempSync(path.join(os.tmpdir(),"labo-project-test-"));
+const file=path.join(dir,"projects.json");
+const projects=new ResearchProjectRepository(file), versions=new ResearchProjectVersionRepository(file), memos=new ConsultationMemoRepository(file);
+const service=new ResearchProjectService(projects,versions);
+const project=service.create({sessionId:"session-a",displayTitle:"最初の本",sourceMode:"free_input",freeInput:{recentInterest:"十分な関心の説明",discomfort:"違和感",graduateTopic:"",reason:"",referenceInfo:"",notes:""},materials:[],step1Response:step1,selectedRq:rq,step2Response:step2});
+assert.equal(projects.list("session-a").length,1,"new project");
+assert.equal(projects.list("session-b").length,0,"session isolation");
+assert.equal(service.update("session-a",project.id,{status:"consultation"})?.status,"consultation","status update");
+const memo=memos.create("session-a",project.id,{versionId:project.currentVersionId,consultationDate:"2026-07-12",person:"教授",affiliation:"研究室",comments:"コメント",critiques:"指摘",references:"文献",rqRevision:"修正",targetRevision:"対象",methodRevision:"方法",nextActions:"次",reflection:"感想",referenceUrl:"https://example.com"});
+assert.ok(memo && memos.list("session-a",project.id).length===1,"memo create");
+const version=versions.create("session-a",project.id,{versionName:"v2 相談後",creationType:"consultation_revision",carryMemos:true});
+assert.ok(version?.sourceMemoIds.includes(memo!.id),"memo inheritance");
+assert.equal(versions.switchCurrent("session-a",project.id,version!.versionId)?.currentVersionId,version!.versionId,"version select");
+const duplicate=projects.duplicate("session-a",project.id,{includeMaterials:true,includeMemos:true,includeNextActions:true});
+assert.ok(duplicate && duplicate.id!==project.id && memos.list("session-a",duplicate.id).length===1,"project duplicate");
+assert.equal(normalizeResearchMaterials([{sourceType:"memo",sourceId:"1",title:"  題  ",pendingTags:["候補",""],userReasonMemo:"  理由 "}])[0].title,"題","material normalization");
+assert.equal(hasQuestionCraftEvidence("saved_items",{recentInterest:"",discomfort:"",graduateTopic:"",reason:"",referenceInfo:"",notes:""},[{sourceType:"memo",sourceId:"1",title:"題",userReasonMemo:"理由"}]),true,"saved evidence");
+assert.equal(projects.delete("session-a",project.id),true,"delete");
+assert.equal(memos.list("session-a",project.id).length,0,"memo cascade");
+fs.rmSync(dir,{recursive:true,force:true});
+console.log("ResearchProject repository/service tests: 12 passed");

@@ -1,0 +1,1134 @@
+{
+  "labDuplicateCandidates": [
+    {
+      "first": "source-lab-05730",
+      "duplicate": "source-lab-16573",
+      "key": "同志社大学|理工学部 電子工学科|超高周波工学研究室|大平 昌敬（）"
+    },
+    {
+      "first": "source-lab-07521",
+      "duplicate": "source-lab-17241",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|天野研究室|天野 佳正"
+    },
+    {
+      "first": "source-lab-07526",
+      "duplicate": "source-lab-17244",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|一國研究室|一國 伸之"
+    },
+    {
+      "first": "source-lab-07518",
+      "duplicate": "source-lab-17248",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|上川研究室|上川 直文"
+    },
+    {
+      "first": "source-lab-07520",
+      "duplicate": "source-lab-17252",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|大窪研究室|大窪 貴洋"
+    },
+    {
+      "first": "source-lab-07506",
+      "duplicate": "source-lab-17264",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|桑折研究室|桑折 道済"
+    },
+    {
+      "first": "source-lab-07519",
+      "duplicate": "source-lab-17265",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|小島研究室|小島 隆"
+    },
+    {
+      "first": "source-lab-07503",
+      "duplicate": "source-lab-17278",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|谷口研究室|谷口 竜王"
+    },
+    {
+      "first": "source-lab-07527",
+      "duplicate": "source-lab-17289",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|中村研究室|中村 将志"
+    },
+    {
+      "first": "source-lab-07512",
+      "duplicate": "source-lab-17298",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|松本研究室|松本 祥治"
+    },
+    {
+      "first": "source-lab-07511",
+      "duplicate": "source-lab-17300",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|三野研究室|三野 孝"
+    },
+    {
+      "first": "source-lab-07513",
+      "duplicate": "source-lab-17305",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|矢貝研究室|矢貝 史樹"
+    },
+    {
+      "first": "source-lab-07505",
+      "duplicate": "source-lab-17308",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|山田研究室|山田 真澄"
+    },
+    {
+      "first": "source-lab-07529",
+      "duplicate": "source-lab-17309",
+      "key": "千葉大学|大学院工学研究院 共生応用化学コース|山田研究室|山田 泰弘"
+    }
+  ],
+  "fieldDuplicateCandidates": [
+    {
+      "first": "field-00017",
+      "duplicate": "field-00018",
+      "key": "有限群論|Annals of Mathematics ／ Inventiones Mathematicae ／ Journal of the AMS ／ Acta Mathematica ／ Journal of the American Mathematical Society (JAMS) ／ Bulletin of the American Mathematical Society ／ Proceedings of the American Mathematical Society"
+    },
+    {
+      "first": "field-00101",
+      "duplicate": "field-00102",
+      "key": "電子論・バンド理論|Physical Review B ／ Nature Physics ／ npj Quantum Materials ／ Physical Review B (PRB) ／ Physical Review Materials ／ Journal of Physics: Condensed Matter (JPCM) ／ Nature Materials ／ Nature Nanotechnology ／ Physica B: Condensed Matter"
+    },
+    {
+      "first": "field-00231",
+      "duplicate": "field-00232",
+      "key": "循環器内科学|Circulation ／ Journal of the American College of Cardiology (JACC) ／ European Heart Journal ／ Gut ／ Gastroenterology ／ Diabetes Care ／ Blood ／ Kidney International ／ Hepatology ／ Annals of Internal Medicine ／ The New England Journal of Medicine ／ The Lancet ／ JAMA ／ American Journal of Respiratory and Critical Care Medicine ／ European Respiratory Journal ／ The American Journal of Gastroenterology ／ Gastrointestinal Endoscopy ／ Endoscopy ／ Diabetes ／ Diabetologia ／ Journal of the American Society of Nephrology (JASN) ／ HemaSphere ／ Neurology ／ Brain ／ Lancet Neurology ／ The Journal of Clinical Endocrinology & Metabolism (JCEM) ／ European Journal of Endocrinology ／ Clinical Infectious Diseases ／ The Lancet Infectious Diseases ／ Arthritis & Rheumatology ／ Annals of the Rheumatic Diseases ／ Journal of Hepatology ／ Journal of the American Geriatrics Society (JAGS) ／ Age and Ageing ／ Atherosclerosis ／ Hypertension ／ Journal of Hypertension ／ The Journal of Allergy and Clinical Immunology (JACI) ／ Allergy"
+    },
+    {
+      "first": "field-00231",
+      "duplicate": "field-00233",
+      "key": "循環器内科学|Circulation ／ Journal of the American College of Cardiology (JACC) ／ European Heart Journal ／ Gut ／ Gastroenterology ／ Diabetes Care ／ Blood ／ Kidney International ／ Hepatology ／ Annals of Internal Medicine ／ The New England Journal of Medicine ／ The Lancet ／ JAMA ／ American Journal of Respiratory and Critical Care Medicine ／ European Respiratory Journal ／ The American Journal of Gastroenterology ／ Gastrointestinal Endoscopy ／ Endoscopy ／ Diabetes ／ Diabetologia ／ Journal of the American Society of Nephrology (JASN) ／ HemaSphere ／ Neurology ／ Brain ／ Lancet Neurology ／ The Journal of Clinical Endocrinology & Metabolism (JCEM) ／ European Journal of Endocrinology ／ Clinical Infectious Diseases ／ The Lancet Infectious Diseases ／ Arthritis & Rheumatology ／ Annals of the Rheumatic Diseases ／ Journal of Hepatology ／ Journal of the American Geriatrics Society (JAGS) ／ Age and Ageing ／ Atherosclerosis ／ Hypertension ／ Journal of Hypertension ／ The Journal of Allergy and Clinical Immunology (JACI) ／ Allergy"
+    },
+    {
+      "first": "field-00339",
+      "duplicate": "field-00340",
+      "key": "教師あり学習|Journal of Machine Learning Research (JMLR) ／ IEEE TPAMI ／ Nature Machine Intelligence ／ Machine Learning (Springer) ／ IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) ／ IEEE Transactions on Neural Networks and Learning Systems (TNNLS) ／ Neural Networks (Elsevier) ／ Neural Computation (MIT Press) ／ Artificial Intelligence (Elsevier) ／ Journal of Artificial Intelligence Research (JAIR) ／ Pattern Recognition (Elsevier) ／ IEEE Transactions on Knowledge and Data Engineering (TKDE) ／ Transactions on Machine Learning Research (TMLR)"
+    },
+    {
+      "first": "field-00339",
+      "duplicate": "field-00341",
+      "key": "教師あり学習|Journal of Machine Learning Research (JMLR) ／ IEEE TPAMI ／ Nature Machine Intelligence ／ Machine Learning (Springer) ／ IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) ／ IEEE Transactions on Neural Networks and Learning Systems (TNNLS) ／ Neural Networks (Elsevier) ／ Neural Computation (MIT Press) ／ Artificial Intelligence (Elsevier) ／ Journal of Artificial Intelligence Research (JAIR) ／ Pattern Recognition (Elsevier) ／ IEEE Transactions on Knowledge and Data Engineering (TKDE) ／ Transactions on Machine Learning Research (TMLR)"
+    },
+    {
+      "first": "field-00342",
+      "duplicate": "field-00343",
+      "key": "深層学習アーキテクチャ|Journal of Machine Learning Research (JMLR) ／ IEEE TPAMI ／ Nature Machine Intelligence ／ Machine Learning (Springer) ／ IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) ／ IEEE Transactions on Neural Networks and Learning Systems (TNNLS) ／ Neural Networks (Elsevier) ／ Neural Computation (MIT Press) ／ Artificial Intelligence (Elsevier) ／ Journal of Artificial Intelligence Research (JAIR) ／ Pattern Recognition (Elsevier) ／ IEEE Transactions on Knowledge and Data Engineering (TKDE) ／ Transactions on Machine Learning Research (TMLR)"
+    },
+    {
+      "first": "field-00342",
+      "duplicate": "field-00344",
+      "key": "深層学習アーキテクチャ|Journal of Machine Learning Research (JMLR) ／ IEEE TPAMI ／ Nature Machine Intelligence ／ Machine Learning (Springer) ／ IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI) ／ IEEE Transactions on Neural Networks and Learning Systems (TNNLS) ／ Neural Networks (Elsevier) ／ Neural Computation (MIT Press) ／ Artificial Intelligence (Elsevier) ／ Journal of Artificial Intelligence Research (JAIR) ／ Pattern Recognition (Elsevier) ／ IEEE Transactions on Knowledge and Data Engineering (TKDE) ／ Transactions on Machine Learning Research (TMLR)"
+    },
+    {
+      "first": "field-00419",
+      "duplicate": "field-00420",
+      "key": "ミクロ経済理論|American Economic Review (AER) ／ Econometrica ／ Quarterly Journal of Economics (QJE) ／ Journal of Political Economy (JPE) ／ Review of Economic Studies (REStud) ／ Review of Economics and Statistics (REStat) ／ Economic Journal (EJ) ／ American Economic Journal: Applied Economics"
+    },
+    {
+      "first": "field-00419",
+      "duplicate": "field-00421",
+      "key": "ミクロ経済理論|American Economic Review (AER) ／ Econometrica ／ Quarterly Journal of Economics (QJE) ／ Journal of Political Economy (JPE) ／ Review of Economic Studies (REStud) ／ Review of Economics and Statistics (REStat) ／ Economic Journal (EJ) ／ American Economic Journal: Applied Economics"
+    }
+  ],
+  "societyDuplicateCandidates": [
+    {
+      "first": "society-00018",
+      "duplicate": "society-00029",
+      "key": "日本応用数理学会|https://jsiam.org/"
+    },
+    {
+      "first": "society-00034",
+      "duplicate": "society-00053",
+      "key": "European Association for Computer Science Logic (EACSL)|https://www.eacsl.org/"
+    },
+    {
+      "first": "society-00056",
+      "duplicate": "society-00057",
+      "key": "光化学協会|https://photochemistry.jp/"
+    },
+    {
+      "first": "society-00063",
+      "duplicate": "society-00064",
+      "key": "日本化学会|https://www.chemistry.or.jp/"
+    },
+    {
+      "first": "society-00063",
+      "duplicate": "society-00065",
+      "key": "日本化学会|https://www.chemistry.or.jp/"
+    },
+    {
+      "first": "society-00076",
+      "duplicate": "society-00077",
+      "key": "触媒学会|https://catsj.jp"
+    },
+    {
+      "first": "society-00079",
+      "duplicate": "society-00080",
+      "key": "錯体化学会|http://www.sakutai.jp/"
+    },
+    {
+      "first": "society-00081",
+      "duplicate": "society-00082",
+      "key": "電気化学会|https://www.electrochem.jp"
+    },
+    {
+      "first": "society-00089",
+      "duplicate": "society-00090",
+      "key": "American Chemical Society (ACS)|https://www.acs.org"
+    },
+    {
+      "first": "society-00089",
+      "duplicate": "society-00091",
+      "key": "American Chemical Society (ACS)|https://www.acs.org"
+    },
+    {
+      "first": "society-00089",
+      "duplicate": "society-00092",
+      "key": "American Chemical Society (ACS)|https://www.acs.org"
+    },
+    {
+      "first": "society-00089",
+      "duplicate": "society-00093",
+      "key": "American Chemical Society (ACS)|https://www.acs.org"
+    },
+    {
+      "first": "society-00103",
+      "duplicate": "society-00104",
+      "key": "Royal Society of Chemistry (RSC)|https://www.rsc.org/"
+    },
+    {
+      "first": "society-00103",
+      "duplicate": "society-00105",
+      "key": "Royal Society of Chemistry (RSC)|https://www.rsc.org/"
+    },
+    {
+      "first": "society-00103",
+      "duplicate": "society-00106",
+      "key": "Royal Society of Chemistry (RSC)|https://www.rsc.org/"
+    },
+    {
+      "first": "society-00103",
+      "duplicate": "society-00107",
+      "key": "Royal Society of Chemistry (RSC)|https://www.rsc.org/"
+    },
+    {
+      "first": "society-00109",
+      "duplicate": "society-00110",
+      "key": "The Electrochemical Society (ECS)|https://www.electrochem.org/"
+    },
+    {
+      "first": "society-00119",
+      "duplicate": "society-00120",
+      "key": "日本惑星科学会|https://www.wakusei.jp/"
+    },
+    {
+      "first": "society-00137",
+      "duplicate": "society-00138",
+      "key": "The Meteoritical Society|https://meteoritical.org/"
+    },
+    {
+      "first": "society-00139",
+      "duplicate": "society-00140",
+      "key": "一般社団法人日本物理学会 (JPS)|https://www.jps.or.jp/"
+    },
+    {
+      "first": "society-00144",
+      "duplicate": "society-00145",
+      "key": "公益社団法人応用物理学会 (JSAP)|https://www.jsap.or.jp/"
+    },
+    {
+      "first": "society-00146",
+      "duplicate": "society-00147",
+      "key": "公益社団法人日本磁気学会 (MSJ)|https://www.magnetics.jp/en/"
+    },
+    {
+      "first": "society-00148",
+      "duplicate": "society-00149",
+      "key": "公益社団法人日本表面真空学会 (JVSS)|https://www.jvss.jp/"
+    },
+    {
+      "first": "society-00150",
+      "duplicate": "society-00151",
+      "key": "応用物理学会|https://www.jsap.or.jp"
+    },
+    {
+      "first": "society-00152",
+      "duplicate": "society-00153",
+      "key": "日本物理学会|https://www.jps.or.jp"
+    },
+    {
+      "first": "society-00152",
+      "duplicate": "society-00154",
+      "key": "日本物理学会|https://www.jps.or.jp"
+    },
+    {
+      "first": "society-00161",
+      "duplicate": "society-00162",
+      "key": "American Physical Society (APS)|https://www.aps.org/"
+    },
+    {
+      "first": "society-00161",
+      "duplicate": "society-00163",
+      "key": "American Physical Society (APS)|https://www.aps.org/"
+    },
+    {
+      "first": "society-00185",
+      "duplicate": "society-00186",
+      "key": "日本内科学会|https://www.naika.or.jp"
+    },
+    {
+      "first": "society-00185",
+      "duplicate": "society-00187",
+      "key": "日本内科学会|https://www.naika.or.jp"
+    },
+    {
+      "first": "society-00188",
+      "duplicate": "society-00189",
+      "key": "日本分子生物学会|https://www.mbsj.jp/"
+    },
+    {
+      "first": "society-00199",
+      "duplicate": "society-00200",
+      "key": "日本外科学会|https://www.jssoc.or.jp"
+    },
+    {
+      "first": "society-00199",
+      "duplicate": "society-00201",
+      "key": "日本外科学会|https://www.jssoc.or.jp"
+    },
+    {
+      "first": "society-00209",
+      "duplicate": "society-00210",
+      "key": "日本救急医学会|https://www.jaam.jp"
+    },
+    {
+      "first": "society-00218",
+      "duplicate": "society-00219",
+      "key": "日本生化学会|https://www.jbsoc.or.jp"
+    },
+    {
+      "first": "society-00224",
+      "duplicate": "society-00225",
+      "key": "日本病理学会|https://pathology.or.jp"
+    },
+    {
+      "first": "society-00243",
+      "duplicate": "society-00244",
+      "key": "日本薬理学会|https://pharmacol.or.jp"
+    },
+    {
+      "first": "society-00246",
+      "duplicate": "society-00247",
+      "key": "日本衛生学会|https://www.nihon-eisei.org/"
+    },
+    {
+      "first": "society-00272",
+      "duplicate": "society-00273",
+      "key": "American College of Physicians (ACP)|https://www.acponline.org"
+    },
+    {
+      "first": "society-00288",
+      "duplicate": "society-00289",
+      "key": "American Society for Pharmacology and Experimental Therapeutics (ASPET)|https://www.aspet.org"
+    },
+    {
+      "first": "society-00316",
+      "duplicate": "society-00317",
+      "key": "Federation of American Societies for Experimental Biology (FASEB)|https://www.google.com/search?q=Federation%20of%20American%20Societies%20for%20Experimental%20Biology%20%28FASEB%29"
+    },
+    {
+      "first": "society-00330",
+      "duplicate": "society-00331",
+      "key": "World Medical Association (WMA)|https://www.google.com/search?q=World%20Medical%20Association%20%28WMA%29"
+    },
+    {
+      "first": "society-00175",
+      "duplicate": "society-00337",
+      "key": "日本アレルギー学会|https://www.jsaweb.jp"
+    },
+    {
+      "first": "society-00176",
+      "duplicate": "society-00338",
+      "key": "日本ウイルス学会|https://jsv.umin.jp"
+    },
+    {
+      "first": "society-00339",
+      "duplicate": "society-00340",
+      "key": "日本ゲノム編集学会|https://jsgedit.jp/"
+    },
+    {
+      "first": "society-00180",
+      "duplicate": "society-00346",
+      "key": "日本人類遺伝学会|https://jshg.jp"
+    },
+    {
+      "first": "society-00182",
+      "duplicate": "society-00348",
+      "key": "日本免疫学会|https://www.jsi-men-eki.org"
+    },
+    {
+      "first": "society-00188",
+      "duplicate": "society-00350",
+      "key": "日本分子生物学会|https://www.mbsj.jp/"
+    },
+    {
+      "first": "society-00188",
+      "duplicate": "society-00351",
+      "key": "日本分子生物学会|https://www.mbsj.jp/"
+    },
+    {
+      "first": "society-00188",
+      "duplicate": "society-00352",
+      "key": "日本分子生物学会|https://www.mbsj.jp/"
+    },
+    {
+      "first": "society-00188",
+      "duplicate": "society-00353",
+      "key": "日本分子生物学会|https://www.mbsj.jp/"
+    },
+    {
+      "first": "society-00354",
+      "duplicate": "society-00355",
+      "key": "日本動物学会|https://www.zoology.or.jp/"
+    },
+    {
+      "first": "society-00356",
+      "duplicate": "society-00357",
+      "key": "日本動物行動学会|https://ethology.jp/"
+    },
+    {
+      "first": "society-00368",
+      "duplicate": "society-00369",
+      "key": "日本植物学会|https://bsj.or.jp/"
+    },
+    {
+      "first": "society-00374",
+      "duplicate": "society-00375",
+      "key": "日本比較生理生化学会|https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E6%AF%94%E8%BC%83%E7%94%9F%E7%90%86%E7%94%9F%E5%8C%96%E5%AD%A6%E4%BC%9A"
+    },
+    {
+      "first": "society-00218",
+      "duplicate": "society-00378",
+      "key": "日本生化学会|https://www.jbsoc.or.jp"
+    },
+    {
+      "first": "society-00218",
+      "duplicate": "society-00379",
+      "key": "日本生化学会|https://www.jbsoc.or.jp"
+    },
+    {
+      "first": "society-00220",
+      "duplicate": "society-00382",
+      "key": "日本生理学会|http://physiology.jp"
+    },
+    {
+      "first": "society-00390",
+      "duplicate": "society-00391",
+      "key": "日本細胞生物学会|https://www.jscb.gr.jp/"
+    },
+    {
+      "first": "society-00233",
+      "duplicate": "society-00392",
+      "key": "日本細菌学会|https://jsbac.org"
+    },
+    {
+      "first": "society-00234",
+      "duplicate": "society-00393",
+      "key": "日本組織細胞化学会|https://jshc.nacos.com"
+    },
+    {
+      "first": "society-00401",
+      "duplicate": "society-00402",
+      "key": "日本進化学会|http://sesj.kenkyuukai.jp/"
+    },
+    {
+      "first": "society-00404",
+      "duplicate": "society-00405",
+      "key": "日本遺伝学会|https://gsj3.org/"
+    },
+    {
+      "first": "society-00126",
+      "duplicate": "society-00406",
+      "key": "日本陸水学会|https://www.jslim.jp/"
+    },
+    {
+      "first": "society-00263",
+      "duplicate": "society-00413",
+      "key": "American Association for the Advancement of Science (AAAS)|https://www.aaas.org"
+    },
+    {
+      "first": "society-00265",
+      "duplicate": "society-00414",
+      "key": "American Association of Immunologists (AAI)|https://www.aai.org"
+    },
+    {
+      "first": "society-00284",
+      "duplicate": "society-00417",
+      "key": "American Society for Biochemistry and Molecular Biology (ASBMB)|https://www.asbmb.org"
+    },
+    {
+      "first": "society-00284",
+      "duplicate": "society-00418",
+      "key": "American Society for Biochemistry and Molecular Biology (ASBMB)|https://www.asbmb.org"
+    },
+    {
+      "first": "society-00287",
+      "duplicate": "society-00420",
+      "key": "American Society for Microbiology (ASM)|https://asm.org"
+    },
+    {
+      "first": "society-00433",
+      "duplicate": "society-00434",
+      "key": "EMBO|https://www.embo.org"
+    },
+    {
+      "first": "society-00445",
+      "duplicate": "society-00446",
+      "key": "Federation of European Biochemical Societies (FEBS)|https://www.google.com/search?q=Federation%20of%20European%20Biochemical%20Societies%20%28FEBS%29"
+    },
+    {
+      "first": "society-00445",
+      "duplicate": "society-00447",
+      "key": "Federation of European Biochemical Societies (FEBS)|https://www.google.com/search?q=Federation%20of%20European%20Biochemical%20Societies%20%28FEBS%29"
+    },
+    {
+      "first": "society-00458",
+      "duplicate": "society-00459",
+      "key": "International Society for Computational Biology (ISCB)|https://www.iscb.org/"
+    },
+    {
+      "first": "society-00476",
+      "duplicate": "society-00477",
+      "key": "Society for Experimental Biology (SEB)|https://www.google.com/search?q=Society%20for%20Experimental%20Biology%20%28SEB%29"
+    },
+    {
+      "first": "society-00332",
+      "duplicate": "society-00504",
+      "key": "応用生態工学会|https://www.ecesj.com/"
+    },
+    {
+      "first": "society-00361",
+      "duplicate": "society-00505",
+      "key": "日本微生物生態学会|https://www.microbial-ecology.jp/"
+    },
+    {
+      "first": "society-00365",
+      "duplicate": "society-00506",
+      "key": "日本景観生態学会|https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E6%99%AF%E8%A6%B3%E7%94%9F%E6%85%8B%E5%AD%A6%E4%BC%9A"
+    },
+    {
+      "first": "society-00380",
+      "duplicate": "society-00508",
+      "key": "日本生態学会|https://www.esj.ne.jp/"
+    },
+    {
+      "first": "society-00126",
+      "duplicate": "society-00509",
+      "key": "日本陸水学会|https://www.jslim.jp/"
+    },
+    {
+      "first": "society-00436",
+      "duplicate": "society-00511",
+      "key": "Ecological Society of America (ESA)|https://esa.org/"
+    },
+    {
+      "first": "society-00455",
+      "duplicate": "society-00512",
+      "key": "International Association for Ecology (INTECOL)|https://www.google.com/search?q=International%20Association%20for%20Ecology%20%28INTECOL%29"
+    },
+    {
+      "first": "society-00460",
+      "duplicate": "society-00513",
+      "key": "International Society for Microbial Ecology (ISME)|https://www.google.com/search?q=International%20Society%20for%20Microbial%20Ecology%20%28ISME%29"
+    },
+    {
+      "first": "society-00474",
+      "duplicate": "society-00514",
+      "key": "Society for Conservation Biology (SCB)|https://conbio.org/"
+    },
+    {
+      "first": "society-00395",
+      "duplicate": "society-00521",
+      "key": "日本繁殖生物学会|https://reproduction.jp/"
+    },
+    {
+      "first": "society-00179",
+      "duplicate": "society-00527",
+      "key": "日本リハビリテーション医学会|https://www.jarm.or.jp"
+    },
+    {
+      "first": "society-00181",
+      "duplicate": "society-00530",
+      "key": "日本健康教育学会|https://nkkg.eiyo.ac.jp/"
+    },
+    {
+      "first": "society-00183",
+      "duplicate": "society-00531",
+      "key": "日本公衆衛生学会|https://www.jsph.jp/"
+    },
+    {
+      "first": "society-00221",
+      "duplicate": "society-00539",
+      "key": "日本産業衛生学会|https://www.sanei.or.jp"
+    },
+    {
+      "first": "society-00223",
+      "duplicate": "society-00540",
+      "key": "日本疫学会|https://jeaweb.jp/"
+    },
+    {
+      "first": "society-00246",
+      "duplicate": "society-00547",
+      "key": "日本衛生学会|https://www.nihon-eisei.org/"
+    },
+    {
+      "first": "society-00283",
+      "duplicate": "society-00550",
+      "key": "American Public Health Association (APHA)|https://www.apha.org/"
+    },
+    {
+      "first": "society-00319",
+      "duplicate": "society-00552",
+      "key": "International Epidemiological Association (IEA)|https://ieaweb.org"
+    },
+    {
+      "first": "society-00174",
+      "duplicate": "society-00559",
+      "key": "日本TDM学会|https://jstdm.jp"
+    },
+    {
+      "first": "society-00241",
+      "duplicate": "society-00565",
+      "key": "日本臨床薬理学会|https://www.jscpt.jp"
+    },
+    {
+      "first": "society-00089",
+      "duplicate": "society-00570",
+      "key": "American Chemical Society (ACS)|https://www.acs.org"
+    },
+    {
+      "first": "society-00343",
+      "duplicate": "society-00576",
+      "key": "日本ビタミン学会|https://www.vitamin-society.jp/"
+    },
+    {
+      "first": "society-00344",
+      "duplicate": "society-00577",
+      "key": "日本乳酸菌学会|https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E4%B9%B3%E9%85%B8%E8%8F%8C%E5%AD%A6%E4%BC%9A"
+    },
+    {
+      "first": "society-00372",
+      "duplicate": "society-00586",
+      "key": "日本植物病理学会|https://www.ppsj.org/"
+    },
+    {
+      "first": "society-00407",
+      "duplicate": "society-00596",
+      "key": "日本雑草学会|https://www.google.com/search?q=%E6%97%A5%E6%9C%AC%E9%9B%91%E8%8D%89%E5%AD%A6%E4%BC%9A"
+    },
+    {
+      "first": "society-00089",
+      "duplicate": "society-00601",
+      "key": "American Chemical Society (ACS)|https://www.acs.org"
+    }
+  ],
+  "journalDuplicateCandidates": [
+    {
+      "first": "journal-00055",
+      "duplicate": "journal-00056",
+      "key": "Bulletin of the Chemical Society of Japan (BCSJ)|https://academic.oup.com/bcsj"
+    },
+    {
+      "first": "journal-00055",
+      "duplicate": "journal-00057",
+      "key": "Bulletin of the Chemical Society of Japan (BCSJ)|https://academic.oup.com/bcsj"
+    },
+    {
+      "first": "journal-00059",
+      "duplicate": "journal-00060",
+      "key": "Chemistry Letters|https://academic.oup.com/chemlett"
+    },
+    {
+      "first": "journal-00082",
+      "duplicate": "journal-00083",
+      "key": "Angewandte Chemie|https://onlinelibrary.wiley.com/journal/15213773"
+    },
+    {
+      "first": "journal-00142",
+      "duplicate": "journal-00143",
+      "key": "Applied Physics Express (APEX)|https://iopscience.iop.org/journal/1882-0786"
+    },
+    {
+      "first": "journal-00144",
+      "duplicate": "journal-00145",
+      "key": "Japanese Journal of Applied Physics (JJAP)|https://iopscience.iop.org/journal/1347-4065"
+    },
+    {
+      "first": "journal-00146",
+      "duplicate": "journal-00147",
+      "key": "Journal of the Physical Society of Japan (JPSJ)|https://journals.jps.jp/journal/jpsj"
+    },
+    {
+      "first": "journal-00148",
+      "duplicate": "journal-00149",
+      "key": "Progress of Theoretical and Experimental Physics (PTEP)|https://academic.oup.com/ptep"
+    },
+    {
+      "first": "journal-00157",
+      "duplicate": "journal-00158",
+      "key": "Nature Physics|https://www.nature.com/nphys/"
+    },
+    {
+      "first": "journal-00166",
+      "duplicate": "journal-00167",
+      "key": "Physical Review Letters (PRL)|https://journals.aps.org/prl/"
+    },
+    {
+      "first": "journal-00197",
+      "duplicate": "journal-00198",
+      "key": "Internal Medicine|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Internal%20Medicine"
+    },
+    {
+      "first": "journal-00197",
+      "duplicate": "journal-00199",
+      "key": "Internal Medicine|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Internal%20Medicine"
+    },
+    {
+      "first": "journal-00223",
+      "duplicate": "journal-00224",
+      "key": "Journal of Pharmacological Sciences|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Journal%20of%20Pharmacological%20Sciences"
+    },
+    {
+      "first": "journal-00234",
+      "duplicate": "journal-00235",
+      "key": "Pathology International (日本病理学会)|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Pathology%20International%20%28%E6%97%A5%E6%9C%AC%E7%97%85%E7%90%86%E5%AD%A6%E4%BC%9A%29"
+    },
+    {
+      "first": "journal-00258",
+      "duplicate": "journal-00259",
+      "key": "日本内科学会雑誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%97%A5%E6%9C%AC%E5%86%85%E7%A7%91%E5%AD%A6%E4%BC%9A%E9%9B%91%E8%AA%8C"
+    },
+    {
+      "first": "journal-00295",
+      "duplicate": "journal-00296",
+      "key": "Annals of Internal Medicine|https://scholar.google.com/scholar?q=Annals%20of%20Internal%20Medicine"
+    },
+    {
+      "first": "journal-00308",
+      "duplicate": "journal-00309",
+      "key": "Cell|https://www.cell.com/cell/home"
+    },
+    {
+      "first": "journal-00330",
+      "duplicate": "journal-00331",
+      "key": "JAMA|https://jamanetwork.com/journals/jama"
+    },
+    {
+      "first": "journal-00330",
+      "duplicate": "journal-00332",
+      "key": "JAMA|https://jamanetwork.com/journals/jama"
+    },
+    {
+      "first": "journal-00344",
+      "duplicate": "journal-00345",
+      "key": "Journal of Pharmacology and Experimental Therapeutics (JPET)|https://scholar.google.com/scholar?q=Journal%20of%20Pharmacology%20and%20Experimental%20Therapeutics%20%28JPET%29"
+    },
+    {
+      "first": "journal-00356",
+      "duplicate": "journal-00357",
+      "key": "Nature Medicine|https://www.nature.com/nm/"
+    },
+    {
+      "first": "journal-00356",
+      "duplicate": "journal-00358",
+      "key": "Nature Medicine|https://www.nature.com/nm/"
+    },
+    {
+      "first": "journal-00369",
+      "duplicate": "journal-00370",
+      "key": "Pharmacological Reviews|https://scholar.google.com/scholar?q=Pharmacological%20Reviews"
+    },
+    {
+      "first": "journal-00393",
+      "duplicate": "journal-00394",
+      "key": "The Lancet|https://www.thelancet.com"
+    },
+    {
+      "first": "journal-00393",
+      "duplicate": "journal-00395",
+      "key": "The Lancet|https://www.thelancet.com"
+    },
+    {
+      "first": "journal-00393",
+      "duplicate": "journal-00396",
+      "key": "The Lancet|https://www.thelancet.com"
+    },
+    {
+      "first": "journal-00401",
+      "duplicate": "journal-00402",
+      "key": "The New England Journal of Medicine (NEJM)|https://scholar.google.com/scholar?q=The%20New%20England%20Journal%20of%20Medicine%20%28NEJM%29"
+    },
+    {
+      "first": "journal-00409",
+      "duplicate": "journal-00410",
+      "key": "Cell Structure and Function|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Cell%20Structure%20and%20Function"
+    },
+    {
+      "first": "journal-00411",
+      "duplicate": "journal-00412",
+      "key": "Development, Growth & Differentiation|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Development%2C%20Growth%20%26%20Differentiation"
+    },
+    {
+      "first": "journal-00415",
+      "duplicate": "journal-00416",
+      "key": "Genes & Genetic Systems|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Genes%20%26%20Genetic%20Systems"
+    },
+    {
+      "first": "journal-00417",
+      "duplicate": "journal-00418",
+      "key": "Genes to Cells|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Genes%20to%20Cells"
+    },
+    {
+      "first": "journal-00417",
+      "duplicate": "journal-00419",
+      "key": "Genes to Cells|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Genes%20to%20Cells"
+    },
+    {
+      "first": "journal-00417",
+      "duplicate": "journal-00420",
+      "key": "Genes to Cells|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Genes%20to%20Cells"
+    },
+    {
+      "first": "journal-00423",
+      "duplicate": "journal-00424",
+      "key": "Journal of Biochemistry|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Journal%20of%20Biochemistry"
+    },
+    {
+      "first": "journal-00425",
+      "duplicate": "journal-00426",
+      "key": "Journal of Biochemistry (JB)|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Journal%20of%20Biochemistry%20%28JB%29"
+    },
+    {
+      "first": "journal-00226",
+      "duplicate": "journal-00428",
+      "key": "Journal of Physiological Sciences|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Journal%20of%20Physiological%20Sciences"
+    },
+    {
+      "first": "journal-00429",
+      "duplicate": "journal-00430",
+      "key": "Journal of Plant Research|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Journal%20of%20Plant%20Research"
+    },
+    {
+      "first": "journal-00436",
+      "duplicate": "journal-00437",
+      "key": "Microbiology and Immunology|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Microbiology%20and%20Immunology"
+    },
+    {
+      "first": "journal-00246",
+      "duplicate": "journal-00447",
+      "key": "The Journal of Biochemistry|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=The%20Journal%20of%20Biochemistry"
+    },
+    {
+      "first": "journal-00246",
+      "duplicate": "journal-00448",
+      "key": "The Journal of Biochemistry|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=The%20Journal%20of%20Biochemistry"
+    },
+    {
+      "first": "journal-00450",
+      "duplicate": "journal-00451",
+      "key": "Zoological Science|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Zoological%20Science"
+    },
+    {
+      "first": "journal-00278",
+      "duplicate": "journal-00454",
+      "key": "生化学 (日本生化学会)|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E7%94%9F%E5%8C%96%E5%AD%A6%20%28%E6%97%A5%E6%9C%AC%E7%94%9F%E5%8C%96%E5%AD%A6%E4%BC%9A%29"
+    },
+    {
+      "first": "journal-00305",
+      "duplicate": "journal-00465",
+      "key": "Brain|https://scholar.google.com/scholar?q=Brain"
+    },
+    {
+      "first": "journal-00308",
+      "duplicate": "journal-00467",
+      "key": "Cell|https://www.cell.com/cell/home"
+    },
+    {
+      "first": "journal-00308",
+      "duplicate": "journal-00468",
+      "key": "Cell|https://www.cell.com/cell/home"
+    },
+    {
+      "first": "journal-00308",
+      "duplicate": "journal-00469",
+      "key": "Cell|https://www.cell.com/cell/home"
+    },
+    {
+      "first": "journal-00478",
+      "duplicate": "journal-00479",
+      "key": "Developmental Cell|https://scholar.google.com/scholar?q=Developmental%20Cell"
+    },
+    {
+      "first": "journal-00489",
+      "duplicate": "journal-00490",
+      "key": "Genes & Development|https://scholar.google.com/scholar?q=Genes%20%26%20Development"
+    },
+    {
+      "first": "journal-00492",
+      "duplicate": "journal-00493",
+      "key": "Genome Biology|https://scholar.google.com/scholar?q=Genome%20Biology"
+    },
+    {
+      "first": "journal-00337",
+      "duplicate": "journal-00503",
+      "key": "Journal of Bacteriology|https://scholar.google.com/scholar?q=Journal%20of%20Bacteriology"
+    },
+    {
+      "first": "journal-00338",
+      "duplicate": "journal-00504",
+      "key": "Journal of Biological Chemistry (JBC)|https://scholar.google.com/scholar?q=Journal%20of%20Biological%20Chemistry%20%28JBC%29"
+    },
+    {
+      "first": "journal-00521",
+      "duplicate": "journal-00522",
+      "key": "Molecular Biology of the Cell|https://scholar.google.com/scholar?q=Molecular%20Biology%20of%20the%20Cell"
+    },
+    {
+      "first": "journal-00355",
+      "duplicate": "journal-00525",
+      "key": "Nature|https://www.nature.com"
+    },
+    {
+      "first": "journal-00355",
+      "duplicate": "journal-00526",
+      "key": "Nature|https://www.nature.com"
+    },
+    {
+      "first": "journal-00527",
+      "duplicate": "journal-00528",
+      "key": "Nature Cell Biology|https://scholar.google.com/scholar?q=Nature%20Cell%20Biology"
+    },
+    {
+      "first": "journal-00540",
+      "duplicate": "journal-00541",
+      "key": "Nucleic Acids Research|https://scholar.google.com/scholar?q=Nucleic%20Acids%20Research"
+    },
+    {
+      "first": "journal-00540",
+      "duplicate": "journal-00542",
+      "key": "Nucleic Acids Research|https://scholar.google.com/scholar?q=Nucleic%20Acids%20Research"
+    },
+    {
+      "first": "journal-00367",
+      "duplicate": "journal-00549",
+      "key": "PNAS|https://www.pnas.org"
+    },
+    {
+      "first": "journal-00389",
+      "duplicate": "journal-00560",
+      "key": "The Journal of Immunology|https://scholar.google.com/scholar?q=The%20Journal%20of%20Immunology"
+    },
+    {
+      "first": "journal-00404",
+      "duplicate": "journal-00570",
+      "key": "mBio|https://scholar.google.com/scholar?q=mBio"
+    },
+    {
+      "first": "journal-00414",
+      "duplicate": "journal-00599",
+      "key": "Ecological Research|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Ecological%20Research"
+    },
+    {
+      "first": "journal-00432",
+      "duplicate": "journal-00600",
+      "key": "Landscape and Ecological Engineering|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Landscape%20and%20Ecological%20Engineering"
+    },
+    {
+      "first": "journal-00433",
+      "duplicate": "journal-00601",
+      "key": "Limnology|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Limnology"
+    },
+    {
+      "first": "journal-00496",
+      "duplicate": "journal-00610",
+      "key": "Global Change Biology|https://scholar.google.com/scholar?q=Global%20Change%20Biology"
+    },
+    {
+      "first": "journal-00431",
+      "duplicate": "journal-00613",
+      "key": "Journal of Reproduction and Development|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=Journal%20of%20Reproduction%20and%20Development"
+    },
+    {
+      "first": "journal-00299",
+      "duplicate": "journal-00653",
+      "key": "Archives of Physical Medicine and Rehabilitation|https://scholar.google.com/scholar?q=Archives%20of%20Physical%20Medicine%20and%20Rehabilitation"
+    },
+    {
+      "first": "journal-00737",
+      "duplicate": "journal-00761",
+      "key": "日本エネルギー学会誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%97%A5%E6%9C%AC%E3%82%A8%E3%83%8D%E3%83%AB%E3%82%AE%E3%83%BC%E5%AD%A6%E4%BC%9A%E8%AA%8C"
+    },
+    {
+      "first": "journal-00791",
+      "duplicate": "journal-00792",
+      "key": "日本建築学会計画系論文集|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%97%A5%E6%9C%AC%E5%BB%BA%E7%AF%89%E5%AD%A6%E4%BC%9A%E8%A8%88%E7%94%BB%E7%B3%BB%E8%AB%96%E6%96%87%E9%9B%86"
+    },
+    {
+      "first": "journal-00802",
+      "duplicate": "journal-00803",
+      "key": "Building and Environment|https://scholar.google.com/scholar?q=Building%20and%20Environment"
+    },
+    {
+      "first": "journal-00030",
+      "duplicate": "journal-00818",
+      "key": "Behaviormetrika|https://www.jstage.jst.go.jp/browse/bhmk"
+    },
+    {
+      "first": "journal-00821",
+      "duplicate": "journal-00822",
+      "key": "IEICE Transactions on Information and Systems|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=IEICE%20Transactions%20on%20Information%20and%20Systems"
+    },
+    {
+      "first": "journal-00821",
+      "duplicate": "journal-00823",
+      "key": "IEICE Transactions on Information and Systems|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=IEICE%20Transactions%20on%20Information%20and%20Systems"
+    },
+    {
+      "first": "journal-00825",
+      "duplicate": "journal-00826",
+      "key": "Journal of Information Processing (JIP)|https://www.jstage.jst.go.jp/browse/ipsjjip"
+    },
+    {
+      "first": "journal-00827",
+      "duplicate": "journal-00828",
+      "key": "コンピュータソフトウェア|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E3%82%B3%E3%83%B3%E3%83%94%E3%83%A5%E3%83%BC%E3%82%BF%E3%82%BD%E3%83%95%E3%83%88%E3%82%A6%E3%82%A7%E3%82%A2"
+    },
+    {
+      "first": "journal-00830",
+      "duplicate": "journal-00831",
+      "key": "人工知能学会論文誌|https://www.jstage.jst.go.jp/browse/tjsai/"
+    },
+    {
+      "first": "journal-00830",
+      "duplicate": "journal-00832",
+      "key": "人工知能学会論文誌|https://www.jstage.jst.go.jp/browse/tjsai/"
+    },
+    {
+      "first": "journal-00024",
+      "duplicate": "journal-00835",
+      "key": "情報処理学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00024",
+      "duplicate": "journal-00836",
+      "key": "情報処理学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00024",
+      "duplicate": "journal-00837",
+      "key": "情報処理学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00024",
+      "duplicate": "journal-00838",
+      "key": "情報処理学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00024",
+      "duplicate": "journal-00839",
+      "key": "情報処理学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%83%85%E5%A0%B1%E5%87%A6%E7%90%86%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00002",
+      "duplicate": "journal-00841",
+      "key": "日本オペレーションズ・リサーチ学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%97%A5%E6%9C%AC%E3%82%AA%E3%83%9A%E3%83%AC%E3%83%BC%E3%82%B7%E3%83%A7%E3%83%B3%E3%82%BA%E3%83%BB%E3%83%AA%E3%82%B5%E3%83%BC%E3%83%81%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00033",
+      "duplicate": "journal-00848",
+      "key": "日本統計学会誌|https://www.jstage.jst.go.jp/browse/jjssj/"
+    },
+    {
+      "first": "journal-00850",
+      "duplicate": "journal-00851",
+      "key": "映像情報メディア学会誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E6%98%A0%E5%83%8F%E6%83%85%E5%A0%B1%E3%83%A1%E3%83%87%E3%82%A3%E3%82%A2%E5%AD%A6%E4%BC%9A%E8%AA%8C"
+    },
+    {
+      "first": "journal-00854",
+      "duplicate": "journal-00855",
+      "key": "自然言語処理|https://www.jstage.jst.go.jp/browse/jnlp"
+    },
+    {
+      "first": "journal-00003",
+      "duplicate": "journal-00857",
+      "key": "計測自動制御学会論文集|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E8%A8%88%E6%B8%AC%E8%87%AA%E5%8B%95%E5%88%B6%E5%BE%A1%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E9%9B%86"
+    },
+    {
+      "first": "journal-00003",
+      "duplicate": "journal-00858",
+      "key": "計測自動制御学会論文集|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E8%A8%88%E6%B8%AC%E8%87%AA%E5%8B%95%E5%88%B6%E5%BE%A1%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E9%9B%86"
+    },
+    {
+      "first": "journal-00859",
+      "duplicate": "journal-00860",
+      "key": "認知科学|https://www.jstage.jst.go.jp/browse/jcss/-char/ja/"
+    },
+    {
+      "first": "journal-00861",
+      "duplicate": "journal-00862",
+      "key": "電子情報通信学会論文誌|https://www.jstage.jst.go.jp/result/global/-char/ja?globalSearchKey=%E9%9B%BB%E5%AD%90%E6%83%85%E5%A0%B1%E9%80%9A%E4%BF%A1%E5%AD%A6%E4%BC%9A%E8%AB%96%E6%96%87%E8%AA%8C"
+    },
+    {
+      "first": "journal-00872",
+      "duplicate": "journal-00873",
+      "key": "Artificial Intelligence (Elsevier)|https://www.sciencedirect.com/journal/artificial-intelligence"
+    },
+    {
+      "first": "journal-00025",
+      "duplicate": "journal-00874",
+      "key": "Communications of the ACM|https://en.wikipedia.org/wiki/Communications_of_the_ACM"
+    },
+    {
+      "first": "journal-00889",
+      "duplicate": "journal-00890",
+      "key": "IEEE Transactions on Knowledge and Data Engineering (TKDE)|https://scholar.google.com/scholar?q=IEEE%20Transactions%20on%20Knowledge%20and%20Data%20Engineering%20%28TKDE%29"
+    },
+    {
+      "first": "journal-00893",
+      "duplicate": "journal-00894",
+      "key": "IEEE Transactions on Neural Networks and Learning Systems (TNNLS)|https://scholar.google.com/scholar?q=IEEE%20Transactions%20on%20Neural%20Networks%20and%20Learning%20Systems%20%28TNNLS%29"
+    },
+    {
+      "first": "journal-00896",
+      "duplicate": "journal-00897",
+      "key": "IEEE Transactions on Pattern Analysis and Machine Intelligence (TPAMI)|https://scholar.google.com/scholar?q=IEEE%20Transactions%20on%20Pattern%20Analysis%20and%20Machine%20Intelligence%20%28TPAMI%29"
+    },
+    {
+      "first": "journal-00908",
+      "duplicate": "journal-00909",
+      "key": "Journal of Artificial Intelligence Research (JAIR)|https://www.jair.org"
+    },
+    {
+      "first": "journal-00911",
+      "duplicate": "journal-00912",
+      "key": "Journal of Machine Learning Research (JMLR)|https://www.jmlr.org/"
+    },
+    {
+      "first": "journal-00026",
+      "duplicate": "journal-00913",
+      "key": "Journal of the ACM (JACM)|https://dl.acm.org/journal/jacm"
+    },
+    {
+      "first": "journal-00914",
+      "duplicate": "journal-00915",
+      "key": "Machine Learning (Springer)|https://www.springer.com/journal/10994"
+    },
+    {
+      "first": "journal-00917",
+      "duplicate": "journal-00918",
+      "key": "Nature Machine Intelligence|https://www.nature.com/natmachintell/"
+    },
+    {
+      "first": "journal-00925",
+      "duplicate": "journal-00926",
+      "key": "Transactions on Machine Learning Research (TMLR)|https://jmlr.org/tmlr/"
+    }
+  ],
+  "notes": [
+    "研究室Excelには都道府県・地域・設置区分が直接ないため、既存data/labs.jsonの検索用マスタは当面維持する。",
+    "学会・ジャーナルと研究室の接続はcandidateで扱い、確定情報として表示しない。"
+  ]
+}

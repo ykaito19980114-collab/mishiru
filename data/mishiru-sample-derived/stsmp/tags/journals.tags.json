@@ -1,0 +1,4818 @@
+[
+  {
+    "tag_id": "tag:a1ff7c1e-5b7f-52b1-b3e1-d013909b307a",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "システム制御情報学会が発行する、システム、制御、情報に関する研究成果を扱う査読付き学術誌。",
+    "controlled": null,
+    "candidate_term": "システム制御情報学会が発行する、システム、制御、情報に関する研究成果を扱う査読付き学術誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406621Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406665Z",
+    "updatedAt": "2026-07-12T12:00:35.406667Z"
+  },
+  {
+    "tag_id": "tag:bebc8993-504b-5716-aa0d-d67c471aa103",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "制御理論",
+    "controlled": null,
+    "candidate_term": "制御理論",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406689Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:relatedFields",
+        "quote": "システム・制御理論 / 制御理論 / サイバネティクス / ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406717Z",
+    "updatedAt": "2026-07-12T12:00:35.406718Z"
+  },
+  {
+    "tag_id": "tag:bc9548ed-b39c-5eac-9ad8-285ffb3ee171",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "システム科学",
+    "controlled": null,
+    "candidate_term": "システム科学",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406729Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:relatedFields",
+        "quote": "システム・制御理論 / 制御理論 / サイバネティクス / ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406752Z",
+    "updatedAt": "2026-07-12T12:00:35.406754Z"
+  },
+  {
+    "tag_id": "tag:e79d69b1-1803-5a27-8d21-4718fa421a8a",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをどのように解析・制御できるのか？",
+    "controlled": null,
+    "candidate_term": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをどのように解析・制御できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406765Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:questions",
+        "quote": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406787Z",
+    "updatedAt": "2026-07-12T12:00:35.406788Z"
+  },
+  {
+    "tag_id": "tag:3cad693f-eae7-58a6-832d-203ffd59556e",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "データ、モデル、最適化、制御理論を組み合わせることで、実システムの性能・安全性・信頼性をどう高められるのか？",
+    "controlled": null,
+    "candidate_term": "データ、モデル、最適化、制御理論を組み合わせることで、実システムの性能・安全性・信頼性をどう高められるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406797Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:questions",
+        "quote": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406819Z",
+    "updatedAt": "2026-07-12T12:00:35.406820Z"
+  },
+  {
+    "tag_id": "tag:a8da90ae-e12b-50ac-86fb-b595502c5747",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "理論的分析",
+    "controlled": "理論研究",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406840Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:questions",
+        "quote": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:articleTypes",
+        "quote": "原著論文／技術論文／確認中",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406862Z",
+    "updatedAt": "2026-07-12T12:00:35.406863Z"
+  },
+  {
+    "tag_id": "tag:6f8d6eef-d57a-5937-8343-bd994dd10181",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "モデリング",
+    "controlled": "モデリング",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406872Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:questions",
+        "quote": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:articleTypes",
+        "quote": "原著論文／技術論文／確認中",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.406894Z",
+    "updatedAt": "2026-07-12T12:00:35.406895Z"
+  },
+  {
+    "tag_id": "tag:3eb403c2-a6ca-59d4-90e5-bce4bc71a881",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406907Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.406929Z",
+    "updatedAt": "2026-07-12T12:00:35.406930Z"
+  },
+  {
+    "tag_id": "tag:e2582b9f-7294-5b11-ad4a-41a2b872185e",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-c01e826c2723",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "OA",
+    "controlled": null,
+    "candidate_term": "OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.406939Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-c01e826c2723",
+    "sourceHash": "8799563f0edec66d118c99065940244dfc746a93d0d2b6b2470f3d8831e11b74",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.406960Z",
+    "updatedAt": "2026-07-12T12:00:35.406962Z"
+  },
+  {
+    "tag_id": "tag:286b1e4c-c392-5b47-b983-ff8f3c750b30",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+    "controlled": null,
+    "candidate_term": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407078Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407102Z",
+    "updatedAt": "2026-07-12T12:00:35.407104Z"
+  },
+  {
+    "tag_id": "tag:ed48baee-7402-5347-b7f7-ed8141d53f57",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "日本腎臓学会が関わる",
+    "controlled": null,
+    "candidate_term": "日本腎臓学会が関わる",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407134Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:relatedFields",
+        "quote": "内科系臨床医学 / 循環器・呼吸器・消化器内科 / 循環器内",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407156Z",
+    "updatedAt": "2026-07-12T12:00:35.407157Z"
+  },
+  {
+    "tag_id": "tag:134249ba-efc0-5485-9bf3-ce7077d8b8b7",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "腎臓病学の基礎・臨床研究を扱う国際誌",
+    "controlled": null,
+    "candidate_term": "腎臓病学の基礎・臨床研究を扱う国際誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407166Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:relatedFields",
+        "quote": "内科系臨床医学 / 循環器・呼吸器・消化器内科 / 循環器内",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407187Z",
+    "updatedAt": "2026-07-12T12:00:35.407188Z"
+  },
+  {
+    "tag_id": "tag:e06c0d5b-0afd-5cb6-b965-a87c693b80ae",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "慢性腎臓病",
+    "controlled": null,
+    "candidate_term": "慢性腎臓病",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407196Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:relatedFields",
+        "quote": "内科系臨床医学 / 循環器・呼吸器・消化器内科 / 循環器内",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407218Z",
+    "updatedAt": "2026-07-12T12:00:35.407219Z"
+  },
+  {
+    "tag_id": "tag:64dbd066-ada5-5280-823e-852986bb3721",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのように発症・進行するのか？",
+    "controlled": null,
+    "candidate_term": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのように発症・進行するのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407229Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:questions",
+        "quote": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407254Z",
+    "updatedAt": "2026-07-12T12:00:35.407258Z"
+  },
+  {
+    "tag_id": "tag:d74b6e44-935c-5513-a024-d905af4a5506",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "臨床研究、腎病理、実験研究を組み合わせて、腎疾患の診断・治療・予後管理をどう改善できるのか？",
+    "controlled": null,
+    "candidate_term": "臨床研究、腎病理、実験研究を組み合わせて、腎疾患の診断・治療・予後管理をどう改善できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407267Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:questions",
+        "quote": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407286Z",
+    "updatedAt": "2026-07-12T12:00:35.407288Z"
+  },
+  {
+    "tag_id": "tag:e25d5322-8e8e-5303-b07b-6720b8f769ce",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "実験",
+    "controlled": "実験",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407304Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:questions",
+        "quote": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:articleTypes",
+        "quote": "原著論文／レビュー／症例報告",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407334Z",
+    "updatedAt": "2026-07-12T12:00:35.407335Z"
+  },
+  {
+    "tag_id": "tag:f9b243eb-d2d9-5dec-9b62-0c1272f788cd",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407347Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.407366Z",
+    "updatedAt": "2026-07-12T12:00:35.407368Z"
+  },
+  {
+    "tag_id": "tag:c9f4e56d-9a5a-5ed5-be65-155767dabd22",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-bfe13a915e84",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407376Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-bfe13a915e84",
+    "sourceHash": "ba4005d77b08343001c971b72b768e3d037fc3abd3c88aa62adc5cd88c425cc3",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.407395Z",
+    "updatedAt": "2026-07-12T12:00:35.407397Z"
+  },
+  {
+    "tag_id": "tag:cb37aa26-82a6-58d0-aff9-6f9e00083e37",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "American Society of Plant Biologists系の、植物生理学・植物分子生物学を扱う国際主要誌。",
+    "controlled": null,
+    "candidate_term": "American Society of Plant Biologists系の、植物生理学・植物分子生物学を扱う国際主要誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407504Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407531Z",
+    "updatedAt": "2026-07-12T12:00:35.407532Z"
+  },
+  {
+    "tag_id": "tag:8cf7755f-363e-5f9c-a9d7-ebe4783d7e01",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "American",
+    "controlled": null,
+    "candidate_term": "American",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407552Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:relatedFields",
+        "quote": "植物学 / 植物分類・植物生理 / 藻類学・菌類学",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407572Z",
+    "updatedAt": "2026-07-12T12:00:35.407573Z"
+  },
+  {
+    "tag_id": "tag:b745f420-8d6a-51ab-982f-68c2cb7e6786",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "Society",
+    "controlled": null,
+    "candidate_term": "Society",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407582Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:relatedFields",
+        "quote": "植物学 / 植物分類・植物生理 / 藻類学・菌類学",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407602Z",
+    "updatedAt": "2026-07-12T12:00:35.407603Z"
+  },
+  {
+    "tag_id": "tag:ad4647b7-ec6d-571b-af84-389bc1286920",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "Plant",
+    "controlled": null,
+    "candidate_term": "Plant",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407611Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:relatedFields",
+        "quote": "植物学 / 植物分類・植物生理 / 藻類学・菌類学",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407630Z",
+    "updatedAt": "2026-07-12T12:00:35.407632Z"
+  },
+  {
+    "tag_id": "tag:5f785d26-118b-5fe2-86b0-00bb22c558e2",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどのように調整するのか？",
+    "controlled": null,
+    "candidate_term": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどのように調整するのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407641Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:questions",
+        "quote": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407660Z",
+    "updatedAt": "2026-07-12T12:00:35.407661Z"
+  },
+  {
+    "tag_id": "tag:e5e70fcc-f42d-5b88-affd-3c9df581f083",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "分子生物学、生理学、ゲノム解析を通じて、植物の成長や環境応答をどう理解できるのか？",
+    "controlled": null,
+    "candidate_term": "分子生物学、生理学、ゲノム解析を通じて、植物の成長や環境応答をどう理解できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407669Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:questions",
+        "quote": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407688Z",
+    "updatedAt": "2026-07-12T12:00:35.407689Z"
+  },
+  {
+    "tag_id": "tag:fc0bc3f7-f651-52ef-9fa1-c0752a42337b",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "解析",
+    "controlled": "解析",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407706Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:questions",
+        "quote": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:articleTypes",
+        "quote": "原著論文／レビュー",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407726Z",
+    "updatedAt": "2026-07-12T12:00:35.407727Z"
+  },
+  {
+    "tag_id": "tag:e0d23817-1556-566e-9191-244462fddf74",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407737Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.407755Z",
+    "updatedAt": "2026-07-12T12:00:35.407756Z"
+  },
+  {
+    "tag_id": "tag:9c23115b-7415-5016-819b-3fe4560803b9",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1fdf5d10b81a",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407764Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1fdf5d10b81a",
+    "sourceHash": "7ee4f16cff314cceb6710c2c2773931b9fa8a56e15bff5694f4a8d696e07fff2",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.407782Z",
+    "updatedAt": "2026-07-12T12:00:35.407784Z"
+  },
+  {
+    "tag_id": "tag:0fff5af9-9701-52b7-a23a-febc785b25b0",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システムに関する和文誌。",
+    "controlled": null,
+    "candidate_term": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システムに関する和文誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407887Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407908Z",
+    "updatedAt": "2026-07-12T12:00:35.407910Z"
+  },
+  {
+    "tag_id": "tag:94291473-e15f-58b5-aa25-fcde585d9755",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "エネルギー・資源学会系の",
+    "controlled": null,
+    "candidate_term": "エネルギー・資源学会系の",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407928Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:relatedFields",
+        "quote": "原子力工学(炉物理 / 核燃料 / 放射線) / エネルギー",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407949Z",
+    "updatedAt": "2026-07-12T12:00:35.407950Z"
+  },
+  {
+    "tag_id": "tag:27295892-45fb-59f4-8c19-b8d481a1c1d4",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "エネルギー",
+    "controlled": null,
+    "candidate_term": "エネルギー",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407958Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:relatedFields",
+        "quote": "原子力工学(炉物理 / 核燃料 / 放射線) / エネルギー",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.407978Z",
+    "updatedAt": "2026-07-12T12:00:35.407979Z"
+  },
+  {
+    "tag_id": "tag:f22a719b-fd95-5959-a7a7-97c618900baa",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "社会システムに関する和文誌",
+    "controlled": null,
+    "candidate_term": "社会システムに関する和文誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.407987Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:relatedFields",
+        "quote": "原子力工学(炉物理 / 核燃料 / 放射線) / エネルギー",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408006Z",
+    "updatedAt": "2026-07-12T12:00:35.408008Z"
+  },
+  {
+    "tag_id": "tag:f567f27c-17b4-51cf-a6a5-41345e9fe4ff",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのように最適化できるのか？",
+    "controlled": null,
+    "candidate_term": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのように最適化できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408016Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:questions",
+        "quote": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408036Z",
+    "updatedAt": "2026-07-12T12:00:35.408037Z"
+  },
+  {
+    "tag_id": "tag:007a3f11-04d5-51b4-9eaa-cd240a620354",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "解説、研究、実践報告を通じて、脱炭素、資源循環、エネルギー政策をどう考えられるのか？",
+    "controlled": null,
+    "candidate_term": "解説、研究、実践報告を通じて、脱炭素、資源循環、エネルギー政策をどう考えられるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408045Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:questions",
+        "quote": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408065Z",
+    "updatedAt": "2026-07-12T12:00:35.408066Z"
+  },
+  {
+    "tag_id": "tag:9b9981c1-9066-5e3d-96f4-505a6b4caab0",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "最適化",
+    "controlled": "最適化",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408083Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:questions",
+        "quote": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:articleTypes",
+        "quote": "解説／総説／研究報告",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408102Z",
+    "updatedAt": "2026-07-12T12:00:35.408104Z"
+  },
+  {
+    "tag_id": "tag:2788e674-ef51-59fa-9ce0-5f5ddf8e8569",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408113Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.408132Z",
+    "updatedAt": "2026-07-12T12:00:35.408133Z"
+  },
+  {
+    "tag_id": "tag:5de59565-2919-5c55-81b8-89dbd3e71a16",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-08b9a8007a15",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "OA",
+    "controlled": null,
+    "candidate_term": "OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408141Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-08b9a8007a15",
+    "sourceHash": "65f432cc44d613012e01231fd072944d3d5ffb9e1082b02f3f41d37d0333ac22",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.408160Z",
+    "updatedAt": "2026-07-12T12:00:35.408161Z"
+  },
+  {
+    "tag_id": "tag:ee95a239-d518-5beb-a374-f9c534295b99",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "AGUが発行する、大気科学を扱う国際主要誌。",
+    "controlled": null,
+    "candidate_term": "AGUが発行する、大気科学を扱う国際主要誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408261Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408286Z",
+    "updatedAt": "2026-07-12T12:00:35.408287Z"
+  },
+  {
+    "tag_id": "tag:91d6cd9e-a921-5d48-9bdd-9b5178aa7bc9",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "大気科学を扱う国際主要誌",
+    "controlled": null,
+    "candidate_term": "大気科学を扱う国際主要誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408306Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:relatedFields",
+        "quote": "開発研究・平和研究 / 各地域研究(アジア / 欧州 / 米",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408326Z",
+    "updatedAt": "2026-07-12T12:00:35.408327Z"
+  },
+  {
+    "tag_id": "tag:0a968f2f-e7d2-5d8c-ba41-1ad9a762542f",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "大気物理",
+    "controlled": null,
+    "candidate_term": "大気物理",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408335Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:relatedFields",
+        "quote": "開発研究・平和研究 / 各地域研究(アジア / 欧州 / 米",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408355Z",
+    "updatedAt": "2026-07-12T12:00:35.408356Z"
+  },
+  {
+    "tag_id": "tag:f34ff062-56b3-5eff-95e7-01ba031f38e8",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "エアロゾル",
+    "controlled": null,
+    "candidate_term": "エアロゾル",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408364Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:relatedFields",
+        "quote": "開発研究・平和研究 / 各地域研究(アジア / 欧州 / 米",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408386Z",
+    "updatedAt": "2026-07-12T12:00:35.408388Z"
+  },
+  {
+    "tag_id": "tag:7e9a5e65-2589-577c-9fb2-bf272d38abe1",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互作用でどう決まるのか？",
+    "controlled": null,
+    "candidate_term": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互作用でどう決まるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408403Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:questions",
+        "quote": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408425Z",
+    "updatedAt": "2026-07-12T12:00:35.408426Z"
+  },
+  {
+    "tag_id": "tag:bba21164-8f74-5db1-9f4b-9bc5fab12681",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "観測、理論、モデル解析を通じて、大気現象と気候への影響をどう理解できるのか？",
+    "controlled": null,
+    "candidate_term": "観測、理論、モデル解析を通じて、大気現象と気候への影響をどう理解できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408434Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:questions",
+        "quote": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408453Z",
+    "updatedAt": "2026-07-12T12:00:35.408454Z"
+  },
+  {
+    "tag_id": "tag:c235eb8f-141b-53fd-b7c7-efc5d8fc1ba7",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "理論的分析",
+    "controlled": "理論研究",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408470Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:questions",
+        "quote": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:articleTypes",
+        "quote": "原著論文",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408491Z",
+    "updatedAt": "2026-07-12T12:00:35.408492Z"
+  },
+  {
+    "tag_id": "tag:acb3b9c5-c4ac-58be-b4a9-75ba4df876af",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "M",
+    "surface": "解析",
+    "controlled": "解析",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408501Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:questions",
+        "quote": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:ff3d39b6"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:articleTypes",
+        "quote": "原著論文",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:45f06166"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408563Z",
+    "updatedAt": "2026-07-12T12:00:35.408565Z"
+  },
+  {
+    "tag_id": "tag:67f36b5d-6dfa-5289-9757-f7ef88350688",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408574Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.408594Z",
+    "updatedAt": "2026-07-12T12:00:35.408596Z"
+  },
+  {
+    "tag_id": "tag:9fd96237-c50b-5db0-b62a-6ba4dcee3cdc",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-26aae0d9e8a8",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408603Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-26aae0d9e8a8",
+    "sourceHash": "cdc22e675b32650bbac05cdf7d99f1b6ba400088d76ac78a70b0806dbe3b2a82",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.408622Z",
+    "updatedAt": "2026-07-12T12:00:35.408623Z"
+  },
+  {
+    "tag_id": "tag:2dfac925-9ec7-59b8-bbd1-147d1c5ed592",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "National Academy of Sciencesが発行する、自然科学・社会科学・医学を横断する国際主要誌。",
+    "controlled": null,
+    "candidate_term": "National Academy of Sciencesが発行する、自然科学・社会科学・医学を横断する国際主要誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408734Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408755Z",
+    "updatedAt": "2026-07-12T12:00:35.408757Z"
+  },
+  {
+    "tag_id": "tag:8d56619e-fbd5-5648-9c9a-5e7cd5c0c062",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "National",
+    "controlled": null,
+    "candidate_term": "National",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408779Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:relatedFields",
+        "quote": "先端医療技術 / 再生医療 / ゲノム医療・精密医療 / 医",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408799Z",
+    "updatedAt": "2026-07-12T12:00:35.408801Z"
+  },
+  {
+    "tag_id": "tag:f49d3107-4235-5de6-aa89-e5ba4f4e79fb",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "Academy",
+    "controlled": null,
+    "candidate_term": "Academy",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408808Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:relatedFields",
+        "quote": "先端医療技術 / 再生医療 / ゲノム医療・精密医療 / 医",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408827Z",
+    "updatedAt": "2026-07-12T12:00:35.408828Z"
+  },
+  {
+    "tag_id": "tag:24fbb986-d29b-5278-bf19-94f1999873d5",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "生命科学",
+    "controlled": null,
+    "candidate_term": "生命科学",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408836Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:relatedFields",
+        "quote": "先端医療技術 / 再生医療 / ゲノム医療・精密医療 / 医",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408855Z",
+    "updatedAt": "2026-07-12T12:00:35.408856Z"
+  },
+  {
+    "tag_id": "tag:17b2a8ac-d39e-55cf-ad95-adf399d4d517",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をどのように更新するのか？",
+    "controlled": null,
+    "candidate_term": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をどのように更新するのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408865Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:questions",
+        "quote": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408883Z",
+    "updatedAt": "2026-07-12T12:00:35.408885Z"
+  },
+  {
+    "tag_id": "tag:2f932b84-3065-5779-975f-3c23b14d814d",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "多様な研究成果を広く共有することで、科学コミュニティ全体の議論や応用をどう促進できるのか？",
+    "controlled": null,
+    "candidate_term": "多様な研究成果を広く共有することで、科学コミュニティ全体の議論や応用をどう促進できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408892Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:questions",
+        "quote": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.408911Z",
+    "updatedAt": "2026-07-12T12:00:35.408912Z"
+  },
+  {
+    "tag_id": "tag:87d37912-711d-5cd6-ade9-048a8a6ff185",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "週刊相当",
+    "controlled": null,
+    "candidate_term": "週刊相当",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408930Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.408948Z",
+    "updatedAt": "2026-07-12T12:00:35.408950Z"
+  },
+  {
+    "tag_id": "tag:3ab21240-518c-5af8-a336-a40ccd61f746",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-0badcbce964f",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.408958Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-0badcbce964f",
+    "sourceHash": "485e30c9b43a51562dc564b66a1455a6dda53f3e7a9fc618c2884de099dc7272",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.408976Z",
+    "updatedAt": "2026-07-12T12:00:35.408977Z"
+  },
+  {
+    "tag_id": "tag:85edc6fb-c580-5393-a530-3af14923aa9e",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "デジタル技術と創造性を扱う国際誌。",
+    "controlled": null,
+    "candidate_term": "デジタル技術と創造性を扱う国際誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409119Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409141Z",
+    "updatedAt": "2026-07-12T12:00:35.409143Z"
+  },
+  {
+    "tag_id": "tag:992c5a59-25b1-53f6-bc9a-3db2f4fa11f8",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "デジタル技術と創造性を扱う国際誌",
+    "controlled": null,
+    "candidate_term": "デジタル技術と創造性を扱う国際誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409161Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:relatedFields",
+        "quote": "ヒューマン情報学 / ヒューマンコンピュータインタラクション",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409181Z",
+    "updatedAt": "2026-07-12T12:00:35.409183Z"
+  },
+  {
+    "tag_id": "tag:6f858939-8064-5bfa-890f-c61ad0aa2002",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "デジタルアート",
+    "controlled": null,
+    "candidate_term": "デジタルアート",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409190Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:relatedFields",
+        "quote": "ヒューマン情報学 / ヒューマンコンピュータインタラクション",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409210Z",
+    "updatedAt": "2026-07-12T12:00:35.409212Z"
+  },
+  {
+    "tag_id": "tag:3f57dc2e-d93d-5556-899b-21c520aa2cdb",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "デザイン",
+    "controlled": null,
+    "candidate_term": "デザイン",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409219Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:relatedFields",
+        "quote": "ヒューマン情報学 / ヒューマンコンピュータインタラクション",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409238Z",
+    "updatedAt": "2026-07-12T12:00:35.409240Z"
+  },
+  {
+    "tag_id": "tag:d53ff14d-7778-5a09-83ae-6fbbdf91ff26",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのように変えるのか？",
+    "controlled": null,
+    "candidate_term": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのように変えるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409258Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:questions",
+        "quote": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409277Z",
+    "updatedAt": "2026-07-12T12:00:35.409279Z"
+  },
+  {
+    "tag_id": "tag:998cf0da-ce32-5944-b270-469b5a52eb22",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "デザイン研究、メディア研究、実践研究を通じて、デジタル創作の方法と価値をどう理解できるのか？",
+    "controlled": null,
+    "candidate_term": "デザイン研究、メディア研究、実践研究を通じて、デジタル創作の方法と価値をどう理解できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409286Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:questions",
+        "quote": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409305Z",
+    "updatedAt": "2026-07-12T12:00:35.409307Z"
+  },
+  {
+    "tag_id": "tag:4b764282-f924-5a4a-bdf2-33d11b26432a",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409323Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.409342Z",
+    "updatedAt": "2026-07-12T12:00:35.409344Z"
+  },
+  {
+    "tag_id": "tag:bd442225-f7de-56c0-b9a5-985e2529e2a7",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-1a647b5bd771",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409351Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-1a647b5bd771",
+    "sourceHash": "108680cdd93194f658be97747ba4305cb996e79909a19d4ca2047fd03592b81f",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.409370Z",
+    "updatedAt": "2026-07-12T12:00:35.409371Z"
+  },
+  {
+    "tag_id": "tag:df999964-90f1-5d24-91a3-c1876234618d",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "疼痛医学を扱う国際誌。",
+    "controlled": null,
+    "candidate_term": "疼痛医学を扱う国際誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409474Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409495Z",
+    "updatedAt": "2026-07-12T12:00:35.409497Z"
+  },
+  {
+    "tag_id": "tag:28cee355-8b7a-5118-9e02-be5dc844f915",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "疼痛医学を扱う国際誌",
+    "controlled": null,
+    "candidate_term": "疼痛医学を扱う国際誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409514Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:relatedFields",
+        "quote": "経済学諸分野 / ミクロ経済学・マクロ経済学 / ミクロ経済",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409534Z",
+    "updatedAt": "2026-07-12T12:00:35.409535Z"
+  },
+  {
+    "tag_id": "tag:ad06508f-27c3-597a-9f33-9866958a8d10",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "慢性疼痛",
+    "controlled": null,
+    "candidate_term": "慢性疼痛",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409543Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:relatedFields",
+        "quote": "経済学諸分野 / ミクロ経済学・マクロ経済学 / ミクロ経済",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409562Z",
+    "updatedAt": "2026-07-12T12:00:35.409563Z"
+  },
+  {
+    "tag_id": "tag:3d968ff0-9883-5007-b7ff-92e3fb8a02a9",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "神経障害性疼痛",
+    "controlled": null,
+    "candidate_term": "神経障害性疼痛",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409571Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:relatedFields",
+        "quote": "経済学諸分野 / ミクロ経済学・マクロ経済学 / ミクロ経済",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409590Z",
+    "updatedAt": "2026-07-12T12:00:35.409591Z"
+  },
+  {
+    "tag_id": "tag:ae65d0e4-7d3d-5db3-b38d-cc5336b2886a",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように組み合わせるべきか？",
+    "controlled": null,
+    "candidate_term": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように組み合わせるべきか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409609Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:questions",
+        "quote": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409628Z",
+    "updatedAt": "2026-07-12T12:00:35.409630Z"
+  },
+  {
+    "tag_id": "tag:95777d9e-b3ec-5f8c-924b-e87476c164f4",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "臨床研究、症例、治療評価を通じて、疼痛管理の安全性と有効性をどう高められるのか？",
+    "controlled": null,
+    "candidate_term": "臨床研究、症例、治療評価を通じて、疼痛管理の安全性と有効性をどう高められるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409637Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:questions",
+        "quote": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.409660Z",
+    "updatedAt": "2026-07-12T12:00:35.409661Z"
+  },
+  {
+    "tag_id": "tag:ad59b3fa-775a-5aad-bd5e-76be7e44d883",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409676Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.409695Z",
+    "updatedAt": "2026-07-12T12:00:35.409696Z"
+  },
+  {
+    "tag_id": "tag:a5a7c858-a9d7-5baf-bd3a-0bc14f84e2ae",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-483097bb38b1",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.409710Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-483097bb38b1",
+    "sourceHash": "ab618c1b56bcd7260b4fbd20b958c6162048cb926c2e9c57e080df7acfa0694c",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.409889Z",
+    "updatedAt": "2026-07-12T12:00:35.409893Z"
+  },
+  {
+    "tag_id": "tag:f6675f40-7952-5a7d-a79d-8632ac61fb62",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "デザイン学を扱う国内誌。",
+    "controlled": null,
+    "candidate_term": "デザイン学を扱う国内誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410296Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.410332Z",
+    "updatedAt": "2026-07-12T12:00:35.410334Z"
+  },
+  {
+    "tag_id": "tag:40b824b9-d343-5c6e-9c06-85af7e0e8974",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "デザイン学を扱う国内誌",
+    "controlled": null,
+    "candidate_term": "デザイン学を扱う国内誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410359Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:relatedFields",
+        "quote": "デザイン学(デザイン思考) / イノベーション研究・技術経営",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.410385Z",
+    "updatedAt": "2026-07-12T12:00:35.410387Z"
+  },
+  {
+    "tag_id": "tag:79b41ced-e099-5ec9-a421-df317a4e1dbf",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "プロダクト",
+    "controlled": null,
+    "candidate_term": "プロダクト",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410428Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:relatedFields",
+        "quote": "デザイン学(デザイン思考) / イノベーション研究・技術経営",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.410453Z",
+    "updatedAt": "2026-07-12T12:00:35.410454Z"
+  },
+  {
+    "tag_id": "tag:722cacfc-006e-5831-bba5-0e021b3d2457",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "サービス",
+    "controlled": null,
+    "candidate_term": "サービス",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410464Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      },
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:relatedFields",
+        "quote": "デザイン学(デザイン思考) / イノベーション研究・技術経営",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:44c0f87c"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.410483Z",
+    "updatedAt": "2026-07-12T12:00:35.410485Z"
+  },
+  {
+    "tag_id": "tag:9db6bfb8-4c12-5a2d-9e2e-2c6bff9af9ad",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "人間の経験や社会課題に対して、デザインはどのような方法で解決案を形にするのか？",
+    "controlled": null,
+    "candidate_term": "人間の経験や社会課題に対して、デザインはどのような方法で解決案を形にするのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410564Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:questions",
+        "quote": "人間の経験や社会課題に対して、デザインはどのような方法で解決",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.410672Z",
+    "updatedAt": "2026-07-12T12:00:35.410677Z"
+  },
+  {
+    "tag_id": "tag:630cb243-b293-57a5-b410-810af0f93863",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "デザイン方法論、評価、事例研究を通じて、人工物・サービス・環境の質をどう高められるのか？",
+    "controlled": null,
+    "candidate_term": "デザイン方法論、評価、事例研究を通じて、人工物・サービス・環境の質をどう高められるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410723Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:questions",
+        "quote": "人間の経験や社会課題に対して、デザインはどのような方法で解決",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.410941Z",
+    "updatedAt": "2026-07-12T12:00:35.410943Z"
+  },
+  {
+    "tag_id": "tag:7f732d79-9e39-5bdf-84d7-ae294d997f03",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "確認中",
+    "controlled": null,
+    "candidate_term": "確認中",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.410996Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.411028Z",
+    "updatedAt": "2026-07-12T12:00:35.411030Z"
+  },
+  {
+    "tag_id": "tag:db209240-5934-5e74-bbe5-4d30d8f34c2d",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-e0fb7e6148f2",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "一部OA",
+    "controlled": null,
+    "candidate_term": "一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.411050Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-e0fb7e6148f2",
+    "sourceHash": "46d58bd113b5fe3a6c10f2dc337253b993f823c94684de8789cb93e8074c6ad1",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.411072Z",
+    "updatedAt": "2026-07-12T12:00:35.411074Z"
+  },
+  {
+    "tag_id": "tag:86c4d0a9-091b-5ddf-a599-4d458650e519",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "Σ",
+    "surface": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。",
+    "controlled": null,
+    "candidate_term": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413570Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.413601Z",
+    "updatedAt": "2026-07-12T12:00:35.413603Z"
+  },
+  {
+    "tag_id": "tag:c94796e8-5f75-50ab-9649-29837f58c5e6",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "臨床腫瘍学を扱うThe",
+    "controlled": null,
+    "candidate_term": "臨床腫瘍学を扱うThe",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413629Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.413652Z",
+    "updatedAt": "2026-07-12T12:00:35.413653Z"
+  },
+  {
+    "tag_id": "tag:508c22fb-02bc-594c-b6e9-2daa0eac2500",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "Lancet系の国際主要誌",
+    "controlled": null,
+    "candidate_term": "Lancet系の国際主要誌",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413663Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.413683Z",
+    "updatedAt": "2026-07-12T12:00:35.413685Z"
+  },
+  {
+    "tag_id": "tag:3818a339-b19f-54c4-a498-996afe7ac44b",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "IS",
+    "surface": "がん臨床試験",
+    "controlled": null,
+    "candidate_term": "がん臨床試験",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413693Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.413712Z",
+    "updatedAt": "2026-07-12T12:00:35.413714Z"
+  },
+  {
+    "tag_id": "tag:c6d69189-61ba-5835-840c-5031c1e4f489",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカムの観点からどう改善できるのか？",
+    "controlled": null,
+    "candidate_term": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカムの観点からどう改善できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413724Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:questions",
+        "quote": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカム",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.413743Z",
+    "updatedAt": "2026-07-12T12:00:35.413745Z"
+  },
+  {
+    "tag_id": "tag:5584055b-3528-56b2-8896-17db3745ab73",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "Q",
+    "surface": "高水準の臨床研究、レビュー、政策論文を通じて、がん治療とがん対策の方向性をどう示せるのか？",
+    "controlled": null,
+    "candidate_term": "高水準の臨床研究、レビュー、政策論文を通じて、がん治療とがん対策の方向性をどう示せるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413753Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:questions",
+        "quote": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカム",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:ff3d39b6"
+      }
+    ],
+    "confidence": 0.6,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.413772Z",
+    "updatedAt": "2026-07-12T12:00:35.413773Z"
+  },
+  {
+    "tag_id": "tag:4dce3fb1-031c-507d-a668-59d1668dfc57",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "月刊",
+    "controlled": null,
+    "candidate_term": "月刊",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413797Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.413820Z",
+    "updatedAt": "2026-07-12T12:00:35.413822Z"
+  },
+  {
+    "tag_id": "tag:56f6c52c-a3eb-50e8-9ddb-2af2905d4c34",
+    "entity": "ent:COLLECTIVE:journal:sample-journal-4cc37a9f577d",
+    "layer": "EXPR",
+    "facet": "SC",
+    "surface": "購読型／一部OA",
+    "controlled": null,
+    "candidate_term": "購読型／一部OA",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.413831Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "journal",
+    "sourceId": "sample-journal-4cc37a9f577d",
+    "sourceHash": "fa3bf5a2c8129812648be248415760f72bd004b61a93beb757df37914a7e50cf",
+    "dataset": "mishiru-sample",
+    "generationMode": "RAPID",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.413849Z",
+    "updatedAt": "2026-07-12T12:00:35.413850Z"
+  }
+]

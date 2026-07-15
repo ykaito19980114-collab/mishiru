@@ -1,0 +1,2356 @@
+[
+  {
+    "id": "card-001",
+    "title": "コンピュータが「0と1の間」を使えたら、何が変わる？",
+    "everyday_hook": "スマホの計算チップ",
+    "hook_genre": "logic",
+    "plain_summary": "ふつうのコンピュータは0か1かで計算しますが、量子コンピュータは「0でも1でもある」不思議な状態を使って計算します。",
+    "why_interesting": "新薬の設計や暗号など、今のスパコンでも歯が立たない問題が解けるかもしれない、計算の常識を書き換える挑戦です。",
+    "area_tags": [
+      "quantum"
+    ],
+    "keywords": [
+      "量子コンピュータ",
+      "量子計算理論",
+      "量子情報"
+    ],
+    "methods": [
+      "理論",
+      "実験"
+    ],
+    "orientation": -0.3,
+    "difficulty": 2,
+    "suited_for": "「そもそもなぜ？」を突き詰めるのが好きな人"
+  },
+  {
+    "id": "card-002",
+    "title": "絶対に盗み見できない通信は作れるのか？",
+    "everyday_hook": "メッセージアプリの鍵マーク",
+    "hook_genre": "info",
+    "plain_summary": "光の粒（光子）に情報を乗せると、盗み見しようとした瞬間に痕跡が残る、物理法則で守られた通信が作れます。",
+    "why_interesting": "「計算が難しいから安全」ではなく「宇宙の法則として安全」という、まったく別次元のセキュリティです。",
+    "area_tags": [
+      "quantum",
+      "photonics"
+    ],
+    "keywords": [
+      "量子情報",
+      "量子光学",
+      "量子もつれ"
+    ],
+    "methods": [
+      "実験",
+      "理論"
+    ],
+    "orientation": -0.2,
+    "difficulty": 2,
+    "suited_for": "セキュリティと物理の両方に興味がある人"
+  },
+  {
+    "id": "card-003",
+    "title": "「もつれた」2つの粒子は、なぜ遠く離れてもつながっているのか？",
+    "everyday_hook": "SFでみる「テレポート」",
+    "hook_genre": "logic",
+    "plain_summary": "量子もつれという現象では、片方を測ると瞬時にもう片方の状態が決まります。アインシュタインも悩んだ不思議です。",
+    "why_interesting": "この「不気味な遠隔作用」こそが、量子通信や量子コンピュータの動力源になっています。",
+    "area_tags": [
+      "quantum"
+    ],
+    "keywords": [
+      "量子もつれ",
+      "量子光学",
+      "量子多体"
+    ],
+    "methods": [
+      "理論",
+      "実験"
+    ],
+    "orientation": -0.8,
+    "difficulty": 3,
+    "suited_for": "常識が通じない世界をじっくり考えたい人"
+  },
+  {
+    "id": "card-004",
+    "title": "組合せが多すぎる問題、物理現象に解かせられない？",
+    "everyday_hook": "配送ルートやシフト表の組み方",
+    "hook_genre": "logic",
+    "plain_summary": "膨大な組合せから最適な答えを探す問題を、量子の性質を使う専用マシン（量子アニーリング）で解く研究です。",
+    "why_interesting": "物流・金融・創薬など「組合せ爆発」に困る現場は無数にあり、実用に一番近い量子技術と言われます。",
+    "area_tags": [
+      "quantum",
+      "math"
+    ],
+    "keywords": [
+      "量子アニーリング",
+      "最適化",
+      "量子計算理論"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "パズルや最適化を現実の問題につなげたい人"
+  },
+  {
+    "id": "card-005",
+    "title": "たくさんの量子が集まると、なぜ「新しい性質」が生まれるのか？",
+    "everyday_hook": "1人と100人で行動が変わる群衆",
+    "hook_genre": "logic",
+    "plain_summary": "電子が1個のときと無数に集まったときでは、まったく違う振る舞いが現れます。多数が織りなす量子の世界を解き明かします。",
+    "why_interesting": "超伝導など「集まって初めて起きる現象」の理解は、次世代デバイスの種そのものです。",
+    "area_tags": [
+      "quantum",
+      "condensed-matter"
+    ],
+    "keywords": [
+      "量子多体",
+      "量子物性",
+      "統計力学"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -0.9,
+    "difficulty": 3,
+    "suited_for": "数式で自然の仕組みを記述したい人"
+  },
+  {
+    "id": "card-006",
+    "title": "原子1個分の精密さで「時間」や「磁場」を測るとどうなる？",
+    "everyday_hook": "GPSの位置がずれる理由",
+    "hook_genre": "making",
+    "plain_summary": "原子の性質を利用した超高精度センサをチップサイズで作る研究です。時間・磁場・加速度を桁違いの精度で測れます。",
+    "why_interesting": "GPSに頼らないナビや、脳の微弱な磁場の計測など、「測れなかったもの」が測れるようになります。",
+    "area_tags": [
+      "quantum",
+      "electronics"
+    ],
+    "keywords": [
+      "チップスケール原子センサ",
+      "量子計測",
+      "MEMS"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "精密なものづくりと物理の融合が好きな人"
+  },
+  {
+    "id": "card-007",
+    "title": "光を1粒ずつ操ると、何ができるようになる？",
+    "everyday_hook": "LEDの光のさらに先",
+    "hook_genre": "logic",
+    "plain_summary": "光の最小単位「光子」を1個ずつ作り、操り、測る技術の研究です。量子コンピュータや量子通信の部品になります。",
+    "why_interesting": "「光を粒として扱う」実験は、教科書の思考実験を現実の装置にする面白さがあります。",
+    "area_tags": [
+      "quantum",
+      "photonics"
+    ],
+    "keywords": [
+      "量子光学",
+      "光子",
+      "量子情報"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": -0.4,
+    "difficulty": 2,
+    "suited_for": "レーザーや光学機器を自分の手で組みたい人"
+  },
+  {
+    "id": "card-008",
+    "title": "電気抵抗がゼロになる「超伝導」は、なぜ起きる？",
+    "everyday_hook": "リニアモーターカーの浮上",
+    "hook_genre": "matter",
+    "plain_summary": "ある温度以下で電気抵抗が完全に消える超伝導。その仕組みの解明と、より高い温度で起こす方法を探ります。",
+    "why_interesting": "室温超伝導が実現すれば、送電ロスゼロ・浮上交通など社会インフラが根本から変わります。",
+    "area_tags": [
+      "condensed-matter"
+    ],
+    "keywords": [
+      "超伝導",
+      "低温物理",
+      "強相関電子系"
+    ],
+    "methods": [
+      "実験",
+      "理論"
+    ],
+    "orientation": -0.6,
+    "difficulty": 2,
+    "suited_for": "物質の中で起きるドラマに惹かれる人"
+  },
+  {
+    "id": "card-009",
+    "title": "電子どうしが「強く影響し合う」物質では何が起きているのか？",
+    "everyday_hook": "満員電車では人の動きが変わる",
+    "hook_genre": "matter",
+    "plain_summary": "電子が互いに強く反発し合う「強相関物質」では、超伝導や巨大磁気応答など予想外の現象が次々に現れます。",
+    "why_interesting": "理論でも予測しきれない未踏領域で、新物質・新現象の発見がいまも続いています。",
+    "area_tags": [
+      "condensed-matter"
+    ],
+    "keywords": [
+      "強相関電子系",
+      "強相関電子系理論",
+      "量子物性"
+    ],
+    "methods": [
+      "理論",
+      "実験"
+    ],
+    "orientation": -0.9,
+    "difficulty": 3,
+    "suited_for": "教科書の先の「未解決」に挑みたい人"
+  },
+  {
+    "id": "card-010",
+    "title": "強力なX線で物質を照らすと、電子の「素顔」が見える？",
+    "everyday_hook": "レントゲン写真のすごい版",
+    "hook_genre": "matter",
+    "plain_summary": "巨大な加速器が生む放射光（超強力なX線）で、物質の中の電子の動きや並び方を直接観察する研究です。",
+    "why_interesting": "新しい超伝導体や電池材料の「なぜ動くのか」を、目で見るように解明できます。",
+    "area_tags": [
+      "condensed-matter"
+    ],
+    "keywords": [
+      "放射光分光",
+      "強相関電子系",
+      "電子状態"
+    ],
+    "methods": [
+      "実験",
+      "データ解析"
+    ],
+    "orientation": -0.5,
+    "difficulty": 2,
+    "suited_for": "大型実験施設を使う研究に憧れる人"
+  },
+  {
+    "id": "card-011",
+    "title": "電子の「自転」でメモリを作ると、なぜ省エネになる？",
+    "everyday_hook": "スマホの電池がすぐ減る問題",
+    "hook_genre": "matter",
+    "plain_summary": "電子は電気だけでなく「スピン（自転のような性質）」を持ちます。これで情報を記録するスピントロニクスの研究です。",
+    "why_interesting": "電源を切っても消えないメモリや超省エネなコンピュータにつながる、物理とエレクトロニクスの境界領域です。",
+    "area_tags": [
+      "condensed-matter",
+      "electronics"
+    ],
+    "keywords": [
+      "スピントロニクス",
+      "磁性",
+      "不揮発性磁気メモリ"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.2,
+    "difficulty": 2,
+    "suited_for": "物理をデバイスの形にしたい人"
+  },
+  {
+    "id": "card-012",
+    "title": "磁石はなぜ磁石なのか、原子レベルで説明できる？",
+    "everyday_hook": "冷蔵庫のマグネット",
+    "hook_genre": "matter",
+    "plain_summary": "身近な磁石の性質は、無数の電子スピンの協調から生まれます。新しい磁性材料の設計と応用を研究します。",
+    "why_interesting": "モーター・ハードディスク・センサなど、磁性材料は現代社会の隠れた主役です。",
+    "area_tags": [
+      "condensed-matter",
+      "materials"
+    ],
+    "keywords": [
+      "磁性",
+      "磁性材料",
+      "高周波磁性デバイス"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0,
+    "difficulty": 1,
+    "suited_for": "身近な現象の「なぜ」を深掘りしたい人"
+  },
+  {
+    "id": "card-013",
+    "title": "マイナス270℃の世界では、物質はどう振る舞う？",
+    "everyday_hook": "冷凍庫よりはるかに冷たい世界",
+    "hook_genre": "matter",
+    "plain_summary": "絶対零度近くまで物質を冷やすと、量子の性質がむき出しになり、常温では見えない現象が現れます。",
+    "why_interesting": "超流動・超伝導など「量子が肉眼スケールで見える」瞬間に立ち会えます。",
+    "area_tags": [
+      "condensed-matter"
+    ],
+    "keywords": [
+      "低温物理",
+      "低温物性",
+      "量子物性"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": -0.8,
+    "difficulty": 2,
+    "suited_for": "極限環境の実験にワクワクする人"
+  },
+  {
+    "id": "card-014",
+    "title": "「曲げても壊れない電子回路」は物理の形（トポロジー）で作れる？",
+    "everyday_hook": "ドーナツとマグカップは同じ形？",
+    "hook_genre": "logic",
+    "plain_summary": "図形の「つながり方」だけに注目する数学（トポロジー）が、壊れにくい電子状態を持つ新物質の発見につながっています。",
+    "why_interesting": "数学の抽象概念が実際の物質の性質を予言する、理論物理のいちばん美しい成功例のひとつです。",
+    "area_tags": [
+      "condensed-matter",
+      "math"
+    ],
+    "keywords": [
+      "トポロジカル物質",
+      "量子物性",
+      "理論"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -1,
+    "difficulty": 3,
+    "suited_for": "数学と物理の境界を歩きたい人"
+  },
+  {
+    "id": "card-015",
+    "title": "厚さ「原子1個」のシート材料は、何がすごい？",
+    "everyday_hook": "鉛筆の芯とセロハンテープ",
+    "hook_genre": "matter",
+    "plain_summary": "グラフェンに代表される原子1層の材料は、薄いのに強く、電気や光に特別な応答を示します。",
+    "why_interesting": "折り曲げられる電子機器や超高速トランジスタなど、「薄さの極限」が新しい機能を生みます。",
+    "area_tags": [
+      "materials",
+      "electronics"
+    ],
+    "keywords": [
+      "原子層材料",
+      "カーボンナノチューブ",
+      "ナノデバイス"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": -0.1,
+    "difficulty": 2,
+    "suited_for": "新素材の最前線に触れたい人"
+  },
+  {
+    "id": "card-016",
+    "title": "ナノの世界で機械を作ると、常識はどう変わる？",
+    "everyday_hook": "スマホが向きを知っている理由",
+    "hook_genre": "making",
+    "plain_summary": "髪の毛の数百分の1サイズの機械（MEMS）を半導体技術で作ります。スマホの加速度センサもその一つです。",
+    "why_interesting": "小さくなると摩擦や空気の意味が変わり、設計の常識も変わる。ものづくりの別世界です。",
+    "area_tags": [
+      "materials",
+      "electronics",
+      "mechanical"
+    ],
+    "keywords": [
+      "MEMS",
+      "マイクロマシン",
+      "センサ"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "ミクロなものづくりに燃える人"
+  },
+  {
+    "id": "card-017",
+    "title": "壊さずに「中の傷」を見つけるには、どうすればいい？",
+    "everyday_hook": "橋やトンネルの老朽化ニュース",
+    "hook_genre": "making",
+    "plain_summary": "超音波や電磁波を使って、構造物や部品を壊さずに内部の欠陥を見つける「非破壊評価」の研究です。",
+    "why_interesting": "インフラの寿命を延ばし事故を防ぐ、社会の安全を支える縁の下の技術です。",
+    "area_tags": [
+      "materials",
+      "mechanical"
+    ],
+    "keywords": [
+      "非破壊評価",
+      "計測",
+      "構造"
+    ],
+    "methods": [
+      "実験",
+      "データ解析"
+    ],
+    "orientation": 0.7,
+    "difficulty": 1,
+    "suited_for": "安全・安心に直結する技術をやりたい人"
+  },
+  {
+    "id": "card-018",
+    "title": "金属の中の「模様」が、強さを決めているって本当？",
+    "everyday_hook": "日本刀の波紋",
+    "hook_genre": "matter",
+    "plain_summary": "金属を顕微鏡で見ると結晶の模様（ミクロ組織）があり、その作り方ひとつで強度や粘り強さが激変します。",
+    "why_interesting": "レシピ（温度と時間）で性質を設計する、料理にも似た材料科学の醍醐味があります。",
+    "area_tags": [
+      "materials"
+    ],
+    "keywords": [
+      "ミクロ組織",
+      "状態図",
+      "材料プロセス"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.3,
+    "difficulty": 1,
+    "suited_for": "顕微鏡の世界と実用の橋渡しをしたい人"
+  },
+  {
+    "id": "card-019",
+    "title": "都市に眠る金属を「採掘」できるか？——資源リサイクルの科学",
+    "everyday_hook": "引き出しの中の古いスマホ",
+    "hook_genre": "nature",
+    "plain_summary": "廃棄された電子機器から貴重な金属を高純度で取り出す技術を研究します。「都市鉱山」の実用化です。",
+    "why_interesting": "資源のない国の資源戦略そのもの。化学と冶金の力で循環型社会を作ります。",
+    "area_tags": [
+      "materials",
+      "energy"
+    ],
+    "keywords": [
+      "資源リサイクル",
+      "金属高純度化",
+      "材料プロセス"
+    ],
+    "methods": [
+      "実験",
+      "フィールド調査"
+    ],
+    "orientation": 0.8,
+    "difficulty": 1,
+    "suited_for": "環境問題に技術で切り込みたい人"
+  },
+  {
+    "id": "card-020",
+    "title": "軽いのに鉄より強い材料は、どう設計する？",
+    "everyday_hook": "飛行機の機体や自転車フレーム",
+    "hook_genre": "matter",
+    "plain_summary": "炭素繊維などを組み合わせた複合材料は、軽さと強さを両立します。その設計と壊れ方の科学です。",
+    "why_interesting": "燃費・安全・デザインの自由度を同時に変える、乗り物づくりの核心技術です。",
+    "area_tags": [
+      "materials",
+      "mechanical"
+    ],
+    "keywords": [
+      "複合材料",
+      "固体力学",
+      "構造"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "強さの仕組みを計算と実験で確かめたい人"
+  },
+  {
+    "id": "card-021",
+    "title": "電気を流すと色や性質が変わる「機能性物質」の正体は？",
+    "everyday_hook": "調光サングラス",
+    "hook_genre": "matter",
+    "plain_summary": "外からの刺激（電気・光・熱）で性質がスイッチする物質を作り、その仕組みを解明する研究です。",
+    "why_interesting": "「材料そのものが機能を持つ」という発想は、デバイスの作り方を根本から変えます。",
+    "area_tags": [
+      "materials",
+      "chemistry"
+    ],
+    "keywords": [
+      "機能性物質",
+      "分子デバイス",
+      "物性"
+    ],
+    "methods": [
+      "実験",
+      "理論"
+    ],
+    "orientation": -0.2,
+    "difficulty": 2,
+    "suited_for": "化学と物理の間で新物質を生みたい人"
+  },
+  {
+    "id": "card-022",
+    "title": "表面のわずか数原子が、材料の運命を決める？",
+    "everyday_hook": "くもらない鏡・さびない包丁",
+    "hook_genre": "matter",
+    "plain_summary": "物質の表面・界面では内部と違う現象が起き、触媒・接着・腐食・半導体の性能を左右します。",
+    "why_interesting": "「表面は物質の顔」。ナノレベルの観察技術で、見えなかった現場を押さえます。",
+    "area_tags": [
+      "materials",
+      "chemistry"
+    ],
+    "keywords": [
+      "表面",
+      "界面",
+      "ナノ計測"
+    ],
+    "methods": [
+      "実験",
+      "データ解析"
+    ],
+    "orientation": -0.3,
+    "difficulty": 2,
+    "suited_for": "精密な観察・分析が性に合う人"
+  },
+  {
+    "id": "card-023",
+    "title": "光を自在に曲げる「人工の結晶」は何に使える？",
+    "everyday_hook": "CDの裏面が虹色に光る理由",
+    "hook_genre": "matter",
+    "plain_summary": "光の波長サイズの周期構造（フォトニック結晶）を作ると、光を閉じ込めたり曲げたり自在に操れます。",
+    "why_interesting": "電気の代わりに光で情報を処理する「光回路」への入口です。",
+    "area_tags": [
+      "photonics",
+      "materials"
+    ],
+    "keywords": [
+      "フォトニック結晶",
+      "光デバイス",
+      "ナノデバイス"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": -0.1,
+    "difficulty": 2,
+    "suited_for": "光の不思議を構造で操りたい人"
+  },
+  {
+    "id": "card-024",
+    "title": "レーザーはなぜ「まっすぐ強い」のか、そしてどこまで強くできる？",
+    "everyday_hook": "レーザーポインタとBlu-ray",
+    "hook_genre": "matter",
+    "plain_summary": "そろった光を作るレーザーの原理を深め、加工・医療・計測へ応用する研究です。",
+    "why_interesting": "金属を一瞬で切る超高出力から、原子を止める超精密まで、光の可能性は桁違いに広い。",
+    "area_tags": [
+      "photonics"
+    ],
+    "keywords": [
+      "レーザー",
+      "光学",
+      "レーザー加工"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.3,
+    "difficulty": 2,
+    "suited_for": "強い光で世界を変えたい人"
+  },
+  {
+    "id": "card-025",
+    "title": "電波と光の間の「テラヘルツ波」は、何を透視できる？",
+    "everyday_hook": "空港の手荷物検査",
+    "hook_genre": "matter",
+    "plain_summary": "電波と光の中間にあるテラヘルツ波は、紙や布を透過しつつ物質を見分けられる未開拓の光です。",
+    "why_interesting": "セキュリティ検査・医薬品検査・超高速通信など、使い道がこれから決まる領域です。",
+    "area_tags": [
+      "photonics",
+      "communication"
+    ],
+    "keywords": [
+      "テラヘルツ",
+      "光計測",
+      "電磁波"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.1,
+    "difficulty": 2,
+    "suited_for": "未開拓の周波数帯を開拓したい人"
+  },
+  {
+    "id": "card-026",
+    "title": "光で「触らずに」ものを動かせるって本当？",
+    "everyday_hook": "SFのトラクタービーム",
+    "hook_genre": "matter",
+    "plain_summary": "光には微小な圧力があり、レーザーで細胞や微粒子をつかんで動かせます（光ピンセット）。",
+    "why_interesting": "ノーベル賞にもなった技術で、生物・化学・物理の実験を根本から変えました。",
+    "area_tags": [
+      "photonics",
+      "bio"
+    ],
+    "keywords": [
+      "光ピンセット",
+      "光計測",
+      "レーザー"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": -0.4,
+    "difficulty": 1,
+    "suited_for": "実験室の「魔法」を自分で扱いたい人"
+  },
+  {
+    "id": "card-027",
+    "title": "光ファイバーの限界は、どこまで伸ばせる？",
+    "everyday_hook": "動画が一瞬で届く仕組み",
+    "hook_genre": "info",
+    "plain_summary": "世界の通信を支える光ファイバー。より多く・より遠く・より速く送るための光技術を研究します。",
+    "why_interesting": "データ量が爆発する時代、通信の物理限界への挑戦は社会の土台工事です。",
+    "area_tags": [
+      "photonics",
+      "communication"
+    ],
+    "keywords": [
+      "光通信",
+      "光デバイス",
+      "フォトニクス"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "インフラ級の技術に関わりたい人"
+  },
+  {
+    "id": "card-028",
+    "title": "電気自動車の心臓「パワー半導体」は、なぜ次世代材料で作る？",
+    "everyday_hook": "EVの航続距離",
+    "hook_genre": "making",
+    "plain_summary": "電力を効率よく変換するパワー半導体。SiC（炭化ケイ素）などの新材料で、ロスの少ない省エネ社会を目指します。",
+    "why_interesting": "同じ電池でも「変換のうまさ」で走行距離が変わる。脱炭素の鍵を握る地味で重要な部品です。",
+    "area_tags": [
+      "electronics",
+      "energy"
+    ],
+    "keywords": [
+      "SiCパワー半導体",
+      "パワー半導体",
+      "半導体"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.7,
+    "difficulty": 2,
+    "suited_for": "省エネと社会実装に直結する研究がしたい人"
+  },
+  {
+    "id": "card-029",
+    "title": "半導体はどこまで小さくできる？——微細化の限界と次の一手",
+    "everyday_hook": "毎年速くなるスマホ",
+    "hook_genre": "making",
+    "plain_summary": "トランジスタを小さくして性能を上げてきた半導体。原子サイズに近づいた今、新しい構造や材料が必要です。",
+    "why_interesting": "世界経済を動かす半導体競争の最前線。物理・化学・電子工学の総合戦です。",
+    "area_tags": [
+      "electronics"
+    ],
+    "keywords": [
+      "半導体",
+      "ナノデバイス",
+      "集積回路"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "ものづくりの最先端に身を置きたい人"
+  },
+  {
+    "id": "card-030",
+    "title": "電線なしで電気を送れたら、社会はどう変わる？",
+    "everyday_hook": "スマホの置くだけ充電",
+    "hook_genre": "making",
+    "plain_summary": "電磁波や磁界を使って、ケーブルなしで電力を届ける無線電力伝送の研究です。走行中のEV充電も視野に入ります。",
+    "why_interesting": "「充電」という行為そのものを消す挑戦。電磁気学が現実のインフラに化けます。",
+    "area_tags": [
+      "electronics",
+      "energy"
+    ],
+    "keywords": [
+      "無線電力伝送",
+      "電磁界数値解析",
+      "電力システム"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.7,
+    "difficulty": 2,
+    "suited_for": "電磁気を使った未来のインフラを作りたい人"
+  },
+  {
+    "id": "card-031",
+    "title": "抵抗ゼロの超伝導で、送電やモーターはどこまで変わる？",
+    "everyday_hook": "送電で消える電気のムダ",
+    "hook_genre": "nature",
+    "plain_summary": "超伝導を電力機器（ケーブル・モーター・磁石）に応用し、エネルギーのムダを極限まで減らす研究です。",
+    "why_interesting": "基礎物理の超伝導を「社会の配線」に落とし込む、理論と工学の橋渡しです。",
+    "area_tags": [
+      "energy",
+      "condensed-matter"
+    ],
+    "keywords": [
+      "超電導電力機器",
+      "超伝導応用",
+      "電力システム"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "物理を大きなスケールで役立てたい人"
+  },
+  {
+    "id": "card-032",
+    "title": "電気をためる・配る「電力システム」を賢くするには？",
+    "everyday_hook": "夏の電力ひっ迫ニュース",
+    "hook_genre": "nature",
+    "plain_summary": "太陽光や風力など変動する電源を、安定した電気として届けるための電力ネットワーク制御を研究します。",
+    "why_interesting": "再エネ時代の「電気の交通整理」。数理・制御・エネルギーが交わる社会インフラの中枢です。",
+    "area_tags": [
+      "energy",
+      "robotics"
+    ],
+    "keywords": [
+      "電力システム",
+      "制御",
+      "エネルギー"
+    ],
+    "methods": [
+      "シミュレーション",
+      "データ解析"
+    ],
+    "orientation": 0.8,
+    "difficulty": 2,
+    "suited_for": "社会全体の仕組みを最適化したい人"
+  },
+  {
+    "id": "card-033",
+    "title": "燃やしても二酸化炭素を出さない燃料は作れるか？",
+    "everyday_hook": "カーボンニュートラルの約束",
+    "hook_genre": "nature",
+    "plain_summary": "水素やアンモニアなど、燃やしてもCO2を出さない「カーボンフリー燃料」の燃焼と利用を研究します。",
+    "why_interesting": "脱炭素の切り札候補。燃え方の科学が地球規模の課題に直結します。",
+    "area_tags": [
+      "energy",
+      "fluid"
+    ],
+    "keywords": [
+      "カーボンフリー燃料",
+      "燃焼",
+      "エネルギー"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.8,
+    "difficulty": 2,
+    "suited_for": "気候変動に工学で立ち向かいたい人"
+  },
+  {
+    "id": "card-034",
+    "title": "太陽光や排熱を「もっと」電気に変えるには？",
+    "everyday_hook": "屋根のソーラーパネル",
+    "hook_genre": "nature",
+    "plain_summary": "光や熱をより高い効率で電気に変える材料・デバイスを研究します。捨てられる熱の再利用も狙います。",
+    "why_interesting": "エネルギー変換効率の1%が、社会全体では莫大な差になります。",
+    "area_tags": [
+      "energy",
+      "materials"
+    ],
+    "keywords": [
+      "エネルギー変換",
+      "太陽電池",
+      "熱電"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.7,
+    "difficulty": 1,
+    "suited_for": "身近なエネルギー問題を材料で解きたい人"
+  },
+  {
+    "id": "card-035",
+    "title": "超高温のプラズマを、どうやって閉じ込める？",
+    "everyday_hook": "地上に太陽を作る核融合",
+    "hook_genre": "nature",
+    "plain_summary": "1億度を超えるプラズマを磁場で閉じ込め、核融合エネルギーを取り出す挑戦です。装置づくりも研究の一部です。",
+    "why_interesting": "実現すれば燃料はほぼ無尽蔵。人類のエネルギー問題を終わらせうる夢の研究です。",
+    "area_tags": [
+      "plasma-space",
+      "energy"
+    ],
+    "keywords": [
+      "プラズマ装置",
+      "核融合",
+      "プラズマ応用"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.2,
+    "difficulty": 3,
+    "suited_for": "巨大装置と極限現象に挑みたい人"
+  },
+  {
+    "id": "card-036",
+    "title": "プラズマは、ものづくりや医療にどう役立つ？",
+    "everyday_hook": "半導体工場とプラズマ滅菌",
+    "hook_genre": "nature",
+    "plain_summary": "電離した気体プラズマは、半導体の加工から表面処理、殺菌・医療まで幅広く使われます。その産業応用を探ります。",
+    "why_interesting": "「第4の物質状態」を道具として使いこなす、応用の裾野がとても広い分野です。",
+    "area_tags": [
+      "plasma-space"
+    ],
+    "keywords": [
+      "プラズマ応用",
+      "産業応用",
+      "プラズマ装置"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "幅広い応用先から入りたい人"
+  },
+  {
+    "id": "card-037",
+    "title": "スマホは、限られた電波をどう分け合っている？",
+    "everyday_hook": "混雑した会場でも通じるLINE",
+    "hook_genre": "info",
+    "plain_summary": "多くの人が同時に使っても通信が成り立つよう、電波（周波数）を賢く使う無線通信技術を研究します。",
+    "why_interesting": "6G時代へ向け、電波という有限資源をどう使い切るかは通信の永遠の課題です。",
+    "area_tags": [
+      "communication"
+    ],
+    "keywords": [
+      "無線通信",
+      "信号処理",
+      "ネットワーク"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "数式と社会インフラを結びたい人"
+  },
+  {
+    "id": "card-038",
+    "title": "レーダーは、雨や車や人をどう「見分けて」いる？",
+    "everyday_hook": "天気予報の雨雲レーダー",
+    "hook_genre": "info",
+    "plain_summary": "電波を飛ばして跳ね返りを分析し、対象の距離・速度・種類を見分けるレーダーの信号処理を研究します。",
+    "why_interesting": "自動運転や防災に不可欠。「見えないものを電波で見る」信号処理の面白さがあります。",
+    "area_tags": [
+      "communication",
+      "info-ai"
+    ],
+    "keywords": [
+      "レーダ",
+      "信号処理",
+      "計測"
+    ],
+    "methods": [
+      "理論",
+      "データ解析"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "信号処理で現実世界を読み解きたい人"
+  },
+  {
+    "id": "card-039",
+    "title": "コンピュータは、どうやって言葉の意味を「理解」する？",
+    "everyday_hook": "ChatGPTとの会話",
+    "hook_genre": "info",
+    "plain_summary": "文章を数値に変え、意味や文脈を扱う自然言語処理の研究です。大規模言語モデルの仕組みや改良を探ります。",
+    "why_interesting": "いま最も社会を動かしているAI技術の中核。日本語特有の難しさへの挑戦もあります。",
+    "area_tags": [
+      "info-ai"
+    ],
+    "keywords": [
+      "自然言語処理",
+      "深層学習",
+      "AI基盤モデル"
+    ],
+    "methods": [
+      "データ解析",
+      "実験"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "言葉とAIの両方に惹かれる人"
+  },
+  {
+    "id": "card-040",
+    "title": "AIは「なぜその答えを出したか」を説明できる？",
+    "everyday_hook": "AI審査で落ちた理由が不明",
+    "hook_genre": "info",
+    "plain_summary": "深層学習の中身はブラックボックスになりがち。判断の根拠を説明できるAIや、その理論的な仕組みを研究します。",
+    "why_interesting": "医療や採用などAIが人生を左右する場面で、「説明できること」は信頼の条件になります。",
+    "area_tags": [
+      "info-ai",
+      "math"
+    ],
+    "keywords": [
+      "統計的機械学習",
+      "機械学習",
+      "深層学習"
+    ],
+    "methods": [
+      "理論",
+      "データ解析"
+    ],
+    "orientation": 0,
+    "difficulty": 3,
+    "suited_for": "AIを数学的に深く理解したい人"
+  },
+  {
+    "id": "card-041",
+    "title": "少ないデータでも賢く学ぶAIは、どう作る？",
+    "everyday_hook": "写真数枚で覚える人間",
+    "hook_genre": "info",
+    "plain_summary": "大量データがないと学べないAIの弱点に対し、統計と機械学習の理論から効率的な学習法を設計します。",
+    "why_interesting": "医療や製造など「データが貴重な現場」でAIを使うための、理論に根ざした挑戦です。",
+    "area_tags": [
+      "info-ai",
+      "math"
+    ],
+    "keywords": [
+      "統計的機械学習",
+      "機械学習",
+      "データ駆動科学"
+    ],
+    "methods": [
+      "理論",
+      "データ解析"
+    ],
+    "orientation": 0.1,
+    "difficulty": 3,
+    "suited_for": "アルゴリズムの根っこを理解したい人"
+  },
+  {
+    "id": "card-042",
+    "title": "膨大なデータから科学の新発見はできるか？",
+    "everyday_hook": "スパコンが解く天気や材料",
+    "hook_genre": "info",
+    "plain_summary": "実験や計算で生まれる大量データをAIで解析し、新材料や新現象を発見する「データ駆動科学」の研究です。",
+    "why_interesting": "実験→理論に次ぐ「第3の科学の方法」。分野の垣根を越えて研究が進みます。",
+    "area_tags": [
+      "info-ai",
+      "math"
+    ],
+    "keywords": [
+      "データ駆動科学",
+      "計算科学",
+      "機械学習"
+    ],
+    "methods": [
+      "データ解析",
+      "シミュレーション"
+    ],
+    "orientation": 0.2,
+    "difficulty": 2,
+    "suited_for": "データで科学の地図を書き換えたい人"
+  },
+  {
+    "id": "card-043",
+    "title": "音楽をコンピュータで分析すると、何がわかる？",
+    "everyday_hook": "音楽アプリのおすすめ",
+    "hook_genre": "info",
+    "plain_summary": "曲の構造やリズム、感情をコンピュータで解析・生成する音楽情報処理の研究です。作曲支援や自動採譜も対象です。",
+    "why_interesting": "芸術と情報科学が出会う分野。「好き」を数式にする面白さと難しさがあります。",
+    "area_tags": [
+      "info-ai"
+    ],
+    "keywords": [
+      "音楽情報処理",
+      "信号処理",
+      "機械学習"
+    ],
+    "methods": [
+      "データ解析",
+      "実験"
+    ],
+    "orientation": 0.3,
+    "difficulty": 1,
+    "suited_for": "趣味と研究を重ねたい人"
+  },
+  {
+    "id": "card-044",
+    "title": "人間の脳をまねた「省エネなAIチップ」は作れる？",
+    "everyday_hook": "脳は電球1個分の電力で動く",
+    "hook_genre": "info",
+    "plain_summary": "脳の神経回路をヒントに、桁違いに省エネな情報処理（脳型コンピューティング）を研究します。",
+    "why_interesting": "AIの電力消費が問題になる今、「脳に学ぶ」発想が次世代計算の突破口かもしれません。",
+    "area_tags": [
+      "info-ai",
+      "electronics"
+    ],
+    "keywords": [
+      "脳型情報処理",
+      "神経回路数理",
+      "ナノデバイス"
+    ],
+    "methods": [
+      "理論",
+      "装置開発"
+    ],
+    "orientation": 0,
+    "difficulty": 3,
+    "suited_for": "生物と情報と電子の融合が好きな人"
+  },
+  {
+    "id": "card-045",
+    "title": "「絶対に解けない問題」と「速く解ける問題」の境界はどこ？",
+    "everyday_hook": "パズルの難しさの正体",
+    "hook_genre": "logic",
+    "plain_summary": "計算の手間がどれだけ増えるかを扱う理論と、効率的な離散アルゴリズムの設計を研究します。",
+    "why_interesting": "コンピュータで「何が原理的に可能か」を決める、情報科学のいちばん深い部分です。",
+    "area_tags": [
+      "math",
+      "info-ai"
+    ],
+    "keywords": [
+      "離散アルゴリズム",
+      "計算理論",
+      "最適化"
+    ],
+    "methods": [
+      "理論"
+    ],
+    "orientation": -0.9,
+    "difficulty": 3,
+    "suited_for": "紙とペンで本質を突き詰めたい人"
+  },
+  {
+    "id": "card-046",
+    "title": "「観測結果」から「原因」を逆算できるか？——逆問題の数理",
+    "everyday_hook": "CTスキャンで体内を再構成",
+    "hook_genre": "logic",
+    "plain_summary": "外から測ったデータをもとに、見えない内部の状態を数学的に推定する「逆問題」を研究します。",
+    "why_interesting": "医療画像・地震・非破壊検査など、「直接見られないものを見る」技術すべての土台です。",
+    "area_tags": [
+      "math"
+    ],
+    "keywords": [
+      "逆問題",
+      "数値解析",
+      "フラクタル解析"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -0.4,
+    "difficulty": 3,
+    "suited_for": "数学を現実の計測につなげたい人"
+  },
+  {
+    "id": "card-047",
+    "title": "脳の複雑な活動は、数式でどこまで説明できる？",
+    "everyday_hook": "ひらめきや記憶の瞬間",
+    "hook_genre": "logic",
+    "plain_summary": "神経細胞のネットワークを数理モデルで表し、脳の情報処理の原理に迫る研究です。",
+    "why_interesting": "生命の最大の謎「脳」を、物理や数学の言葉で解こうとする挑戦です。",
+    "area_tags": [
+      "math",
+      "bio"
+    ],
+    "keywords": [
+      "神経回路数理",
+      "非線形",
+      "数理モデル"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -0.7,
+    "difficulty": 3,
+    "suited_for": "生命現象を数式で捉えたい人"
+  },
+  {
+    "id": "card-048",
+    "title": "小さな変化が大きな結果を生む「非線形」の世界とは？",
+    "everyday_hook": "バタフライ効果",
+    "hook_genre": "logic",
+    "plain_summary": "入力と出力が比例しない「非線形」な現象は、天気・心臓・経済など至る所にあります。その数理を探ります。",
+    "why_interesting": "予測できないカオスの中に潜む秩序を見つける、数学のスリリングな領域です。",
+    "area_tags": [
+      "math"
+    ],
+    "keywords": [
+      "非線形力学",
+      "非線形",
+      "フラクタル解析"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -0.8,
+    "difficulty": 3,
+    "suited_for": "複雑さの中の法則を探したい人"
+  },
+  {
+    "id": "card-049",
+    "title": "自動運転車は、どうやって「危険」を判断している？",
+    "everyday_hook": "自動ブレーキ",
+    "hook_genre": "making",
+    "plain_summary": "センサ情報から周囲を認識し、安全に走るための判断・制御を研究します。AI・制御・機械の総合技術です。",
+    "why_interesting": "人命に関わる意思決定を機械に任せる、技術と倫理が交わる最前線です。",
+    "area_tags": [
+      "robotics",
+      "info-ai"
+    ],
+    "keywords": [
+      "自動運転",
+      "制御",
+      "機械学習"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.7,
+    "difficulty": 2,
+    "suited_for": "AIを現実世界で動かしたい人"
+  },
+  {
+    "id": "card-050",
+    "title": "人と一緒に働くロボットは、どう作れば安全？",
+    "everyday_hook": "工場や介護の現場のロボット",
+    "hook_genre": "making",
+    "plain_summary": "人のそばで協調して動く「人共生ロボット」の機構・制御・安全設計を研究します。",
+    "why_interesting": "囲いの中の産業ロボットから、人と触れ合うロボットへ。設計思想の転換が求められます。",
+    "area_tags": [
+      "robotics"
+    ],
+    "keywords": [
+      "人共生ロボット",
+      "ロボット機構",
+      "制御"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "人の役に立つ機械を手で作りたい人"
+  },
+  {
+    "id": "card-051",
+    "title": "人間そっくりのアンドロイドは、心をどう感じさせる？",
+    "everyday_hook": "受付や案内のロボット",
+    "hook_genre": "making",
+    "plain_summary": "見た目も動きも人間に近いアンドロイドを作り、人がロボットに何を感じるか（人間らしさとは何か）を探ります。",
+    "why_interesting": "ロボット工学でありながら「人間とは何か」を問う、心理学とも交わる異色の研究です。",
+    "area_tags": [
+      "robotics"
+    ],
+    "keywords": [
+      "アンドロイド",
+      "対話ロボット",
+      "HRI"
+    ],
+    "methods": [
+      "実験",
+      "フィールド調査"
+    ],
+    "orientation": 0.3,
+    "difficulty": 2,
+    "suited_for": "技術で人間の本質に迫りたい人"
+  },
+  {
+    "id": "card-052",
+    "title": "ロボットの手は、なぜ「卵をつかむ」のが難しい？",
+    "everyday_hook": "クレーンゲームの歯がゆさ",
+    "hook_genre": "making",
+    "plain_summary": "力加減や滑りを感じながら器用にものを操る「マニピュレーション」を研究します。人の手の凄さを機械で再現します。",
+    "why_interesting": "AIが賢くなっても「手先の器用さ」は難問。ロボットが社会に出るための最後の壁です。",
+    "area_tags": [
+      "robotics"
+    ],
+    "keywords": [
+      "マニピュレーション",
+      "ロボット機構",
+      "制御"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "手を動かす実験が好きな人"
+  },
+  {
+    "id": "card-053",
+    "title": "現実の風景に映像を重ねるAR、どうすれば自然に見える？",
+    "everyday_hook": "ポケモンGOやスマホの試着",
+    "hook_genre": "info",
+    "plain_summary": "プロジェクタや表示技術で、現実世界に情報や映像を違和感なく重ねるAR（拡張現実）を研究します。",
+    "why_interesting": "「画面の中」から「世界そのもの」へ情報を溶け込ませる、次のインターフェースの姿です。",
+    "area_tags": [
+      "info-ai",
+      "robotics"
+    ],
+    "keywords": [
+      "プロジェクションAR",
+      "HCI",
+      "画像処理"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "見た目で驚かせる技術を作りたい人"
+  },
+  {
+    "id": "card-054",
+    "title": "コンピュータを「持ち歩く」ではなく「環境に溶かす」には？",
+    "everyday_hook": "気づけば家中にあるスマート家電",
+    "hook_genre": "info",
+    "plain_summary": "身の回りのあらゆる場所にコンピュータを埋め込む「ユビキタス・コンピューティング」の研究です。",
+    "why_interesting": "意識せずに情報の恩恵を受ける世界の設計。技術と暮らしのデザインが交わります。",
+    "area_tags": [
+      "info-ai"
+    ],
+    "keywords": [
+      "ユビキタス",
+      "コンピューティング",
+      "HCI"
+    ],
+    "methods": [
+      "実験",
+      "フィールド調査"
+    ],
+    "orientation": 0.6,
+    "difficulty": 1,
+    "suited_for": "暮らしを変える技術を考えたい人"
+  },
+  {
+    "id": "card-055",
+    "title": "服のように着るセンサで、健康はどこまで見守れる？",
+    "everyday_hook": "スマートウォッチの心拍計",
+    "hook_genre": "health",
+    "plain_summary": "身につけて生体情報を測る「ウェアラブル」技術を研究します。日常の中で無理なく健康データを集めます。",
+    "why_interesting": "病院でしか測れなかったものを、暮らしの中で連続して測る。予防医療の入口です。",
+    "area_tags": [
+      "info-ai",
+      "bio"
+    ],
+    "keywords": [
+      "ウェアラブル",
+      "生体計測",
+      "ユビキタス"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.7,
+    "difficulty": 1,
+    "suited_for": "健康と情報技術をつなげたい人"
+  },
+  {
+    "id": "card-056",
+    "title": "空気の流れを読み解くと、飛行機や車はどう変わる？",
+    "everyday_hook": "新幹線の先端の形",
+    "hook_genre": "nature",
+    "plain_summary": "物体の周りの空気の流れ（空気力学）を解析し、速く・静かで・燃費のよい乗り物を設計します。",
+    "why_interesting": "目に見えない流れが、乗り物の性能と美しい形を同時に決めます。",
+    "area_tags": [
+      "fluid"
+    ],
+    "keywords": [
+      "空気力学",
+      "流体力学",
+      "数値流体"
+    ],
+    "methods": [
+      "シミュレーション",
+      "実験"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "流れの美しさと工学を両立したい人"
+  },
+  {
+    "id": "card-057",
+    "title": "火星の薄い大気でも飛べる飛行機は作れる？",
+    "everyday_hook": "火星探査のニュース",
+    "hook_genre": "nature",
+    "plain_summary": "地球の1%ほどしかない火星大気で飛ぶ航空機を、流体力学と設計から考える挑戦的な研究です。",
+    "why_interesting": "常識の通じない環境での飛行という、ロマンと最先端工学が同居するテーマです。",
+    "area_tags": [
+      "fluid"
+    ],
+    "keywords": [
+      "火星飛行機",
+      "空気力学",
+      "分子気体力学"
+    ],
+    "methods": [
+      "シミュレーション",
+      "実験"
+    ],
+    "orientation": 0.3,
+    "difficulty": 3,
+    "suited_for": "宇宙と流体の両方にときめく人"
+  },
+  {
+    "id": "card-058",
+    "title": "気体が「まばら」になると、流れの法則はどう変わる？",
+    "everyday_hook": "宇宙空間の真空",
+    "hook_genre": "logic",
+    "plain_summary": "分子がまばらな希薄気体では、ふつうの流体の式が通用しません。分子の動きから流れを解き直します。",
+    "why_interesting": "半導体製造や宇宙機の設計に必須。ミクロとマクロをつなぐ美しい理論です。",
+    "area_tags": [
+      "fluid",
+      "math"
+    ],
+    "keywords": [
+      "分子気体力学",
+      "数値流体",
+      "流体力学"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -0.5,
+    "difficulty": 3,
+    "suited_for": "流れを分子から考えたい人"
+  },
+  {
+    "id": "card-059",
+    "title": "液体・気体・粒が混ざった流れは、なぜ予測が難しい？",
+    "everyday_hook": "炭酸飲料の泡立ち",
+    "hook_genre": "nature",
+    "plain_summary": "気泡や粒子が混ざる「混相流」は、エンジンや化学プラント、災害の現場に現れます。その複雑な流れを解明します。",
+    "why_interesting": "身近なのに難物。理解できれば効率や安全が大きく向上します。",
+    "area_tags": [
+      "fluid"
+    ],
+    "keywords": [
+      "混相流",
+      "流体力学",
+      "数値流体"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "複雑な現象を粘り強く追いたい人"
+  },
+  {
+    "id": "card-060",
+    "title": "髪の毛より細い流路で、実験室をチップに載せられる？",
+    "everyday_hook": "1滴でわかる検査キット",
+    "hook_genre": "health",
+    "plain_summary": "微細な流路で液体を操るマイクロ流体技術で、検査や化学反応を小さなチップ上で行います。",
+    "why_interesting": "大きな装置がいらない診断や実験へ。医療・環境検査を身近にします。",
+    "area_tags": [
+      "fluid",
+      "bio"
+    ],
+    "keywords": [
+      "マイクロ流体",
+      "マイクロ流体チップ",
+      "生体計測"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "小さな流れで大きな問題を解きたい人"
+  },
+  {
+    "id": "card-061",
+    "title": "血液の流れから、病気の予兆を読めるか？",
+    "everyday_hook": "血圧や動脈硬化の検査",
+    "hook_genre": "health",
+    "plain_summary": "血液の流れ（血流）を流体力学で解析し、血管の病気の発生や進行を予測する医工学研究です。",
+    "why_interesting": "体の中の「流れ」を工学で読み解き、医療の判断を助けます。",
+    "area_tags": [
+      "bio",
+      "fluid"
+    ],
+    "keywords": [
+      "血流",
+      "生体力学",
+      "医療ロボティクス"
+    ],
+    "methods": [
+      "シミュレーション",
+      "実験"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "工学で医療に貢献したい人"
+  },
+  {
+    "id": "card-062",
+    "title": "細胞は、力を「感じて」形や運命を変えている？",
+    "everyday_hook": "筋トレで筋肉が育つ理由",
+    "hook_genre": "health",
+    "plain_summary": "細胞が機械的な力を感じ取り応答する「細胞力学」を研究します。力と生命のつながりを解き明かします。",
+    "why_interesting": "再生医療やがん研究の新しい視点。「力」という物理量が生命を動かします。",
+    "area_tags": [
+      "bio"
+    ],
+    "keywords": [
+      "細胞力学",
+      "生体力学",
+      "生体物理工学"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": -0.3,
+    "difficulty": 2,
+    "suited_for": "生命現象を物理で捉えたい人"
+  },
+  {
+    "id": "card-063",
+    "title": "臓器をチップの上で「再現」できたら、薬の開発はどう変わる？",
+    "everyday_hook": "動物実験に頼らない薬づくり",
+    "hook_genre": "health",
+    "plain_summary": "微細加工技術で、臓器の働きをチップ上に再現する「Organ-on-a-Chip」を研究します。",
+    "why_interesting": "動物実験を減らし、ヒトに近い環境で薬を試せる、医療と工学の融合の最前線です。",
+    "area_tags": [
+      "bio",
+      "fluid"
+    ],
+    "keywords": [
+      "Organ",
+      "Body-on-a-Chip",
+      "マイクロ流体チップ"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "医療の未来を工学で作りたい人"
+  },
+  {
+    "id": "card-064",
+    "title": "手術を助けるロボットは、どこまで精密になれる？",
+    "everyday_hook": "手ぶれしない手術",
+    "hook_genre": "health",
+    "plain_summary": "医師の操作を支援・拡張する医療ロボティクスを研究します。細やかで安全な手術を機械が助けます。",
+    "why_interesting": "工学が直接、人の命と体を救う。技術の手応えが最も伝わる分野の一つです。",
+    "area_tags": [
+      "bio",
+      "robotics"
+    ],
+    "keywords": [
+      "医療ロボティクス",
+      "生体力学",
+      "制御"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "ものづくりで医療を変えたい人"
+  },
+  {
+    "id": "card-065",
+    "title": "生き物の仕組みを、物理の法則で説明できるか？",
+    "everyday_hook": "鳥はなぜ群れで飛べる",
+    "hook_genre": "health",
+    "plain_summary": "生命現象を物理の言葉で理解する「生体物理工学」の研究です。分子から個体まで、生きる仕組みを解き明かします。",
+    "why_interesting": "生物学と物理学の境界で、生命の根本原理に迫るスケールの大きな研究です。",
+    "area_tags": [
+      "bio"
+    ],
+    "keywords": [
+      "生体物理工学",
+      "生体力学",
+      "細胞力学"
+    ],
+    "methods": [
+      "実験",
+      "理論"
+    ],
+    "orientation": -0.5,
+    "difficulty": 2,
+    "suited_for": "分野の枠にとらわれず学びたい人"
+  },
+  {
+    "id": "card-066",
+    "title": "触媒は、どうして化学反応を「魔法のように」速める？",
+    "everyday_hook": "車の排ガス浄化装置",
+    "hook_genre": "matter",
+    "plain_summary": "自分は変化せず反応だけを速める触媒。その仕組みを解明し、より少ないエネルギーで物質を作る方法を探ります。",
+    "why_interesting": "化学産業の心臓部。省エネで環境にやさしいものづくりの鍵を握ります。",
+    "area_tags": [
+      "chemistry"
+    ],
+    "keywords": [
+      "触媒",
+      "ゼオライト",
+      "電気化学"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.4,
+    "difficulty": 1,
+    "suited_for": "反応の仕組みを解き明かしたい人"
+  },
+  {
+    "id": "card-067",
+    "title": "分子を「積み木」のように組んで新機能を作れる？",
+    "everyday_hook": "自己修復する材料",
+    "hook_genre": "matter",
+    "plain_summary": "分子どうしを設計通りに組み上げる超分子化学で、これまでにない性質を持つ物質を作ります。",
+    "why_interesting": "「分子でものを設計する」感覚は、ナノスケールの建築のよう。創る楽しさがあります。",
+    "area_tags": [
+      "chemistry"
+    ],
+    "keywords": [
+      "超分子化学",
+      "有機合成",
+      "分子デバイス"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": -0.2,
+    "difficulty": 2,
+    "suited_for": "手を動かして新物質を生みたい人"
+  },
+  {
+    "id": "card-068",
+    "title": "コンピュータで分子の振る舞いを「予言」できる？",
+    "everyday_hook": "作る前にわかる薬の効き目",
+    "hook_genre": "logic",
+    "plain_summary": "量子力学や統計力学の計算で、分子の性質や反応を実験前に予測する計算化学の研究です。",
+    "why_interesting": "試験管を使わずに物質を設計する。実験と理論の力関係を変えつつある分野です。",
+    "area_tags": [
+      "chemistry",
+      "math"
+    ],
+    "keywords": [
+      "計算化学",
+      "量子化学",
+      "統計力学"
+    ],
+    "methods": [
+      "シミュレーション",
+      "理論"
+    ],
+    "orientation": -0.6,
+    "difficulty": 3,
+    "suited_for": "計算で化学を解きたい人"
+  },
+  {
+    "id": "card-069",
+    "title": "微生物や酵素に「ものづくり」をさせられる？",
+    "everyday_hook": "発酵食品とバイオ燃料",
+    "hook_genre": "matter",
+    "plain_summary": "生物の力を使って有用な物質を作るバイオ化学工学の研究です。石油に頼らない材料生産を目指します。",
+    "why_interesting": "生命と化学工学の融合で、持続可能なものづくりの道を開きます。",
+    "area_tags": [
+      "chemistry",
+      "bio"
+    ],
+    "keywords": [
+      "バイオ化学工学",
+      "電気化学",
+      "膜"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "生物と化学工学をつなぎたい人"
+  },
+  {
+    "id": "card-070",
+    "title": "液体は、なぜ場所によって「固さ」が違って見える？",
+    "everyday_hook": "ケチャップが急に出る現象",
+    "hook_genre": "matter",
+    "plain_summary": "流れにくさが状況で変わる複雑流体（レオロジー）を研究します。食品・化粧品・材料の質感を科学します。",
+    "why_interesting": "身近な「とろみ」や「粘り」の裏にある物理。製品開発に直結します。",
+    "area_tags": [
+      "chemistry",
+      "fluid"
+    ],
+    "keywords": [
+      "レオロジー",
+      "複雑流体",
+      "混相流"
+    ],
+    "methods": [
+      "実験",
+      "理論"
+    ],
+    "orientation": 0.2,
+    "difficulty": 2,
+    "suited_for": "身近な物質の不思議を科学したい人"
+  },
+  {
+    "id": "card-071",
+    "title": "熱を自在に運ぶ「ヒートパイプ」は、どう働く？",
+    "everyday_hook": "ノートPCが熱くなりすぎない理由",
+    "hook_genre": "making",
+    "plain_summary": "液体の蒸発と凝縮を使って熱を素早く運ぶヒートパイプなど、機器を冷やす熱制御デバイスを研究します。",
+    "why_interesting": "スマホから宇宙機まで、「冷やせるか」が性能の上限を決めます。地味だが不可欠な技術です。",
+    "area_tags": [
+      "fluid",
+      "mechanical"
+    ],
+    "keywords": [
+      "ヒートパイプ",
+      "熱制御",
+      "熱制御デバイス"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.7,
+    "difficulty": 1,
+    "suited_for": "機器の性能を支える技術に惹かれる人"
+  },
+  {
+    "id": "card-072",
+    "title": "衝突の一瞬に、車は乗員をどう守っている？",
+    "everyday_hook": "クラッシュテストの映像",
+    "hook_genre": "making",
+    "plain_summary": "衝突時のエネルギーを吸収し人を守る構造や材料を、実験とシミュレーションで研究する衝突安全の分野です。",
+    "why_interesting": "ミリ秒単位の現象を設計で制御し、直接命を守る。工学の責任と手応えが大きい研究です。",
+    "area_tags": [
+      "mechanical"
+    ],
+    "keywords": [
+      "衝突安全",
+      "固体力学",
+      "構造"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.7,
+    "difficulty": 2,
+    "suited_for": "安全設計に使命感を持てる人"
+  },
+  {
+    "id": "card-073",
+    "title": "回る機械の「振動」を抑えると、何が良くなる？",
+    "everyday_hook": "洗濯機のガタガタ",
+    "hook_genre": "making",
+    "plain_summary": "モーターやタービンなど回転機械の振動を解析し、壊れにくく静かで長持ちする設計を目指します。",
+    "why_interesting": "振動は故障や騒音の元。抑える技術は、あらゆる機械の寿命と快適さを左右します。",
+    "area_tags": [
+      "mechanical"
+    ],
+    "keywords": [
+      "回転機械",
+      "振動",
+      "固体力学"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "機械の挙動を数式と実験で押さえたい人"
+  },
+  {
+    "id": "card-074",
+    "title": "材料が「壊れる瞬間」を、事前に予測できるか？",
+    "everyday_hook": "金属疲労による事故",
+    "hook_genre": "making",
+    "plain_summary": "力を受けた材料がどう変形し、いつ壊れるかを固体力学で解明します。安全な構造設計の土台です。",
+    "why_interesting": "「壊れない」を保証する科学。橋・航空機・建物すべての信頼を支えます。",
+    "area_tags": [
+      "mechanical",
+      "materials"
+    ],
+    "keywords": [
+      "固体力学",
+      "構造",
+      "材料"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "力学で安全を作りたい人"
+  },
+  {
+    "id": "card-075",
+    "title": "電気の力で物質を作る・分解する——電気化学の可能性",
+    "everyday_hook": "スマホの充電池",
+    "hook_genre": "matter",
+    "plain_summary": "電気と化学反応の関係を扱う電気化学は、電池・燃料電池・メッキ・水素製造の基礎になります。",
+    "why_interesting": "エネルギーを蓄え・変換する技術の心臓部。脱炭素社会の土台を作ります。",
+    "area_tags": [
+      "chemistry",
+      "energy"
+    ],
+    "keywords": [
+      "電気化学",
+      "電池",
+      "エネルギー"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.5,
+    "difficulty": 1,
+    "suited_for": "エネルギーと化学の接点で研究したい人"
+  },
+  {
+    "id": "card-076",
+    "title": "穴だらけの結晶「ゼオライト」は、なぜ役立つ？",
+    "everyday_hook": "消臭剤や浄水フィルター",
+    "hook_genre": "matter",
+    "plain_summary": "分子サイズの穴を持つ結晶ゼオライトは、特定の分子だけを吸着・反応させる「分子のふるい」です。",
+    "why_interesting": "石油精製から環境浄化まで幅広く活躍。ナノの穴の設計が新機能を生みます。",
+    "area_tags": [
+      "chemistry",
+      "materials"
+    ],
+    "keywords": [
+      "ゼオライト",
+      "触媒",
+      "膜"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.3,
+    "difficulty": 1,
+    "suited_for": "materials×化学で実用を狙いたい人"
+  },
+  {
+    "id": "card-077",
+    "title": "必要な分子だけを通す「膜」は、どう設計する？",
+    "everyday_hook": "海水を真水に変える装置",
+    "hook_genre": "nature",
+    "plain_summary": "特定の分子だけを選んで通す分離膜を研究します。水処理・ガス分離・省エネプロセスに使われます。",
+    "why_interesting": "「蒸留より省エネな分離」を実現する膜は、水と資源の未来を左右します。",
+    "area_tags": [
+      "chemistry",
+      "energy"
+    ],
+    "keywords": [
+      "膜",
+      "バイオ化学工学",
+      "電気化学"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.6,
+    "difficulty": 1,
+    "suited_for": "水・環境問題を化学工学で解きたい人"
+  },
+  {
+    "id": "card-078",
+    "title": "熱と電気を「あべこべ」に使うと、どこまで冷やせる？",
+    "everyday_hook": "静かなワインセラー",
+    "hook_genre": "making",
+    "plain_summary": "電気を流すと片面が冷える熱電デバイスなど、熱をエネルギーとして精密に制御する技術を研究します。",
+    "why_interesting": "動く部品なしで冷やす・発電する。宇宙機から日用品まで応用が広がります。",
+    "area_tags": [
+      "energy",
+      "materials"
+    ],
+    "keywords": [
+      "熱制御デバイス",
+      "熱制御",
+      "エネルギー変換"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "熱をコントロールする面白さに惹かれる人"
+  },
+  {
+    "id": "card-079",
+    "title": "ハードディスクは、どうやって指の何億分の1に記録する？",
+    "everyday_hook": "大容量ストレージ",
+    "hook_genre": "matter",
+    "plain_summary": "磁性材料の微小な領域に情報を書き込む記録技術を研究します。より高密度・省エネな記録を目指します。",
+    "why_interesting": "クラウド時代の膨大なデータを支える、磁気と材料の緻密な科学です。",
+    "area_tags": [
+      "materials",
+      "electronics"
+    ],
+    "keywords": [
+      "HDD",
+      "磁性材料",
+      "不揮発性磁気メモリ"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "磁気で情報を刻む技術に興味がある人"
+  },
+  {
+    "id": "card-080",
+    "title": "図形が「自分に似た形」を繰り返すフラクタル、自然にどう現れる？",
+    "everyday_hook": "海岸線や木の枝分かれ",
+    "hook_genre": "logic",
+    "plain_summary": "拡大しても同じ模様が現れるフラクタルを数学的に解析し、自然界や信号の複雑さを測る研究です。",
+    "why_interesting": "自然の複雑な形の裏にある単純な規則を見つける、美しい数理の世界です。",
+    "area_tags": [
+      "math"
+    ],
+    "keywords": [
+      "フラクタル解析",
+      "非線形",
+      "数値解析"
+    ],
+    "methods": [
+      "理論",
+      "データ解析"
+    ],
+    "orientation": -0.7,
+    "difficulty": 2,
+    "suited_for": "自然の中の数学模様に惹かれる人"
+  },
+  {
+    "id": "card-081",
+    "title": "スパコンで自然を「まるごと計算」するには何が必要？",
+    "everyday_hook": "台風の進路予測",
+    "hook_genre": "logic",
+    "plain_summary": "膨大な計算で物理現象を再現する計算科学の研究です。効率的な数値計算の方法そのものを開発します。",
+    "why_interesting": "実験できない現象（宇宙・気候・材料）を計算で「実験」する、第3の科学の道具作りです。",
+    "area_tags": [
+      "math",
+      "info-ai"
+    ],
+    "keywords": [
+      "計算科学",
+      "数値解析",
+      "シミュレーション"
+    ],
+    "methods": [
+      "シミュレーション",
+      "理論"
+    ],
+    "orientation": -0.3,
+    "difficulty": 3,
+    "suited_for": "計算で自然を再現したい人"
+  },
+  {
+    "id": "card-082",
+    "title": "量子コンピュータは「理論上」どんな計算が得意なのか？",
+    "everyday_hook": "話題の量子超越",
+    "hook_genre": "logic",
+    "plain_summary": "量子計算の理論を研究し、どんな問題なら量子が古典を圧倒できるかを数学的に明らかにします。",
+    "why_interesting": "ハードができる前から「何ができるか」を決める、量子時代の設計図づくりです。",
+    "area_tags": [
+      "quantum",
+      "math"
+    ],
+    "keywords": [
+      "量子計算理論",
+      "量子情報",
+      "離散アルゴリズム"
+    ],
+    "methods": [
+      "理論"
+    ],
+    "orientation": -0.9,
+    "difficulty": 3,
+    "suited_for": "理論の力で未来を先取りしたい人"
+  },
+  {
+    "id": "card-083",
+    "title": "電子回路の設計を、AIに任せられる時代は来る？",
+    "everyday_hook": "複雑化するチップ設計",
+    "hook_genre": "info",
+    "plain_summary": "膨大で複雑な集積回路の設計を、アルゴリズムや機械学習で自動化・最適化する研究です。",
+    "why_interesting": "人手では限界の設計を計算で突破する、半導体とAIの合わせ技です。",
+    "area_tags": [
+      "electronics",
+      "info-ai"
+    ],
+    "keywords": [
+      "集積回路",
+      "最適化",
+      "機械学習"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "設計と計算の自動化に興味がある人"
+  },
+  {
+    "id": "card-084",
+    "title": "生体の電気信号から、意図を読み取れるか？",
+    "everyday_hook": "考えるだけで動く義手",
+    "hook_genre": "health",
+    "plain_summary": "筋肉や神経の微弱な電気を計測・解析し、機器を操作する生体計測とインターフェースの研究です。",
+    "why_interesting": "体と機械を直接つなぐ。医療・福祉・人間拡張の未来を切り開きます。",
+    "area_tags": [
+      "bio",
+      "electronics"
+    ],
+    "keywords": [
+      "生体計測",
+      "信号処理",
+      "生体物理工学"
+    ],
+    "methods": [
+      "実験",
+      "データ解析"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "人と機械の接点を作りたい人"
+  },
+  {
+    "id": "card-085",
+    "title": "高い周波数で動く「磁性デバイス」は、通信をどう支える？",
+    "everyday_hook": "スマホの中の小さな部品",
+    "hook_genre": "making",
+    "plain_summary": "高周波で働く磁性材料・デバイスを研究します。無線通信やパワーエレクトロニクスの性能を支えます。",
+    "why_interesting": "目立たないが通信機器に不可欠。材料と電子工学の境界で腕が磨けます。",
+    "area_tags": [
+      "electronics",
+      "materials"
+    ],
+    "keywords": [
+      "高周波磁性デバイス",
+      "磁性材料",
+      "パワー半導体"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.6,
+    "difficulty": 2,
+    "suited_for": "材料をデバイスに仕上げたい人"
+  },
+  {
+    "id": "card-086",
+    "title": "電気を蓄える技術は、どこまで大容量にできる？",
+    "everyday_hook": "モバイルバッテリーの進化",
+    "hook_genre": "nature",
+    "plain_summary": "次世代電池の材料や仕組みを、電気化学と材料科学から研究します。安全で長持ちする蓄電を目指します。",
+    "why_interesting": "再エネもEVも「ためる技術」次第。エネルギー社会の主役です。",
+    "area_tags": [
+      "energy",
+      "chemistry"
+    ],
+    "keywords": [
+      "電池",
+      "電気化学",
+      "エネルギー"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.7,
+    "difficulty": 1,
+    "suited_for": "身近な課題を材料で解決したい人"
+  },
+  {
+    "id": "card-087",
+    "title": "統計の力で、実験データの「本当の意味」を引き出せる？",
+    "everyday_hook": "アンケート結果の読み方",
+    "hook_genre": "logic",
+    "plain_summary": "データに潜む規則や因果を、統計と機械学習で正しく取り出す方法を研究します。誤った結論を避ける理論も含みます。",
+    "why_interesting": "あらゆる科学と産業の土台。「データで嘘をつかない」ための数学です。",
+    "area_tags": [
+      "math",
+      "info-ai"
+    ],
+    "keywords": [
+      "統計的機械学習",
+      "データ駆動科学",
+      "統計"
+    ],
+    "methods": [
+      "理論",
+      "データ解析"
+    ],
+    "orientation": -0.2,
+    "difficulty": 2,
+    "suited_for": "データの背後の論理を大切にする人"
+  },
+  {
+    "id": "card-088",
+    "title": "光でコンピュータを作ったら、どれだけ速くなる？",
+    "everyday_hook": "電気より速い光",
+    "hook_genre": "making",
+    "plain_summary": "電気の代わりに光で計算・通信するフォトニクス技術を研究します。超高速・低消費電力の情報処理を狙います。",
+    "why_interesting": "AI時代の膨大な計算を支える次世代技術。物理と情報が交わります。",
+    "area_tags": [
+      "photonics",
+      "electronics"
+    ],
+    "keywords": [
+      "フォトニクス",
+      "光デバイス",
+      "光通信"
+    ],
+    "methods": [
+      "実験",
+      "装置開発"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "光で計算の常識を変えたい人"
+  },
+  {
+    "id": "card-089",
+    "title": "宇宙から降る「見えない粒子や波」は、地球に何を伝えている？",
+    "everyday_hook": "オーロラの正体",
+    "hook_genre": "nature",
+    "plain_summary": "太陽から届くプラズマや電磁波が地球の超高層大気と起こす現象を観測・解析します。宇宙天気の研究です。",
+    "why_interesting": "GPSや通信を乱す宇宙天気を理解することは、社会インフラの防災に直結します。",
+    "area_tags": [
+      "plasma-space"
+    ],
+    "keywords": [
+      "超高層",
+      "プラズマ応用",
+      "宇宙"
+    ],
+    "methods": [
+      "フィールド調査",
+      "データ解析"
+    ],
+    "orientation": -0.2,
+    "difficulty": 2,
+    "suited_for": "宇宙と地球のつながりに惹かれる人"
+  },
+  {
+    "id": "card-090",
+    "title": "モーターの効率を1%上げると、社会全体で何が起きる？",
+    "everyday_hook": "世界の電力の半分はモーターが消費",
+    "hook_genre": "making",
+    "plain_summary": "電気を動力に変えるモーターと、その駆動を担うパワーエレクトロニクスを高効率化する研究です。",
+    "why_interesting": "わずかな効率改善が、地球規模では巨大な省エネになります。EV時代の中核技術です。",
+    "area_tags": [
+      "energy",
+      "electronics"
+    ],
+    "keywords": [
+      "パワー半導体",
+      "電力システム",
+      "制御"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.8,
+    "difficulty": 2,
+    "suited_for": "効率の改善に達成感を覚える人"
+  },
+  {
+    "id": "card-091",
+    "title": "『AIの基盤モデル』は、なぜ何でもこなせる？",
+    "everyday_hook": "文章も画像も作る一つのAI",
+    "hook_genre": "info",
+    "plain_summary": "巨大なデータで学び、多くのタスクに応用できる基盤モデルの仕組みと、その改良・応用を研究します。",
+    "why_interesting": "現在のAIブームの中心。仕組みの理解が、次のブレイクスルーを生みます。",
+    "area_tags": [
+      "info-ai"
+    ],
+    "keywords": [
+      "AI基盤モデル",
+      "深層学習",
+      "自然言語処理"
+    ],
+    "methods": [
+      "データ解析",
+      "実験"
+    ],
+    "orientation": 0.3,
+    "difficulty": 2,
+    "suited_for": "最先端AIの中身を知りたい人"
+  },
+  {
+    "id": "card-092",
+    "title": "極低温は、量子技術のためになぜ必要なのか？",
+    "everyday_hook": "量子コンピュータの巨大な冷却装置",
+    "hook_genre": "matter",
+    "plain_summary": "量子の性質を保つには極低温が必要です。低温物性を研究し、量子デバイスが働く環境を科学します。",
+    "why_interesting": "量子コンピュータ実現の隠れた土台。物理の基礎が最先端技術を支えます。",
+    "area_tags": [
+      "condensed-matter",
+      "quantum"
+    ],
+    "keywords": [
+      "低温物性",
+      "低温物理",
+      "量子物性"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": -0.6,
+    "difficulty": 3,
+    "suited_for": "基礎物理で最先端を支えたい人"
+  },
+  {
+    "id": "card-093",
+    "title": "計測の精度を極めると、見えてくる新しい物理がある？",
+    "everyday_hook": "重力波の検出",
+    "hook_genre": "logic",
+    "plain_summary": "極限まで精密な計測技術を開発し、これまで測れなかった微小な信号や現象を捉える研究です。",
+    "why_interesting": "「測れる限界」を押し広げることが、新発見の入口になります。",
+    "area_tags": [
+      "photonics",
+      "electronics"
+    ],
+    "keywords": [
+      "計測",
+      "生体計測",
+      "光計測"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": -0.1,
+    "difficulty": 2,
+    "suited_for": "精密さを極めることに喜びを感じる人"
+  },
+  {
+    "id": "card-094",
+    "title": "水素社会は、どんな技術で実現する？",
+    "everyday_hook": "燃料電池車のニュース",
+    "hook_genre": "nature",
+    "plain_summary": "水素を作り・ため・使う一連の技術を、化学・材料・エネルギー工学から研究します。",
+    "why_interesting": "脱炭素の有力シナリオ。基礎から応用まで学びどころの多いテーマです。",
+    "area_tags": [
+      "energy",
+      "chemistry"
+    ],
+    "keywords": [
+      "水素",
+      "電気化学",
+      "カーボンフリー燃料"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": 0.8,
+    "difficulty": 1,
+    "suited_for": "エネルギー転換の全体像に関わりたい人"
+  },
+  {
+    "id": "card-095",
+    "title": "群れで動くロボットは、どう協調している？",
+    "everyday_hook": "ドローンの一斉フライトショー",
+    "hook_genre": "making",
+    "plain_summary": "多数のロボットが自律的に協調して動く群制御を研究します。1台ではできない仕事を集団で実現します。",
+    "why_interesting": "災害探索や物流など、数の力を引き出す制御理論の面白さがあります。",
+    "area_tags": [
+      "robotics",
+      "math"
+    ],
+    "keywords": [
+      "制御",
+      "制御理論",
+      "ロボティクス"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": 0.4,
+    "difficulty": 2,
+    "suited_for": "制御理論を集団に応用したい人"
+  },
+  {
+    "id": "card-096",
+    "title": "システムを『思い通りに動かす』制御理論の力とは？",
+    "everyday_hook": "ドローンが風でも安定する理由",
+    "hook_genre": "logic",
+    "plain_summary": "対象の動きを数式で捉え、狙い通りに操るための制御理論を研究します。ロボットからプラントまで応用は無限です。",
+    "why_interesting": "「動かす」すべての工学の共通言語。抽象的な数学が現実を動かします。",
+    "area_tags": [
+      "robotics",
+      "math"
+    ],
+    "keywords": [
+      "制御理論",
+      "制御",
+      "非線形"
+    ],
+    "methods": [
+      "理論",
+      "シミュレーション"
+    ],
+    "orientation": -0.4,
+    "difficulty": 3,
+    "suited_for": "数学で現実を操る快感を求める人"
+  },
+  {
+    "id": "card-097",
+    "title": "触ると感触が返ってくる『力の通信』はどう作る？",
+    "everyday_hook": "スマホの触覚フィードバック",
+    "hook_genre": "making",
+    "plain_summary": "離れた場所の感触を伝えたり、機械に器用な力加減をさせる力触覚・制御技術を研究します。",
+    "why_interesting": "遠隔手術や熟練技能の伝承など、「手の感覚」をネット越しに届ける挑戦です。",
+    "area_tags": [
+      "robotics",
+      "electronics"
+    ],
+    "keywords": [
+      "制御",
+      "ロボット機構",
+      "生体計測"
+    ],
+    "methods": [
+      "装置開発",
+      "実験"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "感覚を技術で拡張したい人"
+  },
+  {
+    "id": "card-098",
+    "title": "軽くて強い金属を、まったく新しい方法で作れるか？",
+    "everyday_hook": "3Dプリンタで作る金属部品",
+    "hook_genre": "matter",
+    "plain_summary": "金属を溶かし固める過程を制御し、狙った性質を持つ材料を作る材料プロセスの研究です。3D積層造形も対象です。",
+    "why_interesting": "作り方が性質を決める。ものづくりの自由度を広げる材料科学の最前線です。",
+    "area_tags": [
+      "materials",
+      "mechanical"
+    ],
+    "keywords": [
+      "材料プロセス",
+      "ミクロ組織",
+      "金属高純度化"
+    ],
+    "methods": [
+      "実験",
+      "シミュレーション"
+    ],
+    "orientation": 0.5,
+    "difficulty": 2,
+    "suited_for": "作り方から材料を設計したい人"
+  },
+  {
+    "id": "card-099",
+    "title": "分子の一つひとつを『部品』にした電子回路は可能か？",
+    "everyday_hook": "究極に小さいコンピュータ",
+    "hook_genre": "matter",
+    "plain_summary": "単一分子を電子デバイスとして働かせる分子エレクトロニクスを研究します。化学と電子工学の最前線です。",
+    "why_interesting": "半導体の微細化の究極形。「分子でつくる回路」という夢に挑みます。",
+    "area_tags": [
+      "chemistry",
+      "electronics"
+    ],
+    "keywords": [
+      "分子デバイス",
+      "機能性物質",
+      "ナノデバイス"
+    ],
+    "methods": [
+      "実験"
+    ],
+    "orientation": -0.3,
+    "difficulty": 3,
+    "suited_for": "化学と電子の境界を攻めたい人"
+  },
+  {
+    "id": "card-100",
+    "title": "災害や老朽インフラを、ロボットとAIでどう守る？",
+    "everyday_hook": "点検が追いつかない橋やトンネル",
+    "hook_genre": "making",
+    "plain_summary": "ロボットやセンサ、AI解析を組み合わせて、社会インフラの点検・維持・防災を支える研究です。",
+    "why_interesting": "少子高齢化で人手が減る中、社会の安全を技術で支える切実で夢のあるテーマです。",
+    "area_tags": [
+      "robotics",
+      "info-ai",
+      "mechanical"
+    ],
+    "keywords": [
+      "非破壊評価",
+      "ロボティクス",
+      "データ駆動科学"
+    ],
+    "methods": [
+      "実験",
+      "フィールド調査"
+    ],
+    "orientation": 0.8,
+    "difficulty": 1,
+    "suited_for": "社会課題に技術で正面から向き合いたい人"
+  }
+]

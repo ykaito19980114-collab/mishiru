@@ -1,0 +1,6136 @@
+[
+  {
+    "candidate_term": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊な磁性、物質の表面に特徴的な電子状態が現れる仕組みを、理論と数理モデルから研究する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊な磁性、物質の表面に特徴的な電子状態が現れる仕組みを、理論と数理モデルから研究する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "電子同士が強く影響し合う物質で",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「電子同士が強く影響し合う物質で」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "電気抵抗が消える超伝導や特殊な磁性",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「電気抵抗が消える超伝導や特殊な磁性」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "理論と数理モデルから研究する研究室",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「理論と数理モデルから研究する研究室」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:sections.research_summary",
+        "quote": "電子同士が強く影響し合う物質で、電気抵抗が消える超伝導や特殊",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が現れるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が現れるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:researchQuestions",
+        "quote": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "多数の電子の動きを数理モデルで表すと、まだ知られていない物質の状態をどのように予測できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「多数の電子の動きを数理モデルで表すと、まだ知られていない物質の状態をどのように予測できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-41461c2ec17b:researchQuestions",
+        "quote": "電子同士が強く影響し合うと、なぜ超伝導や通常とは異なる磁性が",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-41461c2ec17b:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変えるのかを研究する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変えるのかを研究する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "細胞が周囲の硬さや力をどのように感じ",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「細胞が周囲の硬さや力をどのように感じ」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "形や動き",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「形や動き」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "働きを変えるのかを研究する研究室",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「働きを変えるのかを研究する研究室」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:sections.research_summary",
+        "quote": "細胞が周囲の硬さや力をどのように感じ、形や動き、働きを変える",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変えるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「細胞は周囲から受ける力を、どのように感じ取って形や動きを変えるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:researchQuestions",
+        "quote": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変え",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "細胞や分子に働く非常に小さな力を、細胞を壊さずに測るにはどのような技術が必要なのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「細胞や分子に働く非常に小さな力を、細胞を壊さずに測るにはどのような技術が必要なのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-470a48ca9298:researchQuestions",
+        "quote": "細胞は周囲から受ける力を、どのように感じ取って形や動きを変え",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-470a48ca9298:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の複雑な振る舞いをコンピュータで再現する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の複雑な振る舞いをコンピュータで再現する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "モータ",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「モータ」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "発電機",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「発電機」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "変圧器などの内部で生じる電磁界と",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「変圧器などの内部で生じる電磁界と」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:sections.research_summary",
+        "quote": "モータ、発電機、変圧器などの内部で生じる電磁界と、磁性材料の",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱へ変わるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「モータや変圧器の内部では、電気と磁気の作用がどのように力や熱へ変わるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:researchQuestions",
+        "quote": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "磁性材料の複雑な性質を計算に取り入れると、電気機器の損失や性能をどこまで正確に予測できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「磁性材料の複雑な性質を計算に取り入れると、電気機器の損失や性能をどこまで正確に予測できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-59f30ac6858e:researchQuestions",
+        "quote": "モータや変圧器の内部では、電気と磁気の作用がどのように力や熱",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-59f30ac6858e:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微鏡や分光技術で測る研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微鏡や分光技術で測る研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "高感度な顕微鏡や分光技術で測る研究室",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「高感度な顕微鏡や分光技術で測る研究室」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "材料の発光",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「材料の発光」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "化学反応",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「化学反応」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:sections.research_summary",
+        "quote": "一つの分子やナノ材料が光を吸収・放出する様子を、高感度な顕微",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応したりするのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「一つの分子やナノ材料は、光を受けるとどのように発光したり反応したりするのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:researchQuestions",
+        "quote": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "光を非常に小さな領域へ集めると、通常は見えない分子の動きや反応をどう観察できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「光を非常に小さな領域へ集めると、通常は見えない分子の動きや反応をどう観察できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-4dee53c438a0:researchQuestions",
+        "quote": "一つの分子やナノ材料は、光を受けるとどのように発光したり反応",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-4dee53c438a0:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "脳や人の行動、社会・生命現象などのデータから、観測できない内部状態や原因を確率的に推定する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「脳や人の行動、社会・生命現象などのデータから、観測できない内部状態や原因を確率的に推定する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "脳や人の行動",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「脳や人の行動」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "社会・生命現象などのデータから",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「社会・生命現象などのデータから」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "数理モデル",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「数理モデル」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:sections.research_summary",
+        "quote": "脳や人の行動、社会・生命現象などのデータから、観測できない内",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "観測された行動や信号から、直接見えない内部状態をどのように推定するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「観測された行動や信号から、直接見えない内部状態をどのように推定するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:researchQuestions",
+        "quote": "観測された行動や信号から、直接見えない内部状態をどのように推",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "不確実さや個人差を含むデータから、現象を説明する数理モデルをどのように作るのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「不確実さや個人差を含むデータから、現象を説明する数理モデルをどのように作るのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-40446adcb967:researchQuestions",
+        "quote": "観測された行動や信号から、直接見えない内部状態をどのように推",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-40446adcb967:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動くことで生じる詰まりや流れを数理モデルから研究する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動くことで生じる詰まりや流れを数理モデルから研究する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "道路の渋滞",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「道路の渋滞」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人の混雑",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「人の混雑」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "生物の集団など",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「生物の集団など」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:sections.research_summary",
+        "quote": "道路の渋滞、人の混雑、物流、生物の集団など、多数の要素が動く",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑が生まれるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑が生まれるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:researchQuestions",
+        "quote": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人や車の動き方を少し変えるだけで、流れ全体を滑らかにするにはどこへ働きかければよいのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「人や車の動き方を少し変えるだけで、流れ全体を滑らかにするにはどこへ働きかければよいのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-b51364f6513f:researchQuestions",
+        "quote": "一台の車や一人の行動が積み重なると、なぜ全体として渋滞や混雑",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-b51364f6513f:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、病気との関係を研究する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、病気との関係を研究する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "血液や脳脊髄液など",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「血液や脳脊髄液など」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "病気との関係を研究する研究室",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「病気との関係を研究する研究室」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:sections.research_summary",
+        "quote": "血液や脳脊髄液など、人体内部の流れをコンピュータ上で再現し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "脳の血管の形が人によって異なると、血液の流れや血管壁への力はどう変わるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「脳の血管の形が人によって異なると、血液の流れや血管壁への力はどう変わるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:researchQuestions",
+        "quote": "脳の血管の形が人によって異なると、血液の流れや血管壁への力は",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "MRIで測った流れと数値計算を組み合わせると、患者ごとの血流をどこまで正確に再現できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「MRIで測った流れと数値計算を組み合わせると、患者ごとの血流をどこまで正確に再現できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-46e67b3d62b0:researchQuestions",
+        "quote": "脳の血管の形が人によって異なると、血液の流れや血管壁への力は",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-46e67b3d62b0:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "空気中で発生させたプラズマを水などの液体に接触させ、その境界で短時間に起こる化学反応を研究する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「空気中で発生させたプラズマを水などの液体に接触させ、その境界で短時間に起こる化学反応を研究する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "空気と水から反応性の高い物質を作り",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「空気と水から反応性の高い物質を作り」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "細菌やウイルスの不活化",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「細菌やウイルスの不活化」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "植物への窒素供給",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「植物への窒素供給」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:sections.research_summary",
+        "quote": "空気中で発生させたプラズマを水などの液体に接触させ、その境界",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "プラズマが水と触れる境界では、どのような反応性の高い物質が生まれるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「プラズマが水と触れる境界では、どのような反応性の高い物質が生まれるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:researchQuestions",
+        "quote": "プラズマが水と触れる境界では、どのような反応性の高い物質が生",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "プラズマで作る物質の種類や量を制御すると、滅菌・農業・材料合成へどのように使い分けられるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「プラズマで作る物質の種類や量を制御すると、滅菌・農業・材料合成へどのように使い分けられるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-0dca02346edd:researchQuestions",
+        "quote": "プラズマが水と触れる境界では、どのような反応性の高い物質が生",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-0dca02346edd:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、エネルギーを効率よく取り出しながら環境への負荷を減らす方法を開発する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、エネルギーを効率よく取り出しながら環境への負荷を減らす方法を開発する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:sections.research_summary",
+        "quote": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "燃焼",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「燃焼」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:sections.research_summary",
+        "quote": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "エネルギー",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「エネルギー」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:sections.research_summary",
+        "quote": "燃料や廃棄物を燃やすときに起こる熱・流れ・化学反応を研究し、",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変化するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変化するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:researchQuestions",
+        "quote": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "エネルギーを効率よく取り出しながら、有害物質や二酸化炭素を減らす燃焼条件をどう設計するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「エネルギーを効率よく取り出しながら、有害物質や二酸化炭素を減らす燃焼条件をどう設計するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-90b4b3a37829:researchQuestions",
+        "quote": "燃料の種類や燃やし方を変えると、炎・熱・排出物はどのように変",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-90b4b3a37829:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有機分子の作り方を研究する研究室。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有機分子の作り方を研究する研究室。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:sections.research_summary",
+        "quote": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "ホウ素",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「ホウ素」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:sections.research_summary",
+        "quote": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複数の結合を一度に組み替える反応や",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「複数の結合を一度に組み替える反応や」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:sections.research_summary",
+        "quote": "ホウ素、ケイ素など炭素以外の元素が持つ特徴を利用し、新しい有",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:e4ba46ff"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ作れるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ作れるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:researchQuestions",
+        "quote": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複数の結合を一つの反応で組み替えると、複雑な有機分子をどのように短い工程で作れるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「複数の結合を一つの反応で組み替えると、複雑な有機分子をどのように短い工程で作れるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "labs.json#sample-lab-f0e46eb2cbf5:researchQuestions",
+        "quote": "炭素以外の元素を反応に組み込むと、従来は難しかった結合をなぜ",
+        "independent_chain": false,
+        "evidence_id": "ev:lab:sample-lab-f0e46eb2cbf5:ce2d8d99"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "数、図形、論理、計算、確率などを、観察や実験ではなく、定義・記号・基本ルールによって研究する学問群。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「数、図形、論理、計算、確率などを、観察や実験ではなく、定義・記号・基本ルールによって研究する学問群。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:beginnerDescription",
+        "quote": "数、図形、論理、計算、確率などを、観察や実験ではなく、定義・",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "記号体系",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「記号体系」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:researchObjects",
+        "quote": "記号体系 / 公理 / 数学的構造 / アルゴリズム / 確",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "公理",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「公理」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:researchObjects",
+        "quote": "記号体系 / 公理 / 数学的構造 / アルゴリズム / 確",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "数学的構造",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「数学的構造」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:researchObjects",
+        "quote": "記号体系 / 公理 / 数学的構造 / アルゴリズム / 確",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "記号と基本ルールから、どのような結論を正しく導けるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「記号と基本ルールから、どのような結論を正しく導けるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:questions",
+        "quote": "記号と基本ルールから、どのような結論を正しく導けるのか？ /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "異なる数学的対象を、同じ形式や構造として扱えるのはどのような場合か？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「異なる数学的対象を、同じ形式や構造として扱えるのはどのような場合か？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:questions",
+        "quote": "記号と基本ルールから、どのような結論を正しく導けるのか？ /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "界",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「界」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:beginnerDescription",
+        "quote": "真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "多値真理",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「多値真理」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:researchObjects",
+        "quote": "多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "矛盾",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「矛盾」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:researchObjects",
+        "quote": "多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "関連性",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「関連性」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:researchObjects",
+        "quote": "多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:questions",
+        "quote": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "真か偽か以外の値を認めると、推論の仕組みはどのように変わるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「真か偽か以外の値を認めると、推論の仕組みはどのように変わるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:questions",
+        "quote": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "科",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「科」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "群や環などの抽象的な代数構造を、行列やベクトル空間上の変換として研究する分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「群や環などの抽象的な代数構造を、行列やベクトル空間上の変換として研究する分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:beginnerDescription",
+        "quote": "群や環などの抽象的な代数構造を、行列やベクトル空間上の変換と",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "群",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「群」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:researchObjects",
+        "quote": "群 / 環 / リー群 / リー環 / 加群 / 表現 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "環",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「環」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:researchObjects",
+        "quote": "群 / 環 / リー群 / リー環 / 加群 / 表現 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "リー群",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「リー群」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:researchObjects",
+        "quote": "群 / 環 / リー群 / リー環 / 加群 / 表現 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "抽象的な対称性は、行列やベクトルの変換としてどのように表せるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「抽象的な対称性は、行列やベクトルの変換としてどのように表せるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:questions",
+        "quote": "抽象的な対称性は、行列やベクトルの変換としてどのように表せる",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複雑な表現を基本的な成分へ分けると、元の対称性をどう理解できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「複雑な表現を基本的な成分へ分けると、元の対称性をどう理解できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:questions",
+        "quote": "抽象的な対称性は、行列やベクトルの変換としてどのように表せる",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "図形を切ったり貼ったりせず、連続的に変形しても変わらない性質を研究する分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「図形を切ったり貼ったりせず、連続的に変形しても変わらない性質を研究する分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:beginnerDescription",
+        "quote": "図形を切ったり貼ったりせず、連続的に変形しても変わらない性質",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "位相空間",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「位相空間」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:researchObjects",
+        "quote": "位相空間 / 連続写像 / 同相 / コンパクト性 / 連結",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "連続写像",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「連続写像」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:researchObjects",
+        "quote": "位相空間 / 連続写像 / 同相 / コンパクト性 / 連結",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "同相",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「同相」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:researchObjects",
+        "quote": "位相空間 / 連続写像 / 同相 / コンパクト性 / 連結",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "図形を切らずに変形するとき、変わらずに残る性質は何か？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「図形を切らずに変形するとき、変わらずに残る性質は何か？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:questions",
+        "quote": "図形を切らずに変形するとき、変わらずに残る性質は何か？ / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "穴の数やつながり方を使うと、空間をどのように分類できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「穴の数やつながり方を使うと、空間をどのように分類できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:questions",
+        "quote": "図形を切らずに変形するとき、変わらずに残る性質は何か？ / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "目",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「目」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "時間とともに状態が変わる仕組みを研究する分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「時間とともに状態が変わる仕組みを研究する分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:beginnerDescription",
+        "quote": "時間とともに状態が変わる仕組みを研究する分野。安定した状態、",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "状態空間",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「状態空間」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:researchObjects",
+        "quote": "状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "軌道",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「軌道」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:researchObjects",
+        "quote": "状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "固定点",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「固定点」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:researchObjects",
+        "quote": "状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:questions",
+        "quote": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？ ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "最初の状態の小さな違いが、長期的な結果を大きく変えるのはなぜか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「最初の状態の小さな違いが、長期的な結果を大きく変えるのはなぜか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:questions",
+        "quote": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？ ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "データのばらつきを整理し、背後にある傾向や関係を明らかにする分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「データのばらつきを整理し、背後にある傾向や関係を明らかにする分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:beginnerDescription",
+        "quote": "データのばらつきを整理し、背後にある傾向や関係を明らかにする",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "データ",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「データ」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:researchObjects",
+        "quote": "データ / 標本 / 母集団 / 確率分布 / 統計量 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "標本",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「標本」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:researchObjects",
+        "quote": "データ / 標本 / 母集団 / 確率分布 / 統計量 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "母集団",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「母集団」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:researchObjects",
+        "quote": "データ / 標本 / 母集団 / 確率分布 / 統計量 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "データに見える差は、本当の違いなのか、それとも偶然のばらつきなのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「データに見える差は、本当の違いなのか、それとも偶然のばらつきなのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:questions",
+        "quote": "データに見える差は、本当の違いなのか、それとも偶然のばらつき",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "同じデータから異なる結論が出るとき、どの判断がより信頼できるかをどう比べるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「同じデータから異なる結論が出るとき、どの判断がより信頼できるかをどう比べるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:questions",
+        "quote": "データに見える差は、本当の違いなのか、それとも偶然のばらつき",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "綱",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「綱」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "計算とは何か、問題を効率よく解くには何が必要かを数学的に研究する学問群。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「計算とは何か、問題を効率よく解くには何が必要かを数学的に研究する学問群。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:beginnerDescription",
+        "quote": "計算とは何か、問題を効率よく解くには何が必要かを数学的に研究",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "計算問題",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「計算問題」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:researchObjects",
+        "quote": "計算問題 / アルゴリズム / 計算モデル / 言語 / 証",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "アルゴリズム",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「アルゴリズム」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:researchObjects",
+        "quote": "計算問題 / アルゴリズム / 計算モデル / 言語 / 証",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "計算モデル",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「計算モデル」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:researchObjects",
+        "quote": "計算問題 / アルゴリズム / 計算モデル / 言語 / 証",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:questions",
+        "quote": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "コンピュータの方式が変わっても変わらない、計算の根本的な限界は何か？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「コンピュータの方式が変わっても変わらない、計算の根本的な限界は何か？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:questions",
+        "quote": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "門",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「門」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "動くシステムの状態を理解し、望ましい動きへ導く方法を研究する分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「動くシステムの状態を理解し、望ましい動きへ導く方法を研究する分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:beginnerDescription",
+        "quote": "動くシステムの状態を理解し、望ましい動きへ導く方法を研究する",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "状態",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「状態」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:researchObjects",
+        "quote": "状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "入力",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「入力」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:researchObjects",
+        "quote": "状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "出力",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「出力」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:researchObjects",
+        "quote": "状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "すべての状態を直接測れないシステムを、限られた観測からどう制御できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「すべての状態を直接測れないシステムを、限られた観測からどう制御できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:questions",
+        "quote": "すべての状態を直接測れないシステムを、限られた観測からどう制",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "モデルが現実と少し違っていても、安定して目的を達成する制御はどう設計できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「モデルが現実と少し違っていても、安定して目的を達成する制御はどう設計できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:questions",
+        "quote": "すべての状態を直接測れないシステムを、限られた観測からどう制",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力を統一しようとする理論と、粒子間の新しい対称性を研究する分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力を統一しようとする理論と、粒子間の新しい対称性を研究する分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:beginnerDescription",
+        "quote": "素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "弦",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「弦」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:researchObjects",
+        "quote": "弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "ブレーン",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「ブレーン」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:researchObjects",
+        "quote": "弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "余剰次元",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「余剰次元」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:researchObjects",
+        "quote": "弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "粒子と力をすべて同じ基本的なひもの振動として説明することは可能か？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「粒子と力をすべて同じ基本的なひもの振動として説明することは可能か？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:questions",
+        "quote": "粒子と力をすべて同じ基本的なひもの振動として説明することは可",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "時空そのものが、より基本的な量子情報や場の関係から生まれる可能性はあるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「時空そのものが、より基本的な量子情報や場の関係から生まれる可能性はあるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:questions",
+        "quote": "粒子と力をすべて同じ基本的なひもの振動として説明することは可",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物質、その中間である半導体の性質を明らかにする分野。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物質、その中間である半導体の性質を明らかにする分野。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:beginnerDescription",
+        "quote": "結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:c4c5b1bc"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "結晶格子",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「結晶格子」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:researchObjects",
+        "quote": "結晶格子 / 電子バンド / 正孔 / フォノン / 不純物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "電子バンド",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「電子バンド」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:researchObjects",
+        "quote": "結晶格子 / 電子バンド / 正孔 / フォノン / 不純物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "正孔",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「正孔」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:researchObjects",
+        "quote": "結晶格子 / 電子バンド / 正孔 / フォノン / 不純物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:0cfa57c9"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生じるのはなぜか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生じるのはなぜか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:questions",
+        "quote": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "わずかな不純物や界面の設計によって、半導体の電気的・光学的性質をどこまで変えられるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「わずかな不純物や界面の設計によって、半導体の電気的・光学的性質をどこまで変えられるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:questions",
+        "quote": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "システム、制御、情報、計測、最適化、知能情報処理などを横断的に扱う国内学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「システム、制御、情報、計測、最適化、知能情報処理などを横断的に扱う国内学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-d703e1c50d2e:description",
+        "quote": "システム、制御、情報、計測、最適化、知能情報処理などを横断的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-d703e1c50d2e:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "最適化",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「最適化」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-d703e1c50d2e:description",
+        "quote": "システム、制御、情報、計測、最適化、知能情報処理などを横断的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-d703e1c50d2e:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複雑な対象をモデル化し",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「複雑な対象をモデル化し」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-d703e1c50d2e:description",
+        "quote": "システム、制御、情報、計測、最適化、知能情報処理などを横断的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-d703e1c50d2e:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複数の要素が相互作用するシステムは、どのようにモデル化すれば全体の振る舞いを理解できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「複数の要素が相互作用するシステムは、どのようにモデル化すれば全体の振る舞いを理解できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-d703e1c50d2e:questions",
+        "quote": "複数の要素が相互作用するシステムは、どのようにモデル化すれば",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-d703e1c50d2e:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複雑なシステムを望ましい状態へ動かすには、制御、情報処理、最適化、知能化をどのように組み合わせればよいのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「複雑なシステムを望ましい状態へ動かすには、制御、情報処理、最適化、知能化をどのように組み合わせればよいのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-d703e1c50d2e:questions",
+        "quote": "複数の要素が相互作用するシステムは、どのようにモデル化すれば",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-d703e1c50d2e:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "国内",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「国内」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "計算機科学に関する国際的な主要学会組織。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「計算機科学に関する国際的な主要学会組織。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-1119546fbd7d:description",
+        "quote": "計算機科学に関する国際的な主要学会組織。ソフトウェア、データ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-1119546fbd7d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "ソフトウェア",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「ソフトウェア」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-1119546fbd7d:description",
+        "quote": "計算機科学に関する国際的な主要学会組織。ソフトウェア、データ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-1119546fbd7d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "データベース",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「データベース」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-1119546fbd7d:description",
+        "quote": "計算機科学に関する国際的な主要学会組織。ソフトウェア、データ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-1119546fbd7d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "分散処理",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「分散処理」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-1119546fbd7d:description",
+        "quote": "計算機科学に関する国際的な主要学会組織。ソフトウェア、データ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-1119546fbd7d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "計算機システムは、ハードウェア、OS、プログラム、データ、ネットワークをどのように組み合わせて動いているのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「計算機システムは、ハードウェア、OS、プログラム、データ、ネットワークをどのように組み合わせて動いているのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-1119546fbd7d:questions",
+        "quote": "計算機システムは、ハードウェア、OS、プログラム、データ、ネ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-1119546fbd7d:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "計算機科学を発展させるには、アルゴリズム、システム、ソフトウェア、データ管理、ユーザーとの関係をどのように結びつける必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「計算機科学を発展させるには、アルゴリズム、システム、ソフトウェア、データ管理、ユーザーとの関係をどのように結びつける必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-1119546fbd7d:questions",
+        "quote": "計算機システムは、ハードウェア、OS、プログラム、データ、ネ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-1119546fbd7d:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "国際",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「国際」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "刑法・刑事法に関する国内学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「刑法・刑事法に関する国内学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-87e1eaed1a84:description",
+        "quote": "刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-87e1eaed1a84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "刑法・刑事法に関する国内学会",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「刑法・刑事法に関する国内学会」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-87e1eaed1a84:description",
+        "quote": "刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-87e1eaed1a84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "刑法理論",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「刑法理論」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-87e1eaed1a84:description",
+        "quote": "刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-87e1eaed1a84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "刑事政策",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「刑事政策」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-87e1eaed1a84:description",
+        "quote": "刑法・刑事法に関する国内学会。犯罪、刑罰、刑法理論、刑事政策",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-87e1eaed1a84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "どのような行為を犯罪とし、刑罰を科すことはどのように正当化されるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「どのような行為を犯罪とし、刑罰を科すことはどのように正当化されるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-87e1eaed1a84:questions",
+        "quote": "どのような行為を犯罪とし、刑罰を科すことはどのように正当化さ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-87e1eaed1a84:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "刑事法を研究するには、刑法理論、判例、刑事手続、犯罪学、刑事政策をどう組み合わせる必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「刑事法を研究するには、刑法理論、判例、刑事手続、犯罪学、刑事政策をどう組み合わせる必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-87e1eaed1a84:questions",
+        "quote": "どのような行為を犯罪とし、刑罰を科すことはどのように正当化さ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-87e1eaed1a84:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人類学に関する国際的な主要学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「人類学に関する国際的な主要学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-25a7865f4ff8:description",
+        "quote": "人類学に関する国際的な主要学会。文化人類学、社会人類学、言語",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-25a7865f4ff8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人類学に関する国際的な主要学会",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「人類学に関する国際的な主要学会」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-25a7865f4ff8:description",
+        "quote": "人類学に関する国際的な主要学会。文化人類学、社会人類学、言語",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-25a7865f4ff8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "文化人類学",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「文化人類学」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-25a7865f4ff8:description",
+        "quote": "人類学に関する国際的な主要学会。文化人類学、社会人類学、言語",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-25a7865f4ff8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "社会人類学",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「社会人類学」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-25a7865f4ff8:description",
+        "quote": "人類学に関する国際的な主要学会。文化人類学、社会人類学、言語",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-25a7865f4ff8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどのように多様化してきたのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどのように多様化してきたのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-25a7865f4ff8:questions",
+        "quote": "人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどの",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-25a7865f4ff8:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人類学を発展させるには、民族誌、現地調査、比較、言語、歴史、倫理をどう結びつける必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「人類学を発展させるには、民族誌、現地調査、比較、言語、歴史、倫理をどう結びつける必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-25a7865f4ff8:questions",
+        "quote": "人類の文化、社会、言語、身体、歴史は、地域や時代を超えてどの",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-25a7865f4ff8:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "動脈硬化と脂質代謝に関する国内学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「動脈硬化と脂質代謝に関する国内学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-54143c54fbfa:description",
+        "quote": "動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-54143c54fbfa:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "動脈硬化と脂質代謝に関する国内学会",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「動脈硬化と脂質代謝に関する国内学会」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-54143c54fbfa:description",
+        "quote": "動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-54143c54fbfa:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "脂質異常症",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「脂質異常症」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-54143c54fbfa:description",
+        "quote": "動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-54143c54fbfa:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "血管炎症",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「血管炎症」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-54143c54fbfa:description",
+        "quote": "動脈硬化と脂質代謝に関する国内学会。脂質異常症、血管炎症、プ",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-54143c54fbfa:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのように進行するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのように進行するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-54143c54fbfa:questions",
+        "quote": "血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのよう",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-54143c54fbfa:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "心筋梗塞や脳卒中を防ぐには、脂質管理、生活習慣、薬物療法、リスク評価をどのように組み合わせる必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「心筋梗塞や脳卒中を防ぐには、脂質管理、生活習慣、薬物療法、リスク評価をどのように組み合わせる必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-54143c54fbfa:questions",
+        "quote": "血管の中で脂質、炎症、内皮障害が重なると、動脈硬化はどのよう",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-54143c54fbfa:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "生化学に関する国内学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「生化学に関する国内学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-db13fc2d3f84:description",
+        "quote": "生化学に関する国内学会。元データでは分子生物学にも紐づき、遺",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-db13fc2d3f84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "分子生物学",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「分子生物学」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-db13fc2d3f84:description",
+        "quote": "生化学に関する国内学会。元データでは分子生物学にも紐づき、遺",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-db13fc2d3f84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命現象をどのように支えているのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命現象をどのように支えているのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-db13fc2d3f84:questions",
+        "quote": "DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-db13fc2d3f84:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "分子生物学と生化学を組み合わせると、遺伝子発現、タンパク質機能、代謝異常をどのように理解できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「分子生物学と生化学を組み合わせると、遺伝子発現、タンパク質機能、代謝異常をどのように理解できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-db13fc2d3f84:questions",
+        "quote": "DNA、RNA、タンパク質、酵素の働きは、細胞内の反応や生命",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-db13fc2d3f84:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "薬剤疫学に関する国内学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「薬剤疫学に関する国内学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-18b049282fe4:description",
+        "quote": "薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-18b049282fe4:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "薬剤疫学に関する国内学会",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「薬剤疫学に関する国内学会」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-18b049282fe4:description",
+        "quote": "薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-18b049282fe4:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "医薬品の有効性",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「医薬品の有効性」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-18b049282fe4:description",
+        "quote": "薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-18b049282fe4:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "安全性",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「安全性」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-18b049282fe4:description",
+        "quote": "薬剤疫学に関する国内学会。医薬品の有効性、安全性、使用実態、",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-18b049282fe4:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "実際の医療現場で使われる薬は、集団の中でどのような効果や副作用、使用パターンを示しているのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「実際の医療現場で使われる薬は、集団の中でどのような効果や副作用、使用パターンを示しているのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-18b049282fe4:questions",
+        "quote": "実際の医療現場で使われる薬は、集団の中でどのような効果や副作",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-18b049282fe4:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "薬剤疫学では、医療データから薬の安全性や有効性を評価するために、交絡、バイアス、因果関係をどう扱う必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「薬剤疫学では、医療データから薬の安全性や有効性を評価するために、交絡、バイアス、因果関係をどう扱う必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-18b049282fe4:questions",
+        "quote": "実際の医療現場で使われる薬は、集団の中でどのような効果や副作",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-18b049282fe4:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "鉱業・冶金・資源探査に関する国際的な専門組織。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「鉱業・冶金・資源探査に関する国際的な専門組織。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-4495879934d1:description",
+        "quote": "鉱業・冶金・資源探査に関する国際的な専門組織。採鉱、選鉱、鉱",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-4495879934d1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "鉱山安全",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「鉱山安全」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-4495879934d1:description",
+        "quote": "鉱業・冶金・資源探査に関する国際的な専門組織。採鉱、選鉱、鉱",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-4495879934d1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "鉱物資源",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「鉱物資源」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-4495879934d1:description",
+        "quote": "鉱業・冶金・資源探査に関する国際的な専門組織。採鉱、選鉱、鉱",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-4495879934d1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのように開発されるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのように開発されるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-4495879934d1:questions",
+        "quote": "鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのよう",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-4495879934d1:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "鉱業を持続可能に行うには、資源評価、採掘技術、安全、環境対策、経済性をどう組み合わせる必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「鉱業を持続可能に行うには、資源評価、採掘技術、安全、環境対策、経済性をどう組み合わせる必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-4495879934d1:questions",
+        "quote": "鉱物資源は、地質、探査、採鉱、選鉱、環境条件によってどのよう",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-4495879934d1:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "宇宙航行・宇宙工学に関する国際学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「宇宙航行・宇宙工学に関する国際学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-50334f1b65ba:description",
+        "quote": "宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-50334f1b65ba:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "宇宙航行・宇宙工学に関する国際学会",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「宇宙航行・宇宙工学に関する国際学会」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-50334f1b65ba:description",
+        "quote": "宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-50334f1b65ba:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "宇宙ミッション",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「宇宙ミッション」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-50334f1b65ba:description",
+        "quote": "宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-50334f1b65ba:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "宇宙機",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「宇宙機」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-50334f1b65ba:description",
+        "quote": "宇宙航行・宇宙工学に関する国際学会。宇宙ミッション、軌道、宇",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-50334f1b65ba:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計をどのように組み合わせて実現されているのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計をどのように組み合わせて実現されているのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-50334f1b65ba:questions",
+        "quote": "宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計を",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-50334f1b65ba:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "宇宙航行を発展させるには、宇宙工学、ミッション設計、軌道力学、政策、運用技術をどう結びつける必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「宇宙航行を発展させるには、宇宙工学、ミッション設計、軌道力学、政策、運用技術をどう結びつける必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-50334f1b65ba:questions",
+        "quote": "宇宙機や探査ミッションは、軌道、推進、通信、運用、目的設計を",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-50334f1b65ba:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床腫瘍学に関する国内学会。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「臨床腫瘍学に関する国内学会。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-97696e16fe66:description",
+        "quote": "臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-97696e16fe66:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床腫瘍学に関する国内学会",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「臨床腫瘍学に関する国内学会」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-97696e16fe66:description",
+        "quote": "臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-97696e16fe66:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "がん薬物療法",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「がん薬物療法」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-97696e16fe66:description",
+        "quote": "臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-97696e16fe66:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床試験",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「臨床試験」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-97696e16fe66:description",
+        "quote": "臨床腫瘍学に関する国内学会。がん薬物療法、臨床試験、分子標的",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-97696e16fe66:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目標によってどのように選択されているのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目標によってどのように選択されているのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-97696e16fe66:questions",
+        "quote": "がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-97696e16fe66:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床腫瘍学を進めるには、薬物療法、バイオマーカー、臨床試験、副作用管理、患者支援をどう組み合わせる必要があるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「臨床腫瘍学を進めるには、薬物療法、バイオマーカー、臨床試験、副作用管理、患者支援をどう組み合わせる必要があるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "societies.json#sample-society-97696e16fe66:questions",
+        "quote": "がん薬物療法は、腫瘍の遺伝子、病期、患者状態、副作用、治療目",
+        "independent_chain": false,
+        "evidence_id": "ev:society:sample-society-97696e16fe66:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "システム制御情報学会が発行する、システム、制御、情報に関する研究成果を扱う査読付き学術誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「システム制御情報学会が発行する、システム、制御、情報に関する研究成果を扱う査読付き学術誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "制御理論",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「制御理論」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "システム科学",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「システム科学」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:description",
+        "quote": "システム制御情報学会が発行する、システム、制御、情報に関する",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをどのように解析・制御できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「複雑な対象をシステムとしてモデル化し、その状態や振る舞いをどのように解析・制御できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:questions",
+        "quote": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "データ、モデル、最適化、制御理論を組み合わせることで、実システムの性能・安全性・信頼性をどう高められるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「データ、モデル、最適化、制御理論を組み合わせることで、実システムの性能・安全性・信頼性をどう高められるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-c01e826c2723:questions",
+        "quote": "複雑な対象をシステムとしてモデル化し、その状態や振る舞いをど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-c01e826c2723:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "確認中",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「確認中」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "OA",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「OA」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "日本腎臓学会が関わる",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「日本腎臓学会が関わる」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "腎臓病学の基礎・臨床研究を扱う国際誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「腎臓病学の基礎・臨床研究を扱う国際誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "慢性腎臓病",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「慢性腎臓病」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:description",
+        "quote": "日本腎臓学会が関わる、腎臓病学の基礎・臨床研究を扱う国際誌。",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのように発症・進行するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのように発症・進行するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:questions",
+        "quote": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床研究、腎病理、実験研究を組み合わせて、腎疾患の診断・治療・予後管理をどう改善できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「臨床研究、腎病理、実験研究を組み合わせて、腎疾患の診断・治療・予後管理をどう改善できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-bfe13a915e84:questions",
+        "quote": "腎臓病は、糸球体、尿細管、免疫、血圧、代謝異常によってどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-bfe13a915e84:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "購読型／一部OA",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「購読型／一部OA」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "American Society of Plant Biologists系の、植物生理学・植物分子生物学を扱う国際主要誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「American Society of Plant Biologists系の、植物生理学・植物分子生物学を扱う国際主要誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "American",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「American」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "Society",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「Society」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "Plant",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「Plant」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:description",
+        "quote": "American Society of Plant Biol",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどのように調整するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどのように調整するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:questions",
+        "quote": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "分子生物学、生理学、ゲノム解析を通じて、植物の成長や環境応答をどう理解できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「分子生物学、生理学、ゲノム解析を通じて、植物の成長や環境応答をどう理解できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1fdf5d10b81a:questions",
+        "quote": "植物は、光、水、栄養、温度、ストレスに応じて、生理機能をどの",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1fdf5d10b81a:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システムに関する和文誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「エネルギー・資源学会系の、エネルギー、資源、環境、社会システムに関する和文誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "エネルギー・資源学会系の",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「エネルギー・資源学会系の」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "社会システムに関する和文誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「社会システムに関する和文誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:description",
+        "quote": "エネルギー・資源学会系の、エネルギー、資源、環境、社会システ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのように最適化できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「エネルギーと資源の利用は、技術、経済、環境、政策の中でどのように最適化できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:questions",
+        "quote": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "解説、研究、実践報告を通じて、脱炭素、資源循環、エネルギー政策をどう考えられるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「解説、研究、実践報告を通じて、脱炭素、資源循環、エネルギー政策をどう考えられるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-08b9a8007a15:questions",
+        "quote": "エネルギーと資源の利用は、技術、経済、環境、政策の中でどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-08b9a8007a15:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "AGUが発行する、大気科学を扱う国際主要誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「AGUが発行する、大気科学を扱う国際主要誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "大気科学を扱う国際主要誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「大気科学を扱う国際主要誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "大気物理",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「大気物理」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "エアロゾル",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「エアロゾル」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:description",
+        "quote": "AGUが発行する、大気科学を扱う国際主要誌。大気物理、化学、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互作用でどう決まるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互作用でどう決まるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:questions",
+        "quote": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "観測、理論、モデル解析を通じて、大気現象と気候への影響をどう理解できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「観測、理論、モデル解析を通じて、大気現象と気候への影響をどう理解できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-26aae0d9e8a8:questions",
+        "quote": "大気の構造や変動は、放射、雲、化学反応、循環、地表面との相互",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-26aae0d9e8a8:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "National Academy of Sciencesが発行する、自然科学・社会科学・医学を横断する国際主要誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「National Academy of Sciencesが発行する、自然科学・社会科学・医学を横断する国際主要誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "National",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「National」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "Academy",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「Academy」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "生命科学",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「生命科学」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:description",
+        "quote": "National Academy of Sciencesが発",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をどのように更新するのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「分野を横断する科学的発見は、生命、物質、環境、社会の理解をどのように更新するのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:questions",
+        "quote": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "多様な研究成果を広く共有することで、科学コミュニティ全体の議論や応用をどう促進できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「多様な研究成果を広く共有することで、科学コミュニティ全体の議論や応用をどう促進できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-0badcbce964f:questions",
+        "quote": "分野を横断する科学的発見は、生命、物質、環境、社会の理解をど",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-0badcbce964f:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "週刊相当",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「週刊相当」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デジタル技術と創造性を扱う国際誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「デジタル技術と創造性を扱う国際誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デジタル技術と創造性を扱う国際誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「デジタル技術と創造性を扱う国際誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デジタルアート",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「デジタルアート」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デザイン",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「デザイン」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:description",
+        "quote": "デジタル技術と創造性を扱う国際誌。デジタルアート、デザイン、",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのように変えるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのように変えるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:questions",
+        "quote": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デザイン研究、メディア研究、実践研究を通じて、デジタル創作の方法と価値をどう理解できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「デザイン研究、メディア研究、実践研究を通じて、デジタル創作の方法と価値をどう理解できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-1a647b5bd771:questions",
+        "quote": "デジタル技術は、創造性、表現、制作プロセス、鑑賞体験をどのよ",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-1a647b5bd771:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "疼痛医学を扱う国際誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「疼痛医学を扱う国際誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "疼痛医学を扱う国際誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「疼痛医学を扱う国際誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "慢性疼痛",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「慢性疼痛」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "神経障害性疼痛",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「神経障害性疼痛」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:description",
+        "quote": "疼痛医学を扱う国際誌。慢性疼痛、神経障害性疼痛、薬物療法、介",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように組み合わせるべきか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように組み合わせるべきか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:questions",
+        "quote": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床研究、症例、治療評価を通じて、疼痛管理の安全性と有効性をどう高められるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「臨床研究、症例、治療評価を通じて、疼痛管理の安全性と有効性をどう高められるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-483097bb38b1:questions",
+        "quote": "疼痛診療では、薬物、神経ブロック、心理、リハビリをどのように",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-483097bb38b1:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デザイン学を扱う国内誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「デザイン学を扱う国内誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デザイン学を扱う国内誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「デザイン学を扱う国内誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "プロダクト",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「プロダクト」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "サービス",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「サービス」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:description",
+        "quote": "デザイン学を扱う国内誌。プロダクト、情報、環境、サービス、感",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "人間の経験や社会課題に対して、デザインはどのような方法で解決案を形にするのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「人間の経験や社会課題に対して、デザインはどのような方法で解決案を形にするのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:questions",
+        "quote": "人間の経験や社会課題に対して、デザインはどのような方法で解決",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "デザイン方法論、評価、事例研究を通じて、人工物・サービス・環境の質をどう高められるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「デザイン方法論、評価、事例研究を通じて、人工物・サービス・環境の質をどう高められるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-e0fb7e6148f2:questions",
+        "quote": "人間の経験や社会課題に対して、デザインはどのような方法で解決",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-e0fb7e6148f2:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "一部OA",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「一部OA」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。",
+    "facet": "Σ",
+    "definitionProposal": "Σファセットにおける「臨床腫瘍学を扱うThe Lancet系の国際主要誌。」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "要約主題"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "臨床腫瘍学を扱うThe",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「臨床腫瘍学を扱うThe」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "Lancet系の国際主要誌",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「Lancet系の国際主要誌」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "がん臨床試験",
+    "facet": "IS",
+    "definitionProposal": "ISファセットにおける「がん臨床試験」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究対象"
+    ],
+    "NT": [],
+    "RT": [
+      "研究領域"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:description",
+        "quote": "臨床腫瘍学を扱うThe Lancet系の国際主要誌。がん臨床",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:cb329146"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカムの観点からどう改善できるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカムの観点からどう改善できるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:questions",
+        "quote": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカム",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "高水準の臨床研究、レビュー、政策論文を通じて、がん治療とがん対策の方向性をどう示せるのか？",
+    "facet": "Q",
+    "definitionProposal": "Qファセットにおける「高水準の臨床研究、レビュー、政策論文を通じて、がん治療とがん対策の方向性をどう示せるのか？」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究上の問い"
+    ],
+    "NT": [],
+    "RT": [
+      "研究関心"
+    ],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "journals.json#sample-journal-4cc37a9f577d:questions",
+        "quote": "がん医療は、臨床試験、医療制度、地域差、政策、患者アウトカム",
+        "independent_chain": false,
+        "evidence_id": "ev:journal:sample-journal-4cc37a9f577d:ff3d39b6"
+      }
+    ],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  },
+  {
+    "candidate_term": "月刊",
+    "facet": "SC",
+    "definitionProposal": "SCファセットにおける「月刊」。",
+    "synonymCandidates": [],
+    "qualifierCandidates": [],
+    "BT": [
+      "研究スコープ"
+    ],
+    "NT": [],
+    "RT": [],
+    "ANT": [],
+    "adoption": "hold_for_human_review",
+    "evidence": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft"
+  }
+]

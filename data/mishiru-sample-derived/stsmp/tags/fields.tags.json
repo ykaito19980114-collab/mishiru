@@ -1,0 +1,5022 @@
+[
+  {
+    "tag_id": "tag:b639a153-18fe-5ac0-82d6-1bb9e727470f",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "数、図形、論理、計算、確率などを、観察や実験ではなく、定義・記号・基本ルールによって研究する学問群。",
+    "controlled": null,
+    "candidate_term": "数、図形、論理、計算、確率などを、観察や実験ではなく、定義・記号・基本ルールによって研究する学問群。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139698Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:beginnerDescription",
+        "quote": "数、図形、論理、計算、確率などを、観察や実験ではなく、定義・",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139739Z",
+    "updatedAt": "2026-07-12T12:00:35.139741Z"
+  },
+  {
+    "tag_id": "tag:e3b6637b-4ffd-5d15-9c12-d9a9eaa53dc4",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "記号体系",
+    "controlled": null,
+    "candidate_term": "記号体系",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139758Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:researchObjects",
+        "quote": "記号体系 / 公理 / 数学的構造 / アルゴリズム / 確",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:representativeThemes",
+        "quote": "形式体系 / 証明 / 計算 / 確率 / 情報 / 最適化",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139786Z",
+    "updatedAt": "2026-07-12T12:00:35.139787Z"
+  },
+  {
+    "tag_id": "tag:31beff6d-9338-518c-8a7c-e1f349172854",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "公理",
+    "controlled": null,
+    "candidate_term": "公理",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139797Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:researchObjects",
+        "quote": "記号体系 / 公理 / 数学的構造 / アルゴリズム / 確",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:representativeThemes",
+        "quote": "形式体系 / 証明 / 計算 / 確率 / 情報 / 最適化",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139820Z",
+    "updatedAt": "2026-07-12T12:00:35.139821Z"
+  },
+  {
+    "tag_id": "tag:6e44512d-37f1-50d7-8a9d-387eb7310341",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "数学的構造",
+    "controlled": null,
+    "candidate_term": "数学的構造",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139830Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:researchObjects",
+        "quote": "記号体系 / 公理 / 数学的構造 / アルゴリズム / 確",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:representativeThemes",
+        "quote": "形式体系 / 証明 / 計算 / 確率 / 情報 / 最適化",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139851Z",
+    "updatedAt": "2026-07-12T12:00:35.139853Z"
+  },
+  {
+    "tag_id": "tag:106ace54-6410-5cc4-8ec2-48abb3c092fa",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "記号と基本ルールから、どのような結論を正しく導けるのか？",
+    "controlled": null,
+    "candidate_term": "記号と基本ルールから、どのような結論を正しく導けるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139864Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:questions",
+        "quote": "記号と基本ルールから、どのような結論を正しく導けるのか？ /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139885Z",
+    "updatedAt": "2026-07-12T12:00:35.139886Z"
+  },
+  {
+    "tag_id": "tag:1c73ae9e-2259-5934-b04b-9dcf536ce174",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "異なる数学的対象を、同じ形式や構造として扱えるのはどのような場合か？",
+    "controlled": null,
+    "candidate_term": "異なる数学的対象を、同じ形式や構造として扱えるのはどのような場合か？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139894Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:questions",
+        "quote": "記号と基本ルールから、どのような結論を正しく導けるのか？ /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139915Z",
+    "updatedAt": "2026-07-12T12:00:35.139916Z"
+  },
+  {
+    "tag_id": "tag:c60991c0-d6ca-5dc0-9aef-54a985ef399c",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "定義",
+    "controlled": "定義",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139928Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:methods",
+        "quote": "定義 / 公理化 / 演繹的証明 / 形式化 / 数理モデル",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139948Z",
+    "updatedAt": "2026-07-12T12:00:35.139949Z"
+  },
+  {
+    "tag_id": "tag:d28e0a70-a0d9-5a1f-b0cf-a33bb4a677f5",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "公理化",
+    "controlled": "公理化",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139957Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-d0929ad7a3a1:methods",
+        "quote": "定義 / 公理化 / 演繹的証明 / 形式化 / 数理モデル",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-d0929ad7a3a1:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.139978Z",
+    "updatedAt": "2026-07-12T12:00:35.139979Z"
+  },
+  {
+    "tag_id": "tag:18a7ce91-7cb8-5fc5-b38d-013f3e41489c",
+    "entity": "ent:RESEARCH_FIELD:sample-field-d0929ad7a3a1",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "界",
+    "controlled": null,
+    "candidate_term": "界",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.139991Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-d0929ad7a3a1",
+    "sourceHash": "174b215ce3a55d2b90c34916f7bb0e3a74461cf5ac9ff63db127d4a2c600d067",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.140012Z",
+    "updatedAt": "2026-07-12T12:00:35.140013Z"
+  },
+  {
+    "tag_id": "tag:681e68b0-06d8-5bc5-8e5c-d1b5f08c3b58",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。",
+    "controlled": null,
+    "candidate_term": "真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140120Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:beginnerDescription",
+        "quote": "真か偽かの二つだけでは表しにくい状況を扱う論理体系の集まり。",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140150Z",
+    "updatedAt": "2026-07-12T12:00:35.140151Z"
+  },
+  {
+    "tag_id": "tag:d025af7d-ff37-53ad-ad6a-da6e25f0337a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "多値真理",
+    "controlled": null,
+    "candidate_term": "多値真理",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140162Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:researchObjects",
+        "quote": "多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:representativeThemes",
+        "quote": "多値論理 / 矛盾許容論理 / 関連性論理 / 線形論理 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140189Z",
+    "updatedAt": "2026-07-12T12:00:35.140191Z"
+  },
+  {
+    "tag_id": "tag:737aac28-6764-5522-a96f-1e197bf6af4e",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "矛盾",
+    "controlled": null,
+    "candidate_term": "矛盾",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140199Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:researchObjects",
+        "quote": "多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:representativeThemes",
+        "quote": "多値論理 / 矛盾許容論理 / 関連性論理 / 線形論理 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140225Z",
+    "updatedAt": "2026-07-12T12:00:35.140226Z"
+  },
+  {
+    "tag_id": "tag:6fb23f96-1e73-5e41-befa-067931587b68",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "関連性",
+    "controlled": null,
+    "candidate_term": "関連性",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140234Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:researchObjects",
+        "quote": "多値真理 / 矛盾 / 関連性 / 資源 / 曖昧さ / 非",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:representativeThemes",
+        "quote": "多値論理 / 矛盾許容論理 / 関連性論理 / 線形論理 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140259Z",
+    "updatedAt": "2026-07-12T12:00:35.140262Z"
+  },
+  {
+    "tag_id": "tag:33c3149c-77cd-52d2-a9a6-ad081207a289",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+    "controlled": null,
+    "candidate_term": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140271Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:questions",
+        "quote": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140296Z",
+    "updatedAt": "2026-07-12T12:00:35.140298Z"
+  },
+  {
+    "tag_id": "tag:69c72b6f-0050-5902-879a-44c57eef1ff8",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "真か偽か以外の値を認めると、推論の仕組みはどのように変わるのか？",
+    "controlled": null,
+    "candidate_term": "真か偽か以外の値を認めると、推論の仕組みはどのように変わるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140305Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:questions",
+        "quote": "矛盾や不確かさを含む情報を、どのような推論規則で扱えるのか？",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140330Z",
+    "updatedAt": "2026-07-12T12:00:35.140331Z"
+  },
+  {
+    "tag_id": "tag:5ab74fd3-4716-562c-b2c4-686c5471ecb3",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "公理系の設計",
+    "controlled": "公理系の設計",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140341Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:methods",
+        "quote": "公理系の設計 / 代数的意味論 / 関係意味論 / 証明論 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140366Z",
+    "updatedAt": "2026-07-12T12:00:35.140367Z"
+  },
+  {
+    "tag_id": "tag:d15592fa-1b15-5623-be03-b1287ea87daf",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "代数的意味論",
+    "controlled": "代数的意味論",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140375Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-4ab9bd00503b:methods",
+        "quote": "公理系の設計 / 代数的意味論 / 関係意味論 / 証明論 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-4ab9bd00503b:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140399Z",
+    "updatedAt": "2026-07-12T12:00:35.140400Z"
+  },
+  {
+    "tag_id": "tag:7504eb6c-a136-5dd2-8b84-e9fef0c2a5c4",
+    "entity": "ent:RESEARCH_FIELD:sample-field-4ab9bd00503b",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "科",
+    "controlled": null,
+    "candidate_term": "科",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140410Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-4ab9bd00503b",
+    "sourceHash": "853071caf964d659ea45078e4abd3bfd7f92b9b47246fed3ab0902933f8f01e5",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.140434Z",
+    "updatedAt": "2026-07-12T12:00:35.140436Z"
+  },
+  {
+    "tag_id": "tag:f9193d7c-8752-5914-945a-77789ce56a1b",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "群や環などの抽象的な代数構造を、行列やベクトル空間上の変換として研究する分野。",
+    "controlled": null,
+    "candidate_term": "群や環などの抽象的な代数構造を、行列やベクトル空間上の変換として研究する分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140539Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:beginnerDescription",
+        "quote": "群や環などの抽象的な代数構造を、行列やベクトル空間上の変換と",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140567Z",
+    "updatedAt": "2026-07-12T12:00:35.140569Z"
+  },
+  {
+    "tag_id": "tag:906ee0cc-a082-5adf-b984-c9bd79a55575",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "群",
+    "controlled": null,
+    "candidate_term": "群",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140580Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:researchObjects",
+        "quote": "群 / 環 / リー群 / リー環 / 加群 / 表現 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:representativeThemes",
+        "quote": "既約表現 / 指標理論 / 誘導表現 / 最高ウェイト / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140606Z",
+    "updatedAt": "2026-07-12T12:00:35.140608Z"
+  },
+  {
+    "tag_id": "tag:1fa4715c-aaac-5398-bca0-22ebe37c4b9e",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "環",
+    "controlled": null,
+    "candidate_term": "環",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140616Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:researchObjects",
+        "quote": "群 / 環 / リー群 / リー環 / 加群 / 表現 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:representativeThemes",
+        "quote": "既約表現 / 指標理論 / 誘導表現 / 最高ウェイト / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140641Z",
+    "updatedAt": "2026-07-12T12:00:35.140642Z"
+  },
+  {
+    "tag_id": "tag:b7e42515-4ac5-5e48-8474-4b3f1b7b9109",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "リー群",
+    "controlled": null,
+    "candidate_term": "リー群",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140651Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:researchObjects",
+        "quote": "群 / 環 / リー群 / リー環 / 加群 / 表現 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:representativeThemes",
+        "quote": "既約表現 / 指標理論 / 誘導表現 / 最高ウェイト / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140676Z",
+    "updatedAt": "2026-07-12T12:00:35.140677Z"
+  },
+  {
+    "tag_id": "tag:34ad8dea-7308-5835-9bf5-f6b3e56936c4",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "抽象的な対称性は、行列やベクトルの変換としてどのように表せるのか？",
+    "controlled": null,
+    "candidate_term": "抽象的な対称性は、行列やベクトルの変換としてどのように表せるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140686Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:questions",
+        "quote": "抽象的な対称性は、行列やベクトルの変換としてどのように表せる",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140710Z",
+    "updatedAt": "2026-07-12T12:00:35.140712Z"
+  },
+  {
+    "tag_id": "tag:e08e2c63-483b-5084-a56b-990c00f71f88",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "複雑な表現を基本的な成分へ分けると、元の対称性をどう理解できるのか？",
+    "controlled": null,
+    "candidate_term": "複雑な表現を基本的な成分へ分けると、元の対称性をどう理解できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140719Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:questions",
+        "quote": "抽象的な対称性は、行列やベクトルの変換としてどのように表せる",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140745Z",
+    "updatedAt": "2026-07-12T12:00:35.140747Z"
+  },
+  {
+    "tag_id": "tag:f2c7f92f-6b8e-5aec-88e9-7f0d4ebe08d0",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "行列表示",
+    "controlled": "行列表示",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140757Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:methods",
+        "quote": "行列表示 / 指標計算 / 既約分解 / 誘導表現 / テン",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140782Z",
+    "updatedAt": "2026-07-12T12:00:35.140783Z"
+  },
+  {
+    "tag_id": "tag:79558c6f-27f2-5bb4-9d6b-a131519d9282",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "指標計算",
+    "controlled": "指標計算",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140791Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c272ac81b5ef:methods",
+        "quote": "行列表示 / 指標計算 / 既約分解 / 誘導表現 / テン",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c272ac81b5ef:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140815Z",
+    "updatedAt": "2026-07-12T12:00:35.140817Z"
+  },
+  {
+    "tag_id": "tag:169efd68-eddb-5084-b4bf-0766edd3a04e",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c272ac81b5ef",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "科",
+    "controlled": null,
+    "candidate_term": "科",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140826Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c272ac81b5ef",
+    "sourceHash": "2eac6917a083b685519f960ca5e7daf887e2d8663e4b5fe15f408b8d033597fe",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.140850Z",
+    "updatedAt": "2026-07-12T12:00:35.140851Z"
+  },
+  {
+    "tag_id": "tag:3fadaa05-0491-500d-ae32-4321dbdc0094",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "図形を切ったり貼ったりせず、連続的に変形しても変わらない性質を研究する分野。",
+    "controlled": null,
+    "candidate_term": "図形を切ったり貼ったりせず、連続的に変形しても変わらない性質を研究する分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140953Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:beginnerDescription",
+        "quote": "図形を切ったり貼ったりせず、連続的に変形しても変わらない性質",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.140981Z",
+    "updatedAt": "2026-07-12T12:00:35.140982Z"
+  },
+  {
+    "tag_id": "tag:32316b2d-5a12-51eb-9006-3f1f3bb528b9",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "位相空間",
+    "controlled": null,
+    "candidate_term": "位相空間",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.140993Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:researchObjects",
+        "quote": "位相空間 / 連続写像 / 同相 / コンパクト性 / 連結",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:representativeThemes",
+        "quote": "連結性 / コンパクト性 / 同相 / 多様体 / 不変量 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141018Z",
+    "updatedAt": "2026-07-12T12:00:35.141019Z"
+  },
+  {
+    "tag_id": "tag:72f1858d-e3ea-5c07-b71b-f872fca7e0ac",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "連続写像",
+    "controlled": null,
+    "candidate_term": "連続写像",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141027Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:researchObjects",
+        "quote": "位相空間 / 連続写像 / 同相 / コンパクト性 / 連結",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:representativeThemes",
+        "quote": "連結性 / コンパクト性 / 同相 / 多様体 / 不変量 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141051Z",
+    "updatedAt": "2026-07-12T12:00:35.141052Z"
+  },
+  {
+    "tag_id": "tag:adcb18a9-b7fa-5bd4-8dc2-91cb93cf3cb0",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "同相",
+    "controlled": null,
+    "candidate_term": "同相",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141060Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:researchObjects",
+        "quote": "位相空間 / 連続写像 / 同相 / コンパクト性 / 連結",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:representativeThemes",
+        "quote": "連結性 / コンパクト性 / 同相 / 多様体 / 不変量 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141084Z",
+    "updatedAt": "2026-07-12T12:00:35.141085Z"
+  },
+  {
+    "tag_id": "tag:e09adcfa-21f5-545a-989c-419ee4627402",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "図形を切らずに変形するとき、変わらずに残る性質は何か？",
+    "controlled": null,
+    "candidate_term": "図形を切らずに変形するとき、変わらずに残る性質は何か？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141094Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:questions",
+        "quote": "図形を切らずに変形するとき、変わらずに残る性質は何か？ / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141117Z",
+    "updatedAt": "2026-07-12T12:00:35.141119Z"
+  },
+  {
+    "tag_id": "tag:e828c06c-45c2-58a4-a3a2-15171ff08883",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "穴の数やつながり方を使うと、空間をどのように分類できるのか？",
+    "controlled": null,
+    "candidate_term": "穴の数やつながり方を使うと、空間をどのように分類できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141126Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:questions",
+        "quote": "図形を切らずに変形するとき、変わらずに残る性質は何か？ / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141149Z",
+    "updatedAt": "2026-07-12T12:00:35.141151Z"
+  },
+  {
+    "tag_id": "tag:39ba60af-49de-5b2d-83c0-99e8f25e951e",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "連続変形",
+    "controlled": "連続変形",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141160Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:methods",
+        "quote": "連続変形 / 同相写像 / 不変量 / 被覆 / 分類 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141184Z",
+    "updatedAt": "2026-07-12T12:00:35.141185Z"
+  },
+  {
+    "tag_id": "tag:b528bddc-48d1-5eef-ab43-9975891d61fa",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "同相写像",
+    "controlled": "同相写像",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141193Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-0a0f9070c33e:methods",
+        "quote": "連続変形 / 同相写像 / 不変量 / 被覆 / 分類 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-0a0f9070c33e:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141216Z",
+    "updatedAt": "2026-07-12T12:00:35.141217Z"
+  },
+  {
+    "tag_id": "tag:e6242624-40b0-5e69-bb3f-7674f81eda07",
+    "entity": "ent:RESEARCH_FIELD:sample-field-0a0f9070c33e",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "目",
+    "controlled": null,
+    "candidate_term": "目",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141226Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-0a0f9070c33e",
+    "sourceHash": "52a7eff64da3772133a7d0df73ce0bd3322894423dcb571c46259d523bb86723",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.141249Z",
+    "updatedAt": "2026-07-12T12:00:35.141251Z"
+  },
+  {
+    "tag_id": "tag:032ebe0a-42f4-5592-8f24-c54660451801",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "時間とともに状態が変わる仕組みを研究する分野。",
+    "controlled": null,
+    "candidate_term": "時間とともに状態が変わる仕組みを研究する分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141348Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:beginnerDescription",
+        "quote": "時間とともに状態が変わる仕組みを研究する分野。安定した状態、",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141375Z",
+    "updatedAt": "2026-07-12T12:00:35.141376Z"
+  },
+  {
+    "tag_id": "tag:b0ebbae6-76e6-5d11-8709-662d45309645",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "状態空間",
+    "controlled": null,
+    "candidate_term": "状態空間",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141387Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:researchObjects",
+        "quote": "状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:representativeThemes",
+        "quote": "固定点 / 周期軌道 / アトラクター / 分岐 / カオス",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141412Z",
+    "updatedAt": "2026-07-12T12:00:35.141413Z"
+  },
+  {
+    "tag_id": "tag:cf44b7c1-692e-5fe7-acd1-1d3f4016765d",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "軌道",
+    "controlled": null,
+    "candidate_term": "軌道",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141421Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:researchObjects",
+        "quote": "状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:representativeThemes",
+        "quote": "固定点 / 周期軌道 / アトラクター / 分岐 / カオス",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141446Z",
+    "updatedAt": "2026-07-12T12:00:35.141447Z"
+  },
+  {
+    "tag_id": "tag:f1c1f5d0-0f37-58e0-aefd-86a5c4c43c3f",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "固定点",
+    "controlled": null,
+    "candidate_term": "固定点",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141455Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:researchObjects",
+        "quote": "状態空間 / 軌道 / 固定点 / 周期軌道 / アトラクタ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:representativeThemes",
+        "quote": "固定点 / 周期軌道 / アトラクター / 分岐 / カオス",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141479Z",
+    "updatedAt": "2026-07-12T12:00:35.141480Z"
+  },
+  {
+    "tag_id": "tag:2f9b6f70-f420-50a8-95dc-f0bde80852cd",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？",
+    "controlled": null,
+    "candidate_term": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141489Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:questions",
+        "quote": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？ ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141513Z",
+    "updatedAt": "2026-07-12T12:00:35.141514Z"
+  },
+  {
+    "tag_id": "tag:bc36fa4e-7a33-5a60-90e3-1770ada4399e",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "最初の状態の小さな違いが、長期的な結果を大きく変えるのはなぜか？",
+    "controlled": null,
+    "candidate_term": "最初の状態の小さな違いが、長期的な結果を大きく変えるのはなぜか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141522Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:questions",
+        "quote": "同じ変化の規則から、安定、周期、カオスが生じるのはなぜか？ ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141545Z",
+    "updatedAt": "2026-07-12T12:00:35.141547Z"
+  },
+  {
+    "tag_id": "tag:d38bb91d-b22f-5dab-8e50-a4c9912c7345",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "安定性解析",
+    "controlled": "安定性解析",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141556Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:methods",
+        "quote": "安定性解析 / 位相的共役 / エルゴード理論 / 分岐解析",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141580Z",
+    "updatedAt": "2026-07-12T12:00:35.141581Z"
+  },
+  {
+    "tag_id": "tag:2ffa9b3f-15a4-5320-af37-5e6d7e1692b9",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "位相的共役",
+    "controlled": "位相的共役",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141588Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-5cce956a2700:methods",
+        "quote": "安定性解析 / 位相的共役 / エルゴード理論 / 分岐解析",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-5cce956a2700:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141612Z",
+    "updatedAt": "2026-07-12T12:00:35.141613Z"
+  },
+  {
+    "tag_id": "tag:4f553690-35e2-586e-ad4a-93a88f820298",
+    "entity": "ent:RESEARCH_FIELD:sample-field-5cce956a2700",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "科",
+    "controlled": null,
+    "candidate_term": "科",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141654Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-5cce956a2700",
+    "sourceHash": "5c860642ac084e959b83db2147d895c0c4f45c5a66b590f2329ecf3fe8a64a44",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.141678Z",
+    "updatedAt": "2026-07-12T12:00:35.141680Z"
+  },
+  {
+    "tag_id": "tag:85d021de-eea6-563f-9da2-9ee9ff64966a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "データのばらつきを整理し、背後にある傾向や関係を明らかにする分野。",
+    "controlled": null,
+    "candidate_term": "データのばらつきを整理し、背後にある傾向や関係を明らかにする分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141777Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:beginnerDescription",
+        "quote": "データのばらつきを整理し、背後にある傾向や関係を明らかにする",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141815Z",
+    "updatedAt": "2026-07-12T12:00:35.141817Z"
+  },
+  {
+    "tag_id": "tag:d357c3d8-75e5-50b7-a4e3-2d5721a3f13c",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "データ",
+    "controlled": null,
+    "candidate_term": "データ",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141828Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:researchObjects",
+        "quote": "データ / 標本 / 母集団 / 確率分布 / 統計量 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:representativeThemes",
+        "quote": "記述統計 / 標本調査 / 推定 / 検定 / 回帰 / 予",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141854Z",
+    "updatedAt": "2026-07-12T12:00:35.141856Z"
+  },
+  {
+    "tag_id": "tag:7f6f34a4-2d88-5b2f-8ac9-c14e60889b91",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "標本",
+    "controlled": null,
+    "candidate_term": "標本",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141863Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:researchObjects",
+        "quote": "データ / 標本 / 母集団 / 確率分布 / 統計量 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:representativeThemes",
+        "quote": "記述統計 / 標本調査 / 推定 / 検定 / 回帰 / 予",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141889Z",
+    "updatedAt": "2026-07-12T12:00:35.141890Z"
+  },
+  {
+    "tag_id": "tag:08f13fa2-4a2b-5fa9-b087-ef484928ae49",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "母集団",
+    "controlled": null,
+    "candidate_term": "母集団",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141898Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:researchObjects",
+        "quote": "データ / 標本 / 母集団 / 確率分布 / 統計量 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:representativeThemes",
+        "quote": "記述統計 / 標本調査 / 推定 / 検定 / 回帰 / 予",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141923Z",
+    "updatedAt": "2026-07-12T12:00:35.141925Z"
+  },
+  {
+    "tag_id": "tag:a2978ef8-a539-5600-ba27-dfb22a86453b",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "データに見える差は、本当の違いなのか、それとも偶然のばらつきなのか？",
+    "controlled": null,
+    "candidate_term": "データに見える差は、本当の違いなのか、それとも偶然のばらつきなのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141933Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:questions",
+        "quote": "データに見える差は、本当の違いなのか、それとも偶然のばらつき",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141958Z",
+    "updatedAt": "2026-07-12T12:00:35.141959Z"
+  },
+  {
+    "tag_id": "tag:982c1910-eba4-5df4-aa43-cc8d9bcccb9c",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "同じデータから異なる結論が出るとき、どの判断がより信頼できるかをどう比べるのか？",
+    "controlled": null,
+    "candidate_term": "同じデータから異なる結論が出るとき、どの判断がより信頼できるかをどう比べるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.141968Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:questions",
+        "quote": "データに見える差は、本当の違いなのか、それとも偶然のばらつき",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.141992Z",
+    "updatedAt": "2026-07-12T12:00:35.141994Z"
+  },
+  {
+    "tag_id": "tag:6003acea-9a17-59e5-a974-36ba96a5d5db",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "標本設計",
+    "controlled": "標本設計",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142004Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:methods",
+        "quote": "標本設計 / 確率モデリング / 推定 / 検定 / 回帰 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142033Z",
+    "updatedAt": "2026-07-12T12:00:35.142034Z"
+  },
+  {
+    "tag_id": "tag:12e26408-ea8a-597c-8516-d7fc0a72f36f",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "確率モデリング",
+    "controlled": "確率モデリング",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142042Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-debed2db00ba:methods",
+        "quote": "標本設計 / 確率モデリング / 推定 / 検定 / 回帰 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-debed2db00ba:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142066Z",
+    "updatedAt": "2026-07-12T12:00:35.142067Z"
+  },
+  {
+    "tag_id": "tag:91afe7fc-da70-56e9-b846-74f9d5453185",
+    "entity": "ent:RESEARCH_FIELD:sample-field-debed2db00ba",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "綱",
+    "controlled": null,
+    "candidate_term": "綱",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142076Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-debed2db00ba",
+    "sourceHash": "7d4b5d6facde6850a2a2116b547df80d25f37e4584b8e2b5ec75635387ecb825",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.142100Z",
+    "updatedAt": "2026-07-12T12:00:35.142101Z"
+  },
+  {
+    "tag_id": "tag:015e32d6-ff67-5e3a-9965-5cc7a57c2277",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "計算とは何か、問題を効率よく解くには何が必要かを数学的に研究する学問群。",
+    "controlled": null,
+    "candidate_term": "計算とは何か、問題を効率よく解くには何が必要かを数学的に研究する学問群。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142197Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:beginnerDescription",
+        "quote": "計算とは何か、問題を効率よく解くには何が必要かを数学的に研究",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142225Z",
+    "updatedAt": "2026-07-12T12:00:35.142226Z"
+  },
+  {
+    "tag_id": "tag:a3180b66-acb7-56b9-8eea-d0eae81b10ff",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "計算問題",
+    "controlled": null,
+    "candidate_term": "計算問題",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142237Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:researchObjects",
+        "quote": "計算問題 / アルゴリズム / 計算モデル / 言語 / 証",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:representativeThemes",
+        "quote": "アルゴリズム / 計算量 / オートマトン / プログラム意",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142262Z",
+    "updatedAt": "2026-07-12T12:00:35.142264Z"
+  },
+  {
+    "tag_id": "tag:f3c6b74d-debf-5143-8cfe-cd3a9195a2af",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "アルゴリズム",
+    "controlled": null,
+    "candidate_term": "アルゴリズム",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142271Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:researchObjects",
+        "quote": "計算問題 / アルゴリズム / 計算モデル / 言語 / 証",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:representativeThemes",
+        "quote": "アルゴリズム / 計算量 / オートマトン / プログラム意",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142296Z",
+    "updatedAt": "2026-07-12T12:00:35.142297Z"
+  },
+  {
+    "tag_id": "tag:6d2f51f1-288e-5f53-adf1-0471a66a150c",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "計算モデル",
+    "controlled": null,
+    "candidate_term": "計算モデル",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142305Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:researchObjects",
+        "quote": "計算問題 / アルゴリズム / 計算モデル / 言語 / 証",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:representativeThemes",
+        "quote": "アルゴリズム / 計算量 / オートマトン / プログラム意",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142329Z",
+    "updatedAt": "2026-07-12T12:00:35.142331Z"
+  },
+  {
+    "tag_id": "tag:a5c0d9f4-9732-502a-aef8-d8a896c4686d",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較できるのか？",
+    "controlled": null,
+    "candidate_term": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142339Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:questions",
+        "quote": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142363Z",
+    "updatedAt": "2026-07-12T12:00:35.142364Z"
+  },
+  {
+    "tag_id": "tag:ec49f141-ca3b-5548-aa17-b2a7bdd71c6c",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "コンピュータの方式が変わっても変わらない、計算の根本的な限界は何か？",
+    "controlled": null,
+    "candidate_term": "コンピュータの方式が変わっても変わらない、計算の根本的な限界は何か？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142372Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:questions",
+        "quote": "問題の内容が違っても、計算の難しさを共通の尺度でどこまで比較",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142395Z",
+    "updatedAt": "2026-07-12T12:00:35.142396Z"
+  },
+  {
+    "tag_id": "tag:1c9f14ee-59c6-5001-b981-64f3b66cebc1",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "形式化",
+    "controlled": "形式化",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142406Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:methods",
+        "quote": "形式化 / 数学的証明 / 還元 / アルゴリズム設計 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142429Z",
+    "updatedAt": "2026-07-12T12:00:35.142430Z"
+  },
+  {
+    "tag_id": "tag:45bbafba-f7c7-58a2-970c-569bb2a5944a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "数学的証明",
+    "controlled": "数学的証明",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142438Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-444b4ac889a8:methods",
+        "quote": "形式化 / 数学的証明 / 還元 / アルゴリズム設計 / ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-444b4ac889a8:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142461Z",
+    "updatedAt": "2026-07-12T12:00:35.142462Z"
+  },
+  {
+    "tag_id": "tag:3e85dbe8-d64d-5ffc-aad4-8d1a07b60ca7",
+    "entity": "ent:RESEARCH_FIELD:sample-field-444b4ac889a8",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "門",
+    "controlled": null,
+    "candidate_term": "門",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142470Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-444b4ac889a8",
+    "sourceHash": "6fe77ab49a618be7e1024f4792a0234f3997e22526d0c20f85b4018805800d97",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.142493Z",
+    "updatedAt": "2026-07-12T12:00:35.142495Z"
+  },
+  {
+    "tag_id": "tag:93cc4b8f-d67e-57ed-931b-fbabca401ac2",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "動くシステムの状態を理解し、望ましい動きへ導く方法を研究する分野。",
+    "controlled": null,
+    "candidate_term": "動くシステムの状態を理解し、望ましい動きへ導く方法を研究する分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142589Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:beginnerDescription",
+        "quote": "動くシステムの状態を理解し、望ましい動きへ導く方法を研究する",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142618Z",
+    "updatedAt": "2026-07-12T12:00:35.142620Z"
+  },
+  {
+    "tag_id": "tag:5bba0085-5d1c-519d-a472-1b70e5defaf8",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "状態",
+    "controlled": null,
+    "candidate_term": "状態",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142631Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:researchObjects",
+        "quote": "状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:representativeThemes",
+        "quote": "システム同定 / 状態推定 / フィードバック / 最適制御",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142658Z",
+    "updatedAt": "2026-07-12T12:00:35.142660Z"
+  },
+  {
+    "tag_id": "tag:68c00aa7-2b2c-5229-8e29-8e68b6dd3f12",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "入力",
+    "controlled": null,
+    "candidate_term": "入力",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142667Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:researchObjects",
+        "quote": "状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:representativeThemes",
+        "quote": "システム同定 / 状態推定 / フィードバック / 最適制御",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142695Z",
+    "updatedAt": "2026-07-12T12:00:35.142696Z"
+  },
+  {
+    "tag_id": "tag:3dc18838-0984-574e-a8ca-6105d20237d6",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "出力",
+    "controlled": null,
+    "candidate_term": "出力",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142704Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:researchObjects",
+        "quote": "状態 / 入力 / 出力 / 観測 / 制御器 / 外乱 /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:representativeThemes",
+        "quote": "システム同定 / 状態推定 / フィードバック / 最適制御",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142730Z",
+    "updatedAt": "2026-07-12T12:00:35.142731Z"
+  },
+  {
+    "tag_id": "tag:f5b97e4e-0ed3-51fc-a01e-00269d70b0f7",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "すべての状態を直接測れないシステムを、限られた観測からどう制御できるのか？",
+    "controlled": null,
+    "candidate_term": "すべての状態を直接測れないシステムを、限られた観測からどう制御できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142740Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:questions",
+        "quote": "すべての状態を直接測れないシステムを、限られた観測からどう制",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142766Z",
+    "updatedAt": "2026-07-12T12:00:35.142767Z"
+  },
+  {
+    "tag_id": "tag:00666a78-120c-57b2-bce1-2ca963a66c52",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "モデルが現実と少し違っていても、安定して目的を達成する制御はどう設計できるのか？",
+    "controlled": null,
+    "candidate_term": "モデルが現実と少し違っていても、安定して目的を達成する制御はどう設計できるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142776Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:questions",
+        "quote": "すべての状態を直接測れないシステムを、限られた観測からどう制",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142802Z",
+    "updatedAt": "2026-07-12T12:00:35.142803Z"
+  },
+  {
+    "tag_id": "tag:9cbf2695-35de-5c7f-83af-2149890efde9",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "数理モデル",
+    "controlled": "数理モデル",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142813Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:methods",
+        "quote": "数理モデル / 状態空間表現 / シミュレーション / 最適",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142838Z",
+    "updatedAt": "2026-07-12T12:00:35.142839Z"
+  },
+  {
+    "tag_id": "tag:920bf826-b6e4-5127-b395-f3ecf435879a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "状態空間表現",
+    "controlled": "状態空間表現",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142847Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c501f8a19346:methods",
+        "quote": "数理モデル / 状態空間表現 / シミュレーション / 最適",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c501f8a19346:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.142872Z",
+    "updatedAt": "2026-07-12T12:00:35.142874Z"
+  },
+  {
+    "tag_id": "tag:5e921d8c-7d42-5175-8039-68a96a6d25ea",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c501f8a19346",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "目",
+    "controlled": null,
+    "candidate_term": "目",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.142882Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c501f8a19346",
+    "sourceHash": "8953194e800bda82ff2f24c21ba40a7e3803cf99f3e516994c878808ff4dfc6b",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.142908Z",
+    "updatedAt": "2026-07-12T12:00:35.142909Z"
+  },
+  {
+    "tag_id": "tag:af5aeecb-587e-5b76-adda-6f6d44ce1c02",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力を統一しようとする理論と、粒子間の新しい対称性を研究する分野。",
+    "controlled": null,
+    "candidate_term": "素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力を統一しようとする理論と、粒子間の新しい対称性を研究する分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143009Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:beginnerDescription",
+        "quote": "素粒子を点ではなく微小なひもとして捉え、重力を含むすべての力",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143127Z",
+    "updatedAt": "2026-07-12T12:00:35.143245Z"
+  },
+  {
+    "tag_id": "tag:8d29debb-78a4-5252-bb29-cf1b7dd5f080",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "弦",
+    "controlled": null,
+    "candidate_term": "弦",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143462Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:researchObjects",
+        "quote": "弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:representativeThemes",
+        "quote": "超弦理論 / M理論 / 超対称性 / 余剰次元 / ブレー",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143614Z",
+    "updatedAt": "2026-07-12T12:00:35.143616Z"
+  },
+  {
+    "tag_id": "tag:362394a2-524e-5968-b89f-ac7beb0f57f7",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "ブレーン",
+    "controlled": null,
+    "candidate_term": "ブレーン",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143648Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:researchObjects",
+        "quote": "弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:representativeThemes",
+        "quote": "超弦理論 / M理論 / 超対称性 / 余剰次元 / ブレー",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143690Z",
+    "updatedAt": "2026-07-12T12:00:35.143692Z"
+  },
+  {
+    "tag_id": "tag:a4984c17-0b6c-5721-a326-efd79fc75c64",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "余剰次元",
+    "controlled": null,
+    "candidate_term": "余剰次元",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143705Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:researchObjects",
+        "quote": "弦 / ブレーン / 余剰次元 / 超対称粒子 / 双対性 ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:representativeThemes",
+        "quote": "超弦理論 / M理論 / 超対称性 / 余剰次元 / ブレー",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143736Z",
+    "updatedAt": "2026-07-12T12:00:35.143738Z"
+  },
+  {
+    "tag_id": "tag:4d47ef16-a3f9-5893-a6d3-5f7909a1771f",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "粒子と力をすべて同じ基本的なひもの振動として説明することは可能か？",
+    "controlled": null,
+    "candidate_term": "粒子と力をすべて同じ基本的なひもの振動として説明することは可能か？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143750Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:questions",
+        "quote": "粒子と力をすべて同じ基本的なひもの振動として説明することは可",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143776Z",
+    "updatedAt": "2026-07-12T12:00:35.143778Z"
+  },
+  {
+    "tag_id": "tag:815e1eec-a982-585f-bf15-bd4201afd0c3",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "時空そのものが、より基本的な量子情報や場の関係から生まれる可能性はあるのか？",
+    "controlled": null,
+    "candidate_term": "時空そのものが、より基本的な量子情報や場の関係から生まれる可能性はあるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143786Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:questions",
+        "quote": "粒子と力をすべて同じ基本的なひもの振動として説明することは可",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143811Z",
+    "updatedAt": "2026-07-12T12:00:35.143813Z"
+  },
+  {
+    "tag_id": "tag:91967038-ee96-50cd-81c0-bff6731139af",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "理論モデル",
+    "controlled": "理論モデル",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143825Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:methods",
+        "quote": "理論モデル / 精密測定 / 実験 / 数値計算 / シミュ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143849Z",
+    "updatedAt": "2026-07-12T12:00:35.143851Z"
+  },
+  {
+    "tag_id": "tag:b484730f-0289-55fe-a81a-1c1ac237e09b",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "精密測定",
+    "controlled": "精密測定",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143888Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-521f89cb1d69:methods",
+        "quote": "理論モデル / 精密測定 / 実験 / 数値計算 / シミュ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-521f89cb1d69:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.143912Z",
+    "updatedAt": "2026-07-12T12:00:35.143913Z"
+  },
+  {
+    "tag_id": "tag:c59fc9cf-ddad-5012-ba62-b367f9e4864a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-521f89cb1d69",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "科",
+    "controlled": null,
+    "candidate_term": "科",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.143925Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-521f89cb1d69",
+    "sourceHash": "45626f835671be9f137bc77924f7a1aacce7e70e0cf0c870f86d317f8d13d470",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.143948Z",
+    "updatedAt": "2026-07-12T12:00:35.143950Z"
+  },
+  {
+    "tag_id": "tag:18af6386-f9c0-59a8-b8ec-eb3da42f7f44",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "Σ",
+    "surface": "結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物質、その中間である半導体の性質を明らかにする分野。",
+    "controlled": null,
+    "candidate_term": "結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物質、その中間である半導体の性質を明らかにする分野。",
+    "links": {
+      "BT": [
+        "要約主題"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144067Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:beginnerDescription",
+        "quote": "結晶中の電子や原子の動きを研究し、電気を通す物質、通さない物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:c4c5b1bc"
+      }
+    ],
+    "confidence": 0.76,
+    "refutation": "追加証拠で、この要約主題が対象全体を表さないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144097Z",
+    "updatedAt": "2026-07-12T12:00:35.144098Z"
+  },
+  {
+    "tag_id": "tag:2b278065-9f42-5efc-824d-052fc847fb0a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "結晶格子",
+    "controlled": null,
+    "candidate_term": "結晶格子",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144111Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:researchObjects",
+        "quote": "結晶格子 / 電子バンド / 正孔 / フォノン / 不純物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:representativeThemes",
+        "quote": "バンド構造 / フェルミ面 / フォノン / ドーピング /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144138Z",
+    "updatedAt": "2026-07-12T12:00:35.144139Z"
+  },
+  {
+    "tag_id": "tag:fcc674f2-47ac-5703-a3ce-6a3b35271f19",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "電子バンド",
+    "controlled": null,
+    "candidate_term": "電子バンド",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144147Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:researchObjects",
+        "quote": "結晶格子 / 電子バンド / 正孔 / フォノン / 不純物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:representativeThemes",
+        "quote": "バンド構造 / フェルミ面 / フォノン / ドーピング /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144176Z",
+    "updatedAt": "2026-07-12T12:00:35.144178Z"
+  },
+  {
+    "tag_id": "tag:49e0ff38-d820-59f4-b8c5-a482e4e233a2",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "IS",
+    "surface": "正孔",
+    "controlled": null,
+    "candidate_term": "正孔",
+    "links": {
+      "BT": [
+        "研究対象"
+      ],
+      "NT": [],
+      "RT": [
+        "研究領域"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144185Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:researchObjects",
+        "quote": "結晶格子 / 電子バンド / 正孔 / フォノン / 不純物",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:0cfa57c9"
+      },
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:representativeThemes",
+        "quote": "バンド構造 / フェルミ面 / フォノン / ドーピング /",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:f970b51c"
+      }
+    ],
+    "confidence": 0.72,
+    "refutation": "公式説明または本文証拠で、この対象を扱っていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144210Z",
+    "updatedAt": "2026-07-12T12:00:35.144212Z"
+  },
+  {
+    "tag_id": "tag:35b61cd7-7655-5e45-b7ee-e27cfd8fb28b",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生じるのはなぜか？",
+    "controlled": null,
+    "candidate_term": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生じるのはなぜか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144221Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:questions",
+        "quote": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144245Z",
+    "updatedAt": "2026-07-12T12:00:35.144247Z"
+  },
+  {
+    "tag_id": "tag:389841f9-3fce-5181-ace0-7fe7a85c05e2",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "Q",
+    "surface": "わずかな不純物や界面の設計によって、半導体の電気的・光学的性質をどこまで変えられるのか？",
+    "controlled": null,
+    "candidate_term": "わずかな不純物や界面の設計によって、半導体の電気的・光学的性質をどこまで変えられるのか？",
+    "links": {
+      "BT": [
+        "研究上の問い"
+      ],
+      "NT": [],
+      "RT": [
+        "研究関心"
+      ],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144255Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:questions",
+        "quote": "電子が同じ物質中にあるのに、電気を通す場合と通さない場合が生",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:ff3d39b6"
+      }
+    ],
+    "confidence": 0.78,
+    "refutation": "追加の公式説明で、この問いが当該資源の扱う問いではないと確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144280Z",
+    "updatedAt": "2026-07-12T12:00:35.144281Z"
+  },
+  {
+    "tag_id": "tag:53e269a9-c6a1-5a0c-83cf-1c8482135547",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "理論モデル",
+    "controlled": "理論モデル",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144293Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:methods",
+        "quote": "理論モデル / 精密測定 / 実験 / 数値計算 / シミュ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144317Z",
+    "updatedAt": "2026-07-12T12:00:35.144319Z"
+  },
+  {
+    "tag_id": "tag:6ee22d96-6b78-5035-8279-f7bbe78d1432",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "M",
+    "surface": "精密測定",
+    "controlled": "精密測定",
+    "candidate_term": null,
+    "links": {
+      "BT": [
+        "研究方法"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "asserted",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144330Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [
+      {
+        "grade": "E1",
+        "source": "fields.json#sample-field-c61fedefcf07:methods",
+        "quote": "理論モデル / 精密測定 / 実験 / 数値計算 / シミュ",
+        "independent_chain": false,
+        "evidence_id": "ev:field:sample-field-c61fedefcf07:b85dac7f"
+      }
+    ],
+    "confidence": 0.7,
+    "refutation": "公式説明または本文証拠で、この方法を用いていないことが確認される。",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [],
+    "generatedAt": "2026-07-12T12:00:35.144354Z",
+    "updatedAt": "2026-07-12T12:00:35.144356Z"
+  },
+  {
+    "tag_id": "tag:5a418ed4-2247-5448-bbcb-1edd844f5d7a",
+    "entity": "ent:RESEARCH_FIELD:sample-field-c61fedefcf07",
+    "layer": "CORE",
+    "facet": "SC",
+    "surface": "科",
+    "controlled": null,
+    "candidate_term": "科",
+    "links": {
+      "BT": [
+        "研究スコープ"
+      ],
+      "NT": [],
+      "RT": [],
+      "ANT": [],
+      "UF": [],
+      "decomposes_to": []
+    },
+    "polarity": "n/a",
+    "modality": "hypothesis",
+    "temporality": {
+      "observed_at": "2026-07-12T12:00:35.144365Z",
+      "expected_decay": "durable"
+    },
+    "evidence": [],
+    "confidence": 0.4,
+    "refutation": "",
+    "purpose_scope": "invariant",
+    "derived_from": [],
+    "scheme_version": "mishiru-research-resource@0.1.0-draft",
+    "provenance": {
+      "generated_by": "stsmp_mishiru_pilot.py",
+      "reviewed_by": null,
+      "feedback": []
+    },
+    "sourceType": "field",
+    "sourceId": "sample-field-c61fedefcf07",
+    "sourceHash": "6e25ad3a87791fef7fca6126029794325880da9b8ac2d131614d4e342bbeb5e7",
+    "dataset": "mishiru-sample",
+    "generationMode": "FULL",
+    "reviewStatus": "pending",
+    "warnings": [
+      "insufficient_evidence_for_asserted"
+    ],
+    "generatedAt": "2026-07-12T12:00:35.144389Z",
+    "updatedAt": "2026-07-12T12:00:35.144390Z"
+  }
+]
