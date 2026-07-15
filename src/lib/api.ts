@@ -1,6 +1,7 @@
 // APIクライアント（docs/03 §6）。オフライン時はキャッシュ/キューで体感を壊さない（FR-ERR-01/02）。
 import { getSessionId, newActionId, enqueueAction } from "./session";
 import { aiRequestHeaders } from "./aiModel";
+import { authHeaders } from "./auth";
 import type {
   ThemeCard, Lab, InterestProfile, CardAction,
   DiscoveryCard, ResearchField, ResearchSociety, ResearchJournal, QuestionProject,
@@ -11,24 +12,33 @@ import type {
   NormalizedResearchMaterial, QuestionFreeInput, ResearchProject, ResearchProjectCover, RQCandidate, Step1Response, Step2Response,
 } from "../../shared/research-project";
 
-async function get<T>(url: string): Promise<T> {
-  const res = await fetch(url, { headers: aiRequestHeaders() });
-  if (!res.ok) throw new Error((await res.json().catch(() => ({})))?.error?.message || `HTTP ${res.status}`);
+export class ApiError extends Error { constructor(message: string, public code = "HTTP_ERROR", public status = 0) { super(message); } }
+async function headers(json = false, actionId?: string) { return { ...aiRequestHeaders(json), ...(await authHeaders()), ...(actionId ? { "x-mishiru-action-id": actionId } : {}) }; }
+async function ensure(res: Response) {
+  const body = !res.ok ? await res.json().catch(() => ({})) : null;
+  if (res.status === 403 && body?.error?.code === "ACCOUNT_REQUIRED") window.dispatchEvent(new CustomEvent("mishiru:account-required", { detail: body.access }));
+  window.dispatchEvent(new CustomEvent("mishiru:access-updated"));
+  if (!res.ok) throw new ApiError(body?.error?.message || `HTTP ${res.status}`, body?.error?.code, res.status);
+}
+async function get<T>(url: string, valueAction = false): Promise<T> {
+  const res = await fetch(url, { headers: await headers(false, valueAction ? newActionId() : undefined) });
+  await ensure(res);
   return res.json();
 }
 async function post<T>(url: string, body: unknown): Promise<T> {
-  const res = await fetch(url, { method: "POST", headers: aiRequestHeaders(true), body: JSON.stringify(body) });
-  if (!res.ok) throw new Error((await res.json().catch(() => ({})))?.error?.message || `HTTP ${res.status}`);
+  const actionId = (body as { actionId?: string } | null)?.actionId || newActionId();
+  const res = await fetch(url, { method: "POST", headers: await headers(true, actionId), body: JSON.stringify(body) });
+  await ensure(res);
   return res.json();
 }
 async function patch<T>(url: string, body: unknown): Promise<T> {
-  const res = await fetch(url, { method: "PATCH", headers: aiRequestHeaders(true), body: JSON.stringify(body) });
-  if (!res.ok) throw new Error((await res.json().catch(() => ({})))?.error?.message || `HTTP ${res.status}`);
+  const res = await fetch(url, { method: "PATCH", headers: await headers(true), body: JSON.stringify(body) });
+  await ensure(res);
   return res.json();
 }
 async function del<T>(url: string): Promise<T> {
-  const res = await fetch(url, { method: "DELETE", headers: aiRequestHeaders() });
-  if (!res.ok) throw new Error((await res.json().catch(() => ({})))?.error?.message || `HTTP ${res.status}`);
+  const res = await fetch(url, { method: "DELETE", headers: await headers() });
+  await ensure(res);
   return res.json();
 }
 
@@ -120,7 +130,8 @@ export const api = {
     const payload = { actionId: newActionId(), sessionId: getSessionId(), cardId, action };
     try {
       return await post("/api/card-actions", payload);
-    } catch {
+    } catch (error) {
+      if (error instanceof ApiError && error.code === "ACCOUNT_REQUIRED") throw error;
       enqueueAction(payload);
       return null;
     }
@@ -164,7 +175,7 @@ export const api = {
   getQuestionMaterials: () => get<{ materials: NormalizedResearchMaterial[] }>(`/api/question-materials?sessionId=${getSessionId()}`),
   generateQuestionStep1: (payload: { sourceMode: "free_input" | "saved_items"; freeInput: QuestionFreeInput; materials: NormalizedResearchMaterial[] }) => post<{ step1: Step1Response; normalizedMaterials: NormalizedResearchMaterial[]; aiEnabled: boolean }>("/api/question-craft/step1", { ...payload, sessionId: getSessionId() }),
   generateQuestionStep2: (payload: { freeInput: QuestionFreeInput; selectedRq: RQCandidate; step1: Step1Response }) => post<{ step2: Step2Response; aiEnabled: boolean }>("/api/question-craft/step2", { ...payload, sessionId: getSessionId() }),
-  adjustResearchText: (value: string, instruction: string, context = "") => post<{ value: string; aiEnabled: boolean }>("/api/question-craft/adjust", { value, instruction, context }),
+  adjustResearchText: (value: string, instruction: string, context = "") => post<{ value: string; aiEnabled: boolean }>("/api/question-craft/adjust", { sessionId: getSessionId(), value, instruction, context }),
 
   getProjects: () => get<{ projects: (ResearchProject & { memoCount?: number; assetCount?: number })[] }>(`/api/projects?sessionId=${getSessionId()}`),
   getProject: (id: string) => get<{ project: ResearchProject; memoCount: number }>(`/api/projects/${id}?sessionId=${getSessionId()}`),
@@ -196,7 +207,8 @@ export const api = {
     const payload = { actionId: newActionId(), sessionId: getSessionId(), labId, action };
     try {
       return await post("/api/lab-card-actions", payload);
-    } catch {
+    } catch (error) {
+      if (error instanceof ApiError && error.code === "ACCOUNT_REQUIRED") throw error;
       enqueueAction(payload);
       return null;
     }
@@ -222,7 +234,7 @@ export const api = {
   getEnrichment: (id: string) => get<Enrichment>(`/api/labs/${id}/enrich`),
 
   smartSearch: (q: string, page = 1) =>
-    get<{ interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] }; by: "llm" | "keyword"; total: number; data: LabWithReasons[] }>(`/api/labs/smart?q=${encodeURIComponent(q)}&page=${page}&limit=24`),
+    get<{ interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] }; by: "llm" | "keyword"; total: number; data: LabWithReasons[] }>(`/api/labs/smart?q=${encodeURIComponent(q)}&page=${page}&limit=24&sessionId=${encodeURIComponent(getSessionId())}`, true),
 
   getFilters: () => get<{ facets: { field: Record<string, number>; region: Record<string, number>; type: Record<string, number> }; universities: string[] }>("/api/filters"),
   getPrefectures: (region: string) => get<{ prefectures: string[] }>(`/api/prefectures?region=${encodeURIComponent(region)}`),

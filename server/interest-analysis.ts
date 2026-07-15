@@ -5,6 +5,7 @@ import { callAIJson, aiEnabled, currentAiModel } from "./ai";
 import { store } from "./store";
 import { ACTIVE_DATASET } from "./research-project-repository";
 import { aiUsageConfig } from "./ai-usage-config";
+import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 
 const FILE = path.join(process.cwd(), "data", "runtime", ACTIVE_DATASET === "mishiru-sample" ? "interest-analyses.sample.json" : "interest-analyses.json");
 const active = new Set<string>();
@@ -13,8 +14,8 @@ const makeId = () => `interest-${Date.now().toString(36)}-${Math.random().toStri
 const materialKey = (item: NormalizedResearchMaterial) => `${item.sourceType}:${item.sourceId}`;
 
 export class InterestAnalysisRepository {
-  read(): InterestAnalysis[] { if (!fs.existsSync(FILE)) return []; try { const parsed = JSON.parse(fs.readFileSync(FILE, "utf8")); return Array.isArray(parsed) ? parsed : []; } catch (error) { throw new Error(`RUNTIME_JSON_CORRUPT:${FILE}:${error instanceof Error ? error.message : "parse error"}`); } }
-  write(items: InterestAnalysis[]) { fs.mkdirSync(path.dirname(FILE), { recursive: true }); const temp=`${FILE}.${process.pid}.tmp`; fs.writeFileSync(temp, JSON.stringify(items), "utf8"); fs.renameSync(temp,FILE); }
+  read(): InterestAnalysis[] { if (hasRemoteSessionState()) return getSessionSection<InterestAnalysis[]>("interestAnalyses", []); if (!fs.existsSync(FILE)) return []; try { const parsed = JSON.parse(fs.readFileSync(FILE, "utf8")); return Array.isArray(parsed) ? parsed : []; } catch (error) { throw new Error(`RUNTIME_JSON_CORRUPT:${FILE}:${error instanceof Error ? error.message : "parse error"}`); } }
+  write(items: InterestAnalysis[]) { if (hasRemoteSessionState()) { setSessionSection("interestAnalyses", items); return; } fs.mkdirSync(path.dirname(FILE), { recursive: true }); const temp=`${FILE}.${process.pid}.tmp`; fs.writeFileSync(temp, JSON.stringify(items), "utf8"); fs.renameSync(temp,FILE); }
   list(sessionId: string) { return this.read().filter((item) => item.sessionId === sessionId && item.dataset === ACTIVE_DATASET); }
   latest(sessionId: string) { return this.list(sessionId).sort((a,b) => b.lastAnalyzedAt.localeCompare(a.lastAnalyzedAt))[0] || null; }
   create(item: InterestAnalysis) { const items = this.read(); items.unshift(item); this.write(items); return item; }

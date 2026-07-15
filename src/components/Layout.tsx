@@ -5,6 +5,7 @@ import { Search, Sparkles, Archive, Radar, Lightbulb, BookOpen, Send, Menu, X, C
 import { BrandMark } from "./BrandMark";
 import { FloatingMemoButton } from "./FloatingMemoButton";
 import { AiModelSelector } from "./AiModelSelector";
+import { AccountButton } from "./AccountAccess";
 
 const TABS = [
   { to: "/search", label: "さがす", icon: Search },
@@ -99,6 +100,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             </details>
           </nav>
           <div className="mishiru-sidebar__footer">
+            <AccountButton />
             <details className="sidebar-ai-settings"><summary>AIモデル設定<ChevronDown aria-hidden="true"/></summary><AiModelSelector /></details>
             <span>自分の関心を見つめ、問いにし、相談できる研究のたたきへ。</span>
           </div>
@@ -109,10 +111,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <Link to="/search" className="brand-link" aria-label="MISHIRU ホーム">
           <BrandMark />
         </Link>
-        <button ref={menuTriggerRef} className="mobile-menu-trigger" type="button" aria-expanded={mobileMenuOpen} aria-controls="mobile-journey-menu" onClick={() => setMobileMenuOpen((open) => !open)}>
+        <div className="mishiru-mobile-header__actions"><AccountButton compact /><button ref={menuTriggerRef} className="mobile-menu-trigger" type="button" aria-expanded={mobileMenuOpen} aria-controls="mobile-journey-menu" onClick={() => setMobileMenuOpen((open) => !open)}>
           {mobileMenuOpen ? <X aria-hidden="true" /> : <Menu aria-hidden="true" />}
           <span>{mobileMenuOpen ? "閉じる" : "メニュー"}</span>
-        </button>
+        </button></div>
       </header>
 
       {mobileMenuOpen && <div className="mobile-journey-backdrop" role="presentation" onMouseDown={() => setMobileMenuOpen(false)}>
@@ -122,6 +124,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             {TABS.map((tab, index) => { const Icon = tab.icon; const active = isActive(pathname, tab.to); return <Link key={tab.to} to={tab.to} aria-current={active ? "page" : undefined}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><Icon aria-hidden="true"/><strong>{tab.label}</strong></Link>; })}
           </nav>
           <AiModelSelector compact />
+          <AccountButton />
           <p className="mobile-journey-menu__note">AIを使う操作では、選んだモデルとサーバー側のキーを使用します。キーがブラウザへ送られることはありません。</p>
         </section>
       </div>}

@@ -9,6 +9,7 @@ import type {
   DiscoveryActionRecord, QuestionProject, DiscoveryKind, ResearchResourceLegend,
 } from "../shared/types";
 import { cleanDisplayLabel, uniqueCleanLabels } from "../shared/text";
+import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const RUNTIME_DIR = path.join(DATA_DIR, "runtime");
@@ -151,6 +152,19 @@ function persist() {
   }, 400);
 }
 
+function mutableRuntime(sessionId?: string): RuntimeShape {
+  if (!hasRemoteSessionState(sessionId)) return runtime;
+  return getSessionSection<RuntimeShape>("runtime", {
+    cardActions: [], labActions: [], discoveryActions: [], questionProjects: {}, profiles: {},
+    claims: [], leads: [], reports: [], articles: [], events: [],
+  });
+}
+
+function persistMutable(state: RuntimeShape) {
+  if (hasRemoteSessionState()) setSessionSection("runtime", state);
+  else persist();
+}
+
 // ============ マスタ参照 ============
 export const store = {
   // labs
@@ -286,69 +300,72 @@ export const store = {
 
   // ============ card_actions（冪等 AC-10） ============
   addCardAction(rec: CardActionRecord): { created: boolean } {
-    if (runtime.cardActions.find((a) => a.actionId === rec.actionId)) return { created: false };
+    const state = mutableRuntime(rec.sessionId);
+    if (state.cardActions.find((a) => a.actionId === rec.actionId)) return { created: false };
     // 同一 session×card は最新の action で上書き（保存の付け外し等）
-    const idx = runtime.cardActions.findIndex((a) => a.sessionId === rec.sessionId && a.cardId === rec.cardId);
-    if (idx >= 0) runtime.cardActions[idx] = rec;
-    else runtime.cardActions.push(rec);
-    persist();
+    const idx = state.cardActions.findIndex((a) => a.sessionId === rec.sessionId && a.cardId === rec.cardId);
+    if (idx >= 0) state.cardActions[idx] = rec;
+    else state.cardActions.push(rec);
+    persistMutable(state);
     return { created: true };
   },
-  actionsBySession: (sessionId: string) => runtime.cardActions.filter((a) => a.sessionId === sessionId),
+  actionsBySession: (sessionId: string) => mutableRuntime(sessionId).cardActions.filter((a) => a.sessionId === sessionId),
   evaluatedCardIds: (sessionId: string) =>
-    new Set(runtime.cardActions.filter((a) => a.sessionId === sessionId).map((a) => a.cardId)),
+    new Set(mutableRuntime(sessionId).cardActions.filter((a) => a.sessionId === sessionId).map((a) => a.cardId)),
 
   // ============ lab_actions（研究室カードの評価。冪等・ADR-005） ============
   addLabAction(rec: LabActionRecord): { created: boolean } {
-    if (runtime.labActions.find((a) => a.actionId === rec.actionId)) return { created: false };
+    const state = mutableRuntime(rec.sessionId);
+    if (state.labActions.find((a) => a.actionId === rec.actionId)) return { created: false };
     if (rec.action === "skip" || rec.action === "not_fit") {
-      runtime.labActions = runtime.labActions.filter((a) => !(a.sessionId === rec.sessionId && a.labId === rec.labId));
-      runtime.labActions.push(rec);
+      state.labActions = state.labActions.filter((a) => !(a.sessionId === rec.sessionId && a.labId === rec.labId));
+      state.labActions.push(rec);
     } else {
-      runtime.labActions = runtime.labActions.filter((a) => !(a.sessionId === rec.sessionId && a.labId === rec.labId && (a.action === "skip" || a.action === "not_fit")));
-      const idx = runtime.labActions.findIndex((a) => a.sessionId === rec.sessionId && a.labId === rec.labId && a.action === rec.action);
-      if (idx >= 0) runtime.labActions[idx] = rec;
-      else runtime.labActions.push(rec);
+      state.labActions = state.labActions.filter((a) => !(a.sessionId === rec.sessionId && a.labId === rec.labId && (a.action === "skip" || a.action === "not_fit")));
+      const idx = state.labActions.findIndex((a) => a.sessionId === rec.sessionId && a.labId === rec.labId && a.action === rec.action);
+      if (idx >= 0) state.labActions[idx] = rec;
+      else state.labActions.push(rec);
     }
-    persist();
+    persistMutable(state);
     return { created: true };
   },
-  labActionsBySession: (sessionId: string) => runtime.labActions.filter((a) => a.sessionId === sessionId),
+  labActionsBySession: (sessionId: string) => mutableRuntime(sessionId).labActions.filter((a) => a.sessionId === sessionId),
   removeLabAction(sessionId: string, labId: string, action: CardAction): boolean {
-    const before = runtime.labActions.length;
-    runtime.labActions = runtime.labActions.filter((a) => !(a.sessionId === sessionId && a.labId === labId && a.action === action));
-    if (runtime.labActions.length !== before) persist();
-    return runtime.labActions.length !== before;
+    const state = mutableRuntime(sessionId); const before = state.labActions.length;
+    state.labActions = state.labActions.filter((a) => !(a.sessionId === sessionId && a.labId === labId && a.action === action));
+    if (state.labActions.length !== before) persistMutable(state);
+    return state.labActions.length !== before;
   },
   evaluatedLabIds: (sessionId: string) =>
-    new Set(runtime.labActions.filter((a) => a.sessionId === sessionId).map((a) => a.labId)),
+    new Set(mutableRuntime(sessionId).labActions.filter((a) => a.sessionId === sessionId).map((a) => a.labId)),
   savedLabs(sessionId: string): Lab[] {
-    return runtime.labActions
+    return mutableRuntime(sessionId).labActions
       .filter((a) => a.sessionId === sessionId && a.action === "save")
       .map((a) => labById.get(a.labId))
       .filter((l): l is Lab => !!l);
   },
   likedLabs(sessionId: string): Lab[] {
-    return runtime.labActions
+    return mutableRuntime(sessionId).labActions
       .filter((a) => a.sessionId === sessionId && a.action === "like")
       .map((a) => labById.get(a.labId))
       .filter((l): l is Lab => !!l);
   },
   // 評価総数（テーマ＋研究室。プロファイル閾値の分母）
   totalEvaluations: (sessionId: string) =>
-    runtime.cardActions.filter((a) => a.sessionId === sessionId).length +
-    runtime.labActions.filter((a) => a.sessionId === sessionId).length,
+    mutableRuntime(sessionId).cardActions.filter((a) => a.sessionId === sessionId).length +
+    mutableRuntime(sessionId).labActions.filter((a) => a.sessionId === sessionId).length,
   // 興味分野スコア（デッキ選定用の共有シグナル。正の分のみ）
   interestAreaScore(sessionId: string): Record<string, number> {
     const W: Record<string, number> = { save: 3, important: 4, deep: 2, like: 2, unclear: 1, skip: -1, not_fit: -2 };
     const score: Record<string, number> = {};
-    for (const a of runtime.cardActions.filter((x) => x.sessionId === sessionId)) {
+    const state = mutableRuntime(sessionId);
+    for (const a of state.cardActions.filter((x) => x.sessionId === sessionId)) {
       const card = cardById.get(a.cardId);
       if (!card) continue;
       const w = W[a.action] || 0;
       for (const t of card.area_tags) score[t] = (score[t] || 0) + w;
     }
-    for (const a of runtime.labActions.filter((x) => x.sessionId === sessionId)) {
+    for (const a of state.labActions.filter((x) => x.sessionId === sessionId)) {
       const lab = labById.get(a.labId);
       if (!lab) continue;
       const w = W[a.action] || 0;
@@ -360,32 +377,33 @@ export const store = {
 
   // ============ discovery_actions（混合デッキの反応） ============
   addDiscoveryAction(rec: DiscoveryActionRecord): { created: boolean } {
-    if (runtime.discoveryActions.find((a) => a.actionId === rec.actionId)) return { created: false };
-    const idx = runtime.discoveryActions.findIndex((a) => a.sessionId === rec.sessionId && a.itemId === rec.itemId && a.itemKind === rec.itemKind);
-    if (idx >= 0) runtime.discoveryActions[idx] = rec;
-    else runtime.discoveryActions.push(rec);
-    persist();
+    const state = mutableRuntime(rec.sessionId);
+    if (state.discoveryActions.find((a) => a.actionId === rec.actionId)) return { created: false };
+    const idx = state.discoveryActions.findIndex((a) => a.sessionId === rec.sessionId && a.itemId === rec.itemId && a.itemKind === rec.itemKind);
+    if (idx >= 0) state.discoveryActions[idx] = rec;
+    else state.discoveryActions.push(rec);
+    persistMutable(state);
     return { created: true };
   },
-  discoveryActionsBySession: (sessionId: string) => runtime.discoveryActions.filter((a) => a.sessionId === sessionId),
+  discoveryActionsBySession: (sessionId: string) => mutableRuntime(sessionId).discoveryActions.filter((a) => a.sessionId === sessionId),
   removeDiscoveryAction(sessionId: string, itemId: string, itemKind: string): boolean {
-    const before = runtime.discoveryActions.length;
-    runtime.discoveryActions = runtime.discoveryActions.filter((a) => !(a.sessionId === sessionId && a.itemId === itemId && a.itemKind === itemKind));
-    if (runtime.discoveryActions.length !== before) persist();
-    return runtime.discoveryActions.length !== before;
+    const state = mutableRuntime(sessionId); const before = state.discoveryActions.length;
+    state.discoveryActions = state.discoveryActions.filter((a) => !(a.sessionId === sessionId && a.itemId === itemId && a.itemKind === itemKind));
+    if (state.discoveryActions.length !== before) persistMutable(state);
+    return state.discoveryActions.length !== before;
   },
 
   // ============ question_projects（問い画面の作業台） ============
   saveQuestionProject(project: QuestionProject) {
-    runtime.questionProjects[project.sessionId] = project;
-    persist();
+    const state = mutableRuntime(project.sessionId); state.questionProjects[project.sessionId] = project;
+    persistMutable(state);
     return project;
   },
-  getQuestionProject: (sessionId: string) => runtime.questionProjects[sessionId] || null,
+  getQuestionProject: (sessionId: string) => mutableRuntime(sessionId).questionProjects[sessionId] || null,
 
   // ============ interest_profiles ============
-  saveProfile(p: InterestProfile) { runtime.profiles[p.sessionId] = p; persist(); },
-  getProfile: (sessionId: string) => runtime.profiles[sessionId] || null,
+  saveProfile(p: InterestProfile) { const state=mutableRuntime(p.sessionId); state.profiles[p.sessionId] = p; persistMutable(state); },
+  getProfile: (sessionId: string) => mutableRuntime(sessionId).profiles[sessionId] || null,
 
   // ============ events（計測 FR-EVT-01） ============
   addEvents(evts: AppEvent[]) { runtime.events.push(...evts); persist(); },

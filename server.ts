@@ -23,6 +23,8 @@ import { buildConsultationDraft, ConsultationAssetRepository, ConsultationExport
 import { InterestAnalysisRepository, InterestAnalysisService } from "./server/interest-analysis";
 import { AI_MODELS, aiEnabled, aiProviderStatus, currentAiModel, currentAiProvider, withAiModel } from "./server/ai";
 import { stsmpMaterialMeta } from "./server/stsmp";
+import { accessContextMiddleware, guestUsage, GUEST_ACTION_LIMIT, requireValueAction } from "./server/access";
+import { sessionStateMiddleware } from "./server/session-state";
 import type {
   CardActionRecord, Claim, Lead, Report, Article, AppEvent, ClaimType,
   CardAction, DiscoveryActionRecord, DiscoveryCard, ResearchField, ResearchSociety, ResearchJournal, QuestionProject,
@@ -91,12 +93,12 @@ async function notifyClaim(claim: Claim) {
   console.log(`[claim] 対応待ち登録 id=${claim.id} type=${claim.type} lab=${claim.labName} email=${claim.email}`);
 }
 
-async function startServer() {
+export async function createApp() {
   const app = express();
-  const PORT = Number(process.env.PORT) || 3000;
-  const HOST = process.env.HOST || "0.0.0.0";
   app.use(express.json({ limit: "12mb" }));
   app.use((req, _res, next) => withAiModel(req.get("x-mishiru-ai-model"), next));
+  app.use(accessContextMiddleware);
+  app.use(sessionStateMiddleware);
 
   const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     if (!ADMIN_TOKEN) return next(); // 開発モード（公開環境ではADMIN_TOKEN必須／Runbook参照）
@@ -120,6 +122,16 @@ async function startServer() {
       counts: { labs: store.publicLabs().length, cards: store.allCards().length },
     });
   });
+  app.get("/api/access", async (_req, res) => {
+    const sessionId = String(res.locals.mishiruSessionId || "");
+    if (res.locals.mishiruUser) return res.json({ authenticated: true, sessionId, limit: null, used: 0, remaining: null });
+    const usage = await guestUsage(sessionId);
+    res.json({ authenticated: false, sessionId, limit: GUEST_ACTION_LIMIT, ...usage });
+  });
+  app.post("/api/auth/link-session", (req, res) => {
+    if (!res.locals.mishiruUser) return res.status(401).json({ error: { code: "UNAUTHORIZED", message: "ログインが必要です" } });
+    res.json({ authenticated: true, sessionId: String(res.locals.mishiruSessionId || req.body?.sessionId || "") });
+  });
   app.get("/api/meta", (_req, res) => {
     res.json({ genres: HOOK_GENRES, areas: RESEARCH_AREAS, profileThreshold: PROFILE_THRESHOLD });
   });
@@ -132,7 +144,7 @@ async function startServer() {
     const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です");
     res.json({ materials: collectResearchMaterials(sessionId) });
   });
-  app.post("/api/question-craft/step1", async (req, res) => {
+  app.post("/api/question-craft/step1", requireValueAction("question_step1"), async (req, res) => {
     const sessionId = String(req.body?.sessionId || ""); const sourceMode = req.body?.sourceMode === "saved_items" ? "saved_items" : "free_input";
     const freeInput = (req.body?.freeInput || {}) as QuestionFreeInput; const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
     if (!sessionId) return bad(res, "sessionId が必要です");
@@ -140,13 +152,13 @@ async function startServer() {
     try { res.json({ step1: await generateStep1(freeInput, materials), normalizedMaterials: materials, aiEnabled: aiEnabled() }); }
     catch (error) { console.error("[question-craft step1]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "問いの候補を生成できませんでした。入力内容は保存されています。" } }); }
   });
-  app.post("/api/question-craft/step2", async (req, res) => {
+  app.post("/api/question-craft/step2", requireValueAction("question_step2"), async (req, res) => {
     const sessionId = String(req.body?.sessionId || ""); const freeInput = (req.body?.freeInput || {}) as QuestionFreeInput; const selectedRq = req.body?.selectedRq as RQCandidate; const step1 = req.body?.step1 as Step1Response;
     if (!sessionId || !selectedRq || !step1) return bad(res, "sessionId, selectedRq, step1 が必要です");
     try { res.json({ step2: await generateStep2(freeInput, selectedRq, step1), aiEnabled: aiEnabled() }); }
     catch (error) { console.error("[question-craft step2]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "研究骨子を生成できませんでした。Step 1は保持されています。" } }); }
   });
-  app.post("/api/question-craft/adjust", async (req, res) => { const { value, instruction, context } = req.body || {}; if (!value || !instruction) return bad(res, "value, instruction が必要です"); res.json({ value: await adjustResearchText(String(value), String(instruction), String(context || "")), aiEnabled: aiEnabled() }); });
+  app.post("/api/question-craft/adjust", requireValueAction("question_adjust"), async (req, res) => { const { value, instruction, context } = req.body || {}; if (!value || !instruction) return bad(res, "value, instruction が必要です"); res.json({ value: await adjustResearchText(String(value), String(instruction), String(context || "")), aiEnabled: aiEnabled() }); });
 
   app.get("/api/projects", (req, res) => { const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); const projects = projectRepository.list(sessionId); res.json({ projects: projects.map((project) => ({ ...project, memoCount: consultationMemoRepository.list(sessionId, project.id).length, assetCount: consultationAssetRepository.list(project).length })) }); });
   app.post("/api/projects", (req, res) => { const sessionId = String(req.body?.sessionId || ""); if (!sessionId || !req.body?.step1Response || !req.body?.step2Response || !req.body?.selectedRq) return bad(res, "保存に必要な生成結果が不足しています"); try { const project = researchProjectService.create({ ...req.body, sessionId, materials: normalizeResearchMaterials(req.body.materials || []) }); if (req.body?.interestAnalysisId) projectRepository.update(sessionId, project.id, { interestAnalysisId: String(req.body.interestAnalysisId) }); res.status(201).json({ project: projectRepository.get(sessionId, project.id) }); } catch (error) { console.error("[project create]", error); res.status(500).json({ error: { code: "SAVE_FAILED", message: "研究プロジェクトを保存できませんでした" } }); } });
@@ -188,7 +200,7 @@ async function startServer() {
 
   // ============ みつめる：手動分析 ==========
   app.get("/api/interest-analysis", (req, res) => { const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); res.json({ analysis: interestAnalysisRepository.latest(sessionId), usage: interestAnalysisService.usage(sessionId), aiEnabled: aiEnabled(), serverMaterialCount: collectResearchMaterials(sessionId, true).length, dataset: ACTIVE_DATASET }); });
-  app.post("/api/interest-analysis", async (req, res) => { const sessionId = String(req.body?.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); const materials = normalizeResearchMaterials([...(Array.isArray(req.body?.materials) ? req.body.materials : []), ...collectResearchMaterials(sessionId, true)]).filter((item,index,all) => all.findIndex((other) => `${other.sourceType}:${other.sourceId}:${other.userReaction}` === `${item.sourceType}:${item.sourceId}:${item.userReaction}`) === index); try { const analysis = await interestAnalysisService.analyze(sessionId, materials, Array.isArray(req.body?.excludedSourceIds) ? req.body.excludedSourceIds : []); res.status(201).json({ analysis, usage: interestAnalysisService.usage(sessionId), aiEnabled: aiEnabled() }); } catch (error) { const code = error instanceof Error ? error.message : "ANALYSIS_FAILED"; const status = code === "DAILY_LIMIT_REACHED" ? 429 : code === "ANALYSIS_IN_PROGRESS" ? 409 : 400; res.status(status).json({ error: { code, message: code === "DAILY_LIMIT_REACHED" ? "本日の分析上限に達しました" : code === "ANALYSIS_IN_PROGRESS" ? "分析を処理中です" : "分析に使える素材がありません" } }); } });
+  app.post("/api/interest-analysis", requireValueAction("interest_analysis"), async (req, res) => { const sessionId = String(req.body?.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); const materials = normalizeResearchMaterials([...(Array.isArray(req.body?.materials) ? req.body.materials : []), ...collectResearchMaterials(sessionId, true)]).filter((item,index,all) => all.findIndex((other) => `${other.sourceType}:${other.sourceId}:${other.userReaction}` === `${item.sourceType}:${item.sourceId}:${item.userReaction}`) === index); try { const analysis = await interestAnalysisService.analyze(sessionId, materials, Array.isArray(req.body?.excludedSourceIds) ? req.body.excludedSourceIds : []); res.status(201).json({ analysis, usage: interestAnalysisService.usage(sessionId), aiEnabled: aiEnabled() }); } catch (error) { const code = error instanceof Error ? error.message : "ANALYSIS_FAILED"; const status = code === "DAILY_LIMIT_REACHED" ? 429 : code === "ANALYSIS_IN_PROGRESS" ? 409 : 400; res.status(status).json({ error: { code, message: code === "DAILY_LIMIT_REACHED" ? "本日の分析上限に達しました" : code === "ANALYSIS_IN_PROGRESS" ? "分析を処理中です" : "分析に使える素材がありません" } }); } });
 
   app.get("/api/research-resources/summary", (_req, res) => {
     res.json(store.researchResourceSummary());
@@ -264,7 +276,7 @@ async function startServer() {
   });
 
   // ============ カードアクション（冪等 AC-10 / FR-CARD-02） ============
-  app.post("/api/card-actions", (req, res) => {
+  app.post("/api/card-actions", requireValueAction("card_action"), (req, res) => {
     const { actionId, sessionId, cardId, action } = req.body || {};
     if (!actionId || !sessionId || !cardId || !ACTIONS.includes(action))
       return bad(res, "actionId, sessionId, cardId, action が必要です");
@@ -465,7 +477,7 @@ async function startServer() {
   });
 
   // 研究室カードの評価（冪等 FR-LABCARD-02。テーマカードと同じ4アクション）
-  app.post("/api/lab-card-actions", (req, res) => {
+  app.post("/api/lab-card-actions", requireValueAction("lab_action"), (req, res) => {
     const { actionId, sessionId, labId, action } = req.body || {};
     if (!actionId || !sessionId || !labId || !ACTIONS.includes(action))
       return bad(res, "actionId, sessionId, labId, action が必要です");
@@ -486,7 +498,7 @@ async function startServer() {
     res.json({ ok: true, removed, evaluatedCount: store.totalEvaluations(sessionId) + store.discoveryActionsBySession(sessionId).length });
   });
 
-  app.post("/api/discovery-actions", (req, res) => {
+  app.post("/api/discovery-actions", requireValueAction("discovery_action"), (req, res) => {
     const { actionId, sessionId, itemId, itemKind, action } = req.body || {};
     if (!actionId || !sessionId || !itemId || !itemKind || !ACTIONS.includes(action))
       return bad(res, "actionId, sessionId, itemId, itemKind, action が必要です");
@@ -678,7 +690,7 @@ async function startServer() {
   });
 
   // AI意味検索（なんとなくの興味→研究室。FR-SEARCH-AI・追補）
-  app.get("/api/labs/smart", async (req, res) => {
+  app.get("/api/labs/smart", requireValueAction("smart_search"), async (req, res) => {
     const q = String(req.query.q || "").trim();
     if (q.length < 2) return bad(res, "2文字以上入力してください");
     const page = Math.max(1, Number(req.query.page) || 1);
@@ -970,7 +982,7 @@ async function startServer() {
 
   // ============ Sitemap（published/claimedのみ。20k件はindex分割） ============
   let sitemapCache = "";
-  app.get("/sitemap.xml", (_req, res) => {
+  app.get(["/sitemap.xml", "/api/sitemap.xml"], (_req, res) => {
     const base = process.env.APP_URL || "https://openlab.example";
     if (!sitemapCache) {
       const parts = ["/", "/discover", "/labs", "/universities", "/policy"].map((p) => `<url><loc>${base}${p}</loc></url>`);
@@ -984,16 +996,23 @@ async function startServer() {
   if (process.env.NODE_ENV !== "production") {
     const vite = await createViteServer({ server: { middlewareMode: true }, appType: "spa" });
     app.use(vite.middlewares);
-  } else {
+  } else if (!process.env.VERCEL) {
     const distPath = path.join(process.cwd(), "dist");
     app.use(express.static(distPath));
     app.get("*", (_req, res) => res.sendFile(path.join(distPath, "index.html")));
   }
 
+  return app;
+}
+
+export async function startServer() {
+  const app = await createApp();
+  const PORT = Number(process.env.PORT) || 3000;
+  const HOST = process.env.HOST || "0.0.0.0";
   app.listen(PORT, HOST, () => {
     const providers = aiProviderStatus();
     console.log(`MISHIRU server http://localhost:${PORT}  [openai:${providers.openai} gemini:${providers.gemini} mail:${MAIL_ENABLED} admin:${!!ADMIN_TOKEN}]`);
   });
 }
 
-startServer();
+if (!process.env.VERCEL) void startServer();

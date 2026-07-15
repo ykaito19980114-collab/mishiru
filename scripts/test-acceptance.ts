@@ -13,9 +13,20 @@ async function j(path: string, opts?: RequestInit) {
   const res = await fetch(BASE + path, opts);
   return { status: res.status, body: await res.json().catch(() => ({})) };
 }
-const post = (path: string, body: unknown) => j(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+const post = (path: string, body: unknown) => {
+  const sessionId = String((body as { sessionId?: string } | null)?.sessionId || "admin");
+  return j(path, { method: "POST", headers: { "Content-Type": "application/json", "x-mishiru-dev-user": `acceptance-${sessionId}` }, body: JSON.stringify(body) });
+};
+const guestPost = (path: string, body: unknown) => j(path, { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
 
 async function run() {
+  // ---- AC-11: 未登録は価値操作5回まで、6回目で登録案内 ----
+  const guestSid = uuid();
+  const guestCard = (await j(`/api/cards?sessionId=${guestSid}&batch=1`)).body.cards[0];
+  let guestResult: Awaited<ReturnType<typeof guestPost>> | null = null;
+  for (let i = 0; i < 6; i++) guestResult = await guestPost("/api/card-actions", { actionId: uuid(), sessionId: guestSid, cardId: guestCard.id, action: "like" });
+  check("AC-11", guestResult?.status === 403 && guestResult.body?.error?.code === "ACCOUNT_REQUIRED", "6回目で無料アカウント登録を案内");
+
   // ---- AC-01: 初回10枚評価 → プロファイル＋候補研究室 ----
   const sid = uuid();
   const { body: cardsRes } = await j(`/api/cards?sessionId=${sid}&batch=12`);

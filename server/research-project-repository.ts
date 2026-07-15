@@ -6,6 +6,7 @@ import type {
   ResearchProjectVersion,
   VersionCreationType,
 } from "../shared/research-project";
+import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 
 interface ProjectRuntimeShape {
   projects: ResearchProject[];
@@ -21,6 +22,7 @@ class ProjectRuntimeDatabase {
   constructor(private readonly file = DEFAULT_FILE) {}
 
   read(): ProjectRuntimeShape {
+    if (hasRemoteSessionState()) return getSessionSection<ProjectRuntimeShape>("researchProjects", { projects: [], memos: [] });
     if (!fs.existsSync(this.file)) return { projects: [], memos: [] };
     try {
       const parsed = JSON.parse(fs.readFileSync(this.file, "utf8")) as Partial<ProjectRuntimeShape>;
@@ -32,6 +34,7 @@ class ProjectRuntimeDatabase {
   }
 
   write(data: ProjectRuntimeShape) {
+    if (hasRemoteSessionState()) { setSessionSection("researchProjects", data); return; }
     fs.mkdirSync(path.dirname(this.file), { recursive: true });
     const temp = `${this.file}.${process.pid}.tmp`; fs.writeFileSync(temp, JSON.stringify(data), "utf8"); fs.renameSync(temp, this.file);
   }

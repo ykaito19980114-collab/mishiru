@@ -21,6 +21,10 @@ export function resetSession() {
   localStorage.removeItem(QUEUE_KEY);
 }
 
+export function setSessionId(id: string) {
+  if (id) localStorage.setItem(KEY, id);
+}
+
 export function newActionId(): string {
   return uuid();
 }

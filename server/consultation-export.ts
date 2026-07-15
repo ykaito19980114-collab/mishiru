@@ -7,11 +7,12 @@ import type {
   ResearchOutline, ResearchProject,
 } from "../shared/research-project";
 import { ACTIVE_DATASET } from "./research-project-repository";
+import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 
 const TEMPLATE_VERSION = "mishiru-consultation-v1";
 const RUNTIME_DIR = path.join(process.cwd(), "data", "runtime");
 const DB_FILE = path.join(RUNTIME_DIR, ACTIVE_DATASET === "mishiru-sample" ? "consultation-exports.sample.json" : "consultation-exports.json");
-const OUTPUT_DIR = path.join(RUNTIME_DIR, "exports", ACTIVE_DATASET);
+const OUTPUT_DIR = process.env.VERCEL ? path.join("/tmp", "mishiru", "exports", ACTIVE_DATASET) : path.join(RUNTIME_DIR, "exports", ACTIVE_DATASET);
 const makeId = () => `asset-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
 
@@ -85,8 +86,8 @@ function addFullOutline(sections: Record<string, string[]>, o: ResearchOutline, 
 }
 
 export class ConsultationAssetRepository {
-  read(): ConsultationAsset[] { if (!fs.existsSync(DB_FILE)) return []; try { const parsed = JSON.parse(fs.readFileSync(DB_FILE, "utf8")); return Array.isArray(parsed) ? parsed : []; } catch (error) { throw new Error(`RUNTIME_JSON_CORRUPT:${DB_FILE}:${error instanceof Error ? error.message : "parse error"}`); } }
-  write(items: ConsultationAsset[]) { fs.mkdirSync(path.dirname(DB_FILE), { recursive: true }); const temp=`${DB_FILE}.${process.pid}.tmp`; fs.writeFileSync(temp, JSON.stringify(items), "utf8"); fs.renameSync(temp,DB_FILE); }
+  read(): ConsultationAsset[] { if (hasRemoteSessionState()) return getSessionSection<ConsultationAsset[]>("consultationAssets", []); if (!fs.existsSync(DB_FILE)) return []; try { const parsed = JSON.parse(fs.readFileSync(DB_FILE, "utf8")); return Array.isArray(parsed) ? parsed : []; } catch (error) { throw new Error(`RUNTIME_JSON_CORRUPT:${DB_FILE}:${error instanceof Error ? error.message : "parse error"}`); } }
+  write(items: ConsultationAsset[]) { if (hasRemoteSessionState()) { setSessionSection("consultationAssets", items); return; } fs.mkdirSync(path.dirname(DB_FILE), { recursive: true }); const temp=`${DB_FILE}.${process.pid}.tmp`; fs.writeFileSync(temp, JSON.stringify(items), "utf8"); fs.renameSync(temp,DB_FILE); }
   list(project: ResearchProject) { return this.read().filter((item) => item.projectId === project.id && item.dataset === ACTIVE_DATASET).map((item) => item.status === "ready" && new Date(project.updatedAt) > new Date(item.generatedFromUpdatedAt) ? { ...item, status: "outdated" as const } : item); }
   create(item: ConsultationAsset) { const items = this.read(); items.unshift(clone(item)); this.write(items); return clone(item); }
   update(id: string, patch: Partial<ConsultationAsset>) { const items = this.read(); const index = items.findIndex((item) => item.id === id && item.dataset === ACTIVE_DATASET); if (index < 0) return null; items[index] = { ...items[index], ...clone(patch), id: items[index].id }; this.write(items); return clone(items[index]); }

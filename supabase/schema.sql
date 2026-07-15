@@ -105,6 +105,80 @@ create table if not exists events (
 );
 create index if not exists idx_events_type_at on events (type, at);
 
+-- ---------- 無料体験・アカウント引き継ぎ ----------
+-- ブラウザの匿名 session_id を、ログイン後も同じユーザーへ結び付ける。
+create table if not exists user_sessions (
+  user_id      uuid primary key references auth.users(id) on delete cascade,
+  session_id   text unique not null,
+  created_at   timestamptz default now(),
+  updated_at   timestamptz default now()
+);
+
+create table if not exists guest_usage (
+  session_id   text primary key,
+  action_count integer not null default 0 check (action_count >= 0),
+  created_at   timestamptz default now(),
+  updated_at   timestamptz default now()
+);
+
+-- action_id を保存し、通信再送で同じ操作を二重計上しない。
+create table if not exists guest_usage_events (
+  session_id text not null,
+  action_id  text not null,
+  created_at timestamptz default now(),
+  primary key (session_id, action_id)
+);
+
+-- ResearchProject・保存・反応など、セッション単位の可変状態。
+create table if not exists mishiru_session_state (
+  session_id text primary key,
+  user_id    uuid references auth.users(id) on delete cascade,
+  payload    jsonb not null default '{}'::jsonb,
+  created_at timestamptz default now(),
+  updated_at timestamptz default now()
+);
+create index if not exists idx_mishiru_session_state_user on mishiru_session_state (user_id);
+
+-- 5回制限を競合なく、かつ冪等に消費する。
+create or replace function consume_guest_action(
+  p_session_id text,
+  p_action_id text,
+  p_limit integer default 5
+)
+returns table (allowed boolean, used integer, remaining integer)
+language plpgsql
+security definer
+set search_path = public
+as $$
+declare
+  current_count integer;
+begin
+  if exists(select 1 from guest_usage_events where session_id = p_session_id and action_id = p_action_id) then
+    select action_count into current_count from guest_usage where session_id = p_session_id;
+    current_count := coalesce(current_count, 0);
+    return query select true, current_count, greatest(0, p_limit - current_count);
+    return;
+  end if;
+
+  insert into guest_usage(session_id, action_count) values (p_session_id, 0)
+  on conflict (session_id) do nothing;
+  select action_count into current_count from guest_usage where session_id = p_session_id for update;
+
+  if current_count >= p_limit then
+    return query select false, current_count, 0;
+    return;
+  end if;
+
+  insert into guest_usage_events(session_id, action_id) values (p_session_id, p_action_id);
+  current_count := current_count + 1;
+  update guest_usage set action_count = current_count, updated_at = now() where session_id = p_session_id;
+  return query select true, current_count, greatest(0, p_limit - current_count);
+end;
+$$;
+
+revoke all on function consume_guest_action(text, text, integer) from public, anon, authenticated;
+grant execute on function consume_guest_action(text, text, integer) to service_role;
+
 -- ---------- 運営系（個人情報：admin専用） ----------
 create table if not exists claims (
   id          text primary key,
@@ -197,6 +271,10 @@ alter table leads          enable row level security;
 alter table reports        enable row level security;
 alter table articles       enable row level security;
 alter table events         enable row level security;
+alter table user_sessions enable row level security;
+alter table guest_usage enable row level security;
+alter table guest_usage_events enable row level security;
+alter table mishiru_session_state enable row level security;
 
 -- 公開読み取り：published/claimed の研究室・カード・マスタのみ（§7 決定表）
 drop policy if exists "public read published labs" on labs;

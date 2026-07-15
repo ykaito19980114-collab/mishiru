@@ -3,6 +3,7 @@ import { HelmetProvider } from "react-helmet-async";
 import { lazy, Suspense, useEffect } from "react";
 import { Layout } from "./components/Layout";
 import { flushQueue } from "./lib/session";
+import { AccountAccessProvider } from "./components/AccountAccess";
 
 const Discover = lazy(() => import("./pages/Discover"));
 const CardDetail = lazy(() => import("./pages/CardDetail"));
@@ -39,7 +40,7 @@ export default function App() {
   return (
     <HelmetProvider>
       <BrowserRouter>
-        <Layout>
+        <AccountAccessProvider><Layout>
           <Suspense fallback={<RouteLoading />}>
             <Routes>
               <Route path="/" element={<Navigate to="/search" replace />} />
@@ -66,7 +67,7 @@ export default function App() {
               <Route path="*" element={<Navigate to="/search" replace />} />
             </Routes>
           </Suspense>
-        </Layout>
+        </Layout></AccountAccessProvider>
       </BrowserRouter>
     </HelmetProvider>
   );

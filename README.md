@@ -33,10 +33,14 @@ pnpm run dev
 1. **Supabaseの設定**
    - Supabaseで新しいプロジェクトを作成し、データベースを構築します。
    - `supabase/schema.sql` の内容をSupabaseのSQLエディタで実行して、テーブルとRLSポリシーを作成します。
-   - プロジェクトの Settings > API から、Project URL と Service Role Key を取得します。
-   - AI StudioのSettings > Environment Variables または `.env` に、取得したキーを以下のように設定します。
+   - Supabase Auth の Email プロバイダーを有効にします。
+   - プロジェクトの Settings > API から、Project URL、Anon Key、Service Role Key を取得します。
+   - VercelのEnvironment Variables または `.env` に、取得した値を以下のように設定します。
      - `SUPABASE_URL=your_project_url`
      - `SUPABASE_SERVICE_ROLE_KEY=your_service_role_key`
+     - `VITE_SUPABASE_URL=your_project_url`
+     - `VITE_SUPABASE_ANON_KEY=your_anon_key`
+     - `MISHIRU_GUEST_ACTION_LIMIT=5`
 
 2. **データのインポート**
    - お手元の研究室リスト（スプレッドシートやCSV）を、`labs.csv` というファイル名でプロジェクトのルートディレクトリに配置します。
@@ -47,6 +51,7 @@ pnpm run dev
 
 ## 開発と運用
 
-- 本アプリケーションは、MVPフェーズとして「研究室の検索・閲覧」と「研究室からの問い合わせ導線（リード獲得）」に特化して実装されています。
+- 未登録ユーザーは閲覧を自由に行え、検索・保存・AI生成などの価値操作を5回まで試せます。6回目は無料アカウント作成を案内し、それまでの内容を引き継ぎます。
+- Vercelでは `vercel.json` と `api/[...path].ts` を使って、Viteの画面とExpress APIを同じドメインで配信します。Build Commandは `pnpm run build:vercel`、Output Directoryは `dist` です。
 - データの管理、問い合わせステータスの管理などはSupabaseの管理画面から直接行うことができます。
-- 管理用ダッシュボード (`/admin`) はUIの雛形として用意されています。将来フェーズで認証機能 (Supabase Auth) を導入する際に拡張可能です。
+- 管理用ダッシュボード (`/admin`) は `ADMIN_TOKEN` で保護してください。公開環境で未設定にしないでください。
