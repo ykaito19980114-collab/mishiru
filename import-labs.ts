@@ -52,38 +52,25 @@ async function importLabs() {
         continue;
       }
 
-      // Determine univ type roughly
-      let uType = "private";
-      if (uName.includes("国立") || uName.includes("大学") && !uName.match(/立|私/)) {
-        uType = "national"; // Simplified logic
-      }
-
       // 1. Upsert University
       let slugBase = uName.replace(/大学$/, "").replace(/[^a-zA-Z0-9\u3040-\u309f\u30a0-\u30ff\u4e00-\u9faf]/g, '');
       
       const { data: univData, error: uError } = await supabase
-        .from("universities")
+        .from("mishiru_universities")
         .select("id")
         .eq("name", uName)
         .maybeSingle();
 
-      let univId = null;
-
-      if (univData) {
-        univId = univData.id;
-      } else {
-        const { data: newUniv, error: nuError } = await supabase
-          .from("universities")
+      if (!univData) {
+        const { error: nuError } = await supabase
+          .from("mishiru_universities")
           .insert({
+            id: `univ-${slugBase || Date.now().toString(36)}`,
             name: uName,
-            type: uType,
-            slug: slugBase + "-" + Date.now().toString(36), // generate unique slug
           })
-          .select("id")
-          .single();
+          .select("id").single();
 
         if (nuError) throw new Error(`Univ Insert Error: ${nuError.message}`);
-        univId = newUniv.id;
       }
 
       // 2. Parse PI
@@ -102,9 +89,9 @@ async function importLabs() {
 
       // Check if lab exists
       const { data: existingLab } = await supabase
-        .from("labs")
+        .from("mishiru_labs")
         .select("id")
-        .eq("university_id", univId)
+        .eq("university_name", uName)
         .eq("pi_name", piName)
         .maybeSingle();
 
@@ -118,18 +105,20 @@ async function importLabs() {
 
       // Insert lab
       const { error: lError } = await supabase
-        .from("labs")
+        .from("mishiru_labs")
         .insert({
-          university_id: univId,
+          id: `lab-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`,
           name: lName,
+          university_name: uName,
           pi_name: piName,
           pi_title: piTitle,
-          faculty: dept,
-          research_summary: summary,
+          department: dept,
           keywords: keywords,
           official_url: officialUrl,
-          source: 'scraped',
-          is_published: true
+          sources: officialUrl ? [{ label: "研究室公式サイト", url: officialUrl }] : [],
+          sections: { research_summary: summary },
+          status: "published",
+          confidence: "public_info"
         });
 
       if (lError) throw new Error(`Lab Insert Error: ${lError.message}`);

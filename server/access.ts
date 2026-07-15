@@ -18,14 +18,14 @@ async function canonicalSessionId(userId: string, candidate: string) {
     if (current) return current;
     const next = candidate || uuid(); localUsers.set(userId, next); return next;
   }
-  const { data, error } = await supabase.from("user_sessions").select("session_id").eq("user_id", userId).maybeSingle();
+  const { data, error } = await supabase.from("mishiru_user_sessions").select("session_id").eq("user_id", userId).maybeSingle();
   if (error) throw new Error(`USER_SESSION_LOAD_FAILED:${error.message}`);
   if (data?.session_id) {
     if (candidate && candidate !== data.session_id) await mergeSessionState(candidate, data.session_id, userId);
     return data.session_id as string;
   }
   const sessionId = candidate || uuid();
-  const { error: createError } = await supabase.from("user_sessions").upsert({ user_id: userId, session_id: sessionId, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
+  const { error: createError } = await supabase.from("mishiru_user_sessions").upsert({ user_id: userId, session_id: sessionId, updated_at: new Date().toISOString() }, { onConflict: "user_id" });
   if (createError) throw new Error(`USER_SESSION_CREATE_FAILED:${createError.message}`);
   return sessionId;
 }
@@ -59,7 +59,7 @@ export async function guestUsage(sessionId: string) {
     const used = localUsage.get(sessionId)?.size || 0;
     return { used, remaining: Math.max(0, GUEST_ACTION_LIMIT - used), limit: GUEST_ACTION_LIMIT };
   }
-  const { data, error } = await supabase.from("guest_usage").select("action_count").eq("session_id", sessionId).maybeSingle();
+  const { data, error } = await supabase.from("mishiru_guest_usage").select("action_count").eq("session_id", sessionId).maybeSingle();
   if (error) throw new Error(`GUEST_USAGE_LOAD_FAILED:${error.message}`);
   const used = Number(data?.action_count || 0);
   return { used, remaining: Math.max(0, GUEST_ACTION_LIMIT - used), limit: GUEST_ACTION_LIMIT };
@@ -74,7 +74,7 @@ async function consume(sessionId: string, actionId: string) {
     const used = actions.size;
     return { allowed: actions.has(actionId), used, remaining: Math.max(0, GUEST_ACTION_LIMIT - used), limit: GUEST_ACTION_LIMIT };
   }
-  const { data, error } = await supabase.rpc("consume_guest_action", {
+  const { data, error } = await supabase.rpc("mishiru_consume_guest_action", {
     p_session_id: sessionId,
     p_action_id: actionId,
     p_limit: GUEST_ACTION_LIMIT,
