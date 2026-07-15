@@ -4,11 +4,7 @@
   "outputDirectory": "dist",
   "functions": {
     "api/index.ts": {
-      "includeFiles": "data/**",
-      "maxDuration": 300
-    },
-    "api/[...path].ts": {
-      "includeFiles": "data/**",
+      "includeFiles": "{data/**,dist/server.cjs}",
       "maxDuration": 300
     }
   },

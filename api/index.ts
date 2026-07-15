@@ -1,5 +1,8 @@
 import type { Request, Response } from "express";
-import { createApp } from "../server";
+import { createRequire } from "node:module";
+
+const require = createRequire(import.meta.url);
+const { createApp } = require("../dist/server.cjs") as typeof import("../server");
 
 const appPromise = createApp();
 
