@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { SlidersHorizontal, Building2, X, Sparkles, Loader2, ArrowDown, WandSparkles, Layers, Landmark, BookOpen, Search, ExternalLink, Info } from "lucide-react";
+import { SlidersHorizontal, Building2, X, Sparkles, Loader2, ArrowDown, Layers, Landmark, BookOpen, Search, ExternalLink, Info } from "lucide-react";
 import { api, LabWithReasons, ResearchResourceResponse } from "../lib/api";
 import type { ResearchField, ResearchJournal, ResearchSociety } from "../../shared/types";
 import { fieldLabel } from "../../shared/fields";
@@ -149,56 +149,47 @@ export default function Labs() {
     <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 md:pt-8 pb-12">
       <Helmet><title>さがす ｜ MISHIRU</title></Helmet>
 
-      <section className="labs-hero labs-hero--simple" aria-labelledby="labs-hero-title">
-        <header className="labs-simple-intro">
-          <div className="labs-simple-copy">
-            <p className="eyebrow">さがす</p>
-            <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
-            <p>まだ研究の言葉になっていなくても大丈夫です。いま気になることを、そのまま書いてください。</p>
-          </div>
-          <figure className="labs-simple-visual">
-            <img src="/assets/motifs/mishiru-sculpture.png" alt="青い額の中に置かれた白い女性像" />
-          </figure>
-        </header>
+      {/* 記憶の1点＝青い帯。1画面1アクション: 検索箱だけを置く（ADR-007） */}
+      <section className="hero-band" aria-labelledby="labs-hero-title">
+        <p className="hero-band__eyebrow">MISHIRU ｜ 研究テーマ発見ナビ</p>
+        <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
+        <p className="hero-band__lead">まだ研究の言葉になっていなくても大丈夫。いま気になることを、そのまま書いてください。</p>
 
-        <form onSubmit={(e) => { e.preventDefault(); runAi(aiInput); }} className="mode-search">
-          <label htmlFor="mode-search-input" className="mode-search__label"><WandSparkles className="w-4 h-4" />気になっていること</label>
-          <div className="mode-search__row">
+        <form onSubmit={(e) => { e.preventDefault(); runAi(aiInput); }} className="hero-search">
+          <div className="hero-search__box">
+            <Search aria-hidden="true" />
             <input id="mode-search-input" value={aiInput} onChange={(e) => setAiInput(e.target.value)}
               placeholder="例：人が本音を言いづらいのはなぜ？"
+              aria-label="気になっていること"
               autoComplete="off" />
-            <Button type="submit" disabled={aiInput.trim().length < 2 || aiState === "loading"} className="mode-search__submit">
-              {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <><span>さがす</span><ArrowDown className="w-5 h-5" /></>}
-            </Button>
           </div>
-          <div className="mode-suggestions" aria-label="入力例">
-            <span className="mode-suggestions__prefix">たとえば</span>
-            {MODE_SUGGESTIONS.slice(0, showExamples ? MODE_SUGGESTIONS.length : 3).map((suggestion) => (
-              <button key={suggestion} type="button" onClick={() => { setAiInput(suggestion); runAi(suggestion); }}>{suggestion}</button>
-            ))}
-            <button type="button" className="mode-suggestions__more" onClick={() => setShowExamples((value) => !value)}>{showExamples ? "例を閉じる" : "例をもっと見る"}</button>
-          </div>
+          <button type="submit" className="hero-search__submit" disabled={aiInput.trim().length < 2 || aiState === "loading"}>
+            {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <>さがす</>}
+          </button>
         </form>
+        <div className="hero-examples" aria-label="入力例">
+          <span className="hero-examples__prefix">たとえば</span>
+          {MODE_SUGGESTIONS.slice(0, showExamples ? MODE_SUGGESTIONS.length : 3).map((suggestion) => (
+            <button key={suggestion} type="button" onClick={() => { setAiInput(suggestion); runAi(suggestion); }}>{suggestion}</button>
+          ))}
+          <button type="button" onClick={() => setShowExamples((value) => !value)}>{showExamples ? "例を閉じる" : "例をもっと見る"}</button>
+        </div>
       </section>
 
-      <div className="results-heading">
-        <div>
-          <h2>研究への入口をさがす</h2>
+      <div className="flex items-center justify-between gap-3 flex-wrap mb-1">
+        <div className="search-segments" role="tablist" aria-label="探す対象">
+          {SEARCH_MODES.map((mode) => {
+            const Icon = mode.icon;
+            return (
+              <button key={mode.id} type="button" role="tab" aria-selected={resourceMode === mode.id}
+                onClick={() => setResourceMode(mode.id)}
+                className={`search-segment ${resourceMode === mode.id ? "search-segment--active" : ""}`}>
+                <Icon className="w-4 h-4" aria-hidden="true" />{mode.label}
+              </button>
+            );
+          })}
         </div>
-        <Link to="/universities" className="text-sm font-bold text-[var(--c-ink)] flex items-center gap-1.5 hover:opacity-60"><Building2 className="w-4 h-4" />大学から探す</Link>
-      </div>
-
-      <div className="search-segments" role="tablist" aria-label="探す対象">
-        {SEARCH_MODES.map((mode) => {
-          const Icon = mode.icon;
-          return (
-            <button key={mode.id} type="button" role="tab" aria-selected={resourceMode === mode.id}
-              onClick={() => setResourceMode(mode.id)}
-              className={`search-segment ${resourceMode === mode.id ? "search-segment--active" : ""}`}>
-              <span className="inline-flex items-center gap-1.5"><Icon className="w-4 h-4" />{mode.label}</span>
-            </button>
-          );
-        })}
+        <Link to="/universities" className="text-[13px] font-bold text-[var(--c-ink-2)] flex items-center gap-1.5 min-h-[44px] hover:text-[var(--c-primary)]"><Building2 className="w-4 h-4" aria-hidden="true" />大学から探す</Link>
       </div>
 
       {/* AIモード：解釈バナー */}
@@ -260,11 +251,11 @@ export default function Labs() {
           {/* ===== AIモードの結果 ===== */}
           {inAiMode ? (
             aiState === "loading" ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">{[0, 1, 2, 3].map((i) => <Skeleton key={i} className="h-36" />)}</div>
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">{[0, 1, 2, 3].map((i) => <Skeleton key={i} className="h-32" />)}</div>
             ) : aiState === "error" ? (
               <ErrorState onRetry={() => runAi(aiQuery)} />
             ) : aiResult && aiResult.data.length > 0 ? (
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">
+              <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">
                 {aiResult.data.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} />)}
               </div>
             ) : (
@@ -278,7 +269,7 @@ export default function Labs() {
                 <p className="text-xs text-[var(--c-ink-3)]">{state === "ok" ? `${total.toLocaleString()}件` : "　"}</p>
                 <div><button type="button" onClick={() => setSheetOpen(true)} className="labs-filter-button"><SlidersHorizontal className="w-4 h-4"/>{activeChips.length ? `絞り込み（${activeChips.length}）` : "絞り込み"}</button><select value={sort} onChange={(e) => setSort(e.target.value)} className="text-sm px-2 py-1.5 rounded-[8px] border border-[var(--c-border)] min-h-[44px]"><option value="">{hasFilter ? "関連度順" : "おすすめ順"}</option><option value="univ">大学名順</option><option value="newest">新着順</option></select></div>
               </div>
-              {state === "loading" && <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">{[0, 1, 2, 3].map((i) => <Skeleton key={i} className="h-36" />)}</div>}
+              {state === "loading" && <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">{[0, 1, 2, 3].map((i) => <Skeleton key={i} className="h-32" />)}</div>}
               {state === "error" && <ErrorState onRetry={() => load(filters, sort, 1)} />}
               {state === "ok" && labs.length === 0 && (
                 <EmptyState title="該当する研究室が見つかりませんでした" description="条件を減らしてお試しください。"
@@ -286,7 +277,7 @@ export default function Labs() {
               )}
               {state === "ok" && labs.length > 0 && (
                 <>
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 min-w-0">{labs.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} reasons={l.matchReasons} />)}</div>
+                  <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">{labs.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} reasons={l.matchReasons} />)}</div>
                   {labs.length < total && (
                     <div className="mt-8 flex justify-center"><Button variant="secondary" onClick={loadMore} disabled={loadingMore}>{loadingMore ? "読み込み中…" : "さらに表示"}</Button></div>
                   )}

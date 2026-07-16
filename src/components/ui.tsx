@@ -1,6 +1,6 @@
-// 共通UIプリミティブ（docs/03 §8 SPEC トークン準拠）
+// 共通UIプリミティブ（docs/03 §8 SPEC トークン準拠・ADR-007 Clear Board）
 import React from "react";
-import { ChevronDown } from "lucide-react";
+import { ChevronDown, Info } from "lucide-react";
 import { cleanDisplayLabel } from "../../shared/text";
 
 export function Button({
@@ -21,18 +21,29 @@ export function Button({
   );
 }
 
+// チップは灰（属性）と青（分野・選択）の2トーンのみ（ADR-007）。旧tone値は互換のため受け付けて2トーンへ丸める。
 export function Chip({ children, tone = "default" }: { children: React.ReactNode; tone?: "default" | "blue" | "yellow" | "teal" }) {
   const tones: Record<string, string> = {
-    default: "bg-[var(--c-surface)] text-[var(--c-ink-2)] border-[var(--c-border)]",
+    default: "bg-[var(--c-surface)] text-[var(--c-ink-2)] border-transparent",
     blue: "bg-[var(--c-surface-blue)] text-[var(--c-primary)] border-transparent",
-    yellow: "bg-[var(--c-accent-yellow)] text-[var(--c-accent-yellow-ink)] border-transparent",
-    teal: "bg-white text-[var(--c-teal)] border-[var(--c-teal)]",
+    yellow: "bg-[var(--c-surface)] text-[var(--c-ink-2)] border-transparent",
+    teal: "bg-[var(--c-surface-blue)] text-[var(--c-primary)] border-transparent",
   };
   const content = typeof children === "string" ? cleanDisplayLabel(children) : children;
   return (
-    <span className={`inline-flex items-center text-[13px] px-2.5 py-1 rounded-full border ${tones[tone]}`}>
+    <span className={`inline-flex items-center text-[12.5px] font-medium px-2.5 py-1 rounded-full border ${tones[tone]}`}>
       {content}
     </span>
+  );
+}
+
+// 信頼・免責の注記。本文と同格にせず12.5px灰1行で示す（テキストは必ずspanで包む＝flex崩れ防止）
+export function TrustNote({ children, className = "" }: { children: React.ReactNode; className?: string }) {
+  return (
+    <p className={`trust-note ${className}`}>
+      <Info aria-hidden="true" />
+      <span>{children}</span>
+    </p>
   );
 }
 

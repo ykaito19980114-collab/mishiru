@@ -169,7 +169,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           })}
         </div>
       </nav>
-      {!pathname.startsWith("/questions") && !pathname.startsWith("/projects") && <FloatingMemoButton />}
+      {/* 研究室詳細（/labs/:id）は下部アクションバーと重なるためFABを出さない（ページ内にマーキング手段あり） */}
+      {!pathname.startsWith("/questions") && !pathname.startsWith("/projects") && !/^\/labs\/[^/]+/.test(pathname) && <FloatingMemoButton />}
     </div>
   );
 }

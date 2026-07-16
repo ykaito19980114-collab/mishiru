@@ -2,10 +2,10 @@
 import React, { useEffect, useState } from "react";
 import { useParams, Link, useSearchParams } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { MapPin, ExternalLink, Sparkles, ShieldAlert, ArrowLeft, Compass, Wrench, GraduationCap, Route, Lightbulb, FileText, Info, Highlighter } from "lucide-react";
+import { MapPin, ExternalLink, Sparkles, ShieldAlert, ArrowLeft, Compass, Wrench, GraduationCap, Route, Lightbulb, FileText, Highlighter, Heart, Bookmark } from "lucide-react";
 import { api, Enrichment, ResearchResourceResponse } from "../lib/api";
 import type { Lab } from "../../shared/types";
-import { Button, Card, Chip, Skeleton, ErrorState, VerifiedBadge, Toast, useToast } from "../components/ui";
+import { Button, Card, Chip, Skeleton, ErrorState, VerifiedBadge, Toast, useToast, TrustNote } from "../components/ui";
 import { fieldLabel } from "../../shared/fields";
 import { displayLabName, labQuestions } from "../lib/labText";
 import { makeLabAnnotation, MarkLabel, saveAnnotation } from "../lib/annotations";
@@ -47,6 +47,8 @@ export default function LabDetail() {
   const [markLabel, setMarkLabel] = useState<MarkLabel>("good");
   const [markNote, setMarkNote] = useState("");
   const [markUrl, setMarkUrl] = useState("");
+  const [actBusy, setActBusy] = useState(false);
+  const [acted, setActed] = useState<{ like?: boolean; save?: boolean }>({});
   const { toast, showToast } = useToast();
   const returnTo = params.get("returnTo") || "/labs";
   const returnLabel = returnTo.startsWith("/discover") ? "であうに戻る" : returnTo.startsWith("/saved") ? "ためるに戻る" : returnTo.startsWith("/profile") || returnTo.startsWith("/reflect") ? "みつめるに戻る" : "さがすに戻る";
@@ -97,6 +99,15 @@ export default function LabDetail() {
     setMarkText(""); setMarkNote(""); setMarkUrl("");
     showToast("関心プロフィールの材料として保存しました");
   };
+  // 評価アクション（一覧から詳細へ集約・即確定→トースト）
+  const act = async (action: "like" | "save") => {
+    if (actBusy || acted[action]) return;
+    setActBusy(true);
+    await api.actOnLab(lab.id, action);
+    setActed((a) => ({ ...a, [action]: true }));
+    setActBusy(false);
+    showToast(action === "like" ? "「気になる」に追加しました" : "「ためる」に保存しました");
+  };
 
   const jsonLd = {
     "@context": "https://schema.org", "@type": "ResearchOrganization", name: shownLabName,
@@ -106,7 +117,7 @@ export default function LabDetail() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto px-4 pt-4 pb-10">
+    <div className="max-w-2xl mx-auto px-4 pt-4 pb-40 md:pb-28">
       <Helmet>
         <title>{shownLabName} - {lab.university.name} ｜ MISHIRU</title>
         <meta name="description" content={`${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究テーマ・研究方法・進路などを学生向けに整理。`} />
@@ -132,27 +143,19 @@ export default function LabDetail() {
         </div>
       </header>
 
-      {/* 大元の研究室URL（ヘッダー直下・常設）。未登録時はWeb検索の代替導線 */}
+      {/* 大元の研究室URL（ヘッダー直下・常設 FR-LAB系）。巨大枠をやめ1行リンクに降格（主アクションは下部バー） */}
       {lab.official_url ? (
         <a href={lab.official_url} target="_blank" rel="noopener noreferrer"
           onClick={() => { api.logEvent("outbound_click", { labId: lab.id }); }}
-          className="mb-4 flex items-center justify-between p-4 bg-white border-2 border-[var(--c-primary)] rounded-[var(--radius-card)] hover:bg-[var(--c-surface-blue)] transition-colors">
-          <div className="min-w-0">
-            <span className="font-bold text-[var(--c-primary)] block">研究室の公式サイトを見る</span>
-            <span className="text-xs text-[var(--c-ink-3)] truncate block">{lab.official_url}</span>
-          </div>
-          <ExternalLink className="w-5 h-5 text-[var(--c-primary)] shrink-0" />
+          className="mb-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--c-primary)] underline underline-offset-4 min-h-[44px]">
+          研究室の公式サイトを見る<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
         </a>
       ) : (
         <a href={`https://www.google.com/search?q=${encodeURIComponent(`${lab.university.name} ${lab.name}`)}`}
           target="_blank" rel="noopener noreferrer"
           onClick={() => { api.logEvent("outbound_click", { labId: lab.id, dest: "web_search" }); }}
-          className="mb-4 flex items-center justify-between p-3.5 bg-[var(--c-surface)] border border-[var(--c-border)] rounded-[var(--radius-card)] hover:border-[var(--c-teal)] transition-colors">
-          <div className="min-w-0">
-            <span className="text-sm font-bold text-[var(--c-ink-2)] block">公式サイトは未登録です — Webで探す</span>
-            <span className="text-xs text-[var(--c-ink-3)]">「{lab.university.name} {lab.name}」を検索します</span>
-          </div>
-          <ExternalLink className="w-4 h-4 text-[var(--c-ink-3)] shrink-0" />
+          className="mb-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--c-ink-2)] underline underline-offset-4 min-h-[44px]">
+          公式サイト未登録 — 「{lab.university.name} {lab.name}」をWebで探す<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
         </a>
       )}
 
@@ -169,10 +172,10 @@ export default function LabDetail() {
         <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1.5">研究内容</h2>
         <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{researchText}</p>
         <div className="mt-3 pt-3 border-t border-[var(--c-border)]">
-          <p className="text-[11px] text-[var(--c-ink-3)] leading-relaxed">（公開情報のキーワードに基づく引用・要約です。詳細は公式サイト・出典をご確認ください。）</p>
+          <TrustNote>公開情報のキーワードに基づく要約です。詳細は公式サイト・出典をご確認ください。</TrustNote>
           {primarySource && (
-            <a href={primarySource} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 text-[11px] font-bold text-[var(--c-teal)] underline">
-              {primarySourceLabel || "出典を確認"}<ExternalLink className="w-3 h-3" />
+            <a href={primarySource} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 text-[12px] font-bold text-[var(--c-primary)] underline underline-offset-2">
+              {primarySourceLabel || "出典を確認"}<ExternalLink className="w-3 h-3" aria-hidden="true" />
             </a>
           )}
         </div>
@@ -195,7 +198,7 @@ export default function LabDetail() {
       {resources && (resources.fields.length > 0 || resources.societies.length > 0 || resources.journals.length > 0) && (
         <Card className="p-5 mb-4 bg-[var(--c-surface-blue)] border-transparent">
           <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1.5">関連する研究領域・学会・ジャーナル候補</h2>
-          <p className="text-[12px] text-[var(--c-ink-3)] mb-3">研究室との確定接続ではなく、公開キーワードと研究領域データベースからの candidate 表示です。</p>
+          <TrustNote className="mb-3">公開キーワードと研究領域データベースから探した候補です（研究室との確定した関係ではありません）。</TrustNote>
           <div className="grid sm:grid-cols-3 gap-3">
             <ResourceMini title="研究領域" items={resources.fields.map((f) => f.nameJa)} />
             <ResourceMini title="学会" items={resources.societies.map((s) => s.name)} />
@@ -230,10 +233,9 @@ export default function LabDetail() {
             </div>
             <GuideBlock icon={<Lightbulb className="w-4 h-4" />} title="この研究室のおもしろさ"><p className="text-[14px] text-[var(--c-ink-2)] leading-snug">{guide.appeal}</p></GuideBlock>
           </div>
-          <p className="text-[11px] text-[var(--c-ink-3)] mt-4 pt-3 border-t border-[var(--c-border)] flex items-start gap-1.5">
-            <Info className="w-3.5 h-3.5 shrink-0 mt-0.5" />
-            この「学生向けガイド」は、公開されている分野キーワードをもとに{guide.generatedBy === "template" ? "決定論的に整理した開発用の" : "AIが生成した"}<b>参考情報</b>です。研究室による確認は受けていないため、実際の研究内容と異なる場合があります。
-          </p>
+          <div className="mt-4 pt-3 border-t border-[var(--c-border)]">
+            <TrustNote>この「学生向けガイド」は、公開されている分野キーワードをもとに{guide.generatedBy === "template" ? "決定論的に整理した開発用の" : "AIが生成した"}<b>参考情報</b>です。研究室による確認は受けていないため、実際の研究内容と異なる場合があります。</TrustNote>
+          </div>
         </Card>
       )}
 
@@ -245,13 +247,9 @@ export default function LabDetail() {
             {enrich?.papersConfidence === "related" ? "この研究テーマの関連論文" : `${lab.pi.name} 先生の公開論文`}
           </div>
           {enrich?.papersConfidence === "related" ? (
-            <p className="text-[11px] text-[var(--c-ink-3)] mb-3">
-              研究キーワード「{lab.keywords.slice(0, 3).join("・")}」で公開データベース（OpenAlex）を検索した関連論文です。<b>この研究室の業績一覧ではありません</b>。正確な業績は下の外部DBリンクでご確認ください。
-            </p>
+            <TrustNote className="mb-3">研究キーワード「{lab.keywords.slice(0, 3).join("・")}」で公開データベース（OpenAlex）を検索した関連論文です。<b>この研究室の業績一覧ではありません</b>。正確な業績は下の外部DBリンクでご確認ください。</TrustNote>
           ) : (
-            <p className="text-[11px] text-[var(--c-ink-3)] mb-3">
-              「{lab.pi.name}」名義で公開データベース（OpenAlex）に登録されている論文です。{enrich?.papersConfidence === "name_only" && "分野が一致する確証が弱いため、"}<b>同姓同名を含む場合があります</b>。正確な業績は researchmap 等でご確認ください。
-            </p>
+            <TrustNote className="mb-3">「{lab.pi.name}」名義で公開データベース（OpenAlex）に登録されている論文です。{enrich?.papersConfidence === "name_only" && "分野が一致する確証が弱いため、"}<b>同姓同名を含む場合があります</b>。正確な業績は researchmap 等でご確認ください。</TrustNote>
           )}
           <ul className="space-y-3">
             {papers.map((p, i) => (
@@ -350,6 +348,18 @@ export default function LabDetail() {
         <input value={markUrl} onChange={(e) => setMarkUrl(e.target.value)} placeholder="参照リンク（任意。このページ内の情報なら空欄でOK）" className="w-full min-h-[42px] rounded-[12px] border border-[var(--c-border)] px-3 text-sm outline-none focus:border-[var(--c-primary)] mb-3" />
         <div className="flex gap-2"><Button variant="secondary" onClick={captureSelection}>選択文を入れる</Button><Button onClick={saveMark}>関心プロフィールに保存</Button></div>
       </Card>
+
+      {/* 下部固定アクションバー：評価は即確定→トースト（確認ダイアログなし） */}
+      <div className="action-bar">
+        <div className="action-bar__inner" role="group" aria-label="この研究室へのアクション">
+          <button type="button" className={`action-bar__btn ${acted.like ? "action-bar__btn--done" : ""}`} onClick={() => act("like")} disabled={actBusy}>
+            <Heart aria-hidden="true" />{acted.like ? "追加済み" : "気になる"}
+          </button>
+          <button type="button" className={`action-bar__btn ${acted.save ? "action-bar__btn--done" : "action-bar__btn--primary"}`} onClick={() => act("save")} disabled={actBusy}>
+            <Bookmark aria-hidden="true" />{acted.save ? "保存済み" : "保存する"}
+          </button>
+        </div>
+      </div>
       <Toast message={toast.msg} show={toast.show} />
     </div>
   );
