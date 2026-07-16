@@ -149,7 +149,7 @@ export default function Labs() {
     <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 md:pt-8 pb-12">
       <Helmet><title>さがす ｜ MISHIRU</title></Helmet>
 
-      {/* 記憶の1点＝青い帯。1画面1アクション: 検索箱だけを置く（ADR-007） */}
+      {/* 記憶の1点＝青い帯×彫刻ポスター。主アクションは検索箱ひとつ（ADR-007） */}
       <section className="hero-band" aria-labelledby="labs-hero-title">
         <p className="hero-band__eyebrow">MISHIRU ｜ 研究テーマ発見ナビ</p>
         <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
@@ -174,6 +174,16 @@ export default function Labs() {
           ))}
           <button type="button" onClick={() => setShowExamples((value) => !value)}>{showExamples ? "例を閉じる" : "例をもっと見る"}</button>
         </div>
+
+        {/* 彫刻ポスター＝キャッチーの担い手。実数バッジを重ねて情報と結婚させる（md+は帯の右に額装・モバイルは帯の裾に鎮座） */}
+        <figure className="hero-band__figure">
+          <img src="/assets/motifs/mishiru-sculpture-640.png" alt="青い額の中に置かれた白い彫刻——研究前夜のモチーフ" width={613} height={640} loading="eager" decoding="async" />
+          {!inAiMode && !hasFilter && total > 0 && (
+            <span className="hero-band__count" aria-label={`全国${total.toLocaleString()}件の研究室を掲載`}>
+              全国の研究室<strong>{total.toLocaleString()}<small>件</small></strong>
+            </span>
+          )}
+        </figure>
       </section>
 
       <div className="flex items-center justify-between gap-3 flex-wrap mb-1">
