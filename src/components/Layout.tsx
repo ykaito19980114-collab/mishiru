@@ -169,8 +169,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           })}
         </div>
       </nav>
-      {/* 研究室詳細（/labs/:id）は下部アクションバーと重なるためFABを出さない（ページ内にマーキング手段あり） */}
-      {!pathname.startsWith("/questions") && !pathname.startsWith("/projects") && !/^\/labs\/[^/]+/.test(pathname) && <FloatingMemoButton />}
+      {/* 下部固定アクションバーを持つ画面（研究室詳細・であう）はFABを出さない（重なり防止。メモはためる/詳細ページ内で可能） */}
+      {!pathname.startsWith("/questions") && !pathname.startsWith("/projects") && !pathname.startsWith("/discover") && !/^\/labs\/[^/]+/.test(pathname) && <FloatingMemoButton />}
     </div>
   );
 }

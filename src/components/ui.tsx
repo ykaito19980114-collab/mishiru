@@ -21,12 +21,12 @@ export function Button({
   );
 }
 
-// チップは灰（属性）と青（分野・選択）の2トーンのみ（ADR-007）。旧tone値は互換のため受け付けて2トーンへ丸める。
+// チップは灰（属性）・青（分野）・淡ライム（保存済み等の状態）の3トーン（ADR-007改）。tealは青に丸める。
 export function Chip({ children, tone = "default" }: { children: React.ReactNode; tone?: "default" | "blue" | "yellow" | "teal" }) {
   const tones: Record<string, string> = {
     default: "bg-[var(--c-surface)] text-[var(--c-ink-2)] border-transparent",
     blue: "bg-[var(--c-surface-blue)] text-[var(--c-primary)] border-transparent",
-    yellow: "bg-[var(--c-surface)] text-[var(--c-ink-2)] border-transparent",
+    yellow: "bg-[var(--c-signal-soft)] text-[var(--c-ink)] border-transparent",
     teal: "bg-[var(--c-surface-blue)] text-[var(--c-primary)] border-transparent",
   };
   const content = typeof children === "string" ? cleanDisplayLabel(children) : children;

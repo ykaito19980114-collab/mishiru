@@ -19,7 +19,7 @@ CONCEPT: Clear Board, One Blue（白い掲示板と、一筆の青）
 ## サウナイキタイから移植する7原則（本リデザインの判断基準）
 
 1. **1画面=1主アクション**。競合するCTAを同格で並べない。第一アクション以外は視覚的に一段落とす。
-2. **色は「地の無彩色＋ブランド青1色」**。青は「進む・選ばれている・効く」の意味でだけ使う。装飾に色を使わない。
+2. **色は「地の無彩色＋二色の役割分担」**（2026-07-17改訂）。**青＝行動**（進む・リンク・主ボタン・情報の強調）、**ライム＝選択と現在地**（アクティブなタブ/ナビ・チェック済み・テキスト選択・メモFAB・検索ボタン）。ライムは面と細部にのみ使い**文字色には使わない**（ライム面上の文字は常にink、コントラスト12:1）。全体面積の5〜15%に留めて希少価値を守る。装飾目的の色は引き続き禁止。
 3. **数字がヒーロー**。件数・カウント・温度計的な事実は大きく太く（tabular-nums）。文章は小さく細く。
 4. **一覧に文章を置かない**。リスト行は 名詞＋数字＋チップ＋(最大)1行フック で構成。段落は詳細ページの下層のみ。
 5. **チップは灰1種＋青1種のみ**。灰=属性、青(淡青地)=分野/選択。意味のない色分けをしない。
@@ -38,11 +38,13 @@ CONCEPT: Clear Board, One Blue（白い掲示板と、一筆の青）
 --c-ink-3: #7b7e87;         /* メタ・免責・placeholder */
 --c-primary: #1e3ff0;       /* 唯一の青（旧#123ef5/#1e40ffを統一） */
 --c-primary-strong: #1330c4;
---c-primary-soft: #eef1ff;  /* 青の淡面: 選択・分野チップ・Q記号地のみ */
+--c-primary-soft: #eef1ff;  /* 青の淡面: 分野チップ・Q記号地・情報ハイライト */
+--c-signal: #dce51b;        /* ブランドライム＝選択・現在地（2026-07-17ユーザー指示で復帰） */
+--c-signal-strong: #c6d900;
+--c-signal-soft: #f5f8cf;
 --c-danger: #d63a43; --c-success: #2b8a57;
 --c-border: #e3e3e0;        /* 罫線は淡く */
 --c-border-strong: #c9c9c5;
-/* ライム(--c-signal/--c-accent-yellow)はUIから撤去。ロゴ画像内のみ残存可 */
 
 /* 形 */
 --radius-card: 14px; --radius-panel: 10px; --radius-btn: 10px;
@@ -65,7 +67,7 @@ label: 11px/w800/letter-spacing .12em（英字eyebrow）
 ## 共通コンポーネント規律
 
 - **Button**: primary=青ベタ白字 / secondary=白地+ink罫線 / ghost。**灰色ベタの主ボタン禁止**（無効はopacity.4で表現し、入力が満ちたら即primary色に）。min-h 48px。
-- **Chip**: 灰(bg--c-surface/文字ink-2)と青(bg--c-primary-soft/文字--c-primary)の2種のみ。ライム・teal廃止。12.5px/w600。
+- **Chip**: 灰(bg--c-surface/文字ink-2)・青(bg--c-primary-soft/文字--c-primary)・ライム薄(bg--c-signal-soft/文字ink=保存済み等の状態)の3種。teal廃止。12.5px/w600。
 - **LabRow（一覧の研究室行・最重要部品）**: 行全体が1リンク。構成は上から
   `大学・専攻・県(meta 1行)` → `研究室名(16.5px w800 1行省略)` → `PI名+職位・教員n名(meta)` → `Q. 問い1行(15px、Q.記号のみ青w900、本文ink-2、1行clamp)` → `分野チップ(青)+KWチップ(灰,最大2)`。
   行高目安128〜148px。行内にボタン・ハート・チブロン円を置かない。押下=詳細へ。
@@ -73,7 +75,7 @@ label: 11px/w800/letter-spacing .12em（英字eyebrow）
 - **免責/AI注記**: 12.5px ink-3の1行+ⓘ。長文はdetailsに畳む。本文サイズで免責を書かない。
 - **セグメント/タブ**: 高さ44px。選択=primary青ベタ白字 or ink下線2px、非選択=ink-2。件数バッジは灰。
 - **入力**: 白地・1px border(--c-border-strong)・focus時にborder--c-primary+3px淡青リング。高さ48〜56px。
-- **FloatingMemoButton**: ライム廃止→白地+ink罫線+青アイコンの控えめピル。スクロール中はアイコンのみに縮む。z優先度を主CTAより下げる。
+- **FloatingMemoButton**: ライム地+ink文字の小型ピル（2026-07-17復帰）。モバイルはアイコンのみに縮む。z優先度は主CTAより下。
 - **スケルトン/ロード**: 実レイアウトの骨格を灰で描く（巨大な無地ボイド禁止）。AI生成待ちは「何をしているか+目安秒数」を1行添える。
 - **モーション**: hover/pressは色と1pxの沈み込みのみ。出現は2〜6px+opacity 150ms。`prefers-reduced-motion`で全停止。
 
@@ -101,7 +103,8 @@ label: 11px/w800/letter-spacing .12em（英字eyebrow）
 - **Projects/ProjectDetail/Consult**: 同トークン適用・見出し階層・チップ統一・段落を短く。
 - **Universities/UniversityDetail/Departments/DepartmentDetail/CardDetail/Saved**: 一覧をLabRow様式(名詞+数字+チップ)に圧縮。
 - **ForLabs/Claim/Policy/AuthCallback/admin**: トークン・タイポ置換のみ(構成不変)。
-- **Layout**: bodyのグラデ/ドットノイズ/クリーム帯を撤去しフラット--c-bg。ヘッダー=白+1px下罫線(青上罫線廃止)。サイドバー(md+)のコピーカードからライムグラデ撤去。下部タブ現行4つ維持(アクティブ=青)。site-footerのライム上罫線→--c-border。
+- **Layout**: bodyのグラデ/ドットノイズ/クリーム帯を撤去しフラット--c-bg。ヘッダー=白+1px下罫線(青上罫線廃止)。サイドバー(md+)のコピーカードからライムグラデ撤去。下部タブ現行4つ維持(アクティブ=inkラベル+ライムマーカー)。site-footerのライム上罫線→--c-border。
+- **選択状態の統一（2026-07-17）**: サイドナビのアクティブ・検索対象セグメントのアクティブ・チェック済みフィルタ・::selection・ヒーロー検索ボタン=ライム地+ink文字。行動ボタン(primary)と情報ハイライトは青のまま。
 
 ## 不変条件（違反したら失格）
 

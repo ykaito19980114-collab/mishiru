@@ -11,8 +11,8 @@
   --c-bg: #f4f4f2;
   --c-paper: #ffffff;
   --c-surface: #ececea;
-  --c-surface-blue: #eef1ff;      /* 青の淡面＝選択・Q・分野チップ専用 */
-  --c-surface-yellow: #eef1ff;    /* 旧ライム淡面→青淡面へ吸収 */
+  --c-surface-blue: #eef1ff;      /* 青の淡面＝分野チップ・Q・情報ハイライト */
+  --c-surface-yellow: #f5f8cf;    /* ライムの淡面＝保存済み等の状態 */
   --c-ink: #17181c;
   --c-ink-2: #45474f;
   --c-ink-3: #7b7e87;
@@ -20,9 +20,11 @@
   --c-primary-strong: #1330c4;
   --c-teal: #1e3ff0;              /* 旧エイリアス→青に統一 */
   --c-blue: #1e3ff0;
-  --c-signal: #dfe6ff;            /* 旧ライム→淡青ハイライトへ */
-  --c-accent-yellow: #eef1ff;
-  --c-accent-yellow-ink: #1e3ff0;
+  --c-signal: #dce51b;            /* ブランドライム＝選択・現在地（文字色に使わない） */
+  --c-signal-strong: #c6d900;
+  --c-signal-soft: #f5f8cf;
+  --c-accent-yellow: #dce51b;
+  --c-accent-yellow-ink: #17181c;
   --c-border: #e3e3e0;
   --c-border-strong: #c9c9c5;
   --c-danger: #d63a43;
@@ -31,7 +33,7 @@
   /* 旧 --mishiru-* エイリアス（ロゴ・projects css互換） */
   --mishiru-silver-white: #f4f4f2;
   --mishiru-electric-blue: #1e3ff0;
-  --mishiru-lime: #dfe6ff;
+  --mishiru-lime: #dce51b;
   --mishiru-charcoal: #17181c;
   --mishiru-chrome-light: #ececea;
   --mishiru-chrome-dark: #7b7e87;
@@ -76,6 +78,7 @@ body.menu-open { overflow: hidden; }
   outline: 3px solid var(--c-ink);
   outline-offset: 2px;
   border-radius: 5px;
+  box-shadow: 0 0 0 6px var(--c-signal-soft);
 }
 
 a, button, input, select, textarea { -webkit-tap-highlight-color: transparent; }
@@ -139,9 +142,9 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   transition: background-color .15s ease, color .15s ease;
 }
 .nav-pill:hover { background: var(--c-surface); }
-.nav-pill--active { color: var(--c-primary); background: var(--c-surface-blue); font-weight: 700; }
+.nav-pill--active { color: var(--c-ink); background: var(--c-signal); font-weight: 700; }
 .nav-pill__index { color: var(--c-ink-3); font-family: ui-monospace, SFMono-Regular, monospace; font-size: 10px; font-variant-numeric: tabular-nums; }
-.nav-pill--active .nav-pill__index { color: var(--c-primary); }
+.nav-pill--active .nav-pill__index { color: var(--c-ink); }
 .nav-pill__marker { width: 6px; height: 6px; justify-self: end; background: var(--c-primary); border-radius: 50%; }
 
 .sidebar-tools summary, .sidebar-ai-settings summary { display: flex; align-items: center; justify-content: space-between; min-height: 44px; padding: 0 12px; color: var(--c-ink-3); font-size: 11px; font-weight: 700; letter-spacing: .14em; cursor: pointer; list-style: none; border-radius: 8px; }
@@ -188,8 +191,8 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   backdrop-filter: blur(14px);
 }
 .mobile-nav__item { position: relative; flex: 1; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3px; min-height: 48px; color: var(--c-ink-3); }
-.mobile-nav__item--active { color: var(--c-primary); }
-.mobile-nav__marker { position: absolute; top: 6px; width: 18px; height: 3px; background: var(--c-primary); border-radius: 999px; }
+.mobile-nav__item--active { color: var(--c-ink); }
+.mobile-nav__marker { position: absolute; top: 6px; width: 22px; height: 4px; background: var(--c-signal); border-radius: 999px; }
 
 /* ============ ページ枠・見出し ============ */
 .mishiru-page { max-width: 1180px; margin: 0 auto; padding: 32px clamp(16px, 3vw, 40px) 80px; }
@@ -287,17 +290,17 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   border: 0; border-radius: 12px; outline: none;
   font-size: 16px; font-weight: 500;
 }
-.hero-search input:focus-visible { outline: 3px solid #fff; outline-offset: 2px; }
+.hero-search input:focus-visible { outline: 3px solid var(--c-signal); outline-offset: 2px; box-shadow: none; }
 .hero-search__submit {
   flex: none; min-height: 56px; padding: 0 22px;
-  color: var(--c-primary); background: #fff;
+  color: var(--c-ink); background: var(--c-signal);
   border: 0; border-radius: 12px;
   font-size: 15px; font-weight: 800;
   display: inline-flex; align-items: center; gap: 6px;
-  transition: opacity .15s ease, transform .15s ease;
+  transition: opacity .15s ease, transform .15s ease, background-color .15s ease;
 }
-.hero-search__submit:disabled { opacity: .55; }
-.hero-search__submit:not(:disabled):hover { transform: translateY(-1px); }
+.hero-search__submit:disabled { opacity: .75; }
+.hero-search__submit:not(:disabled):hover { background: var(--c-signal-strong); transform: translateY(-1px); }
 .hero-search__submit:not(:disabled):active { transform: translateY(1px); }
 .hero-search__submit svg { width: 17px; height: 17px; }
 
@@ -319,7 +322,7 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   transition: background-color .15s ease, color .15s ease, border-color .15s ease;
 }
 .search-segment:hover { border-color: var(--c-border-strong); }
-.search-segment--active { color: #fff; background: var(--c-primary); border-color: var(--c-primary); }
+.search-segment--active { color: var(--c-ink); background: var(--c-signal); border-color: var(--c-signal-strong); }
 
 /* ============ 研究室行（一覧＝文章を置かない圧縮行） ============ */
 .lab-row {
@@ -393,7 +396,7 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
 .resource-filter-panel legend { margin-bottom: 7px; font-size: 12px; font-weight: 800; }
 .resource-filter-panel fieldset > div { display: flex; flex-wrap: wrap; gap: 6px; }
 .resource-filter-panel label { display: inline-flex; align-items: center; gap: 5px; padding: 7px 9px; border: 1px solid var(--c-border); border-radius: 8px; background: var(--c-paper); font-size: 11.5px; font-weight: 500; }
-.resource-filter-panel label:has(input:checked) { color: var(--c-primary); border-color: var(--c-primary); background: var(--c-surface-blue); }
+.resource-filter-panel label:has(input:checked) { color: var(--c-ink); border-color: var(--c-signal-strong); background: var(--c-signal-soft); }
 .resource-filter-actions { grid-column: 1 / -1; display: flex; align-items: center; justify-content: flex-end; gap: 10px; }
 .resource-filter-actions > button:first-child { font-size: 12px; text-decoration: underline; }
 
@@ -420,11 +423,12 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   z-index: 55;
   display: inline-flex; align-items: center; gap: 7px;
   min-height: 46px; padding: 0 16px;
-  color: var(--c-primary); background: var(--c-paper);
-  border: 1px solid var(--c-border-strong); border-radius: 999px;
+  color: var(--c-ink); background: var(--c-signal);
+  border: 1px solid rgba(23,24,28,.16); border-radius: 999px;
   box-shadow: var(--shadow-float);
   font-size: 13px; font-weight: 700;
 }
+.floating-memo-button:hover { background: var(--c-signal-strong); }
 .floating-memo-button svg { width: 16px; height: 16px; }
 .memo-panel { position: fixed; z-index: 70; right: 14px; bottom: calc(var(--tab-h) + env(safe-area-inset-bottom) + 74px); width: min(440px, calc(100vw - 28px)); max-height: min(760px, calc(100vh - var(--tab-h) - 112px)); overflow: auto; padding: 18px; color: var(--c-ink); background: var(--c-paper); border: 1px solid var(--c-border); border-radius: 16px; box-shadow: var(--shadow-float); }
 .memo-panel__header { display: flex; align-items: flex-start; justify-content: space-between; gap: 16px; padding-bottom: 14px; border-bottom: 1px solid var(--c-border); }
@@ -434,7 +438,7 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
 .memo-panel__label { display: block; margin-bottom: 6px; color: var(--c-ink-3); font-size: 12px; font-weight: 700; }
 .memo-panel__chips { display: flex; flex-wrap: wrap; gap: 8px; }
 .memo-panel__chips button { min-height: 36px; padding: 0 12px; color: var(--c-ink-2); background: var(--c-paper); border: 1px solid var(--c-border); border-radius: 999px; font-size: 13px; font-weight: 600; }
-.memo-panel__chips button.is-active { color: #fff; background: var(--c-primary); border-color: var(--c-primary); }
+.memo-panel__chips button.is-active { color: var(--c-ink); background: var(--c-signal); border-color: var(--c-signal-strong); }
 .memo-panel__input { width: 100%; min-height: 42px; padding: 10px 12px; border: 1px solid var(--c-border-strong); border-radius: 10px; outline: none; }
 .memo-panel__input:focus { border-color: var(--c-primary); box-shadow: 0 0 0 3px var(--c-surface-blue); }
 .memo-panel__selection { display: inline-flex; align-items: center; gap: 6px; min-height: 36px; margin-top: 8px; padding: 0 12px; color: var(--c-primary); background: var(--c-surface-blue); border-radius: 999px; font-size: 13px; font-weight: 600; }
