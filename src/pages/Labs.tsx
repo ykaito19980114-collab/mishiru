@@ -154,7 +154,6 @@ export default function Labs() {
       <section className="hero-band" aria-labelledby="labs-hero-title">
         <p className="hero-band__eyebrow">MISHIRU ｜ 研究テーマ発見ナビ</p>
         <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
-        <p className="hero-band__lead">まだ研究の言葉になっていなくても大丈夫。いま気になることを、そのまま書いてください。</p>
 
         {/* ボタンは常にフルカラー。未入力での送信は入力欄へフォーカスを返す（押せない見た目を作らない） */}
         <form onSubmit={(e) => { e.preventDefault(); if (aiInput.trim().length < 2) { searchInputRef.current?.focus(); return; } runAi(aiInput); }} className="hero-search">

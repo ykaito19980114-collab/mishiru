@@ -240,7 +240,6 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
 }
 .hero-band__eyebrow { margin: 0 0 10px; color: rgba(255,255,255,.78); font-size: 11px; font-weight: 800; letter-spacing: .2em; }
 .hero-band h1 { margin: 0; max-width: 22ch; font-size: clamp(24px, 3.6vw, 34px); font-weight: 900; line-height: 1.35; letter-spacing: -.01em; }
-.hero-band__lead { margin: 10px 0 0; max-width: 44rem; color: rgba(255,255,255,.86); font-size: 14.5px; font-weight: 400; line-height: 1.8; }
 
 /* 彫刻＝額装ポスター。帯の縁を破って前に出る（ドカン）＋実数バッジで情報と結婚させる */
 .hero-band__figure { position: relative; margin: 0; pointer-events: none; }
