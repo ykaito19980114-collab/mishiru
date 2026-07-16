@@ -3,7 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { Link } from "react-router-dom";
 import { BookOpen, Check, Copy, ExternalLink, FlaskConical, Send, UserRound } from "lucide-react";
 import { api } from "../lib/api";
-import { Button, Card, EmptyState, ErrorState, Skeleton } from "../components/ui";
+import { Button, Card, EmptyState, ErrorState, Skeleton, TrustNote } from "../components/ui";
 import type { Lab } from "../../shared/types";
 import type { ConsultationAsset, ResearchProject } from "../../shared/research-project";
 
@@ -79,6 +79,7 @@ export default function Consult() {
             <div className="consult-lab-main"><small>{lab.university.name} ・ {lab.department}</small><h3>{lab.name}</h3><p><UserRound/>{lab.pi?.name || "担当教員未確認"}<span>{lab.pi?.title}</span></p></div>
             <div className="consult-lab-links"><Link to={`/labs/${lab.id}?returnTo=${encodeURIComponent("/consult")}`}>MISHIRUで見る</Link>{lab.official_url ? <a href={lab.official_url} target="_blank" rel="noreferrer">研究室公式サイト<ExternalLink/></a> : <span>公式サイト未確認</span>}</div>
           </Card>)}</div>}
+          <TrustNote className="mt-2">候補は相談セットと公開情報をもとに整理しています。未確認表示は各研究室で確認できます。</TrustNote>
         </section>
       </main>
     </div>}

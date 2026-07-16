@@ -5,7 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { CheckCircle2, ShieldAlert } from "lucide-react";
 import { api } from "../lib/api";
 import type { Lab } from "../../shared/types";
-import { Button, Card } from "../components/ui";
+import { Button, Card, TrustNote } from "../components/ui";
 
 const TYPES = [
   { id: "fix", label: "内容の修正" },
@@ -77,8 +77,8 @@ export default function Claim() {
           <Field label="ご依頼の種別">
             <div className="grid grid-cols-2 gap-2">
               {TYPES.map((t) => (
-                <label key={t.id} className={`flex items-center gap-2 px-3 py-2.5 rounded-[10px] border cursor-pointer text-sm min-h-[44px] ${form.type === t.id ? "border-[var(--c-teal)] bg-[var(--c-surface-blue)]" : "border-[var(--c-border)]"}`}>
-                  <input type="radio" name="type" checked={form.type === t.id} onChange={() => setForm({ ...form, type: t.id })} className="accent-[var(--c-teal)]" />
+                <label key={t.id} className={`flex items-center gap-2 px-3 py-2.5 rounded-[var(--radius-btn)] border cursor-pointer text-sm min-h-[44px] ${form.type === t.id ? "border-[var(--c-primary)] bg-[var(--c-primary-soft)]" : "border-[var(--c-border)]"}`}>
+                  <input type="radio" name="type" checked={form.type === t.id} onChange={() => setForm({ ...form, type: t.id })} className="accent-[var(--c-primary)]" />
                   {t.label}
                 </label>
               ))}
@@ -100,7 +100,7 @@ export default function Claim() {
             <input value={form.evidenceUrl} onChange={(e) => setForm({ ...form, evidenceUrl: e.target.value })} className={inputCls()} maxLength={500} placeholder="研究室公式ページなど" />
           </Field>
           <Button type="submit" disabled={submitting} className="w-full">{submitting ? "送信中…" : "送信する"}</Button>
-          <p className="text-xs text-[var(--c-ink-3)]">いただいた個人情報はご依頼対応のみに利用し、第三者へ提供しません。</p>
+          <TrustNote>いただいた個人情報はご依頼対応のみに利用し、第三者へ提供しません。</TrustNote>
         </form>
       </Card>
     </div>
@@ -117,4 +117,4 @@ function Field({ label, required, error, children }: { label: string; required?:
   );
 }
 const inputCls = (error?: string) =>
-  `w-full px-3 py-2.5 min-h-[44px] rounded-[10px] border outline-none text-[15px] focus:border-[var(--c-teal)] ${error ? "border-[var(--c-danger)]" : "border-[var(--c-border)]"}`;
+  `w-full px-3 py-2.5 min-h-[48px] rounded-[var(--radius-btn)] border outline-none text-[15px] focus:border-[var(--c-primary)] focus:ring-[3px] focus:ring-[var(--c-primary-soft)] ${error ? "border-[var(--c-danger)]" : "border-[var(--c-border-strong)]"}`;

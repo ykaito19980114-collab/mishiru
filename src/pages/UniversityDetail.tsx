@@ -31,11 +31,11 @@ export default function UniversityDetail() {
       {state === "ok" && data && (
         <>
           <header className="mb-4">
-            <h1 className="text-2xl font-bold">{data.university.name}</h1>
+            <h1 className="text-2xl font-black">{data.university.name}</h1>
             <div className="flex items-center gap-2 mt-2 text-sm text-[var(--c-ink-2)]">
               <MapPin className="w-4 h-4" />{data.university.prefecture}
               <Chip>{data.university.type ? UNIV_TYPE_LABEL[data.university.type as keyof typeof UNIV_TYPE_LABEL] : "—"}</Chip>
-              <span>{data.university.count}研究室</span>
+              <strong className="tabular-nums">{data.university.count}研究室</strong>
             </div>
           </header>
 

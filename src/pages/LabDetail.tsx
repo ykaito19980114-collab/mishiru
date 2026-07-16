@@ -335,7 +335,7 @@ export default function LabDetail() {
 
       <Card className="p-5 mt-4 border-[var(--c-primary)]">
         <div className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-primary)] mb-2">
-          <Highlighter className="w-4 h-4" />気になる箇所をマーキング
+          <Highlighter className="w-4 h-4" />気になる箇所をメモ
         </div>
         <p className="text-xs text-[var(--c-ink-3)] mb-3">ページ内で気になった文章を選択して「選択文を入れる」ボタンを押す、もしくは外部サイトの気になった文章をコピー&ペーストし、「いい／わからない／違う／大事」とメモを残すと、関心プロフィールの材料になります。</p>
         <div className="flex flex-wrap gap-2 mb-3">

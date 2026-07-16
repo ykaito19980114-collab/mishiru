@@ -159,7 +159,7 @@ export default function Saved() {
     saveAnnotation(annotation);
     refreshAnnotations();
     setView("memos");
-    showToast("マーキングメモに保存しました");
+    showToast("メモに保存しました");
   };
 
   return (
@@ -168,7 +168,7 @@ export default function Saved() {
       <div className="flex items-start justify-between gap-3 mb-4">
         <div>
           <h1 className="text-xl font-black mb-1">ためる</h1>
-          <p className="text-sm text-[var(--c-ink-2)]">気になったカードをためて、カードごとにメモや理由を残します。</p>
+          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">気になった研究室・問い・メモを、ひとつの一覧で見返せます。</p>
         </div>
         <Link to="/reflect" className="shrink-0">
           <Button variant="secondary"><Sparkles className="w-4 h-4" />みつめる</Button>
@@ -310,7 +310,7 @@ function MarkingComposer({ onSave }: { onSave: (annotation: Annotation) => void 
     if (!canSave) return;
     onSave(makeAnnotation({
       sourceType: sourceUrl.trim() ? "external_url" : "research_theme_card",
-      sourceTitle: sourceTitle.trim() || "ためる上のマーキング",
+      sourceTitle: sourceTitle.trim() || "ためる上のメモ",
       sourceUrl: sourceUrl.trim(),
       selectedText,
       label,
@@ -325,7 +325,7 @@ function MarkingComposer({ onSave }: { onSave: (annotation: Annotation) => void 
   return (
     <Card className="p-4 border-[var(--c-primary)]">
       <div className="flex items-center gap-1.5 text-sm font-black text-[var(--c-primary)] mb-2">
-        <Highlighter className="w-4 h-4" />気になる箇所をマーキング
+        <Highlighter className="w-4 h-4" />気になる箇所をメモ
       </div>
       <p className="text-xs text-[var(--c-ink-3)] mb-3">外部サイトや論文、研究室ページで気になった短い文章をコピー&ペーストできます。このページ内の情報ならリンクは空欄でOKです。</p>
       <div className="grid sm:grid-cols-2 gap-2 mb-2">
@@ -347,7 +347,7 @@ function MarkingComposer({ onSave }: { onSave: (annotation: Annotation) => void 
       </div>
       <input value={note} onChange={(e) => setNote(e.target.value)} placeholder="理由メモ（任意）"
         className="w-full min-h-[42px] rounded-[12px] border border-[var(--c-border)] px-3 text-sm outline-none focus:border-[var(--c-primary)] mb-3" />
-      <Button onClick={save} disabled={!canSave}><Highlighter className="w-4 h-4" />マーキングメモに保存</Button>
+      <Button onClick={save} disabled={!canSave}><Highlighter className="w-4 h-4" />メモに保存</Button>
     </Card>
   );
 }
@@ -436,7 +436,7 @@ function ResourceStockRow({ entry, notes, onNote }: { entry: StockResource; note
           <h3 className="text-[15px] font-black text-[var(--c-primary)] leading-snug">{title}</h3>
           <p className="text-sm text-[var(--c-ink-2)] mt-1 line-clamp-2">{description}</p>
         </div>
-        {url && <a href={url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-[12px] font-bold text-[var(--c-teal)] min-h-[32px] inline-flex items-center">公式</a>}
+        {url && <a href={url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-[12px] font-bold text-[var(--c-primary)] min-h-[32px] inline-flex items-center">公式</a>}
       </div>
       <ItemNote itemKey={key} value={notes[key] || ""} onChange={onNote} />
     </Card>
@@ -477,7 +477,7 @@ function resourceTitle(item: ResearchField | ResearchSociety | ResearchJournal) 
 function ItemNote({ itemKey, value, onChange }: { itemKey: string; value: string; onChange: (key: string, value: string) => void }) {
   const [open, setOpen] = useState(Boolean(value));
   return (
-    <div className="rounded-[14px] bg-white border border-[var(--c-border)] p-3">
+    <div className="saved-item-note bg-white border border-[var(--c-border)]">
       <button type="button" onClick={() => setOpen((v) => !v)} className="text-[12px] font-black text-[var(--c-primary)] inline-flex items-center gap-1 min-h-[28px]">
         <MessageSquare className="w-3.5 h-3.5" />{value ? "メモを編集" : "メモを追加"}
       </button>
@@ -498,7 +498,7 @@ function MarkingList({ items, labelFilter, onFilter }: { items: Annotation[]; la
   return (
     <section>
       <div className="flex items-center justify-between gap-2 mb-2">
-        <h2 className="text-sm font-black text-[var(--c-ink-2)]">マーキングメモ（{items.length}）</h2>
+        <h2 className="text-sm font-black text-[var(--c-ink-2)]">メモ（{items.length}）</h2>
         <div className="flex items-center gap-1 text-xs text-[var(--c-ink-3)]"><Filter className="w-3.5 h-3.5" />反応で絞る</div>
       </div>
       <div className="flex gap-2 overflow-x-auto pb-2">
@@ -508,7 +508,7 @@ function MarkingList({ items, labelFilter, onFilter }: { items: Annotation[]; la
         ))}
       </div>
       {items.length === 0 ? (
-        <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">この条件のマーキングはまだありません。</p></Card>
+        <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">この条件のメモはまだありません。</p></Card>
       ) : (
         <div className="space-y-3">
           {items.map((item) => <MarkingRow key={item.id} item={item} />)}
@@ -524,7 +524,7 @@ function MarkingRow({ item }: { item: Annotation }) {
     ? `${item.sourceUrl}${item.sourceUrl.includes("?") ? "&" : "?"}returnTo=${encodeURIComponent("/saved")}`
     : item.sourceUrl;
   return (
-    <Card className="p-3">
+    <Card className="saved-memo-row p-3">
       <div className="flex items-start justify-between gap-3 mb-2">
         <div className="flex flex-wrap items-center gap-1.5">
           <Chip tone="blue">{annotationKind(item)}</Chip>
@@ -535,10 +535,10 @@ function MarkingRow({ item }: { item: Annotation }) {
           <LinkLike href={sourceUrl}>参照リンク</LinkLike>
         )}
       </div>
-      <blockquote className="text-[15px] font-bold leading-relaxed text-[var(--c-ink)] border-l-3 border-[var(--c-primary)] pl-3">
+      <blockquote className="text-[15px] font-bold leading-relaxed text-[var(--c-ink)] border-l-3 border-[var(--c-primary)] pl-3 line-clamp-2">
         {item.selectedText}
       </blockquote>
-      {item.note && <p className="mt-2 text-[13px] text-[var(--c-ink-2)]"><span className="font-black text-[var(--c-primary)]">理由メモ: </span>{item.note}</p>}
+      {item.note && <p className="mt-2 text-[13px] text-[var(--c-ink-2)] line-clamp-1"><span className="font-black text-[var(--c-primary)]">理由メモ: </span>{item.note}</p>}
       <div className="mt-2 min-w-0">
         <h3 className="text-[12px] font-black text-[var(--c-ink-3)] truncate">{item.sourceTitle}</h3>
         {item.sourceName && <p className="text-[11px] text-[var(--c-ink-3)] truncate">{item.sourceName}</p>}
@@ -574,7 +574,7 @@ function LinkLike({ href, children }: { href: string; children: React.ReactNode 
 function SavedRow({ card }: { card: ThemeCard }) {
   return (
     <Link to={`/cards/${card.id}`}>
-      <Card className="p-4 hover:border-[var(--c-teal)] transition-colors">
+      <Card className="p-4 hover:border-[var(--c-primary)] transition-colors">
         <div className="flex items-center gap-2 mb-1"><Chip tone="blue">{card.everyday_hook}</Chip></div>
         <h3 className="font-bold text-[var(--c-ink)] leading-snug line-clamp-2">{card.title}</h3>
         <p className="text-sm text-[var(--c-ink-2)] mt-1 line-clamp-2">{card.plain_summary}</p>

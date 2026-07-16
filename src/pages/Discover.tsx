@@ -7,7 +7,7 @@ import { Helmet } from "react-helmet-async";
 import { Heart, Bookmark, ChevronRight, WifiOff, RotateCcw, MapPin, Sparkles, TrendingUp, CornerUpLeft, HelpCircle, Layers, BookOpen, Landmark, Undo2 } from "lucide-react";
 import { api, DiscoveryDeckResponse } from "../lib/api";
 import type { CardAction, DiscoveryCard } from "../../shared/types";
-import { Button, Chip, Skeleton, EmptyState, Toast, useToast } from "../components/ui";
+import { Button, Chip, Skeleton, EmptyState, Toast, TrustNote, useToast } from "../components/ui";
 import { labLocation, verificationText } from "../lib/labText";
 
 type DeckSource = { kind: "default" } | { kind: "search"; q: string } | { kind: "profile" };
@@ -151,7 +151,7 @@ export default function Discover() {
   const profileModeAvailable = evaluated >= threshold;
 
   return (
-    <div className="max-w-xl mx-auto px-4 pt-4">
+    <div className="max-w-xl mx-auto px-4 pt-4 pb-[calc(var(--tab-h)+96px)]">
       <Helmet><title>であう ｜ MISHIRU</title></Helmet>
 
       {offline && (
@@ -162,8 +162,8 @@ export default function Discover() {
 
       <div className="mb-3">
         <div>
-          <h1 className="text-xl font-bold">であう</h1>
-          <p className="text-sm text-[var(--c-ink-2)] leading-relaxed">いろいろな研究室の問いを眺めながら、思っていた分野の外側にも出会い、気になる問いの扱い方を見つけます。</p>
+          <h1 className="text-xl font-black">であう</h1>
+          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">研究室の問いをめくり、まだ知らない関心の入口に出会えます。</p>
         </div>
       </div>
 
@@ -203,7 +203,7 @@ export default function Discover() {
             <Link to="/reflect" className="text-[12px] text-[var(--c-ink-3)] underline min-h-[44px] flex items-center">傾向の詳細を見る</Link>
             {deckMeta.profileQuery && (
               <Link to={`/labs?ai=${encodeURIComponent(deckMeta.profileQuery)}`}
-                className="text-[12px] font-bold text-[var(--c-teal)] border border-[var(--c-teal)] rounded-full px-3 min-h-[44px] flex items-center gap-1">
+                className="text-[12px] font-bold text-[var(--c-primary)] border border-[var(--c-primary)] rounded-full px-3 min-h-[44px] flex items-center gap-1">
                 この傾向で研究室をさがす<ChevronRight className="w-3 h-3" />
               </Link>
             )}
@@ -213,19 +213,21 @@ export default function Discover() {
 
       {evaluated < threshold && source.kind === "default" && (
         <div className="mb-4">
-          <div className="h-1.5 bg-[var(--c-surface)] rounded-full overflow-hidden">
-            <div className="h-full bg-[var(--c-teal)] transition-all duration-300" style={{ width: `${Math.min(100, (evaluated / threshold) * 100)}%` }} />
+          <div className="progress-thin" role="progressbar" aria-valuenow={evaluated} aria-valuemin={0} aria-valuemax={threshold} aria-label="傾向がまとまるまでの進捗">
+            <i style={{ width: `${Math.min(100, (evaluated / threshold) * 100)}%` }} />
           </div>
-          <p className="text-xs text-[var(--c-ink-3)] mt-1">傾向がまとまるまであと {Math.max(0, remaining)} 枚</p>
+          <p className="text-xs text-[var(--c-ink-3)] mt-1">あと {Math.max(0, remaining)} 枚で傾向がまとまります</p>
         </div>
       )}
 
       {loading ? (
-        <div>
-          <Skeleton className="w-full h-[27rem]" />
-          <p className="text-xs text-[var(--c-ink-3)] text-center mt-3 flex items-center justify-center gap-1">
-            <Sparkles className="w-3.5 h-3.5 text-[var(--c-teal)]" />AIが研究室カードを準備しています…
-          </p>
+        <div className="discover-loading-card" aria-label="カードを読み込み中">
+          <div className="discover-loading-card__meta"><Skeleton /><Skeleton /></div>
+          <Skeleton className="discover-loading-card__title" />
+          <Skeleton className="discover-loading-card__hook" />
+          <div className="discover-loading-card__questions"><Skeleton /><Skeleton /></div>
+          <Skeleton className="discover-loading-card__summary" />
+          <TrustNote className="mt-3">AIがカードを準備しています（目安10秒）</TrustNote>
         </div>
       ) : error ? (
         <EmptyState title="カードを読み込めませんでした" description="通信状況を確認して再試行してください。"
@@ -258,35 +260,35 @@ export default function Discover() {
         )
       ) : (
         <>
-          <div className="relative h-[31rem]">
+          <div className="discover-deck-stage">
             {cards[idx + 2] && <div className="absolute inset-x-4 top-4 h-full bg-white border border-[var(--c-border)] rounded-[var(--radius-card)] scale-[0.92] opacity-40" />}
             {cards[idx + 1] && <div className="absolute inset-x-2 top-2 h-full bg-white border border-[var(--c-border)] rounded-[var(--radius-card)] scale-96 opacity-70" />}
-            <DiscoveryCardFace item={current} exitDir={exitDir} onOpen={openLab} onSave={saveCurrent} />
+            <DiscoveryCardFace item={current} exitDir={exitDir} onOpen={openLab} />
           </div>
 
-          <div className="flex justify-start mt-3 max-w-sm mx-auto">
+          <div className="flex items-center justify-between gap-2 mt-3 max-w-sm mx-auto">
             <button onClick={goBack} disabled={!history.length || undoing || !!exitDir} aria-label="前のカードに戻る"
               className="inline-flex items-center gap-1.5 min-h-[44px] px-3 rounded-full border border-[var(--c-border)] bg-white text-[12px] font-bold text-[var(--c-ink-2)] disabled:opacity-35 disabled:cursor-not-allowed hover:border-[var(--c-primary)] hover:text-[var(--c-primary)] transition-colors">
               <Undo2 className="w-4 h-4" />{undoing ? "戻しています…" : "前のカードに戻る"}
             </button>
+            <button onClick={() => act("unclear")} disabled={!!exitDir || undoing}
+              className="inline-flex items-center gap-1 min-h-[44px] px-2 text-[12px] font-bold text-[var(--c-ink-3)] disabled:opacity-35">
+              <HelpCircle className="w-4 h-4" />わからない
+            </button>
           </div>
 
-          <div className="grid grid-cols-3 gap-3 mt-5 max-w-sm mx-auto">
-            <button onClick={() => act("not_fit")} aria-label="今は違う"
-              className="h-16 rounded-full bg-white border-2 border-[var(--c-border)] grid place-items-center text-[var(--c-ink-3)] hover:border-[var(--c-danger)] hover:text-[var(--c-danger)] transition-colors active:scale-95">
-              <CornerUpLeft className="w-8 h-8 -rotate-12" strokeWidth={2.5} />
-            </button>
-            <button onClick={() => act("unclear")} aria-label="わからない"
-              className="h-16 rounded-full bg-white border-2 border-[var(--c-border)] grid place-items-center text-[var(--c-ink-3)] hover:border-[var(--c-primary)] hover:text-[var(--c-primary)] transition-colors active:scale-95">
-              <HelpCircle className="w-8 h-8" strokeWidth={2.5} />
-            </button>
-            <button onClick={() => act("like")} aria-label="気になる"
-              className="h-16 rounded-full bg-[var(--c-primary)] border-2 border-[var(--c-primary)] grid place-items-center text-white hover:bg-[var(--c-primary-strong)] transition-colors active:scale-95 shadow-[var(--shadow-sm)]">
-              <Heart className="w-8 h-8" strokeWidth={2.5} />
-            </button>
-          </div>
-          <div className="grid grid-cols-3 gap-3 mt-2 mb-4 max-w-sm mx-auto text-[12px] text-[var(--c-ink-3)] font-bold text-center">
-            <span>今は違う</span><span>わからない</span><span>気になる</span>
+          <div className="action-bar">
+            <div className="action-bar__inner">
+              <button className="action-bar__btn action-bar__btn--ghost" onClick={() => act("not_fit")} disabled={!!exitDir || undoing}>
+                <CornerUpLeft aria-hidden="true" />違うかも
+              </button>
+              <button className="action-bar__btn" onClick={saveCurrent} disabled={!!exitDir || undoing}>
+                <Bookmark aria-hidden="true" />保存
+              </button>
+              <button className="action-bar__btn action-bar__btn--primary" onClick={() => act("like")} disabled={!!exitDir || undoing}>
+                <Heart aria-hidden="true" />気になる
+              </button>
+            </div>
           </div>
         </>
       )}
@@ -296,7 +298,7 @@ export default function Discover() {
   );
 }
 
-function DiscoveryCardFace({ item, exitDir, onOpen, onSave }: { item: DiscoveryCard; exitDir: "left" | "right" | null; onOpen: () => void; onSave: () => void }) {
+function DiscoveryCardFace({ item, exitDir, onOpen }: { item: DiscoveryCard; exitDir: "left" | "right" | null; onOpen: () => void }) {
   const cls = exitDir === "left" ? "card-out-left" : exitDir === "right" ? "card-out-right" : "";
   const lab = item.lab;
   const kindIcon = item.kind === "field" ? <Layers className="w-4 h-4" />
@@ -305,21 +307,22 @@ function DiscoveryCardFace({ item, exitDir, onOpen, onSave }: { item: DiscoveryC
     : item.kind === "question" ? <HelpCircle className="w-4 h-4" />
     : <Sparkles className="w-4 h-4" />;
   return (
-    <div className={`absolute inset-0 bg-white border border-[var(--c-border)] rounded-[var(--radius-card)] shadow-[var(--shadow-float)] p-5 flex flex-col overflow-hidden ${cls}`}>
-      <button onClick={onSave} className="absolute top-4 right-4 z-10 inline-flex items-center gap-1.5 min-h-[44px] px-3 rounded-full bg-white border border-[var(--c-border)] text-[var(--c-primary)] text-[12px] font-black shadow-[var(--shadow-sm)]" aria-label="保存する">
-        <Bookmark className="w-4 h-4" />保存する
-      </button>
+    <div className={`discover-card absolute inset-0 bg-white border border-[var(--c-border)] rounded-[var(--radius-card)] shadow-[var(--shadow-sm)] p-5 flex flex-col overflow-hidden ${cls}`}>
       <div className="flex items-center gap-1.5 text-[12px] text-[var(--c-ink-3)] mb-2">
         {lab ? <MapPin className="w-3 h-3 shrink-0" /> : kindIcon}
-        <span className="truncate pr-28">{lab ? `${lab.university.name}・${lab.major || lab.department}・${labLocation(lab as any)}` : item.label}</span>
+        <span className="truncate">{lab ? `${lab.university.name}・${lab.major || lab.department}・${labLocation(lab as any)}` : item.label}</span>
       </div>
-      <div className="flex-1 flex flex-col justify-center py-5 min-h-0">
-        <div className="mb-3"><Chip tone="blue">{item.label}</Chip></div>
-        <h2 className="text-[22px] font-black leading-tight text-[var(--c-primary)] mb-3 pr-2">{item.title}</h2>
-        <div className="flex items-center gap-1.5 flex-wrap mb-3">
-          {item.tags.slice(0, 3).map((tag) => <Chip key={tag} tone="yellow">{tag}</Chip>)}
+      <div className="discover-card__body">
+        <div><Chip tone="blue">{item.label}</Chip></div>
+        <h2>{item.title}</h2>
+        {item.tags[0] && <p className="discover-card__hook">{item.tags[0]}</p>}
+        <div className="discover-card__questions">
+          <p><b aria-hidden="true">Q.</b><span>{item.connection}</span></p>
         </div>
-        <p className="text-[14px] text-[var(--c-ink-2)] leading-relaxed line-clamp-5">{item.summary}</p>
+        <div className="discover-card__interesting">
+          <span>何が面白い？</span>
+          <p>{item.summary}</p>
+        </div>
       </div>
       <div className="mt-auto">
         {lab && (
@@ -328,12 +331,10 @@ function DiscoveryCardFace({ item, exitDir, onOpen, onSave }: { item: DiscoveryC
               <p className="text-[13px] font-bold text-[var(--c-ink)] truncate">{lab.name}</p>
               {lab.pi.name && <span className="text-[12px] text-[var(--c-ink-3)] shrink-0">{lab.pi.name} {lab.pi.title}</span>}
             </div>
-            <p className="text-[12px] text-[var(--c-ink-3)] mb-1.5 flex items-center gap-1 leading-relaxed">
-              <Sparkles className="w-3 h-3 text-[var(--c-teal)]" />この紹介は公開情報から作成しました（{verificationText(false)}）
-            </p>
+            <TrustNote className="mb-1.5">この紹介はAIが公開情報から作成しました（{verificationText(false)}）</TrustNote>
           </>
         )}
-        <button onClick={onOpen} className="w-full flex items-center justify-center gap-1 text-sm font-bold text-[var(--c-teal)] min-h-[44px] border-t border-[var(--c-border)] pt-1.5">
+        <button onClick={onOpen} className="w-full flex items-center justify-center gap-1 text-sm font-bold text-[var(--c-primary)] min-h-[44px] border-t border-[var(--c-border)] pt-1.5">
           {lab ? "研究室ページを見る" : item.url ? "公式ページを見る" : "近い研究室をさがす"} <ChevronRight className="w-4 h-4" />
         </button>
       </div>

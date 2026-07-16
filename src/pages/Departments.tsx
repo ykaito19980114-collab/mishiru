@@ -2,9 +2,9 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Building2, ChevronRight } from "lucide-react";
+import { Building2 } from "lucide-react";
 import { api } from "../lib/api";
-import { Card, Skeleton, ErrorState } from "../components/ui";
+import { Skeleton, ErrorState, Chip } from "../components/ui";
 
 export default function Departments() {
   const [state, setState] = useState<"loading" | "error" | "ok">("loading");
@@ -22,8 +22,8 @@ export default function Departments() {
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 pb-8">
       <Helmet><title>専攻から見る ｜ MISHIRU</title></Helmet>
-      <div className="flex items-center gap-2 mb-1"><Building2 className="w-5 h-5 text-[var(--c-primary)]" /><h1 className="text-xl font-bold">専攻から見る</h1></div>
-      <p className="text-sm text-[var(--c-ink-2)] mb-4">専攻ごとに、所属研究室を研究テーマ・方法・進路から比較できます。</p>
+      <div className="flex items-center gap-2 mb-1"><Building2 className="w-5 h-5 text-[var(--c-primary)]" /><h1 className="text-xl font-black">専攻から見る</h1></div>
+      <p className="text-sm text-[var(--c-ink-2)] mb-4 line-clamp-1">専攻ごとに所属研究室のテーマや方法を見比べられます。</p>
 
       {state === "loading" && <div className="space-y-3">{[0, 1, 2].map((i) => <Skeleton key={i} className="h-20" />)}</div>}
       {state === "error" && <ErrorState onRetry={load} />}
@@ -34,14 +34,13 @@ export default function Departments() {
               <h2 className="text-sm font-bold text-[var(--c-ink-3)] mb-2">{univ}</h2>
               <div className="space-y-2">
                 {list.map((d) => (
-                  <Link key={d.key} to={`/departments/${encodeURIComponent(d.key)}`}>
-                    <Card className="p-4 flex items-center justify-between hover:border-[var(--c-teal)] transition-colors">
-                      <div className="min-w-0">
-                        <p className="font-bold text-[var(--c-ink)] line-clamp-1">{d.department}</p>
-                        <p className="text-xs text-[var(--c-ink-3)] mt-0.5">{d.count}研究室</p>
-                      </div>
-                      <ChevronRight className="w-5 h-5 text-[var(--c-ink-3)] shrink-0" />
-                    </Card>
+                  <Link key={d.key} to={`/departments/${encodeURIComponent(d.key)}`} className="entity-row">
+                    <div className="entity-row__main">
+                      <span>{univ}</span>
+                      <h3>{d.department}</h3>
+                      <Chip>専攻</Chip>
+                    </div>
+                    <strong className="entity-row__count">{d.count}<small>研究室</small></strong>
                   </Link>
                 ))}
               </div>

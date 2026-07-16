@@ -69,6 +69,7 @@ export default function Labs() {
   const [aiState, setAiState] = useState<"idle" | "loading" | "error">("idle");
   const [resourceMode, setResourceMode] = useState<SearchMode>("labs");
   const [showExamples, setShowExamples] = useState(false);
+  const searchInputRef = React.useRef<HTMLInputElement>(null);
 
   const activeChips: ActiveChip[] = FILTER_KEYS.flatMap((k): ActiveChip[] => {
     if (k === "q") return [];
@@ -155,15 +156,16 @@ export default function Labs() {
         <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
         <p className="hero-band__lead">まだ研究の言葉になっていなくても大丈夫。いま気になることを、そのまま書いてください。</p>
 
-        <form onSubmit={(e) => { e.preventDefault(); runAi(aiInput); }} className="hero-search">
+        {/* ボタンは常にフルカラー。未入力での送信は入力欄へフォーカスを返す（押せない見た目を作らない） */}
+        <form onSubmit={(e) => { e.preventDefault(); if (aiInput.trim().length < 2) { searchInputRef.current?.focus(); return; } runAi(aiInput); }} className="hero-search">
           <div className="hero-search__box">
             <Search aria-hidden="true" />
-            <input id="mode-search-input" value={aiInput} onChange={(e) => setAiInput(e.target.value)}
+            <input ref={searchInputRef} id="mode-search-input" value={aiInput} onChange={(e) => setAiInput(e.target.value)}
               placeholder="例：人が本音を言いづらいのはなぜ？"
               aria-label="気になっていること"
               autoComplete="off" />
           </div>
-          <button type="submit" className="hero-search__submit" disabled={aiInput.trim().length < 2 || aiState === "loading"}>
+          <button type="submit" className="hero-search__submit" disabled={aiState === "loading"} aria-disabled={aiState === "loading"}>
             {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <>さがす</>}
           </button>
         </form>

@@ -8,7 +8,7 @@ import {
 } from "lucide-react";
 import { api, Candidate, ProfileExtras, QuestionProjectResponse } from "../lib/api";
 import type { InterestProfile, QuestionProject } from "../../shared/types";
-import { Button, Card, Chip, Skeleton, ErrorState } from "../components/ui";
+import { Button, Card, Chip, Skeleton, ErrorState, TrustNote } from "../components/ui";
 import { LabMiniCard } from "../components/LabCard";
 import { InterestDraft, readAnnotations, readInterestDraft, summarizeAnnotations, writeInterestDraft } from "../lib/annotations";
 import { AccountDataPanel } from "../components/AccountAccess";
@@ -94,9 +94,9 @@ export default function Profile() {
       <div className="flex items-start justify-between gap-3 mb-4">
         <div>
           <h1 className="text-2xl font-black">みつめる</h1>
-          <p className="text-sm text-[var(--c-ink-2)]">気になるしてきたものから、近づいている問い・研究領域・研究室・学会/ジャーナルを整理します。</p>
+          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">気になったことから、近い問い・研究領域・研究室を整理します。</p>
         </div>
-        <Link to="/saved" className="text-xs font-bold text-[var(--c-teal)] min-h-[36px] inline-flex items-center">ためるを見る<ChevronRight className="w-3 h-3" /></Link>
+        <Link to="/saved" className="text-xs font-bold text-[var(--c-primary)] min-h-[36px] inline-flex items-center">ためるを見る<ChevronRight className="w-3 h-3" /></Link>
       </div>
 
       {state === "loading" && <div className="space-y-4"><Skeleton className="h-32" /><Skeleton className="h-40" /><Skeleton className="h-40" /></div>}
@@ -109,13 +109,13 @@ export default function Profile() {
               <Compass className="w-5 h-5 text-[var(--c-primary)]" />
               <h2 className="font-bold text-[var(--c-primary)]">カードをあと {needed} 枚評価すると、候補研究室まで見えてきます</h2>
             </div>
-            <div className="h-2 bg-white rounded-full overflow-hidden mb-2" role="progressbar" aria-valuenow={evaluated} aria-valuemin={0} aria-valuemax={threshold} aria-label="傾向生成までの進捗">
-              <div className="h-full bg-[var(--c-teal)] transition-all duration-500" style={{ width: `${Math.min(100, (evaluated / threshold) * 100)}%` }} />
+            <div className="progress-thin mb-2" role="progressbar" aria-valuenow={evaluated} aria-valuemin={0} aria-valuemax={threshold} aria-label="傾向生成までの進捗">
+              <i style={{ width: `${Math.min(100, (evaluated / threshold) * 100)}%` }} />
             </div>
             <p className="text-sm text-[var(--c-ink-2)]">「気になる／わからない／今は違う」で {threshold} 枚ほど反応すると、検索語や候補研究室がまとまります。メモを追加すると、より自分の問いに近づきます。</p>
             <div className="flex flex-wrap gap-2 mt-3">
               <Link to="/discover"><Button>研究室カードにであう</Button></Link>
-              <Link to="/saved"><Button variant="secondary"><Highlighter className="w-4 h-4" />マーキングする</Button></Link>
+              <Link to="/saved"><Button variant="secondary"><Highlighter className="w-4 h-4" />メモする</Button></Link>
             </div>
           </Card>
           <InterestCore
@@ -162,7 +162,7 @@ export default function Profile() {
           {questionProjectData && <ProfileResourcePanel data={questionProjectData} />}
 
           <section aria-labelledby="ph-craft">
-            <h2 id="ph-craft" className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink-2)] mb-2"><Route className="w-4 h-4 text-[var(--c-teal)]" />自分の問いの持ち込み方</h2>
+            <h2 id="ph-craft" className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink-2)] mb-2"><Route className="w-4 h-4 text-[var(--c-primary)]" />自分の問いの持ち込み方</h2>
             <Card className="p-4 space-y-3">
               <p className="text-sm text-[var(--c-ink-2)]">完全一致する研究室は少ない可能性があります。ただし、近い入口は複数あります。</p>
               {markSummary.craftingRoutes.map((text, i) => (
@@ -186,15 +186,15 @@ export default function Profile() {
 
           <section aria-labelledby="ph-cand">
             <div className="flex items-center justify-between mb-2">
-            <h2 id="ph-cand" className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink-2)]"><Sparkles className="w-4 h-4 text-[var(--c-teal)]" />気になっている研究室・候補研究室</h2>
-              {effectiveQuery && <Link to={`/labs?ai=${encodeURIComponent(effectiveQuery)}`} className="text-xs font-bold text-[var(--c-teal)] flex items-center min-h-[36px]">この条件で探す<ChevronRight className="w-3 h-3" /></Link>}
+            <h2 id="ph-cand" className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink-2)]"><Sparkles className="w-4 h-4 text-[var(--c-primary)]" />気になっている研究室・候補研究室</h2>
+              {effectiveQuery && <Link to={`/labs?ai=${encodeURIComponent(effectiveQuery)}`} className="text-xs font-bold text-[var(--c-primary)] flex items-center min-h-[36px]">この条件で探す<ChevronRight className="w-3 h-3" /></Link>}
             </div>
             {sortedCandidates.length ? (
               <div className="space-y-3">
                 {sortedCandidates.map((c) => <LabMiniCard key={c.lab.id} lab={c.lab} reasons={c.reasons} />)}
               </div>
             ) : (
-              <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">まだ十分な手がかりがありません。カード評価やマーキングを増やすと候補が見つかります。</p></Card>
+              <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">カード評価やメモが増えると、ここに候補がまとまります。</p></Card>
             )}
           </section>
 
@@ -215,14 +215,12 @@ export default function Profile() {
 
           <section aria-labelledby="ph-log">
             <h2 id="ph-log" className="text-sm font-bold text-[var(--c-ink-2)] mb-2">探索ログ</h2>
-            <Card className="p-4">
-              <dl className="grid grid-cols-4 gap-2 text-center">
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-2">
                 <StatItem label="評価" value={extras.stats.evaluated} />
                 <StatItem label="気になる" value={extras.stats.liked} />
                 <StatItem label="保存する" value={extras.stats.saved} />
                 <StatItem label="メモ" value={markSummary.count} />
-              </dl>
-            </Card>
+            </div>
             <div className="grid grid-cols-2 gap-3 mt-3">
               <Link to="/discover"><Button variant="secondary" className="w-full">であうを続ける</Button></Link>
               <Link to="/saved"><Button className="w-full"><Highlighter className="w-4 h-4" />ためるを整理</Button></Link>
@@ -240,7 +238,7 @@ function QuestionProjectPanel({ project, data }: { project: QuestionProject; dat
   return (
     <section aria-labelledby="question-project" className="space-y-3">
       <h2 id="question-project" className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink-2)]">
-        <Route className="w-4 h-4 text-[var(--c-teal)]" />検討の進め方
+        <Route className="w-4 h-4 text-[var(--c-primary)]" />検討の進め方
       </h2>
 
       <div className="grid lg:grid-cols-3 gap-3">
@@ -250,7 +248,7 @@ function QuestionProjectPanel({ project, data }: { project: QuestionProject; dat
           <Card key={route.id} className="p-4 flex flex-col">
             <h3 className="text-[18px] font-black text-[var(--c-primary)] mb-2 leading-snug">{route.title}</h3>
             <p className="text-[14px] font-bold text-[var(--c-ink)] leading-snug mb-3">{routeText.question}</p>
-            <div className="rounded-[14px] bg-[var(--c-surface-yellow)] p-3 mb-3">
+            <div className="rounded-[var(--radius-panel)] bg-[var(--c-primary-soft)] p-3 mb-3">
               <p className="text-[12px] font-black text-[var(--c-primary)] mb-1">問いと視点</p>
               <p className="text-[12.5px] text-[var(--c-ink-2)] leading-snug">{routeText.viewpoint}</p>
             </div>
@@ -263,7 +261,7 @@ function QuestionProjectPanel({ project, data }: { project: QuestionProject; dat
                 {route.candidateLabIds.slice(0, 3).map((id) => {
                   const c = candidateById.get(id);
                   return c ? (
-                    <Link key={id} to={`/labs/${id}?returnTo=${encodeURIComponent("/reflect")}`} className="block text-[12px] font-bold text-[var(--c-teal)] underline">{c.lab.name}</Link>
+                    <Link key={id} to={`/labs/${id}?returnTo=${encodeURIComponent("/reflect")}`} className="block text-[12px] font-bold text-[var(--c-primary)] underline">{c.lab.name}</Link>
                   ) : null;
                 })}
               </div>
@@ -306,7 +304,7 @@ function ProfileResourcePanel({ data }: { data: QuestionProjectResponse }) {
         <ProfileResourceList title="関連しそうな学会" items={data.related.societies.map((s) => s.name)} />
         <ProfileResourceList title="関連しそうなジャーナル" items={data.related.journals.map((j) => j.name)} />
       </div>
-      <p className="text-[11px] text-[var(--c-ink-3)] mt-2">ここでの接続は候補です。公式な所属・掲載関係として断定しません。</p>
+      <TrustNote className="mt-2">ここでの接続は候補であり、公式な所属・掲載関係とは限りません。</TrustNote>
     </section>
   );
 }
@@ -388,7 +386,7 @@ function InterestCore({
             <div className="space-y-2">
               {requirements.length > 0 ? requirements.map((r) => (
                 <p key={r} className="text-[13.5px] leading-relaxed text-[var(--c-ink)] bg-white/75 rounded-[12px] px-3 py-2">{r}</p>
-              )) : <p className="text-sm text-[var(--c-ink-2)]">マーキングや修正入力から、関心条件がここにまとまります。</p>}
+              )) : <p className="text-sm text-[var(--c-ink-2)]">メモや修正入力から、関心条件がここにまとまります。</p>}
             </div>
           </div>
           {searchLink && (
@@ -425,9 +423,9 @@ function TermLine({ title, items, empty }: { title: string; items: string[]; emp
 
 function StatItem({ label, value }: { label: string; value: number }) {
   return (
-    <div>
-      <dt className="text-[11px] text-[var(--c-ink-3)]">{label}</dt>
-      <dd className="text-xl font-bold text-[var(--c-ink)]">{value}</dd>
+    <div className="stat-tile">
+      <span>{label}</span>
+      <strong>{value}</strong>
     </div>
   );
 }

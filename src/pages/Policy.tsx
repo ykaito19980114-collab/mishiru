@@ -17,13 +17,13 @@ export default function Policy() {
           掲載情報は、研究室公式サイト・大学公式教員ページ・researchmap等の公開情報にもとづき、運営が学生向けに要約・整理したものです（本文の転載は行いません）。各ページには出典・最終更新日・確度を明示し、研究室未確認の項目は「研究室未確認」と表示します。
         </Sec>
         <Sec title="修正・掲載停止のご依頼">
-          研究室関係者の方は、<Link to="/claim" className="text-[var(--c-teal)] font-bold underline">修正・掲載のご依頼</Link>からいつでもご連絡いただけます。誤情報のご指摘・掲載停止のご依頼には、研究室確認の完了前でも一時非公開の措置を優先し、1営業日以内に対応します。
+          研究室関係者の方は、<Link to="/claim" className="text-[var(--c-primary)] font-bold underline">修正・掲載のご依頼</Link>からいつでもご連絡いただけます。誤情報のご指摘・掲載停止のご依頼には、研究室確認の完了前でも一時非公開の措置を優先し、1営業日以内に対応します。
         </Sec>
         <Sec title="個人情報の取り扱い">
           学生の評価・保存・閲覧の記録は、ブラウザごとの匿名IDに紐づけて保存され、ご本人の進路探索の支援のみに利用します。第三者（研究室・企業等）へ提供することはありません。プロフィール画面からいつでも削除できます。
         </Sec>
         <Sec title="お問い合わせ">
-          掲載・取材・連携に関するお問い合わせは、<Link to="/claim" className="text-[var(--c-teal)] font-bold underline">ご依頼フォーム</Link>よりご連絡ください。
+          掲載・取材・連携に関するお問い合わせは、<Link to="/claim" className="text-[var(--c-primary)] font-bold underline">ご依頼フォーム</Link>よりご連絡ください。
         </Sec>
       </div>
     </div>
@@ -33,7 +33,7 @@ export default function Policy() {
 function Sec({ title, children }: { title: string; children: React.ReactNode }) {
   return (
     <section>
-      <h2 className="text-base font-bold text-[var(--c-ink)] mb-2">{title}</h2>
+      <h2 className="text-base font-black text-[var(--c-ink)] mb-2">{title}</h2>
       <p>{children}</p>
     </section>
   );

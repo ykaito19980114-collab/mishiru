@@ -55,19 +55,19 @@ export default function CardDetail() {
             <h1 className="text-2xl font-bold leading-snug mb-4">{card.title}</h1>
             <div className="space-y-4">
               <div>
-                <h2 className="text-xs font-bold text-[var(--c-teal)] mb-1">やさしい説明</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">やさしい説明</h2>
                 <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{card.plain_summary}</p>
               </div>
               <div>
-                <h2 className="text-xs font-bold text-[var(--c-teal)] mb-1">何が面白いか</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">何が面白いか</h2>
                 <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{card.why_interesting}</p>
               </div>
               <div>
-                <h2 className="text-xs font-bold text-[var(--c-teal)] mb-1">この研究で使う方法</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">この研究で使う方法</h2>
                 <div className="flex flex-wrap gap-1.5">{card.methods.map((m) => <Chip key={m}>{METHOD_LABEL[m] || m}</Chip>)}</div>
               </div>
               <div>
-                <h2 className="text-xs font-bold text-[var(--c-teal)] mb-1">こんな人に向いています</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">こんな人に向いています</h2>
                 <p className="text-[15px] text-[var(--c-ink-2)]">{card.suited_for}</p>
               </div>
             </div>
@@ -75,9 +75,9 @@ export default function CardDetail() {
 
           {/* 評価ボタン */}
           <div className="flex items-center justify-center gap-3">
-            <Button variant="secondary" onClick={() => act("skip")}><X className="w-4 h-4" />違うかも</Button>
-            <Button onClick={() => act("save")}><Bookmark className="w-4 h-4" />保存する</Button>
-            <Button variant="secondary" onClick={() => act("like")}><Heart className="w-4 h-4" />気になる</Button>
+            <Button variant="ghost" onClick={() => act("skip")}><X className="w-4 h-4" />違うかも</Button>
+            <Button variant="secondary" onClick={() => act("save")}><Bookmark className="w-4 h-4" />保存する</Button>
+            <Button onClick={() => act("like")}><Heart className="w-4 h-4" />気になる</Button>
           </div>
 
           {/* 関連研究室（FR-MATCH-01） */}
@@ -91,8 +91,8 @@ export default function CardDetail() {
                 <p className="text-sm text-[var(--c-ink-2)] mb-3">このテーマに直接つながる研究室はまだ登録されていません。近いテーマを見てみましょう。</p>
                 <div className="space-y-2">
                   {nearby.map((c) => (
-                    <Link key={c.id} to={`/cards/${c.id}`} className="block text-sm font-bold text-[var(--c-teal)] hover:underline min-h-[44px] flex items-center">
-                      → {c.title}
+                    <Link key={c.id} to={`/cards/${c.id}`} className="entity-row">
+                      <div className="entity-row__main"><Chip>{c.everyday_hook}</Chip><h3>{c.title}</h3><p>{c.plain_summary}</p></div>
                     </Link>
                   ))}
                 </div>

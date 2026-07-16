@@ -59,7 +59,7 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
             const active = hasValue(filters.field, f.id);
             return (
               <button key={f.id} onClick={() => set({ field: toggleCsv(filters.field, f.id) })}
-                className={`text-[13px] px-3 py-1.5 rounded-full border min-h-[40px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>
+                className={`text-xs font-bold px-3 py-1.5 rounded-full border min-h-[40px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-[var(--c-surface)] border-transparent text-[var(--c-ink-2)]"}`}>
                 {f.label}{n ? <span className={`ml-1 ${active ? "text-white/70" : "text-[var(--c-ink-3)]"}`}>{n}</span> : ""}
               </button>
             );
@@ -74,7 +74,7 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
             const active = hasValue(filters.region, r);
             return (
               <button key={r} onClick={() => set({ region: toggleCsv(filters.region, r), prefecture: "" })}
-                className={`text-[13px] px-3 py-1.5 rounded-full border min-h-[40px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>
+                className={`text-xs font-bold px-3 py-1.5 rounded-full border min-h-[40px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-[var(--c-surface)] border-transparent text-[var(--c-ink-2)]"}`}>
                 {r}{facets?.region[r] ? <span className={`ml-1 ${active ? "text-white/70" : "text-[var(--c-ink-3)]"}`}>{facets.region[r]}</span> : ""}
               </button>
             );
@@ -88,7 +88,7 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
                 const active = hasValue(filters.prefecture, p);
                 return (
                   <button key={p} onClick={() => set({ prefecture: toggleCsv(filters.prefecture, p) })}
-                    className={`text-[12px] px-2.5 py-1.5 rounded-full border min-h-[36px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>
+                    className={`text-xs font-bold px-2.5 py-1.5 rounded-full border min-h-[40px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-[var(--c-surface)] border-transparent text-[var(--c-ink-2)]"}`}>
                     {p}
                   </button>
                 );
@@ -105,7 +105,7 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
             const active = hasValue(filters.type, t.v);
             return (
               <button key={t.v} onClick={() => set({ type: toggleCsv(filters.type, t.v) })}
-                className={`flex-1 text-[13px] px-3 py-2 rounded-[10px] border min-h-[44px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>
+                className={`flex-1 text-xs font-bold px-3 py-2 rounded-[var(--radius-btn)] border min-h-[44px] ${active ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-white border-[var(--c-border-strong)] text-[var(--c-ink-2)]"}`}>
                 {t.l}{facets?.type[t.v] ? <span className={`ml-1 text-xs ${active ? "text-white/70" : "text-[var(--c-ink-3)]"}`}>{facets.type[t.v]}</span> : ""}
               </button>
             );
@@ -128,7 +128,7 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
         <div className="flex flex-wrap gap-2">
           {SIZES.map((s) => (
             <button key={s.v} onClick={() => set({ size: toggleCsv(filters.size, s.v) })}
-              className={`text-[13px] px-3 py-1.5 rounded-full border min-h-[40px] ${hasValue(filters.size, s.v) ? "bg-[var(--c-primary)] text-white border-transparent" : "border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>
+              className={`text-xs font-bold px-3 py-1.5 rounded-full border min-h-[40px] ${hasValue(filters.size, s.v) ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-[var(--c-surface)] border-transparent text-[var(--c-ink-2)]"}`}>
               {s.l}
             </button>
           ))}
@@ -142,9 +142,9 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
       {open && (
         <div className="fixed inset-0 z-[70] flex flex-col justify-end md:justify-center md:items-center" role="dialog" aria-modal="true" aria-label="絞り込み">
           <div className="absolute inset-0 bg-black/40" onClick={onClose} />
-          <div className="relative w-full bg-white rounded-t-[20px] md:rounded-[20px] md:max-w-[620px] max-h-[85vh] flex flex-col shadow-[var(--shadow-float)]">
+          <div className="relative w-full bg-white rounded-t-[var(--radius-card)] md:rounded-[var(--radius-card)] md:max-w-[620px] max-h-[85vh] flex flex-col shadow-[var(--shadow-float)]">
             <div className="flex items-center justify-between px-4 py-3 border-b border-[var(--c-border)]">
-              <h2 className="font-bold">絞り込み</h2>
+              <h2 className="text-base font-black">絞り込み</h2>
               <button onClick={onClose} aria-label="閉じる" className="w-11 h-11 grid place-items-center"><X className="w-5 h-5" /></button>
             </div>
             <div className="flex-1 overflow-y-auto scrollbar-thin px-4 py-4">{body}</div>
@@ -163,7 +163,7 @@ function Group({ label, hint, children }: { label: string; hint?: string; childr
   return (
     <div>
       <h3 className="text-sm font-bold text-[var(--c-ink)] mb-1">{label}</h3>
-      {hint && <p className="text-[11px] leading-relaxed text-[var(--c-ink-3)] mb-2">{hint}</p>}
+      {hint && <p className="text-xs leading-relaxed text-[var(--c-ink-3)] mb-2">{hint}</p>}
       {children}
     </div>
   );
@@ -179,4 +179,4 @@ function Select({ value, onChange, placeholder, options }: { value: string; onCh
     </div>
   );
 }
-const inp = "w-full px-3 py-2.5 min-h-[44px] rounded-[10px] border border-[var(--c-border)] outline-none focus:border-[var(--c-teal)] text-[15px] bg-white";
+const inp = "w-full px-3 py-2.5 min-h-[48px] rounded-[var(--radius-btn)] border border-[var(--c-border-strong)] outline-none focus:border-[var(--c-primary)] focus:ring-3 focus:ring-[var(--c-primary-soft)] text-[15px] bg-white";

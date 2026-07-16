@@ -2,7 +2,7 @@
 import React, { useEffect, useState, useMemo } from "react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet-async";
-import { Search as SearchIcon, ChevronRight } from "lucide-react";
+import { Search as SearchIcon } from "lucide-react";
 import { api } from "../lib/api";
 import { REGIONS, UNIV_TYPE_LABEL } from "../../shared/universities";
 import { Skeleton, ErrorState, Chip } from "../components/ui";
@@ -29,12 +29,12 @@ export default function Universities() {
   return (
     <div className="max-w-3xl mx-auto px-4 pt-4 pb-8">
       <Helmet><title>大学から探す ｜ MISHIRU</title></Helmet>
-      <h1 className="text-xl font-bold mb-1">大学から探す</h1>
-      <p className="text-sm text-[var(--c-ink-2)] mb-4">全国100大学・19,785研究室。大学ごとに研究室と専攻を一覧できます。</p>
+      <h1 className="text-xl font-black mb-1">大学から探す</h1>
+      <p className="text-sm text-[var(--c-ink-2)] mb-4 line-clamp-1">大学ごとに研究室数と専攻を見比べられます。</p>
 
       <div className="relative mb-3">
         <SearchIcon className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--c-ink-3)]" />
-        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="大学名で絞り込む" className="w-full pl-9 pr-3 min-h-[44px] rounded-[10px] border border-[var(--c-border)] focus:border-[var(--c-teal)] outline-none text-[15px]" />
+        <input value={q} onChange={(e) => setQ(e.target.value)} placeholder="大学名で絞り込む" className="w-full pl-9 pr-3 min-h-[44px] rounded-[var(--radius-btn)] border border-[var(--c-border-strong)] focus:border-[var(--c-primary)] outline-none text-[15px]" />
       </div>
       <div className="flex gap-2 overflow-x-auto scrollbar-thin pb-2 mb-4">
         <button onClick={() => setRegion("")} className={`shrink-0 text-[13px] px-3 py-1.5 rounded-full border min-h-[36px] ${!region ? "bg-[var(--c-primary)] text-white border-transparent" : "border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>全国</button>
@@ -52,13 +52,13 @@ export default function Universities() {
               <h2 className="text-sm font-bold text-[var(--c-ink-3)] mb-2">{r}</h2>
               <div className="grid sm:grid-cols-2 gap-2">
                 {byRegion[r].map((u) => (
-                  <Link key={u.name} to={`/universities/${encodeURIComponent(u.name)}`}
-                    className="flex items-center justify-between p-3.5 bg-white border border-[var(--c-border)] rounded-[var(--radius-panel)] hover:border-[var(--c-teal)] transition-colors">
-                    <div className="min-w-0">
-                      <p className="font-bold text-[var(--c-ink)] line-clamp-1">{u.name}</p>
-                      <p className="text-xs text-[var(--c-ink-3)] mt-0.5">{u.prefecture}・{u.type ? UNIV_TYPE_LABEL[u.type as keyof typeof UNIV_TYPE_LABEL] : ""}・{u.count}研究室</p>
+                  <Link key={u.name} to={`/universities/${encodeURIComponent(u.name)}`} className="entity-row">
+                    <div className="entity-row__main">
+                      <span>{u.prefecture}</span>
+                      <h3>{u.name}</h3>
+                      {u.type && <Chip>{UNIV_TYPE_LABEL[u.type as keyof typeof UNIV_TYPE_LABEL]}</Chip>}
                     </div>
-                    <ChevronRight className="w-5 h-5 text-[var(--c-ink-3)] shrink-0" />
+                    <strong className="entity-row__count">{u.count}<small>研究室</small></strong>
                   </Link>
                 ))}
               </div>

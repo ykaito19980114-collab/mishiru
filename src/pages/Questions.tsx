@@ -5,7 +5,7 @@ import { ArrowRight, BookOpen, Check, ChevronDown, ExternalLink, Layers, LoaderC
 import type { NormalizedResearchMaterial, ProjectSourceMode, QuestionFreeInput, ResearchProject, RQCandidate, Step1Response, Step2Response } from "../../shared/research-project";
 import { api } from "../lib/api";
 import { clearQuestionDraft, loadQuestionMaterials, materialTypeLabel, readQuestionDraft, writeQuestionDraft } from "../lib/questionMaterials";
-import { Button, Card, Chip, Disclosure, ErrorState, Skeleton } from "../components/ui";
+import { Button, Card, Chip, Disclosure, ErrorState, Skeleton, TrustNote } from "../components/ui";
 
 const EMPTY_INPUT: QuestionFreeInput = { recentInterest: "", discomfort: "", graduateTopic: "", reason: "", referenceInfo: "", notes: "" };
 const INPUTS: [keyof QuestionFreeInput, string, string][] = [
@@ -16,6 +16,7 @@ const INPUTS: [keyof QuestionFreeInput, string, string][] = [
   ["referenceInfo", "参考情報", "書籍、記事、URL、キーワードなど"],
   ["notes", "任意補足", "条件や避けたい方向など"],
 ];
+const STEP_LABELS = ["気になったことを書く", "問いを比べる", "研究プランをつくる", "保存する"];
 
 export default function Questions() {
   const navigate = useNavigate();
@@ -48,7 +49,7 @@ export default function Questions() {
       if (inherited.length) { setMode("saved_items"); setSelectedIds((current) => Array.from(new Set([...current, ...inherited.filter((id) => items.some((item) => materialKey(item) === id))]))); }
       const direction = searchParams.get("direction") || "";
       if (direction) setFreeInput((current) => current.recentInterest ? current : { ...current, recentInterest: direction });
-    }).catch(() => setError("保存素材を読み込めませんでした。")).finally(() => setBusy(""));
+    }).catch(() => setError("ためたものを読み込めませんでした。")).finally(() => setBusy(""));
   }, []);
 
   useEffect(() => {
@@ -61,6 +62,7 @@ export default function Questions() {
   const enoughEvidence = mode === "free_input"
     ? Object.values(freeInput).some((value) => value.trim().length >= 8)
     : chosenMaterials.some((item) => item.officialDescription || item.officialQuestions?.length || item.excerpt || item.userReasonMemo);
+  const currentStep = step2 ? 3 : step1 ? 1 : 0;
 
   const generateStep1 = async () => {
     if (!enoughEvidence) { setError("この素材だけでは、研究の問いを作るための情報が不足しています。気になった理由や、扱いたい違和感を追加してください。"); return; }
@@ -99,22 +101,14 @@ export default function Questions() {
     <div className="question-page max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-10">
       <Helmet><title>問いにしてみる ｜ MISHIRU</title></Helmet>
       <header className="question-heading">
-        <div><p className="eyebrow">QUESTION CRAFT</p><h1>気になることを、研究できる問いへ。</h1><p>言葉になりきらない関心をほどき、複数の問いを比べながら研究の骨子まで育てます。</p></div>
-        <Link to="/projects"><Button variant="secondary"><BookOpen className="w-4 h-4" />本棚を見る</Button></Link>
+        <div><p className="eyebrow">QUESTION CRAFT</p><h1>気になることを、研究できる問いへ。</h1></div>
+        <Link to="/projects" className="question-library-link"><BookOpen className="w-4 h-4" />保存した問いを見る</Link>
       </header>
-
-      <nav className="step-rail" aria-label="作成ステップ">
-        {["素材を選ぶ", "問いを比べる", "骨子をつくる", "本棚へ保存"].map((label, index) => <span key={label} className={(step2 ? 3 : step1 ? 1 : 0) >= index ? "is-on" : ""}><b>{index + 1}</b>{label}</span>)}
-      </nav>
-      {interestAnalysisId && <p className="inherit-notice">みつめるの分析と根拠素材を引き継いでいます。ここから具体的なRQ候補を作ります。</p>}
-      {aiEnabled === false && <p className="fallback-notice"><Sparkles className="w-4 h-4"/>選択中のAIは利用できません。生成できない場合は、品質検査済みの仮説たたき台へ切り替わります。</p>}
-      {step1?.generatedBy === "quality_fallback" && <p className="fallback-notice" role="status"><Sparkles className="w-4 h-4"/><span><strong>これはAI生成結果ではなく、仮説たたき台です。</strong> 素材から対象・関係・証拠を組み立て、問いの形式を検査しています。理由メモを加えるか、もう一度生成すると焦点を改善できます。</span></p>}
-      {step1?.generatedBy === "ai" && Boolean(step1.qualityReport?.repairedCount) && <div className="quality-notice" role="status">{step1.qualityReport?.warnings.map((warning) => <p key={warning}>{warning}</p>)}</div>}
 
       <Card className="question-source-panel">
         <div className="segment-control">
           <button className={mode === "free_input" ? "active" : ""} onClick={() => setMode("free_input")}>自由入力から作る</button>
-          <button className={mode === "saved_items" ? "active" : ""} onClick={() => setMode("saved_items")}>保存した素材から作る</button>
+          <button className={mode === "saved_items" ? "active" : ""} onClick={() => setMode("saved_items")}>ためたものから作る</button>
         </div>
         {mode === "free_input" ? (
           <div className="question-input-grid">
@@ -141,11 +135,19 @@ export default function Questions() {
           </div>
         )}
         {error && <p className="form-error" role="alert">{error}</p>}
-        <div className="panel-action"><Button onClick={generateStep1} disabled={!!busy || !enoughEvidence}>{busy === "step1" ? <><LoaderCircle className="w-4 h-4 animate-spin"/>素材を統合し、12種類の問いを検査しています…</> : <><Sparkles className="w-4 h-4"/>Step 1：問いの候補をつくる</>}</Button></div>
+        <div className="panel-action"><Button onClick={generateStep1} disabled={!!busy || !enoughEvidence}>{busy === "step1" ? <><LoaderCircle className="w-4 h-4 animate-spin"/>気になったことを統合し、12種類の問いを検査しています…</> : <><Sparkles className="w-4 h-4"/>Step 1：問いの候補をつくる</>}</Button></div>
       </Card>
 
+      <nav className="step-rail" aria-label="作成ステップ">
+        <span><b>{currentStep + 1} / {STEP_LABELS.length}</b>{STEP_LABELS[currentStep]}</span>
+      </nav>
+      {interestAnalysisId && <TrustNote className="question-trust-note">みつめるの分析と根拠を引き継ぎ、具体的な問いの候補を作ります。</TrustNote>}
+      {aiEnabled === false && <TrustNote className="question-trust-note">AIを利用できない場合は、品質検査済みの仮説たたき台を表示します。</TrustNote>}
+      {step1?.generatedBy === "quality_fallback" && <div role="status"><TrustNote className="question-trust-note"><strong>これはAI生成結果ではなく、仮説たたき台です。</strong> 気になったことから対象・関係・証拠を組み立て、問いの形式を検査しています。</TrustNote></div>}
+      {step1?.generatedBy === "ai" && Boolean(step1.qualityReport?.repairedCount) && <div role="status">{step1.qualityReport?.warnings.map((warning) => <TrustNote className="question-trust-note" key={warning}>{warning}</TrustNote>)}</div>}
+
       {step1 && <section id="question-step1" className="question-result-section"><SectionHeading step="STEP 1" title="関心をほどき、問いを比べる" />
-        {step1.source_synthesis && <Card className="source-synthesis"><div className="source-synthesis__head"><div><p className="eyebrow">SOURCE SYNTHESIS</p><h3>素材を、ひとつの研究焦点へ</h3></div><Chip tone={step1.generatedBy === "ai" ? "teal" : "yellow"}>{step1.generatedBy === "ai" ? "AI＋品質検査" : "仮説たたき台"}</Chip></div><strong>{step1.source_synthesis.core_interest}</strong><p>{step1.source_synthesis.adopted_focus}</p><Disclosure summary="素材のつながりと前提を見る" description="なぜこの焦点になったか、不足している情報を確認できます"><div className="source-synthesis__grid"><div><span>素材のつながり</span><ul>{step1.source_synthesis.material_connections.map((item) => <li key={item}>{item}</li>)}</ul></div><div><span>仮定・不足情報</span><ul>{[...step1.source_synthesis.assumptions, ...step1.source_synthesis.missing_information].map((item) => <li key={item}>{item}</li>)}</ul></div></div></Disclosure></Card>}
+        {step1.source_synthesis && <Card className="source-synthesis"><div className="source-synthesis__head"><div><p className="eyebrow">SOURCE SYNTHESIS</p><h3>気になったことを、ひとつの研究焦点へ</h3></div><Chip tone={step1.generatedBy === "ai" ? "teal" : "yellow"}>{step1.generatedBy === "ai" ? "AI＋品質検査" : "仮説たたき台"}</Chip></div><strong>{step1.source_synthesis.core_interest}</strong><p>{step1.source_synthesis.adopted_focus}</p><Disclosure summary="気になったことのつながりと前提を見る" description="なぜこの焦点になったか、不足している情報を確認できます"><div className="source-synthesis__grid"><div><span>気になったことのつながり</span><ul>{step1.source_synthesis.material_connections.map((item) => <li key={item}>{item}</li>)}</ul></div><div><span>仮定・不足情報</span><ul>{[...step1.source_synthesis.assumptions, ...step1.source_synthesis.missing_information].map((item) => <li key={item}>{item}</li>)}</ul></div></div></Disclosure></Card>}
         <Disclosure className="question-research-context" summary="問いの背景と研究マップを見る" description="対象・文脈や、別領域から見た問いを確認できます">
           <Decomposition decomposition={step1.decomposition}/>
           <div className="research-map-grid"><Card className="research-map-main"><p className="eyebrow">RESEARCH MAP</p><h3>{step1.research_map_position.domain_name}</h3><dl><div><dt>対象の存在相</dt><dd>{step1.research_map_position.vertical_axis}</dd></div><div><dt>問いの様式</dt><dd>{step1.research_map_position.horizontal_axis}</dd></div></dl><p>{step1.research_map_position.reason}</p></Card>
@@ -155,10 +157,10 @@ export default function Questions() {
         <div className="rq-grid">{prioritizedRqs.primary.map(({ rq, index }) => <QuestionCandidateCard key={rqId(rq, index)} rq={rq} selected={selectedRq === rq} compared={compareIds.includes(rqId(rq, index))} onCompare={() => setCompareIds(toggle(compareIds, rqId(rq, index)).slice(-3))} onSelect={() => setSelectedRq(rq)} />)}</div>
         {prioritizedRqs.other.length > 0 && <Disclosure className="other-rq-options" summary={`ほかの問い案を見る（${prioritizedRqs.other.length}件）`} description="異なる研究の型から比べたいときに開いてください"><div className="rq-grid">{prioritizedRqs.other.map(({ rq, index }) => <QuestionCandidateCard key={rqId(rq, index)} rq={rq} selected={selectedRq === rq} compared={compareIds.includes(rqId(rq, index))} onCompare={() => setCompareIds(toggle(compareIds, rqId(rq, index)).slice(-3))} onSelect={() => setSelectedRq(rq)} />)}</div></Disclosure>}
         {compareIds.length >= 2 && <Comparison candidates={step1.output_type_proposals.filter((rq, i) => compareIds.includes(rqId(rq, i)))}/>} 
-        <div className="panel-action"><Button onClick={generateStep2} disabled={!selectedRq || !!busy}>{busy === "step2" ? <LoaderCircle className="w-4 h-4 animate-spin"/> : <ArrowRight className="w-4 h-4"/>}Step 2：研究骨子をつくる</Button></div>
+        <div className="panel-action"><Button onClick={generateStep2} disabled={!selectedRq || !!busy}>{busy === "step2" ? <LoaderCircle className="w-4 h-4 animate-spin"/> : <ArrowRight className="w-4 h-4"/>}Step 2：研究プランをつくる</Button></div>
       </section>}
 
-      {step2 && <section id="question-step2" className="question-result-section"><SectionHeading step="STEP 2" title="調べ方と研究骨子を組み立てる" />
+      {step2 && <section id="question-step2" className="question-result-section"><SectionHeading step="STEP 2" title="調べ方と研究プランを組み立てる" />
         <Card className="summary-banner"><span>一文要約</span><strong>{step2.one_sentence_summary}</strong></Card>
         <Card className="gap-card"><span>深掘りするギャップ</span><p>{step2.literature_review.target_gap_deep}</p><div className="query-row">{step2.search_queries.map((query) => <Chip key={query}>{query}</Chip>)}</div></Card>
         <Disclosure className="step2-evidence" summary="先行研究と参照先を詳しく見る" description="ギャップ、論文候補、学術コミュニティへの接続を段階的に確認できます">
@@ -180,10 +182,10 @@ export default function Questions() {
         <div className="panel-action"><Button onClick={() => setSaveOpen(true)}><Save className="w-4 h-4"/>研究プロジェクトとして保存</Button></div>
       </section>}
 
-      {saveOpen && step2 && <div className="modal-backdrop" role="presentation" onMouseDown={() => setSaveOpen(false)}><Card className="save-project-dialog" float><div onMouseDown={(e) => e.stopPropagation()}><div className="dialog-title"><div><p className="eyebrow">ADD TO BOOKSHELF</p><h2>本棚へ保存</h2></div><button aria-label="閉じる" onClick={() => setSaveOpen(false)}>×</button></div>
-        <label className="question-project-target">保存先<select value={targetProjectId} onChange={(e)=>setTargetProjectId(e.target.value)}><option value="">新しい本として本棚へ追加</option>{existingProjects.map((project)=><option key={project.id} value={project.id}>既存の本「{project.displayTitle}」に紐づける</option>)}</select><small>{targetProjectId?"既存の表紙とタイトルを残したまま、今回の問い・骨子・素材を紐づけます。":"新しい研究プロジェクトとして表紙とともに保存します。"}</small></label>
+      {saveOpen && step2 && <div className="modal-backdrop" role="presentation" onMouseDown={() => setSaveOpen(false)}><Card className="save-project-dialog" float><div onMouseDown={(e) => e.stopPropagation()}><div className="dialog-title"><div><p className="eyebrow">SAVE PROJECT</p><h2>保存する</h2></div><button aria-label="閉じる" onClick={() => setSaveOpen(false)}>×</button></div>
+        <label className="question-project-target">保存先<select value={targetProjectId} onChange={(e)=>setTargetProjectId(e.target.value)}><option value="">新しい本として保存</option>{existingProjects.map((project)=><option key={project.id} value={project.id}>既存の本「{project.displayTitle}」に紐づける</option>)}</select><small>{targetProjectId?"既存の表紙とタイトルを残したまま、今回の問い・研究プラン・気になったことを紐づけます。":"新しい研究プロジェクトとして表紙とともに保存します。"}</small></label>
         {!targetProjectId&&<div className="save-grid"><div className="save-fields"><label>本のタイトル<input value={title} onChange={(e) => setTitle(e.target.value)}/></label><label>サブタイトル<textarea rows={3} value={subtitle} onChange={(e) => setSubtitle(e.target.value)}/></label><label>状態<select value={status} onChange={(e) => setStatus(e.target.value as typeof status)}><option value="draft">作成中</option><option value="consultation">相談用</option><option value="on_hold">保留</option></select></label><fieldset><legend>初期表紙</legend><div className="preset-row">{["electric","lime","silver","charcoal"].map((id) => <button key={id} className={preset === id ? "active" : ""} onClick={() => setPreset(id)} style={{background: coverCss(coverPreset(id))}} aria-label={`${id}表紙`} />)}</div><small>詳しい表紙編集は保存後に行えます</small></fieldset></div><ProjectCover title={title} subtitle={subtitle} preset={preset}/></div>}
-        <div className="dialog-actions"><Button variant="ghost" onClick={() => { setPreset("electric"); saveProject(); }}>あとで設定して保存</Button><Button onClick={saveProject} disabled={!title.trim() || busy === "save"}>{busy === "save" && <LoaderCircle className="w-4 h-4 animate-spin"/>}本棚へ追加</Button></div></div></Card></div>}
+        <div className="dialog-actions"><Button variant="ghost" onClick={() => { setPreset("electric"); saveProject(); }}>あとで設定して保存</Button><Button onClick={saveProject} disabled={!title.trim() || busy === "save"}>{busy === "save" && <LoaderCircle className="w-4 h-4 animate-spin"/>}保存する</Button></div></div></Card></div>}
     </div>
   );
 }
