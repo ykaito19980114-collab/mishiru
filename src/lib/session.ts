@@ -1,6 +1,7 @@
 // 匿名セッション管理（docs/03 §12：sessionIdはクライアント生成UUID・削除可能な個人関連情報）
 const KEY = "openlab_session_id";
 const QUEUE_KEY = "openlab_action_queue"; // オフライン再送キュー（FR-ERR-02）
+export const PENDING_SESSION_KEY = "mishiru_pending_session_id";
 
 function uuid(): string {
   if (typeof crypto !== "undefined" && crypto.randomUUID) return crypto.randomUUID();
@@ -19,6 +20,22 @@ export function getSessionId(): string {
 export function resetSession() {
   localStorage.removeItem(KEY);
   localStorage.removeItem(QUEUE_KEY);
+}
+
+export function clearLocalUserData() {
+  [
+    KEY,
+    QUEUE_KEY,
+    PENDING_SESSION_KEY,
+    "openlab_stock_folders",
+    "openlab_stock_item_notes",
+    "openlab_question_craft_draft_v1",
+    "openlab_annotations_v1",
+    "openlab_annotations_v2",
+    "openlab_interest_draft_v1",
+    "mishiru_book_order",
+    "mishiru_book_shelves",
+  ].forEach((key) => localStorage.removeItem(key));
 }
 
 export function setSessionId(id: string) {

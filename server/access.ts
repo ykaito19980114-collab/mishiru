@@ -33,8 +33,12 @@ async function canonicalSessionId(userId: string, candidate: string) {
 export async function accessContextMiddleware(req: Request, res: Response, next: NextFunction) {
   if (!req.path.startsWith("/api")) return next();
   try {
-    let user = await userFromBearer(req.get("authorization"));
-    if (!user && process.env.NODE_ENV !== "production") {
+    const authorization = req.get("authorization");
+    let user = await userFromBearer(authorization);
+    if (authorization && !user) {
+      return res.status(401).json({ error: { code: "UNAUTHORIZED", message: "ログイン情報を確認できません。もう一度ログインしてください。" } });
+    }
+    if (!user && (process.env.NODE_ENV !== "production" || process.env.MISHIRU_ALLOW_DEV_AUTH === "true")) {
       const devUser = req.get("x-mishiru-dev-user");
       if (devUser) user = { id: devUser } as typeof user;
     }
@@ -51,6 +55,10 @@ export async function accessContextMiddleware(req: Request, res: Response, next:
     console.error("[access]", error instanceof Error ? error.message : error);
     res.status(503).json({ error: { code: "AUTH_UNAVAILABLE", message: "アカウント情報を確認できません。少し待ってからもう一度お試しください。" } });
   }
+}
+
+export function forgetLocalUser(userId: string) {
+  localUsers.delete(userId);
 }
 
 export async function guestUsage(sessionId: string) {

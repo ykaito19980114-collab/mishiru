@@ -23,8 +23,9 @@ import { buildConsultationDraft, ConsultationAssetRepository, ConsultationExport
 import { InterestAnalysisRepository, InterestAnalysisService } from "./server/interest-analysis";
 import { AI_MODELS, aiEnabled, aiProviderStatus, currentAiModel, currentAiProvider, withAiModel } from "./server/ai";
 import { stsmpMaterialMeta } from "./server/stsmp";
-import { accessContextMiddleware, guestUsage, GUEST_ACTION_LIMIT, requireValueAction } from "./server/access";
-import { sessionStateMiddleware } from "./server/session-state";
+import { accessContextMiddleware, forgetLocalUser, guestUsage, GUEST_ACTION_LIMIT, requireValueAction } from "./server/access";
+import { discardSessionState, sessionStateMiddleware } from "./server/session-state";
+import { deleteMishiruIdentity } from "./server/supabase";
 import type {
   CardActionRecord, Claim, Lead, Report, Article, AppEvent, ClaimType,
   CardAction, DiscoveryActionRecord, DiscoveryCard, ResearchField, ResearchSociety, ResearchJournal, QuestionProject,
@@ -811,11 +812,21 @@ export async function createApp() {
   });
 
   // ============ セッション削除（AC-06 / FR-PRIV-01） ============
-  app.delete("/api/me", (req, res) => {
-    const sessionId = String(req.query.sessionId || req.body?.sessionId || "");
+  app.delete("/api/me", async (_req, res) => {
+    const sessionId = String(res.locals.mishiruSessionId || "");
     if (!sessionId) return bad(res, "sessionId が必要です");
-    const result = store.deleteSession(sessionId);
-    res.json({ ok: true, deleted: result });
+    const userId = res.locals.mishiruUser?.id || null;
+    try {
+      // レスポンス終了時の自動保存で、削除済みJSONBを再生成しないよう先に破棄する。
+      discardSessionState();
+      const result = store.deleteSession(sessionId);
+      await deleteMishiruIdentity(userId, sessionId);
+      if (userId) forgetLocalUser(userId);
+      res.json({ ok: true, accountDeleted: Boolean(userId), deleted: result });
+    } catch (error) {
+      console.error("[account-delete]", error instanceof Error ? error.message : error);
+      res.status(503).json({ error: { code: "DELETE_UNAVAILABLE", message: "データを削除できませんでした。少し待ってからもう一度お試しください。" } });
+    }
   });
 
   // ============ 管理API（要admin, §7） ============

@@ -12,6 +12,9 @@
 - `GET /api/departments`
 - `POST /api/claims`
 - `GET /api/admin/*`
+- `GET /api/access`
+- `POST /api/auth/link-session`
+- `DELETE /api/me`（匿名セッション削除／認証済みは退会）
 
 ## 追加予定
 

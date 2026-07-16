@@ -11,6 +11,7 @@ import type { InterestProfile, QuestionProject } from "../../shared/types";
 import { Button, Card, Chip, Skeleton, ErrorState } from "../components/ui";
 import { LabMiniCard } from "../components/LabCard";
 import { InterestDraft, readAnnotations, readInterestDraft, summarizeAnnotations, writeInterestDraft } from "../lib/annotations";
+import { AccountDataPanel } from "../components/AccountAccess";
 
 export default function Profile() {
   const [state, setState] = useState<"loading" | "error" | "notready" | "ready">("loading");
@@ -229,6 +230,7 @@ export default function Profile() {
           </section>
         </div>
       )}
+      {(state === "notready" || state === "ready") && <AccountDataPanel />}
     </div>
   );
 }

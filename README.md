@@ -35,7 +35,8 @@ pnpm run dev
    - `supabase/schema.sql` の内容をSupabaseのSQLエディタで実行して、テーブルとRLSポリシーを作成します。
    - テーブルはすべて `mishiru_` から始まります。既存の `universities` などは変更・削除しません。各DDLは再実行可能なので、エラー時は修正後に新しいQueryから全体を再実行できます。
    - 続けて `supabase/verify-schema.sql` を実行します。必須テーブル不足・RLS未設定・回数制限関数不足があれば、SQLが明示的にエラーを返します。
-   - Supabase Auth の Email プロバイダーを有効にします。
+   - Supabase Auth の Email プロバイダーと「Confirm email」を有効にします。
+   - Authentication > URL Configuration で、Site URLを本番URL（例 `https://mishiru-lab.com`）にし、Redirect URLsへ `https://mishiru-lab.com/auth/callback`、VercelのPreview URLに対応する `https://*-kaito-yoshizumi-s-projects.vercel.app/auth/callback`、ローカル確認用 `http://localhost:3008/auth/callback` を登録します。登録確認・パスワード再設定はこの画面へ戻ります。
    - プロジェクトの Settings > API から、Project URL、Anon Key、Service Role Key を取得します。
    - VercelのEnvironment Variables または `.env` に、取得した値を以下のように設定します。
      - `SUPABASE_URL=your_project_url`
@@ -54,6 +55,7 @@ pnpm run dev
 ## 開発と運用
 
 - 未登録ユーザーは閲覧を自由に行え、検索・保存・AI生成などの価値操作を5回まで試せます。6回目は無料アカウント作成を案内し、それまでの内容を引き継ぎます。
+- アカウント機能はメール確認、確認メール再送、ログイン、パスワード再設定、ログアウト、退会に対応します。退会時は本人のAuthユーザー、正規sessionId、保存状態をサーバー側で削除します。
 - Vercelでは `vercel.json` と `api/[...path].ts` を使って、Viteの画面とExpress APIを同じドメインで配信します。Build Commandは `pnpm run build:vercel`、Output Directoryは `dist` です。
 - データの管理、問い合わせステータスの管理などはSupabaseの管理画面から直接行うことができます。
 - 管理用ダッシュボード (`/admin`) は `ADMIN_TOKEN` で保護してください。公開環境で未設定にしないでください。

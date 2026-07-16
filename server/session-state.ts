@@ -38,6 +38,14 @@ export function setSessionSection<T>(key: string, value: T): void {
   context.dirty = true;
 }
 
+export function discardSessionState(): void {
+  const context = storage.getStore();
+  if (!context) return;
+  context.remote = false;
+  context.dirty = false;
+  context.payload = {};
+}
+
 async function load(sessionId: string, userId: string | null): Promise<SessionStateContext> {
   const supabase = serverSupabase();
   if (!supabase) return { sessionId, userId, payload: {}, dirty: false, remote: false, flushing: false };

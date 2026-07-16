@@ -24,6 +24,7 @@ const Claim = lazy(() => import("./pages/Claim"));
 const Policy = lazy(() => import("./pages/Policy"));
 const ForLabs = lazy(() => import("./pages/ForLabs"));
 const Admin = lazy(() => import("./pages/admin/Admin"));
+const AuthCallback = lazy(() => import("./pages/AuthCallback"));
 
 function RouteLoading() {
   return <div className="mishiru-page py-16" role="status" aria-live="polite"><div className="skeleton h-5 w-28 mb-5" /><div className="skeleton h-12 w-3/4" /><span className="sr-only">画面を読み込んでいます</span></div>;
@@ -63,6 +64,7 @@ export default function App() {
               <Route path="/claim" element={<Claim />} />
               <Route path="/policy" element={<Policy />} />
               <Route path="/for-labs" element={<ForLabs />} />
+              <Route path="/auth/callback" element={<AuthCallback />} />
               <Route path="/admin/*" element={<Admin />} />
               <Route path="*" element={<Navigate to="/search" replace />} />
             </Routes>

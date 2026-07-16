@@ -27,6 +27,16 @@ async function run() {
   for (let i = 0; i < 6; i++) guestResult = await guestPost("/api/card-actions", { actionId: uuid(), sessionId: guestSid, cardId: guestCard.id, action: "like" });
   check("AC-11", guestResult?.status === 403 && guestResult.body?.error?.code === "ACCOUNT_REQUIRED", "6回目で無料アカウント登録を案内");
 
+  // ---- AC-12: 登録/ログイン後は匿名セッションを引き継ぎ、上限を解除 ----
+  const authHeaders = { "Content-Type": "application/json", "x-mishiru-dev-user": `account-${guestSid}` };
+  const linked = await j("/api/auth/link-session", { method: "POST", headers: authHeaders, body: JSON.stringify({ sessionId: guestSid }) });
+  const afterLink = await j("/api/card-actions", { method: "POST", headers: authHeaders, body: JSON.stringify({ actionId: uuid(), sessionId: guestSid, cardId: guestCard.id, action: "save" }) });
+  const linkedAccess = await j(`/api/access?sessionId=${guestSid}`, { headers: authHeaders });
+  check("AC-12a", linked.status === 200 && linked.body.sessionId === guestSid, "匿名sessionIdをアカウントへ引き継ぐ");
+  check("AC-12b", afterLink.status === 200 && linkedAccess.body.authenticated === true && linkedAccess.body.limit === null, "ログイン後は匿名上限を適用しない");
+  const accountDelete = await j(`/api/me?sessionId=${guestSid}`, { method: "DELETE", headers: authHeaders });
+  check("AC-13", accountDelete.status === 200 && accountDelete.body.accountDeleted === true, "本人確認済みの退会処理でアカウントデータを削除");
+
   // ---- AC-01: 初回10枚評価 → プロファイル＋候補研究室 ----
   const sid = uuid();
   const { body: cardsRes } = await j(`/api/cards?sessionId=${sid}&batch=12`);
@@ -115,7 +125,8 @@ async function run() {
   check("FR-NAME-01", dirty.length === 0, `氏名クレンジング（ゴミ${dirty.length}件）`);
 
   // ---- FR-SEARCH-AI: 自然文で研究室が返る＋解釈が可視化される ----
-  const { body: ai } = await j(`/api/labs/smart?q=${encodeURIComponent("宇宙とロボット")}`);
+  const searchSid = uuid();
+  const { body: ai } = await j(`/api/labs/smart?q=${encodeURIComponent("宇宙とロボット")}&sessionId=${searchSid}`, { headers: { "x-mishiru-dev-user": `acceptance-${searchSid}` } });
   check("FR-SEARCH-AI-a", ai.data?.length > 0 && ai.total > 0, `AI検索ヒット${ai.total}件`);
   check("FR-SEARCH-AI-b", (ai.interpreted?.keywords?.length > 0 || ai.interpreted?.fieldLabels?.length > 0), "解釈（分野/キーワード）を返す");
   check("FR-SEARCH-AI-c", /宇宙|ロボット/.test(ai.data?.[0]?.name || "") || ai.data?.[0]?.keywords?.some((k: string) => /宇宙|ロボット/.test(k)), "上位結果が入力に関連");
