@@ -269,12 +269,15 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
     width: clamp(230px, 24vw, 320px);
     transform: rotate(2deg);
   }
+  /* 彫刻ポスターが右側を占有するため、例チップは横スクロールで隠さず折り返す（見切れ・重なり防止） */
+  .hero-examples { flex-wrap: wrap; overflow-x: visible; }
 }
 @media (max-width: 767px) {
-  .hero-band { margin-bottom: 46px; padding-bottom: 0; }
+  /* margin-bottomは末尾の.hero-band(edge-to-edge)ルールが上書きするため、ここでは指定しない */
+  .hero-band { padding-bottom: 0; }
   .hero-band__figure {
     width: min(56vw, 230px);
-    margin: 20px auto -30px;
+    margin: 20px auto 0;
     transform: rotate(2deg);
   }
   .hero-band__count { left: -22px; }
@@ -553,7 +556,8 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   .auth-callback-page { padding: 18px 12px 90px; }
   .auth-callback-card { padding: 28px 20px; }
   .mishiru-intro { padding-block: 24px 18px; }
-  .hero-band { margin-inline: -16px; margin-bottom: 22px; border-radius: 0; }
+  /* 彫刻の下端と次コンテンツ(探す対象タブ)の間に十分な余白を確保（実測で調整） */
+  .hero-band { margin-inline: -16px; margin-bottom: 32px; border-radius: 0; }
   .hero-search { flex-direction: column; }
   .hero-search__submit { min-height: 50px; justify-content: center; }
   .mobile-nav__item span { font-size: 10px; line-height: 1.1; max-width: 58px; }
