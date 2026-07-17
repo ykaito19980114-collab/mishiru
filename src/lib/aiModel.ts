@@ -10,7 +10,11 @@ export const AI_MODELS = [
 export type AiModelId = (typeof AI_MODELS)[number]["id"];
 export const AI_MODEL_STORAGE_KEY = "mishiru_ai_model";
 
+// 2026-07 一旦、選択可能なモデルをTerraに固定（ユーザー指示）。解除する際はこの定数をnullに戻す。
+export const LOCKED_AI_MODEL: AiModelId | null = "gpt-5.6-terra";
+
 export function getAiModel(): AiModelId {
+  if (LOCKED_AI_MODEL) return LOCKED_AI_MODEL;
   if (typeof window === "undefined") return "gpt-5.6-sol";
   const value = window.localStorage.getItem(AI_MODEL_STORAGE_KEY);
   return AI_MODELS.some((item) => item.id === value) ? value as AiModelId : "gpt-5.6-sol";

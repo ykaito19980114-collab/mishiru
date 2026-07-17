@@ -8,7 +8,7 @@ import type { Lab } from "../shared/types";
 
 const CONTACT = process.env.CONTACT_EMAIL || "ops@openlab.example";
 const CACHE_FILE = path.join(process.cwd(), "data", "runtime", "enrich-cache.json");
-const CACHE_VERSION = 3; // ロジック変更時に上げると再生成される（v3: キーワード関連論文フォールバック追加）
+const CACHE_VERSION = 4; // ロジック変更時に上げると再生成される（v4: 氏名一致フォールバックの拡張。学際分野の分野コンセプト不一致を救済）
 // 7日TTL（コスト設計：生成は「閲覧された研究室 × 週1回」に制限。期限切れは stale-while-revalidate）
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -136,7 +136,12 @@ async function fetchPapers(name: string, fieldMajor: string, universityName: str
   const best = scored[0];
   // 採用基準：機関一致 or （主分野一致 かつ 業績3件以上）。それ未満は誤同定リスクが高いため論文を出さない
   const strong = best && (best.score >= 5 || (best.score >= 4 && best.works >= 3));
-  if (!best || !strong || best.works === 0) return { papers: [], confidence: "none" };
+  // 学際分野（文化人類学等）はOpenAlexの分野コンセプトが本サービスの12分類と噛み合わず、
+  // 実在の本人でもconceptHitsが0になりstrongを満たせないことがある。
+  // 名前検索のヒットが少ない（同姓同名リスクが低い）候補は、機関・分野の確証がなくても
+  // 氏名一致(name_only)として救済する（「同姓同名を含む場合があります」の既存の正直な注記で示す）。
+  const uniqueNameMatch = !strong && authors.length <= 4 && (best?.works || 0) >= 3;
+  if (!best || best.works === 0 || (!strong && !uniqueNameMatch)) return { papers: [], confidence: "none" };
   const confidence: Enrichment["papersConfidence"] = best.score >= 5 ? "matched" : "name_only";
   const chosen = best.a;
 

@@ -13,6 +13,10 @@ export const AI_MODELS = [
 export type AiModelId = (typeof AI_MODELS)[number]["id"];
 export type AiProvider = (typeof AI_MODELS)[number]["provider"];
 
+// 2026-07 一旦、選択可能なモデルをTerraに固定（ユーザー指示・フロント側のグレーアウトの多層防御）。
+// 解除する際はこの定数をnullに戻す（src/lib/aiModel.tsのLOCKED_AI_MODELと対で管理）。
+const LOCKED_AI_MODEL: AiModelId | null = "gpt-5.6-terra";
+
 const modelContext = new AsyncLocalStorage<AiModelId>();
 const providerCooldownUntil = new Map<AiProvider, number>();
 const PROVIDER_COOLDOWN_MS = 2 * 60 * 1000;
@@ -38,6 +42,7 @@ function defaultAiModel(): AiModelId {
 }
 
 export function resolveAiModel(value?: string | null): AiModelId {
+  if (LOCKED_AI_MODEL) return LOCKED_AI_MODEL;
   return AI_MODELS.some((item) => item.id === value) ? value as AiModelId : defaultAiModel();
 }
 

@@ -1,6 +1,6 @@
 import { useEffect, useId, useState } from "react";
 import { BrainCircuit } from "lucide-react";
-import { AI_MODELS, getAiModel, setAiModel, type AiModelId } from "../lib/aiModel";
+import { AI_MODELS, LOCKED_AI_MODEL, getAiModel, setAiModel, type AiModelId } from "../lib/aiModel";
 
 export function AiModelSelector({ compact = false }: { compact?: boolean }) {
   const id = useId();
@@ -16,14 +16,14 @@ export function AiModelSelector({ compact = false }: { compact?: boolean }) {
     <div className={`ai-model ${compact ? "ai-model--compact" : ""}`}>
       <label htmlFor={id}>
         <BrainCircuit aria-hidden="true" />
-        <span><strong>AIモデル</strong>{!compact && <small>生成時に使用</small>}</span>
+        <span><strong>AIモデル</strong>{!compact && <small>{LOCKED_AI_MODEL ? "現在Terraに固定中" : "生成時に使用"}</small>}</span>
       </label>
       <select id={id} value={model} onChange={(event) => { const next = event.target.value as AiModelId; setModel(next); setAiModel(next); }}>
         <optgroup label="OpenAI">
-          {AI_MODELS.filter((item) => item.provider === "OpenAI").map((item) => <option key={item.id} value={item.id}>{item.label} · {item.description}</option>)}
+          {AI_MODELS.filter((item) => item.provider === "OpenAI").map((item) => <option key={item.id} value={item.id} disabled={LOCKED_AI_MODEL !== null && item.id !== LOCKED_AI_MODEL}>{item.label} · {item.description}</option>)}
         </optgroup>
         <optgroup label="Google Gemini">
-          {AI_MODELS.filter((item) => item.provider === "Google").map((item) => <option key={item.id} value={item.id}>{item.label} · {item.description}</option>)}
+          {AI_MODELS.filter((item) => item.provider === "Google").map((item) => <option key={item.id} value={item.id} disabled={LOCKED_AI_MODEL !== null && item.id !== LOCKED_AI_MODEL}>{item.label} · {item.description}</option>)}
         </optgroup>
       </select>
     </div>
