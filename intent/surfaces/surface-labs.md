@@ -3,11 +3,13 @@ id: surface-labs
 type: surface
 kind: screen
 title: Labs
-approval: ai_proposed
+approval: approved
 status: draft
 implements:
   - path: src/pages/Labs.tsx
-updated: 2026-07-18T11:09:21.803Z
+updated: 2026-07-18T14:21:39.058Z
+links:
+  stories: []
 ---
 AI推定(逆生成v0): ルート規約からの決定論検出
 
