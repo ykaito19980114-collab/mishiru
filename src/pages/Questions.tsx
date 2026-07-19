@@ -72,7 +72,7 @@ export default function Questions() {
       setAiEnabled(result.aiEnabled);
       setStep1(result.step1);
       requestAnimationFrame(() => document.getElementById("question-step1")?.scrollIntoView({ behavior: "smooth" }));
-    } catch (e) { setError(e instanceof Error ? e.message : "Step 1を生成できませんでした。"); }
+    } catch (e) { setError(e instanceof Error ? e.message : "問いの候補を作れませんでした。入力内容を残したまま、もう一度試せます。"); }
     finally { setBusy(""); }
   };
 
@@ -84,7 +84,7 @@ export default function Questions() {
       setAiEnabled(result.aiEnabled);
       setStep2(result.step2); setTitle(selectedRq.public_rq || result.step2.research_outline.main_rq); setSubtitle(result.step2.research_outline.title_public);
       requestAnimationFrame(() => document.getElementById("question-step2")?.scrollIntoView({ behavior: "smooth" }));
-    } catch (e) { setError(e instanceof Error ? e.message : "Step 2を生成できませんでした。"); }
+    } catch (e) { setError(e instanceof Error ? e.message : "研究プランを作れませんでした。選んだ問いを残したまま、もう一度試せます。"); }
     finally { setBusy(""); }
   };
 
@@ -99,16 +99,16 @@ export default function Questions() {
 
   return (
     <div className="question-page max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-10">
-      <Helmet><title>問いにしてみる ｜ MISHIRU</title></Helmet>
+      <Helmet><title>問いをつくる ｜ MISHIRU</title></Helmet>
       <header className="question-heading">
-        <div><p className="eyebrow">QUESTION CRAFT</p><h1>気になることを、研究できる問いへ。</h1></div>
-        <Link to="/projects" className="question-library-link"><BookOpen className="w-4 h-4" />保存した問いを見る</Link>
+        <div><p className="eyebrow">研究にしてみる</p><h1>気になることを、研究できる問いへ。</h1></div>
+        <Link to="/projects" className="question-library-link"><BookOpen className="w-4 h-4" />保存した研究プラン</Link>
       </header>
 
       <Card className="question-source-panel">
         <div className="segment-control">
-          <button className={mode === "free_input" ? "active" : ""} onClick={() => setMode("free_input")}>自由入力から作る</button>
-          <button className={mode === "saved_items" ? "active" : ""} onClick={() => setMode("saved_items")}>ためたものから作る</button>
+          <button className={mode === "free_input" ? "active" : ""} onClick={() => setMode("free_input")}>気になることを書く</button>
+          <button className={mode === "saved_items" ? "active" : ""} onClick={() => setMode("saved_items")}>保存したものを選ぶ</button>
         </div>
         {mode === "free_input" ? (
           <div className="question-input-grid">
@@ -121,7 +121,7 @@ export default function Questions() {
           </div>
         ) : busy === "materials" ? <div className="grid md:grid-cols-2 gap-3"><Skeleton className="h-36"/><Skeleton className="h-36"/></div> : (
           <div>
-            <p className="source-help">複数選べます。公式情報と、あなたの反応・理由メモは分けたままAIへ渡します。</p>
+            <p className="source-help">問いの材料を選んでください。複数選べます。</p>
             <div className="material-grid">{materials.map((item) => {
               const key = materialKey(item); const checked = selectedIds.includes(key);
               return <button key={key} className={`material-option ${checked ? "selected" : ""}`} onClick={() => setSelectedIds(toggle(selectedIds, key))}>
@@ -135,38 +135,38 @@ export default function Questions() {
           </div>
         )}
         {error && <p className="form-error" role="alert">{error}</p>}
-        <div className="panel-action"><Button onClick={generateStep1} disabled={!!busy || !enoughEvidence}>{busy === "step1" ? <><LoaderCircle className="w-4 h-4 animate-spin"/>気になったことを統合し、12種類の問いを検査しています…</> : <><Sparkles className="w-4 h-4"/>Step 1：問いの候補をつくる</>}</Button></div>
+        <div className="panel-action"><Button onClick={generateStep1} disabled={!!busy || !enoughEvidence}>{busy === "step1" ? <><LoaderCircle className="w-4 h-4 animate-spin"/>気になることを整理し、問いを作っています…</> : <><Sparkles className="w-4 h-4"/>問いの候補をつくる</>}</Button></div>
       </Card>
 
       <nav className="step-rail" aria-label="作成ステップ">
         <span><b>{currentStep + 1} / {STEP_LABELS.length}</b>{STEP_LABELS[currentStep]}</span>
       </nav>
-      {interestAnalysisId && <TrustNote className="question-trust-note">みつめるの分析と根拠を引き継ぎ、具体的な問いの候補を作ります。</TrustNote>}
-      {aiEnabled === false && <TrustNote className="question-trust-note">AIを利用できない場合は、品質検査済みの仮説たたき台を表示します。</TrustNote>}
+      {interestAnalysisId && <TrustNote className="question-trust-note">整理した関心と、その根拠を使って問いを作ります。</TrustNote>}
+      {aiEnabled === false && <TrustNote className="question-trust-note">AIを使えないときは、入力内容から作った仮の問いを表示します。</TrustNote>}
       {step1?.generatedBy === "quality_fallback" && <div role="status"><TrustNote className="question-trust-note"><strong>これはAI生成結果ではなく、仮説たたき台です。</strong> 気になったことから対象・関係・証拠を組み立て、問いの形式を検査しています。</TrustNote></div>}
       {step1?.generatedBy === "ai" && Boolean(step1.qualityReport?.repairedCount) && <div role="status">{step1.qualityReport?.warnings.map((warning) => <TrustNote className="question-trust-note" key={warning}>{warning}</TrustNote>)}</div>}
 
-      {step1 && <section id="question-step1" className="question-result-section"><SectionHeading step="STEP 1" title="関心をほどき、問いを比べる" />
-        {step1.source_synthesis && <Card className="source-synthesis"><div className="source-synthesis__head"><div><p className="eyebrow">SOURCE SYNTHESIS</p><h3>気になったことを、ひとつの研究焦点へ</h3></div><Chip tone={step1.generatedBy === "ai" ? "teal" : "yellow"}>{step1.generatedBy === "ai" ? "AI＋品質検査" : "仮説たたき台"}</Chip></div><strong>{step1.source_synthesis.core_interest}</strong><p>{step1.source_synthesis.adopted_focus}</p><Disclosure summary="気になったことのつながりと前提を見る" description="なぜこの焦点になったか、不足している情報を確認できます"><div className="source-synthesis__grid"><div><span>気になったことのつながり</span><ul>{step1.source_synthesis.material_connections.map((item) => <li key={item}>{item}</li>)}</ul></div><div><span>仮定・不足情報</span><ul>{[...step1.source_synthesis.assumptions, ...step1.source_synthesis.missing_information].map((item) => <li key={item}>{item}</li>)}</ul></div></div></Disclosure></Card>}
+      {step1 && <section id="question-step1" className="question-result-section"><SectionHeading step="1 / 2" title="関心をほどき、問いを比べる" />
+        {step1.source_synthesis && <Card className="source-synthesis"><div className="source-synthesis__head"><div><p className="eyebrow">問いの焦点</p><h3>気になったことを、ひとつの焦点へ</h3></div><Chip tone={step1.generatedBy === "ai" ? "teal" : "yellow"}>{step1.generatedBy === "ai" ? "AI作成・検査済み" : "仮の問い"}</Chip></div><strong>{step1.source_synthesis.core_interest}</strong><p>{step1.source_synthesis.adopted_focus}</p><Disclosure summary="この焦点にした理由を見る" description="材料のつながりと、足りない情報を確認できます"><div className="source-synthesis__grid"><div><span>材料のつながり</span><ul>{step1.source_synthesis.material_connections.map((item) => <li key={item}>{item}</li>)}</ul></div><div><span>仮定・足りない情報</span><ul>{[...step1.source_synthesis.assumptions, ...step1.source_synthesis.missing_information].map((item) => <li key={item}>{item}</li>)}</ul></div></div></Disclosure></Card>}
         <Disclosure className="question-research-context" summary="問いの背景と研究マップを見る" description="対象・文脈や、別領域から見た問いを確認できます">
           <Decomposition decomposition={step1.decomposition}/>
-          <div className="research-map-grid"><Card className="research-map-main"><p className="eyebrow">RESEARCH MAP</p><h3>{step1.research_map_position.domain_name}</h3><dl><div><dt>対象の存在相</dt><dd>{step1.research_map_position.vertical_axis}</dd></div><div><dt>問いの様式</dt><dd>{step1.research_map_position.horizontal_axis}</dd></div></dl><p>{step1.research_map_position.reason}</p></Card>
+          <div className="research-map-grid"><Card className="research-map-main"><p className="eyebrow">問いの位置づけ</p><h3>{step1.research_map_position.domain_name}</h3><dl><div><dt>何を扱うか</dt><dd>{step1.research_map_position.vertical_axis}</dd></div><div><dt>どう問うか</dt><dd>{step1.research_map_position.horizontal_axis}</dd></div></dl><p>{step1.research_map_position.reason}</p></Card>
             <Card className="domain-shifts"><h3>別領域へずらすと</h3><p className="domain-shifts__intro">気になる視点をひとつ選んで、問いの変わり方を見てみましょう。</p>{step1.domain_shifts.map((shift, index) => <details key={`${shift.new_domain}-${index}`} open={openDomainShift === index}><summary onClick={(event) => { event.preventDefault(); setOpenDomainShift(openDomainShift === index ? null : index); }}>{shift.new_domain}<ChevronDown/></summary><div className="domain-shift__content"><p className="domain-shift__question">{shift.shifted_rq}</p><p className="domain-shift__reason">{shift.reason}</p></div></details>)}</Card></div>
         </Disclosure>
         <div className="rq-heading"><div><p className="eyebrow">おすすめの問い</p><h2>まず、この中から選ぶ</h2></div><span>{compareIds.length}件を比較対象に選択</span></div>
         <div className="rq-grid">{prioritizedRqs.primary.map(({ rq, index }) => <QuestionCandidateCard key={rqId(rq, index)} rq={rq} selected={selectedRq === rq} compared={compareIds.includes(rqId(rq, index))} onCompare={() => setCompareIds(toggle(compareIds, rqId(rq, index)).slice(-3))} onSelect={() => setSelectedRq(rq)} />)}</div>
         {prioritizedRqs.other.length > 0 && <Disclosure className="other-rq-options" summary={`ほかの問い案を見る（${prioritizedRqs.other.length}件）`} description="異なる研究の型から比べたいときに開いてください"><div className="rq-grid">{prioritizedRqs.other.map(({ rq, index }) => <QuestionCandidateCard key={rqId(rq, index)} rq={rq} selected={selectedRq === rq} compared={compareIds.includes(rqId(rq, index))} onCompare={() => setCompareIds(toggle(compareIds, rqId(rq, index)).slice(-3))} onSelect={() => setSelectedRq(rq)} />)}</div></Disclosure>}
         {compareIds.length >= 2 && <Comparison candidates={step1.output_type_proposals.filter((rq, i) => compareIds.includes(rqId(rq, i)))}/>} 
-        <div className="panel-action"><Button onClick={generateStep2} disabled={!selectedRq || !!busy}>{busy === "step2" ? <LoaderCircle className="w-4 h-4 animate-spin"/> : <ArrowRight className="w-4 h-4"/>}Step 2：研究プランをつくる</Button></div>
+        <div className="panel-action"><Button onClick={generateStep2} disabled={!selectedRq || !!busy}>{busy === "step2" ? <><LoaderCircle className="w-4 h-4 animate-spin"/>研究プランを作っています…</> : <><ArrowRight className="w-4 h-4"/>この問いで研究プランをつくる</>}</Button></div>
       </section>}
 
-      {step2 && <section id="question-step2" className="question-result-section"><SectionHeading step="STEP 2" title="調べ方と研究プランを組み立てる" />
+      {step2 && <section id="question-step2" className="question-result-section"><SectionHeading step="2 / 2" title="調べ方と研究プランを組み立てる" />
         <Card className="summary-banner"><span>一文要約</span><strong>{step2.one_sentence_summary}</strong></Card>
         <Card className="gap-card"><span>深掘りするギャップ</span><p>{step2.literature_review.target_gap_deep}</p><div className="query-row">{step2.search_queries.map((query) => <Chip key={query}>{query}</Chip>)}</div></Card>
         <Disclosure className="step2-evidence" summary="先行研究と参照先を詳しく見る" description="ギャップ、論文候補、学術コミュニティへの接続を段階的に確認できます">
           <div className="step2-evidence__stack">
-            <Disclosure className="step2-evidence__group" defaultOpen summary="1. 先行研究のギャップ" description="分かっていること・未解明なこと・議論が残る点">
-              <Card className="target-gap"><span>TARGET GAP</span><h3>今回の研究で明らかにすべきこと</h3><p>{step2.literature_review.target_gap_deep}</p></Card>
+            <Disclosure className="step2-evidence__group" defaultOpen summary="1. 先行研究のギャップ" description="わかっていること・未解明なこと・議論が残る点">
+              <Card className="target-gap"><span>今回の焦点</span><h3>この研究で明らかにすること</h3><p>{step2.literature_review.target_gap_deep}</p></Card>
               <div className="step2-columns"><ResultList title="すでに分かっていること" items={step2.literature_review.knowns}/><ResultList title="まだ分かっていないこと" items={step2.literature_review.unknowns}/><ResultList title="議論が残っていること" items={step2.literature_review.controversies}/></div>
             </Disclosure>
             <Disclosure className="step2-evidence__group" summary="2. 読むべき論文と検索クエリ" description="参考・競合・隣接研究から読み始める">
@@ -178,11 +178,11 @@ export default function Questions() {
             </Disclosure>
           </div>
         </Disclosure>
-        <Card className="outline-preview"><div><p className="eyebrow">RESEARCH OUTLINE</p><h2>{step2.research_outline.title_public}</h2><p>{step2.research_outline.title_academic}</p></div><dl><Info label="目的" value={step2.research_outline.purpose}/><Info label="メインRQ" value={step2.research_outline.main_rq}/><Info label="研究デザイン" value={step2.research_outline.research_design}/><Info label="分析方法" value={step2.research_outline.analysis_method}/><Info label="学術的意義" value={step2.research_outline.significance.academic}/></dl></Card>
-        <div className="panel-action"><Button onClick={() => setSaveOpen(true)}><Save className="w-4 h-4"/>研究プロジェクトとして保存</Button></div>
+        <Card className="outline-preview"><div><p className="eyebrow">研究プラン</p><h2>{step2.research_outline.title_public}</h2><p>{step2.research_outline.title_academic}</p></div><dl><Info label="目的" value={step2.research_outline.purpose}/><Info label="中心となる問い（RQ）" value={step2.research_outline.main_rq}/><Info label="調べ方" value={step2.research_outline.research_design}/><Info label="分析方法" value={step2.research_outline.analysis_method}/><Info label="研究としての意義" value={step2.research_outline.significance.academic}/></dl></Card>
+        <div className="panel-action"><Button onClick={() => setSaveOpen(true)}><Save className="w-4 h-4"/>この研究プランを保存</Button></div>
       </section>}
 
-      {saveOpen && step2 && <div className="modal-backdrop" role="presentation" onMouseDown={() => setSaveOpen(false)}><Card className="save-project-dialog" float><div onMouseDown={(e) => e.stopPropagation()}><div className="dialog-title"><div><p className="eyebrow">SAVE PROJECT</p><h2>保存する</h2></div><button aria-label="閉じる" onClick={() => setSaveOpen(false)}>×</button></div>
+      {saveOpen && step2 && <div className="modal-backdrop" role="presentation" onMouseDown={() => setSaveOpen(false)}><Card className="save-project-dialog" float><div onMouseDown={(e) => e.stopPropagation()}><div className="dialog-title"><div><p className="eyebrow">保存先を選ぶ</p><h2>研究プランを保存</h2></div><button aria-label="閉じる" onClick={() => setSaveOpen(false)}>×</button></div>
         <label className="question-project-target">保存先<select value={targetProjectId} onChange={(e)=>setTargetProjectId(e.target.value)}><option value="">新しい本として保存</option>{existingProjects.map((project)=><option key={project.id} value={project.id}>既存の本「{project.displayTitle}」に紐づける</option>)}</select><small>{targetProjectId?"既存の表紙とタイトルを残したまま、今回の問い・研究プラン・気になったことを紐づけます。":"新しい研究プロジェクトとして表紙とともに保存します。"}</small></label>
         {!targetProjectId&&<div className="save-grid"><div className="save-fields"><label>本のタイトル<input value={title} onChange={(e) => setTitle(e.target.value)}/></label><label>サブタイトル<textarea rows={3} value={subtitle} onChange={(e) => setSubtitle(e.target.value)}/></label><label>状態<select value={status} onChange={(e) => setStatus(e.target.value as typeof status)}><option value="draft">作成中</option><option value="consultation">相談用</option><option value="on_hold">保留</option></select></label><fieldset><legend>初期表紙</legend><div className="preset-row">{["electric","lime","silver","charcoal"].map((id) => <button key={id} className={preset === id ? "active" : ""} onClick={() => setPreset(id)} style={{background: coverCss(coverPreset(id))}} aria-label={`${id}表紙`} />)}</div><small>詳しい表紙編集は保存後に行えます</small></fieldset></div><ProjectCover title={title} subtitle={subtitle} preset={preset}/></div>}
         <div className="dialog-actions"><Button variant="ghost" onClick={() => { setPreset("electric"); saveProject(); }}>あとで設定して保存</Button><Button onClick={saveProject} disabled={!title.trim() || busy === "save"}>{busy === "save" && <LoaderCircle className="w-4 h-4 animate-spin"/>}保存する</Button></div></div></Card></div>}
@@ -230,9 +230,9 @@ function Decomposition({decomposition}:{decomposition:Step1Response["decompositi
   return <div className="decomposition-block"><div className="decomposition-grid decomposition-grid--core">{cells(core)}</div>{context.length > 0 && <Disclosure summary="場面・動機・活かし方を見る" description="問いをつくる背景を確認できます"><div className="decomposition-grid decomposition-grid--context">{cells(context)}</div></Disclosure>}</div>;
 }
 function Comparison({candidates}:{candidates:RQCandidate[]}) { return <Card className="rq-comparison"><h3>問い案を比較</h3><div>{candidates.map((rq) => <article key={rq.type_name}><Chip tone="blue">{rq.type_name}</Chip><span className="rq-audience-label">初めて読む人向け</span><strong>{rq.public_rq}</strong><Info label="方法" value={rq.methods}/><Info label="成果物" value={rq.expected_output}/><Info label="難易度" value={rq.difficulty}/></article>)}</div></Card>; }
-function PaperIdeas({step2}:{step2:Step2Response}) { return <Card className="paper-ideas"><div className="evidence-card-heading"><span>READING LIST</span><h3>読むべき論文案</h3><p>書誌情報を確認した論文を中心に、内容と研究へのつながりを初心者向けに整理しています。</p></div>{([['参考になる論文',step2.paper_ideas.reference],['競合する研究',step2.paper_ideas.competitor],['隣接領域の論文',step2.paper_ideas.adjacent]] as const).map(([label,items],index) => <details key={label} open={index===0}><summary>{label}<span>{items.length}件</span><ChevronDown/></summary><div className="paper-idea-list">{items.map((paper) => <article key={`${paper.title}-${paper.year || paper.url}`}><div className="paper-link-head"><strong>{paper.title}</strong><span className="paper-status-chips">{paper.sourceLabel&&<Chip tone="teal">{paper.sourceLabel}</Chip>}{paper.openAccess&&<Chip>OA</Chip>}{paper.kind === "search"&&<Chip tone="yellow">検索候補</Chip>}</span></div><small>{[paper.author, paper.journal, paper.year].filter(Boolean).join(" ・ ")}</small>{paper.summary&&<div className="paper-explanation"><span>この論文は何を調べた？</span><p>{paper.summary}</p></div>}<div className="paper-relevance"><span>この研究にどう役立つ？</span><p>{paper.reason}</p></div><a className="paper-destination" href={paper.url} target="_blank" rel="noreferrer">{paper.kind === "search" ? "文献データベースで探す" : "元の論文を見る"}<ExternalLink aria-hidden="true"/></a>{paper.doi&&<code>DOI: {paper.doi}</code>}</article>)}</div></details>)}</Card>; }
-function SearchQueries({queries}:{queries:string[]}) { return <Card className="search-query-list"><div className="evidence-card-heading"><span>SEARCH QUERIES</span><h3>検索クエリ候補</h3></div><div>{queries.map((query) => <a key={query} href={`https://cir.nii.ac.jp/all?q=${encodeURIComponent(query)}`} target="_blank" rel="noreferrer"><span>{query}</span><ExternalLink aria-hidden="true"/></a>)}</div></Card>; }
-function AcademicFields({items,fallback}:{items:Step2Response['academic_mapping']['recommended_societies'];fallback:string}) { return <Card className="academic-fields"><div className="evidence-card-heading"><span>ACADEMIC MAPPING</span><h3>主要な研究領域</h3></div><div>{items.length ? items.map((item) => <a key={item.name} href={item.url}><strong>{item.name}</strong><span>{item.description || item.reason}</span><ExternalLink aria-hidden="true"/></a>) : <strong>{fallback}</strong>}</div></Card>; }
+function PaperIdeas({step2}:{step2:Step2Response}) { return <Card className="paper-ideas"><div className="evidence-card-heading"><span>論文リスト</span><h3>最初に読む論文</h3><p>実在を確認できた論文を中心に、内容と読む理由を分かりやすくまとめています。</p></div>{([['まず参考にする論文',step2.paper_ideas.reference],['問いが近い研究',step2.paper_ideas.competitor],['別の角度から役立つ論文',step2.paper_ideas.adjacent]] as const).map(([label,items],index) => <details key={label} open={index===0}><summary>{label}<span>{items.length}件</span><ChevronDown/></summary><div className="paper-idea-list">{items.map((paper) => <article key={`${paper.title}-${paper.year || paper.url}`}><div className="paper-link-head"><strong>{paper.title}</strong><span className="paper-status-chips">{paper.sourceLabel&&<Chip tone="teal">{paper.sourceLabel}</Chip>}{paper.openAccess&&<Chip>無料公開</Chip>}{paper.kind === "search"&&<Chip tone="yellow">検索から確認</Chip>}</span></div><small>{[paper.author, paper.journal, paper.year].filter(Boolean).join(" ・ ")}</small>{paper.summary&&<div className="paper-explanation"><span>何を調べた論文？</span><p>{paper.summary}</p></div>}<div className="paper-relevance"><span>なぜ読む？</span><p>{paper.reason}</p></div><a className="paper-destination" href={paper.url} target="_blank" rel="noreferrer">{paper.kind === "search" ? "文献データベースで確認" : "論文のページを開く"}<ExternalLink aria-hidden="true"/></a>{paper.doi&&<code>DOI: {paper.doi}</code>}</article>)}</div></details>)}</Card>; }
+function SearchQueries({queries}:{queries:string[]}) { return <Card className="search-query-list"><div className="evidence-card-heading"><span>論文の検索語</span><h3>この言葉で論文を探す</h3><p>選ぶとCiNiiの検索結果が開きます。</p></div><div>{queries.map((query) => <a key={query} href={`https://cir.nii.ac.jp/all?q=${encodeURIComponent(query)}`} target="_blank" rel="noreferrer"><span>{query}</span><ExternalLink aria-hidden="true"/></a>)}</div></Card>; }
+function AcademicFields({items,fallback}:{items:Step2Response['academic_mapping']['recommended_societies'];fallback:string}) { return <Card className="academic-fields"><div className="evidence-card-heading"><span>研究分野</span><h3>この問いに近い研究領域</h3></div><div>{items.length ? items.map((item) => <a key={item.name} href={item.url} target="_blank" rel="noreferrer"><strong>{item.name}</strong><span>{item.description || item.reason}</span><ExternalLink aria-hidden="true"/></a>) : <strong>{fallback}</strong>}</div></Card>; }
 function AcademicList({title,items}:{title:string;items:Step2Response['academic_mapping']['recommended_societies']}) { return <Card className="academic-list"><h3>{title}</h3><div className="academic-list__items">{items.length ? items.map((item) => <article key={item.name}><div className="academic-item__head"><a href={item.url} target="_blank" rel="noreferrer"><strong>{item.name}</strong><ExternalLink aria-hidden="true"/></a><span className="academic-item__chips"><Chip tone={item.url_type === '公式' ? 'teal' : 'yellow'}>{item.url_type}</Chip>{item.scope&&<Chip>{item.scope}</Chip>}</span></div>{item.description&&<p>{item.description}</p>}<div className="academic-item__reason"><span>この研究との接点</span><p>{item.reason}</p></div><a className="academic-item__url" href={item.url} target="_blank" rel="noreferrer">{item.url_type === '公式' ? '公式ページを見る' : '名称で確認する'}<ExternalLink aria-hidden="true"/></a></article>) : <p className="academic-list__empty">入力テーマとの一致を確認できる候補はありませんでした。研究領域名や検索クエリから範囲を絞ってください。</p>}</div></Card>; }
 function coverPreset(id:string) { const values:Record<string,[string,string,string]>={electric:['#003fbd','#001f68','#fff'],lime:['#efff78','#dfff24','#06111f'],silver:['#fff','#bac6d8','#06111f'],charcoal:['#161b22','#161b22','#fff']}; const [a,b,text]=values[id]||values.electric; const block=(size:number,y:number,color=text)=>({fontFamily:'Hiragino Mincho ProN',color,fontSize:size,fontWeight:700,lineHeight:1.3,letterSpacing:0,x:9,y,width:82,align:'left' as const}); return {presetId:id,backgroundType:(id==='charcoal'?'solid':'gradient') as 'solid'|'gradient',solidColor:a,gradientStart:a,gradientEnd:b,gradientAngle:145,autoTextContrast:true,metadataText:'RESEARCH PROJECT\nMISHIRU',title:block(30,18),subtitle:block(15,56),metadata:block(11,84,id==='electric'?'#dfff24':text)}; }
 function coverCss(cover:ReturnType<typeof coverPreset>) { return cover.backgroundType === 'solid' ? cover.solidColor : `linear-gradient(${cover.gradientAngle}deg,${cover.gradientStart},${cover.gradientEnd})`; }

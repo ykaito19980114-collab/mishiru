@@ -90,7 +90,7 @@ export default function Discover() {
     if (!current || exitDir || undoing) return;
     const wasReady = evaluated + 1 >= threshold && evaluated < threshold;
     setExitDir(action === "skip" ? "left" : "right");
-    if (action === "like") showToast("気になるとして、ためるに入れました");
+    if (action === "like") showToast("「気になる」に保存しました");
     setHistory((items) => [...items, { index: idx, card: current, action }]);
 
     setTimeout(() => { setExitDir(null); setIdx((i) => i + 1); }, 220);
@@ -116,11 +116,11 @@ export default function Discover() {
         ? await api.undoLabAction(previous.card.sourceId, previous.action)
         : await api.undoDiscoveryItemAction(previous.card);
       setEvaluated(res.evaluatedCount);
-      showToast("ひとつ前のカードに戻りました");
+      showToast("前のカードに戻りました");
     } catch {
       setHistory((items) => [...items, previous]);
       setIdx(previous.index + 1);
-      showToast("前のカードに戻れませんでした");
+      showToast("前のカードに戻れませんでした。もう一度お試しください");
     } finally {
       setUndoing(false);
     }
@@ -156,14 +156,14 @@ export default function Discover() {
 
       {offline && (
         <div className="mb-3 flex items-center gap-2 text-sm bg-[var(--c-surface)] text-[var(--c-ink-2)] px-3 py-2 rounded-[10px]">
-          <WifiOff className="w-4 h-4" /> オフライン中です。評価は保存され、オンライン復帰時に反映されます。
+          <WifiOff className="w-4 h-4" /> オフラインです。反応は端末に保存し、接続後に反映します。
         </div>
       )}
 
       <div className="mb-3">
         <div>
           <h1 className="text-xl font-black">であう</h1>
-          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">研究室の問いをめくり、まだ知らない関心の入口に出会えます。</p>
+          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">問いを見て、直感で「気になる」か選んでください。</p>
         </div>
       </div>
 
@@ -174,7 +174,7 @@ export default function Discover() {
             source.kind === "profile" ? "bg-[var(--c-primary)] text-white border-transparent"
             : profileModeAvailable ? "border-[var(--c-primary)] text-[var(--c-primary)]"
             : "border-[var(--c-border)] text-[var(--c-ink-3)]"}`}>
-          <TrendingUp className="w-4 h-4" />傾向に沿って表示
+          <TrendingUp className="w-4 h-4" />自分向けに並べる
         </button>
         {source.kind !== "default" && (
           <button onClick={exitToDefault} className="flex items-center gap-1 text-[13px] text-[var(--c-ink-3)] font-bold min-h-[44px] px-2">
@@ -187,7 +187,7 @@ export default function Discover() {
       {source.kind === "search" && !loading && (
         <div className="mb-3 bg-[var(--c-surface-blue)] rounded-[var(--radius-panel)] p-3">
           <div className="flex items-center gap-1.5 text-[13px] font-bold text-[var(--c-primary)] mb-1">
-            <Sparkles className="w-4 h-4" />「{source.q}」で今日の研究セットを再構成中（{deckMeta.totalMatched ?? 0}枚）
+            <Sparkles className="w-4 h-4" />「{source.q}」に近いカードを表示中（{deckMeta.totalMatched ?? 0}枚）
           </div>
           <div className="flex flex-wrap gap-1.5">
             <Chip tone="blue">研究室</Chip><Chip tone="blue">研究領域</Chip><Chip tone="blue">学会</Chip><Chip tone="blue">ジャーナル</Chip>
@@ -197,10 +197,10 @@ export default function Discover() {
       {source.kind === "profile" && !loading && (
         <div className="mb-3 bg-[var(--c-surface-blue)] rounded-[var(--radius-panel)] p-3">
           <div className="flex items-center gap-1.5 text-[13px] font-bold text-[var(--c-primary)] mb-1">
-            <TrendingUp className="w-4 h-4" />あなたの傾向（{(deckMeta.profileTop || []).join("・") || "分析中"}）に沿って表示中
+            <TrendingUp className="w-4 h-4" />これまでの反応に近いカードを表示中
           </div>
           <div className="flex items-center justify-between gap-2">
-            <Link to="/reflect" className="text-[12px] text-[var(--c-ink-3)] underline min-h-[44px] flex items-center">傾向の詳細を見る</Link>
+            <Link to="/reflect" className="text-[12px] text-[var(--c-ink-3)] underline min-h-[44px] flex items-center">関心の整理を見る</Link>
             {deckMeta.profileQuery && (
               <Link to={`/labs?ai=${encodeURIComponent(deckMeta.profileQuery)}`}
                 className="text-[12px] font-bold text-[var(--c-primary)] border border-[var(--c-primary)] rounded-full px-3 min-h-[44px] flex items-center gap-1">
@@ -227,11 +227,11 @@ export default function Discover() {
           <Skeleton className="discover-loading-card__hook" />
           <div className="discover-loading-card__questions"><Skeleton /><Skeleton /></div>
           <Skeleton className="discover-loading-card__summary" />
-          <TrustNote className="mt-3">AIがカードを準備しています（目安10秒）</TrustNote>
+          <TrustNote className="mt-3">問いのカードを準備しています。通常10秒ほどかかります。</TrustNote>
         </div>
       ) : error ? (
-        <EmptyState title="カードを読み込めませんでした" description="通信状況を確認して再試行してください。"
-          action={<Button variant="secondary" onClick={() => loadCards(source)}><RotateCcw className="w-4 h-4" />再試行</Button>} />
+        <EmptyState title="カードを読み込めませんでした" description="通信状況を確認して、もう一度読み込んでください。"
+          action={<Button variant="secondary" onClick={() => loadCards(source)}><RotateCcw className="w-4 h-4" />もう一度読み込む</Button>} />
       ) : !current ? (
         source.kind === "default" ? (
           <EmptyState
@@ -239,8 +239,8 @@ export default function Discover() {
             description="ためた研究室を見返したり、あなた向けの候補をチェックしてみましょう。"
             action={
               <div className="flex flex-col gap-3 w-full max-w-xs">
-                <Link to="/reflect"><Button className="w-full">みつめる</Button></Link>
-                <Link to="/saved"><Button variant="secondary" className="w-full">ためた研究室を見る</Button></Link>
+                <Link to="/reflect"><Button className="w-full">関心を整理する</Button></Link>
+                <Link to="/saved"><Button variant="secondary" className="w-full">保存したものを見る</Button></Link>
               </div>
             }
           />
@@ -320,7 +320,7 @@ function DiscoveryCardFace({ item, exitDir, onOpen }: { item: DiscoveryCard; exi
           <p><b aria-hidden="true">Q.</b><span>{item.connection}</span></p>
         </div>
         <div className="discover-card__interesting">
-          <span>何が面白い？</span>
+          <span>この問いの面白さ</span>
           <p>{item.summary}</p>
         </div>
       </div>

@@ -101,9 +101,9 @@ export function Skeleton({ className = "" }: { className?: string }) {
 export function ErrorState({ onRetry, message }: { onRetry?: () => void; message?: string }) {
   return (
     <EmptyState
-      title="うまく読み込めませんでした"
-      description={message || "通信状況をご確認のうえ、もう一度お試しください。"}
-      action={onRetry && <Button variant="secondary" onClick={onRetry}>再試行</Button>}
+      title="内容を読み込めませんでした"
+      description={message || "通信状況を確認して、もう一度読み込んでください。"}
+      action={onRetry && <Button variant="secondary" onClick={onRetry}>もう一度読み込む</Button>}
     />
   );
 }

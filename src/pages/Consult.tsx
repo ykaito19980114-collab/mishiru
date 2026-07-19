@@ -55,26 +55,26 @@ export default function Consult() {
   return <div className="consult-page max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-10">
     <Helmet><title>つたえる ｜ MISHIRU</title></Helmet>
     <header className="consult-heading">
-      <div><p className="eyebrow">SHARE & CONNECT</p><h1>相談できる相手へ、つなげる</h1><p>整えた相談セットと、問いに近い研究室を一緒に確認できます</p></div>
+      <div><p className="eyebrow">相談の準備</p><h1>研究プランを、相談相手へ</h1><p>共有する資料と、問いに近い研究室を確認できます。</p></div>
       <Send aria-hidden="true" />
     </header>
     {state === "loading" && <div className="consult-loading"><Skeleton className="h-28"/><Skeleton className="h-72"/></div>}
     {state === "error" && <ErrorState onRetry={load}/>} 
-    {state === "ok" && rows.length === 0 && <Card><EmptyState icon={<BookOpen className="w-8 h-8"/>} title="相談セットはまだありません" description="研究テーマを一冊にすると、相談先候補をここで確認できます" action={<Link to="/projects"><Button>相談セットを作る</Button></Link>}/></Card>}
+    {state === "ok" && rows.length === 0 && <Card><EmptyState icon={<BookOpen className="w-8 h-8"/>} title="共有できる研究プランがありません" description="問いから研究プランを作ると、相談先の候補も確認できます。" action={<Link to="/questions"><Button>問いをつくる</Button></Link>}/></Card>}
     {state === "ok" && current && <div className="consult-layout">
       <aside className="consult-projects" aria-label="相談セットを選択">
-        <h2>相談セット</h2>
+        <h2>研究プラン</h2>
         {rows.map(({project}) => <button key={project.id} className={project.id === current.project.id ? "active" : ""} onClick={() => setSelectedId(project.id)}><span>{project.displayTitle}</span><small>{project.step2Response.academic_mapping.target_domain || "研究領域を整理中"}</small></button>)}
       </aside>
       <main className="consult-content">
         <section className="consult-share-panel">
-          <div><span>共有する相談セット</span><h2>{current.project.displayTitle}</h2><p>{current.project.subtitle}</p></div>
+          <div><span>共有する研究プラン</span><h2>{current.project.displayTitle}</h2><p>{current.project.subtitle}</p></div>
           <div className="consult-share-link"><Link to={`/projects/${current.project.id}?tab=assets`}>{shareUrl}</Link><button onClick={copyShareUrl} title="共有リンクをコピー" aria-label="共有リンクをコピー">{copied === current.project.id ? <Check/> : <Copy/>}</button></div>
-          <div className="consult-share-actions"><Link to={`/projects/${current.project.id}?tab=assets`}><Button variant="secondary"><BookOpen/>相談セットを確認</Button></Link>{current.asset && <a className="consult-download" href={api.consultationAssetDownloadUrl(current.project.id, current.asset.id)}><ExternalLink/>生成済み資料を開く</a>}</div>
+          <div className="consult-share-actions"><Link to={`/projects/${current.project.id}?tab=assets`}><Button variant="secondary"><BookOpen/>共有内容を確認</Button></Link>{current.asset && <a className="consult-download" href={api.consultationAssetDownloadUrl(current.project.id, current.asset.id)}><ExternalLink/>作成済みの資料を開く</a>}</div>
         </section>
         <section className="consult-candidates">
-          <div className="consult-section-heading"><div><p className="eyebrow">RELATED LABS</p><h2>相談先の候補</h2></div><span>{current.labs.length}研究室</span></div>
-          {current.labs.length === 0 ? <Card className="consult-no-labs"><FlaskConical/><div><h3>関連する研究室を探しています</h3><p>相談セットの関連素材に研究室を追加すると、ここへ優先表示されます</p></div><Link to="/search">研究室をさがす</Link></Card> : <div className="consult-lab-list">{current.labs.map((lab) => <Card className="consult-lab-card" key={lab.id}>
+          <div className="consult-section-heading"><div><p className="eyebrow">問いに近い研究室</p><h2>相談先の候補</h2></div><span>{current.labs.length}研究室</span></div>
+          {current.labs.length === 0 ? <Card className="consult-no-labs"><FlaskConical/><div><h3>近い研究室がまだありません</h3><p>研究プランに研究室を追加すると、ここに表示されます。</p></div><Link to="/search">研究室をさがす</Link></Card> : <div className="consult-lab-list">{current.labs.map((lab) => <Card className="consult-lab-card" key={lab.id}>
             <div className="consult-lab-mark"><FlaskConical/></div>
             <div className="consult-lab-main"><small>{lab.university.name} ・ {lab.department}</small><h3>{lab.name}</h3><p><UserRound/>{lab.pi?.name || "担当教員未確認"}<span>{lab.pi?.title}</span></p></div>
             <div className="consult-lab-links"><Link to={`/labs/${lab.id}?returnTo=${encodeURIComponent("/consult")}`}>MISHIRUで見る</Link>{lab.official_url ? <a href={lab.official_url} target="_blank" rel="noreferrer">研究室公式サイト<ExternalLink/></a> : <span>公式サイト未確認</span>}</div>

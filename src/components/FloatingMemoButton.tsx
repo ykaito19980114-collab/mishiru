@@ -82,7 +82,7 @@ export function FloatingMemoButton() {
     }));
     reset();
     setOpen(false);
-    showToast("ためるに保存しました");
+    showToast("メモを保存しました");
   };
 
   return (
@@ -96,8 +96,8 @@ export function FloatingMemoButton() {
         <div className="memo-panel" role="dialog" aria-modal="true" aria-labelledby="memo-panel-title">
           <div className="memo-panel__header">
             <div>
-              <p className="mishiru-eyebrow">SAVE TO TAME-RU</p>
-              <h2 id="memo-panel-title">メモ追加</h2>
+              <p className="mishiru-eyebrow">気になったことを残す</p>
+              <h2 id="memo-panel-title">メモを追加</h2>
             </div>
             <button type="button" className="memo-panel__close" onClick={() => setOpen(false)} aria-label="閉じる">
               <X className="w-5 h-5" />
@@ -123,7 +123,7 @@ export function FloatingMemoButton() {
           </div>
 
           <div className="memo-panel__section">
-            <label className="memo-panel__label" htmlFor="memo-content">選択した文章、または気になった内容</label>
+            <label className="memo-panel__label" htmlFor="memo-content">気になった文章・内容</label>
             <textarea id="memo-content" value={selectedText} onChange={(event) => setSelectedText(event.target.value)} rows={4} className="memo-panel__input" />
             <button type="button" className="memo-panel__selection" onClick={captureSelection}>
               <Highlighter className="w-4 h-4" />選択文を入れる
@@ -142,7 +142,7 @@ export function FloatingMemoButton() {
 
           <div className="memo-panel__actions">
             <Button variant="secondary" onClick={() => setOpen(false)}>キャンセル</Button>
-            <Button onClick={save}>ためる</Button>
+            <Button onClick={save}>メモを保存</Button>
           </div>
         </div>
       )}
