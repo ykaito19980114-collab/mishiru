@@ -23,7 +23,7 @@ export default function Departments() {
     <div className="max-w-2xl mx-auto px-4 pt-4 pb-8">
       <Helmet><title>専攻から見る ｜ MISHIRU</title></Helmet>
       <div className="flex items-center gap-2 mb-1"><Building2 className="w-5 h-5 text-[var(--c-primary)]" /><h1 className="text-xl font-black">専攻から見る</h1></div>
-      <p className="text-sm text-[var(--c-ink-2)] mb-4 line-clamp-1">専攻ごとに所属研究室のテーマや方法を見比べられます。</p>
+      <p className="text-sm text-[var(--c-ink-2)] mb-4">専攻ごとに、研究室のテーマや調べ方を比べられます。</p>
 
       {state === "loading" && <div className="space-y-3">{[0, 1, 2].map((i) => <Skeleton key={i} className="h-20" />)}</div>}
       {state === "error" && <ErrorState onRetry={load} />}

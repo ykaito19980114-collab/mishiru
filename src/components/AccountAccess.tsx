@@ -394,7 +394,7 @@ function AccountOverview({ email, close, refresh }: { email: string | null; clos
       <p className="account-modal__eyebrow">アカウント設定</p>
       <h2 id="account-title">アカウント</h2>
       <div className="account-overview__identity"><UserRound aria-hidden="true" /><div><span>ログイン中</span><strong>{email || "登録済みアカウント"}</strong></div></div>
-      <p>保存・評価・問い・研究プロジェクトは、このアカウントに引き継がれています。</p>
+      <p>保存したもの、反応、問い、研究プランは、このアカウントに引き継がれています。</p>
       <button type="button" className="account-secondary-button account-secondary-button--wide" disabled={busy} onClick={logout}><LogOut aria-hidden="true" />ログアウト</button>
       <div className="account-overview__danger">
         <h3>退会とデータ削除</h3>

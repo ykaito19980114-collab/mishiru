@@ -105,7 +105,7 @@ export class ResearchProjectRepository {
       versionName: "v1 複製案",
       parentVersionId: undefined,
       createdAt: now,
-      changeReason: "別の研究プロジェクトとして複製",
+      changeReason: "別の研究プランとして複製",
       creationType: "manual_duplicate",
       sourceMemoIds: [],
       step2Response,

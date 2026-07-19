@@ -60,7 +60,7 @@ export default function Claim() {
         <p className="text-[var(--c-ink-2)] mb-2">1営業日以内に運営が確認し、ご連絡します。</p>
         <p className="text-sm text-[var(--c-ink-3)] mb-2">受付番号：{done}</p>
         <p className="text-sm text-[var(--c-ink-3)] mb-6">掲載停止・誤情報のご指摘は、研究室確認の完了前でも一時非公開の措置を優先します。</p>
-        <Link to="/discover"><Button variant="secondary">トップに戻る</Button></Link>
+        <Link to="/discover"><Button variant="secondary">問いのカードを見る</Button></Link>
       </div>
     );
   }
@@ -69,7 +69,7 @@ export default function Claim() {
     <div className="max-w-lg mx-auto px-4 pt-4 pb-10">
       <Helmet><title>修正・掲載のご依頼 ｜ MISHIRU</title></Helmet>
       <div className="flex items-center gap-2 mb-1"><ShieldAlert className="w-5 h-5 text-[var(--c-primary)]" /><h1 className="text-xl font-bold">修正・掲載のご依頼</h1></div>
-      <p className="text-sm text-[var(--c-ink-2)] mb-4">掲載情報の修正・停止、または研究室ページの整備についてご相談いただけます。{lab && <>（対象：<span className="font-bold">{lab.name}</span>）</>}</p>
+      <p className="text-sm text-[var(--c-ink-2)] mb-4">掲載内容の修正・停止、研究室ページの作成を依頼できます。{lab && <>対象：<span className="font-bold">{lab.name}</span></>}</p>
 
       <Card className="p-5">
         <form onSubmit={submit} className="space-y-4" noValidate>
@@ -99,7 +99,7 @@ export default function Claim() {
           <Field label="確認できる資料のURL（任意）">
             <input value={form.evidenceUrl} onChange={(e) => setForm({ ...form, evidenceUrl: e.target.value })} className={inputCls()} maxLength={500} placeholder="研究室公式ページなど" />
           </Field>
-          <Button type="submit" disabled={submitting} className="w-full">{submitting ? "送信中…" : "送信する"}</Button>
+          <Button type="submit" disabled={submitting} className="w-full">{submitting ? "依頼を送っています…" : "この内容で依頼する"}</Button>
           <TrustNote>いただいた個人情報はご依頼対応のみに利用し、第三者へ提供しません。</TrustNote>
         </form>
       </Card>

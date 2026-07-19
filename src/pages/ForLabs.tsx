@@ -8,9 +8,9 @@ import type { Lab } from "../../shared/types";
 import { Button, Card } from "../components/ui";
 
 const STEPS = [
-  { icon: Eye, title: "① 研究室サイト相談（無料）", body: "研究室の公式サイトや公開情報が学生からどう見えているか、不足している情報と改善案を無料でご提示します。" },
-  { icon: PenLine, title: "② 研究室ページ制作", body: "研究内容を学生に伝わる言葉へ翻訳。公開前に必ず内容をご確認いただきます。" },
-  { icon: RefreshCw, title: "③ 継続更新（任意）", body: "成果・学生テーマ・記事の更新を代行。研究に集中いただけます。" },
+  { icon: Eye, title: "1. 学生からの見え方を確認", body: "公式サイトと公開情報を確認し、伝わりにくい点と改善案を無料でお伝えします。" },
+  { icon: PenLine, title: "2. 学生向けページを作成", body: "研究内容を、正確さを保ったまま学生に伝わる言葉へ整えます。公開前に内容をご確認いただきます。" },
+  { icon: RefreshCw, title: "3. 情報を更新（任意）", body: "研究成果や学生テーマの記事更新を代行します。" },
 ];
 
 export default function ForLabs() {
@@ -27,7 +27,7 @@ export default function ForLabs() {
         <p className="text-sm text-white/70 mb-2">研究室運営者・専攻の方へ</p>
         <h1 className="text-2xl font-bold leading-tight mb-3">研究の魅力を、<br />相性の良い学生に届く形へ。</h1>
         <p className="text-white/80 text-sm leading-relaxed">
-          研究内容を正確に、学生に伝わる言葉で整理し、相性のよい出会いにつなげる情報整備サービスです。
+          研究内容を学生に伝わる言葉へ整えます。研究に関心のある学生との出会いを支えます。
           {lab && <><br /><span className="text-white font-bold">対象：{lab.name}</span></>}
         </p>
       </div>
@@ -47,16 +47,16 @@ export default function ForLabs() {
       <Card className="p-5 mb-6">
         <div className="flex items-center gap-2 mb-3"><ShieldCheck className="w-5 h-5 text-[var(--c-primary)]" /><h2 className="font-bold">安心のための約束</h2></div>
         <ul className="space-y-2 text-sm text-[var(--c-ink-2)]">
-          <li>・掲載は公開情報にもとづき、公開前に必ずご確認いただきます。</li>
-          <li>・出典・最終更新日・確度を常に明示します。</li>
-          <li>・修正・掲載停止のご依頼には1営業日以内に対応します。</li>
-          <li>・学生の個人データを研究室・企業へ提供することはありません。</li>
+          <li>公開前に、掲載内容をご確認いただきます。</li>
+          <li>出典・最終更新日・確認状況を表示します。</li>
+          <li>修正・掲載停止には、1営業日以内に対応します。</li>
+          <li>学生の個人データは、研究室や企業へ提供しません。</li>
         </ul>
       </Card>
 
       <div className="flex flex-col gap-3">
-        <Link to={`/claim?lab_id=${labId}`}><Button className="w-full">研究室サイトについて相談する<ArrowRight className="w-4 h-4" /></Button></Link>
-        <Link to="/labs/demo-lab"><Button variant="secondary" className="w-full">整備済みページの見本を見る</Button></Link>
+        <Link to={`/claim?lab_id=${labId}`}><Button className="w-full">無料相談を申し込む<ArrowRight className="w-4 h-4" /></Button></Link>
+        <Link to="/labs/demo-lab"><Button variant="secondary" className="w-full">学生向けページの見本を見る</Button></Link>
       </div>
     </div>
   );

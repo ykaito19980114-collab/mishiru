@@ -38,7 +38,7 @@ export function buildConsultationDraft(project: ResearchProject, format: Consult
   if (format === "pptx_1") {
     section(sections, "背景・違和感", shorten(`${o.background} ${o.problem}`, 180), opts.showEmpty);
     section(sections, "目的", shorten(o.purpose, 120), opts.showEmpty);
-    section(sections, "メインRQ", shorten(o.main_rq, 120), opts.showEmpty);
+    section(sections, "中心となる研究の問い", shorten(o.main_rq, 120), opts.showEmpty);
     section(sections, "対象", shorten(o.target_population, 90), opts.showEmpty);
     section(sections, "方法", shorten(`${o.research_design} ${o.data_collection} ${o.analysis_method}`, 150), opts.showEmpty);
     section(sections, "研究として面白そうな点", shorten(o.interesting_points, 120), opts.showEmpty);
@@ -46,15 +46,15 @@ export function buildConsultationDraft(project: ResearchProject, format: Consult
     section(sections, "相談したいこと", o.consultation_questions.map((v) => shorten(v, 75)), opts.showEmpty);
   } else if (format === "pptx_2") {
     section(sections, "1｜背景", shorten(o.background, 200), opts.showEmpty); section(sections, "1｜問題", shorten(o.problem, 170), opts.showEmpty);
-    section(sections, "1｜目的", shorten(o.purpose, 150), opts.showEmpty); section(sections, "1｜メインRQ", shorten(o.main_rq, 130), opts.showEmpty);
-    section(sections, "1｜サブRQ", o.sub_rqs.map((v) => shorten(v, 80)), opts.showEmpty);
+    section(sections, "1｜目的", shorten(o.purpose, 150), opts.showEmpty); section(sections, "1｜中心となる問い", shorten(o.main_rq, 130), opts.showEmpty);
+    section(sections, "1｜問いを分けて考える", o.sub_rqs.map((v) => shorten(v, 80)), opts.showEmpty);
     section(sections, "2｜対象", shorten(o.target_population, 120), opts.showEmpty); section(sections, "2｜研究デザイン", shorten(o.research_design, 120), opts.showEmpty);
     section(sections, "2｜データ収集", shorten(o.data_collection, 120), opts.showEmpty); section(sections, "2｜分析方法", shorten(o.analysis_method, 140), opts.showEmpty);
     section(sections, "2｜面白そうな点", shorten(o.interesting_points, 120), opts.showEmpty); section(sections, "2｜難しそうな点", o.difficult_points.map((v) => shorten(v, 75)), opts.showEmpty);
     section(sections, "2｜相談したいこと", o.consultation_questions.map((v) => shorten(v, 80)), opts.showEmpty);
   } else if (format === "pptx_3") {
     section(sections, "1｜背景", shorten(o.background, 230), opts.showEmpty); section(sections, "1｜違和感・問題", shorten(o.problem, 200), opts.showEmpty); section(sections, "1｜目的", shorten(o.purpose, 170), opts.showEmpty);
-    section(sections, "2｜メインRQ", shorten(o.main_rq, 150), opts.showEmpty); section(sections, "2｜サブRQ", o.sub_rqs.map((v) => shorten(v, 90)), opts.showEmpty);
+    section(sections, "2｜中心となる問い", shorten(o.main_rq, 150), opts.showEmpty); section(sections, "2｜問いを分けて考える", o.sub_rqs.map((v) => shorten(v, 90)), opts.showEmpty);
     section(sections, "2｜概念モデル", o.conceptual_model.map((v) => shorten(v, 55)), opts.showEmpty); section(sections, "2｜対象", shorten(o.target_population, 130), opts.showEmpty);
     section(sections, "2｜研究デザイン", shorten(o.research_design, 130), opts.showEmpty); section(sections, "2｜データ収集", shorten(o.data_collection, 130), opts.showEmpty); section(sections, "2｜分析方法", shorten(o.analysis_method, 150), opts.showEmpty);
     section(sections, "3｜学術的意義", shorten(o.significance.academic, 130), opts.showEmpty); section(sections, "3｜実務的意義", shorten(o.significance.practical, 130), opts.showEmpty); section(sections, "3｜社会的意義", shorten(o.significance.social, 130), opts.showEmpty);
@@ -71,14 +71,14 @@ export function buildConsultationDraft(project: ResearchProject, format: Consult
 function addFullOutline(sections: Record<string, string[]>, o: ResearchOutline, opts: ConsultationDocumentOptions) {
   section(sections, "一般向けタイトル", o.title_public, opts.showEmpty); section(sections, "学術向けタイトル", o.title_academic, opts.showEmpty);
   section(sections, "研究の中心的な意味・仕組み", o.mim, opts.showEmpty); section(sections, "背景", o.background, opts.showEmpty);
-  section(sections, "問題", o.problem, opts.showEmpty); section(sections, "目的", o.purpose, opts.showEmpty); section(sections, "メインRQ", o.main_rq, opts.showEmpty);
-  section(sections, "サブRQ", o.sub_rqs, opts.showEmpty); section(sections, "先行研究との差分", o.related_work_diff, opts.showEmpty);
+  section(sections, "解決したい問題", o.problem, opts.showEmpty); section(sections, "目的", o.purpose, opts.showEmpty); section(sections, "中心となる研究の問い", o.main_rq, opts.showEmpty);
+  section(sections, "問いを分けて考える", o.sub_rqs, opts.showEmpty); section(sections, "先行研究との違い", o.related_work_diff, opts.showEmpty);
   section(sections, "概念モデル", o.conceptual_model, opts.showEmpty); section(sections, "研究デザイン", o.research_design, opts.showEmpty);
   section(sections, "対象", o.target_population, opts.showEmpty); section(sections, "データ収集", o.data_collection, opts.showEmpty);
   section(sections, "分析方法", o.analysis_method, opts.showEmpty); section(sections, "評価方法", o.evaluation_method, opts.showEmpty);
   section(sections, "倫理的配慮", o.ethical_considerations, opts.showEmpty); section(sections, "学術的意義", o.significance.academic, opts.showEmpty);
   section(sections, "実務的意義", o.significance.practical, opts.showEmpty); section(sections, "社会的意義", o.significance.social, opts.showEmpty);
-  section(sections, "限界", o.limitations, opts.showEmpty); section(sections, "次のステップ", o.next_steps, opts.showEmpty);
+  section(sections, "この研究だけでは分からないこと", o.limitations, opts.showEmpty); section(sections, "次にやること", o.next_steps, opts.showEmpty);
   section(sections, "研究として面白そうな点", o.interesting_points, opts.showEmpty); section(sections, "難しそうな点", o.difficult_points, opts.showEmpty);
   section(sections, "相談したいこと", o.consultation_questions, opts.showEmpty);
   if (opts.includeComments) section(sections, "コメント", o.comments, opts.showEmpty);
@@ -114,7 +114,7 @@ export class ConsultationExportService {
       return this.assets.update(id, { status: "ready", filePath, pageCount, fontName: fontInfo?.name || asset.fontName, generatedAt: new Date().toISOString() })!;
     } catch (error) {
       try { if (outputPath && fs.existsSync(outputPath)) fs.unlinkSync(outputPath); } catch { /* do not mask original error */ }
-      this.assets.update(id, { status: "error", error: error instanceof Error ? error.message : "生成に失敗しました" });
+      this.assets.update(id, { status: "error", error: error instanceof Error ? error.message : "相談資料を作れませんでした。もう一度お試しください。" });
       throw error;
     }
   }
@@ -143,7 +143,7 @@ async function generatePdf(project: ResearchProject, versionName: string, draft:
     if (draft.options.includeCover) doc.addPage();
     doc.fillColor("#141619").fontSize(22).text(draft.title, { lineGap: 3 });
     if (draft.subtitle) doc.moveDown(.35).fillColor("#383d46").fontSize(11).text(draft.subtitle, { lineGap: 3 });
-    doc.moveDown(.7).fontSize(8.5).fillColor("#6a707a").text(`状態：${statusLabel(project.status)}　Version：${versionName}　作成：${project.createdAt.slice(0,10)}　更新：${project.updatedAt.slice(0,10)}`);
+    doc.moveDown(.7).fontSize(8.5).fillColor("#6a707a").text(`状態：${statusLabel(project.status)}　案：${versionName}　作成：${project.createdAt.slice(0,10)}　更新：${project.updatedAt.slice(0,10)}`);
     doc.moveDown(1);
     for (const [label, values] of Object.entries(draft.sections)) {
       if (doc.y > doc.page.height - 125) doc.addPage();
@@ -179,7 +179,7 @@ async function generatePptx(project: ResearchProject, format: ConsultationAssetF
     const entries = Object.entries(draft.sections).filter(([label]) => count === 1 || label.startsWith(`${page}｜`)).map(([label, values]) => [label.replace(/^\d｜/, ""), values] as const);
     const columns = count === 1 ? 3 : 2; const gap = .18; const width = (12.05 - gap * (columns - 1)) / columns; const rows = Math.ceil(entries.length / columns); const height = Math.min(2.25, (5.35 - gap * Math.max(0, rows - 1)) / Math.max(1, rows));
     entries.forEach(([label, values], index) => { const col = index % columns, row = Math.floor(index / columns), x = .6 + col * (width + gap), y = 1.75 + row * (height + gap); slide.addShape(pptx.ShapeType.roundRect, { x, y, w: width, h: height, rectRadius: .05, line: { color: "D7D9DE", width: 1 }, fill: { color: "FFFFFF" } }); slide.addText(label, { x: x + .16, y: y + .12, w: width - .32, h: .28, fontSize: 10, bold: true, color: "123EF5", margin: 0 }); slide.addText(values.map((value) => ({ text: values.length > 1 ? `・${value}\n` : value, options: { breakLine: false } })), { x: x + .16, y: y + .48, w: width - .32, h: height - .58, fontSize: count === 1 ? 9 : 11, color: "383D46", breakLine: false, margin: 0, valign: "top", fit: "shrink", paraSpaceAfter: 4 }); });
-    slide.addText(`MISHIRU ｜ ${project.versions.find((v) => v.versionId === project.currentVersionId)?.versionName || "Version"} ｜ ${page}/${count}`, { x: .6, y: 7.15, w: 12, h: .18, fontSize: 6.5, color: "6A707A", margin: 0, align: "right" });
+    slide.addText(`MISHIRU ｜ ${project.versions.find((v) => v.versionId === project.currentVersionId)?.versionName || "研究プラン"} ｜ ${page}/${count}`, { x: .6, y: 7.15, w: 12, h: .18, fontSize: 6.5, color: "6A707A", margin: 0, align: "right" });
   }
   await pptx.writeFile({ fileName: filePath }); return count;
 }

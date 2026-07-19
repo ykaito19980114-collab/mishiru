@@ -443,7 +443,7 @@ function repairCandidates(generated: RQCandidate[] | undefined, fallback: RQCand
 export function buildQualityFallbackStep1(input: QuestionFreeInput, materialsInput: NormalizedResearchMaterial[]): Step1Response {
   const materials = normalizeResearchMaterials(materialsInput);
   const brief = fallbackBrief(input, materials);
-  return { ...brief, output_type_proposals: fallbackCandidates(brief), generatedBy: "quality_fallback", qualityReport: { validCount: 12, repairedCount: 12, warnings: ["AI生成を利用せず、品質検査済みの仮説たたき台を表示しています。"] } };
+  return { ...brief, output_type_proposals: fallbackCandidates(brief), generatedBy: "quality_fallback", qualityReport: { validCount: 12, repairedCount: 12, warnings: ["AIを利用できなかったため、入力内容から作った問いの下書きを表示しています。"] } };
 }
 
 function validBrief(value: ResearchBrief | null): value is ResearchBrief {
@@ -467,6 +467,7 @@ export async function generateStep1(input: QuestionFreeInput, materialsInput: No
 公式説明の免責文、URL、研究室名を研究テーマとして転載しないでください。無関係に見える複数素材は単純連結せず、採用する接続仮説と不足情報を明示してください。
 対象・現象・文脈・緊張・知りたいことを、後続で変数・比較・機序・測定・設計へ変換できる具体性で整理してください。
 研究マップの領域シフトは「形式 / 物質 / 生命 / 心・認知 / 社会 / 意味」の6方向を各1件、すべて実質の異なる疑問文で出してください。
+ユーザーに見える文章は、研究初心者が一読で分かる日本語にしてください。一文では一つだけ伝え、専門語には短い言い換えを添えてください。書き手側の処理名や評価用語は出さないでください。
 素材: ${JSON.stringify(source)}`;
   const generatedBrief = await callAIJson<ResearchBrief>(briefPrompt, { temperature: 0.15, timeoutMs: 90000, maxOutputTokens: 8000, responseSchema: RESEARCH_BRIEF_SCHEMA, reasoningEffort: "low" });
   console.info(`[question-craft] brief=${validBrief(generatedBrief) ? "valid" : "fallback"} shifts=${generatedBrief?.domain_shifts?.length || 0}`);
@@ -489,13 +490,13 @@ ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
     ...brief,
     output_type_proposals: briefFallbackCandidates,
     generatedBy: "quality_fallback" as const,
-    qualityReport: { validCount: 12, repairedCount: 12, warnings: ["RQ候補のAI生成が完了しなかったため、素材統合結果から品質検査済みの仮説たたき台を表示しています。"] },
+    qualityReport: { validCount: 12, repairedCount: 12, warnings: ["AIで問いを作れなかったため、入力内容から作った下書きを表示しています。"] },
   };
   const repaired = repairCandidates(generatedRqs.output_type_proposals, briefFallbackCandidates);
   const publicRewrite = await rewritePublicQuestions(repaired.candidates, briefFallbackCandidates, publicStyleQuestions(materials));
   const warnings: string[] = [];
-  if (repaired.repairedCount) warnings.push(`専門向けRQの品質ゲートで${repaired.repairedCount}件を検査済みテンプレートへ置換しました。`);
-  if (publicRewrite.repairedCount) warnings.push(`一般向けRQの可読性ゲートで${publicRewrite.repairedCount}件を平易な問いへ置換しました。`);
+  if (repaired.repairedCount) warnings.push(`専門向けの問い${repaired.repairedCount}件を、内容が伝わる下書きへ置き換えました。`);
+  if (publicRewrite.repairedCount) warnings.push(`一般向けの問い${publicRewrite.repairedCount}件を、初めて読む人にも分かる表現へ直しました。`);
   return {
     ...brief,
     output_type_proposals: publicRewrite.candidates,
@@ -996,6 +997,7 @@ async function synthesizeVerifiedResearch(
 実在確認済み文献: ${JSON.stringify(payload)}
 1. literature_review: target_gap_deepは350〜600字、knownsは5〜7件、unknownsは4〜6件、controversiesは2〜4件。一般論ではなく、文献群で扱われている対象・方法・結果と、研究の問いで追加検証すべき範囲を明確に分けてください。
 2. items: 各文献のidを維持し、summary（何を対象に、どう調べ、何が分かった論文か。専門語を短く言い換えた日本語120〜220字）とreason（この研究のどこに役立つか、またはどこが競合・隣接するか。日本語80〜160字）を返してください。
+文章は結論から書き、一文では一つだけ伝えてください。研究初心者が意味を推測しなくてよい普通の言葉を使い、英語の専門語だけで説明しないでください。
 抄録にない結果は作らず、「抄録から確認できる範囲では」と明示してください。
 JSON {"literature_review":{"target_gap_deep":"...","knowns":["..."],"unknowns":["..."],"controversies":["..."]},"items":[{"id":0,"summary":"...","reason":"..."}]} のみ。`;
   const generated = await callAIJson<{
@@ -1127,6 +1129,7 @@ export { enrichStep2References };
 
 export async function adjustResearchText(value: string, instruction: string, context = "") {
   const prompt = `研究骨子の文章を調整してください。ユーザーが編集した他の文章は変更しません。
+研究初心者が一読で分かる日本語にしてください。結論を先に置き、一文では一つだけ伝えます。専門語は必要なときだけ使い、短い説明を添えます。
 調整指示: ${instruction}
 対象文章: ${value}
 周辺文脈: ${context}

@@ -24,7 +24,7 @@ export default function UniversityDetail() {
   return (
     <div className="max-w-4xl mx-auto px-4 pt-4 pb-8">
       <Helmet><title>{data?.university.name || "大学"}の研究室 ｜ MISHIRU</title></Helmet>
-      <Link to="/universities" className="flex items-center gap-1 text-sm font-bold text-[var(--c-ink-2)] min-h-[44px] mb-1"><ArrowLeft className="w-4 h-4" />大学一覧</Link>
+      <Link to="/universities" className="flex items-center gap-1 text-sm font-bold text-[var(--c-ink-2)] min-h-[44px] mb-1"><ArrowLeft className="w-4 h-4" />大学から探すへ戻る</Link>
 
       {state === "loading" && <div className="space-y-3"><Skeleton className="h-20" /><Skeleton className="h-40" /></div>}
       {state === "error" && <ErrorState onRetry={load} />}
@@ -55,7 +55,7 @@ export default function UniversityDetail() {
           </div>
           {shown.length > limit && (
             <div className="mt-6 flex justify-center">
-              <button onClick={() => setLimit((n) => n + 24)} className="px-6 py-2.5 rounded-[10px] border border-[var(--c-border)] font-bold text-sm min-h-[44px]">さらに表示（残り{shown.length - limit}）</button>
+              <button onClick={() => setLimit((n) => n + 24)} className="px-6 py-2.5 rounded-[10px] border border-[var(--c-border)] font-bold text-sm min-h-[44px]">研究室をさらに24件見る（残り{shown.length - limit}件）</button>
             </div>
           )}
         </>

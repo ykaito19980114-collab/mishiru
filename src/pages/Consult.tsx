@@ -53,7 +53,7 @@ export default function Consult() {
   };
 
   return <div className="consult-page max-w-6xl mx-auto px-4 md:px-6 py-6 md:py-10">
-    <Helmet><title>つたえる ｜ MISHIRU</title></Helmet>
+    <Helmet><title>相談先を探す ｜ MISHIRU</title></Helmet>
     <header className="consult-heading">
       <div><p className="eyebrow">相談の準備</p><h1>研究プランを、相談相手へ</h1><p>共有する資料と、問いに近い研究室を確認できます。</p></div>
       <Send aria-hidden="true" />
@@ -62,7 +62,7 @@ export default function Consult() {
     {state === "error" && <ErrorState onRetry={load}/>} 
     {state === "ok" && rows.length === 0 && <Card><EmptyState icon={<BookOpen className="w-8 h-8"/>} title="共有できる研究プランがありません" description="問いから研究プランを作ると、相談先の候補も確認できます。" action={<Link to="/questions"><Button>問いをつくる</Button></Link>}/></Card>}
     {state === "ok" && current && <div className="consult-layout">
-      <aside className="consult-projects" aria-label="相談セットを選択">
+      <aside className="consult-projects" aria-label="研究プランを選択">
         <h2>研究プラン</h2>
         {rows.map(({project}) => <button key={project.id} className={project.id === current.project.id ? "active" : ""} onClick={() => setSelectedId(project.id)}><span>{project.displayTitle}</span><small>{project.step2Response.academic_mapping.target_domain || "研究領域を整理中"}</small></button>)}
       </aside>
@@ -79,7 +79,7 @@ export default function Consult() {
             <div className="consult-lab-main"><small>{lab.university.name} ・ {lab.department}</small><h3>{lab.name}</h3><p><UserRound/>{lab.pi?.name || "担当教員未確認"}<span>{lab.pi?.title}</span></p></div>
             <div className="consult-lab-links"><Link to={`/labs/${lab.id}?returnTo=${encodeURIComponent("/consult")}`}>MISHIRUで見る</Link>{lab.official_url ? <a href={lab.official_url} target="_blank" rel="noreferrer">研究室公式サイト<ExternalLink/></a> : <span>公式サイト未確認</span>}</div>
           </Card>)}</div>}
-          <TrustNote className="mt-2">候補は相談セットと公開情報をもとに整理しています。未確認表示は各研究室で確認できます。</TrustNote>
+          <TrustNote className="mt-2">候補は研究プランと公開情報をもとに整理しています。正確な研究内容は各研究室の公式サイトで確認してください。</TrustNote>
         </section>
       </main>
     </div>}

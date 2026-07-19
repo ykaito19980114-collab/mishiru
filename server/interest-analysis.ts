@@ -76,12 +76,12 @@ function deterministicAnalysis(materials: NormalizedResearchMaterial[], previous
       broadAreas: top.length > 5 ? [`上位語が${top.length}件あり、複数の関心領域が混在しています`] : ["素材を増やすと、広すぎる部分を判定しやすくなります"],
       confirmations: ["対象者・場所・期間のどれを優先するか", "知りたいことと、実際に測れることを分けられるか"], nextMaterials: ["気になった理由を添えたメモ", "研究室が公開している具体的な問い", "方法が分かる論文や記事"],
     },
-    evidence: { summary: `保存素材${materials.length}件を、反応別集計・キーワード頻度・種別の偏り・明示された問い文だけで整理しました。AIによる意味推論は行っていません。`, sourceIds: materials.map(materialKey), reactionCounts }, analysisMode: "deterministic_fallback",
+    evidence: { summary: `保存した${materials.length}件を、反応・よく出る言葉・種類ごとに整理しました。AIによる意味の推測は行っていません。`, sourceIds: materials.map(materialKey), reactionCounts }, analysisMode: "deterministic_fallback",
   };
 }
 
 async function analyzeWithAI(materials: NormalizedResearchMaterial[]): Promise<InterestAnalysisResult | null> {
-  const prompt = `MISHIRUの関心分析です。完成したRQは作らず、入力された公式情報とユーザー反応を分離してください。違う・わからない・気になる・保存を別信号として扱い、研究領域・研究室・学会・ジャーナル名は候補名だけを出してください。JSONのみ。\n${JSON.stringify(materials)}`;
+  const prompt = `MISHIRUで、研究初心者の関心を整理します。完成した研究の問いは作らず、入力された公式情報とユーザーの反応を分けてください。「違う」「わからない」「気になる」「保存」は別の反応として扱います。研究領域・研究室・学会・ジャーナルは候補名だけを出してください。ユーザーに見える文章は、結論から始め、一文では一つだけ伝えてください。専門語や分析用語を避け、普通の日本語で書いてください。JSONのみ。\n${JSON.stringify(materials)}`;
   const result = await callAIJson<InterestAnalysisResult>(prompt, { temperature:.2, timeoutMs:30000 });
   if (!result?.current || !result?.connections || !result?.directions) return null;
   return { ...result, analysisMode: "ai" };

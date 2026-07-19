@@ -148,7 +148,7 @@ export default function Labs() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 md:pt-8 pb-12">
-      <Helmet><title>さがす ｜ MISHIRU</title></Helmet>
+      <Helmet><title>研究をさがす ｜ MISHIRU</title></Helmet>
 
       {/* 記憶の1点＝青い帯×彫刻ポスター。主アクションは検索箱ひとつ（ADR-007） */}
       <section className="hero-band" aria-labelledby="labs-hero-title">
@@ -165,7 +165,7 @@ export default function Labs() {
               autoComplete="off" />
           </div>
           <button type="submit" className="hero-search__submit" disabled={aiState === "loading"} aria-disabled={aiState === "loading"}>
-            {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <>さがす</>}
+            {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <>研究をさがす</>}
           </button>
         </form>
         <div className="hero-examples" aria-label="入力例">
@@ -216,10 +216,10 @@ export default function Labs() {
                   {aiResult.interpreted.fieldLabels.map((l, index) => <Chip key={`f:${l}:${index}`} tone="blue">{l}</Chip>)}
                   {aiResult.interpreted.keywords.slice(0, 5).map((k, index) => <Chip key={`k:${k}:${index}`}>{k}</Chip>)}
                   {aiResult.interpreted.fieldLabels.length === 0 && aiResult.interpreted.keywords.length === 0 &&
-                    <span className="text-xs text-[var(--c-ink-3)]">キーワードを特定できませんでした。言い換えてお試しください。</span>}
+                    <span className="text-xs text-[var(--c-ink-3)]">研究室を探す言葉に置き換えられませんでした。対象や場面を加えてください。</span>}
                 </div>
               )}
-              <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">{aiResult?.by === "llm" ? "AIで意味を整理" : "登録語から検索"} ・ 研究室{aiResult?.total ?? 0}件</p>
+              <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">{aiResult?.by === "llm" ? "AIで意味を整理" : "登録された言葉から検索"} ・ 研究室{aiResult?.total ?? 0}件</p>
             </div>
             <button onClick={exitAi} className="shrink-0 flex items-center gap-1 text-xs font-bold text-[var(--c-ink-2)] min-h-[36px]"><X className="w-4 h-4" />検索を終える</button>
           </div>
@@ -290,7 +290,7 @@ export default function Labs() {
                 <>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">{labs.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} reasons={l.matchReasons} />)}</div>
                   {labs.length < total && (
-                    <div className="mt-8 flex justify-center"><Button variant="secondary" onClick={loadMore} disabled={loadingMore}>{loadingMore ? "読み込み中…" : "さらに表示"}</Button></div>
+                    <div className="mt-8 flex justify-center"><Button variant="secondary" onClick={loadMore} disabled={loadingMore}>{loadingMore ? "研究室を読み込んでいます…" : "研究室をさらに見る"}</Button></div>
                   )}
                 </>
               )}
@@ -353,7 +353,7 @@ function ResourceExplorer({ mode, resources, query, onSearch }: { mode: Exclude<
       {!result ? (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">{[0, 1, 2].map((i) => <Skeleton key={i} className="h-52" />)}</div>
       ) : items.length === 0 ? (
-        <EmptyState title="候補が見つかりませんでした" description="言葉を短くするか、絞り込みを減らして検索してください。" />
+        <EmptyState title="候補が見つかりませんでした" description="言葉を短くするか、選んだ条件を減らしてください。" />
       ) : (
         <div className={`grid sm:grid-cols-2 gap-3 ${mode === "fields" ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
           {mode === "fields" && (items as ResearchField[]).map((item, index) => <FieldResourceCard key={`${item.id}:${index}`} item={item} labs={result.labCandidates?.[item.id] || []} onSearch={onSearch} />)}

@@ -8,8 +8,8 @@ import { AiModelSelector } from "./AiModelSelector";
 import { AccountButton } from "./AccountAccess";
 
 const TABS = [
-  { to: "/search", label: "さがす", icon: Search },
-  { to: "/discover", label: "であう", icon: Sparkles },
+  { to: "/search", label: "研究をさがす", icon: Search },
+  { to: "/discover", label: "問いを見る", icon: Sparkles },
   { to: "/saved", label: "保存したもの", icon: Archive },
   { to: "/reflect", label: "関心を整理", icon: Radar },
   { to: "/questions", label: "問いをつくる", icon: Lightbulb },

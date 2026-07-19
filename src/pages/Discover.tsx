@@ -41,7 +41,7 @@ export default function Discover() {
     if (!append) { setLoading(true); setError(false); }
     try {
       const res = await api.getDiscoveryCards(16, src.kind === "search" ? src.q : "");
-      setDeckMeta({ totalMatched: res.cards.length, summary: res.summary, profileTop: src.kind === "profile" ? ["みつめる"] : undefined, profileQuery: undefined });
+      setDeckMeta({ totalMatched: res.cards.length, summary: res.summary, profileTop: src.kind === "profile" ? ["整理した関心"] : undefined, profileQuery: undefined });
       setCards((prev) => (append ? [...prev, ...res.cards.filter((c) => !prev.some((p) => p.id === c.id))] : res.cards));
       if (!append) { setIdx(0); setHistory([]); }
       setLoading(false);
@@ -90,7 +90,7 @@ export default function Discover() {
     if (!current || exitDir || undoing) return;
     const wasReady = evaluated + 1 >= threshold && evaluated < threshold;
     setExitDir(action === "skip" ? "left" : "right");
-    if (action === "like") showToast("「気になる」に保存しました");
+    if (action === "like") showToast("「気になる」に追加しました");
     setHistory((items) => [...items, { index: idx, card: current, action }]);
 
     setTimeout(() => { setExitDir(null); setIdx((i) => i + 1); }, 220);
@@ -128,7 +128,7 @@ export default function Discover() {
 
   const saveCurrent = async () => {
     if (!current) return;
-    showToast("保存しました");
+    showToast("保存したものに追加しました");
     const res = current.kind === "lab" && current.sourceId
       ? await api.actOnLab(current.sourceId, "save")
       : await api.actOnDiscoveryItem(current, "save");
@@ -152,7 +152,7 @@ export default function Discover() {
 
   return (
     <div className="max-w-xl mx-auto px-4 pt-4 pb-[calc(var(--tab-h)+96px)]">
-      <Helmet><title>であう ｜ MISHIRU</title></Helmet>
+      <Helmet><title>問いのカード ｜ MISHIRU</title></Helmet>
 
       {offline && (
         <div className="mb-3 flex items-center gap-2 text-sm bg-[var(--c-surface)] text-[var(--c-ink-2)] px-3 py-2 rounded-[10px]">
@@ -162,8 +162,8 @@ export default function Discover() {
 
       <div className="mb-3">
         <div>
-          <h1 className="text-xl font-black">であう</h1>
-          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">問いを見て、直感で「気になる」か選んでください。</p>
+          <h1 className="text-xl font-black">問いのカード</h1>
+          <p className="text-sm text-[var(--c-ink-2)]">問いを見て、直感で「気になる」か選んでください。</p>
         </div>
       </div>
 
@@ -236,7 +236,7 @@ export default function Discover() {
         source.kind === "default" ? (
           <EmptyState
             title="今日のカードはここまで"
-            description="ためた研究室を見返したり、あなた向けの候補をチェックしてみましょう。"
+            description="保存した研究室を見返すか、関心を整理して次の候補を探せます。"
             action={
               <div className="flex flex-col gap-3 w-full max-w-xs">
                 <Link to="/reflect"><Button className="w-full">関心を整理する</Button></Link>
