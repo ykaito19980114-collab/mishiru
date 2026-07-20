@@ -152,7 +152,6 @@ export default function Labs() {
 
       {/* 記憶の1点＝青い帯×彫刻ポスター。主アクションは検索箱ひとつ（ADR-007） */}
       <section className="hero-band" aria-labelledby="labs-hero-title">
-        <p className="hero-band__eyebrow">気になることから探せます</p>
         <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
 
         {/* ボタンは常にフルカラー。未入力での送信は入力欄へフォーカスを返す（押せない見た目を作らない） */}

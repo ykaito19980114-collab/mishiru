@@ -238,7 +238,6 @@ input::placeholder, textarea::placeholder { color: var(--c-ink-3); opacity: 1; }
   background: var(--c-primary);
   border-radius: var(--radius-card);
 }
-.hero-band__eyebrow { margin: 0 0 10px; color: rgba(255,255,255,.78); font-size: 11px; font-weight: 800; letter-spacing: .2em; }
 .hero-band h1 { margin: 0; max-width: 22ch; font-size: clamp(24px, 3.6vw, 34px); font-weight: 900; line-height: 1.35; letter-spacing: -.01em; }
 
 /* 彫刻＝額装ポスター。帯の縁を破って前に出る（ドカン）＋実数バッジで情報と結婚させる */
