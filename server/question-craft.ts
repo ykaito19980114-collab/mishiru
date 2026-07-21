@@ -680,7 +680,9 @@ function referenceTerms(input: QuestionFreeInput, selectedRq: RQCandidate, step1
     selectedRq.rq_title, selectedRq.public_rq, step1.decomposition.target, step1.decomposition.phenomenon, step1.decomposition.context,
   ].filter(Boolean).join(" ");
   const profiles = TOPIC_PROFILES.filter((profile) => profile.pattern.test(source));
-  const phrases = source.match(/[ぁ-んァ-ン一-龠々ー]{3,18}/g) || [];
+  // ひらがなは助詞・活用語尾を含み単語境界がないため抽出対象から除外する（「るんだろう」等の文法的な断片が
+  // 検索語として使われ、OpenAlex検索が0件になり論文フォールバックへ落ちる不具合の原因だった）。
+  const phrases = source.match(/[ァ-ン一-龠々ー]{3,18}/g) || [];
   const stop = /^(について|における|どのような|明らかに|それは|これは|研究|方法|対象|現象|入力された|できる|される|という)$/;
   const explicitEnglish = source.match(/[A-Za-z][A-Za-z-]+(?:\s+[A-Za-z][A-Za-z-]+){0,4}/g) || [];
   return unique([
