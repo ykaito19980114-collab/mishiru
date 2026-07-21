@@ -74,7 +74,7 @@ export default function Consult() {
         </section>
         <section className="consult-candidates">
           <div className="consult-section-heading"><div><p className="eyebrow">RELATED LABS</p><h2>相談先の候補</h2></div><span>{current.labs.length}研究室</span></div>
-          {current.labs.length === 0 ? <Card className="consult-no-labs"><FlaskConical/><div><h3>関連する研究室を探しています</h3><p>相談セットの関連素材に研究室を追加すると、ここへ優先表示されます</p></div><Link to="/search">研究室をさがす</Link></Card> : <div className="consult-lab-list">{current.labs.map((lab) => <Card className="consult-lab-card" key={lab.id}>
+          {current.labs.length === 0 ? <Card className="consult-no-labs"><FlaskConical/><div><h3>相談先の候補はまだありません</h3><p>相談セットの関連素材に研究室を追加すると、ここへ優先して表示されます</p></div><Link to="/search">研究室をさがす</Link></Card> : <div className="consult-lab-list">{current.labs.map((lab) => <Card className="consult-lab-card" key={lab.id}>
             <div className="consult-lab-mark"><FlaskConical/></div>
             <div className="consult-lab-main"><small>{lab.university.name} ・ {lab.department}</small><h3>{lab.name}</h3><p><UserRound/>{lab.pi?.name || "担当教員未確認"}<span>{lab.pi?.title}</span></p></div>
             <div className="consult-lab-links"><Link to={`/labs/${lab.id}?returnTo=${encodeURIComponent("/consult")}`}>MISHIRUで見る</Link>{lab.official_url ? <a href={lab.official_url} target="_blank" rel="noreferrer">研究室公式サイト<ExternalLink/></a> : <span>公式サイト未確認</span>}</div>

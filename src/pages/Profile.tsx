@@ -201,7 +201,7 @@ export default function Profile() {
           <section aria-labelledby="ph-papers">
             <h2 id="ph-papers" className="text-sm font-bold text-[var(--c-ink-2)] mb-2">近い論文・外部DBへの入口</h2>
             <Card className="p-4">
-              <p className="text-sm text-[var(--c-ink-2)] mb-3">論文はタイトルより「何を測ろうとしているか」「どんな対象へ応用しているか」を見ると比較しやすくなります。</p>
+              <p className="text-sm text-[var(--c-ink-2)] mb-3">論文はタイトルより中身で比べると分かりやすくなります。「何を測ろうとしているか」「どんな対象へ応用しているか」を見てください。</p>
               <div className="flex flex-wrap gap-2">
                 {(markSummary.academicTerms.length ? markSummary.academicTerms : profile.candidateFields).slice(0, 5).map((term) => (
                   <a key={term} href={`https://cir.nii.ac.jp/all?q=${encodeURIComponent(term)}`} target="_blank" rel="noopener noreferrer"

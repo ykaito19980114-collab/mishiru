@@ -120,7 +120,7 @@ export default function Discover() {
     } catch {
       setHistory((items) => [...items, previous]);
       setIdx(previous.index + 1);
-      showToast("前のカードに戻れませんでした");
+      showToast("前のカードに戻れませんでした。もう一度お試しください");
     } finally {
       setUndoing(false);
     }
@@ -230,8 +230,8 @@ export default function Discover() {
           <TrustNote className="mt-3">AIがカードを準備しています（目安10秒）</TrustNote>
         </div>
       ) : error ? (
-        <EmptyState title="カードを読み込めませんでした" description="通信状況を確認して再試行してください。"
-          action={<Button variant="secondary" onClick={() => loadCards(source)}><RotateCcw className="w-4 h-4" />再試行</Button>} />
+        <EmptyState title="カードを読み込めませんでした" description="通信状況を確認して、もう一度お試しください。"
+          action={<Button variant="secondary" onClick={() => loadCards(source)}><RotateCcw className="w-4 h-4" />もう一度読み込む</Button>} />
       ) : !current ? (
         source.kind === "default" ? (
           <EmptyState

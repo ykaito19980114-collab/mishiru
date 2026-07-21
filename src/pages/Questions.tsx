@@ -65,7 +65,7 @@ export default function Questions() {
   const currentStep = step2 ? 3 : step1 ? 1 : 0;
 
   const generateStep1 = async () => {
-    if (!enoughEvidence) { setError("この素材だけでは、研究の問いを作るための情報が不足しています。気になった理由や、扱いたい違和感を追加してください。"); return; }
+    if (!enoughEvidence) { setError("問いを作るには、この素材だけでは情報が足りません。気になった理由や、扱いたい違和感を追加してください。"); return; }
     setBusy("step1"); setError(""); setStep2(null); setSelectedRq(null);
     try {
       const result = await api.generateQuestionStep1({ sourceMode: mode, freeInput, materials: chosenMaterials });

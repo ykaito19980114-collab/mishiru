@@ -8,9 +8,9 @@ import type { Lab } from "../../shared/types";
 import { Button, Card } from "../components/ui";
 
 const STEPS = [
-  { icon: Eye, title: "① 研究室サイト相談（無料）", body: "研究室の公式サイトや公開情報が学生からどう見えているか、不足している情報と改善案を無料でご提示します。" },
-  { icon: PenLine, title: "② 研究室ページ制作", body: "研究内容を学生に伝わる言葉へ翻訳。公開前に必ず内容をご確認いただきます。" },
-  { icon: RefreshCw, title: "③ 継続更新（任意）", body: "成果・学生テーマ・記事の更新を代行。研究に集中いただけます。" },
+  { icon: Eye, title: "① 研究室サイト相談（無料）", body: "公式サイトや公開情報が、学生からどう見えているかを診断。足りない情報と改善案を無料でお伝えします。" },
+  { icon: PenLine, title: "② 研究室ページ制作", body: "研究内容を学生に伝わる言葉へ翻訳。公開前に必ず内容を確認いただきます。" },
+  { icon: RefreshCw, title: "③ 継続更新（任意）", body: "成果・学生テーマ・記事の更新を代行。研究に集中できます。" },
 ];
 
 export default function ForLabs() {

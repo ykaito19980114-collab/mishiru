@@ -102,8 +102,8 @@ export function ErrorState({ onRetry, message }: { onRetry?: () => void; message
   return (
     <EmptyState
       title="うまく読み込めませんでした"
-      description={message || "通信状況をご確認のうえ、もう一度お試しください。"}
-      action={onRetry && <Button variant="secondary" onClick={onRetry}>再試行</Button>}
+      description={message || "通信状況を確認して、もう一度お試しください。"}
+      action={onRetry && <Button variant="secondary" onClick={onRetry}>もう一度読み込む</Button>}
     />
   );
 }

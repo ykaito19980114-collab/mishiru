@@ -327,7 +327,7 @@ function MarkingComposer({ onSave }: { onSave: (annotation: Annotation) => void 
       <div className="flex items-center gap-1.5 text-sm font-black text-[var(--c-primary)] mb-2">
         <Highlighter className="w-4 h-4" />気になる箇所をメモ
       </div>
-      <p className="text-xs text-[var(--c-ink-3)] mb-3">外部サイトや論文、研究室ページで気になった短い文章をコピー&ペーストできます。このページ内の情報ならリンクは空欄でOKです。</p>
+      <p className="text-xs text-[var(--c-ink-3)] mb-3">外部サイトや論文で気になった短い文章を、コピー＆ペーストで残せます。このページ内の情報なら、リンクは空欄のままで構いません。</p>
       <div className="grid sm:grid-cols-2 gap-2 mb-2">
         <input value={sourceTitle} onChange={(e) => setSourceTitle(e.target.value)} placeholder="研究室名 / 論文名 / ページタイトル"
           className="min-h-[42px] rounded-[12px] border border-[var(--c-border)] px-3 text-sm outline-none focus:border-[var(--c-primary)]" />
