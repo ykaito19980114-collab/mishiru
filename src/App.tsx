@@ -5,6 +5,7 @@ import { Layout } from "./components/Layout";
 import { flushQueue } from "./lib/session";
 import { AccountAccessProvider } from "./components/AccountAccess";
 
+const Landing = lazy(() => import("./pages/Landing"));
 const Discover = lazy(() => import("./pages/Discover"));
 const CardDetail = lazy(() => import("./pages/CardDetail"));
 const Saved = lazy(() => import("./pages/Saved"));
@@ -44,7 +45,7 @@ export default function App() {
         <AccountAccessProvider><Layout>
           <Suspense fallback={<RouteLoading />}>
             <Routes>
-              <Route path="/" element={<Navigate to="/search" replace />} />
+              <Route path="/" element={<Landing />} />
               <Route path="/search" element={<Labs />} />
               <Route path="/discover" element={<Discover />} />
               <Route path="/cards/:id" element={<CardDetail />} />

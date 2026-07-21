@@ -62,6 +62,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   },[]);
 
   if (isAdmin) return <>{children}</>; // 管理画面は別シェル
+  if (pathname === "/") return <>{children}</>; // LPトップ（SCR-LP・ADR-008）は自前のヘッダー/フッターを持つ
 
   return (
     <div className="mishiru-shell min-h-screen bg-[var(--c-bg)] text-[var(--c-ink)]">
