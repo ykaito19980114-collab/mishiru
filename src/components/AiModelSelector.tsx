@@ -16,7 +16,7 @@ export function AiModelSelector({ compact = false }: { compact?: boolean }) {
     <div className={`ai-model ${compact ? "ai-model--compact" : ""}`}>
       <label htmlFor={id}>
         <BrainCircuit aria-hidden="true" />
-        <span><strong>AIモデル</strong>{!compact && <small>{LOCKED_AI_MODEL ? "現在Terraに固定中" : "生成時に使用"}</small>}</span>
+        <span><strong>使うAI</strong>{!compact && <small>{LOCKED_AI_MODEL ? "現在はGPT · Terraを使用" : "問いや要約の作成に使います"}</small>}</span>
       </label>
       <select id={id} value={model} onChange={(event) => { const next = event.target.value as AiModelId; setModel(next); setAiModel(next); }}>
         <optgroup label="OpenAI">

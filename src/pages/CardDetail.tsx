@@ -36,14 +36,14 @@ export default function CardDetail() {
   const act = async (action: CardAction) => {
     if (!card) return;
     await api.act(card.id, action);
-    showToast(action === "save" ? "保存しました" : action === "like" ? "気になるリストに追加しました" : "記録しました");
+    showToast(action === "save" ? "保存したものに追加しました" : action === "like" ? "「気になる」に追加しました" : "「違うかも」として記録しました");
   };
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 pb-8">
       <Helmet><title>{card?.title || "カード"} ｜ MISHIRU</title></Helmet>
       <button onClick={() => navigate(-1)} className="flex items-center gap-1 text-sm font-bold text-[var(--c-ink-2)] min-h-[44px] mb-2">
-        <ArrowLeft className="w-4 h-4" />戻る
+        <ArrowLeft className="w-4 h-4" />問いのカードへ戻る
       </button>
 
       {state === "loading" && <div className="space-y-4"><Skeleton className="h-48" /><Skeleton className="h-32" /></div>}
@@ -55,7 +55,7 @@ export default function CardDetail() {
             <h1 className="text-2xl font-bold leading-snug mb-4">{card.title}</h1>
             <div className="space-y-4">
               <div>
-                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">やさしい説明</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">どんな研究？</h2>
                 <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{card.plain_summary}</p>
               </div>
               <div>
@@ -63,11 +63,11 @@ export default function CardDetail() {
                 <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{card.why_interesting}</p>
               </div>
               <div>
-                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">この研究で使う方法</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">どうやって調べる？</h2>
                 <div className="flex flex-wrap gap-1.5">{card.methods.map((m) => <Chip key={m}>{METHOD_LABEL[m] || m}</Chip>)}</div>
               </div>
               <div>
-                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">こんな人に向いています</h2>
+                <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1">こんな関心がある人へ</h2>
                 <p className="text-[15px] text-[var(--c-ink-2)]">{card.suited_for}</p>
               </div>
             </div>

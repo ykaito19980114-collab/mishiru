@@ -90,13 +90,13 @@ export default function Profile() {
 
   return (
     <div className="max-w-5xl mx-auto px-4 md:px-6 pt-4 pb-8">
-      <Helmet><title>みつめる ｜ MISHIRU</title></Helmet>
+      <Helmet><title>関心を整理 ｜ MISHIRU</title></Helmet>
       <div className="flex items-start justify-between gap-3 mb-4">
         <div>
-          <h1 className="text-2xl font-black">みつめる</h1>
-          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">気になったことから、近い問い・研究領域・研究室を整理します。</p>
+          <h1 className="text-2xl font-black">関心を整理</h1>
+          <p className="text-sm text-[var(--c-ink-2)]">これまでの反応から、近い問い・研究領域・研究室をまとめます。</p>
         </div>
-        <Link to="/saved" className="text-xs font-bold text-[var(--c-primary)] min-h-[36px] inline-flex items-center">ためるを見る<ChevronRight className="w-3 h-3" /></Link>
+        <Link to="/saved" className="text-xs font-bold text-[var(--c-primary)] min-h-[36px] inline-flex items-center">保存したものを見る<ChevronRight className="w-3 h-3" /></Link>
       </div>
 
       {state === "loading" && <div className="space-y-4"><Skeleton className="h-32" /><Skeleton className="h-40" /><Skeleton className="h-40" /></div>}
@@ -107,15 +107,15 @@ export default function Profile() {
           <Card className="p-5 bg-[var(--c-surface-blue)] border-transparent">
             <div className="flex items-center gap-2 mb-2">
               <Compass className="w-5 h-5 text-[var(--c-primary)]" />
-              <h2 className="font-bold text-[var(--c-primary)]">カードをあと {needed} 枚評価すると、候補研究室まで見えてきます</h2>
+              <h2 className="font-bold text-[var(--c-primary)]">あと{needed}枚選ぶと、関心に近い研究室を表示できます</h2>
             </div>
             <div className="progress-thin mb-2" role="progressbar" aria-valuenow={evaluated} aria-valuemin={0} aria-valuemax={threshold} aria-label="傾向生成までの進捗">
               <i style={{ width: `${Math.min(100, (evaluated / threshold) * 100)}%` }} />
             </div>
-            <p className="text-sm text-[var(--c-ink-2)]">「気になる／わからない／今は違う」で {threshold} 枚ほど反応すると、検索語や候補研究室がまとまります。メモを追加すると、より自分の問いに近づきます。</p>
+            <p className="text-sm text-[var(--c-ink-2)]">カードを「気になる／わからない／違うかも」で選んでください。反応が{threshold}枚ほど集まると、検索語と研究室の候補を整理します。</p>
             <div className="flex flex-wrap gap-2 mt-3">
-              <Link to="/discover"><Button>研究室カードにであう</Button></Link>
-              <Link to="/saved"><Button variant="secondary"><Highlighter className="w-4 h-4" />メモする</Button></Link>
+              <Link to="/discover"><Button>問いのカードを見る</Button></Link>
+              <Link to="/saved"><Button variant="secondary"><Highlighter className="w-4 h-4" />メモを追加</Button></Link>
             </div>
           </Card>
           <InterestCore
@@ -156,7 +156,7 @@ export default function Profile() {
                 </Link>
               ))}
             </div>
-            <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">自然な言葉を、研究室検索や論文検索で使える言葉に変換したものです。</p>
+            <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">普段の言葉を、研究室や論文を探しやすい言葉に置き換えています。</p>
           </section>
 
           {questionProjectData && <ProfileResourcePanel data={questionProjectData} />}
@@ -176,7 +176,7 @@ export default function Profile() {
           <section aria-labelledby="ph-marks">
             <h2 id="ph-marks" className="text-sm font-bold text-[var(--c-ink-2)] mb-2">根拠になった関心条件</h2>
             <Card className="p-4 space-y-3">
-              <TermLine title="反応している対象" items={markSummary.themes} empty="ためる画面や研究室ページでメモを追加すると、対象が整理されます。" />
+              <TermLine title="反応している対象" items={markSummary.themes} empty="保存したものや研究室ページでメモを追加すると、対象が整理されます。" />
               <TermLine title="使いたい研究方法" items={markSummary.methods} empty="測定・分析・観察・設計などの方法が入ります。" />
               <TermLine title="重視したい条件" items={markSummary.conditions} empty="応用先、研究室条件、社会実装先などが入ります。" />
               <TermLine title="まだわからないが気になる" items={markSummary.unclearThemes} empty="「わからない」を付けた箇所が入ります。" />
@@ -199,7 +199,7 @@ export default function Profile() {
           </section>
 
           <section aria-labelledby="ph-papers">
-            <h2 id="ph-papers" className="text-sm font-bold text-[var(--c-ink-2)] mb-2">近い論文・外部DBへの入口</h2>
+            <h2 id="ph-papers" className="text-sm font-bold text-[var(--c-ink-2)] mb-2">近い論文を探す</h2>
             <Card className="p-4">
               <p className="text-sm text-[var(--c-ink-2)] mb-3">論文はタイトルより中身で比べると分かりやすくなります。「何を測ろうとしているか」「どんな対象へ応用しているか」を見てください。</p>
               <div className="flex flex-wrap gap-2">
@@ -222,8 +222,8 @@ export default function Profile() {
                 <StatItem label="メモ" value={markSummary.count} />
             </div>
             <div className="grid grid-cols-2 gap-3 mt-3">
-              <Link to="/discover"><Button variant="secondary" className="w-full">であうを続ける</Button></Link>
-              <Link to="/saved"><Button className="w-full"><Highlighter className="w-4 h-4" />ためるを整理</Button></Link>
+              <Link to="/discover"><Button variant="secondary" className="w-full">問いのカードを続ける</Button></Link>
+              <Link to="/saved"><Button className="w-full"><Highlighter className="w-4 h-4" />保存したものを整理</Button></Link>
             </div>
           </section>
         </div>
@@ -358,8 +358,8 @@ function InterestCore({
       {editing ? (
         <div className="space-y-3">
           <LabeledArea label="今見えている問い・概要" value={draft.summary} onChange={(summary) => setDraft((d) => ({ ...d, summary }))} placeholder="例：人の感情や行動を測り、サービス体験や都市体験の設計につなげたい。" />
-          <LabeledArea label="特に強そうな問い（複数行OK）" value={draft.questions} onChange={(questions) => setDraft((d) => ({ ...d, questions }))} placeholder="例：人の感情や判断は、どんな行動データや体験から測れるのか？" />
-          <LabeledArea label="関心の傾向・条件（複数行OK）" value={draft.requirements} onChange={(requirements) => setDraft((d) => ({ ...d, requirements }))} placeholder="例：データ分析は使いたいが、純粋な機械学習研究だけではない。" />
+          <LabeledArea label="特に強そうな問い（1行に1つ）" value={draft.questions} onChange={(questions) => setDraft((d) => ({ ...d, questions }))} placeholder="例：人の感情や判断は、どんな行動データや体験から測れるのか？" />
+          <LabeledArea label="関心の傾向・条件（1行に1つ）" value={draft.requirements} onChange={(requirements) => setDraft((d) => ({ ...d, requirements }))} placeholder="例：データ分析は使いたいが、純粋な機械学習研究だけではない。" />
           <LabeledArea label="編集理由（任意）" value={draft.reason} onChange={(reason) => setDraft((d) => ({ ...d, reason }))} placeholder="例：心理学だけでなく、サービス設計にもつなげたい。" rows={2} />
           <div className="flex gap-2">
             <Button onClick={onSave}><Check className="w-4 h-4" />更新する</Button>

@@ -148,11 +148,10 @@ export default function Labs() {
 
   return (
     <div className="max-w-6xl mx-auto px-4 md:px-6 pt-4 md:pt-8 pb-12">
-      <Helmet><title>さがす ｜ MISHIRU</title></Helmet>
+      <Helmet><title>研究をさがす ｜ MISHIRU</title></Helmet>
 
       {/* 記憶の1点＝青い帯×彫刻ポスター。主アクションは検索箱ひとつ（ADR-007） */}
       <section className="hero-band" aria-labelledby="labs-hero-title">
-        <p className="hero-band__eyebrow">MISHIRU ｜ 研究テーマ発見ナビ</p>
         <h1 id="labs-hero-title">気になることから、研究を探す。</h1>
 
         {/* ボタンは常にフルカラー。未入力での送信は入力欄へフォーカスを返す（押せない見た目を作らない） */}
@@ -165,7 +164,7 @@ export default function Labs() {
               autoComplete="off" />
           </div>
           <button type="submit" className="hero-search__submit" disabled={aiState === "loading"} aria-disabled={aiState === "loading"}>
-            {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <>さがす</>}
+            {aiState === "loading" ? <Loader2 className="w-5 h-5 animate-spin" /> : <>研究をさがす</>}
           </button>
         </form>
         <div className="hero-examples" aria-label="入力例">
@@ -209,19 +208,19 @@ export default function Labs() {
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-primary)] mb-1">
-                <Sparkles className="w-4 h-4" />「{aiQuery}」をAIで解釈しました
+                <Sparkles className="w-4 h-4" />「{aiQuery}」を研究の言葉に置き換えました
               </div>
               {aiResult && (
                 <div className="flex flex-wrap gap-1.5 mt-1">
                   {aiResult.interpreted.fieldLabels.map((l, index) => <Chip key={`f:${l}:${index}`} tone="blue">{l}</Chip>)}
                   {aiResult.interpreted.keywords.slice(0, 5).map((k, index) => <Chip key={`k:${k}:${index}`}>{k}</Chip>)}
                   {aiResult.interpreted.fieldLabels.length === 0 && aiResult.interpreted.keywords.length === 0 &&
-                    <span className="text-xs text-[var(--c-ink-3)]">キーワードを特定できませんでした。言い換えてお試しください。</span>}
+                    <span className="text-xs text-[var(--c-ink-3)]">研究室を探す言葉に置き換えられませんでした。対象や場面を加えてください。</span>}
                 </div>
               )}
-              <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">{aiResult?.by === "llm" ? "AIが意図を解釈" : "キーワード辞書で解釈"}・{aiResult?.total ?? 0}件ヒット</p>
+              <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">{aiResult?.by === "llm" ? "AIで意味を整理" : "登録された言葉から検索"} ・ 研究室{aiResult?.total ?? 0}件</p>
             </div>
-            <button onClick={exitAi} className="shrink-0 flex items-center gap-1 text-xs font-bold text-[var(--c-ink-2)] min-h-[36px]"><X className="w-4 h-4" />解除</button>
+            <button onClick={exitAi} className="shrink-0 flex items-center gap-1 text-xs font-bold text-[var(--c-ink-2)] min-h-[36px]"><X className="w-4 h-4" />検索を終える</button>
           </div>
         </div>
       )}
@@ -270,8 +269,8 @@ export default function Labs() {
                 {aiResult.data.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} />)}
               </div>
             ) : (
-              <EmptyState title="近い研究室が見つかりませんでした" description="別の言い方（具体的なモノ・現象・課題）でお試しください。例：「電池」「まちづくり」「言葉とAI」"
-                action={<Button variant="secondary" onClick={exitAi}>フィルタ検索に戻る</Button>} />
+              <EmptyState title="近い研究室が見つかりませんでした" description="対象や場面を加えると見つかりやすくなります。例：『職場で本音を言いづらい』『まちの空き家を減らしたい』"
+                action={<Button variant="secondary" onClick={() => { exitAi(); searchInputRef.current?.focus(); }}>言い換えて探す</Button>} />
             )
           ) : (
             /* ===== フィルタモードの結果 ===== */
@@ -283,14 +282,14 @@ export default function Labs() {
               {state === "loading" && <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">{[0, 1, 2, 3].map((i) => <Skeleton key={i} className="h-32" />)}</div>}
               {state === "error" && <ErrorState onRetry={() => load(filters, sort, 1)} />}
               {state === "ok" && labs.length === 0 && (
-                <EmptyState title="該当する研究室が見つかりませんでした" description="条件を減らしてお試しください。"
-                  action={<Button variant="secondary" onClick={() => setFilters(EMPTY_FILTERS)}>条件をリセット</Button>} />
+                <EmptyState title="条件に合う研究室がありません" description="条件を1つ減らすと、候補が見つかりやすくなります。"
+                  action={<Button variant="secondary" onClick={() => setFilters(EMPTY_FILTERS)}>すべての研究室を見る</Button>} />
               )}
               {state === "ok" && labs.length > 0 && (
                 <>
                   <div className="grid grid-cols-1 lg:grid-cols-2 gap-2.5 min-w-0">{labs.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} reasons={l.matchReasons} />)}</div>
                   {labs.length < total && (
-                    <div className="mt-8 flex justify-center"><Button variant="secondary" onClick={loadMore} disabled={loadingMore}>{loadingMore ? "読み込み中…" : "さらに表示"}</Button></div>
+                    <div className="mt-8 flex justify-center"><Button variant="secondary" onClick={loadMore} disabled={loadingMore}>{loadingMore ? "研究室を読み込んでいます…" : "研究室をさらに見る"}</Button></div>
                   )}
                 </>
               )}
@@ -327,10 +326,10 @@ function ResourceExplorer({ mode, resources, query, onSearch }: { mode: Exclude<
     result?.journals || [];
   const title = mode === "fields" ? "研究領域から探す" : mode === "societies" ? "学会から探す" : "ジャーナルから探す";
   const description = mode === "fields"
-    ? "気になることを研究の言葉へ置き換える入口です。関連する研究室・学会・ジャーナルをあわせて見られます。"
+    ? "身近な疑問が、どの研究分野につながるかを見つけられます。"
     : mode === "societies"
-      ? "研究者が集まるコミュニティから、近い研究領域を見ます。"
-      : "論文が集まる場所から、どんな研究が掲載されやすいかを見ます。";
+      ? "同じテーマを研究する人が集まる学会を探せます。"
+      : "読みたい論文が載りそうな学術誌を探せます。";
   return (
     <section className="mb-8" aria-labelledby="resource-explorer-title">
       <div className="flex items-start justify-between gap-3 mb-3">
@@ -353,7 +352,7 @@ function ResourceExplorer({ mode, resources, query, onSearch }: { mode: Exclude<
       {!result ? (
         <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-3">{[0, 1, 2].map((i) => <Skeleton key={i} className="h-52" />)}</div>
       ) : items.length === 0 ? (
-        <EmptyState title="候補がまだ見つかっていません" description="検索窓に興味や疑問を入力すると、近い候補が表示されます。" />
+        <EmptyState title="候補が見つかりませんでした" description="言葉を短くするか、選んだ条件を減らしてください。" />
       ) : (
         <div className={`grid sm:grid-cols-2 gap-3 ${mode === "fields" ? "lg:grid-cols-3" : "lg:grid-cols-2"}`}>
           {mode === "fields" && (items as ResearchField[]).map((item, index) => <FieldResourceCard key={`${item.id}:${index}`} item={item} labs={result.labCandidates?.[item.id] || []} onSearch={onSearch} />)}
@@ -555,7 +554,7 @@ function ResourceSearchControls({ mode, query, onQuery, filters, onFilters, face
           <input value={query} onChange={(event) => onQuery(event.target.value)} placeholder={mode === "fields" ? "研究領域・問い・学会名で検索" : mode === "societies" ? "学会名・問い・会員規模・活動内容で検索" : "誌名・問い・発行主体・掲載条件で検索"} className="w-full min-h-[44px] rounded-[12px] border border-[var(--c-border)] pl-10 pr-3 text-sm outline-none focus:border-[var(--c-primary)]" />
         </div>
         {options.length>0&&<button type="button" className={`resource-filter-toggle ${filtersOpen?"active":""}`} onClick={()=>setFiltersOpen((value)=>!value)}><SlidersHorizontal/>{activeCount?`${activeCount}件の条件`:"絞り込み"}</button>}
-        <Button type="submit" className="min-h-[44px] px-4" disabled={loading}>{loading ? <Loader2 className="w-4 h-4 animate-spin" /> : <Search className="w-4 h-4" />}検索</Button>
+        <Button type="submit" className="min-h-[44px] px-4" disabled={loading}>{loading ? <><Loader2 className="w-4 h-4 animate-spin" />検索中…</> : <><Search className="w-4 h-4" />候補を見る</>}</Button>
       </div>
       {filtersOpen&&options.length>0&&<div className="resource-filter-panel">{options.map(([key,label,values])=><fieldset key={key}><legend>{label}</legend><div>{values.map((value)=><label key={value}><input type="checkbox" checked={splitValues(filters[key]||"").includes(value)} onChange={()=>toggleFilter(key,value)}/><span>{value}</span></label>)}</div></fieldset>)}<div className="resource-filter-actions"><button type="button" onClick={()=>onFilters({})}>すべて解除</button><Button type="submit" disabled={loading}>この条件で表示</Button></div></div>}
     </form>

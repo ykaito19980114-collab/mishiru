@@ -30,7 +30,7 @@ export default function Universities() {
     <div className="max-w-3xl mx-auto px-4 pt-4 pb-8">
       <Helmet><title>大学から探す ｜ MISHIRU</title></Helmet>
       <h1 className="text-xl font-black mb-1">大学から探す</h1>
-      <p className="text-sm text-[var(--c-ink-2)] mb-4 line-clamp-1">大学ごとに研究室数と専攻を見比べられます。</p>
+      <p className="text-sm text-[var(--c-ink-2)] mb-4">大学ごとに、研究室数と専攻を比べられます。</p>
 
       <div className="relative mb-3">
         <SearchIcon className="w-4 h-4 absolute left-3 top-1/2 -translate-y-1/2 text-[var(--c-ink-3)]" />
@@ -64,7 +64,7 @@ export default function Universities() {
               </div>
             </section>
           ))}
-          {filtered.length === 0 && <p className="text-center text-[var(--c-ink-3)] py-12">該当する大学がありません。</p>}
+          {filtered.length === 0 && <div className="text-center text-[var(--c-ink-3)] py-12"><p>条件に合う大学が見つかりませんでした。</p><button className="mt-3 font-bold text-[var(--c-primary)]" onClick={() => { setQ(""); setRegion(""); }}>絞り込みをすべて外す</button></div>}
         </div>
       )}
     </div>

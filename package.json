@@ -13,6 +13,7 @@
     "lint": "tsc --noEmit",
     "test:projects": "node --import tsx scripts/test-research-projects.ts",
     "test:question-quality": "node --import tsx scripts/test-question-craft-quality.ts",
+    "test:ux-writing": "node --import tsx scripts/test-ux-writing.ts",
     "test:acceptance": "node --import tsx scripts/test-acceptance.ts"
     ,"test:phase-b": "node --import tsx scripts/test-phase-b.ts"
   },

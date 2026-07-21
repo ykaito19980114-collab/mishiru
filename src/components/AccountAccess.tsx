@@ -156,15 +156,15 @@ export function AccountButton({ compact = false }: { compact?: boolean }) {
       <button type="button" className={`account-pill ${compact ? "account-pill--compact" : ""}`} onClick={() => open("account")} title="アカウントを管理">
         <UserRound aria-hidden="true" />
         <span>{compact ? "登録済み" : "アカウント"}</span>
-        <strong>管理</strong>
+        <strong>設定</strong>
       </button>
     );
   }
   return (
     <button type="button" className={`account-pill ${compact ? "account-pill--compact" : ""}`} onClick={() => open("signup")}>
       <LogIn aria-hidden="true" />
-      <span>{access.remaining ?? 0}回無料</span>
-      <strong>登録</strong>
+      <span>あと{access.remaining ?? 0}回</span>
+      <strong>無料登録</strong>
     </button>
   );
 }
@@ -191,7 +191,7 @@ export function AccountDataPanel() {
   return (
     <section className="account-data-panel" aria-labelledby="account-data-title">
       <div>
-        <p className="account-data-panel__eyebrow">ACCOUNT &amp; DATA</p>
+        <p className="account-data-panel__eyebrow">アカウント設定</p>
         <h2 id="account-data-title">アカウントとデータ</h2>
         <p>{access.authenticated ? `${email || "登録済みアカウント"}で利用中です。` : `アカウントなしで、あと${access.remaining ?? 0}回利用できます。`}</p>
       </div>
@@ -314,26 +314,26 @@ function AccountModal({
           <AccountOverview email={currentEmail} close={close} refresh={refresh} />
         ) : (
           <>
-            <p className="account-modal__eyebrow">FREE ACCOUNT</p>
-            <h2 id="account-title">{mode === "reset" ? "パスワードを再設定する" : "続きは、無料アカウントで。"}</h2>
-            <p>{mode === "reset" ? "登録したメールアドレスへ、再設定用のリンクを送ります。" : "これまでの保存や問いを引き継いで、このまま無料で続けられます。"}</p>
+            <p className="account-modal__eyebrow">無料アカウント</p>
+            <h2 id="account-title">{mode === "reset" ? "パスワードを再設定" : "無料で続きを使う"}</h2>
+            <p>{mode === "reset" ? "登録したメールアドレスへ、再設定リンクを送ります。" : "いままでの保存内容を引き継ぎ、回数を気にせず使えます。"}</p>
 
             {mode !== "reset" && (
               <div className="account-modal__benefits" aria-label="引き継がれる内容">
-                <span><CheckCircle2 aria-hidden="true" />保存・評価</span>
-                <span><CheckCircle2 aria-hidden="true" />問い</span>
-                <span><CheckCircle2 aria-hidden="true" />研究プロジェクト</span>
+                <span><CheckCircle2 aria-hidden="true" />保存したもの</span>
+                <span><CheckCircle2 aria-hidden="true" />つくった問い</span>
+                <span><CheckCircle2 aria-hidden="true" />研究プラン</span>
               </div>
             )}
 
             {mode !== "reset" && (
               <div className="account-modal__tabs" role="tablist" aria-label="登録またはログイン">
-                <button type="button" role="tab" aria-selected={mode === "signup"} className={mode === "signup" ? "active" : ""} onClick={() => switchMode("signup")}>はじめて登録</button>
+                <button type="button" role="tab" aria-selected={mode === "signup"} className={mode === "signup" ? "active" : ""} onClick={() => switchMode("signup")}>アカウント作成</button>
                 <button type="button" role="tab" aria-selected={mode === "login"} className={mode === "login" ? "active" : ""} onClick={() => switchMode("login")}>ログイン</button>
               </div>
             )}
 
-            {!authConfigured && <p className="account-modal__error">現在、アカウント機能の公開設定を準備中です。</p>}
+            {!authConfigured && <p className="account-modal__error">現在、アカウントを作成できません。時間をおいて、もう一度お試しください。</p>}
             <form onSubmit={submit}>
               <label>メールアドレス<input type="email" autoComplete="email" required autoFocus value={email} onChange={(event) => setEmail(event.target.value)} /></label>
               {mode !== "reset" && (
@@ -345,7 +345,7 @@ function AccountModal({
               {error && <p className="account-modal__error" role="alert">{error}</p>}
               {message && <p className="account-modal__message" role="status">{message}</p>}
               <button className="account-modal__submit" type="submit" disabled={busy || !authConfigured}>
-                {busy ? "処理しています…" : mode === "signup" ? "無料でアカウントを作る" : mode === "login" ? "ログインして続ける" : "再設定メールを送る"}
+                {busy ? (mode === "signup" ? "アカウントを作成中…" : mode === "login" ? "ログイン中…" : "メールを送信中…") : mode === "signup" ? "無料アカウントを作る" : mode === "login" ? "ログインする" : "再設定メールを送る"}
               </button>
             </form>
 
@@ -354,8 +354,8 @@ function AccountModal({
               {mode === "reset" && <button type="button" onClick={() => switchMode("login")}><LogIn aria-hidden="true" />ログインへ戻る</button>}
               {awaitingConfirmation && <button type="button" disabled={busy} onClick={resend}><Mail aria-hidden="true" />確認メールを再送</button>}
             </div>
-            <small>閲覧だけでは回数を消費しません。登録後も無料で利用できます。</small>
-            <button type="button" className="account-modal__browse" onClick={close}>閉じて、見るだけ続ける</button>
+            <small>見るだけなら回数は減りません。登録後も無料です。</small>
+            <button type="button" className="account-modal__browse" onClick={close}>登録せずに見る</button>
           </>
         )}
       </section>
@@ -391,10 +391,10 @@ function AccountOverview({ email, close, refresh }: { email: string | null; clos
 
   return (
     <>
-      <p className="account-modal__eyebrow">YOUR ACCOUNT</p>
+      <p className="account-modal__eyebrow">アカウント設定</p>
       <h2 id="account-title">アカウント</h2>
       <div className="account-overview__identity"><UserRound aria-hidden="true" /><div><span>ログイン中</span><strong>{email || "登録済みアカウント"}</strong></div></div>
-      <p>保存・評価・問い・研究プロジェクトは、このアカウントに引き継がれています。</p>
+      <p>保存したもの、反応、問い、研究プランは、このアカウントに引き継がれています。</p>
       <button type="button" className="account-secondary-button account-secondary-button--wide" disabled={busy} onClick={logout}><LogOut aria-hidden="true" />ログアウト</button>
       <div className="account-overview__danger">
         <h3>退会とデータ削除</h3>

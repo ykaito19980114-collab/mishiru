@@ -8,13 +8,13 @@ import { AiModelSelector } from "./AiModelSelector";
 import { AccountButton } from "./AccountAccess";
 
 const TABS = [
-  { to: "/search", label: "さがす", icon: Search },
-  { to: "/discover", label: "であう", icon: Sparkles },
-  { to: "/saved", label: "ためる", icon: Archive },
-  { to: "/reflect", label: "みつめる", icon: Radar },
-  { to: "/questions", label: "研究にしてみる", icon: Lightbulb },
-  { to: "/projects", label: "相談セット", icon: BookOpen },
-  { to: "/consult", label: "つたえる", icon: Send },
+  { to: "/search", label: "研究をさがす", icon: Search },
+  { to: "/discover", label: "問いを見る", icon: Sparkles },
+  { to: "/saved", label: "保存したもの", icon: Archive },
+  { to: "/reflect", label: "関心を整理", icon: Radar },
+  { to: "/questions", label: "問いをつくる", icon: Lightbulb },
+  { to: "/projects", label: "研究プラン", icon: BookOpen },
+  { to: "/consult", label: "相談先を探す", icon: Send },
 ];
 const MOBILE_TABS = TABS.slice(0, 4);
 
@@ -93,7 +93,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
               );
             })}
             <details className="sidebar-tools" open={TABS.slice(4).some((tab) => isActive(pathname, tab.to)) || undefined}>
-              <summary><span>研究の道具</span><ChevronDown aria-hidden="true"/></summary>
+              <summary><span>問いと相談</span><ChevronDown aria-hidden="true"/></summary>
               <div>
                 {TABS.slice(4).map((t) => { const Icon = t.icon; const active = isActive(pathname, t.to); return <Link key={t.to} to={t.to} aria-current={active ? "page" : undefined} className={`nav-pill ${active ? "nav-pill--active" : ""}`}><Icon className="w-4 h-4" aria-hidden="true"/><span>{t.label}</span>{active && <span className="nav-pill__marker" aria-hidden="true" />}</Link>; })}
               </div>
@@ -101,8 +101,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </nav>
           <div className="mishiru-sidebar__footer">
             <AccountButton />
-            <details className="sidebar-ai-settings"><summary>AIモデル設定<ChevronDown aria-hidden="true"/></summary><AiModelSelector /></details>
-            <span>自分の関心を見つめ、問いにし、相談できる研究のたたきへ。</span>
+            <details className="sidebar-ai-settings"><summary>使うAIを選ぶ<ChevronDown aria-hidden="true"/></summary><AiModelSelector /></details>
+            <span>気になることを見つけ、問いにし、相談の準備まで。</span>
           </div>
         </div>
       </aside>
@@ -119,13 +119,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
       {mobileMenuOpen && <div className="mobile-journey-backdrop" role="presentation" onMouseDown={() => setMobileMenuOpen(false)}>
         <section id="mobile-journey-menu" className="mobile-journey-menu" role="dialog" aria-modal="true" aria-labelledby="mobile-journey-title" onMouseDown={(event) => event.stopPropagation()}>
-          <div className="mobile-journey-menu__head"><div><p>RESEARCH JOURNEY</p><h2 id="mobile-journey-title">研究前夜の道具</h2></div><button type="button" aria-label="メニューを閉じる" onClick={() => setMobileMenuOpen(false)}><X aria-hidden="true" /></button></div>
+          <div className="mobile-journey-menu__head"><div><p>できること</p><h2 id="mobile-journey-title">MISHIRUのメニュー</h2></div><button type="button" aria-label="メニューを閉じる" onClick={() => setMobileMenuOpen(false)}><X aria-hidden="true" /></button></div>
           <nav aria-label="すべての機能" className="mobile-journey-menu__nav">
             {TABS.map((tab, index) => { const Icon = tab.icon; const active = isActive(pathname, tab.to); return <Link key={tab.to} to={tab.to} aria-current={active ? "page" : undefined}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><Icon aria-hidden="true"/><strong>{tab.label}</strong></Link>; })}
           </nav>
           <AiModelSelector compact />
           <AccountButton />
-          <p className="mobile-journey-menu__note">AIを使う操作では、選んだモデルとサーバー側のキーを使用します。キーがブラウザへ送られることはありません。</p>
+          <p className="mobile-journey-menu__note">AIを使うときは、ここで選んだモデルを使います。APIキーは端末へ送られません。</p>
         </section>
       </div>}
 

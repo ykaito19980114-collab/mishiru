@@ -38,4 +38,39 @@ assert.ok(sentoReferences.paper_ideas.reference.length && sentoReferences.paper_
 assert.ok(sentoReferences.academic_mapping.recommended_societies.length && sentoReferences.academic_mapping.recommended_journals.length, "学会・ジャーナル候補が0件にならない");
 assert.ok(sentoReferences.academic_mapping.recommended_societies.some((item) => /社会心理|コミュニケーション/.test(item.name)), "銭湯と会話の関心に近い学会候補を返す");
 
-console.log("Question craft quality tests: 20 passed");
+const startupInput: QuestionFreeInput = {
+  recentInterest: "共同創業者が同じビジョンを語っていても深層の価値観が異なる偽りの合意を、対立前に可視化したい。",
+  discomfort: "スタートアップの共同創業者間に潜在的なビジョン摩擦があっても、顕在化するまで気づけない。",
+  graduateTopic: "Design Science Researchにより予防的な関係システム介入プロトコルを設計する。",
+  reason: "第三の問いと共同実験へ接続したい。",
+  referenceInfo: "vision conflict; false consensus; entrepreneurial team; FEDS",
+  notes: "",
+};
+const startupRq: RQCandidate = {
+  type_name: "R11: デザイン・人工物研究",
+  rq_title: "考え方のずれを安全に話すための道具",
+  public_rq: "起業仲間が考え方のずれを安全に話し、新しい試みへつなげる道具はどう作るのか？",
+  academic_rq: "共同創業者ダイアドの潜在的ビジョン摩擦を可視化する介入プロトコルは、どの設計原則により形成的妥当性を満たすか？",
+  what_we_learn: "潜在的なビジョン摩擦を扱う設計原則",
+  methods: "設計科学研究",
+  expected_output: "介入プロトコル",
+  difficulty: "高",
+  is_recommended: true,
+};
+const startupReferences = enrichStep2References(emptyStep2, startupInput, startupRq, {
+  ...result,
+  decomposition: {
+    ...result.decomposition,
+    target: "共同創業者ダイアド",
+    phenomenon: "潜在的なビジョン摩擦と偽りの合意",
+    context: "初期スタートアップの共同意思決定",
+  },
+});
+const startupOutput = JSON.stringify(startupReferences);
+assert.doesNotMatch(startupOutput, /異種材料|接合強度|疲労寿命|破壊モード|Basic Research in Cardiology|Society for Research in Child Development/, "別テーマの固定文・候補を混入させない");
+assert.match(startupOutput, /共同創業|創業チーム|アントレプレナーシップ|組織行動/, "共同創業者の中心概念を検索・研究領域へ反映する");
+assert.ok(startupReferences.academic_mapping.recommended_societies.some((item) => /組織学会|Academy of Management/.test(item.name)), "組織・経営の学会を返す");
+assert.ok(startupReferences.academic_mapping.recommended_journals.some((item) => /Organization Science|Academy of Management|Strategic/.test(item.name)), "組織・起業研究のジャーナルを返す");
+assert.ok(startupReferences.academic_mapping.recommended_societies.every((item) => item.verificationLabel === "DB一致" && /^https?:\/\//.test(item.url)), "DB一致かつ参照URLのある学会だけを返す");
+
+console.log("Question craft quality tests: 25 passed");

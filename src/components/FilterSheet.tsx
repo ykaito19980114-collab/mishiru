@@ -149,8 +149,8 @@ export function FilterSheet({ open, onClose, filters, onChange, onApply }: {
             </div>
             <div className="flex-1 overflow-y-auto scrollbar-thin px-4 py-4">{body}</div>
             <div className="p-4 border-t border-[var(--c-border)] safe-bottom flex gap-2">
-              <Button variant="ghost" onClick={() => onChange(EMPTY_FILTERS)} className="flex-1">クリア</Button>
-              <Button onClick={() => { onApply(); onClose(); }} className="flex-[2]">結果を見る</Button>
+              <Button variant="ghost" onClick={() => onChange(EMPTY_FILTERS)} className="flex-1">条件をすべて外す</Button>
+              <Button onClick={() => { onApply(); onClose(); }} className="flex-[2]">この条件で研究室を見る</Button>
             </div>
           </div>
         </div>

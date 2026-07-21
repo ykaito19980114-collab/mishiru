@@ -159,19 +159,19 @@ export default function Saved() {
     saveAnnotation(annotation);
     refreshAnnotations();
     setView("memos");
-    showToast("メモに保存しました");
+    showToast("メモを保存しました");
   };
 
   return (
     <div className="max-w-3xl mx-auto px-4 pt-4 pb-8">
-      <Helmet><title>ためる ｜ MISHIRU</title></Helmet>
+      <Helmet><title>保存したもの ｜ MISHIRU</title></Helmet>
       <div className="flex items-start justify-between gap-3 mb-4">
         <div>
-          <h1 className="text-xl font-black mb-1">ためる</h1>
-          <p className="text-sm text-[var(--c-ink-2)] line-clamp-1">気になった研究室・問い・メモを、ひとつの一覧で見返せます。</p>
+          <h1 className="text-xl font-black mb-1">保存したもの</h1>
+          <p className="text-sm text-[var(--c-ink-2)]">研究室・問い・メモを、まとめて見返せます。</p>
         </div>
         <Link to="/reflect" className="shrink-0">
-          <Button variant="secondary"><Sparkles className="w-4 h-4" />みつめる</Button>
+          <Button variant="secondary"><Sparkles className="w-4 h-4" />関心を整理</Button>
         </Link>
       </div>
 
@@ -180,20 +180,20 @@ export default function Saved() {
       {state === "ok" && isEmpty && (
         <EmptyState
           icon={<Sparkles className="w-10 h-10" />}
-          title="まだためた材料がありません"
-          description="であう画面やさがす画面で「気になる」を押すか、気になった文章をメモすると、ここでまとめて見返せます。"
-          action={<Link to="/discover"><Button>研究室カードにであう</Button></Link>}
+          title="まだ保存したものはありません"
+          description="問いのカードで「気になる」や「保存」を選ぶと、ここに追加されます。"
+          action={<Link to="/discover"><Button>問いのカードを見る</Button></Link>}
         />
       )}
       {state === "ok" && !isEmpty && (
         <div className="space-y-6 mt-5">
           <section>
-            <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">保管リスト</h2>
+            <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">種類で絞る</h2>
             <div className="mb-2 inline-flex rounded-full bg-white border border-[var(--c-border)] p-1">
               {([
                 ["all", "すべて"],
                 ["like", "気になる"],
-                ["save", "保存する"],
+                ["save", "保存済み"],
               ] as [StockFilter, string][]).map(([id, label]) => (
                 <button key={id} onClick={() => setStockFilter(id)}
                   className={`min-h-[30px] px-3 rounded-full text-[12px] font-black ${stockFilter === id ? "bg-[var(--c-primary)] text-white" : "text-[var(--c-ink-2)]"}`}>
@@ -216,7 +216,7 @@ export default function Saved() {
           <section>
             <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">フォルダ</h2>
             <div className="flex gap-2 overflow-x-auto pb-1">
-              {folders.length === 0 && <p className="text-xs text-[var(--c-ink-3)]">研究室カード下のフォルダ選択から、作成したフォルダへ移動できます。</p>}
+              {folders.length === 0 && <p className="text-xs text-[var(--c-ink-3)]">よく見返す研究室を、フォルダで分けられます。</p>}
               {folders.map((folder) => (
                 <div key={folder.id} className={`shrink-0 inline-flex items-center rounded-full border overflow-hidden ${view === "folder" && activeFolder === folder.id ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-white border-[var(--c-border)] text-[var(--c-ink-2)]"}`}>
                   {editingFolder === folder.id ? (
@@ -247,7 +247,7 @@ export default function Saved() {
                 placeholder="例：第一候補、先生に聞く"
                 className="flex-1 min-h-[40px] px-3 rounded-[10px] border border-[var(--c-border)] outline-none focus:border-[var(--c-primary)] text-sm"
               />
-              <Button onClick={createFolder} disabled={!folderName.trim()}><FolderPlus className="w-4 h-4" />追加</Button>
+              <Button onClick={createFolder} disabled={!folderName.trim()}><FolderPlus className="w-4 h-4" />フォルダを作る</Button>
             </div>
           </Card>
 
@@ -270,7 +270,7 @@ export default function Saved() {
             <section>
               <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">{folders.find((f) => f.id === activeFolder)?.name || "フォルダ"}（{folderLabs.length}）</h2>
               {folderLabs.length > 0 ? <LabList labs={folderLabs} folders={folders} onAssign={assignFolder} activeFolder={activeFolder} onRemove={removeFromFolder} notes={notes} onNote={persistNote} /> : (
-                <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">このフォルダはまだ空です。研究室カードの下にあるフォルダ選択から追加できます。</p></Card>
+                <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">このフォルダは空です。保存した研究室の「フォルダ」から追加できます。</p></Card>
               )}
             </section>
           )}
@@ -284,12 +284,12 @@ export default function Saved() {
           )}
           {deep.length > 0 && (view === "papers" || view === "all") && (
             <section>
-              <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">詳しく見たテーマカード（{deep.length}）</h2>
+              <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">内容を見たテーマカード（{deep.length}）</h2>
               <div className="space-y-3">{deep.map((c) => <SavedRow key={c.id} card={c} />)}</div>
             </section>
           )}
           <details className="rounded-[var(--radius-card)] border border-[var(--c-border)] bg-white p-4">
-            <summary className="cursor-pointer text-sm font-black text-[var(--c-primary)]">外部サイトや論文からメモを追加する</summary>
+            <summary className="cursor-pointer text-sm font-black text-[var(--c-primary)]">サイトや論文の文章をメモする</summary>
             <div className="mt-3"><MarkingComposer onSave={addExternalMark} /></div>
           </details>
         </div>
@@ -310,7 +310,7 @@ function MarkingComposer({ onSave }: { onSave: (annotation: Annotation) => void 
     if (!canSave) return;
     onSave(makeAnnotation({
       sourceType: sourceUrl.trim() ? "external_url" : "research_theme_card",
-      sourceTitle: sourceTitle.trim() || "ためる上のメモ",
+      sourceTitle: sourceTitle.trim() || "MISHIRUのメモ",
       sourceUrl: sourceUrl.trim(),
       selectedText,
       label,
@@ -327,7 +327,7 @@ function MarkingComposer({ onSave }: { onSave: (annotation: Annotation) => void 
       <div className="flex items-center gap-1.5 text-sm font-black text-[var(--c-primary)] mb-2">
         <Highlighter className="w-4 h-4" />気になる箇所をメモ
       </div>
-      <p className="text-xs text-[var(--c-ink-3)] mb-3">外部サイトや論文で気になった短い文章を、コピー＆ペーストで残せます。このページ内の情報なら、リンクは空欄のままで構いません。</p>
+      <p className="text-xs text-[var(--c-ink-3)] mb-3">気になった文章を貼り付けてください。元のページを残したいときは、リンクも入力できます。</p>
       <div className="grid sm:grid-cols-2 gap-2 mb-2">
         <input value={sourceTitle} onChange={(e) => setSourceTitle(e.target.value)} placeholder="研究室名 / 論文名 / ページタイトル"
           className="min-h-[42px] rounded-[12px] border border-[var(--c-border)] px-3 text-sm outline-none focus:border-[var(--c-primary)]" />
@@ -366,7 +366,7 @@ function LabSection({ title, description, labs, folders, onAssign, notes, onNote
       <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">{title}</h2>
       {description && <p className="text-xs text-[var(--c-ink-3)] mb-3">{description}</p>}
       {labs.length > 0 ? <LabList labs={labs} folders={folders} onAssign={onAssign} notes={notes} onNote={onNote} /> : (
-        <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">まだありません。</p></Card>
+        <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">この条件で保存した研究室はありません。問いのカードや研究室ページで「保存する」を選ぶと、ここに追加されます。</p></Card>
       )}
     </section>
   );
@@ -388,7 +388,7 @@ function LabList({ labs, folders, onAssign, activeFolder, onRemove, notes, onNot
                 className="min-h-[36px] rounded-[8px] border border-[var(--c-border)] px-2 bg-white"
                 aria-label={`${lab.name}をフォルダへ追加`}
               >
-                <option value="">選択</option>
+                <option value="">追加先を選ぶ</option>
                 {folders.map((folder) => <option key={folder.id} value={folder.id}>{folder.name}</option>)}
               </select>
               {activeFolder && activeFolder !== "all" && onRemove && (
@@ -407,7 +407,7 @@ function ResourceSection({ title, items, notes, onNote }: { title: string; items
     <section>
       <h2 className="text-sm font-black text-[var(--c-ink-2)] mb-2">{title}</h2>
       {items.length === 0 ? (
-        <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">まだありません。</p></Card>
+        <Card className="p-4"><p className="text-sm text-[var(--c-ink-2)]">この種類では、まだ保存したものがありません。</p></Card>
       ) : (
         <div className="space-y-3">
           {items.map((entry) => <ResourceStockRow key={`${entry.kind}:${resourceId(entry.item)}`} entry={entry} notes={notes} onNote={onNote} />)}
@@ -424,7 +424,7 @@ function ResourceStockRow({ entry, notes, onNote }: { entry: StockResource; note
   const kindLabel = entry.kind === "field" ? "研究領域" : entry.kind === "society" ? "学会" : "ジャーナル";
   const description = "definition" in entry.item
     ? entry.item.beginnerDescription || entry.item.researchPurpose || entry.item.definition || entry.item.coordinate || "説明データを整備中です。"
-    : entry.item.beginnerDescription || `${entry.item.disciplines?.slice(0, 3).join("・") || entry.item.relatedFields?.slice(0, 3).join("・") || "関連データ確認中"}に近い候補です。`;
+    : entry.item.beginnerDescription || `${entry.item.disciplines?.slice(0, 3).join("・") || entry.item.relatedFields?.slice(0, 3).join("・") || "説明を準備中"}に近い候補です。`;
   const url = "url" in entry.item ? entry.item.url : "";
   return (
     <Card className="p-4">
@@ -436,7 +436,7 @@ function ResourceStockRow({ entry, notes, onNote }: { entry: StockResource; note
           <h3 className="text-[15px] font-black text-[var(--c-primary)] leading-snug">{title}</h3>
           <p className="text-sm text-[var(--c-ink-2)] mt-1 line-clamp-2">{description}</p>
         </div>
-        {url && <a href={url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-[12px] font-bold text-[var(--c-primary)] min-h-[32px] inline-flex items-center">公式</a>}
+        {url && <a href={url} target="_blank" rel="noopener noreferrer" className="shrink-0 text-[12px] font-bold text-[var(--c-primary)] min-h-[32px] inline-flex items-center">公式ページ</a>}
       </div>
       <ItemNote itemKey={key} value={notes[key] || ""} onChange={onNote} />
     </Card>
@@ -532,13 +532,13 @@ function MarkingRow({ item }: { item: Annotation }) {
           <span className="text-[11px] text-[var(--c-ink-3)]">{date}</span>
         </div>
         {sourceUrl && (
-          <LinkLike href={sourceUrl}>参照リンク</LinkLike>
+          <LinkLike href={sourceUrl}>元のページ</LinkLike>
         )}
       </div>
       <blockquote className="text-[15px] font-bold leading-relaxed text-[var(--c-ink)] border-l-3 border-[var(--c-primary)] pl-3 line-clamp-2">
         {item.selectedText}
       </blockquote>
-      {item.note && <p className="mt-2 text-[13px] text-[var(--c-ink-2)] line-clamp-1"><span className="font-black text-[var(--c-primary)]">理由メモ: </span>{item.note}</p>}
+      {item.note && <p className="mt-2 text-[13px] text-[var(--c-ink-2)] line-clamp-1"><span className="font-black text-[var(--c-primary)]">気になった理由： </span>{item.note}</p>}
       <div className="mt-2 min-w-0">
         <h3 className="text-[12px] font-black text-[var(--c-ink-3)] truncate">{item.sourceTitle}</h3>
         {item.sourceName && <p className="text-[11px] text-[var(--c-ink-3)] truncate">{item.sourceName}</p>}

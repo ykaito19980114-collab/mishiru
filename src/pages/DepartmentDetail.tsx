@@ -30,12 +30,12 @@ export default function DepartmentDetail() {
         <>
           <p className="text-sm text-[var(--c-ink-3)]">{data.university}</p>
           <h1 className="text-xl font-black mb-1">{data.department}</h1>
-          <p className="text-sm text-[var(--c-ink-2)] mb-4 line-clamp-1">{data.labs.length}研究室を、分野と研究テーマから見比べられます。</p>
+          <p className="text-sm text-[var(--c-ink-2)] mb-4">{data.labs.length}の研究室を、分野と研究テーマから比べられます。</p>
           <div className="grid sm:grid-cols-2 gap-3">
             {data.labs.map((l) => <LabMiniCard key={l.id} lab={l} />)}
           </div>
           <div className="mt-6 bg-[var(--c-surface)] rounded-[var(--radius-panel)] p-4 text-sm text-[var(--c-ink-2)]">
-            この専攻の研究室ページをまとめて整備・比較しやすくする「研究室コンパス」の導入は、<Link to="/for-labs" className="text-[var(--c-primary)] font-bold underline">運営者向けページ</Link>からご相談ください。
+            この専攻の研究室情報を、学生が比べやすい形へ整えませんか。<Link to="/for-labs" className="text-[var(--c-primary)] font-bold underline">掲載について相談する</Link>
           </div>
         </>
       )}
