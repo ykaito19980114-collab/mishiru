@@ -91,7 +91,7 @@ export default function LabDetail() {
   const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室公式サイト" : "");
   const captureSelection = () => {
     const text = window.getSelection()?.toString().trim() || "";
-    if (text) setMarkText(text.slice(0, 220));
+    if (text) setMarkText(text);
     else showToast("ページ内の気になる文章を選択してください");
   };
   const saveMark = () => {
