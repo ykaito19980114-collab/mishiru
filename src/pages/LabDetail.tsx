@@ -90,7 +90,7 @@ export default function LabDetail() {
   const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室公式サイト" : "");
   const captureSelection = () => {
     const text = window.getSelection()?.toString().trim() || "";
-    if (text) setMarkText(text.slice(0, 220));
+    if (text) setMarkText(text);
     else showToast("ページ内の気になる文章を選択してください");
   };
   const saveMark = () => {
@@ -329,7 +329,7 @@ export default function LabDetail() {
       {/* 研究室関係者向け */}
       <div className="bg-[var(--c-primary)] text-white rounded-[var(--radius-card)] p-5">
         <h3 className="font-bold text-lg mb-1">この研究室の関係者の方へ</h3>
-        <p className="text-sm text-white/80 mb-4 leading-relaxed">学生テーマ例・日常・指導体制・進路など、確認済みの情報を掲載しませんか。整備・更新を運営が代行します。まずは無料の「研究室サイト相談」から。</p>
+        <p className="text-sm text-white/80 mb-4 leading-relaxed">確認済みの情報を掲載しませんか。学生テーマ例・日常・指導体制・進路など、整備と更新は運営が代行します。まずは無料の「研究室サイト相談」から。</p>
         <Link to={`/for-labs?lab_id=${lab.id}`} className="inline-block bg-white text-[var(--c-primary)] font-bold px-5 py-3 rounded-[10px] text-sm">研究室サイトについて相談する</Link>
       </div>
 
@@ -337,7 +337,7 @@ export default function LabDetail() {
         <div className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-primary)] mb-2">
           <Highlighter className="w-4 h-4" />気になる箇所をメモ
         </div>
-        <p className="text-xs text-[var(--c-ink-3)] mb-3">ページ内で気になった文章を選択して「選択文を入れる」ボタンを押す、もしくは外部サイトの気になった文章をコピー&ペーストし、「いい／わからない／違う／大事」とメモを残すと、関心プロフィールの材料になります。</p>
+        <p className="text-xs text-[var(--c-ink-3)] mb-3">メモは「みつめる」の材料になります。このページの文章は、選んでから「選択文を入れる」。外部サイトの文章は、コピー＆ペーストで追加できます。</p>
         <div className="flex flex-wrap gap-2 mb-3">
           {[["good", "いい"],["unclear", "わからない"],["not_fit", "違う"],["important", "大事"]].map(([id, label]) => (
             <button key={id} onClick={() => setMarkLabel(id as MarkLabel)} className={`min-h-[36px] px-3 rounded-full border text-[13px] font-bold ${markLabel === id ? "bg-[var(--c-primary)] text-white border-transparent" : "bg-white text-[var(--c-ink-2)] border-[var(--c-border)]"}`}>{label}</button>

@@ -44,7 +44,7 @@ export function FloatingMemoButton() {
   const captureSelection = React.useCallback(() => {
     const text = window.getSelection()?.toString().trim() || "";
     if (text) {
-      setSelectedText(text.slice(0, 500));
+      setSelectedText(text);
       showToast("選択文を入れました");
     } else {
       showToast("選択中の文章がありません");
@@ -54,7 +54,7 @@ export function FloatingMemoButton() {
   const openPanel = () => {
     setOpen(true);
     const text = window.getSelection()?.toString().trim() || "";
-    if (text) setSelectedText(text.slice(0, 500));
+    if (text) setSelectedText(text);
   };
 
   const reset = () => {

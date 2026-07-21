@@ -120,9 +120,9 @@ function migrateAnnotation(raw: any): Annotation | null {
     sourceTitle: raw.sourceTitle || "未設定のソース",
     sourceUrl: raw.sourceUrl || "",
     sourceName: raw.sourceName || raw.sourceTitle || "",
-    selectedText: String(raw.selectedText).slice(0, 500),
+    selectedText: String(raw.selectedText),
     label: raw.label,
-    note: String(raw.note || "").slice(0, 500),
+    note: String(raw.note || ""),
     ...analysis,
     createdAt: raw.createdAt || new Date().toISOString(),
     keywords: raw.keywords,
@@ -152,8 +152,8 @@ export function saveAnnotation(annotation: Annotation) {
 }
 
 export function makeAnnotation(input: AnnotationInput): Annotation {
-  const selectedText = input.selectedText.trim().slice(0, 500);
-  const note = input.note.trim().slice(0, 500);
+  const selectedText = input.selectedText.trim();
+  const note = input.note.trim();
   const analysis = analyzeText(`${input.sourceTitle} ${selectedText} ${note}`, input.seedKeywords || []);
   return {
     id: nowId(),
