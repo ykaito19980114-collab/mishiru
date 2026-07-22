@@ -80,7 +80,7 @@ async function notifyClaim(claim: Claim) {
         method: "POST",
         headers: { Authorization: `Bearer ${process.env.RESEND_API_KEY}`, "Content-Type": "application/json" },
         body: JSON.stringify({
-          from: "MISHIRU <noreply@mishiru.example>", to,
+          from: "MISHIRU <noreply@mishiru-lab.com>", to,
           subject: `[Claim] ${claim.type} - ${claim.labName || claim.labId || "対象不明"}`,
           text: `受付ID: ${claim.id}\n種別: ${claim.type}\n研究室: ${claim.labName}\n申請者: ${claim.name} (${claim.affiliation})\nメール: ${claim.email}\n内容: ${claim.message}`,
         }),
