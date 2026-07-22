@@ -1,8 +1,8 @@
 // MISHIRU Service Worker
 // 静的アセット: stale-while-revalidate。個人データを含み得るAPIレスポンスは保存しない。
 // POST/PATCH/DELETE はキャッシュ対象外。
-const CACHE = "mishiru-v2";
-const CORE = ["/manifest.webmanifest", "/icon.svg"];
+const CACHE = "mishiru-v3";
+const CORE = ["/", "/manifest.webmanifest", "/icon.svg"];
 
 self.addEventListener("install", (e) => {
   e.waitUntil(caches.open(CACHE).then((c) => c.addAll(CORE)).then(() => self.skipWaiting()));

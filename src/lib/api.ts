@@ -246,11 +246,17 @@ export const api = {
 
   submitClaim: (body: Record<string, unknown>) => post<{ ok: boolean; id: string }>("/api/claims", body),
 
-  deleteMe: () => fetch(`/api/me?sessionId=${getSessionId()}`, { method: "DELETE" }).then((r) => r.json()),
+  deleteMe: async () => {
+    const res = await fetch(`/api/me?sessionId=${encodeURIComponent(getSessionId())}`, { method: "DELETE", headers: await headers() });
+    await ensure(res);
+    return res.json() as Promise<{ ok: boolean }>;
+  },
 
-  logEvent: (type: string, payload: Record<string, string | number | boolean> = {}) =>
-    fetch("/api/events", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ events: [{ type, sessionId: getSessionId(), payload }] }),
-    }).catch(() => {}),
+  logEvent: async (type: string, payload: Record<string, string | number | boolean> = {}) => {
+    const sessionId = getSessionId();
+    return fetch("/api/events", {
+      method: "POST", headers: await headers(true),
+      body: JSON.stringify({ sessionId, events: [{ type, payload }] }),
+    }).catch(() => undefined);
+  },
 };

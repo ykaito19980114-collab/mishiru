@@ -8,6 +8,8 @@ import type {
 } from "../shared/research-project";
 import { ACTIVE_DATASET } from "./research-project-repository";
 import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
+import { persistConsultationFile } from "./consultation-file-storage";
+import { readProjectCover } from "./project-cover-storage";
 
 const TEMPLATE_VERSION = "mishiru-consultation-v1";
 const RUNTIME_DIR = path.join(process.cwd(), "data", "runtime");
@@ -112,8 +114,10 @@ export class ConsultationExportService {
       const filename = uniqueFilename(project.displayTitle, version.versionNumber, format, ext);
       const filePath = path.join(OUTPUT_DIR, filename); outputPath = filePath;
       const fontInfo = format === "pdf" ? findJapaneseFont() : null;
-      const pageCount = format === "pdf" ? await generatePdf(project, version.versionName, draft, filePath, fontInfo!) : await generatePptx(project, format, draft, filePath);
-      return this.assets.update(id, { status: "ready", filePath, pageCount, fontName: fontInfo?.name || asset.fontName, generatedAt: new Date().toISOString() })!;
+      const coverImage = format === "pdf" && project.cover.image?.storagePath ? await readProjectCover(project.cover.image.storagePath) : null;
+      const pageCount = format === "pdf" ? await generatePdf(project, version.versionName, draft, filePath, fontInfo!, coverImage) : await generatePptx(project, format, draft, filePath);
+      const persistedPath = await persistConsultationFile(filePath, project.sessionId, project.id, id);
+      return this.assets.update(id, { status: "ready", filePath: persistedPath, pageCount, fontName: fontInfo?.name || asset.fontName, generatedAt: new Date().toISOString() })!;
     } catch (error) {
       try { if (outputPath && fs.existsSync(outputPath)) fs.unlinkSync(outputPath); } catch { /* do not mask original error */ }
       this.assets.update(id, { status: "error", error: error instanceof Error ? error.message : "相談資料を作れませんでした。もう一度お試しください。" });
@@ -136,12 +140,12 @@ function findJapaneseFont(): { path: string; name: string; collectionName: strin
   throw new Error("日本語PDFフォントが見つかりません。OSへ日本語フォントを追加して再試行してください。");
 }
 
-async function generatePdf(project: ResearchProject, versionName: string, draft: ConsultationDocumentDraft, filePath: string, fontInfo: { path:string; name:string; collectionName:string }): Promise<number> {
+async function generatePdf(project: ResearchProject, versionName: string, draft: ConsultationDocumentDraft, filePath: string, fontInfo: { path:string; name:string; collectionName:string }, coverImage: Buffer | null): Promise<number> {
   return new Promise((resolve, reject) => {
     const fontPath = fontInfo.path; const doc = new PDFDocument({ size: "A4", margins: { top: 55, bottom: 54, left: 56, right: 56 }, bufferPages: true, info: { Title: project.displayTitle, Author: "MISHIRU" } });
     const stream = fs.createWriteStream(filePath); stream.on("error", reject); doc.on("error", reject); doc.pipe(stream);
     try { fontInfo.collectionName ? doc.font(fontPath, fontInfo.collectionName) : doc.font(fontPath); } catch (error) { reject(error); return; }
-    if (draft.options.includeCover) drawPdfCover(doc, project, versionName);
+    if (draft.options.includeCover) drawPdfCover(doc, project, versionName, coverImage);
     if (draft.options.includeCover) doc.addPage();
     doc.fillColor("#141619").fontSize(22).text(draft.title, { lineGap: 3 });
     if (draft.subtitle) doc.moveDown(.35).fillColor("#383d46").fontSize(11).text(draft.subtitle, { lineGap: 3 });
@@ -159,10 +163,10 @@ async function generatePdf(project: ResearchProject, versionName: string, draft:
   });
 }
 
-function drawPdfCover(doc: PDFKit.PDFDocument, project: ResearchProject, versionName: string) {
+function drawPdfCover(doc: PDFKit.PDFDocument, project: ResearchProject, versionName: string, coverImage: Buffer | null) {
   const cover = project.cover; const bg = cover.backgroundType === "gradient" ? cover.gradientStart : cover.solidColor;
   doc.save().rect(0, 0, doc.page.width, doc.page.height).fill(bg || "#123ef5");
-  if (cover.backgroundType === "image" && cover.image) { try { const source = cover.image.storagePath && fs.existsSync(cover.image.storagePath) ? cover.image.storagePath : Buffer.from(cover.image.dataUrl.split(",")[1], "base64"); doc.image(source, 0, 0, { fit: [doc.page.width, doc.page.height], align: "center", valign: "center" }); doc.fillColor(cover.image.overlayColor).opacity(cover.image.overlayOpacity).rect(0, 0, doc.page.width, doc.page.height).fill().opacity(1); } catch { /* keep color cover */ } }
+  if (cover.backgroundType === "image" && cover.image) { try { const inline = cover.image.dataUrl.startsWith("data:") ? Buffer.from(cover.image.dataUrl.split(",")[1], "base64") : null; const source = coverImage || inline; if (source) doc.image(source, 0, 0, { fit: [doc.page.width, doc.page.height], align: "center", valign: "center" }); doc.fillColor(cover.image.overlayColor).opacity(cover.image.overlayOpacity).rect(0, 0, doc.page.width, doc.page.height).fill().opacity(1); } catch { /* keep color cover */ } }
   doc.fillColor(cover.title.color || "#ffffff").fontSize(30).text(project.displayTitle, 58, 165, { width: doc.page.width - 116, lineGap: 5 });
   doc.moveDown(.8).fillColor(cover.subtitle.color || "#ffffff").fontSize(13).text(project.subtitle, { width: doc.page.width - 116, lineGap: 4 });
   doc.fillColor(cover.metadata.color || "#dce51b").fontSize(10).text(`MISHIRU RESEARCH PROJECT\n${versionName}`, 58, doc.page.height - 105, { width: doc.page.width - 116 }); doc.restore();

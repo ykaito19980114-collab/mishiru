@@ -2,7 +2,6 @@
 // 学生系は匿名（sessionId）、管理系は x-admin-token。外部依存ゼロでも全AC成立（ADR-002）。
 import express from "express";
 import path from "path";
-import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 import { store } from "./server/store";
@@ -26,6 +25,9 @@ import { stsmpMaterialMeta } from "./server/stsmp";
 import { accessContextMiddleware, forgetLocalUser, guestUsage, GUEST_ACTION_LIMIT, requireValueAction } from "./server/access";
 import { discardSessionState, sessionStateMiddleware } from "./server/session-state";
 import { deleteMishiruIdentity } from "./server/supabase";
+import { apiErrorHandler, rateLimit, rejectOversizedJson, requestContextMiddleware } from "./server/request-security";
+import { readProjectCover, saveProjectCover } from "./server/project-cover-storage";
+import { consultationFileName, readConsultationFile, removeConsultationFile } from "./server/consultation-file-storage";
 import type {
   CardActionRecord, Claim, Lead, Report, Article, AppEvent, ClaimType,
   CardAction, DiscoveryActionRecord, DiscoveryCard, ResearchField, ResearchSociety, ResearchJournal, QuestionProject,
@@ -50,6 +52,18 @@ const interestAnalysisRepository = new InterestAnalysisRepository();
 const interestAnalysisService = new InterestAnalysisService(interestAnalysisRepository);
 
 function isValidEmail(s: string) { return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(s); }
+const boundedText = (value: unknown, max: number) => String(value || "").trim().slice(0, max);
+function normalizedFreeInput(value: unknown): QuestionFreeInput {
+  const input = value && typeof value === "object" ? value as Partial<QuestionFreeInput> : {};
+  return {
+    recentInterest: boundedText(input.recentInterest, 1200),
+    discomfort: boundedText(input.discomfort, 1200),
+    graduateTopic: boundedText(input.graduateTopic, 1200),
+    reason: boundedText(input.reason, 1200),
+    referenceInfo: boundedText(input.referenceInfo, 2000),
+    notes: boundedText(input.notes, 2000),
+  };
+}
 
 function collectResearchMaterials(sessionId: string, allReactions = false): NormalizedResearchMaterial[] {
   const allowed = (action: CardAction) => allReactions || action === "like" || action === "save" || action === "important" || action === "deep";
@@ -82,7 +96,7 @@ async function notifyClaim(claim: Claim) {
         body: JSON.stringify({
           from: "MISHIRU <noreply@mishiru-lab.com>", to,
           subject: `[Claim] ${claim.type} - ${claim.labName || claim.labId || "対象不明"}`,
-          text: `受付ID: ${claim.id}\n種別: ${claim.type}\n研究室: ${claim.labName}\n申請者: ${claim.name} (${claim.affiliation})\nメール: ${claim.email}\n内容: ${claim.message}`,
+          text: `受付ID: ${claim.id}\n種別: ${claim.type}\n研究室: ${claim.labName}\n申請者: ${claim.name} (${claim.affiliation})\nメール: ${claim.email}\n内容: ${claim.message}\n確認資料: ${claim.evidenceUrl || "なし"}`,
         }),
       });
       if (!res.ok) throw new Error(`Resend ${res.status}`);
@@ -91,11 +105,13 @@ async function notifyClaim(claim: Claim) {
       console.error("[claim] メール通知失敗（受付は継続）:", (e as Error).message);
     }
   }
-  console.log(`[claim] 対応待ち登録 id=${claim.id} type=${claim.type} lab=${claim.labName} email=${claim.email}`);
+  // 個人情報をログへ残さず、受付IDだけで追跡する。
+  console.log(`[claim] 対応待ち登録 id=${claim.id} type=${claim.type} lab=${claim.labName || claim.labId || "対象不明"}`);
 }
 
 export async function createApp() {
   const app = express();
+  app.set("trust proxy", 1);
   app.disable("x-powered-by");
   app.use((_req, res, next) => {
     res.setHeader("X-Content-Type-Options", "nosniff");
@@ -108,9 +124,17 @@ export async function createApp() {
     }
     next();
   });
-  app.use(express.json({ limit: "12mb" }));
+  app.use(requestContextMiddleware);
+  app.use(rejectOversizedJson);
+  app.use(express.json({ limit: "8mb" }));
   app.use(accessContextMiddleware);
   app.use(sessionStateMiddleware);
+
+  const aiRateLimit = rateLimit({ name: "ai", windowMs: 60_000, max: 12, message: "AIを使う操作が続いています。1分ほど待ってから、もう一度お試しください。" });
+  const enrichmentRateLimit = rateLimit({ name: "enrichment", windowMs: 60_000, max: 30 });
+  const exportRateLimit = rateLimit({ name: "export", windowMs: 60_000, max: 10, message: "資料の作成が続いています。1分ほど待ってから、もう一度お試しください。" });
+  const eventRateLimit = rateLimit({ name: "event", windowMs: 60_000, max: 120 });
+  const claimRateLimit = rateLimit({ name: "claim", windowMs: 60 * 60_000, max: 5, message: "ご依頼を続けて受け付けています。1時間ほど待ってから、もう一度お試しください。" });
 
   const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     if (!ADMIN_TOKEN) {
@@ -155,26 +179,31 @@ export async function createApp() {
     const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です");
     res.json({ materials: collectResearchMaterials(sessionId) });
   });
-  app.post("/api/question-craft/step1", requireValueAction("question_step1"), async (req, res) => {
+  app.post("/api/question-craft/step1", aiRateLimit, requireValueAction("question_step1"), async (req, res) => {
     const sessionId = String(req.body?.sessionId || ""); const sourceMode = req.body?.sourceMode === "saved_items" ? "saved_items" : "free_input";
-    const freeInput = (req.body?.freeInput || {}) as QuestionFreeInput; const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
+    const freeInput = normalizedFreeInput(req.body?.freeInput); const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
     if (!sessionId) return bad(res, "sessionId が必要です");
     if (!hasQuestionCraftEvidence(sourceMode, freeInput, materials)) return res.status(422).json({ error: { code: "INSUFFICIENT_MATERIAL", message: "この素材だけでは、研究の問いを作るための情報が不足しています。気になった理由や、扱いたい違和感を追加してください。" } });
     try { res.json({ step1: await generateStep1(freeInput, materials), normalizedMaterials: materials, aiEnabled: aiEnabled() }); }
     catch (error) { console.error("[question-craft step1]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "問いの候補を生成できませんでした。入力内容は保存されています。" } }); }
   });
-  app.post("/api/question-craft/step2", requireValueAction("question_step2"), async (req, res) => {
-    const sessionId = String(req.body?.sessionId || ""); const freeInput = (req.body?.freeInput || {}) as QuestionFreeInput; const selectedRq = req.body?.selectedRq as RQCandidate; const step1 = req.body?.step1 as Step1Response;
+  app.post("/api/question-craft/step2", aiRateLimit, requireValueAction("question_step2"), async (req, res) => {
+    const sessionId = String(req.body?.sessionId || ""); const freeInput = normalizedFreeInput(req.body?.freeInput); const selectedRq = req.body?.selectedRq as RQCandidate; const step1 = req.body?.step1 as Step1Response;
     if (!sessionId || !selectedRq || !step1) return bad(res, "sessionId, selectedRq, step1 が必要です");
     try { res.json({ step2: await generateStep2(freeInput, selectedRq, step1), aiEnabled: aiEnabled() }); }
     catch (error) { console.error("[question-craft step2]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "研究骨子を生成できませんでした。Step 1は保持されています。" } }); }
   });
-  app.post("/api/question-craft/adjust", requireValueAction("question_adjust"), async (req, res) => { const { value, instruction, context } = req.body || {}; if (!value || !instruction) return bad(res, "value, instruction が必要です"); res.json({ value: await adjustResearchText(String(value), String(instruction), String(context || "")), aiEnabled: aiEnabled() }); });
+  app.post("/api/question-craft/adjust", aiRateLimit, requireValueAction("question_adjust"), async (req, res) => {
+    const value = boundedText(req.body?.value, 8000); const instruction = boundedText(req.body?.instruction, 1000); const context = boundedText(req.body?.context, 4000);
+    if (!value || !instruction) return bad(res, "調整する文章と指示を入力してください");
+    try { res.json({ value: await adjustResearchText(value, instruction, context), aiEnabled: aiEnabled() }); }
+    catch (error) { console.error("[question-craft adjust]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "文章を調整できませんでした。元の文章はそのまま残っています。" } }); }
+  });
 
   app.get("/api/projects", (req, res) => { const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); const projects = projectRepository.list(sessionId); res.json({ projects: projects.map((project) => ({ ...project, memoCount: consultationMemoRepository.list(sessionId, project.id).length, assetCount: consultationAssetRepository.list(project).length })) }); });
   app.post("/api/projects", (req, res) => { const sessionId = String(req.body?.sessionId || ""); if (!sessionId || !req.body?.step1Response || !req.body?.step2Response || !req.body?.selectedRq) return bad(res, "保存に必要な生成結果が不足しています"); try { const project = researchProjectService.create({ ...req.body, sessionId, materials: normalizeResearchMaterials(req.body.materials || []) }); if (req.body?.interestAnalysisId) projectRepository.update(sessionId, project.id, { interestAnalysisId: String(req.body.interestAnalysisId) }); res.status(201).json({ project: projectRepository.get(sessionId, project.id) }); } catch (error) { console.error("[project create]", error); res.status(500).json({ error: { code: "SAVE_FAILED", message: "研究プロジェクトを保存できませんでした" } }); } });
-  app.post("/api/projects/quick", async (req, res) => {
-    const sessionId=String(req.body?.sessionId||""); const title=String(req.body?.displayTitle||"").trim();
+  app.post("/api/projects/quick", aiRateLimit, requireValueAction("quick_project"), async (req, res) => {
+    const sessionId=String(req.body?.sessionId||""); const title=boundedText(req.body?.displayTitle,160);
     if(!sessionId||!title)return bad(res,"sessionId とタイトルが必要です");
     const freeInput:QuestionFreeInput={recentInterest:title,discomfort:"",graduateTopic:title,reason:"まず一冊を作り、あとから問いを育てる",referenceInfo:"",notes:""};
     try{const step1=await generateStep1(freeInput,[]);const selectedRq=step1.output_type_proposals[0];const step2=await generateStep2(freeInput,selectedRq,step1);const project=researchProjectService.create({sessionId,displayTitle:title,subtitle:String(req.body?.subtitle||"思いついたテーマから始める研究前夜"),status:"draft",sourceMode:"free_input",freeInput,materials:[],step1Response:step1,selectedRq,step2Response:step2,cover:req.body?.cover});res.status(201).json({project});}
@@ -182,21 +211,31 @@ export async function createApp() {
   });
   app.get("/api/projects/:id", (req, res) => { const sessionId = String(req.query.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.json({ project, memoCount: consultationMemoRepository.list(sessionId, project.id).length }); });
   app.patch("/api/projects/:id", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = researchProjectService.update(sessionId, req.params.id, req.body || {}); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.json({ project }); });
-  app.post("/api/projects/:id/cover-image", (req, res) => {
+  app.post("/api/projects/:id/cover-image", async (req, res) => {
     const sessionId=String(req.body?.sessionId||""); const project=projectRepository.get(sessionId,req.params.id); if(!project)return res.status(404).json({error:{code:"NOT_FOUND",message:"研究プロジェクトが見つかりません"}});
     const dataUrl=String(req.body?.dataUrl||""); const match=dataUrl.match(/^data:(image\/(?:png|jpeg|webp));base64,([A-Za-z0-9+/=]+)$/); if(!match)return bad(res,"PNG・JPEG・WebP画像だけを使用できます");
     const buffer=Buffer.from(match[2],"base64"); if(buffer.length>5*1024*1024)return res.status(413).json({error:{code:"IMAGE_TOO_LARGE",message:"表紙画像は5MB以下にしてください"}});
-    const kind=req.body?.kind==="motif"?"motif":"background"; const ext=match[1]==="image/png"?"png":match[1]==="image/webp"?"webp":"jpg"; const safeSession=sessionId.replace(/[^A-Za-z0-9_-]/g,"_").slice(0,80); const safeProject=project.id.replace(/[^A-Za-z0-9_-]/g,"_");
-    const dir=path.join(process.cwd(),"data","runtime","uploads","projects",ACTIVE_DATASET,safeSession,safeProject); fs.mkdirSync(dir,{recursive:true}); const storagePath=path.join(dir,`${kind}-${Date.now()}.${ext}`); fs.writeFileSync(storagePath,buffer);
-    const image={dataUrl:`/api/projects/${project.id}/cover-image?sessionId=${encodeURIComponent(sessionId)}&kind=${kind}&v=${Date.now()}`,storagePath,mimeType:match[1] as "image/png"|"image/jpeg"|"image/webp",scale:1,x:50,y:50,brightness:1,overlayColor:"#000000",overlayOpacity:.2}; res.status(201).json({image});
+    const kind=req.body?.kind==="motif"?"motif":"background"; const ext=match[1]==="image/png"?"png":match[1]==="image/webp"?"webp":"jpg";
+    try {
+      const storagePath = await saveProjectCover({ buffer, mimeType: match[1], extension: ext, dataset: ACTIVE_DATASET, sessionId, projectId: project.id, kind });
+      const image={dataUrl:`/api/projects/${project.id}/cover-image?sessionId=${encodeURIComponent(sessionId)}&kind=${kind}&v=${Date.now()}`,storagePath,mimeType:match[1] as "image/png"|"image/jpeg"|"image/webp",scale:1,x:50,y:50,brightness:1,overlayColor:"#000000",overlayOpacity:.2}; res.status(201).json({image});
+    } catch (error) { console.error("[cover upload]", error instanceof Error ? error.message : error); res.status(503).json({ error: { code: "UPLOAD_UNAVAILABLE", message: "画像を保存できませんでした。少し待ってから、もう一度お試しください。" } }); }
   });
-  app.get("/api/projects/:id/cover-image",(req,res)=>{const sessionId=String(req.query.sessionId||"");const project=projectRepository.get(sessionId,req.params.id);const storagePath=req.query.kind==="motif"?project?.cover.motif?.storagePath:project?.cover.image?.storagePath;if(!project||!storagePath||!path.resolve(storagePath).startsWith(path.resolve(process.cwd(),"data","runtime","uploads","projects")))return res.status(404).end();res.sendFile(path.resolve(storagePath));});
+  app.get("/api/projects/:id/cover-image",async(req,res)=>{const sessionId=String(req.query.sessionId||"");const project=projectRepository.get(sessionId,req.params.id);const storagePath=req.query.kind==="motif"?project?.cover.motif?.storagePath:project?.cover.image?.storagePath;if(!project||!storagePath)return res.status(404).end();try{const buffer=await readProjectCover(storagePath);if(!buffer)return res.status(404).end();const mimeType=req.query.kind==="motif"?project.cover.motif?.mimeType:project.cover.image?.mimeType;res.type(mimeType||"image/jpeg").setHeader("Cache-Control","private, max-age=3600").send(buffer);}catch(error){console.error("[cover download]",error instanceof Error?error.message:error);res.status(503).json({error:{code:"DOWNLOAD_UNAVAILABLE",message:"画像を読み込めませんでした。少し待ってから、もう一度お試しください。"}});}});
   app.delete("/api/projects/:id", (req, res) => { const sessionId = String(req.query.sessionId || ""); if (!projectRepository.delete(sessionId, req.params.id)) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.json({ ok: true }); });
   app.post("/api/projects/:id/versions", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const version = researchProjectService.createVersion(sessionId, req.params.id, req.body || {}); if (!version) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.status(201).json({ version, project: projectRepository.get(sessionId, req.params.id) }); });
   app.patch("/api/projects/:id/versions/:versionId", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const version = projectVersionRepository.update(sessionId, req.params.id, req.params.versionId, req.body || {}); if (!version) return res.status(404).json({ error: { code: "NOT_FOUND", message: "バージョンが見つかりません" } }); res.json({ version }); });
   app.post("/api/projects/:id/versions/:versionId/select", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = researchProjectService.switchVersion(sessionId, req.params.id, req.params.versionId); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "バージョンが見つかりません" } }); res.json({ project }); });
   app.post("/api/projects/:id/duplicate", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = projectRepository.duplicate(sessionId, req.params.id, req.body?.options || {}); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.status(201).json({ project }); });
-  app.post("/api/projects/:id/regenerate", async (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); const step2Response = await generateStep2(project.freeInput, project.selectedRq, project.step1Response); const version = researchProjectService.createVersion(sessionId, project.id, { versionName: req.body?.versionName || `v${project.versions.length + 1} AI再生成`, changeReason: req.body?.changeReason || "全体をAIで再生成", creationType: "ai_regeneration", step2Response, carryMemos: req.body?.carryMemos !== false }); res.status(201).json({ version, project: projectRepository.get(sessionId, project.id) }); });
+  app.post("/api/projects/:id/regenerate", aiRateLimit, requireValueAction("project_regenerate"), async (req, res) => {
+    const sessionId = String(req.body?.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id);
+    if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } });
+    try {
+      const step2Response = await generateStep2(project.freeInput, project.selectedRq, project.step1Response);
+      const version = researchProjectService.createVersion(sessionId, project.id, { versionName: boundedText(req.body?.versionName, 100) || `v${project.versions.length + 1} AI再生成`, changeReason: boundedText(req.body?.changeReason, 500) || "全体をAIで再生成", creationType: "ai_regeneration", step2Response, carryMemos: req.body?.carryMemos !== false });
+      res.status(201).json({ version, project: projectRepository.get(sessionId, project.id) });
+    } catch (error) { console.error("[project regenerate]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "再生成できませんでした。現在の内容はそのまま残っています。" } }); }
+  });
   app.get("/api/projects/:id/memos", (req, res) => { const sessionId = String(req.query.sessionId || ""); res.json({ memos: consultationMemoRepository.list(sessionId, req.params.id) }); });
   app.post("/api/projects/:id/memos", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const memo = consultationMemoRepository.create(sessionId, req.params.id, req.body); if (!memo) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.status(201).json({ memo }); });
   app.patch("/api/projects/:id/memos/:memoId", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const memo = consultationMemoRepository.update(sessionId, req.params.id, req.params.memoId, req.body || {}); if (!memo) return res.status(404).json({ error: { code: "NOT_FOUND", message: "相談メモが見つかりません" } }); res.json({ memo }); });
@@ -205,13 +244,13 @@ export async function createApp() {
   // ============ 相談資料 ==========
   app.get("/api/projects/:id/assets", (req, res) => { const sessionId = String(req.query.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); res.json({ assets: consultationAssetRepository.list(project) }); });
   app.post("/api/projects/:id/assets/preview", (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); const format = req.body?.format as ConsultationAssetFormat; if (!["pdf","pptx_1","pptx_2","pptx_3"].includes(format)) return bad(res, "format が不正です"); res.json({ draft: buildConsultationDraft(project, format, req.body?.options || DEFAULT_DOCUMENT_OPTIONS) }); });
-  app.post("/api/projects/:id/assets", async (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); const format = req.body?.format as ConsultationAssetFormat; if (!["pdf","pptx_1","pptx_2","pptx_3"].includes(format)) return bad(res, "format が不正です"); const draft = req.body?.draft as ConsultationDocumentDraft; try { const asset = await consultationExportService.generate(project, format, draft || buildConsultationDraft(project, format)); const next = projectRepository.update(sessionId, project.id, { consultationAssetIds: Array.from(new Set([...project.consultationAssetIds, asset.id])) }); res.status(201).json({ asset, project: next }); } catch (error) { console.error("[consultation export]", error); res.status(500).json({ error: { code: "EXPORT_FAILED", message: error instanceof Error ? error.message : "相談資料を生成できませんでした" } }); } });
-  app.get("/api/projects/:id/assets/:assetId/download", (req, res) => { const sessionId = String(req.query.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); const asset = consultationAssetRepository.get(req.params.assetId); if (!project || !asset || asset.projectId !== project.id || !asset.filePath) return res.status(404).json({ error: { code: "NOT_FOUND", message: "生成ファイルが見つかりません" } }); res.download(asset.filePath, path.basename(asset.filePath)); });
-  app.delete("/api/projects/:id/assets/:assetId", (req, res) => { const sessionId = String(req.query.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); const asset = consultationAssetRepository.get(req.params.assetId); if (!project || !asset || asset.projectId !== project.id) return res.status(404).json({ error: { code: "NOT_FOUND", message: "相談資料が見つかりません" } }); consultationAssetRepository.delete(asset.id); projectRepository.update(sessionId, project.id, { consultationAssetIds: project.consultationAssetIds.filter((id) => id !== asset.id) }); res.json({ ok:true }); });
+  app.post("/api/projects/:id/assets", exportRateLimit, async (req, res) => { const sessionId = String(req.body?.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } }); const format = req.body?.format as ConsultationAssetFormat; if (!["pdf","pptx_1","pptx_2","pptx_3"].includes(format)) return bad(res, "format が不正です"); const draft = req.body?.draft as ConsultationDocumentDraft; try { const asset = await consultationExportService.generate(project, format, draft || buildConsultationDraft(project, format)); const next = projectRepository.update(sessionId, project.id, { consultationAssetIds: Array.from(new Set([...project.consultationAssetIds, asset.id])) }); res.status(201).json({ asset, project: next }); } catch (error) { console.error("[consultation export]", error); res.status(500).json({ error: { code: "EXPORT_FAILED", message: "相談資料を作成できませんでした。内容は保存されています。少し待ってから、もう一度お試しください。" } }); } });
+  app.get("/api/projects/:id/assets/:assetId/download", async (req, res) => { const sessionId = String(req.query.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); const asset = consultationAssetRepository.get(req.params.assetId); if (!project || !asset || asset.projectId !== project.id || !asset.filePath) return res.status(404).json({ error: { code: "NOT_FOUND", message: "生成ファイルが見つかりません" } }); try { const buffer = await readConsultationFile(asset.filePath); if (!buffer) return res.status(404).json({ error: { code: "NOT_FOUND", message: "生成ファイルが見つかりません。資料をもう一度作成してください。" } }); res.attachment(consultationFileName(asset.filePath)).send(buffer); } catch (error) { console.error("[consultation download]", error instanceof Error ? error.message : error); res.status(503).json({ error: { code: "DOWNLOAD_UNAVAILABLE", message: "資料をダウンロードできませんでした。少し待ってから、もう一度お試しください。" } }); } });
+  app.delete("/api/projects/:id/assets/:assetId", async (req, res) => { const sessionId = String(req.query.sessionId || ""); const project = projectRepository.get(sessionId, req.params.id); const asset = consultationAssetRepository.get(req.params.assetId); if (!project || !asset || asset.projectId !== project.id) return res.status(404).json({ error: { code: "NOT_FOUND", message: "相談資料が見つかりません" } }); consultationAssetRepository.delete(asset.id); await removeConsultationFile(asset.filePath); projectRepository.update(sessionId, project.id, { consultationAssetIds: project.consultationAssetIds.filter((id) => id !== asset.id) }); res.json({ ok:true }); });
 
   // ============ みつめる：手動分析 ==========
   app.get("/api/interest-analysis", (req, res) => { const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); res.json({ analysis: interestAnalysisRepository.latest(sessionId), usage: interestAnalysisService.usage(sessionId), aiEnabled: aiEnabled(), serverMaterialCount: collectResearchMaterials(sessionId, true).length, dataset: ACTIVE_DATASET }); });
-  app.post("/api/interest-analysis", requireValueAction("interest_analysis"), async (req, res) => { const sessionId = String(req.body?.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); const materials = normalizeResearchMaterials([...(Array.isArray(req.body?.materials) ? req.body.materials : []), ...collectResearchMaterials(sessionId, true)]).filter((item,index,all) => all.findIndex((other) => `${other.sourceType}:${other.sourceId}:${other.userReaction}` === `${item.sourceType}:${item.sourceId}:${item.userReaction}`) === index); try { const analysis = await interestAnalysisService.analyze(sessionId, materials, Array.isArray(req.body?.excludedSourceIds) ? req.body.excludedSourceIds : []); res.status(201).json({ analysis, usage: interestAnalysisService.usage(sessionId), aiEnabled: aiEnabled() }); } catch (error) { const code = error instanceof Error ? error.message : "ANALYSIS_FAILED"; const status = code === "DAILY_LIMIT_REACHED" ? 429 : code === "ANALYSIS_IN_PROGRESS" ? 409 : 400; res.status(status).json({ error: { code, message: code === "DAILY_LIMIT_REACHED" ? "本日の分析上限に達しました" : code === "ANALYSIS_IN_PROGRESS" ? "分析を処理中です" : "分析に使える素材がありません" } }); } });
+  app.post("/api/interest-analysis", aiRateLimit, requireValueAction("interest_analysis"), async (req, res) => { const sessionId = String(req.body?.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です"); const materials = normalizeResearchMaterials([...(Array.isArray(req.body?.materials) ? req.body.materials : []), ...collectResearchMaterials(sessionId, true)]).filter((item,index,all) => all.findIndex((other) => `${other.sourceType}:${other.sourceId}:${other.userReaction}` === `${item.sourceType}:${item.sourceId}:${item.userReaction}`) === index); try { const analysis = await interestAnalysisService.analyze(sessionId, materials, Array.isArray(req.body?.excludedSourceIds) ? req.body.excludedSourceIds : []); res.status(201).json({ analysis, usage: interestAnalysisService.usage(sessionId), aiEnabled: aiEnabled() }); } catch (error) { const code = error instanceof Error ? error.message : "ANALYSIS_FAILED"; const status = code === "DAILY_LIMIT_REACHED" ? 429 : code === "ANALYSIS_IN_PROGRESS" ? 409 : 400; res.status(status).json({ error: { code, message: code === "DAILY_LIMIT_REACHED" ? "本日の分析上限に達しました" : code === "ANALYSIS_IN_PROGRESS" ? "分析を処理中です" : "分析に使える素材がありません" } }); } });
 
   app.get("/api/research-resources/summary", (_req, res) => {
     res.json(store.researchResourceSummary());
@@ -701,7 +740,7 @@ export async function createApp() {
   });
 
   // AI意味検索（なんとなくの興味→研究室。FR-SEARCH-AI・追補）
-  app.get("/api/labs/smart", requireValueAction("smart_search"), async (req, res) => {
+  app.get("/api/labs/smart", aiRateLimit, requireValueAction("smart_search"), async (req, res) => {
     const q = String(req.query.q || "").trim();
     if (q.length < 2) return bad(res, "2文字以上入力してください");
     const page = Math.max(1, Number(req.query.page) || 1);
@@ -745,7 +784,7 @@ export async function createApp() {
   });
 
   // 研究室ページの充実（AI学生ガイド＋公開論文。lazy＋キャッシュ・FR-ENRICH）
-  app.get("/api/labs/:id/enrich", async (req, res) => {
+  app.get("/api/labs/:id/enrich", enrichmentRateLimit, async (req, res) => {
     const lab = store.labById(req.params.id);
     if (!lab || (lab.status !== "published" && lab.status !== "claimed"))
       return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究室が見つかりません" } });
@@ -760,11 +799,17 @@ export async function createApp() {
   });
 
   // 公式リンク離脱の計測（FR-EVT-01 outbound_click）
-  app.post("/api/events", (req, res) => {
-    const evts = Array.isArray(req.body?.events) ? req.body.events : [];
+  app.post("/api/events", eventRateLimit, (req, res) => {
+    const evts = Array.isArray(req.body?.events) ? req.body.events.slice(0, 20) : [];
+    const allowedTypes = new Set(["session_start", "outbound_click"]);
+    const sessionId = String(res.locals.mishiruSessionId || "anon");
     const clean: AppEvent[] = evts
-      .filter((e: any) => e && typeof e.type === "string")
-      .map((e: any) => ({ type: e.type, sessionId: String(e.sessionId || "anon"), payload: e.payload || {}, at: nowIso() }));
+      .filter((e: any) => e && typeof e.type === "string" && allowedTypes.has(e.type))
+      .map((e: any) => {
+        const rawPayload = e.payload && typeof e.payload === "object" && !Array.isArray(e.payload) ? e.payload : {};
+        const payload = Object.fromEntries(Object.entries(rawPayload).slice(0, 20).map(([key, value]) => [boundedText(key, 80), typeof value === "boolean" || typeof value === "number" ? value : boundedText(value, 500)]));
+        return { type: e.type, sessionId, payload, at: nowIso() } as AppEvent;
+      });
     store.addEvents(clean);
     res.json({ ok: true, accepted: clean.length });
   });
@@ -805,8 +850,10 @@ export async function createApp() {
   });
 
   // ============ Claim（FR-CLAIM-01/02, AC-03） ============
-  app.post("/api/claims", async (req, res) => {
-    const { type, labId, name, affiliation, email, message, evidenceUrl } = req.body || {};
+  app.post("/api/claims", claimRateLimit, async (req, res) => {
+    const { type, labId, name, affiliation, email, message, evidenceUrl, website } = req.body || {};
+    // 見えない項目を埋める自動投稿は、正常受付と同じ形で静かに破棄する。
+    if (boundedText(website, 200)) return res.json({ ok: true, id: genId("claim") });
     const t: ClaimType = ["fix", "takedown", "claim", "other"].includes(type) ? type : "other";
     const normalizedName = String(name || "").trim().slice(0, 100);
     const normalizedAffiliation = String(affiliation || "").trim().slice(0, 200);
@@ -1038,12 +1085,14 @@ export async function createApp() {
   app.get(["/sitemap.xml", "/api/sitemap.xml"], (_req, res) => {
     const base = process.env.APP_URL || "https://mishiru-lab.com";
     if (!sitemapCache) {
-      const parts = ["/", "/discover", "/labs", "/universities", "/policy"].map((p) => `<url><loc>${base}${p}</loc></url>`);
+      const parts = ["/", "/search", "/discover", "/labs", "/universities", "/for-labs", "/policy", "/privacy"].map((p) => `<url><loc>${base}${p}</loc></url>`);
       for (const lab of store.publicNonDemo()) parts.push(`<url><loc>${base}/labs/${lab.id}</loc></url>`);
       sitemapCache = `<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n${parts.join("\n")}\n</urlset>`;
     }
     res.header("Content-Type", "application/xml").send(sitemapCache);
   });
+
+  app.use("/api", (_req, res) => res.status(404).json({ error: { code: "NOT_FOUND", message: "この操作は利用できません。画面を再読み込みしてください。" } }));
 
   // ============ フロント配信 ============
   if (process.env.NODE_ENV !== "production") {
@@ -1054,6 +1103,9 @@ export async function createApp() {
     app.use(express.static(distPath));
     app.get("*", (_req, res) => res.sendFile(path.join(distPath, "index.html")));
   }
+
+  // JSONの破損・容量超過・未処理例外を、内部情報を出さない一貫した応答へ変換する。
+  app.use(apiErrorHandler);
 
   return app;
 }

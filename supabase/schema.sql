@@ -291,9 +291,9 @@ create policy "public read universities" on mishiru_universities for select usin
 drop policy if exists "public read departments" on mishiru_departments;
 create policy "public read departments" on mishiru_departments for select using (true);
 
--- 匿名フォーム投稿：Claimのみ許可（自由口コミは存在しない = PROH-03/Test-PROH-03）
+-- ClaimはサーバーAPIだけで受け付ける。公開anon keyからの直接投稿は許可しない。
 drop policy if exists "anon insert claims" on mishiru_claims;
-create policy "anon insert claims" on mishiru_claims for insert with check (true);
+revoke insert on table mishiru_claims from anon, authenticated;
 
 -- card_actions / interest_profiles / events：セッション本人のみ（アプリ側でsession_id一致を強制）
 -- leads/reports/articles には公開ポリシーを作らない = admin(service role)のみ参照可（PII保護）。

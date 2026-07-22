@@ -30,6 +30,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
   const canonicalUrl = `https://mishiru-lab.com${pathname === "/" ? "/" : pathname}`;
   const isAdmin = pathname.startsWith("/admin");
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [online, setOnline] = React.useState(() => typeof navigator === "undefined" || navigator.onLine);
   const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
   const menuWasOpen = React.useRef(false);
 
@@ -62,6 +63,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
     document.addEventListener("keydown",onKeyDown); return()=>document.removeEventListener("keydown",onKeyDown);
   },[]);
 
+  React.useEffect(() => {
+    const update = () => setOnline(navigator.onLine);
+    window.addEventListener("online", update);
+    window.addEventListener("offline", update);
+    return () => { window.removeEventListener("online", update); window.removeEventListener("offline", update); };
+  }, []);
+
   if (isAdmin) return <>{children}</>; // 管理画面は別シェル
   // LPトップ（SCR-LP・ADR-008改）: アプリシェル（サイドバー/ハンバーガー/下部タブ）の中に描画し、
   // 既存ページへの導線を保つ。フッターとFABはLP側が持つ/不要のため出さない
@@ -74,6 +82,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <meta property="og:url" content={canonicalUrl} />
       </Helmet>
       <a href="#main-content" className="skip-link">本文へスキップ</a>
+      {!online && <div className="offline-banner" role="status" aria-live="polite">オフラインです。入力内容はこの端末に残ります。接続が戻ると再送します。</div>}
 
       <aside className="mishiru-sidebar">
         <div className="mishiru-sidebar__inner">

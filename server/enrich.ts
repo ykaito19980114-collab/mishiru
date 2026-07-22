@@ -6,7 +6,7 @@ import { callAIJson, aiEnabled } from "./ai";
 import { fieldLabel } from "../shared/fields";
 import type { Lab } from "../shared/types";
 
-const CONTACT = process.env.CONTACT_EMAIL || "ops@openlab.example";
+const CONTACT = process.env.CONTACT_EMAIL || "support@mishiru-lab.com";
 const CACHE_FILE = path.join(process.cwd(), "data", "runtime", "enrich-cache.json");
 const CACHE_VERSION = 4; // ロジック変更時に上げると再生成される（v4: 氏名一致フォールバックの拡張。学際分野の分野コンセプト不一致を救済）
 // 7日TTL（コスト設計：生成は「閲覧された研究室 × 週1回」に制限。期限切れは stale-while-revalidate）

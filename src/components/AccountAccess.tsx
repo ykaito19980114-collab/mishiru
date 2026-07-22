@@ -154,7 +154,7 @@ export function AccountButton({ compact = false }: { compact?: boolean }) {
   const { access, open } = useAccountAccess();
   if (access.authenticated) {
     return (
-      <button type="button" className={`account-pill ${compact ? "account-pill--compact" : ""}`} onClick={() => open("account")} title="アカウントを管理">
+      <button type="button" className={`account-pill ${compact ? "account-pill--compact" : ""}`} onClick={() => open("account")} title="アカウントを管理" aria-label="アカウントを管理">
         <UserRound aria-hidden="true" />
         <span>{compact ? "登録済み" : "アカウント"}</span>
         <strong>設定</strong>
@@ -162,7 +162,7 @@ export function AccountButton({ compact = false }: { compact?: boolean }) {
     );
   }
   return (
-    <button type="button" className={`account-pill ${compact ? "account-pill--compact" : ""}`} onClick={() => open("signup")}>
+    <button type="button" className={`account-pill ${compact ? "account-pill--compact" : ""}`} onClick={() => open("signup")} aria-label={`無料アカウントを作る。登録なしであと${access.remaining ?? 0}回利用できます`}>
       <LogIn aria-hidden="true" />
       <span>あと{access.remaining ?? 0}回</span>
       <strong>無料登録</strong>

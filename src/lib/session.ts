@@ -1,4 +1,5 @@
 // 匿名セッション管理（docs/03 §12：sessionIdはクライアント生成UUID・削除可能な個人関連情報）
+import { authHeaders } from "./auth";
 const KEY = "openlab_session_id";
 const QUEUE_KEY = "openlab_action_queue"; // オフライン再送キュー（FR-ERR-02）
 export const PENDING_SESSION_KEY = "mishiru_pending_session_id";
@@ -80,7 +81,7 @@ export async function flushQueue() {
     try {
       const res = await fetch(endpoint, {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: { "Content-Type": "application/json", ...(await authHeaders()), "x-mishiru-action-id": a.actionId },
         body: JSON.stringify(a),
       });
       if (!res.ok) remaining.push(a);

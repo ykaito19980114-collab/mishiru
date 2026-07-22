@@ -8,6 +8,7 @@ export default function Policy() {
     <div className="max-w-2xl mx-auto px-4 pt-6 pb-10">
       <Helmet><title>掲載ポリシー ｜ MISHIRU</title></Helmet>
       <h1 className="text-2xl font-bold mb-6">掲載ポリシー</h1>
+      <p className="text-sm text-[var(--c-ink-3)] mb-6">最終更新：2026年7月22日</p>
 
       <div className="space-y-6 text-[15px] text-[var(--c-ink-2)] leading-relaxed">
         <Sec title="本サービスの位置づけ">
@@ -17,7 +18,7 @@ export default function Policy() {
           掲載情報は、研究室公式サイト・大学公式教員ページ・researchmap等の公開情報にもとづき、運営が学生向けに要約・整理したものです（本文の転載は行いません）。各ページには出典・最終更新日・確度を明示し、研究室未確認の項目は「研究室未確認」と表示します。
         </Sec>
         <Sec title="修正・掲載停止のご依頼">
-          研究室関係者の方は、<Link to="/claim" className="text-[var(--c-primary)] font-bold underline">修正・掲載のご依頼</Link>からいつでもご連絡いただけます。誤情報のご指摘・掲載停止のご依頼には、研究室確認の完了前でも一時非公開の措置を優先し、1営業日以内に対応します。
+          研究室関係者の方は、<Link to="/claim" className="text-[var(--c-primary)] font-bold underline">修正・掲載のご依頼</Link>からいつでもご連絡いただけます。誤情報や掲載停止のご依頼は、原則1営業日以内に一次確認します。必要な場合は、事実確認の完了前でも一時非公開を優先します。
         </Sec>
         <Sec title="個人情報の取り扱い">
           評価・保存・閲覧の記録は、ブラウザごとの匿名IDに結び付けて保存します。記録は、ご本人の研究探索を支えるためだけに使います。研究室や企業などの第三者へは提供しません。アカウント設定からいつでも削除できます。

@@ -18,7 +18,7 @@ export default function Claim() {
   const [params] = useSearchParams();
   const labId = params.get("lab_id") || "";
   const [lab, setLab] = useState<Lab | null>(null);
-  const [form, setForm] = useState({ type: "fix", name: "", affiliation: "", email: "", message: "", evidenceUrl: "" });
+  const [form, setForm] = useState({ type: "fix", name: "", affiliation: "", email: "", message: "", evidenceUrl: "", website: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState<string | null>(null);
@@ -65,7 +65,7 @@ export default function Claim() {
         <Helmet><title>受け付けました ｜ MISHIRU</title></Helmet>
         <CheckCircle2 className="w-14 h-14 text-[var(--c-success)] mx-auto mb-4" />
         <h1 className="text-xl font-bold mb-2">受け付けました</h1>
-        <p className="text-[var(--c-ink-2)] mb-2">1営業日以内に運営が確認し、ご連絡します。</p>
+        <p className="text-[var(--c-ink-2)] mb-2">原則1営業日以内に運営が一次確認し、ご連絡します。</p>
         <p className="text-sm text-[var(--c-ink-3)] mb-2">受付番号：{done}</p>
         <p className="text-sm text-[var(--c-ink-3)] mb-6">掲載停止・誤情報のご指摘は、研究室確認の完了前でも一時非公開の措置を優先します。</p>
         <Link to="/discover"><Button variant="secondary">問いのカードを見る</Button></Link>
@@ -81,6 +81,10 @@ export default function Claim() {
 
       <Card className="p-5">
         <form onSubmit={submit} className="space-y-4" noValidate>
+          <div className="claim-honeypot" aria-hidden="true">
+            <label htmlFor="claim-website">ウェブサイト</label>
+            <input id="claim-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} />
+          </div>
           {errors.form && <p className="text-sm text-[var(--c-danger)]" role="alert">{errors.form}</p>}
           <fieldset>
             <legend className="block text-sm font-bold text-[var(--c-ink)] mb-1.5">ご依頼の種別</legend>

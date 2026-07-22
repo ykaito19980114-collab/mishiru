@@ -1,0 +1,32 @@
+const BASE = process.env.BASE || "http://localhost:3100";
+let passed = 0;
+function check(value: unknown, label: string) { if (!value) throw new Error(`FAIL: ${label}`); passed += 1; console.log(`PASS ${label}`); }
+
+async function json(path: string, init?: RequestInit) {
+  const response = await fetch(`${BASE}${path}`, init);
+  const body = await response.json().catch(() => ({}));
+  return { response, body };
+}
+
+const unknown = await json("/api/does-not-exist");
+check(unknown.response.status === 404 && unknown.body?.error?.code === "NOT_FOUND", "未定義APIをJSON 404で返す");
+
+const invalid = await json("/api/events", { method: "POST", headers: { "Content-Type": "application/json" }, body: "{" });
+check(invalid.response.status === 400 && invalid.body?.error?.code === "INVALID_JSON", "壊れたJSONを安全な400で返す");
+
+const oversized = await json("/api/events", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ value: "x".repeat(1_100_000) }) });
+check(oversized.response.status === 413 && oversized.body?.error?.code === "PAYLOAD_TOO_LARGE", "巨大な入力を413で止める");
+
+const event = await json("/api/events", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ sessionId: "security-test-session", events: [{ type: "admin_override", payload: { secret: "x" } }] }) });
+check(event.response.status === 200 && event.body?.accepted === 0, "許可していない計測イベントを保存しない");
+
+const honeypot = await json("/api/claims", { method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify({ website: "https://bot.example", name: "bot", email: "bot@example.com", message: "spam" }) });
+check(honeypot.response.status === 200 && honeypot.body?.ok === true, "自動投稿を静かに破棄する");
+
+const aiConfig = await json("/api/ai/config");
+check([401, 503].includes(aiConfig.response.status) && !aiConfig.body?.models, "AI設定を公開しない");
+
+const health = await fetch(`${BASE}/api/health`);
+check(health.headers.get("cache-control")?.includes("no-store") && Boolean(health.headers.get("x-request-id")), "APIをキャッシュせずリクエストIDを付ける");
+
+console.log(`Public hardening tests: ${passed} passed`);

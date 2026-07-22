@@ -4,7 +4,7 @@ import { ChevronDown, Info } from "lucide-react";
 import { cleanDisplayLabel } from "../../shared/text";
 
 export function Button({
-  children, variant = "primary", className = "", ...props
+  children, variant = "primary", className = "", type = "button", ...props
 }: React.ButtonHTMLAttributes<HTMLButtonElement> & { variant?: "primary" | "secondary" | "ghost" | "danger" }) {
   const base =
     "app-button inline-flex items-center justify-center gap-2 font-bold min-h-[48px] px-5 disabled:opacity-40 disabled:cursor-not-allowed";
@@ -15,7 +15,7 @@ export function Button({
     danger: "bg-white text-[var(--c-danger)] border border-[var(--c-danger)] hover:bg-[#fdeceb]",
   };
   return (
-    <button className={`${base} ${variants[variant]} ${className}`} {...props}>
+    <button type={type} className={`${base} ${variants[variant]} ${className}`} {...props}>
       {children}
     </button>
   );
@@ -47,10 +47,11 @@ export function TrustNote({ children, className = "" }: { children: React.ReactN
   );
 }
 
-export function Card({ children, className = "", float = false }: { children: React.ReactNode; className?: string; float?: boolean }) {
+export function Card({ children, className = "", float = false, ...props }: React.HTMLAttributes<HTMLDivElement> & { float?: boolean }) {
   return (
     <div
       className={`bg-white border border-[var(--c-border)] rounded-[var(--radius-card)] ${float ? "shadow-[var(--shadow-float)]" : "shadow-[var(--shadow-sm)]"} ${className}`}
+      {...props}
     >
       {children}
     </div>
