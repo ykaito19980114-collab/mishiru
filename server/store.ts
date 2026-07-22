@@ -10,6 +10,7 @@ import type {
 } from "../shared/types";
 import { cleanDisplayLabel, uniqueCleanLabels } from "../shared/text";
 import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
+import { serverSupabase } from "./supabase";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const RUNTIME_DIR = path.join(DATA_DIR, "runtime");
@@ -163,6 +164,29 @@ function mutableRuntime(sessionId?: string): RuntimeShape {
 function persistMutable(state: RuntimeShape) {
   if (hasRemoteSessionState()) setSessionSection("runtime", state);
   else persist();
+}
+
+interface ClaimRow {
+  id: string; type: string; lab_id: string | null; lab_name: string | null;
+  name: string; affiliation: string | null; email: string; message: string | null;
+  evidence_url: string | null; status: string; note: string | null;
+  created_at: string; updated_at: string;
+}
+function claimToRow(c: Claim): ClaimRow {
+  return {
+    id: c.id, type: c.type, lab_id: c.labId, lab_name: c.labName,
+    name: c.name, affiliation: c.affiliation || null, email: c.email, message: c.message || null,
+    evidence_url: c.evidenceUrl ?? null, status: c.status, note: c.note ?? null,
+    created_at: c.createdAt, updated_at: c.updatedAt,
+  };
+}
+function rowToClaim(r: ClaimRow): Claim {
+  return {
+    id: r.id, type: r.type as Claim["type"], labId: r.lab_id, labName: r.lab_name,
+    name: r.name, affiliation: r.affiliation || "", email: r.email, message: r.message || "",
+    evidenceUrl: r.evidence_url ?? undefined, status: r.status as Claim["status"], note: r.note ?? undefined,
+    createdAt: r.created_at, updatedAt: r.updated_at,
+  };
 }
 
 // ============ マスタ参照 ============
@@ -409,11 +433,46 @@ export const store = {
   addEvents(evts: AppEvent[]) { runtime.events.push(...evts); persist(); },
   allEvents: () => runtime.events,
 
-  // ============ claims ============
-  addClaim(c: Claim) { runtime.claims.unshift(c); persist(); },
-  allClaims: () => runtime.claims,
-  claimById: (id: string) => runtime.claims.find((c) => c.id === id) || null,
-  updateClaim(id: string, patch: Partial<Claim>) {
+  // ============ claims（個人情報：Supabase設定時はmishiru_claims、未設定時のみローカルJSON。ADR-002） ============
+  async addClaim(c: Claim) {
+    const supabase = serverSupabase();
+    if (supabase) {
+      const { error } = await supabase.from("mishiru_claims").insert(claimToRow(c));
+      if (error) throw new Error(`CLAIM_SAVE_FAILED:${error.message}`);
+      return;
+    }
+    runtime.claims.unshift(c);
+    persist();
+  },
+  async allClaims(): Promise<Claim[]> {
+    const supabase = serverSupabase();
+    if (supabase) {
+      const { data, error } = await supabase.from("mishiru_claims").select("*").order("created_at", { ascending: false });
+      if (error) throw new Error(`CLAIM_LIST_FAILED:${error.message}`);
+      return (data || []).map(rowToClaim);
+    }
+    return runtime.claims;
+  },
+  async claimById(id: string): Promise<Claim | null> {
+    const supabase = serverSupabase();
+    if (supabase) {
+      const { data, error } = await supabase.from("mishiru_claims").select("*").eq("id", id).maybeSingle();
+      if (error) throw new Error(`CLAIM_GET_FAILED:${error.message}`);
+      return data ? rowToClaim(data) : null;
+    }
+    return runtime.claims.find((c) => c.id === id) || null;
+  },
+  async updateClaim(id: string, patch: Partial<Claim>): Promise<Claim | null> {
+    const supabase = serverSupabase();
+    if (supabase) {
+      const updatedAt = new Date().toISOString();
+      const row: Record<string, unknown> = { updated_at: updatedAt };
+      if (patch.status !== undefined) row.status = patch.status;
+      if (patch.note !== undefined) row.note = patch.note;
+      const { data, error } = await supabase.from("mishiru_claims").update(row).eq("id", id).select().maybeSingle();
+      if (error) throw new Error(`CLAIM_UPDATE_FAILED:${error.message}`);
+      return data ? rowToClaim(data) : null;
+    }
     const c = runtime.claims.find((x) => x.id === id);
     if (!c) return null;
     Object.assign(c, patch, { updatedAt: new Date().toISOString() });

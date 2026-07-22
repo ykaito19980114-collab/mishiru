@@ -806,7 +806,12 @@ export async function createApp() {
       name, affiliation: affiliation || "", email, message, evidenceUrl,
       status: "pending", createdAt: nowIso(), updatedAt: nowIso(),
     };
-    store.addClaim(claim);
+    try {
+      await store.addClaim(claim);
+    } catch (error) {
+      console.error("[claim] 保存失敗:", error instanceof Error ? error.message : error);
+      return res.status(503).json({ error: { code: "CLAIM_SAVE_UNAVAILABLE", message: "受け付けられませんでした。少し待ってからもう一度お試しください。" } });
+    }
     await notifyClaim(claim);
     res.json({ ok: true, id: claim.id });
   });
@@ -882,13 +887,25 @@ export async function createApp() {
   });
 
   // Claim管理
-  app.get("/api/admin/claims", requireAdmin, (_req, res) => res.json({ claims: store.allClaims() }));
-  app.patch("/api/admin/claims/:id", requireAdmin, (req, res) => {
+  app.get("/api/admin/claims", requireAdmin, async (_req, res) => {
+    try {
+      res.json({ claims: await store.allClaims() });
+    } catch (error) {
+      console.error("[claim] 一覧取得失敗:", error instanceof Error ? error.message : error);
+      res.status(503).json({ error: { code: "CLAIM_LIST_UNAVAILABLE", message: "一覧を取得できませんでした。少し待ってからもう一度お試しください。" } });
+    }
+  });
+  app.patch("/api/admin/claims/:id", requireAdmin, async (req, res) => {
     const { status, note } = req.body || {};
     if (status && !["pending", "in_review", "resolved", "rejected"].includes(status)) return bad(res, "不正なstatus");
-    const c = store.updateClaim(req.params.id, { ...(status && { status }), ...(note !== undefined && { note }) });
-    if (!c) return res.status(404).json({ error: { code: "NOT_FOUND", message: "Claimが見つかりません" } });
-    res.json({ claim: c });
+    try {
+      const c = await store.updateClaim(req.params.id, { ...(status && { status }), ...(note !== undefined && { note }) });
+      if (!c) return res.status(404).json({ error: { code: "NOT_FOUND", message: "Claimが見つかりません" } });
+      res.json({ claim: c });
+    } catch (error) {
+      console.error("[claim] 更新失敗:", error instanceof Error ? error.message : error);
+      res.status(503).json({ error: { code: "CLAIM_UPDATE_UNAVAILABLE", message: "更新できませんでした。少し待ってからもう一度お試しください。" } });
+    }
   });
   // 一時非公開（FR-CLAIM-02）：本人確認前でも運営が即時hidden化
   app.post("/api/admin/labs/:id/status", requireAdmin, (req, res) => {

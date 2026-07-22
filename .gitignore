@@ -9,3 +9,5 @@ server.js
 .backup-prototype/
 __pycache__/
 *.py[cod]
+.vercel
+.env*
