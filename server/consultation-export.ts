@@ -15,6 +15,8 @@ const DB_FILE = path.join(RUNTIME_DIR, ACTIVE_DATASET === "mishiru-sample" ? "co
 const OUTPUT_DIR = process.env.VERCEL ? path.join("/tmp", "mishiru", "exports", ACTIVE_DATASET) : path.join(RUNTIME_DIR, "exports", ACTIVE_DATASET);
 const makeId = () => `asset-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
 const clone = <T>(value: T): T => JSON.parse(JSON.stringify(value)) as T;
+// tsx/esbuildとNodeの実行方式によってはCommonJSのdefaultが一段深くなるため、両方を受け付ける。
+const PptxGenJSConstructor = (PptxGenJS as unknown as { default?: typeof PptxGenJS }).default || PptxGenJS;
 
 export const DEFAULT_DOCUMENT_OPTIONS: ConsultationDocumentOptions = {
   includeCover: true, includeComments: true, includeNextActions: true, includeMaterials: false, showEmpty: false,
@@ -167,7 +169,7 @@ function drawPdfCover(doc: PDFKit.PDFDocument, project: ResearchProject, version
 }
 
 async function generatePptx(project: ResearchProject, format: ConsultationAssetFormat, draft: ConsultationDocumentDraft, filePath: string) {
-  const pptx = new PptxGenJS(); pptx.layout = "LAYOUT_WIDE"; pptx.author = "MISHIRU"; pptx.subject = project.displayTitle; pptx.title = project.displayTitle;
+  const pptx = new PptxGenJSConstructor(); pptx.layout = "LAYOUT_WIDE"; pptx.author = "MISHIRU"; pptx.subject = project.displayTitle; pptx.title = project.displayTitle;
   pptx.theme = { headFontFace: "Hiragino Sans", bodyFontFace: "Hiragino Sans" };
   const count = Number(format.slice(-1));
   const accent = (project.cover.gradientStart || project.cover.solidColor || "#123ef5").replace("#", "").toUpperCase();

@@ -21,7 +21,7 @@ import { ACTIVE_DATASET, ConsultationMemoRepository, ResearchProjectRepository, 
 import { ResearchProjectService } from "./server/research-project-service";
 import { buildConsultationDraft, ConsultationAssetRepository, ConsultationExportService, DEFAULT_DOCUMENT_OPTIONS } from "./server/consultation-export";
 import { InterestAnalysisRepository, InterestAnalysisService } from "./server/interest-analysis";
-import { AI_MODELS, aiEnabled, aiProviderStatus, currentAiModel, currentAiProvider, withAiModel } from "./server/ai";
+import { AI_MODELS, aiEnabled, aiProviderStatus, currentAiModel, currentAiProvider } from "./server/ai";
 import { stsmpMaterialMeta } from "./server/stsmp";
 import { accessContextMiddleware, forgetLocalUser, guestUsage, GUEST_ACTION_LIMIT, requireValueAction } from "./server/access";
 import { discardSessionState, sessionStateMiddleware } from "./server/session-state";
@@ -73,7 +73,7 @@ function collectResearchMaterials(sessionId: string, allReactions = false): Norm
 
 // Claim通知（メール or ログ）。通知失敗でも受付は成立（AC-03）。
 async function notifyClaim(claim: Claim) {
-  const to = process.env.CLAIM_NOTIFY_EMAIL || "ops@openlab.example";
+  const to = process.env.CLAIM_NOTIFY_EMAIL || "support@mishiru-lab.com";
   if (MAIL_ENABLED) {
     try {
       const res = await fetch("https://api.resend.com/emails", {
@@ -96,13 +96,29 @@ async function notifyClaim(claim: Claim) {
 
 export async function createApp() {
   const app = express();
+  app.disable("x-powered-by");
+  app.use((_req, res, next) => {
+    res.setHeader("X-Content-Type-Options", "nosniff");
+    res.setHeader("X-Frame-Options", "DENY");
+    res.setHeader("Referrer-Policy", "strict-origin-when-cross-origin");
+    res.setHeader("Permissions-Policy", "camera=(), microphone=(), geolocation=()");
+    res.setHeader("Cross-Origin-Opener-Policy", "same-origin");
+    if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
+      res.setHeader("Strict-Transport-Security", "max-age=31536000; includeSubDomains");
+    }
+    next();
+  });
   app.use(express.json({ limit: "12mb" }));
-  app.use((req, _res, next) => withAiModel(req.get("x-mishiru-ai-model"), next));
   app.use(accessContextMiddleware);
   app.use(sessionStateMiddleware);
 
   const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
-    if (!ADMIN_TOKEN) return next(); // 開発モード（公開環境ではADMIN_TOKEN必須／Runbook参照）
+    if (!ADMIN_TOKEN) {
+      if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
+        return res.status(503).json({ error: { code: "ADMIN_UNAVAILABLE", message: "管理機能は現在利用できません" } });
+      }
+      return next();
+    }
     if (req.headers["x-admin-token"] === ADMIN_TOKEN) return next();
     return res.status(401).json({ error: { code: "UNAUTHORIZED", message: "管理トークンが必要です" } });
   };
@@ -111,13 +127,12 @@ export async function createApp() {
 
   // ============ ヘルス・メタ ============
   app.get("/api/health", (_req, res) => {
+    const production = process.env.NODE_ENV === "production" || !!process.env.VERCEL;
     res.json({
       status: "ok",
       store: "local-json",
-      adminProtected: !!ADMIN_TOKEN,
+      adminProtected: production || !!ADMIN_TOKEN,
       ai: aiEnabled(),
-      aiProvider: currentAiProvider(),
-      aiModel: currentAiModel(),
       mail: MAIL_ENABLED,
       dataset: ACTIVE_DATASET,
       counts: { labs: store.publicLabs().length, cards: store.allCards().length },
@@ -136,7 +151,7 @@ export async function createApp() {
   app.get("/api/meta", (_req, res) => {
     res.json({ genres: HOOK_GENRES, areas: RESEARCH_AREAS, profileThreshold: PROFILE_THRESHOLD });
   });
-  app.get("/api/ai/config", (_req, res) => {
+  app.get("/api/ai/config", requireAdmin, (_req, res) => {
     res.json({ enabled: aiEnabled(), selectedModel: currentAiModel(), selectedProvider: currentAiProvider(), providers: aiProviderStatus(), models: AI_MODELS });
   });
 
@@ -798,12 +813,27 @@ export async function createApp() {
   app.post("/api/claims", async (req, res) => {
     const { type, labId, name, affiliation, email, message, evidenceUrl } = req.body || {};
     const t: ClaimType = ["fix", "takedown", "claim", "other"].includes(type) ? type : "other";
-    if (!name || !email || !message) return bad(res, "お名前・メール・内容は必須です");
-    if (!isValidEmail(email)) return bad(res, "メールアドレスの形式が正しくありません");
-    const lab = labId ? store.labById(labId) : null;
+    const normalizedName = String(name || "").trim().slice(0, 100);
+    const normalizedAffiliation = String(affiliation || "").trim().slice(0, 200);
+    const normalizedEmail = String(email || "").trim().toLowerCase().slice(0, 200);
+    const normalizedMessage = String(message || "").trim().slice(0, 2000);
+    const normalizedEvidenceUrl = String(evidenceUrl || "").trim().slice(0, 500);
+    if (!normalizedName || !normalizedEmail || !normalizedMessage) return bad(res, "お名前・メール・内容は必須です");
+    if (!isValidEmail(normalizedEmail)) return bad(res, "メールアドレスの形式が正しくありません");
+    if (normalizedEvidenceUrl) {
+      try {
+        const parsed = new URL(normalizedEvidenceUrl);
+        if (!['http:', 'https:'].includes(parsed.protocol)) throw new Error("invalid protocol");
+      } catch {
+        return bad(res, "確認資料のURLは、http:// または https:// から入力してください");
+      }
+    }
+    const normalizedLabId = String(labId || "").trim();
+    const lab = normalizedLabId ? store.labById(normalizedLabId) : null;
     const claim: Claim = {
-      id: genId("claim"), type, labId: labId || null, labName: lab?.name || null,
-      name, affiliation: affiliation || "", email, message, evidenceUrl,
+      id: genId("claim"), type: t, labId: lab?.id || null, labName: lab?.name || null,
+      name: normalizedName, affiliation: normalizedAffiliation, email: normalizedEmail, message: normalizedMessage,
+      evidenceUrl: normalizedEvidenceUrl || undefined,
       status: "pending", createdAt: nowIso(), updatedAt: nowIso(),
     };
     try {
@@ -1011,7 +1041,7 @@ export async function createApp() {
   // ============ Sitemap（published/claimedのみ。20k件はindex分割） ============
   let sitemapCache = "";
   app.get(["/sitemap.xml", "/api/sitemap.xml"], (_req, res) => {
-    const base = process.env.APP_URL || "https://openlab.example";
+    const base = process.env.APP_URL || "https://mishiru-lab.com";
     if (!sitemapCache) {
       const parts = ["/", "/discover", "/labs", "/universities", "/policy"].map((p) => `<url><loc>${base}${p}</loc></url>`);
       for (const lab of store.publicNonDemo()) parts.push(`<url><loc>${base}/labs/${lab.id}</loc></url>`);

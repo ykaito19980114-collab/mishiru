@@ -1,6 +1,5 @@
 // APIクライアント（docs/03 §6）。オフライン時はキャッシュ/キューで体感を壊さない（FR-ERR-01/02）。
 import { getSessionId, newActionId, enqueueAction } from "./session";
-import { aiRequestHeaders } from "./aiModel";
 import { authHeaders } from "./auth";
 import type {
   ThemeCard, Lab, InterestProfile, CardAction,
@@ -13,7 +12,7 @@ import type {
 } from "../../shared/research-project";
 
 export class ApiError extends Error { constructor(message: string, public code = "HTTP_ERROR", public status = 0) { super(message); } }
-async function headers(json = false, actionId?: string) { return { ...aiRequestHeaders(json), ...(await authHeaders()), ...(actionId ? { "x-mishiru-action-id": actionId } : {}) }; }
+async function headers(json = false, actionId?: string) { return { ...(json ? { "Content-Type": "application/json" } : {}), ...(await authHeaders()), ...(actionId ? { "x-mishiru-action-id": actionId } : {}) }; }
 async function ensure(res: Response) {
   const body = !res.ok ? await res.json().catch(() => ({})) : null;
   if (res.status === 403 && body?.error?.code === "ACCOUNT_REQUIRED") window.dispatchEvent(new CustomEvent("mishiru:account-required", { detail: body.access }));
