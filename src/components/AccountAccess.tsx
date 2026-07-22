@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   CheckCircle2,
   KeyRound,
@@ -245,6 +246,7 @@ function AccountModal({
   const [email, setEmail] = React.useState(currentEmail || "");
   const [password, setPassword] = React.useState("");
   const [confirmation, setConfirmation] = React.useState("");
+  const [consent, setConsent] = React.useState(false);
   const [busy, setBusy] = React.useState(false);
   const [message, setMessage] = React.useState("");
   const [error, setError] = React.useState("");
@@ -254,6 +256,7 @@ function AccountModal({
     setMode(next);
     setPassword("");
     setConfirmation("");
+    setConsent(false);
     setMessage("");
     setError("");
     setAwaitingConfirmation(false);
@@ -341,6 +344,12 @@ function AccountModal({
               )}
               {mode === "signup" && (
                 <label>パスワード（確認）<input type="password" minLength={8} autoComplete="new-password" required value={confirmation} onChange={(event) => setConfirmation(event.target.value)} /></label>
+              )}
+              {mode === "signup" && (
+                <label className="account-consent">
+                  <input type="checkbox" required checked={consent} onChange={(event) => setConsent(event.target.checked)} />
+                  <span><Link to="/privacy" target="_blank" rel="noopener noreferrer">プライバシーポリシー</Link>に同意します</span>
+                </label>
               )}
               {error && <p className="account-modal__error" role="alert">{error}</p>}
               {message && <p className="account-modal__message" role="status">{message}</p>}

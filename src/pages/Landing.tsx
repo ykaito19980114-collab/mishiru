@@ -303,10 +303,11 @@ export default function Landing() {
             <a href="#faq">料金・FAQ</a>
             <Link to="/for-labs">研究室関係者の方へ</Link>
             <Link to="/policy">掲載ポリシー</Link>
+            <Link to="/privacy">プライバシーポリシー</Link>
             <Link to="/claim">修正・掲載のご依頼</Link>
           </nav>
         </div>
-        <p className="lp-footer__copy">© 2026 MISHIRU ｜ 研究前夜を、相談できる一枚へ。</p>
+        <p className="lp-footer__copy">© 2026 MISHIRU</p>
       </footer>
     </div>
   );

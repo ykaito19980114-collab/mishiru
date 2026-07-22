@@ -23,6 +23,7 @@ const Departments = lazy(() => import("./pages/Departments"));
 const DepartmentDetail = lazy(() => import("./pages/DepartmentDetail"));
 const Claim = lazy(() => import("./pages/Claim"));
 const Policy = lazy(() => import("./pages/Policy"));
+const Privacy = lazy(() => import("./pages/Privacy"));
 const ForLabs = lazy(() => import("./pages/ForLabs"));
 const Admin = lazy(() => import("./pages/admin/Admin"));
 const AuthCallback = lazy(() => import("./pages/AuthCallback"));
@@ -64,6 +65,7 @@ export default function App() {
               <Route path="/departments/:key" element={<DepartmentDetail />} />
               <Route path="/claim" element={<Claim />} />
               <Route path="/policy" element={<Policy />} />
+              <Route path="/privacy" element={<Privacy />} />
               <Route path="/for-labs" element={<ForLabs />} />
               <Route path="/auth/callback" element={<AuthCallback />} />
               <Route path="/admin/*" element={<Admin />} />

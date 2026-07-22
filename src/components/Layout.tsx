@@ -105,7 +105,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <div className="mishiru-sidebar__footer">
             <AccountButton />
             <details className="sidebar-ai-settings"><summary>使うAIを選ぶ<ChevronDown aria-hidden="true"/></summary><AiModelSelector /></details>
-            <span>気になることを見つけ、問いにし、相談の準備まで。</span>
           </div>
         </div>
       </aside>
@@ -140,9 +139,10 @@ export function Layout({ children }: { children: React.ReactNode }) {
       {/* フッター（md以上のみ。LPは自前のlp-footerを持つため出さない） */}
       {!isLanding && <footer className="hidden md:block site-footer mishiru-footer">
         <div className="max-w-6xl mx-auto px-6 py-7 flex items-center justify-between text-xs text-[var(--c-ink-3)]">
-          <span>© 2026 MISHIRU ｜ 研究前夜を、相談できる一枚へ。</span>
+          <span>© 2026 MISHIRU</span>
           <span className="flex gap-4">
             <Link to="/policy" className="hover:text-[var(--c-ink)]">掲載ポリシー</Link>
+            <Link to="/privacy" className="hover:text-[var(--c-ink)]">プライバシーポリシー</Link>
             <Link to="/claim" className="hover:text-[var(--c-ink)]">修正・掲載のご依頼</Link>
           </span>
         </div>
