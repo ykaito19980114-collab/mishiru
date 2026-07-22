@@ -130,12 +130,7 @@ export async function createApp() {
     const production = process.env.NODE_ENV === "production" || !!process.env.VERCEL;
     res.json({
       status: "ok",
-      store: "local-json",
       adminProtected: production || !!ADMIN_TOKEN,
-      ai: aiEnabled(),
-      mail: MAIL_ENABLED,
-      dataset: ACTIVE_DATASET,
-      counts: { labs: store.publicLabs().length, cards: store.allCards().length },
     });
   });
   app.get("/api/access", async (_req, res) => {
