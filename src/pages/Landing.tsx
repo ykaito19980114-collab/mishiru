@@ -100,10 +100,9 @@ export default function Landing() {
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
-      {/* ===== LPヘッダー ===== */}
+      {/* ===== LP内ナビ（md以上のみ。ロゴとページ間導線はアプリシェル側が持つ） ===== */}
       <header className="lp-header">
         <div className="lp-header__inner">
-          <Link to="/" className="brand-link" aria-label="MISHIRU トップ"><BrandMark /></Link>
           <nav className="lp-header__nav" aria-label="ページ内ナビゲーション">
             <a href="#features">機能</a>
             <a href="#how">使い方</a>
@@ -117,7 +116,7 @@ export default function Landing() {
         </div>
       </header>
 
-      <main id="main-content">
+      <div className="lp-main">
         {/* ===== 1. Hero ===== */}
         <section className="lp-hero" aria-labelledby="lp-hero-title">
           <div className="lp-hero__copy">
@@ -288,7 +287,7 @@ export default function Landing() {
             <Link to="/search" className="lp-band__login">ログインはこちら</Link>
           </div>
         </section>
-      </main>
+      </div>
 
       {/* ===== LPフッター ===== */}
       <footer className="lp-footer">

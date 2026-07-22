@@ -29,10 +29,11 @@
 .lp-cta--sm { min-height: 42px; padding: 0 16px; font-size: 13.5px; }
 .lp-cta--lg { min-height: 54px; padding: 0 30px; font-size: 16px; }
 
-/* ---- ヘッダー ---- */
-.lp-header { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--c-border); backdrop-filter: blur(12px); }
-.lp-header__inner { display: flex; align-items: center; gap: 18px; max-width: 1180px; margin: 0 auto; min-height: 64px; padding: 0 clamp(14px, 2.5vw, 24px); }
-.lp-header__nav { display: none; align-items: center; gap: 4px; margin-left: 8px; }
+/* ---- LP内ナビ(md以上のみ。モバイルはアプリシェルのヘッダー+ハンバーガーが担う) ---- */
+.lp-header { display: none; position: sticky; top: 0; z-index: 40; background: rgba(255,255,255,.94); border-bottom: 1px solid var(--c-border); backdrop-filter: blur(12px); }
+@media (min-width: 768px) { .lp-header { display: block; } }
+.lp-header__inner { display: flex; align-items: center; gap: 18px; max-width: 1180px; margin: 0 auto; min-height: 58px; padding: 0 clamp(14px, 2.5vw, 24px); }
+.lp-header__nav { display: none; align-items: center; gap: 4px; }
 .lp-header__nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 13px; color: var(--c-ink-2); font-size: 13.5px; font-weight: 600; border-radius: 8px; }
 .lp-header__nav a:hover { background: var(--c-surface); color: var(--c-ink); }
 .lp-header__actions { display: flex; align-items: center; gap: 10px; margin-left: auto; }

@@ -19,7 +19,7 @@ const TABS = [
 const MOBILE_TABS = TABS.slice(0, 4);
 
 function isActive(pathname: string, to: string) {
-  if (to === "/search") return pathname === "/" || pathname.startsWith("/search") || pathname.startsWith("/labs") || pathname.startsWith("/universities") || pathname.startsWith("/departments");
+  if (to === "/search") return pathname.startsWith("/search") || pathname.startsWith("/labs") || pathname.startsWith("/universities") || pathname.startsWith("/departments");
   if (to === "/discover") return pathname.startsWith("/discover") || pathname.startsWith("/cards");
   if (to === "/reflect") return pathname.startsWith("/reflect") || pathname.startsWith("/profile");
   return pathname.startsWith(to);
@@ -62,7 +62,9 @@ export function Layout({ children }: { children: React.ReactNode }) {
   },[]);
 
   if (isAdmin) return <>{children}</>; // 管理画面は別シェル
-  if (pathname === "/") return <>{children}</>; // LPトップ（SCR-LP・ADR-008）は自前のヘッダー/フッターを持つ
+  // LPトップ（SCR-LP・ADR-008改）: アプリシェル（サイドバー/ハンバーガー/下部タブ）の中に描画し、
+  // 既存ページへの導線を保つ。フッターとFABはLP側が持つ/不要のため出さない
+  const isLanding = pathname === "/";
 
   return (
     <div className="mishiru-shell min-h-screen bg-[var(--c-bg)] text-[var(--c-ink)]">
@@ -135,8 +137,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         {children}
       </main>
 
-      {/* フッター（md以上のみ） */}
-      <footer className="hidden md:block site-footer mishiru-footer">
+      {/* フッター（md以上のみ。LPは自前のlp-footerを持つため出さない） */}
+      {!isLanding && <footer className="hidden md:block site-footer mishiru-footer">
         <div className="max-w-6xl mx-auto px-6 py-7 flex items-center justify-between text-xs text-[var(--c-ink-3)]">
           <span>© 2026 MISHIRU ｜ 研究前夜を、相談できる一枚へ。</span>
           <span className="flex gap-4">
@@ -144,7 +146,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
             <Link to="/claim" className="hover:text-[var(--c-ink)]">修正・掲載のご依頼</Link>
           </span>
         </div>
-      </footer>
+      </footer>}
 
       {/* 下部タブ（モバイル） */}
       <nav
@@ -170,8 +172,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
           })}
         </div>
       </nav>
-      {/* 下部固定アクションバーを持つ画面（研究室詳細・であう）はFABを出さない（重なり防止。メモはためる/詳細ページ内で可能） */}
-      {!pathname.startsWith("/questions") && !pathname.startsWith("/projects") && !pathname.startsWith("/discover") && !/^\/labs\/[^/]+/.test(pathname) && <FloatingMemoButton />}
+      {/* 下部固定アクションバーを持つ画面（研究室詳細・であう）とLPはFABを出さない（重なり防止。メモはためる/詳細ページ内で可能） */}
+      {!isLanding && !pathname.startsWith("/questions") && !pathname.startsWith("/projects") && !pathname.startsWith("/discover") && !/^\/labs\/[^/]+/.test(pathname) && <FloatingMemoButton />}
     </div>
   );
 }
