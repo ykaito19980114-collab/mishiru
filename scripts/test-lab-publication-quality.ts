@@ -8,6 +8,14 @@ const labs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "u
 const publicLabs = labs.filter((lab) => lab.status === "published" || lab.status === "claimed");
 const aggregateName = /全研究室|研究室群|各研究室|各分野|各領域|各専攻|講座群|連携研究室|教員一覧|担当教員一覧|研究室・教員一覧|ほか(?:\d+)?(?:研究室)?|他研究室|多数|主要分野/;
 const profileUrl = /researchmap\.jp|k-ris\.keio\.ac\.jp|r-info\.tohoku\.ac\.jp|research-db\.|researchers?\.|ridb\.|yudb\.|hyokadb|profs\.|elsevierpure\.com|search\.adb\.|rdb\.|nrid\.nii\.ac\.jp|kaken\.nii\.ac\.jp|jglobal\.jst\.go\.jp|orcid\.org|scholar\.google\.|cir\.nii\.ac\.jp|\/(?:faculty|staff|teacher|researcher|profile|people|member)(?:\/|$)/i;
+const coreLabName = (name: string) => name
+  .replace(/[（(][^）)]*[）)]/g, " ")
+  .replace(/研究室|研究所|研究グループ|グループ|ラボ|講座|分野|部門|領域|ユニット/g, " ")
+  .replace(/[・／/\s]+/g, "")
+  .trim();
+const homepageKey = (value: string) => new URL(value).toString()
+  .replace(/\/(?:index\.(?:html?|php))?$/i, "")
+  .toLowerCase();
 
 assert.ok(publicLabs.length > 0, "公開対象が0件になっている");
 assert.equal(publicLabs.length, labs.length, "掲載停止処理前のデータは全件公開状態である必要がある");
@@ -24,6 +32,16 @@ for (const lab of publicLabs) {
   }
   const aggregate = aggregateName.test(lab.name);
   if (aggregate) assert.equal(lab.official_url, null, `${lab.id}: 集合ページに研究室HPリンクがある`);
+}
+
+const homepageGroups = new Map<string, Lab[]>();
+for (const lab of publicLabs.filter((item) => item.official_url)) {
+  const key = homepageKey(lab.official_url!);
+  homepageGroups.set(key, [...(homepageGroups.get(key) || []), lab]);
+}
+for (const [url, groupedLabs] of homepageGroups) {
+  const identities = new Set(groupedLabs.map((lab) => coreLabName(lab.name)).filter(Boolean));
+  assert.ok(identities.size <= 1, `${url}: 異なる研究室名へ同じ研究室HPが割り当てられている`);
 }
 
 const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publication-audit.json"), "utf-8")) as {

@@ -328,11 +328,15 @@ function pageMatchScore(lab: Lab, page: FetchRecord) {
   let score = 0;
   const reasons: string[] = [];
   const text = `${page.title} ${page.text}`.replace(/\s+/g, "");
+  const lead = `${page.title} ${page.text.slice(0, 2_000)}`.replace(/\s+/g, "");
   const core = coreLabName(lab.name);
   const people = personTokens(lab.pi.name);
-  if (core.length >= 2 && text.includes(core)) { score += 5; reasons.push("ページ本文に研究室名"); }
-  if (people[0] && text.includes(people[0])) { score += 5; reasons.push("ページ本文に責任者名"); }
-  else if (people[1] && text.includes(people[1])) { score += 2; reasons.push("ページ本文に責任者姓"); }
+  if (core.length >= 2 && lead.includes(core)) { score += 7; reasons.push("ページ冒頭に研究室名"); }
+  else if (core.length >= 2 && text.includes(core)) { score += 2; reasons.push("ページ本文に研究室名"); }
+  if (people[0] && lead.includes(people[0])) { score += 7; reasons.push("ページ冒頭に責任者名"); }
+  else if (people[0] && text.includes(people[0])) { score += 2; reasons.push("ページ本文に責任者名"); }
+  else if (people[1] && lead.includes(people[1])) { score += 3; reasons.push("ページ冒頭に責任者姓"); }
+  else if (people[1] && text.includes(people[1])) { score += 1; reasons.push("ページ本文に責任者姓"); }
   if (/研究室|laboratory|\blab\b/i.test(`${page.title} ${page.text.slice(0, 3000)}`)) { score += 2; reasons.push("研究室ページ表記"); }
   if (isProfileUrl(page.finalUrl)) { score -= 10; reasons.push("教員・研究者プロフィール"); }
   if (looksLikeDirectory(page.finalUrl, page.text)) { score -= 7; reasons.push("研究室・教員一覧"); }
@@ -380,7 +384,7 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
     const page = await fetchPage(currentUrl);
     const match = pageMatchScore(lab, page);
     const exactIdentity = match.reasons.some((reason) =>
-      reason === "ページ本文に研究室名" || reason === "ページ本文に責任者名");
+      reason === "ページ冒頭に研究室名" || reason === "ページ冒頭に責任者名");
     const accepted = page.ok
       && presentsAsLabHomepage(page)
       && exactIdentity
@@ -413,7 +417,7 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
     const match = pageMatchScore(lab, page);
     const combined = candidate.score + match.score;
     const anchorIdentity = candidate.reasons.some((reason) => reason.startsWith("リンクに研究室名") || reason.startsWith("リンクに責任者"));
-    const pageIdentity = match.reasons.some((reason) => reason === "ページ本文に研究室名" || reason === "ページ本文に責任者名");
+    const pageIdentity = match.reasons.some((reason) => reason === "ページ冒頭に研究室名" || reason === "ページ冒頭に責任者名");
     if (page.ok && presentsAsLabHomepage(page) && combined >= 10 && (anchorIdentity || pageIdentity)) {
       return {
         labId: lab.id,
@@ -506,6 +510,11 @@ function pendingSummary() {
   return "研究室名・所属などの基礎情報を掲載しています。研究室ホームページと研究内容は現在確認中です。";
 }
 
+function canonicalHomepageKey(value: string | null | undefined) {
+  const normalized = normalizeUrl(value).replace(/\/(?:index\.(?:html?|php))?$/i, "");
+  return normalized.toLowerCase();
+}
+
 async function main() {
   const range = labs.slice(OFFSET, Number.isFinite(LIMIT) ? OFFSET + LIMIT : undefined);
   const target = PENDING_ONLY
@@ -529,7 +538,7 @@ async function main() {
   }
 
   const aggregateIds = new Set(labs.filter((lab) => isAggregateLabName(lab.name)).map((lab) => lab.id));
-  const updated = labs.map((lab) => {
+  const updatedBeforeSharedUrlCheck = labs.map((lab) => {
     const audit = acceptedById.get(lab.id);
     if (!audit) return lab;
     const duplicate = duplicateOf.get(lab.id);
@@ -559,6 +568,42 @@ async function main() {
     } satisfies Lab;
   });
 
+  // 同じURLが異なる研究室名へ割り当てられている場合は、学科一覧・研究室一覧・
+  // 別研究室サイトの誤採用である可能性が高い。ページ自体は公開したまま、
+  // 外部リンクと推測情報だけを確認待ちへ戻す。
+  const homepageGroups = new Map<string, Lab[]>();
+  for (const lab of updatedBeforeSharedUrlCheck) {
+    const key = canonicalHomepageKey(lab.official_url);
+    if (!key) continue;
+    homepageGroups.set(key, [...(homepageGroups.get(key) || []), lab]);
+  }
+  const ambiguousSharedUrlIds = new Set<string>();
+  for (const groupedLabs of homepageGroups.values()) {
+    const identities = new Set(groupedLabs.map((lab) => coreLabName(lab.name)).filter(Boolean));
+    if (identities.size <= 1) continue;
+    for (const lab of groupedLabs) ambiguousSharedUrlIds.add(lab.id);
+  }
+  const updated = updatedBeforeSharedUrlCheck.map((lab) => {
+    if (!ambiguousSharedUrlIds.has(lab.id)) return lab;
+    const note = "異なる研究室名に同一URLが割り当てられているため、個別研究室ホームページを再確認";
+    return {
+      ...lab,
+      official_url: null,
+      has_url: false,
+      sources: [],
+      sections: { ...lab.sections, research_summary: pendingSummary() },
+      quality: {
+        ...lab.quality,
+        publicationLevel: "hidden",
+        contentLevel: "basic",
+        sourceKind: "none",
+        reviewStatus: "needs_review",
+        missingFields: Array.from(new Set([...lab.quality.missingFields, "研究室ホームページ"])),
+        notes: Array.from(new Set([...lab.quality.notes, note])),
+      },
+    } satisfies Lab;
+  });
+
   let previousAudits: LabAudit[] = [];
   try {
     const previousReport = JSON.parse(fs.readFileSync(REPORT_FILE, "utf-8")) as { decisions?: LabAudit[] };
@@ -568,7 +613,23 @@ async function main() {
   }
   const mergedById = new Map(previousAudits.map((audit) => [audit.labId, audit]));
   for (const audit of audits) mergedById.set(audit.labId, audit);
-  const mergedAudits = labs.map((lab) => mergedById.get(lab.id)).filter((audit): audit is LabAudit => Boolean(audit));
+  const mergedAudits = labs
+    .map((lab) => mergedById.get(lab.id))
+    .filter((audit): audit is LabAudit => Boolean(audit))
+    .map((audit) => {
+      if (!ambiguousSharedUrlIds.has(audit.labId) && !aggregateIds.has(audit.labId)) return audit;
+      const reason = ambiguousSharedUrlIds.has(audit.labId)
+        ? "異なる研究室名に同一URLが割り当てられているため、個別研究室ホームページを再確認"
+        : "複数研究室をまとめた集合ページ";
+      return {
+        ...audit,
+        acceptedUrl: null,
+        outcome: "manual_hold" as const,
+        confidence: 0,
+        matchedKeywords: [],
+        reasons: Array.from(new Set([...audit.reasons, reason])),
+      };
+    });
   const counts = {
     input: mergedAudits.length,
     verified: mergedAudits.filter((item) => item.outcome === "verified" && item.acceptedUrl).length,
@@ -577,6 +638,7 @@ async function main() {
     unresolved: mergedAudits.filter((item) => item.outcome === "unresolved").length,
     duplicatePagesHeld: duplicateOf.size,
     aggregatePagesHeld: aggregateIds.size,
+    ambiguousSharedUrlsHeld: ambiguousSharedUrlIds.size,
     publishable: updated.filter((lab) => lab.status === "published" || lab.status === "claimed").length,
   };
   const report = {
