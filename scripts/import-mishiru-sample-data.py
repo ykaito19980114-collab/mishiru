@@ -512,6 +512,10 @@ def main() -> None:
 
     warnings: list[dict[str, str]] = []
     labs = normalize_labs(lab_records, warnings)
+    suppression_path = Path("data/lab-suppressions.json")
+    suppressions = json.loads(suppression_path.read_text(encoding="utf-8")) if suppression_path.exists() else {}
+    suppressed_source_nos = {str(value) for value in suppressions.get("sourceNos", [])}
+    labs = [lab for lab in labs if str(lab.get("sourceNo", "")) not in suppressed_source_nos]
     fields = normalize_fields(field_records)
     societies = normalize_societies(society_records, warnings)
     journals = normalize_journals(journal_records, warnings)

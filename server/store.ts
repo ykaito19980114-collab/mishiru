@@ -29,7 +29,16 @@ function readJson<T>(file: string, fallback: T): T {
 }
 
 // --- マスタ（起動時ロード・不変） ---
-const labs: Lab[] = readJson<Lab[]>(MASTER_LABS_FILE, []);
+const labSuppressions = readJson<{ ids: string[]; sourceNos: string[] }>(
+  path.join(DATA_DIR, "lab-suppressions.json"),
+  { ids: [], sourceNos: [] },
+);
+const suppressedLabIds = new Set(labSuppressions.ids);
+const suppressedSourceNos = new Set(labSuppressions.sourceNos);
+const labs: Lab[] = readJson<Lab[]>(MASTER_LABS_FILE, []).filter((lab) => {
+  const sourceNo = String((lab as Lab & { sourceNo?: string }).sourceNo || lab.id.replace(/^(?:source-)?lab-0*/, ""));
+  return !suppressedLabIds.has(lab.id) && !suppressedSourceNos.has(sourceNo);
+});
 const cards: ThemeCard[] = readJson<ThemeCard[]>(path.join(DATA_DIR, "cards.json"), []);
 const researchFields: ResearchField[] = readJson<ResearchField[]>(path.join(MASTER_RESOURCES_DIR, "fields.json"), []);
 const researchSocieties: ResearchSociety[] = readJson<ResearchSociety[]>(path.join(MASTER_RESOURCES_DIR, "societies.json"), []);

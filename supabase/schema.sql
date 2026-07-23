@@ -182,6 +182,18 @@ revoke all on function mishiru_consume_guest_action(text, text, integer) from pu
 grant execute on function mishiru_consume_guest_action(text, text, integer) to service_role;
 
 -- ---------- 運営系（個人情報：admin専用） ----------
+create table if not exists mishiru_content_suppressions (
+  id                    text primary key,
+  lab_id                text not null unique,
+  source_no             text,
+  reason                text not null,
+  suppress_publication  boolean not null default true,
+  suppress_contact      boolean not null default true,
+  requested_at          timestamptz not null default now(),
+  created_at            timestamptz not null default now(),
+  updated_at            timestamptz not null default now()
+);
+
 create table if not exists mishiru_claims (
   id          text primary key,
   type        text check (type in ('fix','takedown','claim','other')),
@@ -268,6 +280,7 @@ alter table mishiru_universities   enable row level security;
 alter table mishiru_departments    enable row level security;
 alter table mishiru_card_actions   enable row level security;
 alter table mishiru_interest_profiles enable row level security;
+alter table mishiru_content_suppressions enable row level security;
 alter table mishiru_claims         enable row level security;
 alter table mishiru_leads          enable row level security;
 alter table mishiru_reports        enable row level security;
@@ -294,6 +307,7 @@ create policy "public read departments" on mishiru_departments for select using 
 -- ClaimはサーバーAPIだけで受け付ける。公開anon keyからの直接投稿は許可しない。
 drop policy if exists "anon insert claims" on mishiru_claims;
 revoke insert on table mishiru_claims from anon, authenticated;
+revoke all on table mishiru_content_suppressions from anon, authenticated;
 
 -- card_actions / interest_profiles / events：セッション本人のみ（アプリ側でsession_id一致を強制）
 -- leads/reports/articles には公開ポリシーを作らない = admin(service role)のみ参照可（PII保護）。
