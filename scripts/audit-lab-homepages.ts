@@ -6,7 +6,7 @@
  * official_url として採用する。未確認ページは review_requested にする。
  *
  * 実行例:
- *   pnpm tsx scripts/audit-lab-homepages.ts --limit=100 --concurrency=8
+ *   pnpm tsx scripts/audit-lab-homepages.ts --offset=0 --limit=500 --concurrency=8 --apply
  *   pnpm tsx scripts/audit-lab-homepages.ts --concurrency=12 --apply
  */
 import fs from "fs";
@@ -79,6 +79,7 @@ const argValue = (name: string, fallback: number) => {
 };
 const APPLY = args.has("--apply");
 const LIMIT = argValue("limit", Number.POSITIVE_INFINITY);
+const OFFSET = Math.max(0, argValue("offset", 0));
 const CONCURRENCY = Math.max(1, Math.min(16, argValue("concurrency", 8)));
 
 const labs = JSON.parse(fs.readFileSync(LABS_FILE, "utf-8")) as Lab[];
@@ -347,6 +348,7 @@ function keywordsConfirmedOnPage(lab: Lab, page: FetchRecord) {
 
 function discoveryUrls(lab: Lab, source: NormalizedLab | undefined) {
   return Array.from(new Set([
+    source?.url || "",
     source?.facultyPage || "",
     source?.researchmap || "",
     ...urlsIn(source?.notes),
@@ -369,7 +371,10 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
     };
   }
 
-  const currentUrl = normalizeUrl(lab.official_url);
+  const source = normalizedByNo.get(labNo(lab));
+  // data/labs.json で未確認扱いにした後も、元データに残る研究室URL候補を失わない。
+  // URLはそのまま採用せず、以下の本文・責任者・研究室ページ判定を必ず通す。
+  const currentUrl = normalizeUrl(lab.official_url) || normalizeUrl(source?.url);
   if (currentUrl) {
     const page = await fetchPage(currentUrl);
     const match = pageMatchScore(lab, page);
@@ -393,7 +398,6 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
     }
   }
 
-  const source = normalizedByNo.get(labNo(lab));
   const pages = await Promise.all(discoveryUrls(lab, source).map((url) => fetchPage(url, true)));
   const candidates = pages
     .filter((page) => page.ok && page.links.length)
@@ -502,8 +506,9 @@ function pendingSummary() {
 }
 
 async function main() {
-  const target = labs.slice(0, LIMIT);
-  console.log(`[audit] ${target.length}件 / concurrency=${CONCURRENCY} / apply=${APPLY}`);
+  const target = labs.slice(OFFSET, Number.isFinite(LIMIT) ? OFFSET + LIMIT : undefined);
+  const rangeEnd = target.length ? OFFSET + target.length - 1 : OFFSET;
+  console.log(`[audit] ${target.length}件 / range=${OFFSET}-${rangeEnd} / concurrency=${CONCURRENCY} / apply=${APPLY}`);
   const audits = await pool(target, CONCURRENCY, auditLab);
   fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
   fs.writeFileSync(CACHE_FILE, JSON.stringify(fetchCache));
@@ -513,8 +518,6 @@ async function main() {
   const duplicateWinner = new Map<string, string>();
   const duplicateOf = new Map<string, string>();
   for (const lab of labs) {
-    const audit = acceptedById.get(lab.id);
-    if (!audit) continue;
     const key = [lab.university.name, lab.department, lab.name, lab.pi.name].join("\u0000");
     const winner = duplicateWinner.get(key);
     if (!winner) duplicateWinner.set(key, lab.id);
@@ -552,12 +555,22 @@ async function main() {
     } satisfies Lab;
   });
 
+  let previousAudits: LabAudit[] = [];
+  try {
+    const previousReport = JSON.parse(fs.readFileSync(REPORT_FILE, "utf-8")) as { decisions?: LabAudit[] };
+    previousAudits = previousReport.decisions || [];
+  } catch {
+    previousAudits = [];
+  }
+  const mergedById = new Map(previousAudits.map((audit) => [audit.labId, audit]));
+  for (const audit of audits) mergedById.set(audit.labId, audit);
+  const mergedAudits = labs.map((lab) => mergedById.get(lab.id)).filter((audit): audit is LabAudit => Boolean(audit));
   const counts = {
-    input: audits.length,
-    verified: audits.filter((item) => item.outcome === "verified" && item.acceptedUrl).length,
-    discovered: audits.filter((item) => item.outcome === "discovered" && item.acceptedUrl).length,
-    manualHold: audits.filter((item) => item.outcome === "manual_hold").length,
-    unresolved: audits.filter((item) => item.outcome === "unresolved").length,
+    input: mergedAudits.length,
+    verified: mergedAudits.filter((item) => item.outcome === "verified" && item.acceptedUrl).length,
+    discovered: mergedAudits.filter((item) => item.outcome === "discovered" && item.acceptedUrl).length,
+    manualHold: mergedAudits.filter((item) => item.outcome === "manual_hold").length,
+    unresolved: mergedAudits.filter((item) => item.outcome === "unresolved").length,
     duplicatePagesHeld: duplicateOf.size,
     aggregatePagesHeld: aggregateIds.size,
     publishable: updated.filter((lab) => lab.status === "published" || lab.status === "claimed").length,
@@ -566,8 +579,8 @@ async function main() {
     generatedAt: `${CHECKED_AT}T00:00:00+09:00`,
     rule: "掲載停止対象を除く研究室ページは基礎情報を公開する。研究室名または責任者名との一致を確認できた研究室ホームページだけを外部リンクと内容整理に使用し、教員ページ・researchmap・部局一覧は代用しない。",
     counts,
-    decisions: audits,
-    unresolved: audits.filter((item) => !item.acceptedUrl),
+    decisions: mergedAudits,
+    unresolved: mergedAudits.filter((item) => !item.acceptedUrl),
     potentialDuplicateGroups: Array.from(
       labs.reduce((map, lab) => {
         const key = [lab.university.name, lab.department, lab.name].join("\u0000");
@@ -579,9 +592,13 @@ async function main() {
       .map(([key, ids]) => ({ key: key.split("\u0000"), ids })),
   };
   fs.writeFileSync(REPORT_FILE, JSON.stringify(report, null, 2));
-  if (APPLY && Number.isFinite(LIMIT) === false) fs.writeFileSync(LABS_FILE, JSON.stringify(updated));
-  else if (APPLY) console.warn("[audit] --limit 指定時は data/labs.json を更新しません。全件実行でのみ適用します。");
-  console.log(JSON.stringify(counts, null, 2));
+  if (APPLY) fs.writeFileSync(LABS_FILE, JSON.stringify(updated));
+  const batchCounts = {
+    checked: audits.length,
+    confirmed: audits.filter((item) => Boolean(item.acceptedUrl)).length,
+    unresolved: audits.filter((item) => !item.acceptedUrl).length,
+  };
+  console.log(JSON.stringify({ batch: batchCounts, overall: counts }, null, 2));
 }
 
 await main();
