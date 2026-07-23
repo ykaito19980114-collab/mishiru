@@ -577,10 +577,24 @@ async function main() {
     if (!key) continue;
     homepageGroups.set(key, [...(homepageGroups.get(key) || []), lab]);
   }
+  const labBySourceNo = new Map(updatedBeforeSharedUrlCheck.map((lab) => [labNo(lab), lab]));
+  const sourceUrlGroups = new Map<string, Lab[]>();
+  for (const source of normalized) {
+    const lab = labBySourceNo.get(String(source.sourceNo));
+    const key = canonicalHomepageKey(source.url);
+    if (!lab || !key) continue;
+    sourceUrlGroups.set(key, [...(sourceUrlGroups.get(key) || []), lab]);
+  }
+  const ambiguousSourceUrlKeys = new Set(
+    Array.from(sourceUrlGroups)
+      .filter(([, groupedLabs]) =>
+        new Set(groupedLabs.map((lab) => coreLabName(lab.name)).filter(Boolean)).size > 1)
+      .map(([key]) => key),
+  );
   const ambiguousSharedUrlIds = new Set<string>();
-  for (const groupedLabs of homepageGroups.values()) {
+  for (const [key, groupedLabs] of homepageGroups) {
     const identities = new Set(groupedLabs.map((lab) => coreLabName(lab.name)).filter(Boolean));
-    if (identities.size <= 1) continue;
+    if (identities.size <= 1 && !ambiguousSourceUrlKeys.has(key)) continue;
     for (const lab of groupedLabs) ambiguousSharedUrlIds.add(lab.id);
   }
   const updated = updatedBeforeSharedUrlCheck.map((lab) => {
@@ -639,6 +653,7 @@ async function main() {
     duplicatePagesHeld: duplicateOf.size,
     aggregatePagesHeld: aggregateIds.size,
     ambiguousSharedUrlsHeld: ambiguousSharedUrlIds.size,
+    ambiguousSourceUrls: ambiguousSourceUrlKeys.size,
     publishable: updated.filter((lab) => lab.status === "published" || lab.status === "claimed").length,
   };
   const report = {
