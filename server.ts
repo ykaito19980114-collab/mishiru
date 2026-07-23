@@ -138,10 +138,7 @@ export async function createApp() {
 
   const requireAdmin = (req: express.Request, res: express.Response, next: express.NextFunction) => {
     if (!ADMIN_TOKEN) {
-      if (process.env.NODE_ENV === "production" || process.env.VERCEL) {
-        return res.status(503).json({ error: { code: "ADMIN_UNAVAILABLE", message: "管理機能は現在利用できません" } });
-      }
-      return next();
+      return res.status(503).json({ error: { code: "ADMIN_UNAVAILABLE", message: "管理機能は現在利用できません" } });
     }
     if (req.headers["x-admin-token"] === ADMIN_TOKEN) return next();
     return res.status(401).json({ error: { code: "UNAUTHORIZED", message: "管理トークンが必要です" } });

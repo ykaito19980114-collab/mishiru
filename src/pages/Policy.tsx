@@ -8,14 +8,14 @@ export default function Policy() {
     <div className="max-w-2xl mx-auto px-4 pt-6 pb-10">
       <Helmet><title>掲載ポリシー ｜ MISHIRU</title></Helmet>
       <h1 className="text-2xl font-bold mb-6">掲載ポリシー</h1>
-      <p className="text-sm text-[var(--c-ink-3)] mb-6">最終更新：2026年7月22日</p>
+      <p className="text-sm text-[var(--c-ink-3)] mb-6">最終更新：2026年7月23日</p>
 
       <div className="space-y-6 text-[15px] text-[var(--c-ink-2)] leading-relaxed">
         <Sec title="本サービスの位置づけ">
           MISHIRUは、学生が興味関心から研究テーマ・研究室に出会うための独立した第三者サービスです。各大学・研究室が運営するものではありません。研究室ランキング・教授評価・口コミ投稿は行いません。
         </Sec>
         <Sec title="情報の出典と正確性">
-          掲載情報は、研究室公式サイト・大学公式教員ページ・researchmap等の公開情報にもとづき、運営が学生向けに要約・整理したものです（本文の転載は行いません）。各ページには出典・最終更新日・確度を明示し、研究室未確認の項目は「研究室未確認」と表示します。
+          公開する研究室ページは、研究室名・責任者・大学との対応を研究室ホームページで確認できたものに限ります。教員プロフィール、researchmap、学部の教員一覧は候補の探索や照合にのみ使い、研究室ホームページとしては掲載しません。内容は運営が学生向けに要約し、出典と確認日を明示します。
         </Sec>
         <Sec title="修正・掲載停止のご依頼">
           研究室関係者の方は、<Link to="/claim" className="text-[var(--c-primary)] font-bold underline">修正・掲載のご依頼</Link>からいつでもご連絡いただけます。誤情報や掲載停止のご依頼は、原則1営業日以内に一次確認します。必要な場合は、事実確認の完了前でも一時非公開を優先します。

@@ -95,7 +95,9 @@ for (const row of parsed.data) {
       student_themes: null, methods: null, key_papers: null, daily_life: null,
       mentoring: null, careers: null, fit: null, collaboration: null,
     },
-    status: "published",
+    // 研究室ホームページの到達確認と、研究室名・責任者名の一致確認が終わるまで公開しない。
+    // 変換後に scripts/audit-lab-homepages.ts --apply を実行する。
+    status: "review_requested",
     verified: false,
     confidence: "public_info",
     last_updated: today,

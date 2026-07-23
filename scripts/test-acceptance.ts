@@ -83,17 +83,25 @@ async function run() {
 
   // ---- AC-04: 診断レポート（LLM未設定→テンプレ） ----
   const rep = await post("/api/admin/reports/generate", { labId });
-  check("AC-04", !!rep.body.report?.content && rep.body.report.generatedBy === "template", "テンプレでレポート生成(FR-REPORT-02)");
-  check("AC-04b", /想定|カード接続|接続/.test(rep.body.report.content), "想定カード接続を含む");
+  if (rep.status === 503) {
+    check("AC-04", rep.body?.error?.code === "ADMIN_UNAVAILABLE", "管理トークン未設定時は診断レポートAPIを公開しない");
+  } else {
+    check("AC-04", !!rep.body.report?.content && rep.body.report.generatedBy === "template", "テンプレでレポート生成(FR-REPORT-02)");
+    check("AC-04b", /想定|カード接続|接続/.test(rep.body.report.content), "想定カード接続を含む");
+  }
 
   // ---- AC-05: 外部データ不能でも破綻しない（=常時JSONストアで200） ----
   check("AC-05", labRes && lab && labsRes.data.length > 0, "外部API未接続でも研究室表示が成立");
 
   // ---- AC-08: リード次アクション日必須 ----
   const noDate = await post("/api/admin/leads", { university: "京大", labName: "テスト研" });
-  check("AC-08a", noDate.status === 400, "次アクション日なしは拒否");
-  const withDate = await post("/api/admin/leads", { university: "京大", labName: "テスト研", nextActionDate: "2026-07-20", nextAction: "初回" });
-  check("AC-08b", !!withDate.body.lead?.id, "次アクション日ありで登録");
+  if (noDate.status === 503) {
+    check("AC-08a", noDate.body?.error?.code === "ADMIN_UNAVAILABLE", "管理トークン未設定時はリードAPIを公開しない");
+  } else {
+    check("AC-08a", noDate.status === 400, "次アクション日なしは拒否");
+    const withDate = await post("/api/admin/leads", { university: "京大", labName: "テスト研", nextActionDate: "2026-07-20", nextAction: "初回" });
+    check("AC-08b", !!withDate.body.lead?.id, "次アクション日ありで登録");
+  }
 
   // ---- FR-MATCH-02: カード関連研究室0件でも近いカードで行き止まりにしない ----
   const { body: cd } = await j(`/api/cards/${cards[0].id}?sessionId=${sid}`);
@@ -107,13 +115,17 @@ async function run() {
 
   // ---- STATE-02: 記事差戻し（professor_review→editing）は理由必須 ----
   const art = await post("/api/admin/articles", { labName: "テスト研", title: "テスト記事" });
-  const artId = art.body.article.id;
-  const patch = (body: unknown) => j(`/api/admin/articles/${artId}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
-  await patch({ status: "professor_review" }); // 教授確認へ
-  const noReason = await patch({ status: "editing" }); // 差戻し・理由なし → 拒否
-  check("STATE-02a", noReason.status === 400, "差戻しは理由なしで拒否");
-  const withReason = await patch({ status: "editing", returnReason: "表現の修正が必要" });
-  check("STATE-02b", withReason.status === 200 && withReason.body.article.returnReason === "表現の修正が必要", "理由ありで差戻し成功");
+  if (art.status === 503) {
+    check("STATE-02a", art.body?.error?.code === "ADMIN_UNAVAILABLE", "管理トークン未設定時は記事APIを公開しない");
+  } else {
+    const artId = art.body.article.id;
+    const patch = (body: unknown) => j(`/api/admin/articles/${artId}`, { method: "PATCH", headers: { "Content-Type": "application/json" }, body: JSON.stringify(body) });
+    await patch({ status: "professor_review" }); // 教授確認へ
+    const noReason = await patch({ status: "editing" }); // 差戻し・理由なし → 拒否
+    check("STATE-02a", noReason.status === 400, "差戻しは理由なしで拒否");
+    const withReason = await patch({ status: "editing", returnReason: "表現の修正が必要" });
+    check("STATE-02b", withReason.status === 200 && withReason.body.article.returnReason === "表現の修正が必要", "理由ありで差戻し成功");
+  }
 
   // ---- Test-PROH-03: 自由口コミ投稿APIが存在しない ----
   const review = await post("/api/reviews", { text: "口コミ" });
@@ -200,18 +212,14 @@ async function run() {
   const { body: urlDetail } = await j(`/api/labs/${urlLab.data[0].id}`);
   check("LAB-URL-01", typeof urlDetail.lab.official_url === "string" && urlDetail.lab.official_url.startsWith("http"), "公式サイトURLが研究室ページに供給される");
 
-  // ---- FR-ENRICH: 研究室ページの充実（AIガイド＋論文の二段構え・信頼ゲート） ----
-  const { body: en244 } = await j(`/api/labs/lab-244/enrich`); // 藤田桂英/情報AI
-  check("FR-ENRICH-01", !!en244.aiGuide?.overview && Array.isArray(en244.aiGuide?.questions), "AI学生ガイド生成");
-  check("FR-ENRICH-02a", en244.papers?.length > 0 && ["matched", "name_only"].includes(en244.papersConfidence), `著者一致の論文をin-app提供（${en244.papers?.length}件）`);
-  // 誤同定ゲート：藤本聡(物理・共通名)は著者断定せず、関連論文モードにフォールバック
-  const { body: en1 } = await j(`/api/labs/lab-1/enrich`);
-  check("FR-ENRICH-02b", en1.papersConfidence !== "matched" && en1.papersConfidence !== "name_only", `共通名は著者断定しない（mode=${en1.papersConfidence}）`);
-  check("FR-ENRICH-02c", (en1.papers || []).every((p: any) => !/knee|arthroscop|surgery/i.test(p.title)), "誤同定論文（膝手術等）を出さない");
-  // 全ページ掲出：著者特定できない研究室でもキーワード関連論文で埋め込みが成立
-  const { body: enRand } = await j(`/api/labs/lab-1000/enrich`);
-  check("FR-ENRICH-02d", (en1.papers?.length > 0 || enRand.papers?.length > 0), `関連論文フォールバックで掲出（lab-1:${en1.papers?.length}件/lab-1000:${enRand.papers?.length}件）`);
-  check("FR-ENRICH-03", "aiGuide" in en244 && "papers" in en244, "enrichは常に構造を返す（失敗時も画面を壊さない）");
+  // ---- FR-ENRICH: 公開確認済み研究室だけを補足し、論文は所属一致時だけ表示 ----
+  const enrichmentLabId = urlLab.data[0].id;
+  const { body: enrichment } = await j(`/api/labs/${enrichmentLabId}/enrich`);
+  check("FR-ENRICH-01", "aiGuide" in enrichment && "papers" in enrichment, "公開研究室のenrichは常に構造を返す");
+  check("FR-ENRICH-02a", ["matched", "none"].includes(enrichment.papersConfidence), `論文は所属一致または非表示（mode=${enrichment.papersConfidence}）`);
+  check("FR-ENRICH-02b", enrichment.papersConfidence !== "name_only" && enrichment.papersConfidence !== "related", "氏名だけ・関連語だけの論文を研究室実績として出さない");
+  const hidden = await j("/api/labs/lab-1/enrich");
+  check("FR-ENRICH-03", hidden.status === 404, "再確認待ちの研究室はenrichも公開しない");
 
   console.log(results.join("\n"));
   console.log(`\n${pass} passed, ${fail} failed`);

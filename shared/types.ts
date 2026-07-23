@@ -6,13 +6,25 @@ export type LabStatus =
   | "update_requested" | "hidden" | "archived";
 
 export interface LabSource {
-  label: string; // 例: 研究室公式サイト / 大学公式教員ページ / researchmap
+  label: string; // 公開ページでは「研究室ホームページ」を一次出典にする
   url: string;
 }
 
 export interface LabMember {
   name: string;
   title: string; // 教授/准教授/講師/助教/特任教授 等
+}
+
+export interface LabQuality {
+  publicationLevel: "sourced" | "basic" | "review" | "hidden";
+  contentLevel: "verified" | "sourced" | "basic";
+  score: number;
+  reviewStatus: "automated" | "manually_researched" | "needs_review";
+  sourceKind: "lab_homepage" | "none";
+  checkedAt: string;
+  missingFields: string[];
+  duplicateOf?: string;
+  notes?: string[];
 }
 
 // FR-LAB-01 必須10項目。null = 「未確認」表示（空欄・非表示にしない）
@@ -61,7 +73,7 @@ export interface Lab {
   confidence: "public_info" | "verified"; // 確度表示
   last_updated: string;     // YYYY-MM-DD
   is_demo?: boolean;        // 公認ページの表示例（一覧・マッチング対象外）
-  quality?: Record<string, string>;
+  quality?: LabQuality;
   rawSource?: Record<string, string>;
 }
 

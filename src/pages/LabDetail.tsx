@@ -60,9 +60,14 @@ export default function LabDetail() {
       setLab(res.lab);
       setReasons(res.connectionReasons);
       setState("ok");
-      api.getResearchResources(res.lab.keywords.slice(0, 3).join(" "), 5).then(setResources).catch(() => {});
-      // 充実情報は遅延取得（Gemini＋OpenAlexで数秒かかるため本文表示をブロックしない）
-      api.getEnrichment(id!).then((e) => { setEnrich(e); setEnrichState("done"); }).catch(() => setEnrichState("done"));
+      const canInterpret = res.lab.quality?.sourceKind === "lab_homepage"
+        && res.lab.quality?.contentLevel !== "basic";
+      if (canInterpret) {
+        api.getResearchResources(res.lab.keywords.slice(0, 3).join(" "), 5).then(setResources).catch(() => {});
+        api.getEnrichment(id!).then((e) => { setEnrich(e); setEnrichState("done"); }).catch(() => setEnrichState("done"));
+      } else {
+        setEnrichState("done");
+      }
     } catch (e) {
       setState((e as Error).message.includes("見つかりません") ? "notfound" : "error");
     }
@@ -88,7 +93,7 @@ export default function LabDetail() {
   const researchText = cleanResearchSummary(s.research_summary || fallbackResearchSummary(lab, shownLabName));
   const sourcedQuestions = labQuestions(lab, 2);
   const primarySource = lab.sources[0]?.url || lab.official_url || "";
-  const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室公式サイト" : "");
+  const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室ホームページ" : "");
   const captureSelection = () => {
     const text = window.getSelection()?.toString().trim() || "";
     if (text) setMarkText(text);
@@ -145,20 +150,13 @@ export default function LabDetail() {
       </header>
 
       {/* 大元の研究室URL（ヘッダー直下・常設 FR-LAB系）。巨大枠をやめ1行リンクに降格（主アクションは下部バー） */}
-      {lab.official_url ? (
-        <a href={lab.official_url} target="_blank" rel="noopener noreferrer"
+      {primarySource ? (
+        <a href={primarySource} target="_blank" rel="noopener noreferrer"
           onClick={() => { api.logEvent("outbound_click", { labId: lab.id }); }}
           className="mb-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--c-primary)] underline underline-offset-4 min-h-[44px]">
-          研究室の公式サイトを見る<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
+          研究室ホームページを見る<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
         </a>
-      ) : (
-        <a href={`https://www.google.com/search?q=${encodeURIComponent(`${lab.university.name} ${lab.name}`)}`}
-          target="_blank" rel="noopener noreferrer"
-          onClick={() => { api.logEvent("outbound_click", { labId: lab.id, dest: "web_search" }); }}
-          className="mb-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--c-ink-2)] underline underline-offset-4 min-h-[44px]">
-          「{lab.university.name} {lab.name}」で公式サイトを探す<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
-        </a>
-      )}
+      ) : null}
 
       {/* あなたとの接続（AC-09） */}
       {reasons.length > 0 && (
@@ -173,7 +171,7 @@ export default function LabDetail() {
         <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1.5">どんな研究室？</h2>
         <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{researchText}</p>
         <div className="mt-3 pt-3 border-t border-[var(--c-border)]">
-          <TrustNote>公開情報を短くまとめています。正確な内容は公式サイトで確認してください。</TrustNote>
+          <TrustNote>研究室ホームページの公開情報を短く整理しています。研究対象や方法の詳細は、元のページで確認してください。</TrustNote>
           {primarySource && (
             <a href={primarySource} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 text-[12px] font-bold text-[var(--c-primary)] underline underline-offset-2">
               {primarySourceLabel || "元の情報を開く"}<ExternalLink className="w-3 h-3" aria-hidden="true" />
@@ -182,7 +180,13 @@ export default function LabDetail() {
         </div>
       </Card>
 
-      {sourcedQuestions.length > 0 && (
+      {lab.quality?.contentLevel === "basic" && (
+        <Card className="p-4 mb-4 bg-[var(--c-surface-blue)] border-transparent">
+          <TrustNote>研究分野の手掛かりが少ないため、推測した問い・研究方法・論文候補は表示していません。</TrustNote>
+        </Card>
+      )}
+
+      {lab.quality?.contentLevel !== "basic" && sourcedQuestions.length > 0 && (
         <Card className="p-5 mb-4">
           <h2 className="text-sm font-bold text-[var(--c-primary)] mb-2">この研究室が扱う問い</h2>
           <ul className="space-y-2">
@@ -319,9 +323,14 @@ export default function LabDetail() {
           {lab.sources.map((src, i) => (
             <li key={i}><a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[var(--c-teal)] underline">{src.label}</a></li>
           ))}
-          {lab.sources.length === 0 && <li className="text-[var(--c-ink-3)]">公開情報にもとづく暫定掲載です。</li>}
+          {lab.sources.length === 0 && <li className="text-[var(--c-ink-3)]">研究室ホームページを確認できていません。</li>}
         </ul>
-        <p className="text-xs text-[var(--c-ink-3)] mb-3">最終更新：{lab.last_updated}<br />確認状況：{lab.confidence === "verified" ? "研究室が確認済み" : "公開情報をもとに作成。一部はAIによる推定で、研究室は未確認です"}</p>
+        <p className="text-xs text-[var(--c-ink-3)] mb-3">
+          最終更新：{lab.last_updated}<br />
+          確認状況：{lab.confidence === "verified"
+            ? "研究室が内容を確認済みです"
+            : "研究室ホームページを照合済みです。紹介文は公開情報の要約で、研究室による確認前です"}
+        </p>
         <Link to={`/claim?lab_id=${lab.id}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink)] min-h-[44px]">
           <ShieldAlert className="w-4 h-4" />情報の修正・掲載停止を依頼する
         </Link>
