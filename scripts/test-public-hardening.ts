@@ -30,13 +30,21 @@ const health = await fetch(`${BASE}/api/health`);
 check(health.headers.get("cache-control")?.includes("no-store") && Boolean(health.headers.get("x-request-id")), "APIをキャッシュせずリクエストIDを付ける");
 
 const labs = await json("/api/labs?limit=1");
-check(labs.response.status === 200 && labs.body?.total === 5896, "確認済み研究室5,896件だけを一覧へ掲載する");
+check(labs.response.status === 200 && labs.body?.total === 5893, "掲載停止依頼を除く確認済み研究室5,893件だけを一覧へ掲載する");
 
 const heldLab = await json("/api/labs/lab-4");
 check(heldLab.response.status === 404, "未確認研究室は直接URLでも表示しない");
 
+for (const suppressedLabId of ["lab-874", "lab-1291", "lab-6736", "lab-8036", "lab-10504", "lab-12172", "lab-12280", "lab-13850"]) {
+  const suppressedLab = await json(`/api/labs/${suppressedLabId}`);
+  check(suppressedLab.response.status === 404, `掲載停止依頼済みの${suppressedLabId}を表示しない`);
+}
+
 const sitemap = await fetch(`${BASE}/sitemap.xml`);
 const sitemapBody = await sitemap.text();
 check(!sitemapBody.includes("/labs/lab-4</loc>"), "未確認研究室をサイトマップへ載せない");
+for (const suppressedLabId of ["lab-874", "lab-1291", "lab-6736", "lab-8036", "lab-10504", "lab-12172", "lab-12280", "lab-13850"]) {
+  check(!sitemapBody.includes(`/labs/${suppressedLabId}</loc>`), `掲載停止依頼済みの${suppressedLabId}をサイトマップへ載せない`);
+}
 
 console.log(`Public hardening tests: ${passed} passed`);

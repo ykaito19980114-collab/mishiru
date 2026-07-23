@@ -5,10 +5,18 @@ import type { Lab } from "../shared/types";
 
 const root = process.cwd();
 const labs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "utf-8")) as Lab[];
+const suppressions = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-suppressions.json"), "utf-8")) as {
+  ids: string[];
+  sourceNos: string[];
+};
+const suppressedIds = new Set(suppressions.ids);
+const suppressedSourceNos = new Set(suppressions.sourceNos);
 const eligibleLabs = labs.filter((lab) => lab.status === "published" || lab.status === "claimed");
-const publicLabs = eligibleLabs.filter((lab) =>
+const qualityApprovedLabs = eligibleLabs.filter((lab) =>
   lab.quality?.sourceKind === "lab_homepage" && Boolean(lab.official_url));
-const heldLabs = eligibleLabs.filter((lab) => !publicLabs.includes(lab));
+const publicLabs = qualityApprovedLabs.filter((lab) =>
+  !suppressedIds.has(lab.id) && !suppressedSourceNos.has(String(lab.sourceNo || "")));
+const heldLabs = eligibleLabs.filter((lab) => !qualityApprovedLabs.includes(lab));
 const aggregateName = /全研究室|研究室群|各研究室|各分野|各領域|各専攻|講座群|連携研究室|教員一覧|担当教員一覧|研究室・教員一覧|ほか(?:\d+)?(?:研究室)?|他研究室|多数|主要分野/;
 const profileUrl = /researchmap\.jp|k-ris\.keio\.ac\.jp|r-info\.tohoku\.ac\.jp|research-db\.|researchers?\.|ridb\.|yudb\.|hyokadb|profs\.|elsevierpure\.com|search\.adb\.|rdb\.|nrid\.nii\.ac\.jp|kaken\.nii\.ac\.jp|jglobal\.jst\.go\.jp|orcid\.org|scholar\.google\.|cir\.nii\.ac\.jp|\/(?:faculty|staff|teacher|researcher|profile|people|member)(?:\/|$)/i;
 const coreLabName = (name: string) => name
@@ -49,6 +57,7 @@ for (const [url, groupedLabs] of homepageGroups) {
 const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publication-audit.json"), "utf-8")) as {
   counts: { publishable: number };
 };
-assert.equal(publicLabs.length, report.counts.publishable, "監査レポートと公開件数が一致しない");
+assert.equal(qualityApprovedLabs.length, report.counts.publishable, "監査レポートと品質確認済み件数が一致しない");
+assert.equal(publicLabs.length, 5893, "掲載停止依頼を除いた公開件数が一致しない");
 
 console.log(`lab publication quality: OK (${publicLabs.length.toLocaleString()} published / ${labs.length.toLocaleString()} total)`);
