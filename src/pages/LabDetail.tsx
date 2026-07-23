@@ -9,6 +9,7 @@ import { Button, Card, Chip, Skeleton, ErrorState, VerifiedBadge, Toast, useToas
 import { fieldLabel } from "../../shared/fields";
 import { displayLabName, labQuestions } from "../lib/labText";
 import { makeLabAnnotation, MarkLabel, saveAnnotation } from "../lib/annotations";
+import { assessLabEvidence } from "../../shared/lab-evidence";
 
 // 研究室確認済みの確定情報セクション（値があるときのみ表示）
 function VerifiedSection({ title, children, value }: { title: string; children?: React.ReactNode; value?: unknown }) {
@@ -59,10 +60,11 @@ export default function LabDetail() {
       setLab(res.lab);
       setReasons(res.connectionReasons);
       setState("ok");
-      const canInterpret = res.lab.quality?.sourceKind === "lab_homepage"
-        && res.lab.quality?.contentLevel !== "basic";
-      if (canInterpret) {
+      const evidence = assessLabEvidence(res.lab);
+      if (evidence.canMapResources) {
         api.getResearchResources(res.lab.keywords.slice(0, 3).join(" "), 5).then(setResources).catch(() => {});
+      }
+      if (evidence.canGenerateGuide || evidence.canSearchPapers) {
         api.getEnrichment(id!).then((e) => { setEnrich(e); setEnrichState("done"); }).catch(() => setEnrichState("done"));
       } else {
         setEnrichState("done");
@@ -89,7 +91,8 @@ export default function LabDetail() {
   const guide = enrich?.aiGuide;
   const papers = enrich?.papers || [];
   const shownLabName = displayLabName(lab);
-  const hasLabHomepage = lab.quality?.sourceKind === "lab_homepage" && Boolean(lab.official_url);
+  const evidence = assessLabEvidence(lab);
+  const hasLabHomepage = evidence.hasHomepage;
   const researchText = cleanResearchSummary(s.research_summary || fallbackResearchSummary());
   const sourcedQuestions = labQuestions(lab, 2);
   const primarySource = lab.sources[0]?.url || lab.official_url || "";
@@ -188,17 +191,19 @@ export default function LabDetail() {
         </div>
       </Card>
 
-      {(!hasLabHomepage || lab.quality?.contentLevel === "basic") && (
+      {(!hasLabHomepage || !evidence.canGenerateGuide) && (
         <Card className="p-4 mb-4 bg-[var(--c-surface-blue)] border-transparent">
           <TrustNote>
-            {hasLabHomepage
-              ? "研究分野の手掛かりが少ないため、推測した問い・研究方法・論文候補は表示していません。"
-              : "研究室ホームページの確認後、研究テーマや研究方法を順次追加します。"}
+            {!hasLabHomepage
+              ? "研究室ホームページの確認後、研究テーマや研究方法を順次追加します。"
+              : evidence.canShowQuestions
+                ? "研究方法は、公式情報から根拠を確認できた内容だけを表示します。論文は、責任者名と所属先が一致したものだけを表示します。"
+                : "研究テーマの根拠を確認中のため、推測した問いや研究方法は表示していません。論文は、責任者名と所属先が一致したものだけを表示します。"}
           </TrustNote>
         </Card>
       )}
 
-      {hasLabHomepage && lab.quality?.contentLevel !== "basic" && sourcedQuestions.length > 0 && (
+      {evidence.canShowQuestions && sourcedQuestions.length > 0 && (
         <Card className="p-5 mb-4">
           <h2 className="text-sm font-bold text-[var(--c-primary)] mb-2">この研究室が扱う問い</h2>
           <ul className="space-y-2">
@@ -227,7 +232,10 @@ export default function LabDetail() {
       {/* ===== AI学生ガイド（FR-ENRICH。公開情報からの推定・明示ラベル） ===== */}
       {enrichState === "loading" && (
         <Card className="p-5 mb-4">
-          <div className="flex items-center gap-2 text-sm text-[var(--c-ink-3)] mb-3"><Sparkles className="w-4 h-4 animate-pulse text-[var(--c-teal)]" />研究室のガイドを準備しています…</div>
+          <div className="flex items-center gap-2 text-sm text-[var(--c-ink-3)] mb-3">
+            <Sparkles className="w-4 h-4 animate-pulse text-[var(--c-teal)]" />
+            {evidence.canGenerateGuide ? "研究室のガイドを準備しています…" : "公開論文を確認しています…"}
+          </div>
           <Skeleton className="h-4 w-3/4 mb-2" /><Skeleton className="h-4 w-full mb-2" /><Skeleton className="h-4 w-5/6" />
         </Card>
       )}
@@ -238,9 +246,11 @@ export default function LabDetail() {
           </div>
           <p className="text-[15px] text-[var(--c-ink)] leading-relaxed mb-4">{guide.overview}</p>
           <div className="space-y-4">
-            <GuideBlock icon={<Compass className="w-4 h-4" />} title="この研究室が扱う問い">
-              <ul className="space-y-1.5">{guide.questions.map((q, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug flex gap-2"><span className="text-[var(--c-teal)]">Q.</span>{q}</li>)}</ul>
-            </GuideBlock>
+            {!evidence.hasDirectQuestions && guide.questions.length > 0 && (
+              <GuideBlock icon={<Compass className="w-4 h-4" />} title="この研究室が扱う問い">
+                <ul className="space-y-1.5">{guide.questions.map((q, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug flex gap-2"><span className="text-[var(--c-teal)]">Q.</span>{q}</li>)}</ul>
+              </GuideBlock>
+            )}
             <GuideBlock icon={<Wrench className="w-4 h-4" />} title="主な研究の進め方">
               <ul className="space-y-1">{guide.methods.map((m, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug">・{m}</li>)}</ul>
             </GuideBlock>

@@ -19,6 +19,7 @@
     "audit:lab-homepages": "node --import tsx scripts/audit-lab-homepages.ts",
     "discover:lab-homepages": "node --import tsx scripts/discover-lab-homepages-with-search.ts",
     "test:lab-publication-quality": "node --import tsx scripts/test-lab-publication-quality.ts",
+    "test:lab-evidence": "node --import tsx scripts/test-lab-evidence.ts",
     "test:acceptance": "node --import tsx scripts/test-acceptance.ts"
     ,"test:phase-b": "node --import tsx scripts/test-phase-b.ts"
   },

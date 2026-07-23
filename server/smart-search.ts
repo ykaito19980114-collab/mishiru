@@ -30,7 +30,7 @@ function scoreIdentity(lab: Lab, query: string) {
   const people = lab.members.map((member) => ({
     compact: compactIdentity(member.name),
     label: `${member.name}${member.title}`,
-  }));
+  })).filter((person) => person.compact.length >= 2);
   const identityParts = [university, labName, ...people.map((person) => person.compact)];
 
   let score = 0;

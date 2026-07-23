@@ -44,6 +44,7 @@ assert.equal(
   "https://www-mat.eng.osaka-u.ac.jp/msp3/aboutus",
   "小泉研究室のURLが研究室紹介ページと一致しない",
 );
+assert.equal(koizumiLab.quality?.contentLevel, "sourced", "小泉研究室の確認済み研究情報が表示対象になっていない");
 for (const lab of publicLabs) {
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
   assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);

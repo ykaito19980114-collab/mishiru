@@ -11,6 +11,8 @@ export interface LabHomepageOverride {
   applyAtRuntime?: boolean;
   keywords?: string[];
   researchSummary?: string;
+  researchQuestions?: string[];
+  contentLevel?: "verified" | "sourced" | "basic";
 }
 
 export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOverride[]): Lab[] {
@@ -27,10 +29,13 @@ export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOve
       ...(lab.quality?.notes || []).filter((note) => !/確認できない|再確認/.test(note)),
       override.note,
     ];
+    const contentLevel = override.contentLevel || lab.quality?.contentLevel || "basic";
 
     return {
       ...lab,
       keywords,
+      researchQuestions: override.researchQuestions || lab.researchQuestions,
+      questions: override.researchQuestions || lab.questions,
       official_url: override.url,
       has_url: true,
       sources: [{ label: override.label || "研究室ホームページ", url: override.url }],
@@ -40,8 +45,8 @@ export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOve
       },
       last_updated: override.checkedAt,
       quality: {
-        publicationLevel: "review",
-        contentLevel: lab.quality?.contentLevel || "basic",
+        publicationLevel: contentLevel === "basic" ? "review" : "sourced",
+        contentLevel,
         score: Math.max(lab.quality?.score || 0, 85),
         reviewStatus: "manually_researched",
         sourceKind: "lab_homepage",

@@ -5,10 +5,11 @@ import path from "path";
 import { callAIJson, aiEnabled } from "./ai";
 import { fieldLabel } from "../shared/fields";
 import type { Lab } from "../shared/types";
+import { assessLabEvidence } from "../shared/lab-evidence";
 
 const CONTACT = process.env.CONTACT_EMAIL || "support@mishiru-lab.com";
 const CACHE_FILE = path.join(process.cwd(), "data", "runtime", "enrich-cache.json");
-const CACHE_VERSION = 5; // 研究室HPと具体的キーワードを確認できたページだけを補足。推測による関連論文フォールバックは行わない。
+const CACHE_VERSION = 6; // 問い・ガイド・論文を用途別の根拠判定へ分離。推測による関連論文フォールバックは行わない。
 // 7日TTL（コスト設計：生成は「閲覧された研究室 × 週1回」に制限。期限切れは stale-while-revalidate）
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -53,7 +54,7 @@ function persist() {
 
 // --- AI学生ガイド（Gemini） ---
 async function generateGuide(lab: Lab): Promise<AiGuide | null> {
-  if (lab.quality?.sourceKind !== "lab_homepage" || lab.quality?.contentLevel === "basic") return null;
+  if (!assessLabEvidence(lab).canGenerateGuide) return null;
   if (!aiEnabled()) {
     const keywords = lab.keywords.slice(0, 4); const theme = keywords.join("・") || fieldLabel(lab.field_major);
     return { overview: `${theme}に関する公開キーワードを、学生が確認しやすい形に整理した開発用の案です。研究内容の詳細は公式情報をご確認ください。`, questions: keywords.slice(0,3).map((keyword)=>`${keyword}について、この研究室はどの対象や現象を扱っているか？`), methods: ["公式サイトで研究テーマを確認する","公開論文から研究方法を確認する","相談時に対象と方法を質問する"], fit: `${theme}を自分の問いと結び付けて確かめたい学生向けの確認材料です。`, careers: "公開情報だけでは進路を断定できないため、研究室へ確認してください。", appeal: `${theme}をどの対象・方法で扱うかを比較できる点です。`, generatedBy:"template" };
@@ -166,9 +167,12 @@ async function fetchPapers(name: string, fieldMajor: string, universityName: str
 const refreshing = new Set<string>(); // 二重再生成防止
 
 async function generate(lab: Lab): Promise<Enrichment> {
+  const evidence = assessLabEvidence(lab);
   const [aiGuide, paperResult] = await Promise.all([
-    generateGuide(lab),
-    lab.pi.name ? fetchPapers(lab.pi.name, lab.field_major, lab.university.name) : Promise.resolve({ papers: [], confidence: "none" as const }),
+    evidence.canGenerateGuide ? generateGuide(lab) : Promise.resolve(null),
+    evidence.canSearchPapers
+      ? fetchPapers(lab.pi.name, lab.field_major, lab.university.name)
+      : Promise.resolve({ papers: [], confidence: "none" as const }),
   ]);
 
   return {
@@ -183,7 +187,8 @@ async function generate(lab: Lab): Promise<Enrichment> {
 const isFresh = (e: Enrichment) => Date.now() - new Date(e.generatedAt).getTime() < TTL_MS;
 
 export async function enrichLab(lab: Lab, opts: { force?: boolean } = {}): Promise<Enrichment> {
-  if (lab.quality?.sourceKind !== "lab_homepage" || lab.quality?.contentLevel === "basic") {
+  const evidence = assessLabEvidence(lab);
+  if (!evidence.canGenerateGuide && !evidence.canSearchPapers) {
     return { aiGuide: null, papers: [], papersConfidence: "none", generatedAt: new Date().toISOString(), version: CACHE_VERSION };
   }
   let cached = cache[lab.id];
