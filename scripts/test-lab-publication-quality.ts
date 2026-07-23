@@ -37,6 +37,13 @@ const homepageKey = (value: string) => new URL(value).toString()
 
 assert.ok(publicLabs.length > 0, "公開対象が0件になっている");
 assert.ok(heldLabs.length > 0, "未確認研究室が公開対象から除外されていない");
+const koizumiLab = publicLabs.find((lab) => lab.id === "lab-19162");
+assert.ok(koizumiLab, "小泉研究室が公開対象に含まれていない");
+assert.equal(
+  koizumiLab.official_url,
+  "https://www-mat.eng.osaka-u.ac.jp/msp3/aboutus",
+  "小泉研究室のURLが研究室紹介ページと一致しない",
+);
 for (const lab of publicLabs) {
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
   assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);

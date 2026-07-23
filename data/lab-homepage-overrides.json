@@ -17,6 +17,15 @@
     "researchSummary": "核融合発電の実現に向けた燃料射出システムや高速液滴発生、画像計測技術を研究しています。核融合研究で得られた計測技術の一般応用にも取り組んでいます。"
   },
   {
+    "labId": "lab-19162",
+    "url": "https://www-mat.eng.osaka-u.ac.jp/msp3/aboutus",
+    "label": "研究室ホームページ",
+    "evidenceUrl": "https://www-mat.eng.osaka-u.ac.jp/msp3/aboutus",
+    "checkedAt": "2026-07-23",
+    "note": "大阪大学大学院工学研究科 材料設計・プロセス工学領域（小泉研究室）の公式ホームページを確認",
+    "applyAtRuntime": true
+  },
+  {
     "labId": "lab-18",
     "url": "https://mbm.me.es.osaka-u.ac.jp/",
     "label": "研究室ホームページ",
