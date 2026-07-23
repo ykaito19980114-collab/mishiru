@@ -6,7 +6,7 @@
  * official_url として採用する。未確認ページは review_requested にする。
  *
  * 実行例:
- *   pnpm tsx scripts/audit-lab-homepages.ts --offset=0 --limit=500 --concurrency=8 --apply
+ *   pnpm tsx scripts/audit-lab-homepages.ts --offset=0 --limit=500 --pending-only --concurrency=8 --apply
  *   pnpm tsx scripts/audit-lab-homepages.ts --concurrency=12 --apply
  */
 import fs from "fs";
@@ -78,6 +78,7 @@ const argValue = (name: string, fallback: number) => {
   return raw ? Number(raw) : fallback;
 };
 const APPLY = args.has("--apply");
+const PENDING_ONLY = args.has("--pending-only");
 const LIMIT = argValue("limit", Number.POSITIVE_INFINITY);
 const OFFSET = Math.max(0, argValue("offset", 0));
 const CONCURRENCY = Math.max(1, Math.min(16, argValue("concurrency", 8)));
@@ -506,9 +507,12 @@ function pendingSummary() {
 }
 
 async function main() {
-  const target = labs.slice(OFFSET, Number.isFinite(LIMIT) ? OFFSET + LIMIT : undefined);
-  const rangeEnd = target.length ? OFFSET + target.length - 1 : OFFSET;
-  console.log(`[audit] ${target.length}件 / range=${OFFSET}-${rangeEnd} / concurrency=${CONCURRENCY} / apply=${APPLY}`);
+  const range = labs.slice(OFFSET, Number.isFinite(LIMIT) ? OFFSET + LIMIT : undefined);
+  const target = PENDING_ONLY
+    ? range.filter((lab) => lab.quality?.sourceKind !== "lab_homepage")
+    : range;
+  const rangeEnd = range.length ? OFFSET + range.length - 1 : OFFSET;
+  console.log(`[audit] ${target.length}件 / range=${OFFSET}-${rangeEnd} / pendingOnly=${PENDING_ONLY} / concurrency=${CONCURRENCY} / apply=${APPLY}`);
   const audits = await pool(target, CONCURRENCY, auditLab);
   fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
   fs.writeFileSync(CACHE_FILE, JSON.stringify(fetchCache));
