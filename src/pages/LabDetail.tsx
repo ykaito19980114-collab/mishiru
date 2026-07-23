@@ -22,9 +22,8 @@ function VerifiedSection({ title, children, value }: { title: string; children?:
   );
 }
 
-function fallbackResearchSummary(lab: Lab, shownLabName: string) {
-  const keywords = lab.keywords.slice(0, 3).join("、") || fieldLabel(lab.field_major);
-  return `${shownLabName}では、${keywords}を手がかりに、対象となる現象の仕組みや応用の可能性を探る研究に取り組んでいると考えられます。`;
+function fallbackResearchSummary() {
+  return "研究室名・所属などの基礎情報を掲載しています。研究室ホームページと研究内容は現在確認中です。";
 }
 
 function cleanResearchSummary(value: string) {
@@ -90,7 +89,8 @@ export default function LabDetail() {
   const guide = enrich?.aiGuide;
   const papers = enrich?.papers || [];
   const shownLabName = displayLabName(lab);
-  const researchText = cleanResearchSummary(s.research_summary || fallbackResearchSummary(lab, shownLabName));
+  const hasLabHomepage = lab.quality?.sourceKind === "lab_homepage" && Boolean(lab.official_url);
+  const researchText = cleanResearchSummary(s.research_summary || fallbackResearchSummary());
   const sourcedQuestions = labQuestions(lab, 2);
   const primarySource = lab.sources[0]?.url || lab.official_url || "";
   const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室ホームページ" : "");
@@ -119,14 +119,16 @@ export default function LabDetail() {
     "@context": "https://schema.org", "@type": "ResearchOrganization", name: shownLabName,
     parentOrganization: { "@type": "CollegeOrUniversity", name: lab.university.name },
     member: { "@type": "Person", name: lab.pi.name, jobTitle: lab.pi.title },
-    knowsAbout: lab.keywords, sameAs: lab.official_url ? [lab.official_url] : [],
+    knowsAbout: hasLabHomepage ? lab.keywords : [], sameAs: lab.official_url ? [lab.official_url] : [],
   };
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 pb-40 md:pb-28">
       <Helmet>
         <title>{shownLabName} - {lab.university.name} ｜ MISHIRU</title>
-        <meta name="description" content={`${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究テーマ・研究方法・進路などを学生向けに整理。`} />
+        <meta name="description" content={hasLabHomepage
+          ? `${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究室ホームページの公開情報を学生向けに整理。`
+          : `${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究室ホームページと研究内容は現在確認中です。`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -145,7 +147,9 @@ export default function LabDetail() {
         })()}
         <div className="flex flex-wrap gap-1.5 mt-3">
           <Chip tone="blue">{fieldLabel(lab.field_major)}</Chip>
-          {lab.keywords.slice(0, 4).map((k) => <Chip key={k}>{k}</Chip>)}
+          {hasLabHomepage
+            ? lab.keywords.slice(0, 4).map((k) => <Chip key={k}>{k}</Chip>)
+            : <Chip>情報確認中</Chip>}
         </div>
       </header>
 
@@ -159,7 +163,7 @@ export default function LabDetail() {
       ) : null}
 
       {/* あなたとの接続（AC-09） */}
-      {reasons.length > 0 && (
+      {hasLabHomepage && reasons.length > 0 && (
         <Card className="p-4 mb-4 bg-[var(--c-surface-blue)] border-transparent">
           <div className="flex items-center gap-1 text-sm font-bold text-[var(--c-primary)] mb-1"><Sparkles className="w-4 h-4" />あなたの関心との共通点</div>
           <ul className="space-y-1">{reasons.map((r, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug">・{r}</li>)}</ul>
@@ -171,7 +175,11 @@ export default function LabDetail() {
         <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1.5">どんな研究室？</h2>
         <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{researchText}</p>
         <div className="mt-3 pt-3 border-t border-[var(--c-border)]">
-          <TrustNote>研究室ホームページの公開情報を短く整理しています。研究対象や方法の詳細は、元のページで確認してください。</TrustNote>
+          <TrustNote>
+            {hasLabHomepage
+              ? "研究室ホームページの公開情報を短く整理しています。研究対象や方法の詳細は、元のページで確認してください。"
+              : "研究室ホームページを確認中です。確認が終わるまで、推測した研究内容や外部リンクは表示しません。"}
+          </TrustNote>
           {primarySource && (
             <a href={primarySource} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 text-[12px] font-bold text-[var(--c-primary)] underline underline-offset-2">
               {primarySourceLabel || "元の情報を開く"}<ExternalLink className="w-3 h-3" aria-hidden="true" />
@@ -180,13 +188,17 @@ export default function LabDetail() {
         </div>
       </Card>
 
-      {lab.quality?.contentLevel === "basic" && (
+      {(!hasLabHomepage || lab.quality?.contentLevel === "basic") && (
         <Card className="p-4 mb-4 bg-[var(--c-surface-blue)] border-transparent">
-          <TrustNote>研究分野の手掛かりが少ないため、推測した問い・研究方法・論文候補は表示していません。</TrustNote>
+          <TrustNote>
+            {hasLabHomepage
+              ? "研究分野の手掛かりが少ないため、推測した問い・研究方法・論文候補は表示していません。"
+              : "研究室ホームページの確認後、研究テーマや研究方法を順次追加します。"}
+          </TrustNote>
         </Card>
       )}
 
-      {lab.quality?.contentLevel !== "basic" && sourcedQuestions.length > 0 && (
+      {hasLabHomepage && lab.quality?.contentLevel !== "basic" && sourcedQuestions.length > 0 && (
         <Card className="p-5 mb-4">
           <h2 className="text-sm font-bold text-[var(--c-primary)] mb-2">この研究室が扱う問い</h2>
           <ul className="space-y-2">
@@ -297,7 +309,7 @@ export default function LabDetail() {
       )}
 
       {/* 外部DBでの確認リンク（正確な業績の一次確認用に格下げ） */}
-      {lab.pi.name && (
+      {hasLabHomepage && lab.pi.name && (
         <div className="mb-4">
           <h3 className="text-xs font-bold text-[var(--c-ink-3)] uppercase tracking-wide mb-2">{lab.pi.name} 先生の論文・研究費を確認する</h3>
           <div className="flex flex-wrap gap-2">
@@ -329,7 +341,9 @@ export default function LabDetail() {
           最終更新：{lab.last_updated}<br />
           確認状況：{lab.confidence === "verified"
             ? "研究室が内容を確認済みです"
-            : "研究室ホームページを照合済みです。紹介文は公開情報の要約で、研究室による確認前です"}
+            : hasLabHomepage
+              ? "研究室ホームページを照合済みです。紹介文は公開情報の要約で、研究室による確認前です"
+              : "研究室ホームページと研究内容を確認中です"}
         </p>
         <Link to={`/claim?lab_id=${lab.id}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink)] min-h-[44px]">
           <ShieldAlert className="w-4 h-4" />情報の修正・掲載停止を依頼する

@@ -1,8 +1,9 @@
 # 研究室ページの公開品質
 
-## 公開条件
+## 掲載方針
 
-研究室ページを公開できるのは、次をすべて満たす場合だけです。
+掲載停止の対象を除き、研究室名・所属などの基礎情報は公開します。
+ただし、研究内容の要約・問い・AI補足・外部リンクを表示できるのは、次をすべて満たす場合だけです。
 
 1. 研究室ホームページへ到達できる
 2. ページ上で研究室名または責任者名を照合できる
@@ -12,6 +13,7 @@
 6. 掲載停止対象ではない
 
 大学の教員ページ、researchmap、研究室一覧は、研究室ホームページを見つけるための確認元にだけ使います。公開ページのリンク先にはしません。
+確認できていないページには「確認中」と表示し、推測した研究内容や外部リンクを出しません。
 
 ## 監査
 
@@ -26,7 +28,7 @@ pnpm audit:lab-homepages -- --concurrency=12 --apply
 pnpm test:lab-publication-quality
 ```
 
-確認できなかった研究室は削除せず、`review_requested` として非公開にします。再調査後、研究室ホームページを確認できた場合だけ再公開します。
+確認できなかった研究室もページ自体は公開します。研究室ホームページを確認できるまでは、基礎情報と確認状況だけを表示します。
 
 ## 手動確認
 
@@ -34,4 +36,4 @@ pnpm test:lab-publication-quality
 
 ## Supabase
 
-`supabase/migrations/20260723_lab_publication_quality.sql` を適用すると、`homepage_status = 'verified'` かつ研究室ホームページのある行だけを公開できます。監査履歴は `mishiru_lab_publication_audits` に保存します。
+`supabase/migrations/20260723_lab_publication_quality.sql` を適用すると、`published` / `claimed` のページを公開し、研究室ホームページの確認状況を別に管理できます。監査履歴は `mishiru_lab_publication_audits` に保存します。

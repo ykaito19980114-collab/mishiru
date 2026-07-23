@@ -218,8 +218,9 @@ async function run() {
   check("FR-ENRICH-01", "aiGuide" in enrichment && "papers" in enrichment, "公開研究室のenrichは常に構造を返す");
   check("FR-ENRICH-02a", ["matched", "none"].includes(enrichment.papersConfidence), `論文は所属一致または非表示（mode=${enrichment.papersConfidence}）`);
   check("FR-ENRICH-02b", enrichment.papersConfidence !== "name_only" && enrichment.papersConfidence !== "related", "氏名だけ・関連語だけの論文を研究室実績として出さない");
-  const hidden = await j("/api/labs/lab-1/enrich");
-  check("FR-ENRICH-03", hidden.status === 404, "再確認待ちの研究室はenrichも公開しない");
+  const pending = await j("/api/labs/lab-1/enrich");
+  check("FR-ENRICH-03", pending.status === 200 && pending.body.aiGuide === null && pending.body.papers?.length === 0,
+    "確認中の研究室ページは公開し、推測したAI補足と論文は表示しない");
 
   console.log(results.join("\n"));
   console.log(`\n${pass} passed, ${fail} failed`);

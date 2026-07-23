@@ -154,7 +154,9 @@ const WINDOW = 240;
 
 export function selectDeck(sessionId: string, genre: string | null, batch = DECK_BATCH): Lab[] {
   const evaluated = store.evaluatedLabIds(sessionId);
-  const pool = store.publicNonDemo().filter((l) => l.keywords.length > 0);
+  const pool = store.publicNonDemo().filter((l) =>
+    l.keywords.length > 0 && l.quality?.sourceKind === "lab_homepage",
+  );
 
   // ジャンル選択（SCR-00）→ area_tags のジャンル対応で優先
   const genreAreas = genre ? new Set(RESEARCH_AREAS.filter((a) => a.genre === genre).map((a) => a.id)) : null;

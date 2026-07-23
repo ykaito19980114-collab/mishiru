@@ -318,12 +318,11 @@ alter table mishiru_api_cache enable row level security;
 alter table mishiru_audit_logs enable row level security;
 alter table mishiru_lab_publication_audits enable row level security;
 
--- 公開読み取り：研究室HPの検証まで完了した published/claimed だけ。
+-- 公開読み取り：掲載停止対象を除いた published/claimed。
+-- 研究室HPの確認状態は homepage_status で別に管理する。
 drop policy if exists "public read published labs" on mishiru_labs;
 create policy "public read published labs" on mishiru_labs for select using (
   status in ('published','claimed')
-  and homepage_status = 'verified'
-  and official_url is not null
 );
 drop policy if exists "public read cards" on mishiru_theme_cards;
 create policy "public read cards" on mishiru_theme_cards for select using (true);
@@ -343,9 +342,7 @@ with (security_invoker = true)
 as
 select *
 from mishiru_labs
-where status in ('published', 'claimed')
-  and homepage_status = 'verified'
-  and official_url is not null;
+where status in ('published', 'claimed');
 
 revoke all on table mishiru_public_labs from anon, authenticated;
 
