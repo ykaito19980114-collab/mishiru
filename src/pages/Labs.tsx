@@ -179,8 +179,8 @@ export default function Labs() {
         <figure className="hero-band__figure">
           <img src="/assets/motifs/mishiru-sculpture-640.png" alt="青い額の中に置かれた白い彫刻——研究前夜のモチーフ" width={613} height={640} loading="eager" decoding="async" />
           {!inAiMode && !hasFilter && total > 0 && (
-            <span className="hero-band__count" aria-label={`全国${total.toLocaleString()}件の研究室を掲載`}>
-              全国の研究室<strong>{total.toLocaleString()}<small>件</small></strong>
+            <span className="hero-band__count" aria-label={`ホームページを確認できた研究室を全国${total.toLocaleString()}件掲載`}>
+              公開確認済みの研究室<strong>{total.toLocaleString()}<small>件</small></strong>
             </span>
           )}
         </figure>

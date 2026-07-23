@@ -29,4 +29,14 @@ check([401, 503].includes(aiConfig.response.status) && !aiConfig.body?.models, "
 const health = await fetch(`${BASE}/api/health`);
 check(health.headers.get("cache-control")?.includes("no-store") && Boolean(health.headers.get("x-request-id")), "APIをキャッシュせずリクエストIDを付ける");
 
+const labs = await json("/api/labs?limit=1");
+check(labs.response.status === 200 && labs.body?.total === 5896, "確認済み研究室5,896件だけを一覧へ掲載する");
+
+const heldLab = await json("/api/labs/lab-4");
+check(heldLab.response.status === 404, "未確認研究室は直接URLでも表示しない");
+
+const sitemap = await fetch(`${BASE}/sitemap.xml`);
+const sitemapBody = await sitemap.text();
+check(!sitemapBody.includes("/labs/lab-4</loc>"), "未確認研究室をサイトマップへ載せない");
+
 console.log(`Public hardening tests: ${passed} passed`);

@@ -23,7 +23,7 @@ function missingSections(lab: Lab | null): string[] {
 }
 
 export function templateReport(input: GenInput): string {
-  const lab = input.labId ? store.labById(input.labId) : null;
+  const lab = input.labId ? store.allLabById(input.labId) : null;
   const name = lab?.name || input.labName || input.researcher || "対象研究室";
   const univ = lab ? `${lab.university.name} ${lab.department}` : "";
   const areas = lab?.area_tags.map(areaLabel).join("、") || "（分野情報なし）";
@@ -70,7 +70,7 @@ ${relatedCards.length ? relatedCards.map((c) => `- 「${c.title}」（${c.everyd
 export async function generateReport(input: GenInput): Promise<{ content: string; generatedBy: "llm" | "template" }> {
   const template = templateReport(input);
   if (!aiEnabled()) return { content: template, generatedBy: "template" };
-  const lab = input.labId ? store.labById(input.labId) : null;
+  const lab = input.labId ? store.allLabById(input.labId) : null;
   const prompt = `あなたは研究室広報の専門家です。以下の研究室について「見え方診断レポート」の下書きをMarkdownで作成してください。
 断定を避け、公開情報に基づく推定であることを明記し、営業的すぎない誠実なトーンで。章立ては: 学生からの見え方 / 不足情報 / 競合比較 / 改善案 / 想定カード接続 / 提案。
 研究室名: ${lab?.name || input.labName || input.researcher}

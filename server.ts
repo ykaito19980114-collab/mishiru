@@ -767,7 +767,7 @@ export async function createApp() {
 
   app.get("/api/labs/:id", (req, res) => {
     const lab = store.labById(req.params.id);
-    if (!lab || (lab.status !== "published" && lab.status !== "claimed"))
+    if (!lab)
       return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究室が見つかりません" } });
     const sessionId = req.query.sessionId ? String(req.query.sessionId) : null;
     store.addEvents([{ type: "lab_view", sessionId: sessionId || "anon", payload: { labId: lab.id }, at: nowIso() }]);
@@ -783,7 +783,7 @@ export async function createApp() {
   // 研究室ページの充実（AI学生ガイド＋公開論文。lazy＋キャッシュ・FR-ENRICH）
   app.get("/api/labs/:id/enrich", enrichmentRateLimit, async (req, res) => {
     const lab = store.labById(req.params.id);
-    if (!lab || (lab.status !== "published" && lab.status !== "claimed"))
+    if (!lab)
       return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究室が見つかりません" } });
     try {
       const enrichment = await enrichLab(lab);
@@ -978,7 +978,7 @@ export async function createApp() {
   });
   // 一時非公開（FR-CLAIM-02）：本人確認前でも運営が即時hidden化
   app.post("/api/admin/labs/:id/status", requireAdmin, (req, res) => {
-    const lab = store.labById(req.params.id);
+    const lab = store.allLabById(req.params.id);
     if (!lab) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究室が見つかりません" } });
     const next = String(req.body?.status || "");
     const allowed = ["draft", "review_requested", "published", "claimed", "update_requested", "hidden", "archived"];
@@ -1022,7 +1022,7 @@ export async function createApp() {
     const { labId, labName, researcher, sourceUrl } = req.body || {};
     if (!labId && !labName && !researcher) return bad(res, "labId / labName / researcher のいずれかが必要です");
     const { content, generatedBy } = await generateReport({ labId, labName, researcher, sourceUrl });
-    const lab = labId ? store.labById(labId) : null;
+    const lab = labId ? store.allLabById(labId) : null;
     const report: Report = {
       id: genId("report"), labId: labId || null, labName: lab?.name || labName || researcher || "対象研究室",
       researcher, sourceUrl, content, generatedBy, status: "draft", createdAt: nowIso(), updatedAt: nowIso(),

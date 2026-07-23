@@ -758,11 +758,14 @@ async function main() {
     aggregatePagesHeld: aggregateIds.size,
     ambiguousSharedUrlsHeld: ambiguousSharedUrlIds.size,
     ambiguousSourceUrls: ambiguousSourceUrlKeys.size,
-    publishable: updated.filter((lab) => lab.status === "published" || lab.status === "claimed").length,
+    publishable: updated.filter((lab) =>
+      (lab.status === "published" || lab.status === "claimed")
+      && lab.quality?.sourceKind === "lab_homepage"
+      && Boolean(lab.official_url)).length,
   };
   const report = {
     generatedAt: `${CHECKED_AT}T00:00:00+09:00`,
-    rule: "掲載停止対象を除く研究室ページは基礎情報を公開する。研究室名または責任者名との一致を確認できた研究室ホームページだけを外部リンクと内容整理に使用し、教員ページ・researchmap・部局一覧は代用しない。",
+    rule: "研究室名または責任者名との一致を確認できた個別の研究室ホームページだけを公開する。教員ページ・researchmap・部局一覧は代用せず、未確認レコードは再確認できるよう元データに保持する。",
     counts,
     decisions: mergedAudits,
     unresolved: mergedAudits.filter((item) => !item.acceptedUrl),
