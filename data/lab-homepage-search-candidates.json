@@ -1,0 +1,180 @@
+[
+  {
+    "labId": "lab-4",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 量子情報・量子光学（山本研究室） 山本俊 研究室 公式",
+    "urls": [
+      "http://qi.mp.es.osaka-u.ac.jp/"
+    ],
+    "result": "lab-4\thttp://qi.mp.es.osaka-u.ac.jp/\n"
+  },
+  {
+    "labId": "lab-7",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 分子集積化学（久木研究室） 久木一朗 研究室 公式",
+    "urls": [
+      "http://www.chem.es.osaka-u.ac.jp/mol/"
+    ],
+    "result": "lab-7\thttp://www.chem.es.osaka-u.ac.jp/mol/\n"
+  },
+  {
+    "labId": "lab-9",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 量子化学工学（北河研究室） 北河康隆 研究室 公式",
+    "urls": [
+      "http://www.cheng.es.osaka-u.ac.jp/kitagawa/"
+    ],
+    "result": "lab-9\thttp://www.cheng.es.osaka-u.ac.jp/kitagawa/\n"
+  },
+  {
+    "labId": "lab-13",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 熱工学（河原研究室） 河原源太 研究室 公式",
+    "urls": [
+      "http://www.mech.es.osaka-u.ac.jp/kawara/"
+    ],
+    "result": "lab-13\thttp://www.mech.es.osaka-u.ac.jp/kawara/\n"
+  },
+  {
+    "labId": "lab-15",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 機能デザイン領域 推進工学講座 流体工学（杉山研究室） 杉山和靖 研究室 公式",
+    "urls": [
+      "http://www.flu.es.osaka-u.ac.jp/"
+    ],
+    "result": "lab-15\thttp://www.flu.es.osaka-u.ac.jp/"
+  },
+  {
+    "labId": "lab-16",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 身体運動制御学（西川研究室） 西川敦 研究室 公式",
+    "urls": [
+      "https://www.hmc.mech.es.osaka-u.ac.jp/"
+    ],
+    "result": "lab-16\thttps://www.hmc.mech.es.osaka-u.ac.jp/\n"
+  },
+  {
+    "labId": "lab-18",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 分子生体計測（出口研究室） 出口真次 研究室 公式",
+    "urls": [
+      "https://www.deguchi-lab.es.osaka-u.ac.jp/"
+    ],
+    "result": "lab-18\thttps://www.deguchi-lab.es.osaka-u.ac.jp/\n"
+  },
+  {
+    "labId": "lab-28",
+    "searchedAt": "2026-07-23",
+    "query": "大阪大学 制御情報システム（櫻間研究室） 櫻間一徳 研究室 公式",
+    "urls": [
+      "https://www.msl.es.osaka-u.ac.jp/"
+    ],
+    "result": "lab-28\thttps://www.msl.es.osaka-u.ac.jp/\n"
+  },
+  {
+    "labId": "lab-29",
+    "searchedAt": "2026-07-23",
+    "query": "京都大学 電気情報システム論（薄研究室） 薄良彦 研究室 公式",
+    "urls": [
+      "https://www.ee.t.kyoto-u.ac.jp/research/list/view/11"
+    ],
+    "result": "lab-29\thttps://www.ee.t.kyoto-u.ac.jp/research/list/view/11\n"
+  },
+  {
+    "labId": "lab-35",
+    "searchedAt": "2026-07-23",
+    "query": "京都大学 マイクロ波エネルギー伝送（篠原研究室・生存圏研） 篠原真毅 研究室 公式",
+    "urls": [
+      "https://www.rish.kyoto-u.ac.jp/shinohara-lab/index.php"
+    ],
+    "result": "lab-35\thttps://www.rish.kyoto-u.ac.jp/shinohara-lab/index.php"
+  },
+  {
+    "labId": "lab-40",
+    "searchedAt": "2026-07-23",
+    "query": "京都大学 ナノプロセス工学（De Zoysa研究室） Menaka De Zoysa 研究室 公式",
+    "urls": [
+      "https://www.ee.t.kyoto-u.ac.jp/ja/p09494/es-lab"
+    ],
+    "result": "lab-40\thttps://www.ee.t.kyoto-u.ac.jp/ja/p09494/es-lab\n"
+  },
+  {
+    "labId": "lab-42",
+    "searchedAt": "2026-07-23",
+    "query": "京都大学 応用解析学（木上研究室） 木上淳 研究室 公式",
+    "urls": [
+      "http://www.math.kyoto-u.ac.jp/~kigami/"
+    ],
+    "result": "lab-42\thttp://www.math.kyoto-u.ac.jp/~kigami/\n"
+  },
+  {
+    "labId": "lab-59",
+    "searchedAt": "2026-07-23",
+    "query": "東北大学 数理情報学／量子コンピューティング（大関研究室） 大関 研究室 公式",
+    "urls": [],
+    "result": "lab-59\tNONE\n"
+  },
+  {
+    "labId": "lab-60",
+    "searchedAt": "2026-07-23",
+    "query": "東北大学 金属プロセス工学（三木研究室） 三木貴博 研究室 公式",
+    "urls": [
+      "https://www.material.tohoku.ac.jp/lab/miki/"
+    ],
+    "result": "lab-60\thttps://www.material.tohoku.ac.jp/lab/miki/\n"
+  },
+  {
+    "labId": "lab-61",
+    "searchedAt": "2026-07-23",
+    "query": "東北大学 計算材料構成学（大森研究室） 大森俊洋 研究室 公式",
+    "urls": [
+      "https://www.material.tohoku.ac.jp/~seigyo/index.html"
+    ],
+    "result": "lab-61\thttps://www.material.tohoku.ac.jp/~seigyo/index.html"
+  },
+  {
+    "labId": "lab-62",
+    "searchedAt": "2026-07-23",
+    "query": "東北大学 素形材プロセス学（及川研究室） 及川勝成 研究室 公式",
+    "urls": [
+      "http://www.material.tohoku.ac.jp/~koso/lab.html"
+    ],
+    "result": "lab-62\thttp://www.material.tohoku.ac.jp/~koso/lab.html\n"
+  },
+  {
+    "labId": "lab-65",
+    "searchedAt": "2026-07-23",
+    "query": "東北大学 流動・材料システム評価研究分野（内一研究室） 内一 研究室 公式",
+    "urls": [
+      "http://www.ifs.tohoku.ac.jp/index.html"
+    ],
+    "result": "lab-65\thttp://www.ifs.tohoku.ac.jp/index.html\n"
+  },
+  {
+    "labId": "lab-70",
+    "searchedAt": "2026-07-23",
+    "query": "名古屋大学 固体力学（奥村研究室） 奥村大 研究室 公式",
+    "urls": [
+      "http://www.mae.nagoya-u.ac.jp/lab/solidmech/"
+    ],
+    "result": "lab-70\thttp://www.mae.nagoya-u.ac.jp/lab/solidmech/\n"
+  },
+  {
+    "labId": "lab-77",
+    "searchedAt": "2026-07-23",
+    "query": "名古屋大学 マイクロ・ナノプロセス工学（秦研究室） 秦誠一 研究室 公式",
+    "urls": [
+      "http://www.mems.nagoya-u.ac.jp/"
+    ],
+    "result": "lab-77\thttp://www.mems.nagoya-u.ac.jp/\n"
+  },
+  {
+    "labId": "lab-78",
+    "searchedAt": "2026-07-23",
+    "query": "名古屋大学 流体力学（航空宇宙・野々村研究室） 野々村拓 研究室 公式",
+    "urls": [
+      "http://www.aeromech.nagoya-u.ac.jp/lab/fluid/"
+    ],
+    "result": "lab-78\thttp://www.aeromech.nagoya-u.ac.jp/lab/fluid/"
+  }
+]

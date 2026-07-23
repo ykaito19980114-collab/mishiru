@@ -71,6 +71,7 @@ const NORMALIZED_FILE = path.join(DATA, "normalized", "labs.json");
 const OVERRIDES_FILE = path.join(DATA, "lab-homepage-overrides.json");
 const CACHE_FILE = path.join(DATA, "runtime", "lab-homepage-crawl-cache.json");
 const REPORT_FILE = path.join(DATA, "lab-publication-audit.json");
+const SEARCH_CANDIDATES_FILE = path.join(DATA, "lab-homepage-search-candidates.json");
 const CHECKED_AT = "2026-07-23";
 const args = new Set(process.argv.slice(2));
 const argValue = (name: string, fallback: number) => {
@@ -89,6 +90,9 @@ const normalized = JSON.parse(fs.readFileSync(NORMALIZED_FILE, "utf-8")) as Norm
 const overrides = JSON.parse(fs.readFileSync(OVERRIDES_FILE, "utf-8")) as Override[];
 const normalizedByNo = new Map(normalized.map((item) => [String(item.sourceNo), item]));
 const normalizedSourceUrls = new Set(normalized.map((item) => normalizeUrl(item.url)).filter(Boolean));
+let searchCandidates: { labId: string; urls: string[] }[] = [];
+try { searchCandidates = JSON.parse(fs.readFileSync(SEARCH_CANDIDATES_FILE, "utf-8")); } catch { searchCandidates = []; }
+const searchUrlsById = new Map(searchCandidates.map((item) => [item.labId, item.urls.map(normalizeUrl).filter(Boolean)]));
 const overrideById = new Map(overrides.map((item) => [item.labId, item]));
 let fetchCache: Record<string, FetchRecord> = {};
 try { fetchCache = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8")); } catch { fetchCache = {}; }
@@ -446,6 +450,7 @@ function discoveryUrls(lab: Lab, source: NormalizedLab | undefined) {
     source?.facultyPage || "",
     source?.researchmap || "",
     ...urlsIn(source?.notes),
+    ...(searchUrlsById.get(lab.id) || []),
   ].map(normalizeUrl).filter(Boolean)));
 }
 
@@ -469,8 +474,12 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
   // data/labs.json で未確認扱いにした後も、元データに残る研究室URL候補を失わない。
   // URLはそのまま採用せず、以下の本文・責任者・研究室ページ判定を必ず通す。
   const currentUrl = normalizeUrl(lab.official_url) || normalizeUrl(source?.url);
-  if (currentUrl) {
-    const page = await fetchPage(currentUrl);
+  const directCandidates = Array.from(new Set([
+    currentUrl,
+    ...(searchUrlsById.get(lab.id) || []),
+  ].filter(Boolean)));
+  for (const directUrl of directCandidates) {
+    const page = await fetchPage(directUrl);
     const match = pageMatchScore(lab, page);
     const exactIdentity = hasCurrentLabIdentity(lab, match.reasons);
     const accepted = page.ok
@@ -482,8 +491,8 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
         labId: lab.id,
         currentUrl,
         acceptedUrl: page.finalUrl,
-        evidenceUrl: currentUrl,
-        outcome: "verified",
+        evidenceUrl: directUrl,
+        outcome: directUrl === currentUrl ? "verified" : "discovered",
         confidence: Math.min(100, 70 + Math.max(0, match.score) * 3),
         matchedKeywords: keywordsConfirmedOnPage(lab, page),
         reasons: ["既存URLを取得", ...match.reasons],
