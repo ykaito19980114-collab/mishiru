@@ -79,6 +79,7 @@ const argValue = (name: string, fallback: number) => {
 };
 const APPLY = args.has("--apply");
 const PENDING_ONLY = args.has("--pending-only");
+const REFRESH_SOURCE_PAGES = args.has("--refresh-source-pages");
 const LIMIT = argValue("limit", Number.POSITIVE_INFINITY);
 const OFFSET = Math.max(0, argValue("offset", 0));
 const CONCURRENCY = Math.max(1, Math.min(16, argValue("concurrency", 8)));
@@ -87,6 +88,7 @@ const labs = JSON.parse(fs.readFileSync(LABS_FILE, "utf-8")) as Lab[];
 const normalized = JSON.parse(fs.readFileSync(NORMALIZED_FILE, "utf-8")) as NormalizedLab[];
 const overrides = JSON.parse(fs.readFileSync(OVERRIDES_FILE, "utf-8")) as Override[];
 const normalizedByNo = new Map(normalized.map((item) => [String(item.sourceNo), item]));
+const normalizedSourceUrls = new Set(normalized.map((item) => normalizeUrl(item.url)).filter(Boolean));
 const overrideById = new Map(overrides.map((item) => [item.labId, item]));
 let fetchCache: Record<string, FetchRecord> = {};
 try { fetchCache = JSON.parse(fs.readFileSync(CACHE_FILE, "utf-8")); } catch { fetchCache = {}; }
@@ -157,6 +159,30 @@ function pageTitle(html: string) {
   return decodeHtml(html.match(/<title[^>]*>([\s\S]*?)<\/title>/i)?.[1] || "").slice(0, 300);
 }
 
+function looksGarbled(value: string) {
+  const replacementCharacters = (value.match(/�/g) || []).length;
+  return replacementCharacters >= 2 || /(?:��|���|�[A-Za-z\u3040-\u30ff\u3400-\u9fff])/.test(value);
+}
+
+function decodeResponseBody(bytes: Uint8Array, contentType: string) {
+  const ascii = new TextDecoder("iso-8859-1").decode(bytes.slice(0, 8_192));
+  const declared = contentType.match(/charset\s*=\s*["']?([^;"'\s]+)/i)?.[1]
+    || ascii.match(/<meta[^>]+charset\s*=\s*["']?([^"'\s/>]+)/i)?.[1]
+    || ascii.match(/<meta[^>]+content\s*=\s*["'][^"']*charset=([^;"'\s]+)/i)?.[1]
+    || "utf-8";
+  const normalized = declared.toLowerCase().replace(/_/g, "-");
+  const encoding = /^(?:shift-jis|shiftjis|sjis|x-sjis|windows-31j|ms-kanji)$/.test(normalized)
+    ? "shift_jis"
+    : /^(?:euc-jp|eucjp|x-euc-jp)$/.test(normalized)
+      ? "euc-jp"
+      : normalized;
+  try {
+    return new TextDecoder(encoding).decode(bytes);
+  } catch {
+    return new TextDecoder("utf-8").decode(bytes);
+  }
+}
+
 function coreLabName(name: string) {
   return name
     .replace(/[（(][^）)]*[）)]/g, " ")
@@ -221,6 +247,7 @@ function presentsAsLabHomepage(page: FetchRecord) {
 
 const inFlight = new Map<string, Promise<FetchRecord>>();
 const hostLastRequest = new Map<string, number>();
+const refreshedSourceUrls = new Set<string>();
 let completedFetches = 0;
 let cacheWrites = 0;
 
@@ -229,7 +256,12 @@ async function fetchPage(value: string, collectLinks = false): Promise<FetchReco
   if (!url) return { requestedUrl: value, finalUrl: "", ok: false, status: 0, contentType: "", title: "", text: "", links: [], linksCollected: collectLinks, error: "invalid_url", checkedAt: CHECKED_AT };
   // 同じ監査日の取得結果は失敗も含めて再利用し、全件監査中の過剰な再アクセスを防ぐ。
   const cached = fetchCache[url];
-  if (cached?.checkedAt === CHECKED_AT && (!collectLinks || cached.linksCollected)) return cached;
+  const shouldRefreshSource = REFRESH_SOURCE_PAGES
+    && normalizedSourceUrls.has(url)
+    && !refreshedSourceUrls.has(url)
+    && Boolean(cached)
+    && (!cached.ok || looksGarbled(`${cached.title} ${cached.text.slice(0, 1_000)}`));
+  if (cached?.checkedAt === CHECKED_AT && (!collectLinks || cached.linksCollected) && !shouldRefreshSource) return cached;
   const flightKey = `${url}|${collectLinks ? "links" : "page"}`;
   if (inFlight.has(flightKey)) return inFlight.get(flightKey)!;
   const task = (async () => {
@@ -238,21 +270,40 @@ async function fetchPage(value: string, collectLinks = false): Promise<FetchReco
     const elapsed = Date.now() - (hostLastRequest.get(host) || 0);
     if (elapsed < 350) await new Promise((resolve) => setTimeout(resolve, 350 - elapsed));
     hostLastRequest.set(host, Date.now());
-    const ctrl = new AbortController();
-    const timer = setTimeout(() => ctrl.abort(), 9000);
     let record: FetchRecord;
     try {
-      const response = await fetch(url, {
-        redirect: "follow",
-        signal: ctrl.signal,
-        headers: {
-          "User-Agent": "MISHIRU-Publication-Audit/1.0 (+https://mishiru-lab.com; support@mishiru-lab.com)",
-          "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.4,*/*;q=0.1",
-        },
-      });
+      const request = async (target: string) => {
+        const ctrl = new AbortController();
+        const timer = setTimeout(() => ctrl.abort(), 12_000);
+        try {
+          return await fetch(target, {
+          redirect: "follow",
+          signal: ctrl.signal,
+          headers: {
+            "User-Agent": "MISHIRU-Publication-Audit/1.0 (+https://mishiru-lab.com; support@mishiru-lab.com)",
+            "Accept": "text/html,application/xhtml+xml,application/pdf;q=0.4,*/*;q=0.1",
+            "Accept-Language": "ja,en;q=0.7",
+          },
+        });
+        } finally {
+          clearTimeout(timer);
+        }
+      };
+      let response: Response;
+      try {
+        response = await request(url);
+      } catch (firstError) {
+        const alternate = url.startsWith("http://")
+          ? url.replace(/^http:\/\//, "https://")
+          : url.replace(/^https:\/\//, "http://");
+        if (alternate === url) throw firstError;
+        response = await request(alternate);
+      }
       const contentType = response.headers.get("content-type") || "";
       const isHtml = /html|xhtml/i.test(contentType);
-      const body = isHtml ? (await response.text()).slice(0, 2_000_000) : "";
+      const body = isHtml
+        ? decodeResponseBody(new Uint8Array(await response.arrayBuffer()), contentType).slice(0, 2_000_000)
+        : "";
       const finalUrl = normalizeUrl(response.url) || url;
       const text = isHtml ? decodeHtml(body).slice(0, 24_000) : "";
       record = {
@@ -281,10 +332,9 @@ async function fetchPage(value: string, collectLinks = false): Promise<FetchReco
         error: error instanceof Error ? error.message : "fetch_failed",
         checkedAt: CHECKED_AT,
       };
-    } finally {
-      clearTimeout(timer);
     }
     fetchCache[url] = record;
+    if (shouldRefreshSource) refreshedSourceUrls.add(url);
     completedFetches += 1;
     if (completedFetches % 500 === 0) {
       fs.mkdirSync(path.dirname(CACHE_FILE), { recursive: true });
