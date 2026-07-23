@@ -2,15 +2,22 @@ import assert from "node:assert/strict";
 import fs from "node:fs";
 import path from "node:path";
 import type { Lab } from "../shared/types";
+import { applyLabHomepageOverrides, type LabHomepageOverride } from "../server/lab-publication";
 
 const root = process.cwd();
-const labs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "utf-8")) as Lab[];
+const baseLabs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "utf-8")) as Lab[];
+const overrides = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-homepage-overrides.json"), "utf-8")) as LabHomepageOverride[];
+const labs = applyLabHomepageOverrides(baseLabs, overrides);
+const manuallyPublishedIds = new Set(overrides.filter((override) => override.applyAtRuntime && override.publish !== false).map((override) => override.labId));
 const suppressions = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-suppressions.json"), "utf-8")) as {
   ids: string[];
   sourceNos: string[];
 };
 const suppressedIds = new Set(suppressions.ids);
 const suppressedSourceNos = new Set(suppressions.sourceNos);
+const baseEligibleLabs = baseLabs.filter((lab) => lab.status === "published" || lab.status === "claimed");
+const baseQualityApprovedLabs = baseEligibleLabs.filter((lab) =>
+  lab.quality?.sourceKind === "lab_homepage" && Boolean(lab.official_url));
 const eligibleLabs = labs.filter((lab) => lab.status === "published" || lab.status === "claimed");
 const qualityApprovedLabs = eligibleLabs.filter((lab) =>
   lab.quality?.sourceKind === "lab_homepage" && Boolean(lab.official_url));
@@ -32,7 +39,7 @@ assert.ok(publicLabs.length > 0, "公開対象が0件になっている");
 assert.ok(heldLabs.length > 0, "未確認研究室が公開対象から除外されていない");
 for (const lab of publicLabs) {
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
-  assert.ok(!profileUrl.test(lab.official_url || ""), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
+  assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
   assert.equal(lab.sources[0]?.label, "研究室ホームページ", `${lab.id}: 主出典の種別が不正`);
   assert.equal(lab.sources[0]?.url, lab.official_url, `${lab.id}: 主出典と研究室HPが不一致`);
   const aggregate = aggregateName.test(lab.name);
@@ -57,7 +64,8 @@ for (const [url, groupedLabs] of homepageGroups) {
 const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publication-audit.json"), "utf-8")) as {
   counts: { publishable: number };
 };
-assert.equal(qualityApprovedLabs.length, report.counts.publishable, "監査レポートと品質確認済み件数が一致しない");
-assert.equal(publicLabs.length, 5893, "掲載停止依頼を除いた公開件数が一致しない");
+assert.equal(baseQualityApprovedLabs.length, report.counts.publishable, "監査レポートと一括監査時の品質確認済み件数が一致しない");
+assert.equal(qualityApprovedLabs.length, report.counts.publishable + 1, "個別確認済みの研究室が公開対象へ追加されていない");
+assert.equal(publicLabs.length, 5894, "掲載停止依頼を除いた公開件数が一致しない");
 
 console.log(`lab publication quality: OK (${publicLabs.length.toLocaleString()} published / ${labs.length.toLocaleString()} total)`);

@@ -745,7 +745,7 @@ export async function createApp() {
     try {
       const result = await smartSearch(q, 200);
       const paged = result.labs.slice((page - 1) * limit, page * limit);
-      res.json({ interpreted: result.interpreted, by: result.by, total: result.total, data: paged });
+      res.json({ interpreted: result.interpreted, by: result.by, mode: result.mode, total: result.total, data: paged });
     } catch (e) {
       console.error("[smart] error:", e);
       res.status(500).json({ error: { code: "INTERNAL", message: "検索に失敗しました" } });

@@ -11,6 +11,7 @@ import type {
 import { cleanDisplayLabel, uniqueCleanLabels } from "../shared/text";
 import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 import { serverSupabase } from "./supabase";
+import { applyLabHomepageOverrides, isPublicLab, type LabHomepageOverride } from "./lab-publication";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const RUNTIME_DIR = path.join(DATA_DIR, "runtime");
@@ -33,9 +34,13 @@ const labSuppressions = readJson<{ ids: string[]; sourceNos: string[] }>(
   path.join(DATA_DIR, "lab-suppressions.json"),
   { ids: [], sourceNos: [] },
 );
+const labHomepageOverrides = readJson<LabHomepageOverride[]>(
+  path.join(DATA_DIR, "lab-homepage-overrides.json"),
+  [],
+);
 const suppressedLabIds = new Set(labSuppressions.ids);
 const suppressedSourceNos = new Set(labSuppressions.sourceNos);
-const labs: Lab[] = readJson<Lab[]>(MASTER_LABS_FILE, []).filter((lab) => {
+const labs: Lab[] = applyLabHomepageOverrides(readJson<Lab[]>(MASTER_LABS_FILE, []), labHomepageOverrides).filter((lab) => {
   const sourceNo = String((lab as Lab & { sourceNo?: string }).sourceNo || lab.id.replace(/^(?:source-)?lab-0*/, ""));
   return !suppressedLabIds.has(lab.id) && !suppressedSourceNos.has(sourceNo);
 });
@@ -73,10 +78,6 @@ for (const l of labs) {
 }
 // 公開対象は、個別の研究室ホームページを確認できた研究室だけ。
 // 未確認レコードは元データに残し、再確認後に戻せるようにする。
-const isPublicLab = (lab: Lab) =>
-  (lab.status === "published" || lab.status === "claimed")
-  && lab.quality?.sourceKind === "lab_homepage"
-  && Boolean(lab.official_url);
 // 公開・非デモの研究室（一覧/検索/件数/サイトマップの共通母集団。起動時に確定）
 const publicLabsList = labs.filter((lab) => isPublicLab(lab) && !lab.is_demo);
 const resourceText = new Map<string, string>();

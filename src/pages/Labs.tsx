@@ -22,7 +22,7 @@ const CHIP_LABEL: Record<string, (v: string) => string> = {
 
 type AiResult = {
   interpreted: { fieldLabels: string[]; areaLabels: string[]; keywords: string[] };
-  by: "llm" | "keyword"; total: number; data: LabWithReasons[];
+  by: "name" | "llm" | "keyword"; mode: "name" | "topic"; total: number; data: LabWithReasons[];
 };
 type ActiveChip = { key: keyof Filters | "tag"; value: string };
 type SearchMode = "labs" | "fields" | "societies" | "journals";
@@ -104,11 +104,14 @@ export default function Labs() {
     const np = new URLSearchParams(params); np.set("ai", query); setParams(np, { replace: true });
     try {
       const res = await api.smartSearch(query);
-      const specificTerms = [...res.interpreted.keywords, ...res.interpreted.areaLabels];
-      const terms = specificTerms.length ? specificTerms : res.interpreted.fieldLabels;
-      const resourceRes = await api.getResearchResources(query, 6, {}, terms);
       setAiResult(res);
-      setResources(resourceRes);
+      if (res.mode === "name") {
+        setResources(null);
+      } else {
+        const specificTerms = [...res.interpreted.keywords, ...res.interpreted.areaLabels];
+        const terms = specificTerms.length ? specificTerms : res.interpreted.fieldLabels;
+        setResources(await api.getResearchResources(query, 6, {}, terms));
+      }
       setAiState("idle");
     } catch { setAiState("error"); }
   }, [params, setParams]);
@@ -159,8 +162,8 @@ export default function Labs() {
           <div className="hero-search__box">
             <Search aria-hidden="true" />
             <input ref={searchInputRef} id="mode-search-input" value={aiInput} onChange={(e) => setAiInput(e.target.value)}
-              placeholder="例：人が本音を言いづらいのはなぜ？"
-              aria-label="気になっていること"
+              placeholder="研究室名・教員名、または気になること"
+              aria-label="研究室名・教員名、または気になっていること"
               autoComplete="off" />
           </div>
           <button type="submit" className="hero-search__submit" disabled={aiState === "loading"} aria-disabled={aiState === "loading"}>
@@ -208,17 +211,23 @@ export default function Labs() {
           <div className="flex items-start justify-between gap-2">
             <div className="min-w-0">
               <div className="flex items-center gap-1.5 text-sm font-bold text-[var(--c-primary)] mb-1">
-                <Sparkles className="w-4 h-4" />「{aiQuery}」を研究の言葉に置き換えました
+                {aiResult?.mode === "name" ? <Search className="w-4 h-4" /> : <Sparkles className="w-4 h-4" />}
+                {aiResult?.mode === "name"
+                  ? `「${aiQuery}」で研究室・教員を検索しました`
+                  : `「${aiQuery}」を研究の言葉に置き換えました`}
               </div>
               {aiResult && (
                 <div className="flex flex-wrap gap-1.5 mt-1">
                   {aiResult.interpreted.fieldLabels.map((l, index) => <Chip key={`f:${l}:${index}`} tone="blue">{l}</Chip>)}
                   {aiResult.interpreted.keywords.slice(0, 5).map((k, index) => <Chip key={`k:${k}:${index}`}>{k}</Chip>)}
-                  {aiResult.interpreted.fieldLabels.length === 0 && aiResult.interpreted.keywords.length === 0 &&
+                  {aiResult.mode === "topic" && aiResult.interpreted.fieldLabels.length === 0 && aiResult.interpreted.keywords.length === 0 &&
                     <span className="text-xs text-[var(--c-ink-3)]">研究室を探す言葉に置き換えられませんでした。対象や場面を加えてください。</span>}
                 </div>
               )}
-              <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">{aiResult?.by === "llm" ? "AIで意味を整理" : "登録された言葉から検索"} ・ 研究室{aiResult?.total ?? 0}件</p>
+              <p className="text-[11px] text-[var(--c-ink-3)] mt-1.5">
+                {aiResult?.mode === "name" ? "研究室名・教員名・大学名から検索" : aiResult?.by === "llm" ? "AIで意味を整理" : "登録された言葉から検索"}
+                {" ・ "}研究室{aiResult?.total ?? 0}件
+              </p>
             </div>
             <button onClick={exitAi} className="shrink-0 flex items-center gap-1 text-xs font-bold text-[var(--c-ink-2)] min-h-[36px]"><X className="w-4 h-4" />検索を終える</button>
           </div>
@@ -269,7 +278,11 @@ export default function Labs() {
                 {aiResult.data.map((l, index) => <LabMiniCard key={`${l.id}:${index}`} lab={l} />)}
               </div>
             ) : (
-              <EmptyState title="近い研究室が見つかりませんでした" description="対象や場面を加えると見つかりやすくなります。例：『職場で本音を言いづらい』『まちの空き家を減らしたい』"
+              <EmptyState
+                title={aiResult?.mode === "name" ? "一致する公開中の研究室がありません" : "近い研究室が見つかりませんでした"}
+                description={aiResult?.mode === "name"
+                  ? "大学名と教員名の間に空白を入れるか、名前を短くしてお試しください。MISHIRUでは、ホームページを確認できた研究室だけを表示しています。"
+                  : "対象や場面を加えると見つかりやすくなります。例：『職場で本音を言いづらい』『まちの空き家を減らしたい』"}
                 action={<Button variant="secondary" onClick={() => { exitAi(); searchInputRef.current?.focus(); }}>言い換えて探す</Button>} />
             )
           ) : (

@@ -7,9 +7,94 @@ import type { Lab } from "../shared/types";
 
 export interface SmartResult {
   interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] };
-  by: "llm" | "keyword";
+  by: "name" | "llm" | "keyword";
+  mode: "name" | "topic";
   labs: (Lab & { _score: number; _why: string[] })[];
   total: number;
+}
+
+const IDENTITY_LABELS = /(?:研究室|研究グループ|ラボ|lab|laboratory|先生|教授|准教授|講師|助教)$/gi;
+const normalizeIdentity = (value: string) =>
+  value.normalize("NFKC").toLowerCase().replace(/[・･,，、/／|｜()（）「」『』【】[\]{}]/g, " ").replace(/\s+/g, " ").trim();
+const compactIdentity = (value: string) => normalizeIdentity(value).replace(/\s/g, "");
+const identityTokens = (query: string) => normalizeIdentity(query)
+  .split(" ")
+  .map((token) => token.replace(IDENTITY_LABELS, "").trim())
+  .filter((token) => token.length >= 2);
+
+function scoreIdentity(lab: Lab, query: string) {
+  const tokens = identityTokens(query);
+  const compactQuery = compactIdentity(query);
+  const university = compactIdentity(lab.university.name);
+  const labName = compactIdentity(lab.name);
+  const people = lab.members.map((member) => ({
+    compact: compactIdentity(member.name),
+    label: `${member.name}${member.title}`,
+  }));
+  const identityParts = [university, labName, ...people.map((person) => person.compact)];
+
+  let score = 0;
+  const why: string[] = [];
+  const universityMatched = compactQuery.includes(university)
+    || tokens.some((token) => university.includes(compactIdentity(token)));
+  if (universityMatched) {
+    score += compactQuery === university ? 45 : 35;
+    why.push(`${lab.university.name}に一致`);
+  }
+
+  const labToken = labName.replace(IDENTITY_LABELS, "");
+  const labMatched = compactQuery === labName
+    || compactQuery.includes(labName)
+    || (labToken.length >= 2 && compactQuery.includes(labToken))
+    || tokens.some((token) => labName.includes(compactIdentity(token)));
+  if (labMatched) {
+    score += compactQuery === labName ? 100 : 55;
+    why.push(`${lab.name}に一致`);
+  }
+
+  const matchedPeople = people.filter((person) =>
+    compactQuery.includes(person.compact)
+    || tokens.some((token) => person.compact.includes(compactIdentity(token))));
+  if (matchedPeople.length) {
+    score += matchedPeople.some((person) => compactQuery === person.compact) ? 95 : 60;
+    why.push(`${matchedPeople[0].label}に一致`);
+  }
+
+  // スペースなしの「兵庫県立大学古賀」にも対応する。
+  if (universityMatched && compactQuery.includes(university)) {
+    const remainder = compactQuery.replace(university, "").replace(IDENTITY_LABELS, "");
+    if (remainder.length >= 2 && identityParts.slice(1).some((part) => part.includes(remainder))) {
+      score += 40;
+    }
+  }
+
+  // 複数語では、大学名・研究室名・教員名のどこかですべての語が一致した候補だけを残す。
+  if (tokens.length > 1 && !tokens.every((token) =>
+    identityParts.some((part) => part.includes(compactIdentity(token))))) {
+    return { score: 0, why: [] as string[] };
+  }
+  return { score, why };
+}
+
+function searchByIdentity(query: string, limit: number) {
+  const scored = store.publicNonDemo()
+    .map((lab) => ({ lab, ...scoreIdentity(lab, query) }))
+    .filter((result) => result.score > 0)
+    .sort((a, b) => b.score - a.score
+      || a.lab.university.name.localeCompare(b.lab.university.name, "ja")
+      || a.lab.name.localeCompare(b.lab.name, "ja"));
+  return {
+    total: scored.length,
+    labs: scored.slice(0, limit).map(({ lab, score, why }) => ({ ...lab, _score: score, _why: why })),
+  };
+}
+
+function hasIdentityIntent(query: string, identityResultCount: number) {
+  const tokens = identityTokens(query);
+  const hasNamedUniversity = tokens.some((token) => token.length >= 4 && /大学(?:院)?$/.test(token));
+  return identityResultCount > 0
+    || hasNamedUniversity
+    || /研究室|研究グループ|ラボ|lab|先生|教授|准教授|講師|助教/i.test(query);
 }
 
 // 入力文から分野大分類を推定（fields.tsのRULES needlesが入力に含まれるか）
@@ -68,6 +153,17 @@ async function llmInterpret(query: string): Promise<{ fields: string[]; areas: s
 
 export async function smartSearch(query: string, limit = 40): Promise<SmartResult> {
   const q = query.trim();
+  const identity = searchByIdentity(q, limit);
+  if (hasIdentityIntent(q, identity.total)) {
+    return {
+      interpreted: { fields: [], fieldLabels: [], areas: [], areaLabels: [], keywords: [] },
+      by: "name",
+      mode: "name",
+      labs: identity.labs,
+      total: identity.total,
+    };
+  }
+
   const llm = await llmInterpret(q);
 
   const fields = llm?.fields.length ? llm.fields : inferFields(q);
@@ -105,6 +201,6 @@ export async function smartSearch(query: string, limit = 40): Promise<SmartResul
       fields, fieldLabels: fields.map(fieldLabel),
       areas, areaLabels: areas.map(areaLabel), keywords,
     },
-    by, labs, total: scored.length,
+    by, mode: "topic", labs, total: scored.length,
   };
 }

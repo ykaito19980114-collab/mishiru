@@ -233,7 +233,7 @@ export const api = {
   getEnrichment: (id: string) => get<Enrichment>(`/api/labs/${id}/enrich`),
 
   smartSearch: (q: string, page = 1) =>
-    get<{ interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] }; by: "llm" | "keyword"; total: number; data: LabWithReasons[] }>(`/api/labs/smart?q=${encodeURIComponent(q)}&page=${page}&limit=24&sessionId=${encodeURIComponent(getSessionId())}`, true),
+    get<{ interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] }; by: "name" | "llm" | "keyword"; mode: "name" | "topic"; total: number; data: LabWithReasons[] }>(`/api/labs/smart?q=${encodeURIComponent(q)}&page=${page}&limit=24&sessionId=${encodeURIComponent(getSessionId())}`, true),
 
   getFilters: () => get<{ facets: { field: Record<string, number>; region: Record<string, number>; type: Record<string, number> }; universities: string[] }>("/api/filters"),
   getPrefectures: (region: string) => get<{ prefectures: string[] }>(`/api/prefectures?region=${encodeURIComponent(region)}`),
