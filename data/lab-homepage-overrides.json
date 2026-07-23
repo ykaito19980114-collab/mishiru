@@ -1,0 +1,91 @@
+[
+  {
+    "labId": "lab-18",
+    "url": "https://mbm.me.es.osaka-u.ac.jp/",
+    "label": "研究室ホームページ",
+    "evidenceUrl": "https://mbm.me.es.osaka-u.ac.jp/?page_id=24",
+    "checkedAt": "2026-07-23",
+    "note": "大阪大学 分子生体計測グループ 出口研究室の公式ホームページ"
+  },
+  {
+    "labId": "lab-264",
+    "url": "https://www.k-ris.keio.ac.jp/html/100011436_ja.html",
+    "label": "研究室の公式研究情報",
+    "evidenceUrl": "https://www.k-ris.keio.ac.jp/html/100011436_knkyu_prsn_ja.html",
+    "checkedAt": "2026-07-23",
+    "note": "慶應義塾大学公式K-RIS。独立した研究室ホームページは確認できず、公開保留判定用の手掛かりとしてのみ保持",
+    "publish": false
+  },
+  {
+    "labId": "lab-2136",
+    "url": "https://www.ae.keio.ac.jp/staff/",
+    "label": "大学公式教員一覧",
+    "evidenceUrl": "https://www.ae.keio.ac.jp/staff/",
+    "checkedAt": "2026-07-23",
+    "note": "個別の研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-2137",
+    "url": "https://www.ae.keio.ac.jp/staff/",
+    "label": "大学公式教員一覧",
+    "evidenceUrl": "https://www.ae.keio.ac.jp/staff/",
+    "checkedAt": "2026-07-23",
+    "note": "個別の研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-2138",
+    "url": "https://www.ae.keio.ac.jp/staff/",
+    "label": "大学公式教員一覧",
+    "evidenceUrl": "https://www.ae.keio.ac.jp/staff/",
+    "checkedAt": "2026-07-23",
+    "note": "個別の研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-2358",
+    "url": "https://www.r-info.tohoku.ac.jp/ja/dfb8ff582cc2976c53e20664ee2ca2d5.html",
+    "label": "大学公式研究者ページ",
+    "evidenceUrl": "https://www.r-info.tohoku.ac.jp/ja/dfb8ff582cc2976c53e20664ee2ca2d5.html",
+    "checkedAt": "2026-07-23",
+    "note": "独立した研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-2434",
+    "url": "https://www.chem.tohoku.ac.jp/entrance/pamphlet/images/2024_kagaku_se_0425.pdf",
+    "label": "大学公式専攻案内",
+    "evidenceUrl": "https://www.chem.tohoku.ac.jp/entrance/pamphlet/images/2024_kagaku_se_0425.pdf",
+    "checkedAt": "2026-07-23",
+    "note": "研究分野の公式資料は確認できるが、研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-2435",
+    "url": "https://www.chem.tohoku.ac.jp/entrance/pamphlet/images/2024_kagaku_se_0425.pdf",
+    "label": "大学公式専攻案内",
+    "evidenceUrl": "https://www.chem.tohoku.ac.jp/entrance/pamphlet/images/2024_kagaku_se_0425.pdf",
+    "checkedAt": "2026-07-23",
+    "note": "研究分野の公式資料は確認できるが、研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-2436",
+    "url": "https://www.chem.tohoku.ac.jp/research/laboratory/index.html",
+    "label": "大学公式研究室一覧",
+    "evidenceUrl": "https://www.chem.tohoku.ac.jp/research/laboratory/index.html",
+    "checkedAt": "2026-07-23",
+    "note": "研究室一覧は確認できるが、個別の研究室ホームページを確認できないため公開保留",
+    "publish": false
+  },
+  {
+    "labId": "lab-262",
+    "url": "https://www.mse.tcu.ac.jp/laboratory/%E9%AB%98%E6%A9%9F%E8%83%BD%E6%A9%9F%E6%A2%B0%E5%88%B6%E5%BE%A1%E7%A0%94%E7%A9%B6%E5%AE%A4/",
+    "label": "研究室ホームページ",
+    "evidenceUrl": "https://www.mse.tcu.ac.jp/laboratory/%E9%AB%98%E6%A9%9F%E8%83%BD%E6%A9%9F%E6%A2%B0%E5%88%B6%E5%BE%A1%E7%A0%94%E7%A9%B6%E5%AE%A4/",
+    "checkedAt": "2026-07-23",
+    "note": "元データが複数研究室の集合レコードのため、個別研究室ページとしては公開保留",
+    "publish": false
+  }
+]

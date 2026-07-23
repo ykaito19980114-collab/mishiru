@@ -15,6 +15,8 @@
     "test:question-quality": "node --import tsx scripts/test-question-craft-quality.ts",
     "test:ux-writing": "node --import tsx scripts/test-ux-writing.ts",
     "test:public-hardening": "node --import tsx scripts/test-public-hardening.ts",
+    "audit:lab-homepages": "node --import tsx scripts/audit-lab-homepages.ts",
+    "test:lab-publication-quality": "node --import tsx scripts/test-lab-publication-quality.ts",
     "test:acceptance": "node --import tsx scripts/test-acceptance.ts"
     ,"test:phase-b": "node --import tsx scripts/test-phase-b.ts"
   },

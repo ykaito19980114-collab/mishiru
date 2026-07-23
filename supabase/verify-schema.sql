@@ -14,7 +14,8 @@ begin
     ('mishiru_interest_profiles'), ('mishiru_events'), ('mishiru_user_sessions'),
     ('mishiru_guest_usage'), ('mishiru_guest_usage_events'), ('mishiru_session_state'),
     ('mishiru_claims'), ('mishiru_leads'), ('mishiru_reports'), ('mishiru_articles'),
-    ('mishiru_api_cache'), ('mishiru_audit_logs')
+    ('mishiru_api_cache'), ('mishiru_audit_logs'),
+    ('mishiru_lab_publication_audits')
   ) as required(name)
   where to_regclass('public.' || required.name) is null;
 

@@ -114,7 +114,7 @@ export function VerifiedBadge({ verified }: { verified: boolean }) {
   return verified ? (
     <Chip tone="teal">研究室確認済み</Chip>
   ) : (
-    <Chip tone="default">研究室未確認</Chip>
+    <Chip tone="default">ホームページ照合済み</Chip>
   );
 }
 
