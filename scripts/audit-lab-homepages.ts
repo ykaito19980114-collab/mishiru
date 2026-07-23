@@ -165,6 +165,24 @@ function coreLabName(name: string) {
     .trim();
 }
 
+function labNameAliases(name: string) {
+  const aliases = new Set<string>();
+  const add = (value: string) => {
+    const normalized = value
+      .replace(/研究室|研究所|研究グループ|グループ|ラボ|講座|分野|部門|領域|ユニット/g, " ")
+      .replace(/[・／/\s]+/g, "")
+      .trim();
+    if (normalized.length >= 2) aliases.add(normalized);
+  };
+  add(coreLabName(name));
+  for (const match of name.matchAll(/[（(]([^）)]+)[）)]/g)) {
+    if (/研究室|研究所|研究グループ|ラボ|講座|分野|部門|領域|ユニット/.test(match[1])) {
+      add(match[1]);
+    }
+  }
+  return Array.from(aliases);
+}
+
 function personTokens(name: string) {
   const clean = name.replace(/\s+/g, "");
   if (!clean || clean === "各教員" || clean.startsWith("全")) return [];
@@ -306,10 +324,10 @@ function candidateScore(lab: Lab, link: { url: string; anchor: string; context: 
   const reasons: string[] = [];
   const anchor = link.anchor.replace(/\s+/g, "");
   const context = link.context.replace(/\s+/g, "");
-  const core = coreLabName(lab.name);
+  const aliases = labNameAliases(lab.name);
   const people = personTokens(lab.pi.name);
-  if (core.length >= 2 && anchor.includes(core)) { score += 8; reasons.push("リンクに研究室名一致"); }
-  else if (core.length >= 2 && context.includes(core)) { score += 2; reasons.push("リンク周辺に研究室名"); }
+  if (aliases.some((alias) => anchor.includes(alias))) { score += 8; reasons.push("リンクに研究室名一致"); }
+  else if (aliases.some((alias) => context.includes(alias))) { score += 2; reasons.push("リンク周辺に研究室名"); }
   if (people[0] && anchor.includes(people[0])) { score += 8; reasons.push("リンクに責任者名一致"); }
   else if (people[0] && context.includes(people[0])) { score += 2; reasons.push("リンク周辺に責任者名"); }
   else if (people[1] && anchor.includes(people[1])) { score += 4; reasons.push("リンクに責任者姓一致"); }
@@ -329,18 +347,39 @@ function pageMatchScore(lab: Lab, page: FetchRecord) {
   const reasons: string[] = [];
   const text = `${page.title} ${page.text}`.replace(/\s+/g, "");
   const lead = `${page.title} ${page.text.slice(0, 2_000)}`.replace(/\s+/g, "");
-  const core = coreLabName(lab.name);
+  const aliases = labNameAliases(lab.name);
   const people = personTokens(lab.pi.name);
-  if (core.length >= 2 && lead.includes(core)) { score += 7; reasons.push("ページ冒頭に研究室名"); }
-  else if (core.length >= 2 && text.includes(core)) { score += 2; reasons.push("ページ本文に研究室名"); }
+  const leadAlias = aliases.find((alias) => lead.includes(alias));
+  const bodyAlias = aliases.find((alias) => text.includes(alias));
+  if (leadAlias) { score += 7; reasons.push("ページ冒頭に研究室名"); }
+  else if (bodyAlias) { score += 2; reasons.push("ページ本文に研究室名"); }
   if (people[0] && lead.includes(people[0])) { score += 7; reasons.push("ページ冒頭に責任者名"); }
   else if (people[0] && text.includes(people[0])) { score += 2; reasons.push("ページ本文に責任者名"); }
+  else if (people[1] && new RegExp(`${people[1]}(?:研究室|ラボ|\\s*(?:lab|laboratory))`, "i").test(lead)) {
+    score += 7;
+    reasons.push("ページ冒頭に責任者姓と研究室表記");
+  }
   else if (people[1] && lead.includes(people[1])) { score += 3; reasons.push("ページ冒頭に責任者姓"); }
   else if (people[1] && text.includes(people[1])) { score += 1; reasons.push("ページ本文に責任者姓"); }
   if (/研究室|laboratory|\blab\b/i.test(`${page.title} ${page.text.slice(0, 3000)}`)) { score += 2; reasons.push("研究室ページ表記"); }
   if (isProfileUrl(page.finalUrl)) { score -= 10; reasons.push("教員・研究者プロフィール"); }
   if (looksLikeDirectory(page.finalUrl, page.text)) { score -= 7; reasons.push("研究室・教員一覧"); }
   return { score, reasons };
+}
+
+function hasCurrentLabIdentity(lab: Lab, reasons: string[]) {
+  const people = personTokens(lab.pi.name);
+  const surname = people[1] || "";
+  const eponymousAlias = surname.length >= 2
+    && labNameAliases(lab.name).some((alias) =>
+      alias === surname
+      || (alias.length <= surname.length + 2 && alias.includes(surname)));
+  const personConfirmed = reasons.includes("ページ冒頭に責任者名")
+    || reasons.includes("ページ冒頭に責任者姓と研究室表記");
+  const eponymousLabConfirmed = eponymousAlias && reasons.includes("ページ冒頭に研究室名");
+  // 一般的な分野名だけが一致しても、担当者交代後の旧データや別研究室を
+  // 誤採用しうる。現在の責任者、または責任者姓を冠した研究室名まで確認する。
+  return personConfirmed || eponymousLabConfirmed;
 }
 
 function keywordsConfirmedOnPage(lab: Lab, page: FetchRecord) {
@@ -383,8 +422,7 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
   if (currentUrl) {
     const page = await fetchPage(currentUrl);
     const match = pageMatchScore(lab, page);
-    const exactIdentity = match.reasons.some((reason) =>
-      reason === "ページ冒頭に研究室名" || reason === "ページ冒頭に責任者名");
+    const exactIdentity = hasCurrentLabIdentity(lab, match.reasons);
     const accepted = page.ok
       && presentsAsLabHomepage(page)
       && exactIdentity
@@ -416,8 +454,15 @@ async function auditLab(lab: Lab): Promise<LabAudit> {
     const page = await fetchPage(candidate.url);
     const match = pageMatchScore(lab, page);
     const combined = candidate.score + match.score;
-    const anchorIdentity = candidate.reasons.some((reason) => reason.startsWith("リンクに研究室名") || reason.startsWith("リンクに責任者"));
-    const pageIdentity = match.reasons.some((reason) => reason === "ページ冒頭に研究室名" || reason === "ページ冒頭に責任者名");
+    const people = personTokens(lab.pi.name);
+    const surname = people[1] || "";
+    const eponymousAlias = surname.length >= 2
+      && labNameAliases(lab.name).some((alias) =>
+        alias === surname
+        || (alias.length <= surname.length + 2 && alias.includes(surname)));
+    const anchorIdentity = candidate.reasons.some((reason) => reason.startsWith("リンクに責任者"))
+      || (eponymousAlias && candidate.reasons.includes("リンクに研究室名一致"));
+    const pageIdentity = hasCurrentLabIdentity(lab, match.reasons);
     if (page.ok && presentsAsLabHomepage(page) && combined >= 10 && (anchorIdentity || pageIdentity)) {
       return {
         labId: lab.id,
