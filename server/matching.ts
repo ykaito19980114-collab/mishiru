@@ -132,7 +132,9 @@ export function matchLabs(sessionId: string, limit = 5): { lab: Lab; reason: Mat
   const evaluatedLabs = store.evaluatedLabIds(sessionId);
   const positiveLabKwLower = s.positiveLabKeywords.map((k) => k.toLowerCase());
 
-  const candidates = store.labsByArea(interestAreas).filter((l) => !evaluatedLabs.has(l.id));
+  const candidates = store.labsByArea(interestAreas).filter((l) =>
+    !evaluatedLabs.has(l.id) && l.quality?.sourceKind === "lab_homepage",
+  );
   const scored = candidates.map((lab) => {
     let score = 0;
     const reasons: string[] = [];
@@ -305,6 +307,7 @@ export function collectProfileExtras(sessionId: string): ProfileExtras {
   const seenText = new Set<string>();
   for (const lab of [...savedLabs, ...likedLabs, ...deepLabs]) {
     if (questions.length >= 6) break;
+    if (lab.quality?.sourceKind !== "lab_homepage") continue;
     const card = cachedCardFor(lab.id);
     const sourceQuestions = card?.questions?.length ? card.questions : labQuestionsFromPublicInfo(lab);
     let taken = 0;

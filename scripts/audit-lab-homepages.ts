@@ -493,8 +493,12 @@ function sourceList(audit: LabAudit): LabSource[] {
 
 function evidenceSummary(audit: LabAudit) {
   const keywords = audit.matchedKeywords.slice(0, 4);
-  if (!keywords.length) return "研究内容の詳細は、研究室ホームページで確認できます。";
+  if (!keywords.length) return "研究室ホームページを確認しました。研究内容の詳しい整理は準備中です。最新情報は、元のページで確認してください。";
   return `研究室ホームページでは「${keywords.join("」「")}」が研究分野・キーワードとして示されています。研究対象や方法の詳細は、元のページで確認できます。`;
+}
+
+function pendingSummary() {
+  return "研究室名・所属などの基礎情報を掲載しています。研究室ホームページと研究内容は現在確認中です。";
 }
 
 async function main() {
@@ -527,19 +531,22 @@ async function main() {
       ? { ...audit, acceptedUrl: null, outcome: "manual_hold" as const, reasons: [...audit.reasons, "複数研究室をまとめた集合ページ"] }
       : audit;
     const quality = qualityFor(lab, effectiveAudit, duplicate);
-    const publishable = quality.publicationLevel === "sourced";
+    const homepageVerified = quality.sourceKind === "lab_homepage" && Boolean(effectiveAudit.acceptedUrl);
+    const publishedStatus = lab.verified || lab.status === "claimed" ? "claimed" : "published";
     return {
       ...lab,
       sourceNo: labNo(lab),
-      official_url: publishable ? effectiveAudit.acceptedUrl : null,
-      has_url: publishable && Boolean(effectiveAudit.acceptedUrl),
-      sources: publishable ? sourceList(effectiveAudit) : [],
-      keywords: publishable ? effectiveAudit.matchedKeywords : lab.keywords,
+      official_url: homepageVerified ? effectiveAudit.acceptedUrl : null,
+      has_url: homepageVerified,
+      sources: homepageVerified ? sourceList(effectiveAudit) : [],
+      keywords: homepageVerified && effectiveAudit.matchedKeywords.length > 0
+        ? effectiveAudit.matchedKeywords
+        : lab.keywords,
       sections: {
         ...lab.sections,
-        research_summary: publishable ? evidenceSummary(effectiveAudit) : lab.sections.research_summary,
+        research_summary: homepageVerified ? evidenceSummary(effectiveAudit) : pendingSummary(),
       },
-      status: publishable ? (lab.status === "claimed" ? "claimed" : "published") : "review_requested",
+      status: publishedStatus,
       quality,
       last_updated: CHECKED_AT,
     } satisfies Lab;
@@ -557,7 +564,7 @@ async function main() {
   };
   const report = {
     generatedAt: `${CHECKED_AT}T00:00:00+09:00`,
-    rule: "研究室名または責任者名との一致を確認できた研究室ホームページのみ公開。教員ページ・researchmap・部局一覧は発見元に限定。",
+    rule: "掲載停止対象を除く研究室ページは基礎情報を公開する。研究室名または責任者名との一致を確認できた研究室ホームページだけを外部リンクと内容整理に使用し、教員ページ・researchmap・部局一覧は代用しない。",
     counts,
     decisions: audits,
     unresolved: audits.filter((item) => !item.acceptedUrl),
