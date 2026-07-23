@@ -37,7 +37,7 @@ const argValue = (name: string, fallback: number) => {
 const OFFSET = Math.max(0, argValue("offset", 0));
 const LIMIT = Math.max(1, argValue("limit", 100));
 const BATCH_SIZE = Math.max(1, Math.min(10, argValue("batch-size", 5)));
-const CONCURRENCY = Math.max(1, Math.min(4, argValue("concurrency", 2)));
+const CONCURRENCY = Math.max(1, Math.min(8, argValue("concurrency", 2)));
 
 if (!API_KEY) throw new Error("GEMINI_API_KEY が設定されていません");
 
