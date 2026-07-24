@@ -73,6 +73,15 @@
     ]
   },
   {
+    "labId": "lab-17719",
+    "url": "https://taguchi.proteins.jp/",
+    "label": "研究室ホームページ",
+    "evidenceUrl": "https://taguchi.proteins.jp/",
+    "checkedAt": "2026-07-24",
+    "note": "東京科学大学 田口研究室から新しい公式ホームページURLへの変更連絡を受領し、研究室名・所属・研究内容を照合",
+    "applyAtRuntime": true
+  },
+  {
     "labId": "lab-19162",
     "url": "https://www-mat.eng.osaka-u.ac.jp/msp3/aboutus",
     "label": "研究室ホームページ",
