@@ -41,15 +41,26 @@ check(namedSearch.response.status === 200
 const heldLab = await json("/api/labs/lab-4");
 check(heldLab.response.status === 404, "未確認研究室は直接URLでも表示しない");
 
-for (const suppressedLabId of ["lab-874", "lab-1291", "lab-6736", "lab-8036", "lab-10504", "lab-12172", "lab-12280", "lab-13850"]) {
+for (const suppressedLabId of ["lab-874", "lab-1291", "lab-6736", "lab-8036", "lab-10504", "lab-12172", "lab-12280", "lab-13850", "lab-42", "lab-4751", "lab-8525"]) {
   const suppressedLab = await json(`/api/labs/${suppressedLabId}`);
   check(suppressedLab.response.status === 404, `掲載停止依頼済みの${suppressedLabId}を表示しない`);
+}
+for (const [suppressedLabId, query] of [
+  ["lab-42", "京都大学 木上淳"],
+  ["lab-4751", "慶應義塾大学 志澤一之"],
+  ["lab-8525", "熊本大学 佐久川貴志"],
+] as const) {
+  const search = await json(`/api/labs/smart?q=${encodeURIComponent(query)}&sessionId=removed-lab-search`);
+  check(
+    !search.body?.data?.some((lab: { id?: string }) => lab.id === suppressedLabId),
+    `掲載停止依頼済みの${suppressedLabId}を検索結果へ載せない`,
+  );
 }
 
 const sitemap = await fetch(`${BASE}/sitemap.xml`);
 const sitemapBody = await sitemap.text();
 check(!sitemapBody.includes("/labs/lab-4</loc>"), "未確認研究室をサイトマップへ載せない");
-for (const suppressedLabId of ["lab-874", "lab-1291", "lab-6736", "lab-8036", "lab-10504", "lab-12172", "lab-12280", "lab-13850"]) {
+for (const suppressedLabId of ["lab-874", "lab-1291", "lab-6736", "lab-8036", "lab-10504", "lab-12172", "lab-12280", "lab-13850", "lab-42", "lab-4751", "lab-8525"]) {
   check(!sitemapBody.includes(`/labs/${suppressedLabId}</loc>`), `掲載停止依頼済みの${suppressedLabId}をサイトマップへ載せない`);
 }
 
