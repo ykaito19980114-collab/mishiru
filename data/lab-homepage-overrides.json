@@ -3,18 +3,74 @@
     "labId": "lab-1234",
     "url": "https://www.eng.u-hyogo.ac.jp/faculty/koga/",
     "label": "研究室ホームページ",
-    "evidenceUrl": "https://www.eng.u-hyogo.ac.jp/faculty/koga/haizoku.html",
-    "checkedAt": "2026-07-23",
-    "note": "兵庫県立大学大学院工学研究科 古賀麻由子研究室の公式ホームページを確認",
+    "evidenceUrl": "https://www.eng.u-hyogo.ac.jp/faculty/koga/gaiyou.html",
+    "checkedAt": "2026-07-24",
+    "note": "兵庫県立大学大学院工学研究科 古賀麻由子准教授の研究室公式ページ、研究概要、配属案内を照合",
     "applyAtRuntime": true,
-    "keywords": [
-      "核融合燃料射出システム",
-      "高速液滴発生",
-      "画像計測",
-      "プラズマ・イメージング",
-      "レンズレスカメラ"
+    "contentLevel": "sourced",
+    "replaceKeywords": true,
+    "name": "古賀研究室",
+    "department": "工学部 電気電子情報工学科 電気工学コース／大学院工学研究科 電気物性工学専攻",
+    "graduateSchool": "大学院工学研究科",
+    "major": "電気物性工学専攻",
+    "members": [
+      {
+        "name": "古賀麻由子",
+        "title": "准教授"
+      }
     ],
-    "researchSummary": "核融合発電の実現に向けた燃料射出システムや高速液滴発生、画像計測技術を研究しています。核融合研究で得られた計測技術の一般応用にも取り組んでいます。"
+    "keywords": [
+      "レーザー核融合",
+      "ターゲットインジェクション",
+      "核融合燃料供給",
+      "レンズレスマイクロ波ホログラフィ",
+      "機械学習による画像再構成",
+      "プラズマ計測"
+    ],
+    "researchSummary": "核融合発電の実現に向けて、燃料を炉へ高速・高精度に送り込むターゲットインジェクション装置を開発しています。あわせて、レンズを使わずにマイクロ波の受信信号から画像を再構成する技術にも取り組んでいます。",
+    "researchQuestions": [
+      "核融合発電を連続して行うには、小さな燃料をどのように速く正確に送り込めばよいのか？",
+      "レンズを使わずに受け取ったマイクロ波から、対象の形をどのように画像として再現できるのか？"
+    ]
+  },
+  {
+    "labId": "lab-7556",
+    "url": "https://ryutai.hiroshima-u.ac.jp/ja/",
+    "label": "研究室ホームページ",
+    "evidenceUrl": "https://ryutai.hiroshima-u.ac.jp/ja/research/",
+    "checkedAt": "2026-07-24",
+    "note": "広島大学大学院先進理工系科学研究科 流体工学研究室の公式ホームページ、メンバー、研究内容を照合",
+    "applyAtRuntime": true,
+    "contentLevel": "sourced",
+    "replaceKeywords": true,
+    "name": "流体工学研究室",
+    "department": "大学院先進理工系科学研究科 機械工学プログラム",
+    "graduateSchool": "大学院先進理工系科学研究科",
+    "major": "機械工学プログラム",
+    "members": [
+      {
+        "name": "鈴木康浩",
+        "title": "教授"
+      },
+      {
+        "name": "尾形陽一",
+        "title": "教授"
+      }
+    ],
+    "keywords": [
+      "磁場閉じ込め核融合",
+      "プラズマ流体",
+      "気液二相流",
+      "数値流体力学",
+      "乱流計測",
+      "流体可視化",
+      "プラズマ推進"
+    ],
+    "researchSummary": "流体制御を通じたカーボンニュートラルの実現を目指す研究室です。核融合プラズマの実験・シミュレーション、エンジンや配管内の気液二相流、乱流の可視化・計測などに取り組んでいます。",
+    "researchQuestions": [
+      "核融合発電を実現するには、プラズマの流れをどのように捉え、制御すればよいのか？",
+      "空気と水が一緒に流れるとき、流れ方やエネルギー損失はどのように変わるのか？"
+    ]
   },
   {
     "labId": "lab-19162",

@@ -45,6 +45,17 @@ assert.equal(
   "小泉研究室のURLが研究室紹介ページと一致しない",
 );
 assert.equal(koizumiLab.quality?.contentLevel, "sourced", "小泉研究室の確認済み研究情報が表示対象になっていない");
+const kogaLab = publicLabs.find((lab) => lab.id === "lab-1234");
+assert.ok(kogaLab, "古賀研究室が公開対象に含まれていない");
+assert.equal(kogaLab.official_url, "https://www.eng.u-hyogo.ac.jp/faculty/koga/");
+assert.equal(kogaLab.quality?.contentLevel, "sourced");
+assert.deepEqual(kogaLab.keywords.slice(0, 2), ["レーザー核融合", "ターゲットインジェクション"]);
+assert.ok(!kogaLab.keywords.includes("高速液滴発生"), "研究内容と確認できない旧キーワードが残っている");
+const suzukiLab = publicLabs.find((lab) => lab.id === "lab-7556");
+assert.ok(suzukiLab, "広島大学流体工学研究室が公開対象に含まれていない");
+assert.equal(suzukiLab.official_url, "https://ryutai.hiroshima-u.ac.jp/ja/");
+assert.equal(suzukiLab.quality?.contentLevel, "sourced");
+assert.deepEqual(suzukiLab.members.map((member) => member.name), ["鈴木康浩", "尾形陽一"]);
 for (const lab of publicLabs) {
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
   assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
@@ -73,7 +84,7 @@ const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publicati
   counts: { publishable: number };
 };
 assert.equal(baseQualityApprovedLabs.length, report.counts.publishable, "監査レポートと一括監査時の品質確認済み件数が一致しない");
-assert.equal(qualityApprovedLabs.length, report.counts.publishable + 1, "個別確認済みの研究室が公開対象へ追加されていない");
-assert.equal(publicLabs.length, 5894, "掲載停止依頼を除いた公開件数が一致しない");
+assert.equal(qualityApprovedLabs.length, report.counts.publishable + 2, "個別確認済みの研究室が公開対象へ追加されていない");
+assert.equal(publicLabs.length, 5895, "掲載停止依頼を除いた公開件数が一致しない");
 
 console.log(`lab publication quality: OK (${publicLabs.length.toLocaleString()} published / ${labs.length.toLocaleString()} total)`);

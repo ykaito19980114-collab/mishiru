@@ -1,4 +1,4 @@
-import type { Lab } from "../shared/types";
+import type { Lab, LabMember } from "../shared/types";
 
 export interface LabHomepageOverride {
   labId: string;
@@ -10,9 +10,15 @@ export interface LabHomepageOverride {
   publish?: boolean;
   applyAtRuntime?: boolean;
   keywords?: string[];
+  replaceKeywords?: boolean;
   researchSummary?: string;
   researchQuestions?: string[];
   contentLevel?: "verified" | "sourced" | "basic";
+  name?: string;
+  department?: string;
+  graduateSchool?: string;
+  major?: string;
+  members?: LabMember[];
 }
 
 export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOverride[]): Lab[] {
@@ -22,7 +28,12 @@ export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOve
     const override = byId.get(lab.id);
     if (!override || override.publish === false) return lab;
 
-    const keywords = Array.from(new Set([...(lab.keywords || []), ...(override.keywords || [])]));
+    const keywords = Array.from(new Set([
+      ...(override.replaceKeywords ? [] : (lab.keywords || [])),
+      ...(override.keywords || []),
+    ]));
+    const members = override.members?.length ? override.members : lab.members;
+    const pi = members.find((member) => member.name.trim().length > 0) || lab.pi;
     const missingFields = (lab.quality?.missingFields || []).filter((field) =>
       field !== "研究室ホームページ" && !(override.keywords?.length && field === "具体的な研究キーワード"));
     const notes = [
@@ -33,6 +44,13 @@ export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOve
 
     return {
       ...lab,
+      name: override.name || lab.name,
+      department: override.department || lab.department,
+      graduate_school: override.graduateSchool || lab.graduate_school,
+      major: override.major || lab.major,
+      members,
+      pi,
+      member_count: members.length,
       keywords,
       researchQuestions: override.researchQuestions || lab.researchQuestions,
       questions: override.researchQuestions || lab.questions,

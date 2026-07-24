@@ -30,7 +30,7 @@ const health = await fetch(`${BASE}/api/health`);
 check(health.headers.get("cache-control")?.includes("no-store") && Boolean(health.headers.get("x-request-id")), "APIをキャッシュせずリクエストIDを付ける");
 
 const labs = await json("/api/labs?limit=1");
-check(labs.response.status === 200 && labs.body?.total === 5894, "掲載停止依頼を除く確認済み研究室5,894件だけを一覧へ掲載する");
+check(labs.response.status === 200 && labs.body?.total === 5895, "掲載停止依頼を除く確認済み研究室5,895件だけを一覧へ掲載する");
 
 const namedSearch = await json(`/api/labs/smart?q=${encodeURIComponent("兵庫県立大学 古賀")}&sessionId=public-hardening-search`);
 check(namedSearch.response.status === 200
