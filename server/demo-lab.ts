@@ -20,8 +20,7 @@ export const DEMO_LAB: Lab = {
   official_url: "http://www.fujimotolab.mp.es.osaka-u.ac.jp/",
   has_url: true,
   sources: [
-    { label: "研究室公式サイト", url: "http://www.fujimotolab.mp.es.osaka-u.ac.jp/" },
-    { label: "大学公式教員ページ", url: "https://rd.iai.osaka-u.ac.jp/ja/87214147b191dabc.html" },
+    { label: "研究室ホームページ", url: "http://www.fujimotolab.mp.es.osaka-u.ac.jp/" },
   ],
   sections: {
     research_summary:
@@ -33,7 +32,7 @@ export const DEMO_LAB: Lab = {
     ],
     methods: ["理論", "数値シミュレーション"],
     key_papers: [
-      { title: "強相関電子系における超伝導機構に関する理論研究", note: "テーマ例（詳細・一覧は公式サイト/researchmapをご確認ください）" },
+      { title: "強相関電子系における超伝導機構に関する理論研究", note: "テーマ例（詳細・一覧は研究室ホームページをご確認ください）" },
     ],
     daily_life:
       "実験装置を扱うのではなく、論文を読み、数式を立て、計算機で数値を確かめる時間が中心です。週1回のゼミで進捗と論文紹介を行う想定の紹介です。",
@@ -50,4 +49,13 @@ export const DEMO_LAB: Lab = {
   confidence: "verified",
   last_updated: "2026-07-03",
   is_demo: true,
+  quality: {
+    publicationLevel: "sourced",
+    contentLevel: "verified",
+    score: 100,
+    reviewStatus: "manually_researched",
+    sourceKind: "lab_homepage",
+    checkedAt: "2026-07-23",
+    missingFields: [],
+  },
 };

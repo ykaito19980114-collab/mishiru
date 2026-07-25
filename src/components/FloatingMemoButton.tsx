@@ -87,7 +87,7 @@ export function FloatingMemoButton() {
 
   return (
     <>
-      <button type="button" className="floating-memo-button" onClick={openPanel}>
+      <button type="button" className="floating-memo-button" onClick={openPanel} aria-label="メモを追加">
         <Plus className="w-5 h-5" />
         <span>メモ追加</span>
       </button>

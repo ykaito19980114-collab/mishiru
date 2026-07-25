@@ -1,10 +1,10 @@
 // アプリシェル：モバイル下部4タブ（IA-02）＋ md以上でヘッダーナビ。
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 import { Search, Sparkles, Archive, Radar, Lightbulb, BookOpen, Send, Menu, X, ChevronDown } from "lucide-react";
 import { BrandMark } from "./BrandMark";
 import { FloatingMemoButton } from "./FloatingMemoButton";
-import { AiModelSelector } from "./AiModelSelector";
 import { AccountButton } from "./AccountAccess";
 
 const TABS = [
@@ -27,8 +27,10 @@ function isActive(pathname: string, to: string) {
 
 export function Layout({ children }: { children: React.ReactNode }) {
   const { pathname } = useLocation();
+  const canonicalUrl = `https://mishiru-lab.com${pathname === "/" ? "/" : pathname}`;
   const isAdmin = pathname.startsWith("/admin");
   const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+  const [online, setOnline] = React.useState(() => typeof navigator === "undefined" || navigator.onLine);
   const menuTriggerRef = React.useRef<HTMLButtonElement>(null);
   const menuWasOpen = React.useRef(false);
 
@@ -61,6 +63,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
     document.addEventListener("keydown",onKeyDown); return()=>document.removeEventListener("keydown",onKeyDown);
   },[]);
 
+  React.useEffect(() => {
+    const update = () => setOnline(navigator.onLine);
+    window.addEventListener("online", update);
+    window.addEventListener("offline", update);
+    return () => { window.removeEventListener("online", update); window.removeEventListener("offline", update); };
+  }, []);
+
   if (isAdmin) return <>{children}</>; // 管理画面は別シェル
   // LPトップ（SCR-LP・ADR-008改）: アプリシェル（サイドバー/ハンバーガー/下部タブ）の中に描画し、
   // 既存ページへの導線を保つ。フッターとFABはLP側が持つ/不要のため出さない
@@ -68,7 +77,12 @@ export function Layout({ children }: { children: React.ReactNode }) {
 
   return (
     <div className="mishiru-shell min-h-screen bg-[var(--c-bg)] text-[var(--c-ink)]">
+      <Helmet>
+        <link rel="canonical" href={canonicalUrl} />
+        <meta property="og:url" content={canonicalUrl} />
+      </Helmet>
       <a href="#main-content" className="skip-link">本文へスキップ</a>
+      {!online && <div className="offline-banner" role="status" aria-live="polite">オフラインです。入力内容はこの端末に残ります。接続が戻ると再送します。</div>}
 
       <aside className="mishiru-sidebar">
         <div className="mishiru-sidebar__inner">
@@ -104,7 +118,6 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </nav>
           <div className="mishiru-sidebar__footer">
             <AccountButton />
-            <details className="sidebar-ai-settings"><summary>使うAIを選ぶ<ChevronDown aria-hidden="true"/></summary><AiModelSelector /></details>
           </div>
         </div>
       </aside>
@@ -125,9 +138,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           <nav aria-label="すべての機能" className="mobile-journey-menu__nav">
             {TABS.map((tab, index) => { const Icon = tab.icon; const active = isActive(pathname, tab.to); return <Link key={tab.to} to={tab.to} aria-current={active ? "page" : undefined}><span aria-hidden="true">{String(index + 1).padStart(2, "0")}</span><Icon aria-hidden="true"/><strong>{tab.label}</strong></Link>; })}
           </nav>
-          <AiModelSelector compact />
           <AccountButton />
-          <p className="mobile-journey-menu__note">AIを使うときは、ここで選んだモデルを使います。APIキーは端末へ送られません。</p>
         </section>
       </div>}
 

@@ -14,7 +14,8 @@ export function LabMiniCard({ lab, reasons, actions: _actions = true, showReason
   const location = useLocation();
   const returnTo = `${location.pathname}${location.search}`;
   const detailPath = `/labs/${lab.id}?returnTo=${encodeURIComponent(returnTo)}`;
-  const question = labQuestions(lab, 1)[0];
+  const hasLabHomepage = lab.quality?.sourceKind === "lab_homepage" && Boolean(lab.official_url);
+  const question = hasLabHomepage ? labQuestions(lab, 1)[0] : "";
 
   return (
     <article
@@ -41,16 +42,16 @@ export function LabMiniCard({ lab, reasons, actions: _actions = true, showReason
         <p className="lab-row__q"><b aria-hidden="true">Q.</b><span>{question}</span></p>
       )}
 
-      {showReasons && reasons && reasons.length > 0 && (
+      {hasLabHomepage && showReasons && reasons && reasons.length > 0 && (
         <p className="lab-row__reason"><Sparkles aria-hidden="true" /><span>{reasons[0]}</span></p>
       )}
 
       <div className="lab-row__chips">
         <Chip tone="blue">{fieldLabel(lab.field_major)}</Chip>
-        {lab.keywords.slice(0, 2).map((k, index) => (
+        {hasLabHomepage && lab.keywords.slice(0, 2).map((k, index) => (
           <Chip key={`${k}:${index}`}>{k.length > 12 ? k.slice(0, 12) + "…" : k}</Chip>
         ))}
-        {!lab.has_url && <span className="lab-row__hint">公式サイト未登録</span>}
+        {!hasLabHomepage && <span className="lab-row__hint">研究室情報を確認中</span>}
       </div>
     </article>
   );

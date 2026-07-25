@@ -6,10 +6,11 @@ import { callAIJson, aiEnabled } from "./ai";
 import { readAiCache, withSingleFlight, writeAiCache } from "./ai-cache";
 import { fieldLabel } from "../shared/fields";
 import type { Lab } from "../shared/types";
+import { assessLabEvidence } from "../shared/lab-evidence";
 
-const CONTACT = process.env.CONTACT_EMAIL || "ops@openlab.example";
+const CONTACT = process.env.CONTACT_EMAIL || "support@mishiru-lab.com";
 const CACHE_FILE = path.join(process.cwd(), "data", "runtime", "enrich-cache.json");
-const CACHE_VERSION = 4; // ロジック変更時に上げると再生成される（v4: 氏名一致フォールバックの拡張。学際分野の分野コンセプト不一致を救済）
+const CACHE_VERSION = 6; // 問い・ガイド・論文を用途別の根拠判定へ分離。推測による関連論文フォールバックは行わない。
 // 7日TTL（コスト設計：生成は「閲覧された研究室 × 週1回」に制限。期限切れは stale-while-revalidate）
 const TTL_MS = 7 * 24 * 60 * 60 * 1000;
 
@@ -54,6 +55,7 @@ function persist() {
 
 // --- AI学生ガイド（Gemini） ---
 async function generateGuide(lab: Lab): Promise<AiGuide | null> {
+  if (!assessLabEvidence(lab).canGenerateGuide) return null;
   if (!aiEnabled()) {
     const keywords = lab.keywords.slice(0, 4); const theme = keywords.join("・") || fieldLabel(lab.field_major);
     return { overview: `${theme}に関する公開キーワードを、学生が確認しやすい形に整理した開発用の案です。研究内容の詳細は公式情報をご確認ください。`, questions: keywords.slice(0,3).map((keyword)=>`${keyword}について、この研究室はどの対象や現象を扱っているか？`), methods: ["公式サイトで研究テーマを確認する","公開論文から研究方法を確認する","相談時に対象と方法を質問する"], fit: `${theme}を自分の問いと結び付けて確かめたい学生向けの確認材料です。`, careers: "公開情報だけでは進路を断定できないため、研究室へ確認してください。", appeal: `${theme}をどの対象・方法で扱うかを比較できる点です。`, generatedBy:"template" };
@@ -113,8 +115,13 @@ async function fetchPapers(name: string, fieldMajor: string, universityName: str
   if (!authors.length) return { papers: [], confidence: "none" };
 
   const wantConcepts = new Set((FIELD_CONCEPTS[fieldMajor] || []).map((c) => c.toLowerCase()));
-  // 大学名の英語一部（「大阪大学」→「Osaka」等）を作れないため、機関名の日本語/英語両方に部分一致を試みる緩い照合
-  const univKey = universityName.replace(/大学$|大学院.*$/, "").toLowerCase();
+  const institutionRes = await oa(`https://api.openalex.org/institutions?search=${encodeURIComponent(universityName)}&per-page=8`);
+  const institutionIds = new Set<string>(
+    (institutionRes?.results || [])
+      .filter((institution: any) => institution.country_code === "JP")
+      .map((institution: any) => String(institution.id || "").split("/").pop())
+      .filter(Boolean),
+  );
 
   // 各候補にスコアを付け、十分に確からしいものだけ採用（誤情報＝致命リスクのため厳格に）
   const scored = authors.map((a) => {
@@ -123,10 +130,8 @@ async function fetchPapers(name: string, fieldMajor: string, universityName: str
     const conceptHitsTop2 = top2.filter((c) => wantConcepts.has(c)).length;
     const conceptHitsAny = concepts.filter((c) => wantConcepts.has((c.display_name || "").toLowerCase())).length;
     const insts = (a.last_known_institutions || a.affiliations?.map((x: any) => x.institution) || []) as any[];
-    const instMatch = insts.some((i: any) => {
-      const dn = (i?.display_name || "").toLowerCase();
-      return univKey.length > 1 && (dn.includes(univKey) || (i?.country_code === "JP" && dn && false));
-    });
+    const instMatch = insts.some((institution: any) =>
+      institutionIds.has(String(institution?.id || "").split("/").pop()));
     let score = 0;
     if (instMatch) score += 5;                    // 機関一致は強い証拠
     if (conceptHitsTop2 > 0) score += 3;          // 主分野が一致
@@ -136,15 +141,11 @@ async function fetchPapers(name: string, fieldMajor: string, universityName: str
   }).sort((x, y) => y.score - x.score || y.works - x.works);
 
   const best = scored[0];
-  // 採用基準：機関一致 or （主分野一致 かつ 業績3件以上）。それ未満は誤同定リスクが高いため論文を出さない
-  const strong = best && (best.score >= 5 || (best.score >= 4 && best.works >= 3));
-  // 学際分野（文化人類学等）はOpenAlexの分野コンセプトが本サービスの12分類と噛み合わず、
-  // 実在の本人でもconceptHitsが0になりstrongを満たせないことがある。
-  // 名前検索のヒットが少ない（同姓同名リスクが低い）候補は、機関・分野の確証がなくても
-  // 氏名一致(name_only)として救済する（「同姓同名を含む場合があります」の既存の正直な注記で示す）。
-  const uniqueNameMatch = !strong && authors.length <= 4 && (best?.works || 0) >= 3;
-  if (!best || best.works === 0 || (!strong && !uniqueNameMatch)) return { papers: [], confidence: "none" };
-  const confidence: Enrichment["papersConfidence"] = best.score >= 5 ? "matched" : "name_only";
+  const bestInstitutions = (best?.a?.last_known_institutions || best?.a?.affiliations?.map((item: any) => item.institution) || []) as any[];
+  const institutionMatched = bestInstitutions.some((institution: any) =>
+    institutionIds.has(String(institution?.id || "").split("/").pop()));
+  if (!best || best.works === 0 || !institutionMatched) return { papers: [], confidence: "none" };
+  const confidence: Enrichment["papersConfidence"] = "matched";
   const chosen = best.a;
 
   const aid = String(chosen.id).split("/").pop();
@@ -163,53 +164,22 @@ async function fetchPapers(name: string, fieldMajor: string, universityName: str
   return { papers, confidence: papers.length ? confidence : "none" };
 }
 
-// --- キーワード関連論文（著者を特定できない研究室向けフォールバック。全ページ掲出のため） ---
-// 「本研究室の業績」とは主張せず、研究キーワードでOpenAlexを検索した関連論文として明示表示する。
-function mapWork(w: any): Paper {
-  return {
-    title: String(w.title),
-    year: w.publication_year ?? null,
-    venue: null, // OpenAlexのvenueは不正確な例が多いため非表示（ADR-004）
-    citations: w.cited_by_count ?? 0,
-    url: w.doi ? String(w.doi) : (w.primary_location?.landing_page_url || w.id || null),
-    authors: (w.authorships || []).slice(0, 4).map((a: any) => a.author?.display_name).filter(Boolean),
-  };
-}
-
-async function fetchRelatedPapers(keywords: string[]): Promise<Paper[]> {
-  const kws = keywords.filter((k) => k.length >= 2).slice(0, 3);
-  if (!kws.length) return [];
-  const res = await oa(`https://api.openalex.org/works?search=${encodeURIComponent(kws.join(" "))}&per-page=25`);
-  const works: any[] = res?.results || [];
-  // ノイズ除去：タイトルにいずれかのキーワード（または先頭4文字）を含むものだけ採用
-  const stems = kws.flatMap((k) => (k.length > 4 ? [k, k.slice(0, 4)] : [k]));
-  return works
-    .filter((w) => w.title && stems.some((s) => String(w.title).includes(s)))
-    .slice(0, 6)
-    .map(mapWork);
-}
-
 // --- 統合（7日TTLキャッシュ。期限内は再生成ゼロ、期限切れは古い内容を即返しつつ裏で更新=SWR） ---
 const refreshing = new Set<string>(); // 二重再生成防止
 
 async function generate(lab: Lab): Promise<Enrichment> {
+  const evidence = assessLabEvidence(lab);
   const [aiGuide, paperResult] = await Promise.all([
-    generateGuide(lab),
-    lab.pi.name ? fetchPapers(lab.pi.name, lab.field_major, lab.university.name) : Promise.resolve({ papers: [], confidence: "none" as const }),
+    evidence.canGenerateGuide ? generateGuide(lab) : Promise.resolve(null),
+    evidence.canSearchPapers
+      ? fetchPapers(lab.pi.name, lab.field_major, lab.university.name)
+      : Promise.resolve({ papers: [], confidence: "none" as const }),
   ]);
-
-  // 著者を高確度で特定できない場合は、キーワード関連論文へフォールバック（全ページ掲出・FR-ENRICH-02改）
-  let papers = paperResult.papers;
-  let confidence: Enrichment["papersConfidence"] = paperResult.confidence;
-  if (papers.length === 0) {
-    const related = await fetchRelatedPapers(lab.keywords);
-    if (related.length) { papers = related; confidence = "related"; }
-  }
 
   return {
     aiGuide,
-    papers,
-    papersConfidence: confidence,
+    papers: paperResult.papers,
+    papersConfidence: paperResult.confidence,
     generatedAt: new Date().toISOString(),
     version: CACHE_VERSION,
   };
@@ -236,6 +206,12 @@ function storeEnrichment(labId: string, enrichment: Enrichment) {
 }
 
 export async function enrichLab(lab: Lab, opts: { force?: boolean } = {}): Promise<Enrichment> {
+  // 根拠が足りない研究室はそもそも生成しない（origin/mainの公開品質ガード）。
+  // キャッシュ参照より前に置く＝L2への問い合わせも省ける。
+  const evidence = assessLabEvidence(lab);
+  if (!evidence.canGenerateGuide && !evidence.canSearchPapers) {
+    return { aiGuide: null, papers: [], papersConfidence: "none", generatedAt: new Date().toISOString(), version: CACHE_VERSION };
+  }
   let cached = await fromAnyCache(lab.id);
   const valid = cached && cached.version === CACHE_VERSION;
 
@@ -249,10 +225,11 @@ export async function enrichLab(lab: Lab, opts: { force?: boolean } = {}): Promi
   // 期限内キャッシュ → そのまま配信（生成コストゼロ）
   if (!opts.force && valid && cached && isFresh(cached)) return cached;
 
-  // 期限切れ、または版が古いキャッシュ → 即座に古い内容を返し、裏で再生成（ユーザーを待たせない）。
-  // 版ズレを「無し」ではなく「陳腐化」として扱うのが要点。CACHE_VERSIONを上げた直後に
-  // 全研究室ページが同期生成でブロックする（＝コストの崖）のを避け、背景移行にする。
-  if (!opts.force && cached) {
+  // 期限切れキャッシュ（版は一致）→ 古い内容を即返しつつ裏で再生成（ユーザーを待たせない）。
+  // 版ズレはここに含めない。CACHE_VERSIONを上げるのは「前の出力はもう正しくない」という宣言であり
+  // （例：v6の公開根拠ゲート導入）、古い内容を配り続けると掲載してはいけない情報が生き残る。
+  // コストより正しさを優先し、版ズレは下の同期再生成へ落とす。
+  if (!opts.force && valid && cached && !isFresh(cached)) {
     if (!refreshing.has(lab.id)) {
       refreshing.add(lab.id);
       void generate(lab)

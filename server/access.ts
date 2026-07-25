@@ -8,7 +8,8 @@ const localUsers = new Map<string, string>();
 const uuid = () => `sess-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 12)}`;
 
 function suppliedSessionId(req: Request) {
-  return String(req.body?.sessionId || req.query?.sessionId || req.get("x-mishiru-session-id") || "").trim();
+  const value = String(req.body?.sessionId || req.query?.sessionId || req.get("x-mishiru-session-id") || "").trim();
+  return /^[A-Za-z0-9_-]{8,100}$/.test(value) ? value : "";
 }
 
 async function canonicalSessionId(userId: string, candidate: string) {
@@ -97,7 +98,8 @@ export function requireValueAction(kind: string) {
     if (res.locals.mishiruUser) return next();
     const sessionId = String(res.locals.mishiruSessionId || suppliedSessionId(req));
     if (!sessionId) return res.status(400).json({ error: { code: "BAD_REQUEST", message: "sessionId が必要です" } });
-    const actionId = String(req.body?.actionId || req.get("x-mishiru-action-id") || `${kind}:${Date.now()}:${Math.random()}`);
+    const suppliedActionId = String(req.body?.actionId || req.get("x-mishiru-action-id") || "").trim();
+    const actionId = /^[A-Za-z0-9:_-]{8,140}$/.test(suppliedActionId) ? suppliedActionId : `${kind}:${Date.now()}:${Math.random()}`;
     try {
       const access = await consume(sessionId, actionId);
       res.setHeader("X-Mishiru-Guest-Used", String(access.used));

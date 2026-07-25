@@ -28,6 +28,10 @@ const splitKeywords = (raw: string) =>
 
 const raw = fs.readFileSync(CSV, "utf-8").replace(/^﻿/, "");
 const parsed = Papa.parse<Record<string, string>>(raw, { header: true, skipEmptyLines: true });
+const suppressions = JSON.parse(
+  fs.readFileSync(path.join(process.cwd(), "data", "lab-suppressions.json"), "utf-8"),
+) as { sourceNos?: string[] };
+const suppressedSourceNos = new Set(suppressions.sourceNos || []);
 
 const today = "2026-07-03";
 const labs: Lab[] = [];
@@ -39,7 +43,7 @@ let noUrl = 0;
 for (const row of parsed.data) {
   const no = (row["No"] || "").trim();
   const univName = (row["大学名"] || "").trim();
-  if (!no || !univName) continue;
+  if (!no || !univName || suppressedSourceNos.has(no)) continue;
 
   const facultyFull = (row["学部・研究科・専攻"] || "").trim();
   // 研究科・専攻の分割（最初の全角/半角スペースで2分割）
@@ -91,7 +95,9 @@ for (const row of parsed.data) {
       student_themes: null, methods: null, key_papers: null, daily_life: null,
       mentoring: null, careers: null, fit: null, collaboration: null,
     },
-    status: "published",
+    // 研究室ホームページの到達確認と、研究室名・責任者名の一致確認が終わるまで公開しない。
+    // 変換後に scripts/audit-lab-homepages.ts --apply を実行する。
+    status: "review_requested",
     verified: false,
     confidence: "public_info",
     last_updated: today,

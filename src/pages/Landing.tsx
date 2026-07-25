@@ -11,11 +11,12 @@ import {
   ArrowRight, ChevronDown, Brain, HelpCircle,
 } from "lucide-react";
 import { BrandMark } from "../components/BrandMark";
+import { api } from "../lib/api";
 import "../landing.css";
 
-// 実データ件数（2026-07-21確認: data/labs.json ほか data/normalized/*.json）
+// 研究室件数は公開品質基準を通過した件数をAPIから取得する。
 const STATS = [
-  { icon: Building2, label: "研究室", value: "19,785", unit: "件" },
+  { icon: Building2, label: "研究室", value: "", unit: "件" },
   { icon: Layers, label: "研究領域", value: "606", unit: "" },
   { icon: Landmark, label: "学会", value: "1,700", unit: "" },
   { icon: BookOpen, label: "ジャーナル", value: "1,648", unit: "" },
@@ -78,6 +79,10 @@ const FAQS = [
 export default function Landing() {
   const navigate = useNavigate();
   const inputRef = React.useRef<HTMLInputElement>(null);
+  const [labCount, setLabCount] = React.useState<number | null>(null);
+  React.useEffect(() => {
+    api.getLabs({ limit: "1" }).then((result) => setLabCount(result.total)).catch(() => {});
+  }, []);
   const goSearch = (query?: string) => {
     const value = (query ?? inputRef.current?.value ?? "").trim();
     navigate(value.length >= 2 ? `/search?ai=${encodeURIComponent(value)}` : "/search");
@@ -89,14 +94,14 @@ export default function Landing() {
     name: "MISHIRU",
     alternateName: "みしる",
     url: "https://mishiru-lab.com/",
-    description: "気になることから、研究を探す。全国19,785件の研究室と、研究領域・学会・ジャーナルを横断して探索できる研究テーマ発見ナビ。",
+    description: "気になることから、研究を探す。研究室と、研究領域・学会・ジャーナルを横断して探索できる研究テーマ発見ナビ。",
   };
 
   return (
     <div className="lp">
       <Helmet>
         <title>MISHIRU（みしる）｜気になることから、研究を探す</title>
-        <meta name="description" content="モヤモヤした関心や疑問を、研究の問い・研究領域・研究室・論文につなげる研究テーマ発見ナビ。全国19,785件の研究室を掲載。登録なしで今すぐ使えます。" />
+        <meta name="description" content="モヤモヤした関心や疑問を、研究の問い・研究領域・研究室・論文につなげる研究テーマ発見ナビ。登録なしで今すぐ使えます。" />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -138,7 +143,7 @@ export default function Landing() {
           </div>
           <div className="lp-hero__visual" aria-hidden="true">
             <img src="/assets/motifs/mishiru-sculpture-640.png" alt="" width={613} height={640} loading="eager" decoding="async" />
-            <span className="lp-hero__count">全国の研究室<strong>19,785<small>件</small></strong></span>
+            {labCount !== null && <span className="lp-hero__count">公開確認済みの研究室<strong>{labCount.toLocaleString()}<small>件</small></strong></span>}
           </div>
         </section>
 
@@ -258,11 +263,11 @@ export default function Landing() {
             {STATS.map(({ icon: Icon, label, value, unit }) => (
               <div key={label} className="lp-stat">
                 <span className="lp-stat__label"><Icon aria-hidden="true" />{label}</span>
-                <strong>{value}<small>{unit}</small></strong>
+                <strong>{label === "研究室" ? (labCount?.toLocaleString() || "確認中") : value}<small>{unit}</small></strong>
               </div>
             ))}
           </div>
-          <p className="lp-note">※掲載数は2026年7月時点のものです。</p>
+          <p className="lp-note">※研究室は、ホームページを確認できた公開中の件数です。</p>
         </section>
 
         {/* ===== 9. FAQ（料金含む） ===== */}

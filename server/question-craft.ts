@@ -109,26 +109,30 @@ const VERIFIED_LITERATURE_SCHEMA = {
   required: ["literature_review", "items"],
 };
 
-const cleanArray = (values?: string[]) => Array.from(new Set((values || []).map((value) => value.trim()).filter(Boolean)));
+const cleanArray = (values?: string[], maxItems = 16, maxLength = 300) => Array.from(new Set((Array.isArray(values) ? values : [])
+  .map((value) => String(value || "").trim().slice(0, maxLength))
+  .filter(Boolean))).slice(0, maxItems);
+const materialText = (value: unknown, max: number) => String(value || "").trim().slice(0, max);
+const MATERIAL_SOURCE_TYPES = new Set(["lab", "field", "society", "journal", "marking", "memo", "quote", "external_url", "book", "article", "news", "paper_url", "post_url", "event"]);
 
 export function normalizeResearchMaterials(materials: NormalizedResearchMaterial[]) {
-  return materials.map((material) => {
+  return (Array.isArray(materials) ? materials : []).filter((material) => material && typeof material === "object" && MATERIAL_SOURCE_TYPES.has(String(material.sourceType))).slice(0, 30).map((material) => {
     const normalized: NormalizedResearchMaterial = {
       sourceType: material.sourceType,
-      sourceId: material.sourceId,
-      title: material.title.trim(),
+      sourceId: materialText(material.sourceId, 180),
+      title: materialText(material.title, 300) || "タイトル未設定",
     };
-    if (material.officialDescription?.trim()) normalized.officialDescription = material.officialDescription.trim();
-    if (cleanArray(material.officialQuestions).length) normalized.officialQuestions = cleanArray(material.officialQuestions);
-    if (cleanArray(material.sourceKeywords).length) normalized.sourceKeywords = cleanArray(material.sourceKeywords);
-    if (cleanArray(material.approvedTags).length) normalized.approvedTags = cleanArray(material.approvedTags);
-    if (cleanArray(material.pendingTags).length) normalized.pendingTags = cleanArray(material.pendingTags);
-    if (material.executionMode?.trim()) normalized.executionMode = material.executionMode.trim();
-    if (material.userReaction?.trim()) normalized.userReaction = material.userReaction.trim();
-    if (material.userReasonMemo?.trim()) normalized.userReasonMemo = material.userReasonMemo.trim();
-    if (material.excerpt?.trim()) normalized.excerpt = material.excerpt.trim();
-    if (material.url?.trim()) normalized.url = material.url.trim();
-    if (material.verificationStatus?.trim()) normalized.verificationStatus = material.verificationStatus.trim();
+    const officialDescription = materialText(material.officialDescription, 4000); if (officialDescription) normalized.officialDescription = officialDescription;
+    if (cleanArray(material.officialQuestions, 12, 500).length) normalized.officialQuestions = cleanArray(material.officialQuestions, 12, 500);
+    if (cleanArray(material.sourceKeywords, 30, 100).length) normalized.sourceKeywords = cleanArray(material.sourceKeywords, 30, 100);
+    if (cleanArray(material.approvedTags, 30, 100).length) normalized.approvedTags = cleanArray(material.approvedTags, 30, 100);
+    if (cleanArray(material.pendingTags, 30, 100).length) normalized.pendingTags = cleanArray(material.pendingTags, 30, 100);
+    const executionMode = materialText(material.executionMode, 80); if (executionMode) normalized.executionMode = executionMode;
+    const reaction = materialText(material.userReaction, 80); if (reaction) normalized.userReaction = reaction;
+    const memo = materialText(material.userReasonMemo, 2000); if (memo) normalized.userReasonMemo = memo;
+    const excerpt = materialText(material.excerpt, 4000); if (excerpt) normalized.excerpt = excerpt;
+    const url = materialText(material.url, 1000); if (url) normalized.url = url;
+    const verification = materialText(material.verificationStatus, 80); if (verification) normalized.verificationStatus = verification;
     if (material.createdAt) normalized.createdAt = material.createdAt;
     return normalized;
   });

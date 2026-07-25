@@ -10,7 +10,7 @@ const files = [...collectTsx("src/components"), ...collectTsx("src/pages")];
 
 const source = files.map((file) => readFileSync(file, "utf8")).join("\n");
 
-for (const phrase of ["詳しくはこちら", ">再試行<", ">次へ<", ">送信する<", ">さらに表示<", "Step 1：", "Step 2：", "SAVE TO TAME-RU", "FREE ACCOUNT", "YOUR ACCOUNT", "先行研究と参照先を詳しく見る", "検索クエリ", "学術コミュニティへの接続", "AI作成・検査済み", "仮説たたき台"]) {
+for (const phrase of ["詳しくはこちら", ">再試行<", ">次へ<", ">送信する<", ">さらに表示<", "Step 1：", "Step 2：", "SAVE TO TAME-RU", "FREE ACCOUNT", "YOUR ACCOUNT", "先行研究と参照先を詳しく見る", "検索クエリ", "学術コミュニティへの接続", "AI作成・検査済み", "仮説たたき台", "使うAIを選ぶ", "現在はGPT"]) {
   assert.equal(source.includes(phrase), false, `曖昧または説明者目線の文言が残っています: ${phrase}`);
 }
 

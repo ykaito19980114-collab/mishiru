@@ -18,7 +18,7 @@ export default function Claim() {
   const [params] = useSearchParams();
   const labId = params.get("lab_id") || "";
   const [lab, setLab] = useState<Lab | null>(null);
-  const [form, setForm] = useState({ type: "fix", name: "", affiliation: "", email: "", message: "", evidenceUrl: "" });
+  const [form, setForm] = useState({ type: "fix", name: "", affiliation: "", email: "", message: "", evidenceUrl: "", website: "" });
   const [errors, setErrors] = useState<Record<string, string>>({});
   const [submitting, setSubmitting] = useState(false);
   const [done, setDone] = useState<string | null>(null);
@@ -33,6 +33,14 @@ export default function Claim() {
     if (!form.email.trim()) e.email = "メールアドレスを入力してください";
     else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) e.email = "メールアドレスの形式が正しくありません";
     if (!form.message.trim()) e.message = "ご依頼内容を入力してください";
+    if (form.evidenceUrl.trim()) {
+      try {
+        const url = new URL(form.evidenceUrl.trim());
+        if (!["http:", "https:"].includes(url.protocol)) throw new Error("invalid protocol");
+      } catch {
+        e.evidenceUrl = "http:// または https:// から始まるURLを入力してください";
+      }
+    }
     setErrors(e);
     return Object.keys(e).length === 0;
   };
@@ -57,7 +65,7 @@ export default function Claim() {
         <Helmet><title>受け付けました ｜ MISHIRU</title></Helmet>
         <CheckCircle2 className="w-14 h-14 text-[var(--c-success)] mx-auto mb-4" />
         <h1 className="text-xl font-bold mb-2">受け付けました</h1>
-        <p className="text-[var(--c-ink-2)] mb-2">1営業日以内に運営が確認し、ご連絡します。</p>
+        <p className="text-[var(--c-ink-2)] mb-2">原則1営業日以内に運営が一次確認し、ご連絡します。</p>
         <p className="text-sm text-[var(--c-ink-3)] mb-2">受付番号：{done}</p>
         <p className="text-sm text-[var(--c-ink-3)] mb-6">掲載停止・誤情報のご指摘は、研究室確認の完了前でも一時非公開の措置を優先します。</p>
         <Link to="/discover"><Button variant="secondary">問いのカードを見る</Button></Link>
@@ -73,8 +81,13 @@ export default function Claim() {
 
       <Card className="p-5">
         <form onSubmit={submit} className="space-y-4" noValidate>
-          {errors.form && <p className="text-sm text-[var(--c-danger)]">{errors.form}</p>}
-          <Field label="ご依頼の種別">
+          <div className="claim-honeypot" aria-hidden="true">
+            <label htmlFor="claim-website">ウェブサイト</label>
+            <input id="claim-website" name="website" tabIndex={-1} autoComplete="off" value={form.website} onChange={(e) => setForm({ ...form, website: e.target.value })} />
+          </div>
+          {errors.form && <p className="text-sm text-[var(--c-danger)]" role="alert">{errors.form}</p>}
+          <fieldset>
+            <legend className="block text-sm font-bold text-[var(--c-ink)] mb-1.5">ご依頼の種別</legend>
             <div className="grid grid-cols-2 gap-2">
               {TYPES.map((t) => (
                 <label key={t.id} className={`flex items-center gap-2 px-3 py-2.5 rounded-[var(--radius-btn)] border cursor-pointer text-sm min-h-[44px] ${form.type === t.id ? "border-[var(--c-primary)] bg-[var(--c-primary-soft)]" : "border-[var(--c-border)]"}`}>
@@ -83,23 +96,23 @@ export default function Claim() {
                 </label>
               ))}
             </div>
+          </fieldset>
+          <Field id="claim-name" label="お名前" required error={errors.name}>
+            <input id="claim-name" value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls(errors.name)} maxLength={100} autoComplete="name" aria-invalid={Boolean(errors.name)} aria-describedby={errors.name ? "claim-name-error" : undefined} />
           </Field>
-          <Field label="お名前" required error={errors.name}>
-            <input value={form.name} onChange={(e) => setForm({ ...form, name: e.target.value })} className={inputCls(errors.name)} maxLength={100} />
+          <Field id="claim-affiliation" label="ご所属（任意）">
+            <input id="claim-affiliation" value={form.affiliation} onChange={(e) => setForm({ ...form, affiliation: e.target.value })} className={inputCls()} maxLength={200} placeholder="例：○○大学 △△研究室" autoComplete="organization" />
           </Field>
-          <Field label="ご所属（任意）">
-            <input value={form.affiliation} onChange={(e) => setForm({ ...form, affiliation: e.target.value })} className={inputCls()} maxLength={200} placeholder="例：○○大学 △△研究室" />
+          <Field id="claim-email" label="メールアドレス" required error={errors.email}>
+            <input id="claim-email" type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls(errors.email)} maxLength={200} autoComplete="email" inputMode="email" aria-invalid={Boolean(errors.email)} aria-describedby={errors.email ? "claim-email-error" : undefined} />
           </Field>
-          <Field label="メールアドレス" required error={errors.email}>
-            <input type="email" value={form.email} onChange={(e) => setForm({ ...form, email: e.target.value })} className={inputCls(errors.email)} maxLength={200} />
+          <Field id="claim-message" label="ご依頼内容" required error={errors.message}>
+            <textarea id="claim-message" value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={inputCls(errors.message)} maxLength={2000} placeholder="修正してほしい箇所、掲載停止の理由などをご記入ください" aria-invalid={Boolean(errors.message)} aria-describedby={errors.message ? "claim-message-error" : undefined} />
           </Field>
-          <Field label="ご依頼内容" required error={errors.message}>
-            <textarea value={form.message} onChange={(e) => setForm({ ...form, message: e.target.value })} rows={4} className={inputCls(errors.message)} maxLength={2000} placeholder="修正してほしい箇所、掲載停止の理由などをご記入ください" />
+          <Field id="claim-evidence-url" label="確認できる資料のURL（任意）" error={errors.evidenceUrl}>
+            <input id="claim-evidence-url" type="url" value={form.evidenceUrl} onChange={(e) => setForm({ ...form, evidenceUrl: e.target.value })} className={inputCls(errors.evidenceUrl)} maxLength={500} placeholder="https://example.ac.jp/lab" inputMode="url" aria-invalid={Boolean(errors.evidenceUrl)} aria-describedby={errors.evidenceUrl ? "claim-evidence-url-error" : undefined} />
           </Field>
-          <Field label="確認できる資料のURL（任意）">
-            <input value={form.evidenceUrl} onChange={(e) => setForm({ ...form, evidenceUrl: e.target.value })} className={inputCls()} maxLength={500} placeholder="研究室公式ページなど" />
-          </Field>
-          <Button type="submit" disabled={submitting} className="w-full">{submitting ? "依頼を送っています…" : "この内容で依頼する"}</Button>
+          <Button type="submit" disabled={submitting} className="w-full">{submitting ? "依頼を送っています…" : "依頼を送る"}</Button>
           <TrustNote>いただいた個人情報はご依頼対応のみに利用し、第三者へ提供しません。</TrustNote>
         </form>
       </Card>
@@ -107,12 +120,12 @@ export default function Claim() {
   );
 }
 
-function Field({ label, required, error, children }: { label: string; required?: boolean; error?: string; children: React.ReactNode }) {
+function Field({ id, label, required, error, children }: { id: string; label: string; required?: boolean; error?: string; children: React.ReactNode }) {
   return (
     <div>
-      <label className="block text-sm font-bold text-[var(--c-ink)] mb-1.5">{label}{required && <span className="text-[var(--c-danger)] ml-1">*</span>}</label>
+      <label htmlFor={id} className="block text-sm font-bold text-[var(--c-ink)] mb-1.5">{label}{required && <span className="text-[var(--c-danger)] ml-1" aria-label="必須">*</span>}</label>
       {children}
-      {error && <p className="text-xs text-[var(--c-danger)] mt-1">{error}</p>}
+      {error && <p id={`${id}-error`} className="text-xs text-[var(--c-danger)] mt-1" role="alert">{error}</p>}
     </div>
   );
 }

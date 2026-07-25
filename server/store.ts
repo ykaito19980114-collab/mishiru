@@ -11,6 +11,7 @@ import type {
 import { cleanDisplayLabel, uniqueCleanLabels } from "../shared/text";
 import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 import { serverSupabase } from "./supabase";
+import { applyLabHomepageOverrides, isPublicLab, type LabHomepageOverride } from "./lab-publication";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const RUNTIME_DIR = path.join(DATA_DIR, "runtime");
@@ -29,7 +30,20 @@ function readJson<T>(file: string, fallback: T): T {
 }
 
 // --- マスタ（起動時ロード・不変） ---
-const labs: Lab[] = readJson<Lab[]>(MASTER_LABS_FILE, []);
+const labSuppressions = readJson<{ ids: string[]; sourceNos: string[] }>(
+  path.join(DATA_DIR, "lab-suppressions.json"),
+  { ids: [], sourceNos: [] },
+);
+const labHomepageOverrides = readJson<LabHomepageOverride[]>(
+  path.join(DATA_DIR, "lab-homepage-overrides.json"),
+  [],
+);
+const suppressedLabIds = new Set(labSuppressions.ids);
+const suppressedSourceNos = new Set(labSuppressions.sourceNos);
+const labs: Lab[] = applyLabHomepageOverrides(readJson<Lab[]>(MASTER_LABS_FILE, []), labHomepageOverrides).filter((lab) => {
+  const sourceNo = String((lab as Lab & { sourceNo?: string }).sourceNo || lab.id.replace(/^(?:source-)?lab-0*/, ""));
+  return !suppressedLabIds.has(lab.id) && !suppressedSourceNos.has(sourceNo);
+});
 const cards: ThemeCard[] = readJson<ThemeCard[]>(path.join(DATA_DIR, "cards.json"), []);
 const researchFields: ResearchField[] = readJson<ResearchField[]>(path.join(MASTER_RESOURCES_DIR, "fields.json"), []);
 const researchSocieties: ResearchSociety[] = readJson<ResearchSociety[]>(path.join(MASTER_RESOURCES_DIR, "societies.json"), []);
@@ -62,8 +76,10 @@ const searchText = new Map<string, string>();
 for (const l of labs) {
   searchText.set(l.id, `${l.name} ${l.pi.name} ${l.department} ${l.university.name} ${l.keywords.join(" ")} ${(l.sourceKeywords || []).join(" ")} ${(l.researchQuestions || []).join(" ")} ${l.sections?.research_summary || ""}`.toLowerCase());
 }
-// 公開・非デモの研究室（一覧/検索の母集団。起動時に確定）
-const publicLabsList = labs.filter((l) => (l.status === "published" || l.status === "claimed") && !l.is_demo);
+// 公開対象は、個別の研究室ホームページを確認できた研究室だけ。
+// 未確認レコードは元データに残し、再確認後に戻せるようにする。
+// 公開・非デモの研究室（一覧/検索/件数/サイトマップの共通母集団。起動時に確定）
+const publicLabsList = labs.filter((lab) => isPublicLab(lab) && !lab.is_demo);
 const resourceText = new Map<string, string>();
 for (const f of researchFields) {
   resourceText.set(f.id, `${f.nameJa} ${f.nameEn} ${f.fullPath} ${f.definition} ${f.beginnerDescription || ""} ${f.researchPurpose || ""} ${(f.researchObjects || []).join(" ")} ${(f.representativeThemes || []).join(" ")} ${f.coordinate} ${(f.questions || []).join(" ")} ${f.disciplines.join(" ")} ${f.domesticSocieties.join(" ")} ${f.internationalSocieties.join(" ")} ${f.domesticJournals.join(" ")} ${f.internationalJournals.join(" ")} ${(f.sourceKeywords || []).join(" ")}`.toLowerCase());
@@ -193,9 +209,13 @@ function rowToClaim(r: ClaimRow): Claim {
 export const store = {
   // labs
   allLabs: () => labs,
-  publicLabs: () => labs.filter((l) => l.status === "published" || l.status === "claimed"),
+  publicLabs: () => labs.filter(isPublicLab),
   publicNonDemo: () => publicLabsList,
-  labById: (id: string) => labById.get(id) || null,
+  labById: (id: string) => {
+    const lab = labById.get(id);
+    return lab && isPublicLab(lab) ? lab : null;
+  },
+  allLabById: (id: string) => labById.get(id) || null,
   labsByArea: (areas: string[]) =>
     publicLabsList.filter((l) => l.area_tags.some((t) => areas.includes(t))),
 

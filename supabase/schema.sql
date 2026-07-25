@@ -36,6 +36,12 @@ create table if not exists mishiru_labs (
   keywords      text[] default '{}',
   area_tags     text[] default '{}',       -- taxonomy id（GINで検索）
   official_url  text,
+  homepage_status text default 'pending'
+                  check (homepage_status in ('pending','verified','unresolved','manual_hold','duplicate')),
+  homepage_evidence_url text,
+  homepage_checked_at timestamptz,
+  quality_score integer default 0 check (quality_score between 0 and 100),
+  quality_notes jsonb default '[]'::jsonb,
   sources       jsonb default '[]'::jsonb, -- [{label,url}] 出典（FR-LAB-02）
   sections      jsonb default '{}'::jsonb, -- FR-LAB-01 必須10項目。null=未確認
   status        text default 'published'
@@ -49,6 +55,23 @@ create table if not exists mishiru_labs (
 create index if not exists idx_mishiru_labs_area on mishiru_labs using gin (area_tags);
 create index if not exists idx_mishiru_labs_keywords on mishiru_labs using gin (keywords);
 create index if not exists idx_mishiru_labs_status on mishiru_labs (status);
+create index if not exists idx_mishiru_labs_homepage_status on mishiru_labs (homepage_status);
+
+-- 研究室ホームページの監査履歴。教員ページ・researchmap・部局一覧は
+-- evidence_url としてのみ保持し、公開URLには採用しない。
+create table if not exists mishiru_lab_publication_audits (
+  lab_id          text primary key,
+  source_no       text,
+  homepage_url    text,
+  evidence_url    text,
+  outcome         text not null
+                  check (outcome in ('verified','discovered','unresolved','manual_hold','duplicate')),
+  confidence      integer not null default 0 check (confidence between 0 and 100),
+  reasons         jsonb not null default '[]'::jsonb,
+  checked_at      timestamptz not null default now(),
+  updated_at      timestamptz not null default now()
+);
+create index if not exists idx_mishiru_lab_audits_outcome on mishiru_lab_publication_audits (outcome);
 
 create table if not exists mishiru_theme_cards (
   id            text primary key,          -- card-001
@@ -182,6 +205,18 @@ revoke all on function mishiru_consume_guest_action(text, text, integer) from pu
 grant execute on function mishiru_consume_guest_action(text, text, integer) to service_role;
 
 -- ---------- 運営系（個人情報：admin専用） ----------
+create table if not exists mishiru_content_suppressions (
+  id                    text primary key,
+  lab_id                text not null unique,
+  source_no             text,
+  reason                text not null,
+  suppress_publication  boolean not null default true,
+  suppress_contact      boolean not null default true,
+  requested_at          timestamptz not null default now(),
+  created_at            timestamptz not null default now(),
+  updated_at            timestamptz not null default now()
+);
+
 create table if not exists mishiru_claims (
   id          text primary key,
   type        text check (type in ('fix','takedown','claim','other')),
@@ -270,6 +305,7 @@ alter table mishiru_universities   enable row level security;
 alter table mishiru_departments    enable row level security;
 alter table mishiru_card_actions   enable row level security;
 alter table mishiru_interest_profiles enable row level security;
+alter table mishiru_content_suppressions enable row level security;
 alter table mishiru_claims         enable row level security;
 alter table mishiru_leads          enable row level security;
 alter table mishiru_reports        enable row level security;
@@ -282,10 +318,14 @@ alter table mishiru_session_state enable row level security;
 alter table mishiru_sources enable row level security;
 alter table mishiru_api_cache enable row level security;
 alter table mishiru_audit_logs enable row level security;
+alter table mishiru_lab_publication_audits enable row level security;
 
--- 公開読み取り：published/claimed の研究室・カード・マスタのみ（§7 決定表）
+-- 公開読み取り：掲載停止対象を除いた published/claimed。
+-- 研究室HPの確認状態は homepage_status で別に管理する。
 drop policy if exists "public read published labs" on mishiru_labs;
-create policy "public read published labs" on mishiru_labs for select using (status in ('published','claimed'));
+create policy "public read published labs" on mishiru_labs for select using (
+  status in ('published','claimed')
+);
 drop policy if exists "public read cards" on mishiru_theme_cards;
 create policy "public read cards" on mishiru_theme_cards for select using (true);
 drop policy if exists "public read universities" on mishiru_universities;
@@ -293,9 +333,20 @@ create policy "public read universities" on mishiru_universities for select usin
 drop policy if exists "public read departments" on mishiru_departments;
 create policy "public read departments" on mishiru_departments for select using (true);
 
--- 匿名フォーム投稿：Claimのみ許可（自由口コミは存在しない = PROH-03/Test-PROH-03）
+-- ClaimはサーバーAPIだけで受け付ける。公開anon keyからの直接投稿は許可しない。
 drop policy if exists "anon insert claims" on mishiru_claims;
-create policy "anon insert claims" on mishiru_claims for insert with check (true);
+revoke insert on table mishiru_claims from anon, authenticated;
+revoke all on table mishiru_content_suppressions from anon, authenticated;
+revoke all on table mishiru_lab_publication_audits from anon, authenticated;
+
+create or replace view mishiru_public_labs
+with (security_invoker = true)
+as
+select *
+from mishiru_labs
+where status in ('published', 'claimed');
+
+revoke all on table mishiru_public_labs from anon, authenticated;
 
 -- card_actions / interest_profiles / events：セッション本人のみ（アプリ側でsession_id一致を強制）
 -- leads/reports/articles には公開ポリシーを作らない = admin(service role)のみ参照可（PII保護）。

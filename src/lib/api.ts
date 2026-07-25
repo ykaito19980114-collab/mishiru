@@ -1,6 +1,5 @@
 // APIクライアント（docs/03 §6）。オフライン時はキャッシュ/キューで体感を壊さない（FR-ERR-01/02）。
 import { getSessionId, newActionId, enqueueAction } from "./session";
-import { aiRequestHeaders } from "./aiModel";
 import { authHeaders } from "./auth";
 import type {
   ThemeCard, Lab, InterestProfile, CardAction,
@@ -13,7 +12,7 @@ import type {
 } from "../../shared/research-project";
 
 export class ApiError extends Error { constructor(message: string, public code = "HTTP_ERROR", public status = 0) { super(message); } }
-async function headers(json = false, actionId?: string) { return { ...aiRequestHeaders(json), ...(await authHeaders()), ...(actionId ? { "x-mishiru-action-id": actionId } : {}) }; }
+async function headers(json = false, actionId?: string) { return { ...(json ? { "Content-Type": "application/json" } : {}), ...(await authHeaders()), ...(actionId ? { "x-mishiru-action-id": actionId } : {}) }; }
 async function ensure(res: Response) {
   const body = !res.ok ? await res.json().catch(() => ({})) : null;
   if (res.status === 403 && body?.error?.code === "ACCOUNT_REQUIRED") window.dispatchEvent(new CustomEvent("mishiru:account-required", { detail: body.access }));
@@ -234,7 +233,7 @@ export const api = {
   getEnrichment: (id: string) => get<Enrichment>(`/api/labs/${id}/enrich`),
 
   smartSearch: (q: string, page = 1) =>
-    get<{ interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] }; by: "llm" | "keyword"; total: number; data: LabWithReasons[] }>(`/api/labs/smart?q=${encodeURIComponent(q)}&page=${page}&limit=24&sessionId=${encodeURIComponent(getSessionId())}`, true),
+    get<{ interpreted: { fields: string[]; fieldLabels: string[]; areas: string[]; areaLabels: string[]; keywords: string[] }; by: "name" | "llm" | "keyword"; mode: "name" | "topic"; total: number; data: LabWithReasons[] }>(`/api/labs/smart?q=${encodeURIComponent(q)}&page=${page}&limit=24&sessionId=${encodeURIComponent(getSessionId())}`, true),
 
   getFilters: () => get<{ facets: { field: Record<string, number>; region: Record<string, number>; type: Record<string, number> }; universities: string[] }>("/api/filters"),
   getPrefectures: (region: string) => get<{ prefectures: string[] }>(`/api/prefectures?region=${encodeURIComponent(region)}`),
@@ -247,11 +246,17 @@ export const api = {
 
   submitClaim: (body: Record<string, unknown>) => post<{ ok: boolean; id: string }>("/api/claims", body),
 
-  deleteMe: () => fetch(`/api/me?sessionId=${getSessionId()}`, { method: "DELETE" }).then((r) => r.json()),
+  deleteMe: async () => {
+    const res = await fetch(`/api/me?sessionId=${encodeURIComponent(getSessionId())}`, { method: "DELETE", headers: await headers() });
+    await ensure(res);
+    return res.json() as Promise<{ ok: boolean }>;
+  },
 
-  logEvent: (type: string, payload: Record<string, string | number | boolean> = {}) =>
-    fetch("/api/events", {
-      method: "POST", headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ events: [{ type, sessionId: getSessionId(), payload }] }),
-    }).catch(() => {}),
+  logEvent: async (type: string, payload: Record<string, string | number | boolean> = {}) => {
+    const sessionId = getSessionId();
+    return fetch("/api/events", {
+      method: "POST", headers: await headers(true),
+      body: JSON.stringify({ sessionId, events: [{ type, payload }] }),
+    }).catch(() => undefined);
+  },
 };

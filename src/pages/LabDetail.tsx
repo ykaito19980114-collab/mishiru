@@ -9,6 +9,7 @@ import { Button, Card, Chip, Skeleton, ErrorState, VerifiedBadge, Toast, useToas
 import { fieldLabel } from "../../shared/fields";
 import { displayLabName, labQuestions } from "../lib/labText";
 import { makeLabAnnotation, MarkLabel, saveAnnotation } from "../lib/annotations";
+import { assessLabEvidence } from "../../shared/lab-evidence";
 
 // 研究室確認済みの確定情報セクション（値があるときのみ表示）
 function VerifiedSection({ title, children, value }: { title: string; children?: React.ReactNode; value?: unknown }) {
@@ -22,9 +23,8 @@ function VerifiedSection({ title, children, value }: { title: string; children?:
   );
 }
 
-function fallbackResearchSummary(lab: Lab, shownLabName: string) {
-  const keywords = lab.keywords.slice(0, 3).join("、") || fieldLabel(lab.field_major);
-  return `${shownLabName}では、${keywords}を手がかりに、対象となる現象の仕組みや応用の可能性を探る研究に取り組んでいると考えられます。`;
+function fallbackResearchSummary() {
+  return "研究室名・所属などの基礎情報を掲載しています。研究室ホームページと研究内容は現在確認中です。";
 }
 
 function cleanResearchSummary(value: string) {
@@ -60,9 +60,15 @@ export default function LabDetail() {
       setLab(res.lab);
       setReasons(res.connectionReasons);
       setState("ok");
-      api.getResearchResources(res.lab.keywords.slice(0, 3).join(" "), 5).then(setResources).catch(() => {});
-      // 充実情報は遅延取得（Gemini＋OpenAlexで数秒かかるため本文表示をブロックしない）
-      api.getEnrichment(id!).then((e) => { setEnrich(e); setEnrichState("done"); }).catch(() => setEnrichState("done"));
+      const evidence = assessLabEvidence(res.lab);
+      if (evidence.canMapResources) {
+        api.getResearchResources(res.lab.keywords.slice(0, 3).join(" "), 5).then(setResources).catch(() => {});
+      }
+      if (evidence.canGenerateGuide || evidence.canSearchPapers) {
+        api.getEnrichment(id!).then((e) => { setEnrich(e); setEnrichState("done"); }).catch(() => setEnrichState("done"));
+      } else {
+        setEnrichState("done");
+      }
     } catch (e) {
       setState((e as Error).message.includes("見つかりません") ? "notfound" : "error");
     }
@@ -85,10 +91,12 @@ export default function LabDetail() {
   const guide = enrich?.aiGuide;
   const papers = enrich?.papers || [];
   const shownLabName = displayLabName(lab);
-  const researchText = cleanResearchSummary(s.research_summary || fallbackResearchSummary(lab, shownLabName));
+  const evidence = assessLabEvidence(lab);
+  const hasLabHomepage = evidence.hasHomepage;
+  const researchText = cleanResearchSummary(s.research_summary || fallbackResearchSummary());
   const sourcedQuestions = labQuestions(lab, 2);
   const primarySource = lab.sources[0]?.url || lab.official_url || "";
-  const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室公式サイト" : "");
+  const primarySourceLabel = lab.sources[0]?.label || (lab.official_url ? "研究室ホームページ" : "");
   const captureSelection = () => {
     const text = window.getSelection()?.toString().trim() || "";
     if (text) setMarkText(text);
@@ -114,14 +122,16 @@ export default function LabDetail() {
     "@context": "https://schema.org", "@type": "ResearchOrganization", name: shownLabName,
     parentOrganization: { "@type": "CollegeOrUniversity", name: lab.university.name },
     member: { "@type": "Person", name: lab.pi.name, jobTitle: lab.pi.title },
-    knowsAbout: lab.keywords, sameAs: lab.official_url ? [lab.official_url] : [],
+    knowsAbout: hasLabHomepage ? lab.keywords : [], sameAs: lab.official_url ? [lab.official_url] : [],
   };
 
   return (
     <div className="max-w-2xl mx-auto px-4 pt-4 pb-40 md:pb-28">
       <Helmet>
         <title>{shownLabName} - {lab.university.name} ｜ MISHIRU</title>
-        <meta name="description" content={`${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究テーマ・研究方法・進路などを学生向けに整理。`} />
+        <meta name="description" content={hasLabHomepage
+          ? `${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究室ホームページの公開情報を学生向けに整理。`
+          : `${lab.university.name} ${lab.department} ${shownLabName}（${lab.pi.name} ${lab.pi.title}）。研究室ホームページと研究内容は現在確認中です。`} />
         <script type="application/ld+json">{JSON.stringify(jsonLd)}</script>
       </Helmet>
 
@@ -140,28 +150,23 @@ export default function LabDetail() {
         })()}
         <div className="flex flex-wrap gap-1.5 mt-3">
           <Chip tone="blue">{fieldLabel(lab.field_major)}</Chip>
-          {lab.keywords.slice(0, 4).map((k) => <Chip key={k}>{k}</Chip>)}
+          {hasLabHomepage
+            ? lab.keywords.slice(0, 4).map((k) => <Chip key={k}>{k}</Chip>)
+            : <Chip>情報確認中</Chip>}
         </div>
       </header>
 
       {/* 大元の研究室URL（ヘッダー直下・常設 FR-LAB系）。巨大枠をやめ1行リンクに降格（主アクションは下部バー） */}
-      {lab.official_url ? (
-        <a href={lab.official_url} target="_blank" rel="noopener noreferrer"
+      {primarySource ? (
+        <a href={primarySource} target="_blank" rel="noopener noreferrer"
           onClick={() => { api.logEvent("outbound_click", { labId: lab.id }); }}
           className="mb-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--c-primary)] underline underline-offset-4 min-h-[44px]">
-          研究室の公式サイトを見る<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
+          研究室ホームページを見る<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
         </a>
-      ) : (
-        <a href={`https://www.google.com/search?q=${encodeURIComponent(`${lab.university.name} ${lab.name}`)}`}
-          target="_blank" rel="noopener noreferrer"
-          onClick={() => { api.logEvent("outbound_click", { labId: lab.id, dest: "web_search" }); }}
-          className="mb-5 inline-flex items-center gap-1.5 text-[14px] font-bold text-[var(--c-ink-2)] underline underline-offset-4 min-h-[44px]">
-          「{lab.university.name} {lab.name}」で公式サイトを探す<ExternalLink className="w-4 h-4 shrink-0" aria-hidden="true" />
-        </a>
-      )}
+      ) : null}
 
       {/* あなたとの接続（AC-09） */}
-      {reasons.length > 0 && (
+      {hasLabHomepage && reasons.length > 0 && (
         <Card className="p-4 mb-4 bg-[var(--c-surface-blue)] border-transparent">
           <div className="flex items-center gap-1 text-sm font-bold text-[var(--c-primary)] mb-1"><Sparkles className="w-4 h-4" />あなたの関心との共通点</div>
           <ul className="space-y-1">{reasons.map((r, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug">・{r}</li>)}</ul>
@@ -173,7 +178,11 @@ export default function LabDetail() {
         <h2 className="text-sm font-bold text-[var(--c-primary)] mb-1.5">どんな研究室？</h2>
         <p className="text-[15px] text-[var(--c-ink-2)] leading-relaxed">{researchText}</p>
         <div className="mt-3 pt-3 border-t border-[var(--c-border)]">
-          <TrustNote>公開情報を短くまとめています。正確な内容は公式サイトで確認してください。</TrustNote>
+          <TrustNote>
+            {hasLabHomepage
+              ? "研究室ホームページの公開情報を短く整理しています。研究対象や方法の詳細は、元のページで確認してください。"
+              : "研究室ホームページを確認中です。確認が終わるまで、推測した研究内容や外部リンクは表示しません。"}
+          </TrustNote>
           {primarySource && (
             <a href={primarySource} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 text-[12px] font-bold text-[var(--c-primary)] underline underline-offset-2">
               {primarySourceLabel || "元の情報を開く"}<ExternalLink className="w-3 h-3" aria-hidden="true" />
@@ -182,7 +191,19 @@ export default function LabDetail() {
         </div>
       </Card>
 
-      {sourcedQuestions.length > 0 && (
+      {(!hasLabHomepage || !evidence.canGenerateGuide) && (
+        <Card className="p-4 mb-4 bg-[var(--c-surface-blue)] border-transparent">
+          <TrustNote>
+            {!hasLabHomepage
+              ? "研究室ホームページの確認後、研究テーマや研究方法を順次追加します。"
+              : evidence.canShowQuestions
+                ? "研究方法は、公式情報から根拠を確認できた内容だけを表示します。論文は、責任者名と所属先が一致したものだけを表示します。"
+                : "研究テーマの根拠を確認中のため、推測した問いや研究方法は表示していません。論文は、責任者名と所属先が一致したものだけを表示します。"}
+          </TrustNote>
+        </Card>
+      )}
+
+      {evidence.canShowQuestions && sourcedQuestions.length > 0 && (
         <Card className="p-5 mb-4">
           <h2 className="text-sm font-bold text-[var(--c-primary)] mb-2">この研究室が扱う問い</h2>
           <ul className="space-y-2">
@@ -211,7 +232,10 @@ export default function LabDetail() {
       {/* ===== AI学生ガイド（FR-ENRICH。公開情報からの推定・明示ラベル） ===== */}
       {enrichState === "loading" && (
         <Card className="p-5 mb-4">
-          <div className="flex items-center gap-2 text-sm text-[var(--c-ink-3)] mb-3"><Sparkles className="w-4 h-4 animate-pulse text-[var(--c-teal)]" />研究室のガイドを準備しています…</div>
+          <div className="flex items-center gap-2 text-sm text-[var(--c-ink-3)] mb-3">
+            <Sparkles className="w-4 h-4 animate-pulse text-[var(--c-teal)]" />
+            {evidence.canGenerateGuide ? "研究室のガイドを準備しています…" : "公開論文を確認しています…"}
+          </div>
           <Skeleton className="h-4 w-3/4 mb-2" /><Skeleton className="h-4 w-full mb-2" /><Skeleton className="h-4 w-5/6" />
         </Card>
       )}
@@ -222,9 +246,11 @@ export default function LabDetail() {
           </div>
           <p className="text-[15px] text-[var(--c-ink)] leading-relaxed mb-4">{guide.overview}</p>
           <div className="space-y-4">
-            <GuideBlock icon={<Compass className="w-4 h-4" />} title="この研究室が扱う問い">
-              <ul className="space-y-1.5">{guide.questions.map((q, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug flex gap-2"><span className="text-[var(--c-teal)]">Q.</span>{q}</li>)}</ul>
-            </GuideBlock>
+            {!evidence.hasDirectQuestions && guide.questions.length > 0 && (
+              <GuideBlock icon={<Compass className="w-4 h-4" />} title="この研究室が扱う問い">
+                <ul className="space-y-1.5">{guide.questions.map((q, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug flex gap-2"><span className="text-[var(--c-teal)]">Q.</span>{q}</li>)}</ul>
+              </GuideBlock>
+            )}
             <GuideBlock icon={<Wrench className="w-4 h-4" />} title="主な研究の進め方">
               <ul className="space-y-1">{guide.methods.map((m, i) => <li key={i} className="text-[14px] text-[var(--c-ink-2)] leading-snug">・{m}</li>)}</ul>
             </GuideBlock>
@@ -293,7 +319,7 @@ export default function LabDetail() {
       )}
 
       {/* 外部DBでの確認リンク（正確な業績の一次確認用に格下げ） */}
-      {lab.pi.name && (
+      {hasLabHomepage && lab.pi.name && (
         <div className="mb-4">
           <h3 className="text-xs font-bold text-[var(--c-ink-3)] uppercase tracking-wide mb-2">{lab.pi.name} 先生の論文・研究費を確認する</h3>
           <div className="flex flex-wrap gap-2">
@@ -319,9 +345,16 @@ export default function LabDetail() {
           {lab.sources.map((src, i) => (
             <li key={i}><a href={src.url} target="_blank" rel="noopener noreferrer" className="text-[var(--c-teal)] underline">{src.label}</a></li>
           ))}
-          {lab.sources.length === 0 && <li className="text-[var(--c-ink-3)]">公開情報にもとづく暫定掲載です。</li>}
+          {lab.sources.length === 0 && <li className="text-[var(--c-ink-3)]">研究室ホームページを確認できていません。</li>}
         </ul>
-        <p className="text-xs text-[var(--c-ink-3)] mb-3">最終更新：{lab.last_updated}<br />確認状況：{lab.confidence === "verified" ? "研究室が確認済み" : "公開情報をもとに作成。一部はAIによる推定で、研究室は未確認です"}</p>
+        <p className="text-xs text-[var(--c-ink-3)] mb-3">
+          最終更新：{lab.last_updated}<br />
+          確認状況：{lab.confidence === "verified"
+            ? "研究室が内容を確認済みです"
+            : hasLabHomepage
+              ? "研究室ホームページを照合済みです。紹介文は公開情報の要約で、研究室による確認前です"
+              : "研究室ホームページと研究内容を確認中です"}
+        </p>
         <Link to={`/claim?lab_id=${lab.id}`} className="inline-flex items-center gap-1.5 text-sm font-bold text-[var(--c-ink)] min-h-[44px]">
           <ShieldAlert className="w-4 h-4" />情報の修正・掲載停止を依頼する
         </Link>

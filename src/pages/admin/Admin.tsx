@@ -50,6 +50,10 @@ export default function Admin() {
   if (!authed) {
     return (
       <div className="min-h-screen grid place-items-center bg-[var(--c-surface)] px-4">
+        <Helmet>
+          <title>運営管理ログイン ｜ MISHIRU</title>
+          <meta name="robots" content="noindex,nofollow" />
+        </Helmet>
         <Card className="p-6 w-full max-w-sm">
           <h1 className="text-lg font-bold mb-1">運営管理ログイン</h1>
           <p className="text-sm text-[var(--c-ink-2)] mb-4">管理トークンを入力してください。</p>
@@ -64,7 +68,10 @@ export default function Admin() {
 
   return (
     <div className="min-h-screen bg-[var(--c-surface)]">
-      <Helmet><title>運営管理 ｜ MISHIRU</title></Helmet>
+      <Helmet>
+        <title>運営管理 ｜ MISHIRU</title>
+        <meta name="robots" content="noindex,nofollow" />
+      </Helmet>
       <header className="bg-white border-b border-[var(--c-border)] sticky top-0 z-30">
         <div className="max-w-6xl mx-auto px-4 h-14 flex items-center justify-between">
           <div className="flex items-center gap-3">

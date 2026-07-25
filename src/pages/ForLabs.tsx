@@ -49,7 +49,7 @@ export default function ForLabs() {
         <ul className="space-y-2 text-sm text-[var(--c-ink-2)]">
           <li>公開前に、掲載内容をご確認いただきます。</li>
           <li>出典・最終更新日・確認状況を表示します。</li>
-          <li>修正・掲載停止には、1営業日以内に対応します。</li>
+          <li>修正・掲載停止のご依頼は、原則1営業日以内に一次確認します。</li>
           <li>学生の個人データは、研究室や企業へ提供しません。</li>
         </ul>
       </Card>
