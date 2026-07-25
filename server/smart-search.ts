@@ -1,6 +1,7 @@
 // AI意味検索（自然文→研究室）。GEMINI設定時はLLMで意図抽出、未設定時は辞書ベースのフォールバック（AC-05思想）。
 import { store } from "./store";
 import { callAIJson, aiEnabled } from "./ai";
+import { readAiCache, withSingleFlight, writeAiCache } from "./ai-cache";
 import { inferAreaTags, RESEARCH_AREAS, areaLabel } from "../shared/taxonomy";
 import { FIELD_MAJORS, classifyField, fieldLabel, type FieldMajor } from "../shared/fields";
 import type { Lab } from "../shared/types";
@@ -47,23 +48,55 @@ function extractKeywords(text: string): string[] {
   return hit;
 }
 
-async function llmInterpret(query: string): Promise<{ fields: string[]; areas: string[]; keywords: string[] } | null> {
+// 検索意図の解釈はクエリだけで決まり、研究室データが増えても変わらない。
+// つまり「同じ質問には同じ答え」で使い回せる ＝ キャッシュが最も効く部分。
+// 一方、研究室のスコアリング（下のsmartSearch本体）はキャッシュしない。CPUだけで安く、
+// かつデータ更新を即座に反映すべきだから。高い部分だけを保存する。
+const INTERPRET_SCOPE = "smart-search";
+const INTERPRET_VERSION = 1; // プロンプトや分類体系を変えたら上げる
+const INTERPRET_TTL_MS = 30 * 24 * 60 * 60 * 1000;
+type Interpretation = { fields: string[]; areas: string[]; keywords: string[] };
+const interpretL1 = new Map<string, Interpretation>();
+const INTERPRET_L1_MAX = 500;
+
+// 表記ゆれで取りこぼさないよう正規化してからキーにする。
+// 「AIで仕事はどう変わる？」「ＡＩで仕事はどう変わる?」「 AIで仕事はどう変わる? 」を同じ1件として扱う。
+function normalizeQuery(query: string): string {
+  return query.normalize("NFKC").trim().replace(/\s+/g, " ").toLowerCase();
+}
+
+async function llmInterpret(query: string): Promise<Interpretation | null> {
   if (!aiEnabled()) return null;
+  const key = normalizeQuery(query);
+  const local = interpretL1.get(key);
+  if (local) return local;
+  const remote = await readAiCache<Interpretation>(INTERPRET_SCOPE, key, INTERPRET_VERSION);
+  if (remote) { interpretL1.set(key, remote); return remote; }
+
   const prompt = `ユーザーの「なんとなくの興味」から、大学研究室を探すための検索意図をJSONで抽出してください。
 利用可能な分野(field): ${FIELD_MAJORS.map((f) => `${f.id}(${f.label})`).join(", ")}
 利用可能な研究領域(area): ${RESEARCH_AREAS.map((a) => `${a.id}(${a.label})`).join(", ")}
 出力は必ず次のJSONのみ: {"fields":["id",...],"areas":["id",...],"keywords":["日本語キーワード",...]}
 キーワードは研究室検索に効く具体語（例:量子コンピュータ, ロボット, がん治療）を3〜6個。
 ユーザー入力: 「${query}」`;
-  const parsed = await callAIJson<{ fields: string[]; areas: string[]; keywords: string[] }>(prompt, { temperature: 0.2 });
+  // 同じ語での同時アクセスが生成を並走させないよう束ねる
+  const parsed = await withSingleFlight(`${INTERPRET_SCOPE}:${key}`, () =>
+    callAIJson<Interpretation>(prompt, { temperature: 0.2, feature: "smart-search", maxOutputTokens: 400, reasoningEffort: "low" }));
   if (!parsed) return null;
   const validFields = new Set<string>(FIELD_MAJORS.map((f) => f.id));
   const validAreas = new Set<string>(RESEARCH_AREAS.map((a) => a.id));
-  return {
+  const interpretation: Interpretation = {
     fields: (parsed.fields || []).filter((x: string) => validFields.has(x)),
     areas: (parsed.areas || []).filter((x: string) => validAreas.has(x)),
     keywords: (parsed.keywords || []).filter((x: unknown) => typeof x === "string").slice(0, 6),
   };
+  // 何も解釈できなかった結果は保存しない（辞書フォールバックで毎回やり直す方が良い）
+  if (interpretation.fields.length || interpretation.areas.length || interpretation.keywords.length) {
+    if (interpretL1.size >= INTERPRET_L1_MAX) interpretL1.delete(interpretL1.keys().next().value as string);
+    interpretL1.set(key, interpretation);
+    writeAiCache(INTERPRET_SCOPE, key, INTERPRET_VERSION, interpretation, INTERPRET_TTL_MS);
+  }
+  return interpretation;
 }
 
 export async function smartSearch(query: string, limit = 40): Promise<SmartResult> {

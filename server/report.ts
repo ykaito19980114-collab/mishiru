@@ -77,7 +77,7 @@ export async function generateReport(input: GenInput): Promise<{ content: string
 分野: ${lab?.area_tags.map(areaLabel).join("、") || "不明"}
 キーワード: ${lab?.keywords.join("、") || "不明"}
 公式サイト: ${lab?.official_url || "なし"}`;
-  const text = await callAI(prompt, { temperature: 0.5 });
+  const text = await callAI(prompt, { temperature: 0.5, feature: "report", maxOutputTokens: 6000, reasoningEffort: "low" });
   if (text && text.trim().length > 50) return { content: text, generatedBy: "llm" };
   return { content: template, generatedBy: "template" };
 }

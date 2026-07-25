@@ -399,7 +399,7 @@ ${styleQuestions.map((item) => `- ${item}`).join("\n")}
 
 対象: ${JSON.stringify(source)}`;
   const generated = await callAIJson<{ public_questions: PublicQuestionRewrite[] }>(prompt, {
-    temperature: 0.1, timeoutMs: 90000, maxOutputTokens: 12000, responseSchema: PUBLIC_RQ_SCHEMA, reasoningEffort: "low",
+    temperature: 0.1, timeoutMs: 90000, maxOutputTokens: 12000, responseSchema: PUBLIC_RQ_SCHEMA, reasoningEffort: "low", feature: "qc:public-rq",
   });
   let repairedCount = 0;
   const rewritten = candidates.map((candidate, index) => {
@@ -469,7 +469,7 @@ export async function generateStep1(input: QuestionFreeInput, materialsInput: No
 研究マップの領域シフトは「形式 / 物質 / 生命 / 心・認知 / 社会 / 意味」の6方向を各1件、すべて実質の異なる疑問文で出してください。
 ユーザーに見える文章は、研究初心者が一読で分かる日本語にしてください。一文では一つだけ伝え、専門語には短い言い換えを添えてください。書き手側の処理名や評価用語は出さないでください。
 素材: ${JSON.stringify(source)}`;
-  const generatedBrief = await callAIJson<ResearchBrief>(briefPrompt, { temperature: 0.15, timeoutMs: 90000, maxOutputTokens: 8000, responseSchema: RESEARCH_BRIEF_SCHEMA, reasoningEffort: "low" });
+  const generatedBrief = await callAIJson<ResearchBrief>(briefPrompt, { temperature: 0.15, timeoutMs: 90000, maxOutputTokens: 8000, responseSchema: RESEARCH_BRIEF_SCHEMA, reasoningEffort: "low", feature: "qc:brief" });
   console.info(`[question-craft] brief=${validBrief(generatedBrief) ? "valid" : "fallback"} shifts=${generatedBrief?.domain_shifts?.length || 0}`);
   const brief = validBrief(generatedBrief) ? normalizeBrief(generatedBrief, fallback) : fallback;
   const briefFallbackCandidates = fallbackCandidates(brief);
@@ -484,7 +484,7 @@ ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
 - 実行可能性の高い3〜4件だけ is_recommended=true。quality_scoreは上記条件への適合度0〜100。
 
 研究ブリーフ: ${JSON.stringify(brief)}`;
-  const generatedRqs = await callAIJson<{ output_type_proposals: RQCandidate[] }>(rqPrompt, { temperature: 0.15, timeoutMs: 120000, maxOutputTokens: 20000, responseSchema: RQ_CANDIDATES_SCHEMA, reasoningEffort: "medium" });
+  const generatedRqs = await callAIJson<{ output_type_proposals: RQCandidate[] }>(rqPrompt, { temperature: 0.15, timeoutMs: 120000, maxOutputTokens: 20000, responseSchema: RQ_CANDIDATES_SCHEMA, reasoningEffort: "medium", feature: "qc:rq-candidates" });
   console.info(`[question-craft] candidates=${generatedRqs?.output_type_proposals?.length || 0}`);
   if (!generatedRqs?.output_type_proposals?.length) return {
     ...brief,
@@ -1011,6 +1011,7 @@ JSON {"literature_review":{"target_gap_deep":"...","knowns":["..."],"unknowns":[
     maxOutputTokens: 5000,
     responseSchema: VERIFIED_LITERATURE_SCHEMA,
     reasoningEffort: "low",
+    feature: "qc:literature",
   });
   const byId = new Map((generated?.items || []).map((item) => [item.id, item]));
   const papers = works.map(({ work, abstract }, index) => {
@@ -1136,5 +1137,5 @@ export async function adjustResearchText(value: string, instruction: string, con
 対象文章: ${value}
 周辺文脈: ${context}
 調整後の文章だけを返してください。`;
-  return (await callAI(prompt, { temperature: 0.25, timeoutMs: 20000 }))?.trim() || value;
+  return (await callAI(prompt, { temperature: 0.25, timeoutMs: 20000, feature: "qc:adjust-text", maxOutputTokens: 1200, reasoningEffort: "low" }))?.trim() || value;
 }

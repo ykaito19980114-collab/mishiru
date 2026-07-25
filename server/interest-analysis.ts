@@ -80,9 +80,26 @@ function deterministicAnalysis(materials: NormalizedResearchMaterial[], previous
   };
 }
 
+// プロンプトへ渡す素材の上限。反応が貯まるほど無制限に伸びる作りだったため、
+// 直近のものから一定数に絞り、モデルが使わないメタ情報（id・URL・日時・検証状態）を落とす。
+// 素材200件でプロンプトが7万字を超えていたのを、1万字程度に収める。
+const MAX_MATERIALS = 40;
+const MAX_EXCERPT = 200;
+
+function compactMaterials(materials: NormalizedResearchMaterial[]) {
+  return materials.slice(-MAX_MATERIALS).map((item) => ({
+    type: item.sourceType,
+    title: item.title,
+    reaction: item.userReaction,
+    keywords: (item.sourceKeywords || []).slice(0, 8),
+    questions: (item.officialQuestions || []).slice(0, 2),
+    note: (item.officialDescription || "").slice(0, MAX_EXCERPT),
+  }));
+}
+
 async function analyzeWithAI(materials: NormalizedResearchMaterial[]): Promise<InterestAnalysisResult | null> {
-  const prompt = `MISHIRUで、研究初心者の関心を整理します。完成した研究の問いは作らず、入力された公式情報とユーザーの反応を分けてください。「違う」「わからない」「気になる」「保存」は別の反応として扱います。研究領域・研究室・学会・ジャーナルは候補名だけを出してください。ユーザーに見える文章は、結論から始め、一文では一つだけ伝えてください。専門語や分析用語を避け、普通の日本語で書いてください。JSONのみ。\n${JSON.stringify(materials)}`;
-  const result = await callAIJson<InterestAnalysisResult>(prompt, { temperature:.2, timeoutMs:30000 });
+  const prompt = `MISHIRUで、研究初心者の関心を整理します。完成した研究の問いは作らず、入力された公式情報とユーザーの反応を分けてください。「違う」「わからない」「気になる」「保存」は別の反応として扱います。研究領域・研究室・学会・ジャーナルは候補名だけを出してください。ユーザーに見える文章は、結論から始め、一文では一つだけ伝えてください。専門語や分析用語を避け、普通の日本語で書いてください。JSONのみ。\n${JSON.stringify(compactMaterials(materials))}`;
+  const result = await callAIJson<InterestAnalysisResult>(prompt, { temperature:.2, timeoutMs:30000, feature: "interest-analysis", maxOutputTokens: 4000, reasoningEffort: "low" });
   if (!result?.current || !result?.connections || !result?.directions) return null;
   return { ...result, analysisMode: "ai" };
 }

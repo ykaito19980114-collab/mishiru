@@ -3,6 +3,7 @@
 import fs from "fs";
 import path from "path";
 import { callAIJson, aiEnabled } from "./ai";
+import { readAiCache, withSingleFlight, writeAiCache } from "./ai-cache";
 import { fieldLabel } from "../shared/fields";
 import type { Lab } from "../shared/types";
 
@@ -70,7 +71,7 @@ async function generateGuide(lab: Lab): Promise<AiGuide | null> {
 分野: ${fieldLabel(lab.field_major)}
 分野キーワード: ${kw}
 出力JSON（キーは英語、値は日本語）: {"overview":"120字程度のやさしい研究概要","questions":["公開情報から読み取れる、この研究室が扱いそうな問いを学生目線で3つ"],"methods":["使いそうな研究方法を3つ（各30字程度）"],"fit":"どんな学生に向いていそうか（60字程度）","careers":"想定される進路の方向性（60字程度）","appeal":"この研究室のテーマのおもしろさ（80字程度）"}`;
-  const g = await callAIJson<AiGuide>(prompt, { temperature: 0.4 });
+  const g = await callAIJson<AiGuide>(prompt, { temperature: 0.4, feature: "enrich:guide", maxOutputTokens: 1500, reasoningEffort: "low" });
   if (!g || !g.overview) return null;
   // 配列の健全化
   g.questions = (g.questions || []).slice(0, 3);
@@ -216,36 +217,55 @@ async function generate(lab: Lab): Promise<Enrichment> {
 
 const isFresh = (e: Enrichment) => Date.now() - new Date(e.generatedAt).getTime() < TTL_MS;
 
+const SCOPE = "enrich";
+
+/** L1（プロセス内）に無ければL2（Supabase・全インスタンス共有）を見る。L2ヒット時はL1へ載せ直す */
+async function fromAnyCache(labId: string): Promise<Enrichment | undefined> {
+  const local = cache[labId];
+  if (local) return local;
+  const remote = await readAiCache<Enrichment>(SCOPE, labId, CACHE_VERSION);
+  if (remote) { cache[labId] = remote; return remote; }
+  return undefined;
+}
+
+/** L1とL2の両方へ書く。L2はfire-and-forgetなのでレスポンスは待たない */
+function storeEnrichment(labId: string, enrichment: Enrichment) {
+  cache[labId] = enrichment;
+  persist(); // ローカル開発用（Vercelでは読み取り専用のため失敗するが、L2があるので実害なし）
+  writeAiCache(SCOPE, labId, CACHE_VERSION, enrichment, TTL_MS);
+}
+
 export async function enrichLab(lab: Lab, opts: { force?: boolean } = {}): Promise<Enrichment> {
-  let cached = cache[lab.id];
+  let cached = await fromAnyCache(lab.id);
   const valid = cached && cached.version === CACHE_VERSION;
 
   // Older cache entries may predate the deterministic guide fallback. Repair
   // them in place so AI-disabled environments still return a complete guide.
-  if (valid && !cached.aiGuide && !aiEnabled()) {
+  if (valid && cached && !cached.aiGuide && !aiEnabled()) {
     cached = { ...cached, aiGuide: await generateGuide(lab) };
-    cache[lab.id] = cached;
-    persist();
+    storeEnrichment(lab.id, cached);
   }
 
   // 期限内キャッシュ → そのまま配信（生成コストゼロ）
-  if (!opts.force && valid && isFresh(cached)) return cached;
+  if (!opts.force && valid && cached && isFresh(cached)) return cached;
 
-  // 期限切れキャッシュ → 即座に古い内容を返し、裏で再生成（ユーザーを待たせない）
-  if (!opts.force && valid && !isFresh(cached)) {
+  // 期限切れ、または版が古いキャッシュ → 即座に古い内容を返し、裏で再生成（ユーザーを待たせない）。
+  // 版ズレを「無し」ではなく「陳腐化」として扱うのが要点。CACHE_VERSIONを上げた直後に
+  // 全研究室ページが同期生成でブロックする（＝コストの崖）のを避け、背景移行にする。
+  if (!opts.force && cached) {
     if (!refreshing.has(lab.id)) {
       refreshing.add(lab.id);
       void generate(lab)
-        .then((e) => { if (e.aiGuide || e.papers.length) { cache[lab.id] = e; persist(); } })
+        .then((e) => { if (e.aiGuide || e.papers.length) storeEnrichment(lab.id, e); })
         .finally(() => refreshing.delete(lab.id));
     }
     return cached;
   }
 
-  // キャッシュなし → 同期生成
-  const enrichment = await generate(lab);
+  // キャッシュなし → 同期生成。同一研究室への同時アクセスで生成が並走しないよう束ねる（スタンピード防止）
+  const enrichment = await withSingleFlight(`${SCOPE}:${lab.id}`, () => generate(lab));
   // 有意な生成のみ永続化。全失敗時はキャッシュせず次回再試行（AC-05）
-  if (enrichment.aiGuide || enrichment.papers.length) { cache[lab.id] = enrichment; persist(); }
+  if (enrichment.aiGuide || enrichment.papers.length) storeEnrichment(lab.id, enrichment);
   return enrichment;
 }
 

@@ -1,0 +1,8 @@
+# 研究室ページ本体はクロールしてよい（sitemap.xmlで19,785件を公開している）。
+# ただし /api/ はクロールさせない。研究室ページの補足情報はJSから /api/labs/:id/enrich を
+# 呼んで生成するため、クローラがAPIを直接踏むとAI生成が研究室数ぶん走りうる。
+User-agent: *
+Disallow: /api/
+Disallow: /admin
+
+Sitemap: https://mishiru-lab.com/sitemap.xml

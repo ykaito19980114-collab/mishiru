@@ -6,6 +6,7 @@ import fs from "fs";
 import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 import { store } from "./server/store";
+import { aiUsageSnapshot, resetAiUsage } from "./server/ai-telemetry";
 import { buildProfile, matchLabs, labsForCard, nearbyCards, collectProfileExtras, PROFILE_THRESHOLD } from "./server/matching";
 import { nextCards } from "./server/cards-service";
 import { generateReport } from "./server/report";
@@ -108,6 +109,10 @@ export async function createApp() {
   };
   const bad = (res: express.Response, message: string) =>
     res.status(400).json({ error: { code: "BAD_REQUEST", message } });
+
+  // 既知のクローラ判定。AI生成を伴うエンドポイントで「生成はさせず、あるものだけ返す」ために使う
+  const CRAWLER_UA = /bot|crawler|spider|crawling|slurp|bingpreview|facebookexternalhit|embedly|quora link preview|showyoubot|outbrain|pinterest|vkshare|w3c_validator|headlesschrome|lighthouse|gptbot|ccbot|claudebot|anthropic|perplexity|bytespider/i;
+  const isCrawler = (userAgent?: string) => Boolean(userAgent && CRAWLER_UA.test(userAgent));
 
   // ============ ヘルス・メタ ============
   app.get("/api/health", (_req, res) => {
@@ -455,10 +460,12 @@ export async function createApp() {
     ].slice(0, 12);
 
     try {
-      const labs = q.length >= 2
-        ? (await smartSearch(q, 80)).labs.slice(0, 6)
-        : (await getDeckCards(sessionId, null, 6)).map((c) => c.lab);
-      const labCards = await buildCardsFor(labs);
+      // getDeckCardsはカード内容まで組み立てて返すため、そのまま使う。
+      // 以前は .map(c => c.lab) で内容を捨ててbuildCardsForを再実行しており、
+      // 生成が失敗したときに同じ研究室ぶんの生成が二重に走っていた。
+      const labCards = q.length >= 2
+        ? await buildCardsFor((await smartSearch(q, 80)).labs.slice(0, 6))
+        : await getDeckCards(sessionId, null, 6);
       const related = terms.length ? store.relatedResearchResources(terms, 6) : store.searchResearchResources("", 6);
       const cards: DiscoveryCard[] = [
         ...labCards.map((c) => labDiscoveryCard(toCardJson(c))),
@@ -740,6 +747,12 @@ export async function createApp() {
     if (!lab || (lab.status !== "published" && lab.status !== "claimed"))
       return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究室が見つかりません" } });
     try {
+      // クローラには生成済みキャッシュだけを返す（robots.txtの/api/禁止と二重の防御）。
+      // sitemapが19,785件の研究室URLを公開しているため、無防備だとクロール1周でAI生成が同数走る。
+      if (isCrawler(req.get("user-agent"))) {
+        const cached = cachedEnrichment(lab.id);
+        return res.json(cached || { aiGuide: null, papers: [], papersConfidence: "none", generatedAt: new Date().toISOString(), version: 0 });
+      }
       const enrichment = await enrichLab(lab);
       res.json(enrichment);
     } catch (e) {
@@ -835,6 +848,10 @@ export async function createApp() {
   });
 
   // ============ 管理API（要admin, §7） ============
+  // AIトークン実測（機能別）。reasoningShareが高い＝推論に払っている、cacheHitShareが低い＝プロンプトキャッシュ未活用
+  app.get("/api/admin/ai-usage", requireAdmin, (_req, res) => res.json(aiUsageSnapshot()));
+  app.post("/api/admin/ai-usage/reset", requireAdmin, (_req, res) => { resetAiUsage(); res.json({ ok: true }); });
+
   app.get("/api/admin/kpi", requireAdmin, (_req, res) => {
     const events = store.allEvents();
     const sessions = new Set(events.map((e) => e.sessionId).filter((s) => s !== "anon"));

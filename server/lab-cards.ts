@@ -5,6 +5,7 @@ import fs from "fs";
 import path from "path";
 import { store } from "./store";
 import { callAIJson, aiEnabled } from "./ai";
+import { readAiCacheMany, writeAiCache } from "./ai-cache";
 import { fieldLabel } from "../shared/fields";
 import { RESEARCH_AREAS } from "../shared/taxonomy";
 import type { Lab, LabCardContent } from "../shared/types";
@@ -117,7 +118,7 @@ async function generateBatch(labs: Lab[]): Promise<void> {
 ${list}
 出力（JSON配列のみ）: [{"labId":"lab-1","title":"...","hook":"...","summary":"...","questions":["...","...","..."],"why":"..."}]`;
 
-  const arr = await callAIJson<{ labId: string; title: string; hook: string; summary: string; questions: string[]; why: string }[]>(prompt, { temperature: 0.5, timeoutMs: 30000 });
+  const arr = await callAIJson<{ labId: string; title: string; hook: string; summary: string; questions: string[]; why: string }[]>(prompt, { temperature: 0.5, timeoutMs: 30000, feature: "lab-cards", maxOutputTokens: 5000, reasoningEffort: "low" });
   if (!Array.isArray(arr)) return;
   const validIds = new Set(labs.map((l) => l.id));
   const now = new Date().toISOString();
@@ -136,6 +137,8 @@ ${list}
       generatedBy: "llm",
       generatedAt: now,
     };
+    // L2へも保存（全インスタンス・コールドスタート跨ぎで共有。fire-and-forgetでレスポンスは待たせない）
+    writeAiCache(SCOPE, item.labId, CACHE_VERSION, cache.cards[item.labId], TTL_MS);
   }
   persist();
 }
@@ -205,8 +208,20 @@ export function selectDeck(sessionId: string, genre: string | null, batch = DECK
   return picked;
 }
 
+const SCOPE = "lab-cards";
+
+// L1（プロセス内）に無いぶんだけL2（Supabase・全インスタンス共有）から1クエリで補充する。
+// これが無いとコールドスタートのたびにデッキ全件を生成し直すことになる（Vercelのファイルシステムは読み取り専用）。
+async function hydrateFromSharedCache(labs: Lab[]) {
+  const wanted = labs.filter((l) => { const c = cache.cards[l.id]; return !(c && isFresh(c) && c.generatedBy === "llm"); }).map((l) => l.id);
+  if (!wanted.length) return;
+  const remote = await readAiCacheMany<LabCardContent>(SCOPE, wanted, CACHE_VERSION);
+  for (const [labId, content] of remote) if (isFresh(content)) cache.cards[labId] = content;
+}
+
 // --- 共通：任意の研究室リストをカード化（不足分のみ1回のバッチ生成。AI検索/傾向モードでも使用） ---
 export async function buildCardsFor(labs: Lab[]): Promise<(LabCardContent & { lab: Lab })[]> {
+  await hydrateFromSharedCache(labs);
   const missing = labs.filter((l) => { const c = cache.cards[l.id]; return !(c && isFresh(c) && c.generatedBy === "llm"); });
   if (missing.length) await generateBatch(missing);
   return labs.map((lab) => {

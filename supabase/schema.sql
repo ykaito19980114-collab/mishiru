@@ -241,7 +241,9 @@ create table if not exists mishiru_articles (
   updated_at   timestamptz default now()
 );
 
--- 外部APIキャッシュ（NFR-EXT-01。v1で使用）
+-- 外部APIキャッシュ（NFR-EXT-01）。ADR-009でAI生成物の永続キャッシュにも転用。
+-- cache_keyに "<scope>:v<version>:<key>" を入れて名前空間を分ける（例 enrich:v4:lab-123 / lab-cards:v9:lab-123 /
+-- smart-search:v1:<正規化クエリ> / budget:v1:<YYYY-MM-DD>）。RLS有効・公開ポリシー無し = service_roleのみ。
 create table if not exists mishiru_api_cache (
   cache_key   text primary key,
   payload     jsonb,
