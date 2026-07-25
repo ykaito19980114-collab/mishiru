@@ -374,10 +374,14 @@ function normalizeQuestion(value: string) {
 
 interface PublicQuestionRewrite { type_name: string; rq_title: string; public_rq: string }
 
-async function rewritePublicQuestions(candidates: RQCandidate[], fallbacks: RQCandidate[], styleQuestions: string[]) {
-  const source = candidates.map((item) => ({ type_name: item.type_name, academic_rq: item.academic_rq, core_components: item.components }));
+// targetCodes を渡すと、その類型だけを書き直す。残りはテンプレート由来で既に平易な日本語のため、
+// 書き直す必要がなく、送るだけ入力トークンの無駄になる（ADR-009）。
+async function rewritePublicQuestions(candidates: RQCandidate[], fallbacks: RQCandidate[], styleQuestions: string[], targetCodes?: Set<string>) {
+  const isTarget = (index: number) => !targetCodes || targetCodes.has(RQ_TYPES[index][0]);
+  const targets = candidates.filter((_, index) => isTarget(index));
+  const source = targets.map((item) => ({ type_name: item.type_name, academic_rq: item.academic_rq, core_components: item.components }));
   const prompt = `あなたは、研究者向けの問いを、研究に初めて触れる人にも一読で分かる問いへ翻訳する編集者です。
-次の12件について rq_title と public_rq だけを書き直してください。academic_rq の研究上の中心関係は変えません。
+次の${source.length}件について rq_title と public_rq だけを書き直してください。academic_rq の研究上の中心関係は変えません。
 
 このサービスの研究領域・学会・ジャーナルDBにある文体例:
 ${styleQuestions.map((item) => `- ${item}`).join("\n")}
@@ -403,12 +407,14 @@ ${styleQuestions.map((item) => `- ${item}`).join("\n")}
 
 対象: ${JSON.stringify(source)}`;
   const generated = await callAIJson<{ public_questions: PublicQuestionRewrite[] }>(prompt, {
-    temperature: 0.1, timeoutMs: 90000, maxOutputTokens: 12000, responseSchema: PUBLIC_RQ_SCHEMA, reasoningEffort: "low", feature: "qc:public-rq",
+    temperature: 0.1, timeoutMs: 90000, maxOutputTokens: 4000, responseSchema: PUBLIC_RQ_SCHEMA, reasoningEffort: "low", feature: "qc:public-rq",
   });
   let repairedCount = 0;
   const rewritten = candidates.map((candidate, index) => {
+    // 対象外（テンプレート由来）はそのまま返す。書き直しの必要がない
+    if (!isTarget(index)) return candidate;
     const code = RQ_TYPES[index][0];
-    const found = generated?.public_questions?.find((item) => item.type_name?.match(new RegExp(`^${code}(?:\\b|[:：])`))) || generated?.public_questions?.[index];
+    const found = generated?.public_questions?.find((item) => item.type_name?.match(new RegExp(`^${code}(?:\\b|[:：])`)));
     const publicRq = normalizeQuestion(found?.public_rq || "");
     if (!found || !isPlainPublicQuestion(publicRq)) {
       repairedCount++;
@@ -423,8 +429,11 @@ ${styleQuestions.map((item) => `- ${item}`).join("\n")}
 
 function repairCandidates(generated: RQCandidate[] | undefined, fallback: RQCandidate[]) {
   let repairedCount = 0;
+  // 位置による対応付けは「12件そろって順番どおり」返ってきたときだけ使う。
+  // 4件だけ生成させる運用（ADR-009）では、generated[index]で拾うとR4の中身がR2に化けるため。
+  const positional = generated?.length === RQ_TYPES.length;
   const candidates = RQ_TYPES.map(([code, name], index) => {
-    const found = generated?.find((item) => item.type_name?.match(new RegExp(`^${code}(?:\\b|[:：])`))) || generated?.[index];
+    const found = generated?.find((item) => item.type_name?.match(new RegExp(`^${code}(?:\\b|[:：])`))) || (positional ? generated?.[index] : undefined);
     const publicRq = normalizeQuestion(found?.public_rq || "");
     const academicRq = normalizeQuestion(found?.academic_rq || "");
     if (!found || !isResearchQuestion(publicRq) || !isResearchQuestion(academicRq)) { repairedCount++; return fallback[index]; }
@@ -477,7 +486,11 @@ export async function generateStep1(input: QuestionFreeInput, materialsInput: No
   console.info(`[question-craft] brief=${validBrief(generatedBrief) ? "valid" : "fallback"} shifts=${generatedBrief?.domain_shifts?.length || 0}`);
   const brief = validBrief(generatedBrief) ? normalizeBrief(generatedBrief, fallback) : fallback;
   const briefFallbackCandidates = fallbackCandidates(brief);
-  const rqPrompt = `あなたは大学院レベルのRQを設計・査読する研究方法論者です。次の研究ブリーフから、12研究成果物類型を各1件、順番どおりに生成してください。
+  // 12類型すべてを生成していたが、画面の初期表示は推奨3〜4件で、残りは折り畳みの中だった。
+  // ここでモデル自身に「この研究ブリーフに最も合う4類型」を選ばせ、その4件だけ生成させる。
+  // 残り8類型は決定的テンプレート（fallbackCandidates）がrepairCandidatesで自動的に埋めるため、
+  // 「ほかの問い案を見る」の件数と並びは従来どおり12件のまま変わらない（ADR-009）。
+  const rqPrompt = `あなたは大学院レベルのRQを設計・査読する研究方法論者です。次の研究ブリーフに対して、下の12研究成果物類型の中から**この素材で最も実行可能性が高く有望な4類型を自分で選び、その4件だけ**生成してください。12件すべては作らないでください。
 ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
 
 合格条件:
@@ -485,10 +498,12 @@ ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
 - 対象、着目する現象・変数・概念、関係/比較/変化/測定/設計、文脈、収集可能な証拠を具体化する。
 - R1=特徴と条件、R2=類型と分類基準、R3=変数間関連、R4=介入と比較対象と効果、R5=段階と転換点、R6=当事者の意味づけ、R7=概念間関係、R8=要因モデル、R9=信頼性・妥当性を持つ測定、R10=既存手法との性能比較、R11=設計物と評価指標、R12=文献範囲と未解決論点を問う。
 - 「素材文＋〇〇の視点から何を明らかにできるか」「〇〇研究として捉える」「対象・現象・文脈を記述・説明・検証できるか」は不合格。
-- 実行可能性の高い3〜4件だけ is_recommended=true。quality_scoreは上記条件への適合度0〜100。
+- type_name は必ず「R番号: 類型名」の形式で始める（選んだ類型が分かるようにするため）。
+- 出力する4件はすべて is_recommended=true。quality_scoreは上記条件への適合度0〜100。
 
 研究ブリーフ: ${JSON.stringify(brief)}`;
-  const generatedRqs = await callAIJson<{ output_type_proposals: RQCandidate[] }>(rqPrompt, { temperature: 0.15, timeoutMs: 120000, maxOutputTokens: 20000, responseSchema: RQ_CANDIDATES_SCHEMA, reasoningEffort: "medium", feature: "qc:rq-candidates" });
+  // 4件ぶんの上限。12件生成時の20000から引き下げる（実測の出力は12件で約6,800トークン）
+  const generatedRqs = await callAIJson<{ output_type_proposals: RQCandidate[] }>(rqPrompt, { temperature: 0.15, timeoutMs: 120000, maxOutputTokens: 7000, responseSchema: RQ_CANDIDATES_SCHEMA, reasoningEffort: "medium", feature: "qc:rq-candidates" });
   console.info(`[question-craft] candidates=${generatedRqs?.output_type_proposals?.length || 0}`);
   if (!generatedRqs?.output_type_proposals?.length) return {
     ...brief,
@@ -496,8 +511,18 @@ ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
     generatedBy: "quality_fallback" as const,
     qualityReport: { validCount: 12, repairedCount: 12, warnings: ["AIで問いを作れなかったため、入力内容から作った下書きを表示しています。"] },
   };
+  // モデルが実際に選んだ類型コード。これがAI生成の4件＝画面の初期表示になる
+  const selectedCodes = new Set(
+    generatedRqs.output_type_proposals
+      .map((item) => item.type_name?.match(/^(R\d{1,2})(?:\b|[:：])/)?.[1])
+      .filter((code): code is string => Boolean(code) && RQ_TYPES.some(([rq]) => rq === code)),
+  );
   const repaired = repairCandidates(generatedRqs.output_type_proposals, briefFallbackCandidates);
-  const publicRewrite = await rewritePublicQuestions(repaired.candidates, briefFallbackCandidates, publicStyleQuestions(materials));
+  // 推奨＝AIが選んで生成した類型。repairCandidatesの既定([0,2,5,11])に上書きされないよう明示する
+  if (selectedCodes.size >= 3) {
+    repaired.candidates.forEach((item, index) => { item.is_recommended = selectedCodes.has(RQ_TYPES[index][0]); });
+  }
+  const publicRewrite = await rewritePublicQuestions(repaired.candidates, briefFallbackCandidates, publicStyleQuestions(materials), selectedCodes.size >= 3 ? selectedCodes : undefined);
   const warnings: string[] = [];
   if (repaired.repairedCount) warnings.push(`専門向けの問い${repaired.repairedCount}件を、内容が伝わる下書きへ置き換えました。`);
   if (publicRewrite.repairedCount) warnings.push(`一般向けの問い${publicRewrite.repairedCount}件を、初めて読む人にも分かる表現へ直しました。`);
