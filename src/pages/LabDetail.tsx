@@ -10,6 +10,7 @@ import { fieldLabel } from "../../shared/fields";
 import { displayLabName, labQuestions } from "../lib/labText";
 import { makeLabAnnotation, MarkLabel, saveAnnotation } from "../lib/annotations";
 import { assessLabEvidence } from "../../shared/lab-evidence";
+import { googleScholarUrlForLab } from "../lib/labLinks";
 
 // 研究室確認済みの確定情報セクション（値があるときのみ表示）
 function VerifiedSection({ title, children, value }: { title: string; children?: React.ReactNode; value?: unknown }) {
@@ -327,7 +328,7 @@ export default function LabDetail() {
               { label: "researchmap", url: `https://researchmap.jp/researchers?q=${encodeURIComponent(lab.pi.name)}` },
               { label: "CiNii Research", url: `https://cir.nii.ac.jp/all?q=${encodeURIComponent(lab.pi.name)}` },
               { label: "KAKEN(科研費)", url: `https://kaken.nii.ac.jp/ja/search/?qm=${encodeURIComponent(lab.pi.name)}` },
-              { label: "Google Scholar", url: `https://scholar.google.com/scholar?q=${encodeURIComponent(`"${lab.pi.name}" ${lab.university.name}`)}` },
+              { label: "Google Scholar", url: googleScholarUrlForLab(lab) },
             ].map((x) => (
               <a key={x.label} href={x.url} target="_blank" rel="noopener noreferrer" onClick={() => api.logEvent("outbound_click", { labId: lab.id, dest: x.label })}
                 className="inline-flex items-center gap-1 text-[13px] font-bold text-[var(--c-teal)] border border-[var(--c-teal)] rounded-full px-3 py-1.5 min-h-[40px] hover:bg-[var(--c-surface-blue)] transition-colors">

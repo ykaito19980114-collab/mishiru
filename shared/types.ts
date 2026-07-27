@@ -63,6 +63,7 @@ export interface Lab {
   area_tags: string[];      // taxonomy.RESEARCH_AREAS の id（カード⇄研究室マッチング用の細分）
   field_major: FieldMajor;  // 12大分類（フィルタ用）
   official_url: string | null;
+  google_scholar_url?: string; // 本人・大学公式情報で確認できた場合のみプロフィールURLを保持
   has_url: boolean;         // URL有無（営業リスト用）
   sources: LabSource[];     // 出典（FR-LAB-02）
   researchQuestions?: string[]; // Excel「扱う問い」。AI補完せず、存在する時だけ優先表示

@@ -3,11 +3,14 @@ import fs from "node:fs";
 import path from "node:path";
 import type { Lab } from "../shared/types";
 import { applyLabHomepageOverrides, type LabHomepageOverride } from "../server/lab-publication";
+import { applyLabExternalProfileOverrides, type LabExternalProfileOverride } from "../server/lab-external-profiles";
+import { googleScholarUrlForLab } from "../src/lib/labLinks";
 
 const root = process.cwd();
 const baseLabs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "utf-8")) as Lab[];
 const overrides = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-homepage-overrides.json"), "utf-8")) as LabHomepageOverride[];
-const labs = applyLabHomepageOverrides(baseLabs, overrides);
+const externalProfileOverrides = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-external-profile-overrides.json"), "utf-8")) as LabExternalProfileOverride[];
+const labs = applyLabExternalProfileOverrides(applyLabHomepageOverrides(baseLabs, overrides), externalProfileOverrides);
 const manuallyPublishedIds = new Set(overrides.filter((override) => override.applyAtRuntime && override.publish !== false).map((override) => override.labId));
 const suppressions = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-suppressions.json"), "utf-8")) as {
   ids: string[];
@@ -63,6 +66,19 @@ const taguchiLab = publicLabs.find((lab) => lab.id === "lab-17719");
 assert.ok(taguchiLab, "田口研究室が公開対象に含まれていない");
 assert.equal(taguchiLab.official_url, "https://taguchi.proteins.jp/");
 assert.equal(taguchiLab.sources[0]?.url, "https://taguchi.proteins.jp/");
+const tamakiLab = publicLabs.find((lab) => lab.id === "lab-11748");
+assert.ok(tamakiLab, "玉木研究室が公開対象に含まれていない");
+assert.equal(
+  googleScholarUrlForLab(tamakiLab),
+  "https://scholar.google.co.jp/citations?user=AsO4n6gAAAAJ&hl=ja&oi=sra",
+  "玉木先生本人から連絡されたGoogle Scholarプロフィールへリンクしていない",
+);
+assert.equal(tamakiLab.last_updated, "2026-07-27");
+const kohnoLab = publicLabs.find((lab) => lab.id === "lab-10520");
+assert.ok(kohnoLab, "河野晴彦研究室が公開対象に含まれていない");
+assert.equal(kohnoLab.official_url, "https://www.iizuka.kyutech.ac.jp/ics/h-kohno");
+assert.equal(kohnoLab.department, "大学院情報工学研究院 知的システム工学研究系");
+assert.equal(kohnoLab.quality?.contentLevel, "sourced");
 for (const lab of publicLabs) {
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
   assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
@@ -91,7 +107,7 @@ const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publicati
   counts: { publishable: number };
 };
 assert.equal(baseQualityApprovedLabs.length, report.counts.publishable, "監査レポートと一括監査時の品質確認済み件数が一致しない");
-assert.equal(qualityApprovedLabs.length, report.counts.publishable + 2, "個別確認済みの研究室が公開対象へ追加されていない");
-assert.equal(publicLabs.length, 5895, "掲載停止依頼を除いた公開件数が一致しない");
+assert.equal(qualityApprovedLabs.length, report.counts.publishable + 3, "個別確認済みの研究室が公開対象へ追加されていない");
+assert.equal(publicLabs.length, 5896, "掲載停止依頼を除いた公開件数が一致しない");
 
 console.log(`lab publication quality: OK (${publicLabs.length.toLocaleString()} published / ${labs.length.toLocaleString()} total)`);
