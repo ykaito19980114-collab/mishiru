@@ -6,6 +6,11 @@ import { applyLabHomepageOverrides, type LabHomepageOverride } from "../server/l
 import { applyLabExternalProfileOverrides, type LabExternalProfileOverride } from "../server/lab-external-profiles";
 import { assessLabEvidence } from "../shared/lab-evidence";
 import { googleScholarUrlForLab, researchDatabaseLinks } from "../src/lib/labLinks";
+import {
+  looksLikeAggregateLabName,
+  looksLikeAggregateLabPage,
+  looksLikeResearcherProfile,
+} from "../shared/lab-url-quality";
 
 const root = process.cwd();
 const baseLabs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "utf-8")) as Lab[];
@@ -28,8 +33,7 @@ const qualityApprovedLabs = eligibleLabs.filter((lab) =>
 const publicLabs = qualityApprovedLabs.filter((lab) =>
   !suppressedIds.has(lab.id) && !suppressedSourceNos.has(String(lab.sourceNo || "")));
 const heldLabs = eligibleLabs.filter((lab) => !qualityApprovedLabs.includes(lab));
-const aggregateName = /全研究室|研究室群|各研究室|各分野|各領域|各専攻|講座群|連携研究室|教員一覧|担当教員一覧|研究室・教員一覧|ほか(?:\d+)?(?:研究室)?|他研究室|多数|主要分野/;
-const profileUrl = /researchmap\.jp|k-ris\.keio\.ac\.jp|r-info\.tohoku\.ac\.jp|research-db\.|researchers?\.|ridb\.|yudb\.|hyokadb|profs\.|elsevierpure\.com|search\.adb\.|rdb\.|nrid\.nii\.ac\.jp|kaken\.nii\.ac\.jp|jglobal\.jst\.go\.jp|orcid\.org|scholar\.google\.|cir\.nii\.ac\.jp|\/(?:faculty|staff|teacher|researcher|profile|people|member)(?:\/|$)/i;
+const legacyProfileUrl = /researchmap\.jp|k-ris\.keio\.ac\.jp|r-info\.tohoku\.ac\.jp|research-db\.|researchers?\.|ridb\.|yudb\.|hyokadb|profs\.|elsevierpure\.com|search\.adb\.|rdb\.|nrid\.nii\.ac\.jp|kaken\.nii\.ac\.jp|jglobal\.jst\.go\.jp|orcid\.org|scholar\.google\.|cir\.nii\.ac\.jp|\/(?:faculty|staff|teacher|researcher|profile|people|member)(?:\/|$)/i;
 const coreLabName = (name: string) => name
   .replace(/[（(][^）)]*[）)]/g, " ")
   .replace(/研究室|研究所|研究グループ|グループ|ラボ|講座|分野|部門|領域|ユニット/g, " ")
@@ -93,11 +97,17 @@ assert.equal(yoshimuraLab.quality?.contentLevel, "sourced");
 assert.deepEqual(yoshimuraLab.members.map((member) => member.name), ["吉村倫一", "河合里紗"]);
 assert.ok(yoshimuraLab.keywords.includes("両親媒性イオン液体"));
 for (const lab of publicLabs) {
+  const workbookPromoted = Boolean(lab.quality?.notes?.some((note) =>
+    note.startsWith("研究室リスト_DB 2026-07-28:") && !note.includes("問い・研究概要")));
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
-  assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
+  assert.ok(!legacyProfileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
+  if (workbookPromoted) {
+    assert.ok(!looksLikeResearcherProfile(lab.official_url || ""), `${lab.id}: Excel更新から教員・研究者ページを研究室HPとして公開している`);
+    assert.ok(!looksLikeAggregateLabPage(lab.official_url || ""), `${lab.id}: Excel更新から研究室一覧ページを個別研究室HPとして公開している`);
+  }
   assert.equal(lab.sources[0]?.label, "研究室ホームページ", `${lab.id}: 主出典の種別が不正`);
   assert.equal(lab.sources[0]?.url, lab.official_url, `${lab.id}: 主出典と研究室HPが不一致`);
-  const aggregate = aggregateName.test(lab.name);
+  const aggregate = looksLikeAggregateLabName(lab.name);
   if (aggregate) assert.equal(lab.official_url, null, `${lab.id}: 集合ページに研究室HPリンクがある`);
 }
 for (const lab of heldLabs) {
@@ -119,8 +129,48 @@ for (const [url, groupedLabs] of homepageGroups) {
 const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publication-audit.json"), "utf-8")) as {
   counts: { publishable: number };
 };
-assert.equal(baseQualityApprovedLabs.length, report.counts.publishable, "監査レポートと一括監査時の品質確認済み件数が一致しない");
-assert.equal(qualityApprovedLabs.length, report.counts.publishable + 4, "個別確認済みの研究室が公開対象へ追加されていない");
-assert.equal(publicLabs.length, 5897, "掲載停止依頼を除いた公開件数が一致しない");
+const workbookReport = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-workbook-update-report.json"), "utf-8")) as {
+  result: {
+    evidenceStored: number;
+    trustedEvidence: number;
+    provisionalStored: number;
+    promoted: number;
+  };
+};
+assert.equal(
+  baseQualityApprovedLabs.length,
+  report.counts.publishable + workbookReport.result.promoted,
+  "一括監査済みとExcelで個別確認済みの公開件数が一致しない",
+);
+assert.equal(
+  qualityApprovedLabs.length,
+  report.counts.publishable + workbookReport.result.promoted + 4,
+  "個別確認済みの研究室が公開対象へ追加されていない",
+);
+assert.equal(
+  publicLabs.length,
+  5897 + workbookReport.result.promoted,
+  "掲載停止依頼を除いた公開件数が一致しない",
+);
+const workbookEvidence = JSON.parse(
+  fs.readFileSync(path.join(root, "data", "lab-research-evidence.json"), "utf-8"),
+) as { labId: string; confidence: "confirmed" | "candidate" }[];
+assert.equal(workbookEvidence.length, workbookReport.result.evidenceStored);
+assert.equal(
+  workbookEvidence.filter((evidence) => evidence.confidence === "confirmed").length,
+  workbookReport.result.trustedEvidence,
+);
+assert.equal(
+  workbookEvidence.filter((evidence) => evidence.confidence === "candidate").length,
+  workbookReport.result.provisionalStored,
+);
+const workbookPromotedLab = publicLabs.find((lab) => lab.id === "lab-4");
+assert.ok(workbookPromotedLab, "Excelで研究室HP確認済みの研究室が公開されていない");
+assert.equal(workbookPromotedLab.researchQuestions?.length, 2);
+assert.equal(workbookEvidence.find((evidence) => evidence.labId === "lab-4")?.confidence, "confirmed");
+const workbookCandidateLab = publicLabs.find((lab) => lab.id === "lab-1");
+assert.ok(workbookCandidateLab, "既存公開研究室がExcel差分更新で消えている");
+assert.equal(workbookEvidence.find((evidence) => evidence.labId === "lab-1")?.confidence, "candidate");
+assert.equal(workbookCandidateLab.researchQuestions, undefined, "候補状態の問いを公開表示へ反映している");
 
 console.log(`lab publication quality: OK (${publicLabs.length.toLocaleString()} published / ${labs.length.toLocaleString()} total)`);

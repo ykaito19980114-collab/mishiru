@@ -15,6 +15,19 @@ export interface LabMember {
   title: string; // 教授/准教授/講師/助教/特任教授 等
 }
 
+export interface LabResearchEvidence {
+  summary: string;
+  questions: string[];
+  sourceUrl: string;
+  note: string;
+  verificationStatus: string;
+  urlStatus: string;
+  confidence: "confirmed" | "candidate";
+  importedAt: string;
+  source: string;
+  excelRow: number;
+}
+
 export interface LabQuality {
   publicationLevel: "sourced" | "basic" | "review" | "hidden";
   contentLevel: "verified" | "sourced" | "basic";

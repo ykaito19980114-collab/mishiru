@@ -1,0 +1,995 @@
+{
+  "source": {
+    "fileName": "研究室リスト_DB.xlsx",
+    "sha256": "293275052c99b348ec7b7111fa09111e777de568c42c9d65357125e9fbad2832",
+    "importedAt": "2026-07-28"
+  },
+  "input": {
+    "baseRows": 19785,
+    "updateRows": 8124,
+    "duplicateUpdateRows": 26,
+    "existingLabs": 19784
+  },
+  "policy": {
+    "mergeKey": "A列NoとH列Noを独立に読み、Noで結合",
+    "existingPublishedLabs": "URL・公開状態を維持し、確認済みの問いと概要だけ更新",
+    "newPublication": "確認済みの問い、研究室ページ取得済み、研究室名一致、非プロフィールURLをすべて満たす場合のみ公開",
+    "provisionalRows": "根拠情報をDBへ保存するが、公開表示には使用しない",
+    "suppressions": "既存の掲載停止リストを常に優先",
+    "duplicateRows": "同じNoが複数ある場合はExcel内の後の行を採用"
+  },
+  "result": {
+    "evidenceStored": 8123,
+    "trustedEvidence": 6619,
+    "provisionalStored": 1504,
+    "displayedContentUpdated": 3854,
+    "promoted": 1530,
+    "preservedPublic": 2578,
+    "suppressedEvidence": 6,
+    "missingBaseRow": 0,
+    "mismatchedNames": 294,
+    "promotionCandidates": 1850,
+    "rejectedAmbiguousHomepageUrls": 118,
+    "publicBefore": 5896,
+    "publicAfter": 7423
+  },
+  "warnings": {
+    "rightRowsWithoutLab": [
+      "1291"
+    ],
+    "mismatchSample": [
+      {
+        "no": "90",
+        "baseName": "（9部門：応用物理/応用化学/材料科学/機械・宇宙航空/応用量子科学/土木/建築都市/環境/環境循環システム）",
+        "updateName": "大学院工学研究院"
+      },
+      {
+        "no": "118",
+        "baseName": "（物性理論・計算物理/先端物質創成/量子物性/光科学・量子情報・量子計測の各分野）",
+        "updateName": "物理工学専攻"
+      },
+      {
+        "no": "121",
+        "baseName": "（システム情報科学研究院所属教員が担当）",
+        "updateName": "電気情報工学科"
+      },
+      {
+        "no": "123",
+        "baseName": "（各研究室HP＋研究者情報にリンク）",
+        "updateName": "土木工学科"
+      },
+      {
+        "no": "137",
+        "baseName": "（計量経済・統計）",
+        "updateName": "計量経済・統計"
+      },
+      {
+        "no": "153",
+        "baseName": "（准教授・助教 抜粋）",
+        "updateName": "准教授・助教 抜粋"
+      },
+      {
+        "no": "227",
+        "baseName": "生物物理第１研究室",
+        "updateName": "生物物理第一研究室"
+      },
+      {
+        "no": "237",
+        "baseName": "高温高圧物理研究室",
+        "updateName": "地球内部物理研究室"
+      },
+      {
+        "no": "239",
+        "baseName": "（II類研究室群：木寺/小泉/小木曽/田中(基)/細川/高田/石橋(功)/和田・小野/澤田/金子・中村/崎山・菅原/小島/松浦/張）",
+        "updateName": "II類（融合系）研究室群"
+      },
+      {
+        "no": "242",
+        "baseName": "清水（昭）研究室",
+        "updateName": "清水昭伸研究室"
+      },
+      {
+        "no": "244",
+        "baseName": "藤田研究室",
+        "updateName": "藤田桂英研究室"
+      },
+      {
+        "no": "249",
+        "baseName": "（機械工学・材料工学・海洋空間・航空宇宙・エネルギー材料・集積プロセスの各分野）",
+        "updateName": "機械・材料・海洋系工学専攻"
+      },
+      {
+        "no": "250",
+        "baseName": "（ソフトマターイオニクス材料/生物物理化学・構造生命化学 等）",
+        "updateName": "化学・生命系研究室群"
+      },
+      {
+        "no": "262",
+        "baseName": "（高機能機械系研究室 ほか）",
+        "updateName": "機械システム工学科 研究室群"
+      },
+      {
+        "no": "265",
+        "baseName": "（担当教員一覧／研究室と研究テーマ）",
+        "updateName": "材料系 研究室群"
+      },
+      {
+        "no": "266",
+        "baseName": "（材料工学/トライボロジー/流体工学/熱機関 ほか17研究室）",
+        "updateName": "機械工学類 研究室群"
+      },
+      {
+        "no": "267",
+        "baseName": "（教員一覧）",
+        "updateName": "環境生命自然科学研究科 研究室群"
+      },
+      {
+        "no": "268",
+        "baseName": "（研究室・教員一覧）",
+        "updateName": "工業化学系 研究室群"
+      },
+      {
+        "no": "269",
+        "baseName": "（情報数理工学/知識情報処理/知的機構/知的システムデザイン/知能メカトロ情報システム/音声言語処理機構/社会情報学/共創情報学/応用メディア情報/ネットワーク情報システム 各研究室）",
+        "updateName": "情報工学系 研究室群"
+      },
+      {
+        "no": "270",
+        "baseName": "（光・電子回路システム/電気電子材料/電気回路/電力系統解析/超高周波工学/電気機器/超音波エレクトロニクス・応用計測/プラズマ物理/応用数学/通信方式/光デバイス/システム制御 各研究室）",
+        "updateName": "電気電子工学系 研究室群"
+      },
+      {
+        "no": "271",
+        "baseName": "（金属材料科学/応用材料工学/構造工学/噴霧・燃焼工学/伝熱工学/流体力学/機械力学/生産システムデザイン/機械設計工学/数理工学 各研究室）",
+        "updateName": "機械工学系 研究室群"
+      },
+      {
+        "no": "272",
+        "baseName": "高岡研究室（物理学）",
+        "updateName": "物理学研究室（高岡研究室）"
+      },
+      {
+        "no": "276",
+        "baseName": "槇原研究室",
+        "updateName": "データ駆動ソフトウェア工学研究室"
+      },
+      {
+        "no": "277",
+        "baseName": "上山研究室",
+        "updateName": "先進ネットワーク研究室"
+      },
+      {
+        "no": "278",
+        "baseName": "分散・協調メディア研究室",
+        "updateName": "環境情報研究室"
+      },
+      {
+        "no": "288",
+        "baseName": "動的再構成システム研究室",
+        "updateName": "視覚LSIシステム研究室"
+      },
+      {
+        "no": "290",
+        "baseName": "無線信号処理研究室",
+        "updateName": "マルチメディア集積回路システム研究室"
+      },
+      {
+        "no": "316",
+        "baseName": "（NTT/ATR/パナソニックHD/NEC/富士通/オムロン/産総研/JAXA/NICT/理研 等13連携研究室）",
+        "updateName": "産学連携研究室群"
+      },
+      {
+        "no": "318",
+        "baseName": "（AI知性/社会システムマネジメント/データ社会メディア/コンピューティング科学/次世代デジタル社会基盤/人間情報学/メディカルサイエンス/ナノマテリアル・デバイス/バイオ機能医工学 等の各研究室）",
+        "updateName": "先端科学技術研究科 研究室群"
+      },
+      {
+        "no": "320",
+        "baseName": "岩崎研究室",
+        "updateName": "岩崎・関・前田研究室"
+      },
+      {
+        "no": "325",
+        "baseName": "三好研究室",
+        "updateName": "三好・山口研究室"
+      },
+      {
+        "no": "328",
+        "baseName": "菅野研究室",
+        "updateName": "光・高周波技術研究室"
+      },
+      {
+        "no": "330",
+        "baseName": "岡本研究室",
+        "updateName": "岡本英二研究室"
+      },
+      {
+        "no": "332",
+        "baseName": "（准教授・助教ほか）",
+        "updateName": "電気電子工学分野 研究室群"
+      },
+      {
+        "no": "334",
+        "baseName": "糸魚川研究室",
+        "updateName": "生産機器研究室"
+      },
+      {
+        "no": "336",
+        "baseName": "坂口研究室",
+        "updateName": "VR・メカトロニクス研究室"
+      },
+      {
+        "no": "338",
+        "baseName": "田中研究室",
+        "updateName": "触覚学研究室"
+      },
+      {
+        "no": "339",
+        "baseName": "中村（匡）研究室",
+        "updateName": "医用生体工学研究室"
+      },
+      {
+        "no": "341",
+        "baseName": "松本研究室",
+        "updateName": "材料加工研究室"
+      },
+      {
+        "no": "342",
+        "baseName": "森西研究室",
+        "updateName": "流動デザイン研究室"
+      },
+      {
+        "no": "343",
+        "baseName": "山田研究室",
+        "updateName": "機械制御研究室"
+      },
+      {
+        "no": "344",
+        "baseName": "（准教授・助教ほか）",
+        "updateName": "機械工学分野 研究室群"
+      },
+      {
+        "no": "351",
+        "baseName": "黒崎研究室",
+        "updateName": "黒崎正行研究室"
+      },
+      {
+        "no": "368",
+        "baseName": "伊原正喜 教員研究室",
+        "updateName": "生物有機化学研究室"
+      },
+      {
+        "no": "369",
+        "baseName": "梅澤公二 教員研究室",
+        "updateName": "機能分子設計学研究室"
+      },
+      {
+        "no": "370",
+        "baseName": "大神田淳子 教員研究室",
+        "updateName": "ケミカルバイオロジー研究室"
+      },
+      {
+        "no": "371",
+        "baseName": "片山茂 教員研究室",
+        "updateName": "食品化学研究室"
+      },
+      {
+        "no": "372",
+        "baseName": "河村篤 教員研究室",
+        "updateName": "天然物化学研究室"
+      },
+      {
+        "no": "373",
+        "baseName": "喜井勲 教員研究室",
+        "updateName": "創薬標的科学研究室"
+      },
+      {
+        "no": "374",
+        "baseName": "小西博昭 教員研究室",
+        "updateName": "生物化学研究室"
+      }
+    ]
+  },
+  "promotedSample": [
+    {
+      "id": "lab-4",
+      "no": "4",
+      "university": "大阪大学",
+      "name": "量子情報・量子光学（山本研究室）",
+      "url": "http://qi.mp.es.osaka-u.ac.jp/main/"
+    },
+    {
+      "id": "lab-13",
+      "no": "13",
+      "university": "大阪大学",
+      "name": "熱工学（河原研究室）",
+      "url": "https://sites.google.com/view/wwwkawaharalab/"
+    },
+    {
+      "id": "lab-18",
+      "no": "18",
+      "university": "大阪大学",
+      "name": "分子生体計測（出口研究室）",
+      "url": "https://mbm.me.es.osaka-u.ac.jp/"
+    },
+    {
+      "id": "lab-28",
+      "no": "28",
+      "university": "大阪大学",
+      "name": "制御情報システム（櫻間研究室）",
+      "url": "https://www.cis.sys.es.osaka-u.ac.jp/"
+    },
+    {
+      "id": "lab-29",
+      "no": "29",
+      "university": "京都大学",
+      "name": "電気情報システム論（薄研究室）",
+      "url": "https://www-lab23.kuee.kyoto-u.ac.jp/ja/"
+    },
+    {
+      "id": "lab-35",
+      "no": "35",
+      "university": "京都大学",
+      "name": "マイクロ波エネルギー伝送（篠原研究室・生存圏研）",
+      "url": "https://space.rish.kyoto-u.ac.jp/shinohara-lab/index.php"
+    },
+    {
+      "id": "lab-59",
+      "no": "59",
+      "university": "東北大学",
+      "name": "数理情報学／量子コンピューティング（大関研究室）",
+      "url": "https://altema.is.tohoku.ac.jp/~mohzeki/"
+    },
+    {
+      "id": "lab-60",
+      "no": "60",
+      "university": "東北大学",
+      "name": "金属プロセス工学（三木研究室）",
+      "url": "http://www.material.tohoku.ac.jp/~tekko/"
+    },
+    {
+      "id": "lab-77",
+      "no": "77",
+      "university": "名古屋大学",
+      "name": "マイクロ・ナノプロセス工学（秦研究室）",
+      "url": "http://mnm.mae.nagoya-u.ac.jp/"
+    },
+    {
+      "id": "lab-82",
+      "no": "82",
+      "university": "北海道大学",
+      "name": "コヒーレント光研究室",
+      "url": "https://www.ist.hokudai.ac.jp/div/bio/test/?page_id=263"
+    },
+    {
+      "id": "lab-83",
+      "no": "83",
+      "university": "北海道大学",
+      "name": "人間情報工学研究室",
+      "url": "https://www.ist.hokudai.ac.jp/div/bio/test/?page_id=239"
+    },
+    {
+      "id": "lab-84",
+      "no": "84",
+      "university": "北海道大学",
+      "name": "ナノ材料光計測研究室",
+      "url": "https://www.ist.hokudai.ac.jp/div/bio/test/?page_id=257"
+    },
+    {
+      "id": "lab-85",
+      "no": "85",
+      "university": "北海道大学",
+      "name": "情報生物学研究室",
+      "url": "https://www.ist.hokudai.ac.jp/div/bio/test/?page_id=89"
+    },
+    {
+      "id": "lab-99",
+      "no": "99",
+      "university": "神戸大学",
+      "name": "小澤研究室",
+      "url": "http://www2.kobe-u.ac.jp/~ozawasei/act-j.html"
+    },
+    {
+      "id": "lab-100",
+      "no": "100",
+      "university": "神戸大学",
+      "name": "大森研究室",
+      "url": "https://www2.kobe-u.ac.jp/~omoritos/"
+    },
+    {
+      "id": "lab-106",
+      "no": "106",
+      "university": "東京大学",
+      "name": "柳本研究室（固体力学・材料分野）",
+      "url": "https://www.cem.t.u-tokyo.ac.jp/"
+    },
+    {
+      "id": "lab-110",
+      "no": "110",
+      "university": "東京大学",
+      "name": "松橋研究室",
+      "url": "https://enesys.t.u-tokyo.ac.jp/"
+    },
+    {
+      "id": "lab-119",
+      "no": "119",
+      "university": "九州大学",
+      "name": "水素利用プロセス研究室",
+      "url": "https://www.mech.kyushu-u.ac.jp/~hup/"
+    },
+    {
+      "id": "lab-120",
+      "no": "120",
+      "university": "九州大学",
+      "name": "風力発電システム研究室",
+      "url": "https://sites.google.com/view/kangawalab/"
+    },
+    {
+      "id": "lab-125",
+      "no": "125",
+      "university": "筑波大学",
+      "name": "サイバニクス研究室",
+      "url": "https://sanlab.iit.tsukuba.ac.jp/"
+    },
+    {
+      "id": "lab-129",
+      "no": "129",
+      "university": "筑波大学",
+      "name": "工藤研究室",
+      "url": "https://www.cs.tsukuba.ac.jp/~kudo/japanese.html"
+    },
+    {
+      "id": "lab-134",
+      "no": "134",
+      "university": "東京科学大学（旧東京工業大学）",
+      "name": "遠藤玄研究室",
+      "url": "https://www.robotics.mech.e.titech.ac.jp/gendo/en/"
+    },
+    {
+      "id": "lab-135",
+      "no": "135",
+      "university": "東京科学大学（旧東京工業大学）",
+      "name": "孫研究室",
+      "url": "https://hemingsun-lab.github.io/ja/"
+    },
+    {
+      "id": "lab-138",
+      "no": "138",
+      "university": "一橋大学",
+      "name": "欅研究室",
+      "url": "https://keyakkie.github.io/keyaki-lab/"
+    },
+    {
+      "id": "lab-154",
+      "no": "154",
+      "university": "千葉大学",
+      "name": "須鎗研究室",
+      "url": "http://www.icsd3.tj.chiba-u.jp/"
+    },
+    {
+      "id": "lab-165",
+      "no": "165",
+      "university": "千葉大学",
+      "name": "今泉（貴）研究室",
+      "url": "http://sites.google.com/site/imaizumilab/"
+    },
+    {
+      "id": "lab-169",
+      "no": "169",
+      "university": "千葉大学",
+      "name": "眞鍋研究室",
+      "url": "http://www.is-lab.net/"
+    },
+    {
+      "id": "lab-175",
+      "no": "175",
+      "university": "千葉大学",
+      "name": "堀内（隆）研究室",
+      "url": "http://dippix.tp.chiba-u.jp/"
+    },
+    {
+      "id": "lab-178",
+      "no": "178",
+      "university": "千葉大学",
+      "name": "今泉（祥）研究室",
+      "url": "http://foto.tp.chiba-u.jp/"
+    },
+    {
+      "id": "lab-179",
+      "no": "179",
+      "university": "千葉大学",
+      "name": "久保研究室",
+      "url": "https://qlab2022.github.io/"
+    },
+    {
+      "id": "lab-186",
+      "no": "186",
+      "university": "名古屋大学",
+      "name": "生物有機化学研究室（阿部研究室）",
+      "url": "https://biochemistry.chem.nagoya-u.ac.jp/"
+    },
+    {
+      "id": "lab-191",
+      "no": "191",
+      "university": "名古屋大学",
+      "name": "分子組織化学研究室（田中研究室）",
+      "url": "https://supra.chem.nagoya-u.ac.jp/"
+    },
+    {
+      "id": "lab-192",
+      "no": "192",
+      "university": "名古屋大学",
+      "name": "無機化学研究室（唯研究室）",
+      "url": "https://cat.chem.nagoya-u.ac.jp/"
+    },
+    {
+      "id": "lab-194",
+      "no": "194",
+      "university": "名古屋大学",
+      "name": "有機金属・材料化学グループ（Cruddenグループ）",
+      "url": "https://nagoya-uni-cruddengroup.labby.jp/"
+    },
+    {
+      "id": "lab-219",
+      "no": "219",
+      "university": "明治大学",
+      "name": "知能ロボットシステム研究室",
+      "url": "http://www.isc.meiji.ac.jp/~tmatsuda/"
+    },
+    {
+      "id": "lab-226",
+      "no": "226",
+      "university": "明治大学",
+      "name": "物性理論研究室",
+      "url": "http://www.isc.meiji.ac.jp/~hk/"
+    },
+    {
+      "id": "lab-228",
+      "no": "228",
+      "university": "明治大学",
+      "name": "レーザー物理研究室",
+      "url": "http://www.isc.meiji.ac.jp/~hoda/index.htm"
+    },
+    {
+      "id": "lab-229",
+      "no": "229",
+      "university": "明治大学",
+      "name": "原子・光科学研究室",
+      "url": "http://www.isc.meiji.ac.jp/~kanamoto/"
+    },
+    {
+      "id": "lab-233",
+      "no": "233",
+      "university": "明治大学",
+      "name": "地球・惑星大気物理研究室",
+      "url": "http://www.isc.meiji.ac.jp/~suzuhide/index.html"
+    },
+    {
+      "id": "lab-241",
+      "no": "241",
+      "university": "東京農工大学",
+      "name": "久保研究室",
+      "url": "https://kubolaboratory.com/"
+    },
+    {
+      "id": "lab-243",
+      "no": "243",
+      "university": "東京農工大学",
+      "name": "張研究室",
+      "url": "https://www.eecs.tuat.ac.jp/laboratory/zhang/"
+    },
+    {
+      "id": "lab-245",
+      "no": "245",
+      "university": "東京農工大学",
+      "name": "宮代研究室",
+      "url": "https://www.eecs.tuat.ac.jp/laboratory/miya/"
+    },
+    {
+      "id": "lab-248",
+      "no": "248",
+      "university": "横浜国立大学",
+      "name": "前川研究室",
+      "url": "http://maekawalab-ynu.com/"
+    },
+    {
+      "id": "lab-252",
+      "no": "252",
+      "university": "上智大学",
+      "name": "張研究室",
+      "url": "https://eas-sophia.jp/"
+    },
+    {
+      "id": "lab-256",
+      "no": "256",
+      "university": "東京都市大学",
+      "name": "機械力学研究室",
+      "url": "https://www.me.tcu.ac.jp/labs/mdl/"
+    },
+    {
+      "id": "lab-257",
+      "no": "257",
+      "university": "東京都市大学",
+      "name": "材料力学研究室",
+      "url": "https://www.me.tcu.ac.jp/labs/sml/"
+    },
+    {
+      "id": "lab-258",
+      "no": "258",
+      "university": "東京都市大学",
+      "name": "流体工学研究室",
+      "url": "https://www.me.tcu.ac.jp/labs/fel/"
+    },
+    {
+      "id": "lab-259",
+      "no": "259",
+      "university": "東京都市大学",
+      "name": "機械材料研究室",
+      "url": "https://www.me.tcu.ac.jp/labs/eml/"
+    },
+    {
+      "id": "lab-280",
+      "no": "280",
+      "university": "立命館大学",
+      "name": "認知工学研究室",
+      "url": "https://ce-lab.org/"
+    },
+    {
+      "id": "lab-284",
+      "no": "284",
+      "university": "立命館大学",
+      "name": "対話デザイン研究室",
+      "url": "https://www.nisihara-lab.org/"
+    },
+    {
+      "id": "lab-285",
+      "no": "285",
+      "university": "立命館大学",
+      "name": "コラボレーションデザイン研究室",
+      "url": "http://collabodesign.org/"
+    },
+    {
+      "id": "lab-286",
+      "no": "286",
+      "university": "立命館大学",
+      "name": "活動情報工学研究室",
+      "url": "https://www.aie-ritsumei.jp/"
+    },
+    {
+      "id": "lab-287",
+      "no": "287",
+      "university": "立命館大学",
+      "name": "社会知能研究室",
+      "url": "https://www.si-lab.org/index-ja.html"
+    },
+    {
+      "id": "lab-291",
+      "no": "291",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "コンピューティング・アーキテクチャ研究室",
+      "url": "https://isw3.naist.jp/Research/cs-arch-ja.html"
+    },
+    {
+      "id": "lab-292",
+      "no": "292",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "ディペンダブルシステム学研究室",
+      "url": "https://isw3.naist.jp/Research/cs-ds-ja.html"
+    },
+    {
+      "id": "lab-293",
+      "no": "293",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "ユビキタスコンピューティングシステム研究室",
+      "url": "https://isw3.naist.jp/Research/cs-ubi-ja.html"
+    },
+    {
+      "id": "lab-294",
+      "no": "294",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "大規模システム管理研究室",
+      "url": "https://isw3.naist.jp/Research/ai-lsm-ja.html"
+    },
+    {
+      "id": "lab-296",
+      "no": "296",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "ソフトウェア設計学研究室",
+      "url": "https://isw3.naist.jp/Research/cs-sd-ja.html"
+    },
+    {
+      "id": "lab-297",
+      "no": "297",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "サイバーレジリエンス構成学研究室",
+      "url": "https://isw3.naist.jp/Research/cs-ip-ja.html"
+    },
+    {
+      "id": "lab-298",
+      "no": "298",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "情報セキュリティ工学研究室",
+      "url": "https://isw3.naist.jp/Research/cs-ise-ja.html"
+    },
+    {
+      "id": "lab-301",
+      "no": "301",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "情報基盤システム学研究室（協力）",
+      "url": "https://isw3.naist.jp/Research/cs-inet-ja.html"
+    },
+    {
+      "id": "lab-303",
+      "no": "303",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "自然言語処理学研究室",
+      "url": "https://isw3.naist.jp/Research/mi-nlp-ja.html"
+    },
+    {
+      "id": "lab-304",
+      "no": "304",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "ヒューマンAIインタラクション研究室",
+      "url": "https://isw3.naist.jp/Research/mi-hai-ja.html"
+    },
+    {
+      "id": "lab-305",
+      "no": "305",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "ソーシャル・コンピューティング研究室",
+      "url": "https://isw3.naist.jp/Research/mi-sociocom-ja.html"
+    },
+    {
+      "id": "lab-306",
+      "no": "306",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "インタラクティブメディア設計学研究室",
+      "url": "https://isw3.naist.jp/Research/mi-imd-ja.html"
+    },
+    {
+      "id": "lab-307",
+      "no": "307",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "光メディアインタフェース研究室",
+      "url": "https://isw3.naist.jp/Research/mi-omi-ja.html"
+    },
+    {
+      "id": "lab-308",
+      "no": "308",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "サイバネティクス・リアリティ工学研究室",
+      "url": "https://isw3.naist.jp/Research/mi-care-ja.html"
+    },
+    {
+      "id": "lab-309",
+      "no": "309",
+      "university": "奈良先端科学技術大学院大学（NAIST）",
+      "name": "ヒューマンロボティクス研究室",
+      "url": "https://isw3.naist.jp/Research/ai-huro-ja.html"
+    },
+    {
+      "id": "lab-321",
+      "no": "321",
+      "university": "名古屋工業大学",
+      "name": "王研究室",
+      "url": "http://wlab.web.nitech.ac.jp/top.htm"
+    },
+    {
+      "id": "lab-322",
+      "no": "322",
+      "university": "名古屋工業大学",
+      "name": "小坂研究室",
+      "url": "http://kosaka-lab.web.nitech.ac.jp/"
+    },
+    {
+      "id": "lab-327",
+      "no": "327",
+      "university": "名古屋工業大学",
+      "name": "安井研究室",
+      "url": "http://yasui-lab.web.nitech.ac.jp/"
+    },
+    {
+      "id": "lab-329",
+      "no": "329",
+      "university": "名古屋工業大学",
+      "name": "加藤研究室",
+      "url": "http://ik-lab.web.nitech.ac.jp/mkato/"
+    },
+    {
+      "id": "lab-331",
+      "no": "331",
+      "university": "名古屋工業大学",
+      "name": "岸研究室",
+      "url": "https://s-lab.web.nitech.ac.jp/"
+    },
+    {
+      "id": "lab-345",
+      "no": "345",
+      "university": "九州工業大学",
+      "name": "光来研究室",
+      "url": "http://www.ksl.ci.kyutech.ac.jp/index-j.html"
+    },
+    {
+      "id": "lab-354",
+      "no": "354",
+      "university": "九州工業大学",
+      "name": "川原研究室",
+      "url": "http://nile.csn.kyutech.ac.jp/"
+    },
+    {
+      "id": "lab-355",
+      "no": "355",
+      "university": "九州工業大学",
+      "name": "柴田研究室",
+      "url": "https://nmlab.csn.kyutech.ac.jp/"
+    },
+    {
+      "id": "lab-356",
+      "no": "356",
+      "university": "九州工業大学",
+      "name": "田上研究室",
+      "url": "https://sites.google.com/site/tagami77/"
+    },
+    {
+      "id": "lab-359",
+      "no": "359",
+      "university": "九州工業大学",
+      "name": "大西研究室",
+      "url": "https://evocomp.csn.kyutech.ac.jp"
+    },
+    {
+      "id": "lab-360",
+      "no": "360",
+      "university": "九州工業大学",
+      "name": "温研究室",
+      "url": "https://www.vlab.cse.kyutech.ac.jp/~wen/index.htm"
+    },
+    {
+      "id": "lab-361",
+      "no": "361",
+      "university": "九州工業大学",
+      "name": "ケッペン研究室",
+      "url": "http://mkoeppen.science-city.org/"
+    },
+    {
+      "id": "lab-362",
+      "no": "362",
+      "university": "九州工業大学",
+      "name": "藤原研究室",
+      "url": "https://sites.google.com/view/pd-algolab"
+    },
+    {
+      "id": "lab-363",
+      "no": "363",
+      "university": "九州工業大学",
+      "name": "李研究室",
+      "url": "https://leelab.csn.kyutech.ac.jp/"
+    },
+    {
+      "id": "lab-364",
+      "no": "364",
+      "university": "九州工業大学",
+      "name": "宮瀬研究室",
+      "url": "http://aries3a.cse.kyutech.ac.jp/"
+    },
+    {
+      "id": "lab-366",
+      "no": "366",
+      "university": "九州工業大学",
+      "name": "小西研究室",
+      "url": "https://leo10.cse.kyutech.ac.jp/"
+    },
+    {
+      "id": "lab-408",
+      "no": "408",
+      "university": "新潟大学",
+      "name": "生物有機化学研究室",
+      "url": "http://www.agr.niigata-u.ac.jp/~satot/"
+    },
+    {
+      "id": "lab-411",
+      "no": "411",
+      "university": "岐阜大学",
+      "name": "園芸植物栽培学研究室",
+      "url": "http://www1.gifu-u.ac.jp/~ymatsu/"
+    },
+    {
+      "id": "lab-413",
+      "no": "413",
+      "university": "岐阜大学",
+      "name": "植物遺伝育種学研究室",
+      "url": "http://www1.gifu-u.ac.jp/~kyamane/"
+    },
+    {
+      "id": "lab-421",
+      "no": "421",
+      "university": "岐阜大学",
+      "name": "植物病原ゲノム学研究室（連携）",
+      "url": "http://www1.gifu-u.ac.jp/~lsrc/dgr/suga-hp/MGRC_SUGA.htm"
+    },
+    {
+      "id": "lab-430",
+      "no": "430",
+      "university": "静岡大学",
+      "name": "高瀬研究室",
+      "url": "http://kjtakase.la.coocan.jp/"
+    },
+    {
+      "id": "lab-451",
+      "no": "451",
+      "university": "長崎大学",
+      "name": "進化・行動生態学研究室（竹垣研）",
+      "url": "https://takegaki3.wixsite.com/takegakilab"
+    },
+    {
+      "id": "lab-452",
+      "no": "452",
+      "university": "長崎大学",
+      "name": "海棲哺乳類研究室",
+      "url": "http://www7b.biglobe.ne.jp/~masaoamano/"
+    },
+    {
+      "id": "lab-477",
+      "no": "477",
+      "university": "東京電機大学",
+      "name": "学習システム研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/adachi/adachi.html"
+    },
+    {
+      "id": "lab-478",
+      "no": "478",
+      "university": "東京電機大学",
+      "name": "医用電子回路研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/ueno/ueno.html"
+    },
+    {
+      "id": "lab-479",
+      "no": "479",
+      "university": "東京電機大学",
+      "name": "エネルギー環境システム研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/kato/kato.html"
+    },
+    {
+      "id": "lab-480",
+      "no": "480",
+      "university": "東京電機大学",
+      "name": "プラズマプロセス研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/kanasugi/kanasugi.html"
+    },
+    {
+      "id": "lab-481",
+      "no": "481",
+      "university": "東京電機大学",
+      "name": "ハイパワー工学研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/koshizuka/koshizuka.html"
+    },
+    {
+      "id": "lab-482",
+      "no": "482",
+      "university": "東京電機大学",
+      "name": "ナノエネルギー研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/sato/sato.html"
+    },
+    {
+      "id": "lab-483",
+      "no": "483",
+      "university": "東京電機大学",
+      "name": "パワーエレクトロニクス研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/d_sato/d_sato.html"
+    },
+    {
+      "id": "lab-485",
+      "no": "485",
+      "university": "東京電機大学",
+      "name": "ディジタル信号処理研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/suyama/suyama.html"
+    },
+    {
+      "id": "lab-486",
+      "no": "486",
+      "university": "東京電機大学",
+      "name": "知能システム研究室",
+      "url": "http://www.eee.dendai.ac.jp/eee/labo/hidaka/hidaka.html"
+    }
+  ]
+}
