@@ -67,11 +67,12 @@ export function assessLabEvidence(lab: Lab): LabEvidenceAssessment {
   const hasDirectQuestions =
     hasHomepage
     && Boolean(lab.researchQuestions?.some((question) => question.trim().length > 0));
-  const canGenerateGuide = hasTrustedTopics;
+  const canGenerateGuide = hasTrustedTopics && lab.allow_ai_guide !== false;
   const canShowQuestions = hasDirectQuestions || canGenerateGuide;
   const canMapResources = hasTrustedTopics;
   const canSearchPapers =
     hasHomepage
+    && lab.allow_paper_search !== false
     && lab.pi.name.replace(/\s/g, "").length >= 2
     && lab.university.name.trim().length >= 2;
 

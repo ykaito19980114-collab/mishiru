@@ -12,6 +12,7 @@ import { cleanDisplayLabel, uniqueCleanLabels } from "../shared/text";
 import { getSessionSection, hasRemoteSessionState, setSessionSection } from "./session-state";
 import { serverSupabase } from "./supabase";
 import { applyLabHomepageOverrides, isPublicLab, type LabHomepageOverride } from "./lab-publication";
+import { applyLabExternalProfileOverrides, type LabExternalProfileOverride } from "./lab-external-profiles";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 const RUNTIME_DIR = path.join(DATA_DIR, "runtime");
@@ -38,9 +39,16 @@ const labHomepageOverrides = readJson<LabHomepageOverride[]>(
   path.join(DATA_DIR, "lab-homepage-overrides.json"),
   [],
 );
+const labExternalProfileOverrides = readJson<LabExternalProfileOverride[]>(
+  path.join(DATA_DIR, "lab-external-profile-overrides.json"),
+  [],
+);
 const suppressedLabIds = new Set(labSuppressions.ids);
 const suppressedSourceNos = new Set(labSuppressions.sourceNos);
-const labs: Lab[] = applyLabHomepageOverrides(readJson<Lab[]>(MASTER_LABS_FILE, []), labHomepageOverrides).filter((lab) => {
+const labs: Lab[] = applyLabExternalProfileOverrides(
+  applyLabHomepageOverrides(readJson<Lab[]>(MASTER_LABS_FILE, []), labHomepageOverrides),
+  labExternalProfileOverrides,
+).filter((lab) => {
   const sourceNo = String((lab as Lab & { sourceNo?: string }).sourceNo || lab.id.replace(/^(?:source-)?lab-0*/, ""));
   return !suppressedLabIds.has(lab.id) && !suppressedSourceNos.has(sourceNo);
 });
