@@ -286,6 +286,18 @@ create table if not exists mishiru_api_cache (
   expires_at  timestamptz
 );
 
+-- AIトークン使用量の日次集計（ADR-010。管理画面の今日/今月/累計。service_roleのみ）
+create table if not exists mishiru_ai_usage_daily (
+  day              date primary key,
+  input_tokens     bigint not null default 0,
+  output_tokens    bigint not null default 0,
+  reasoning_tokens bigint not null default 0,
+  cached_tokens    bigint not null default 0,
+  calls            integer not null default 0,
+  failures         integer not null default 0,
+  updated_at       timestamptz default now()
+);
+
 -- 監査ログ（法令対応記録）
 create table if not exists mishiru_audit_logs (
   id          bigserial primary key,
@@ -318,6 +330,7 @@ alter table mishiru_session_state enable row level security;
 alter table mishiru_sources enable row level security;
 alter table mishiru_api_cache enable row level security;
 alter table mishiru_audit_logs enable row level security;
+alter table mishiru_ai_usage_daily enable row level security;
 alter table mishiru_lab_publication_audits enable row level security;
 
 -- 公開読み取り：掲載停止対象を除いた published/claimed。

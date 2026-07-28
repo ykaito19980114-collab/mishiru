@@ -1,15 +1,16 @@
 import { useEffect, useMemo, useRef, useState, type PointerEvent } from "react";
 import { Helmet } from "react-helmet-async";
-import { Link, useParams } from "react-router-dom";
+import { Link, useLocation, useParams } from "react-router-dom";
 import { AlertTriangle, ArrowLeft, BookCopy, Check, ChevronDown, Copy, Download, Eraser, FileText, Highlighter, ImagePlus, LoaderCircle, PenTool, Plus, Presentation, Redo2, RotateCcw, Save, Search, Sparkles, Trash2, Undo2, X } from "lucide-react";
 import type { ConsultationAsset, ConsultationAssetFormat, ConsultationDocumentDraft, ConsultationDocumentOptions, ConsultationMemo, NormalizedResearchMaterial, ProjectNextAction, ResearchOutline, ResearchProject, ResearchProjectCover, ResearchProjectVersion } from "../../shared/research-project";
 import { api } from "../lib/api";
 import { loadQuestionMaterials, materialTypeLabel } from "../lib/questionMaterials";
-import { Button, Card, Chip, ErrorState, Skeleton, TrustNote } from "../components/ui";
+import { Button, Card, Chip, ErrorState, Skeleton, Toast, TrustNote, useToast } from "../components/ui";
+import { LiteraturePanel } from "../components/LiteraturePanel";
 import { ProjectCover } from "../components/ProjectCover";
 
-type Tab = "outline"|"questions"|"assets"|"memos"|"materials"|"versions"|"cover";
-const TABS: [Tab,string][] = [["outline","研究プラン"],["questions","問い案"],["assets","相談資料"],["memos","相談メモ"],["materials","関連素材"],["versions","変更履歴"],["cover","表紙"]];
+type Tab = "outline"|"literature"|"questions"|"assets"|"memos"|"materials"|"versions"|"cover";
+const TABS: [Tab,string][] = [["outline","研究プラン"],["literature","先行研究"],["questions","問い案"],["assets","相談資料"],["memos","相談メモ"],["materials","関連素材"],["versions","変更履歴"],["cover","表紙"]];
 const EMPTY_MEMO = { versionId:"", consultationDate:new Date().toISOString().slice(0,10), person:"", affiliation:"", comments:"", critiques:"", references:"", rqRevision:"", targetRevision:"", methodRevision:"", nextActions:"", reflection:"", referenceUrl:"" };
 
 export default function ProjectDetail() {
@@ -21,6 +22,32 @@ export default function ProjectDetail() {
   const [state,setState] = useState<"loading"|"error"|"ok">("loading");
   const load = () => { setState("loading"); Promise.all([api.getProject(id),api.getProjectMemos(id),loadQuestionMaterials()]).then(([p,m,all]) => { setProject(p.project); setMemos(m.memos); setMaterials(all); setState("ok"); }).catch(() => setState("error")); };
   useEffect(load,[id]);
+
+  // 到着トースト（問いを選んだ直後の自動作成。ADR-010 J4）
+  const location = useLocation();
+  const { toast, showToast } = useToast();
+  const welcomed = useRef(false);
+  useEffect(() => {
+    if (state === "ok" && !welcomed.current && (location.state as { justCreated?: boolean } | null)?.justCreated) {
+      welcomed.current = true;
+      showToast("研究プランを作成しました。タイトルはあとから変えられます");
+      window.history.replaceState({}, "");
+    }
+  }, [state]);
+
+  // 文献の後追い充填: literatureStatusがpendingの間、唯一のLLM処理を背景で実行する。
+  // サーバー側はprojectId単位のsingle-flightなので、二重マウント（StrictMode）でも生成は1回
+  const [filling, setFilling] = useState(false);
+  const fillLiterature = () => {
+    if (!project || filling) return;
+    setFilling(true);
+    api.fillPlanLiterature(project.id)
+      .then(({ project: next }) => { if (next) setProject(next); })
+      .catch(() => { /* 失敗してもプランはそのまま使える。先行研究タブに再試行がある */ })
+      .finally(() => setFilling(false));
+  };
+  const literatureStatus = project?.step2Response?.literatureStatus;
+  useEffect(() => { if (state === "ok" && literatureStatus === "pending") fillLiterature(); }, [state, literatureStatus]);
   if (state === "loading") return <div className="max-w-6xl mx-auto px-4 py-8"><Skeleton className="h-72"/><Skeleton className="h-96 mt-4"/></div>;
   if (state === "error" || !project) return <div className="max-w-4xl mx-auto px-4 py-8"><ErrorState onRetry={load}/></div>;
   return <div className="project-detail-page max-w-6xl mx-auto px-4 md:px-6 py-5 md:py-8">
@@ -29,12 +56,14 @@ export default function ProjectDetail() {
     <header className="project-detail-header"><ProjectCover project={project} compact/><div><div className="project-title-row"><span className={`status-dot ${project.status}`}>{project.status === "draft" ? "作成中" : project.status === "consultation" ? "相談用" : "保留"}</span><span>案{project.versions.find((v) => v.versionId === project.currentVersionId)?.versionNumber || 1}</span></div><h1>{project.displayTitle}</h1><p>{project.subtitle}</p><small>更新 {new Date(project.updatedAt).toLocaleString("ja-JP")}</small></div><label className="header-status">いまの状態<select value={project.status} onChange={async(e) => { const {project:next}=await api.updateProject(id,{status:e.target.value as ResearchProject['status']}); setProject(next); }}><option value="draft">作成中</option><option value="consultation">相談用</option><option value="on_hold">保留</option></select></label></header>
     <nav className="project-tabs">{TABS.map(([key,label]) => <button key={key} className={tab===key?"active":""} onClick={() => setTab(key)}>{label}{key==="memos" && memos.length>0 && <b>{memos.length}</b>}</button>)}</nav>
     {tab === "outline" && <OutlineEditor project={project} onProject={setProject}/>} 
+    {tab === "literature" && <LiteraturePanel project={project} filling={filling || literatureStatus === "pending"} onRetry={fillLiterature}/>}
     {tab === "questions" && <QuestionCandidates project={project}/>} 
     {tab === "assets" && <ConsultationAssets project={project} onProject={setProject}/>}
     {tab === "memos" && <MemoPanel project={project} memos={memos} onMemos={setMemos}/>} 
     {tab === "materials" && <MaterialsPanel project={project} materials={materials} onProject={setProject}/>} 
     {tab === "versions" && <VersionsPanel project={project} onProject={setProject}/>} 
     {tab === "cover" && <CoverEditor project={project} onProject={setProject}/>} 
+    <Toast message={toast.msg} show={toast.show}/>
   </div>;
 }
 

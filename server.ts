@@ -5,7 +5,8 @@ import path from "path";
 import { createServer as createViteServer } from "vite";
 import dotenv from "dotenv";
 import { store } from "./server/store";
-import { aiUsageSnapshot, resetAiUsage } from "./server/ai-telemetry";
+import { aiUsageSnapshot, aiUsageTotals, resetAiUsage } from "./server/ai-telemetry";
+import { readAiCache, withSingleFlight, writeAiCache } from "./server/ai-cache";
 import { buildProfile, matchLabs, labsForCard, nearbyCards, collectProfileExtras, PROFILE_THRESHOLD } from "./server/matching";
 import { nextCards } from "./server/cards-service";
 import { generateReport } from "./server/report";
@@ -15,8 +16,8 @@ import { getDeckCards, buildCardsFor, labCardCacheStats, DECK_BATCH } from "./se
 import type { LabActionRecord } from "./shared/types";
 import { HOOK_GENRES, RESEARCH_AREAS } from "./shared/taxonomy";
 import { fieldLabel } from "./shared/fields";
-import type { ConsultationAssetFormat, ConsultationDocumentDraft, NormalizedResearchMaterial, QuestionFreeInput, ResearchProject, RQCandidate, Step1Response } from "./shared/research-project";
-import { adjustResearchText, generateStep1, generateStep2, hasQuestionCraftEvidence, normalizeResearchMaterials } from "./server/question-craft";
+import type { ConsultationAssetFormat, ConsultationDocumentDraft, NormalizedResearchMaterial, QuestionFreeInput, ResearchProject, RQCandidate, Step1Response, Step2Response } from "./shared/research-project";
+import { adjustResearchText, generateBrief, generateCandidatesFromBrief, generateStep1, generateStep2, generateStep2Literature, generateStep2Outline, hasQuestionCraftEvidence, normalizeResearchMaterials, type FocusOverride } from "./server/question-craft";
 import { ACTIVE_DATASET, ConsultationMemoRepository, ResearchProjectRepository, ResearchProjectVersionRepository } from "./server/research-project-repository";
 import { ResearchProjectService } from "./server/research-project-service";
 import { buildConsultationDraft, ConsultationAssetRepository, ConsultationExportService, DEFAULT_DOCUMENT_OPTIONS } from "./server/consultation-export";
@@ -181,6 +182,112 @@ export async function createApp() {
     const sessionId = String(req.query.sessionId || ""); if (!sessionId) return bad(res, "sessionId が必要です");
     res.json({ materials: collectResearchMaterials(sessionId) });
   });
+  // ============ 問いをつくる ジャーニーAPI（ADR-010） ============
+  // actionId鍵のレスポンスキャッシュ（24h・成功時のみ）。同一actionIdの再送はLLMを再実行せず同じ応答を返す
+  // = 二重送信・リロード復帰の安全化と、1消費での再生成悪用の封鎖を兼ねる
+  const QC_SCOPE = "qc-action";
+  const QC_TTL_MS = 24 * 60 * 60 * 1000;
+  const qcActionId = (req: express.Request) => {
+    const value = String(req.body?.actionId || req.get("x-mishiru-action-id") || "").trim();
+    return /^[A-Za-z0-9_-]{8,100}$/.test(value) ? value : "";
+  };
+  // L1（プロセス内）応答キャッシュ。Supabase未設定のローカル開発でも再送を冪等にし、
+  // 本番では即時の二重クリックにDB往復なしで応える（L2はai-cacheが担う）
+  const qcLocal = new Map<string, { payload: object; expires: number }>();
+  const qcRead = async (key: string): Promise<object | null> => {
+    const local = qcLocal.get(key);
+    if (local && local.expires > Date.now()) return local.payload;
+    if (local) qcLocal.delete(key);
+    return readAiCache<object>(QC_SCOPE, key, 1);
+  };
+  const qcWrite = (key: string, payload: object) => {
+    if (qcLocal.size >= 500) { const first = qcLocal.keys().next().value as string | undefined; if (first) qcLocal.delete(first); }
+    qcLocal.set(key, { payload, expires: Date.now() + QC_TTL_MS });
+    writeAiCache(QC_SCOPE, key, 1, payload, QC_TTL_MS);
+  };
+
+  app.post("/api/question-craft/brief", aiRateLimit, requireValueAction("question_step1"), async (req, res) => {
+    const sessionId = String(req.body?.sessionId || ""); const sourceMode = req.body?.sourceMode === "saved_items" ? "saved_items" : "free_input";
+    const freeInput = normalizedFreeInput(req.body?.freeInput); const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
+    if (!sessionId) return bad(res, "sessionId が必要です");
+    if (!hasQuestionCraftEvidence(sourceMode, freeInput, materials)) return res.status(422).json({ error: { code: "INSUFFICIENT_MATERIAL", message: "この素材だけでは、研究の問いを作るための情報が不足しています。気になった理由や、扱いたい違和感を追加してください。" } });
+    const actionId = qcActionId(req);
+    try {
+      if (actionId) { const cached = await qcRead(`brief:${actionId}`); if (cached) return res.json(cached); }
+      const { brief, generatedBy } = await withSingleFlight(`qc-brief:${actionId || sessionId}`, () => generateBrief(freeInput, materials));
+      const payload = { brief, briefGeneratedBy: generatedBy, normalizedMaterials: materials, aiEnabled: aiEnabled() };
+      if (actionId) qcWrite(`brief:${actionId}`, payload);
+      res.json(payload);
+    } catch (error) { console.error("[question-craft brief]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "関心の整理に失敗しました。入力内容は残っています。もう一度お試しください。" } }); }
+  });
+
+  app.post("/api/question-craft/candidates", aiRateLimit, requireValueAction("question_step1"), async (req, res) => {
+    const sessionId = String(req.body?.sessionId || ""); const freeInput = normalizedFreeInput(req.body?.freeInput);
+    const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
+    const brief = req.body?.brief ?? null;
+    const focusRaw = req.body?.focusOverride;
+    const focusOverride: FocusOverride | null = focusRaw && typeof focusRaw.question === "string" && focusRaw.question.trim()
+      ? { vertical_axis: String(focusRaw.vertical_axis || ""), question: String(focusRaw.question) } : null;
+    if (!sessionId) return bad(res, "sessionId が必要です");
+    const actionId = qcActionId(req);
+    try {
+      if (actionId) { const cached = await qcRead(`cand:${actionId}`); if (cached) return res.json(cached); }
+      const step1 = await withSingleFlight(`qc-cand:${actionId || sessionId}`, () => generateCandidatesFromBrief(freeInput, materials, brief, focusOverride));
+      const payload = { step1, aiEnabled: aiEnabled() };
+      if (actionId && step1.generatedBy === "ai") qcWrite(`cand:${actionId}`, payload);
+      res.json(payload);
+    } catch (error) { console.error("[question-craft candidates]", error); res.status(500).json({ error: { code: "AI_FAILED", message: "問いの候補を生成できませんでした。関心の整理は残っています。" } }); }
+  });
+
+  // 問いを選んだ瞬間にプランが存在する（LLM無し・即時）。actionId冪等なので二重クリックでも1プロジェクト
+  app.post("/api/question-craft/outline", requireValueAction("question_step2"), async (req, res) => {
+    const sessionId = String(req.body?.sessionId || ""); const freeInput = normalizedFreeInput(req.body?.freeInput);
+    const selectedRq = req.body?.selectedRq as RQCandidate; const step1 = req.body?.step1 as Step1Response;
+    const sourceMode = req.body?.sourceMode === "saved_items" ? "saved_items" : "free_input";
+    const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
+    if (!sessionId || !selectedRq || !step1) return bad(res, "sessionId, selectedRq, step1 が必要です");
+    const actionId = qcActionId(req);
+    try {
+      if (actionId) { const cached = await qcRead(`outline:${actionId}`); if (cached) return res.json(cached); }
+      // 並行二重POST（応答キャッシュは成功後にしか効かない）もsingle-flightで1プロジェクトに束ねる
+      const payload = await withSingleFlight(`qc-outline:${actionId || sessionId}`, async () => {
+        if (actionId) { const again = await qcRead(`outline:${actionId}`); if (again) return again as { project: ResearchProject | null; aiEnabled: boolean }; }
+        const step2 = generateStep2Outline(freeInput, selectedRq, step1);
+        const title = boundedText(selectedRq.rq_title || selectedRq.public_rq, 160) || "わたしの研究プラン";
+        const project = researchProjectService.create({
+          sessionId, displayTitle: title, subtitle: "問いから育てる研究前夜", status: "draft",
+          sourceMode, freeInput, materials, step1Response: step1, selectedRq, step2Response: step2,
+        });
+        if (req.body?.interestAnalysisId) projectRepository.update(sessionId, project.id, { interestAnalysisId: String(req.body.interestAnalysisId) });
+        const built = { project: projectRepository.get(sessionId, project.id), aiEnabled: aiEnabled() };
+        if (actionId) qcWrite(`outline:${actionId}`, built);
+        return built;
+      });
+      res.status(201).json(payload);
+    } catch (error) { console.error("[question-craft outline]", error); res.status(500).json({ error: { code: "SAVE_FAILED", message: "研究プランを作成できませんでした。もう一度お試しください。" } }); }
+  });
+
+  // 文献充填（唯一のLLM）。無課金だが、pending/fallbackのプロジェクトにしか実行できず、
+  // projectIdでsingle-flight＝実質プロジェクトあたり1回に有界（ADR-010 J5）
+  app.post("/api/question-craft/literature", aiRateLimit, async (req, res) => {
+    const sessionId = String(req.body?.sessionId || ""); const projectId = String(req.body?.projectId || "");
+    if (!sessionId || !projectId) return bad(res, "sessionId と projectId が必要です");
+    const project = projectRepository.get(sessionId, projectId);
+    if (!project) return res.status(404).json({ error: { code: "NOT_FOUND", message: "研究プロジェクトが見つかりません" } });
+    const current = project.step2Response as Step2Response | undefined;
+    if (!current || !project.selectedRq || !project.step1Response) return bad(res, "このプロジェクトには文献を充填できません");
+    if (current.literatureStatus === "verified") return res.json({ step2: current, project });
+    try {
+      const enriched = await withSingleFlight(`qc-lit:${projectId}`, () =>
+        generateStep2Literature(current, project.freeInput || normalizedFreeInput(null), project.selectedRq as RQCandidate, project.step1Response as Step1Response));
+      const updated = researchProjectService.update(sessionId, projectId, { step2Response: enriched });
+      res.json({ step2: enriched, project: updated || project });
+    } catch (error) {
+      console.error("[question-craft literature]", error);
+      res.status(500).json({ error: { code: "AI_FAILED", message: "先行研究の確認に失敗しました。プランはそのまま使えます。あとで、もう一度お試しください。" } });
+    }
+  });
+
   app.post("/api/question-craft/step1", aiRateLimit, requireValueAction("question_step1"), async (req, res) => {
     const sessionId = String(req.body?.sessionId || ""); const sourceMode = req.body?.sourceMode === "saved_items" ? "saved_items" : "free_input";
     const freeInput = normalizedFreeInput(req.body?.freeInput); const materials = normalizeResearchMaterials(Array.isArray(req.body?.materials) ? req.body.materials : []);
@@ -918,7 +1025,7 @@ export async function createApp() {
 
   // ============ 管理API（要admin, §7） ============
   // AIトークン実測（機能別）。reasoningShareが高い＝推論に払っている、cacheHitShareが低い＝プロンプトキャッシュ未活用
-  app.get("/api/admin/ai-usage", requireAdmin, (_req, res) => res.json(aiUsageSnapshot()));
+  app.get("/api/admin/ai-usage", requireAdmin, async (_req, res) => res.json({ ...aiUsageSnapshot(), totals3: await aiUsageTotals() }));
   app.post("/api/admin/ai-usage/reset", requireAdmin, (_req, res) => { resetAiUsage(); res.json({ ok: true }); });
 
   app.get("/api/admin/kpi", requireAdmin, (_req, res) => {

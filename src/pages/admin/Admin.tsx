@@ -22,6 +22,12 @@ const TABS = [
   { id: "cards", label: "カード成績", icon: LayoutGrid },
 ];
 
+function fmtTokens(value: number) {
+  if (value >= 1_000_000) return `${(value / 1_000_000).toFixed(value >= 10_000_000 ? 0 : 1)}M`;
+  if (value >= 1_000) return `${(value / 1_000).toFixed(value >= 100_000 ? 0 : 1)}k`;
+  return String(value);
+}
+
 export default function Admin() {
   const [tab, setTab] = useState("kpi");
   const [authed, setAuthed] = useState(false);
@@ -30,6 +36,9 @@ export default function Admin() {
   const [err, setErr] = useState("");
 
   useEffect(() => { adminApi.health().then(setHealth).catch(() => {}); }, []);
+  // AIトークン使用量の常時表示（ADR-010 J7。運営コスト情報のため管理画面のみ）
+  const [aiTotals, setAiTotals] = useState<{ persisted: boolean; today: { inputTokens: number; outputTokens: number }; thisMonth: { inputTokens: number; outputTokens: number }; cumulative: { inputTokens: number; outputTokens: number; since: string | null } } | null>(null);
+  useEffect(() => { if (!authed) return; adminApi.aiUsage().then((d) => setAiTotals(d?.totals3 || null)).catch(() => setAiTotals(null)); }, [authed]);
 
   const tryAuth = useCallback(async () => {
     setErr("");
@@ -78,7 +87,16 @@ export default function Admin() {
             <span className="font-bold">MISHIRU 運営管理</span>
             {health && !health.adminProtected && <span className="text-[11px] bg-[var(--c-accent-yellow)] text-[var(--c-accent-yellow-ink)] px-2 py-0.5 rounded-full">開発モード（ADMIN_TOKEN未設定）</span>}
           </div>
-          <a href="/discover" className="text-sm text-[var(--c-ink-2)] flex items-center gap-1"><LogOut className="w-4 h-4" />サイトへ</a>
+          <div className="flex items-center gap-4">
+            {aiTotals && <span className="ai-usage-strip" title={aiTotals.persisted ? `計測開始 ${aiTotals.cumulative.since || "2026-07-26"} 以降の入出力トークン合計` : "日次テーブル未適用のため、このインスタンス内の集計のみ"}>
+              AIトークン
+              <b>今日 {fmtTokens(aiTotals.today.inputTokens + aiTotals.today.outputTokens)}</b>
+              <b>今月 {fmtTokens(aiTotals.thisMonth.inputTokens + aiTotals.thisMonth.outputTokens)}</b>
+              <b>累計 {fmtTokens(aiTotals.cumulative.inputTokens + aiTotals.cumulative.outputTokens)}</b>
+              {!aiTotals.persisted && <em>一時値</em>}
+            </span>}
+            <a href="/discover" className="text-sm text-[var(--c-ink-2)] flex items-center gap-1"><LogOut className="w-4 h-4" />サイトへ</a>
+          </div>
         </div>
         <div className="max-w-6xl mx-auto px-2 flex gap-1 overflow-x-auto scrollbar-thin">
           {TABS.map((t) => {

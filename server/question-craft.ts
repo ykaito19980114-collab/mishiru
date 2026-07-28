@@ -256,7 +256,7 @@ function materialTopics(input: QuestionFreeInput, materials: NormalizedResearchM
   return Array.from(new Set([...userWords, ...materialWords])).slice(0, 6);
 }
 
-interface ResearchBrief extends Pick<Step1Response, "source_synthesis" | "decomposition" | "research_map_position" | "domain_shifts"> {}
+type ResearchBrief = import("../shared/research-project").ResearchBrief;
 
 function fallbackBrief(input: QuestionFreeInput, materials: NormalizedResearchMaterial[]): ResearchBrief {
   const topics = materialTopics(input, materials);
@@ -471,7 +471,9 @@ function normalizeBrief(value: ResearchBrief, fallback: Step1Response): Research
   return { ...value, domain_shifts: shifts };
 }
 
-export async function generateStep1(input: QuestionFreeInput, materialsInput: NormalizedResearchMaterial[]) {
+// ジャーニー第1段（ADR-010）: 研究ブリーフだけを生成して返す。
+// UIはこの結果を「焦点カード」として先行表示し、ユーザーが読んでいる間に第2段（候補生成）が走る。
+export async function generateBrief(input: QuestionFreeInput, materialsInput: NormalizedResearchMaterial[]) {
   const materials = normalizeResearchMaterials(materialsInput);
   const fallback = buildQualityFallbackStep1(input, materials);
   const source = { freeInput: input, savedMaterials: materialPrompt(materials) };
@@ -484,8 +486,31 @@ export async function generateStep1(input: QuestionFreeInput, materialsInput: No
 素材: ${JSON.stringify(source)}`;
   const generatedBrief = await callAIJson<ResearchBrief>(briefPrompt, { temperature: 0.15, timeoutMs: 90000, maxOutputTokens: 8000, responseSchema: RESEARCH_BRIEF_SCHEMA, reasoningEffort: "low", feature: "qc:brief" });
   console.info(`[question-craft] brief=${validBrief(generatedBrief) ? "valid" : "fallback"} shifts=${generatedBrief?.domain_shifts?.length || 0}`);
-  const brief = validBrief(generatedBrief) ? normalizeBrief(generatedBrief, fallback) : fallback;
+  const generatedByAi = validBrief(generatedBrief);
+  const brief = generatedByAi ? normalizeBrief(generatedBrief, fallback) : fallback;
+  return { brief, generatedBy: generatedByAi ? ("ai" as const) : ("quality_fallback" as const) };
+}
+
+/** 焦点カードの「別の見方」チップから渡される、候補生成の方向指定（ADR-010 J2） */
+export interface FocusOverride { vertical_axis: string; question: string }
+
+// ジャーニー第2段: 検証済みbriefからAI選抜4類型の候補生成＋平易化リライトまで行い、完全なStep1Responseを返す。
+// briefはクライアント経由で往復するため、ここで再検証し、壊れていれば決定的フォールバックへ落とす。
+export async function generateCandidatesFromBrief(
+  input: QuestionFreeInput,
+  materialsInput: NormalizedResearchMaterial[],
+  briefInput: ResearchBrief | null | undefined,
+  focusOverride?: FocusOverride | null,
+) {
+  const materials = normalizeResearchMaterials(materialsInput);
+  const fallback = buildQualityFallbackStep1(input, materials);
+  // クライアント往復分の防御: 型検証＋サイズ上限（トークン爆弾と壊れたJSONを同じ経路で弾く）
+  const briefOk = briefInput && validBrief(briefInput as ResearchBrief) && JSON.stringify(briefInput).length <= 12000;
+  const brief = briefOk ? normalizeBrief(briefInput as ResearchBrief, fallback) : fallback;
   const briefFallbackCandidates = fallbackCandidates(brief);
+  const focusLine = focusOverride && focusOverride.question
+    ? `\n焦点の指定: ユーザーは研究マップの「${String(focusOverride.vertical_axis).slice(0, 24)}」方向（${String(focusOverride.question).slice(0, 160)}）へ寄せることを選びました。4類型の選定と各問いは、この方向の対象・現象を中心に構成してください。`
+    : "";
   // 12類型すべてを生成していたが、画面の初期表示は推奨3〜4件で、残りは折り畳みの中だった。
   // ここでモデル自身に「この研究ブリーフに最も合う4類型」を選ばせ、その4件だけ生成させる。
   // 残り8類型は決定的テンプレート（fallbackCandidates）がrepairCandidatesで自動的に埋めるため、
@@ -501,7 +526,7 @@ ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
 - type_name は必ず「R番号: 類型名」の形式で始める（選んだ類型が分かるようにするため）。
 - 出力する4件はすべて is_recommended=true。quality_scoreは上記条件への適合度0〜100。
 
-研究ブリーフ: ${JSON.stringify(brief)}`;
+研究ブリーフ: ${JSON.stringify(brief)}${focusLine}`;
   // 4件ぶんの上限。12件生成時の20000から引き下げる（実測の出力は12件で約6,800トークン）
   const generatedRqs = await callAIJson<{ output_type_proposals: RQCandidate[] }>(rqPrompt, { temperature: 0.15, timeoutMs: 120000, maxOutputTokens: 7000, responseSchema: RQ_CANDIDATES_SCHEMA, reasoningEffort: "medium", feature: "qc:rq-candidates" });
   console.info(`[question-craft] candidates=${generatedRqs?.output_type_proposals?.length || 0}`);
@@ -532,6 +557,12 @@ ${RQ_TYPES.map(([code, name]) => `${code} ${name}`).join(" / ")}
     generatedBy: "ai" as const,
     qualityReport: { validCount: 12, repairedCount: repaired.repairedCount + publicRewrite.repairedCount, warnings },
   };
+}
+
+// 互換の一括版（受入テスト・/api/projects/quick・旧クライアントが使用）。内部は分割関数の合成で挙動不変
+export async function generateStep1(input: QuestionFreeInput, materialsInput: NormalizedResearchMaterial[]) {
+  const { brief } = await generateBrief(input, materialsInput);
+  return generateCandidatesFromBrief(input, materialsInput, brief);
 }
 
 function compactResearchPhrase(value: string | undefined, fallback: string, maxLength = 72) {
@@ -1057,15 +1088,17 @@ JSON {"literature_review":{"target_gap_deep":"...","knowns":["..."],"unknowns":[
   return { papers, literatureReview: validLiterature };
 }
 
-async function enrichVerifiedPapers(step2: Step2Response, selectedRq: RQCandidate, terms: string[]) {
+async function enrichVerifiedPapers(step2: Step2Response, selectedRq: RQCandidate, terms: string[]): Promise<Step2Response> {
   const works = await fetchOpenAlexWorks(scholarlyQueries(step2, selectedRq, terms));
-  if (!works.length) return step2;
+  // 実在文献が見つからない場合はfallback（テンプレの探し方ガイド）のまま。「未確認の参考例」ラベルの根拠になる
+  if (!works.length) return { ...step2, literatureStatus: "fallback" };
   const synthesis = await synthesizeVerifiedResearch(works, selectedRq);
   const papers = synthesis.papers;
   const fill = (verified: PaperCandidate[], fallback: PaperCandidate[], minimum: number) =>
     [...verified, ...fallback.filter((item) => !verified.some((paper) => paper.title === item.title))].slice(0, Math.max(minimum, verified.length));
   return {
     ...step2,
+    literatureStatus: "verified",
     ...(synthesis.literatureReview ? { literature_review: synthesis.literatureReview, generatedBy: "ai" as const } : {}),
     paper_ideas: {
       reference: fill(papers.slice(0, 3), step2.paper_ideas.reference, 3),
@@ -1146,7 +1179,9 @@ function enrichStep2Mapping(step2: Step2Response) {
   };
 }
 
-export async function generateStep2(input: QuestionFreeInput, selectedRq: RQCandidate, step1: Step1Response) {
+// ジャーニー第3段の前半（ADR-010 J4）: 決定的骨子＋fallback文献。LLMを一切呼ばないため即時に返る。
+// これでプロジェクトを先に作成し、文献充填（唯一のLLM）はプロジェクト画面内で後追いする
+export function generateStep2Outline(input: QuestionFreeInput, selectedRq: RQCandidate, step1: Step1Response): Step2Response {
   const result = fallbackStep2(input, selectedRq, step1);
   result.research_outline.interesting_points ||= "";
   result.research_outline.difficult_points ||= [];
@@ -1154,7 +1189,17 @@ export async function generateStep2(input: QuestionFreeInput, selectedRq: RQCand
   result.research_outline.comments ||= [];
   result.research_outline.next_actions ||= (result.research_outline.next_steps || []).map((value) => ({ id: `action-${Math.random().toString(36).slice(2, 8)}`, text: value, completed: false }));
   const referenced = enrichStep2Mapping(enrichStep2References(result, input, selectedRq, step1));
-  return enrichVerifiedPapers(referenced, selectedRq, referenceTerms(input, selectedRq, step1));
+  return { ...referenced, literatureStatus: "pending" };
+}
+
+// 後半: 実在文献の確認と充填（OpenAlex＋LLM1コール）。失敗してもstep2構造は壊さない
+export async function generateStep2Literature(step2: Step2Response, input: QuestionFreeInput, selectedRq: RQCandidate, step1: Step1Response): Promise<Step2Response> {
+  return enrichVerifiedPapers(step2, selectedRq, referenceTerms(input, selectedRq, step1));
+}
+
+// 互換の一括版（受入テスト・/quick・regenerateが使用）。内部は分割関数の合成で挙動不変
+export async function generateStep2(input: QuestionFreeInput, selectedRq: RQCandidate, step1: Step1Response) {
+  return generateStep2Literature(generateStep2Outline(input, selectedRq, step1), input, selectedRq, step1);
 }
 
 export { enrichStep2References };

@@ -6,7 +6,7 @@ import type {
   DiscoveryCard, ResearchField, ResearchSociety, ResearchJournal, QuestionProject,
   ResearchResourceLegend,
 } from "../../shared/types";
-import type {
+import type { ResearchBrief,
   ConsultationAsset, ConsultationDocumentDraft, ConsultationDocumentOptions, ConsultationMemo, InterestAnalysis,
   NormalizedResearchMaterial, QuestionFreeInput, ResearchProject, ResearchProjectCover, RQCandidate, Step1Response, Step2Response,
 } from "../../shared/research-project";
@@ -173,6 +173,12 @@ export const api = {
 
   getQuestionMaterials: () => get<{ materials: NormalizedResearchMaterial[] }>(`/api/question-materials?sessionId=${getSessionId()}`),
   generateQuestionStep1: (payload: { sourceMode: "free_input" | "saved_items"; freeInput: QuestionFreeInput; materials: NormalizedResearchMaterial[] }) => post<{ step1: Step1Response; normalizedMaterials: NormalizedResearchMaterial[]; aiEnabled: boolean }>("/api/question-craft/step1", { ...payload, sessionId: getSessionId() }),
+  // ジャーニーAPI（ADR-010）。actionIdを明示的に渡す＝brief/candidatesで同一IDを共有して1価値消費に束ね、
+  // 再送はサーバーのactionId応答キャッシュが同じ結果を返す（LLM再実行なし）
+  generateQuestionBrief: (payload: { sourceMode: "free_input" | "saved_items"; freeInput: QuestionFreeInput; materials: NormalizedResearchMaterial[]; actionId: string }) => post<{ brief: ResearchBrief; briefGeneratedBy: "ai" | "quality_fallback"; normalizedMaterials: NormalizedResearchMaterial[]; aiEnabled: boolean }>("/api/question-craft/brief", { ...payload, sessionId: getSessionId() }),
+  generateQuestionCandidates: (payload: { freeInput: QuestionFreeInput; materials: NormalizedResearchMaterial[]; brief: ResearchBrief | null; focusOverride?: { vertical_axis: string; question: string } | null; actionId: string }) => post<{ step1: Step1Response; aiEnabled: boolean }>("/api/question-craft/candidates", { ...payload, sessionId: getSessionId() }),
+  createPlanFromQuestion: (payload: { sourceMode: "free_input" | "saved_items"; freeInput: QuestionFreeInput; materials: NormalizedResearchMaterial[]; selectedRq: RQCandidate; step1: Step1Response; interestAnalysisId?: string; actionId: string }) => post<{ project: ResearchProject; aiEnabled: boolean }>("/api/question-craft/outline", { ...payload, sessionId: getSessionId() }),
+  fillPlanLiterature: (projectId: string) => post<{ step2: Step2Response; project: ResearchProject }>("/api/question-craft/literature", { sessionId: getSessionId(), projectId }),
   generateQuestionStep2: (payload: { freeInput: QuestionFreeInput; selectedRq: RQCandidate; step1: Step1Response }) => post<{ step2: Step2Response; aiEnabled: boolean }>("/api/question-craft/step2", { ...payload, sessionId: getSessionId() }),
   adjustResearchText: (value: string, instruction: string, context = "") => post<{ value: string; aiEnabled: boolean }>("/api/question-craft/adjust", { sessionId: getSessionId(), value, instruction, context }),
 

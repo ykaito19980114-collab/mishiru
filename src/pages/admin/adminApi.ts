@@ -18,6 +18,7 @@ async function req<T>(url: string, method = "GET", body?: unknown): Promise<T> {
 export const adminApi = {
   health: () => req<any>("/api/health"),
   kpi: () => req<any>("/api/admin/kpi"),
+  aiUsage: () => req<any>("/api/admin/ai-usage"),
 
   labs: (params: Record<string, string>) =>
     req<{ data: any[]; total: number; summary: { totalLabs: number; noUrl: number } }>(`/api/admin/labs?${new URLSearchParams(params).toString()}`),

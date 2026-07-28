@@ -130,6 +130,8 @@ export interface ResearchOutline {
 }
 
 export interface Step2Response {
+  /** 文献セクションの状態（ADR-010）。pending=骨子のみ作成済で充填待ち / verified=実在文献で充填済 / fallback=実在文献が見つからず下書きのまま（「未確認の参考例」として表示する） */
+  literatureStatus?: "pending" | "verified" | "fallback";
   literature_review: {
     knowns: string[];
     unknowns: string[];
@@ -410,11 +412,17 @@ export interface InterestAnalysis {
   updatedAt: string;
 }
 
+/** 研究ブリーフ＝Step1Responseの前半（焦点カードの中身）。ジャーニーAPIでクライアントと往復する（ADR-010） */
+export type ResearchBrief = Pick<Step1Response, "source_synthesis" | "decomposition" | "research_map_position" | "domain_shifts">;
+
 export interface QuestionCraftDraft {
   sourceMode: ProjectSourceMode;
   freeInput: QuestionFreeInput;
   selectedMaterialIds: string[];
   materials: NormalizedResearchMaterial[];
+  /** 第1段（焦点カード）だけ完了した状態の復帰用（ADR-010） */
+  briefResponse?: ResearchBrief | null;
+  briefGeneratedBy?: "ai" | "quality_fallback" | null;
   step1Response: Step1Response | null;
   selectedRq: RQCandidate | null;
   step2Response: Step2Response | null;
