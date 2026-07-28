@@ -64,6 +64,9 @@ export interface Lab {
   field_major: FieldMajor;  // 12大分類（フィルタ用）
   official_url: string | null;
   google_scholar_url?: string; // 本人・大学公式情報で確認できた場合のみプロフィールURLを保持
+  allow_ai_guide?: boolean; // falseの場合は推測による研究室ガイドを生成・表示しない
+  allow_paper_search?: boolean; // falseの場合は外部DBから論文を自動取得しない
+  suppress_cinii_link?: boolean; // 同姓同名等で誤誘導する場合はCiNii検索リンクを表示しない
   has_url: boolean;         // URL有無（営業リスト用）
   sources: LabSource[];     // 出典（FR-LAB-02）
   researchQuestions?: string[]; // Excel「扱う問い」。AI補完せず、存在する時だけ優先表示

@@ -4,7 +4,8 @@ import path from "node:path";
 import type { Lab } from "../shared/types";
 import { applyLabHomepageOverrides, type LabHomepageOverride } from "../server/lab-publication";
 import { applyLabExternalProfileOverrides, type LabExternalProfileOverride } from "../server/lab-external-profiles";
-import { googleScholarUrlForLab } from "../src/lib/labLinks";
+import { assessLabEvidence } from "../shared/lab-evidence";
+import { googleScholarUrlForLab, researchDatabaseLinks } from "../src/lib/labLinks";
 
 const root = process.cwd();
 const baseLabs = JSON.parse(fs.readFileSync(path.join(root, "data", "labs.json"), "utf-8")) as Lab[];
@@ -79,6 +80,18 @@ assert.ok(kohnoLab, "河野晴彦研究室が公開対象に含まれていな�
 assert.equal(kohnoLab.official_url, "https://www.iizuka.kyutech.ac.jp/ics/h-kohno");
 assert.equal(kohnoLab.department, "大学院情報工学研究院 知的システム工学研究系");
 assert.equal(kohnoLab.quality?.contentLevel, "sourced");
+assert.ok(kohnoLab.keywords.includes("磁場核融合"));
+assert.ok(kohnoLab.keywords.includes("核融合プラズマ"));
+assert.ok(!kohnoLab.sections.research_summary.includes("宇宙"), "河野研究室に誤った宇宙研究の記述が残っている");
+assert.equal(assessLabEvidence(kohnoLab).canGenerateGuide, false, "河野研究室でAI推測を再生成しない");
+assert.equal(assessLabEvidence(kohnoLab).canSearchPapers, false, "河野先生と同姓同名の論文を自動取得しない");
+assert.ok(!researchDatabaseLinks(kohnoLab).some((link) => link.id === "cinii"), "河野先生のページで別人を含むCiNii氏名検索へリンクしない");
+const yoshimuraLab = publicLabs.find((lab) => lab.id === "lab-15282");
+assert.ok(yoshimuraLab, "奈良女子大学吉村研究室が公開対象に含まれていない");
+assert.equal(yoshimuraLab.official_url, "https://www.chem.nara-wu.ac.jp/~yoshimura/");
+assert.equal(yoshimuraLab.quality?.contentLevel, "sourced");
+assert.deepEqual(yoshimuraLab.members.map((member) => member.name), ["吉村倫一", "河合里紗"]);
+assert.ok(yoshimuraLab.keywords.includes("両親媒性イオン液体"));
 for (const lab of publicLabs) {
   assert.ok(lab.official_url?.startsWith("http"), `${lab.id}: 確認済み研究室HPがない`);
   assert.ok(!profileUrl.test(lab.official_url || "") || manuallyPublishedIds.has(lab.id), `${lab.id}: 教員・研究者ページを研究室HPとして公開している`);
@@ -107,7 +120,7 @@ const report = JSON.parse(fs.readFileSync(path.join(root, "data", "lab-publicati
   counts: { publishable: number };
 };
 assert.equal(baseQualityApprovedLabs.length, report.counts.publishable, "監査レポートと一括監査時の品質確認済み件数が一致しない");
-assert.equal(qualityApprovedLabs.length, report.counts.publishable + 3, "個別確認済みの研究室が公開対象へ追加されていない");
-assert.equal(publicLabs.length, 5896, "掲載停止依頼を除いた公開件数が一致しない");
+assert.equal(qualityApprovedLabs.length, report.counts.publishable + 4, "個別確認済みの研究室が公開対象へ追加されていない");
+assert.equal(publicLabs.length, 5897, "掲載停止依頼を除いた公開件数が一致しない");
 
 console.log(`lab publication quality: OK (${publicLabs.length.toLocaleString()} published / ${labs.length.toLocaleString()} total)`);

@@ -19,6 +19,9 @@ export interface LabHomepageOverride {
   graduateSchool?: string;
   major?: string;
   members?: LabMember[];
+  allowAiGuide?: boolean;
+  allowPaperSearch?: boolean;
+  suppressCiniiLink?: boolean;
 }
 
 export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOverride[]): Lab[] {
@@ -51,6 +54,9 @@ export function applyLabHomepageOverrides(labs: Lab[], overrides: LabHomepageOve
       members,
       pi,
       member_count: members.length,
+      allow_ai_guide: override.allowAiGuide ?? lab.allow_ai_guide,
+      allow_paper_search: override.allowPaperSearch ?? lab.allow_paper_search,
+      suppress_cinii_link: override.suppressCiniiLink ?? lab.suppress_cinii_link,
       keywords,
       researchQuestions: override.researchQuestions || lab.researchQuestions,
       questions: override.researchQuestions || lab.questions,
