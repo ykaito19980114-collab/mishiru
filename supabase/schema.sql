@@ -351,6 +351,8 @@ drop policy if exists "anon insert claims" on mishiru_claims;
 revoke insert on table mishiru_claims from anon, authenticated;
 revoke all on table mishiru_content_suppressions from anon, authenticated;
 revoke all on table mishiru_lab_publication_audits from anon, authenticated;
+revoke all on table mishiru_ai_usage_daily from anon, authenticated;
+grant select, insert, update, delete on table mishiru_ai_usage_daily to service_role;
 
 create or replace view mishiru_public_labs
 with (security_invoker = true)

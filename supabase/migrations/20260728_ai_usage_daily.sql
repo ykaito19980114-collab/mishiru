@@ -12,3 +12,5 @@ create table if not exists mishiru_ai_usage_daily (
 );
 alter table mishiru_ai_usage_daily enable row level security;
 -- 公開ポリシーは作らない = service_role のみ読み書き可（運営コスト情報）
+revoke all privileges on table mishiru_ai_usage_daily from anon, authenticated;
+grant select, insert, update, delete on table mishiru_ai_usage_daily to service_role;
