@@ -40,6 +40,10 @@ begin
     raise exception 'Missing function: mishiru_consume_guest_action(text,text,integer)';
   end if;
 
+  if to_regprocedure('public.mishiru_record_ai_usage(date,bigint,bigint,bigint,bigint,integer,integer)') is null then
+    raise exception 'Missing function: mishiru_record_ai_usage(date,bigint,bigint,bigint,bigint,integer,integer)';
+  end if;
+
   if exists (
     select 1
     from pg_policies
@@ -57,6 +61,16 @@ begin
       and grantee in ('anon', 'authenticated')
   ) then
     raise exception 'mishiru_ai_usage_daily has anon/authenticated grants';
+  end if;
+
+  if exists (
+    select 1
+    from information_schema.routine_privileges
+    where specific_schema = 'public'
+      and routine_name = 'mishiru_record_ai_usage'
+      and grantee in ('PUBLIC', 'anon', 'authenticated')
+  ) then
+    raise exception 'mishiru_record_ai_usage has public execute grants';
   end if;
 end;
 $$;

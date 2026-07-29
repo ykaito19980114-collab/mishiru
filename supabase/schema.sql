@@ -298,6 +298,42 @@ create table if not exists mishiru_ai_usage_daily (
   updated_at       timestamptz default now()
 );
 
+-- AI使用量を日次行へ原子的に加算する。複数のサーバーレスインスタンスからの同時記録に対応。
+create or replace function mishiru_record_ai_usage(
+  p_day date,
+  p_input_tokens bigint,
+  p_output_tokens bigint,
+  p_reasoning_tokens bigint,
+  p_cached_tokens bigint,
+  p_calls integer,
+  p_failures integer
+) returns void
+language sql
+security definer
+set search_path = public
+as $$
+  insert into mishiru_ai_usage_daily (
+    day, input_tokens, output_tokens, reasoning_tokens, cached_tokens, calls, failures, updated_at
+  ) values (
+    p_day,
+    greatest(p_input_tokens, 0),
+    greatest(p_output_tokens, 0),
+    greatest(p_reasoning_tokens, 0),
+    greatest(p_cached_tokens, 0),
+    greatest(p_calls, 0),
+    greatest(p_failures, 0),
+    now()
+  )
+  on conflict (day) do update set
+    input_tokens = mishiru_ai_usage_daily.input_tokens + excluded.input_tokens,
+    output_tokens = mishiru_ai_usage_daily.output_tokens + excluded.output_tokens,
+    reasoning_tokens = mishiru_ai_usage_daily.reasoning_tokens + excluded.reasoning_tokens,
+    cached_tokens = mishiru_ai_usage_daily.cached_tokens + excluded.cached_tokens,
+    calls = mishiru_ai_usage_daily.calls + excluded.calls,
+    failures = mishiru_ai_usage_daily.failures + excluded.failures,
+    updated_at = now();
+$$;
+
 -- 監査ログ（法令対応記録）
 create table if not exists mishiru_audit_logs (
   id          bigserial primary key,
@@ -353,6 +389,10 @@ revoke all on table mishiru_content_suppressions from anon, authenticated;
 revoke all on table mishiru_lab_publication_audits from anon, authenticated;
 revoke all on table mishiru_ai_usage_daily from anon, authenticated;
 grant select, insert, update, delete on table mishiru_ai_usage_daily to service_role;
+revoke all on function mishiru_record_ai_usage(date,bigint,bigint,bigint,bigint,integer,integer)
+  from public, anon, authenticated;
+grant execute on function mishiru_record_ai_usage(date,bigint,bigint,bigint,bigint,integer,integer)
+  to service_role;
 
 create or replace view mishiru_public_labs
 with (security_invoker = true)

@@ -1,7 +1,7 @@
 // AIトークン計測。providerの生usageを1か所で正規化し、①1行JSONログ（Vercelログで永続・grep可能）
 // ②プロセス内ロールアップ（/api/admin/ai-usage）③日次集計テーブル mishiru_ai_usage_daily（ADR-010・
-// 管理画面の今日/今月/累計表示の永続元）へ流す。③は60秒デバウンスのread-modify-writeで、
-// インスタンス間の同時書き込みで多少の取りこぼしを許容する（目的は課金監視であり会計ではない）。
+// 管理画面の今日/今月/累計表示の永続元）へ流す。③は各呼び出し完了時にSupabase RPCで
+// 原子的に加算し、サーバーレスのレスポンス後停止や複数インスタンス競合で取りこぼさない。
 import { serverSupabase } from "./supabase";
 import type { AiProvider } from "./ai";
 
@@ -60,7 +60,7 @@ const KEY_SEP = "\u0000";
 const rollup = new Map<string, FeatureRollup>();
 let since = new Date().toISOString();
 
-export function recordAiCall(record: AiCallRecord) {
+export async function recordAiCall(record: AiCallRecord): Promise<void> {
   const key = `${record.feature}${KEY_SEP}${record.model}`;
   const current = rollup.get(key) || { ...EMPTY, calls: 0, failures: 0, totalDurationMs: 0 };
   current.calls += 1;
@@ -86,62 +86,45 @@ export function recordAiCall(record: AiCallRecord) {
     ok: record.ok,
   }));
 
-  queueDailyUsage(record);
+  await persistDailyUsage(record);
 }
 
 // --- 日次永続化（mishiru_ai_usage_daily・ADR-010） ---
-interface DailyDelta { in: number; out: number; reasoning: number; cached: number; calls: number; failures: number }
-const zeroDelta = (): DailyDelta => ({ in: 0, out: 0, reasoning: 0, cached: 0, calls: 0, failures: 0 });
-let pendingDelta = zeroDelta();
-let flushTimer: NodeJS.Timeout | null = null;
 let dailyTableAvailable = true; // テーブル未作成の環境では1回のエラーで諦める（AC-05の劣化動作）
-const FLUSH_DELAY_MS = 60 * 1000;
+const jstDay = (date = new Date()) => {
+  const parts = new Intl.DateTimeFormat("en", {
+    timeZone: "Asia/Tokyo",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).formatToParts(date);
+  const value = Object.fromEntries(parts.map((part) => [part.type, part.value]));
+  return `${value.year}-${value.month}-${value.day}`;
+};
 
-function queueDailyUsage(record: AiCallRecord) {
-  if (!dailyTableAvailable || !serverSupabase()) return;
-  pendingDelta.in += record.inputTokens;
-  pendingDelta.out += record.outputTokens;
-  pendingDelta.reasoning += record.reasoningTokens;
-  pendingDelta.cached += record.cachedInputTokens;
-  pendingDelta.calls += 1;
-  if (!record.ok) pendingDelta.failures += 1;
-  if (!flushTimer) {
-    flushTimer = setTimeout(() => { flushTimer = null; void flushDailyUsage(); }, FLUSH_DELAY_MS);
-    // サーバーレスではレスポンス後にプロセスが凍結されうるため、タイマーでプロセスを生かし続けない
-    flushTimer.unref?.();
-  }
-}
-
-async function flushDailyUsage() {
+async function persistDailyUsage(record: AiCallRecord) {
   const supabase = serverSupabase();
   if (!supabase || !dailyTableAvailable) return;
-  const delta = pendingDelta;
-  if (!delta.calls) return;
-  pendingDelta = zeroDelta();
-  const day = new Date().toISOString().slice(0, 10);
   try {
-    const { data, error } = await supabase.from("mishiru_ai_usage_daily").select("*").eq("day", day).maybeSingle();
+    const { error } = await supabase.rpc("mishiru_record_ai_usage", {
+      p_day: jstDay(),
+      p_input_tokens: record.inputTokens,
+      p_output_tokens: record.outputTokens,
+      p_reasoning_tokens: record.reasoningTokens,
+      p_cached_tokens: record.cachedInputTokens,
+      p_calls: 1,
+      p_failures: record.ok ? 0 : 1,
+    });
     if (error) throw error;
-    const { error: upsertError } = await supabase.from("mishiru_ai_usage_daily").upsert({
-      day,
-      input_tokens: (data?.input_tokens || 0) + delta.in,
-      output_tokens: (data?.output_tokens || 0) + delta.out,
-      reasoning_tokens: (data?.reasoning_tokens || 0) + delta.reasoning,
-      cached_tokens: (data?.cached_tokens || 0) + delta.cached,
-      calls: (data?.calls || 0) + delta.calls,
-      failures: (data?.failures || 0) + delta.failures,
-      updated_at: new Date().toISOString(),
-    }, { onConflict: "day" });
-    if (upsertError) throw upsertError;
   } catch (error) {
     const message = error instanceof Error ? error.message : String(error);
-    // テーブル未作成（migration未適用）はこの環境では恒久なので、以後書き込みを止めてログ1回だけ
-    if (/mishiru_ai_usage_daily|does not exist|schema cache/i.test(message)) {
+    // migration未適用はこの環境では恒久なので、以後書き込みを止めてログ1回だけ
+    if (/mishiru_(?:ai_usage_daily|record_ai_usage)|does not exist|schema cache/i.test(message)) {
       dailyTableAvailable = false;
       console.warn("[ai-telemetry] 日次テーブル未作成のため永続化を停止（supabase/migrations/20260728_ai_usage_daily.sql を適用してください）:", message);
     } else {
-      // 一時障害は取りこぼしのまま次周期へ（会計ではなく監視のため再送しない）
-      console.error("[ai-telemetry] daily flush failed:", message);
+      // 一時障害は生成結果を失敗させない（会計ではなく監視のため再送しない）
+      console.error("[ai-telemetry] daily persistence failed:", message);
     }
   }
 }
@@ -168,23 +151,18 @@ export async function aiUsageTotals(): Promise<AiUsageTotals> {
     const { data, error } = await supabase.from("mishiru_ai_usage_daily").select("day,input_tokens,output_tokens,calls").order("day");
     if (error) throw error;
     const rows = data || [];
-    const today = new Date().toISOString().slice(0, 10);
+    const today = jstDay();
     const month = today.slice(0, 7);
     const sum = (filtered: typeof rows) => filtered.reduce((acc, row) => ({
       inputTokens: acc.inputTokens + Number(row.input_tokens || 0),
       outputTokens: acc.outputTokens + Number(row.output_tokens || 0),
       calls: acc.calls + Number(row.calls || 0),
     }), { inputTokens: 0, outputTokens: 0, calls: 0 });
-    // 未フラッシュのプロセス内ぶんを今日へ加算して「常時表示」の即時性を保つ
-    const pendingNow = { inputTokens: pendingDelta.in, outputTokens: pendingDelta.out, calls: pendingDelta.calls };
-    const add = (a: { inputTokens: number; outputTokens: number; calls: number }) => ({
-      inputTokens: a.inputTokens + pendingNow.inputTokens, outputTokens: a.outputTokens + pendingNow.outputTokens, calls: a.calls + pendingNow.calls,
-    });
     return {
       persisted: true,
-      today: add(sum(rows.filter((row) => row.day === today))),
-      thisMonth: add(sum(rows.filter((row) => String(row.day).startsWith(month)))),
-      cumulative: { ...add(sum(rows)), since: rows[0]?.day || null },
+      today: sum(rows.filter((row) => row.day === today)),
+      thisMonth: sum(rows.filter((row) => String(row.day).startsWith(month))),
+      cumulative: { ...sum(rows), since: rows[0]?.day || null },
     };
   } catch (error) {
     console.error("[ai-telemetry] totals read failed:", error instanceof Error ? error.message : error);

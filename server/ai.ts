@@ -195,11 +195,11 @@ export async function callAI(prompt: string, opts: GenOpts = {}): Promise<string
         : await callOpenAI(prompt, opts, model);
       recordProviderResult(provider, Boolean(result.text));
       // 失敗（text=null）でも入力トークンは課金されうるため、成否に関わらず記録する
-      recordAiCall({ feature, provider, model, durationMs: Date.now() - startedAt, ok: Boolean(result.text), ...result.usage });
+      await recordAiCall({ feature, provider, model, durationMs: Date.now() - startedAt, ok: Boolean(result.text), ...result.usage });
       return result.text;
     } catch (error) {
       recordProviderResult(provider, false);
-      recordAiCall({ feature, provider, model, durationMs: Date.now() - startedAt, ok: false, ...NO_USAGE });
+      await recordAiCall({ feature, provider, model, durationMs: Date.now() - startedAt, ok: false, ...NO_USAGE });
       console.error(`[ai] provider=${provider} error=${error instanceof Error ? error.name : "unknown"}`);
       return null;
     }
