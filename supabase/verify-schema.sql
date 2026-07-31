@@ -15,7 +15,7 @@ begin
     ('mishiru_guest_usage'), ('mishiru_guest_usage_events'), ('mishiru_session_state'),
     ('mishiru_claims'), ('mishiru_leads'), ('mishiru_reports'), ('mishiru_articles'),
     ('mishiru_api_cache'), ('mishiru_audit_logs'),
-    ('mishiru_lab_publication_audits')
+    ('mishiru_lab_publication_audits'), ('mishiru_ai_usage_daily')
   ) as required(name)
   where to_regclass('public.' || required.name) is null;
 
@@ -38,6 +38,39 @@ begin
 
   if to_regprocedure('public.mishiru_consume_guest_action(text,text,integer)') is null then
     raise exception 'Missing function: mishiru_consume_guest_action(text,text,integer)';
+  end if;
+
+  if to_regprocedure('public.mishiru_record_ai_usage(date,bigint,bigint,bigint,bigint,integer,integer)') is null then
+    raise exception 'Missing function: mishiru_record_ai_usage(date,bigint,bigint,bigint,bigint,integer,integer)';
+  end if;
+
+  if exists (
+    select 1
+    from pg_policies
+    where schemaname = 'public'
+      and tablename = 'mishiru_ai_usage_daily'
+  ) then
+    raise exception 'mishiru_ai_usage_daily must not have public RLS policies';
+  end if;
+
+  if exists (
+    select 1
+    from information_schema.role_table_grants
+    where table_schema = 'public'
+      and table_name = 'mishiru_ai_usage_daily'
+      and grantee in ('anon', 'authenticated')
+  ) then
+    raise exception 'mishiru_ai_usage_daily has anon/authenticated grants';
+  end if;
+
+  if exists (
+    select 1
+    from information_schema.routine_privileges
+    where specific_schema = 'public'
+      and routine_name = 'mishiru_record_ai_usage'
+      and grantee in ('PUBLIC', 'anon', 'authenticated')
+  ) then
+    raise exception 'mishiru_record_ai_usage has public execute grants';
   end if;
 end;
 $$;

@@ -58,7 +58,7 @@ UIはbrief到着時点で**焦点カード**（「あなたの関心をこう捉
 
 ### J7. AIトークン使用量の常時表示（運営者向け）
 
-- 集計の永続化先は**専用テーブル `mishiru_ai_usage_daily`**（day主キー・in/out/reasoning/cached/calls/failures）。mishiru_api_cacheはTTL付きキャッシュ表でありパージで消えうるため使わない（アドバイザー指摘採用）。RLS有効・公開ポリシー無し。schema.sqlとmigrationを同梱（本番への適用は運用者作業。未適用環境ではメモリ内集計のみで劣化動作＝AC-05）
+- 集計の永続化先は**専用テーブル `mishiru_ai_usage_daily`**（day主キー・in/out/reasoning/cached/calls/failures）。mishiru_api_cacheはTTL付きキャッシュ表でありパージで消えうるため使わない（アドバイザー指摘採用）。各AI呼び出し完了時に`mishiru_record_ai_usage` RPCで日本時間の日次行へ原子的に加算し、サーバーレス停止や複数インスタンス競合でも取りこぼさない。RLS有効・公開ポリシー無し・anon/authenticated権限無し。schema.sqlとmigrationを同梱（未適用環境ではメモリ内集計のみで劣化動作＝AC-05）
 - ai-telemetryのrecordAiCallから60秒デバウンスで当日行へフラッシュ
 - `GET /api/admin/ai-usage` に `today / thisMonth / cumulative`（計測開始2026-07-26以降）を追加
 - **表示は管理画面のみ**: admin全タブ共通ヘッダーに「AIトークン 今日◯／今月◯／累計◯」を常設。一般ユーザーには出さない（研究初心者を萎縮させる・運営コスト情報のため。refcraft-webの「トークン消費あり」注記は本サービスの対象者には移植しない）
