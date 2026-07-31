@@ -15,20 +15,42 @@ export const AI_MODELS = [
 export type AiModelId = (typeof AI_MODELS)[number]["id"];
 export type AiProvider = (typeof AI_MODELS)[number]["provider"];
 
-// 2026-07 一旦、選択可能なモデルをTerraに固定（ユーザー指示・フロント側のグレーアウトの多層防御）。
-// 解除する際はこの定数をnullに戻す（src/lib/aiModel.tsのLOCKED_AI_MODELと対で管理）。
-const LOCKED_AI_MODEL: AiModelId | null = "gpt-5.6-terra";
+// ============ 機能別モデル割当（ADR-009追記・2026-07-29） ============
+// 2026-07-29のOpenAI値下げ（Luna -80% / Terra -20%、Solは対象外）を受けた振り分け。
+// 判定基準は「件数が多く・出力が定型で・失敗しても決定的フォールバックが効く」処理をLUNAへ、
+// 中核価値そのものか誤情報が致命になる処理をTERRAへ。実測(ADR-009)に基づく。
+//
+// 重要: 以前は LOCKED_AI_MODEL + withAiModel ミドルウェアでTerraへ固定していたが、
+// 公開ハードニングでモデル選択UIとミドルウェアが撤去され、固定が外れて
+// defaultAiModel()（= env AI_MODEL = 既定 gpt-5.6-sol）へ落ちていた。
+// 実測で全機能がSol（最上位・今回の値下げ対象外）で動いていたことを確認したため、
+// env依存をやめ、この表を唯一の決定点にする。
+const LIGHT_MODEL: AiModelId = "gpt-5.6-luna";
+const CORE_MODEL: AiModelId = "gpt-5.6-terra";
+
+// 軽量側。出力が定型・件数が多い・失敗時は決定的フォールバックへ落ちるもの
+const LIGHT_FEATURES = new Set([
+  "smart-search",     // 自然文→分類コード+キーワード。実測 out 57-94tok。辞書フォールバックあり
+  "enrich:guide",     // 研究室ガイド。実測 out 427tok・定型JSON。全研究室ページで最多件数。テンプレフォールバックあり
+  "lab-cards",        // デッキ8枚のバッチ。定型JSON。テンプレカードあり
+  "qc:adjust-text",   // 一段落の書き換え。失敗時は原文をそのまま返す
+  "report",           // 管理者向け診断下書き。低頻度・テンプレフォールバックあり
+]);
+// 上記以外（qc:brief / qc:rq-candidates / qc:public-rq / qc:literature / interest-analysis）はCORE_MODEL。
+// 理由: 中核価値（問いの設計）、平易化の品質要件（FR-QUESTION-05）、実在文献の要約（誤情報が致命）。
+
+export function modelForFeature(feature?: string): AiModelId {
+  return feature && LIGHT_FEATURES.has(feature) ? LIGHT_MODEL : CORE_MODEL;
+}
+
+// providerフォールバック時も同じ重み付けを保つ（軽い処理は軽いGeminiへ）
+function geminiPeer(model: AiModelId): AiModelId {
+  return model === LIGHT_MODEL ? "gemini-3.1-flash-lite" : "gemini-3.5-flash";
+}
 
 const modelContext = new AsyncLocalStorage<AiModelId>();
 const providerCooldownUntil = new Map<AiProvider, number>();
 const PROVIDER_COOLDOWN_MS = 2 * 60 * 1000;
-
-function modelForProvider(provider: AiProvider): AiModelId {
-  const configured = provider === "openai" ? process.env.OPENAI_MODEL : process.env.GEMINI_MODEL;
-  const match = AI_MODELS.find((item) => item.id === configured && item.provider === provider);
-  if (match) return match.id;
-  return provider === "openai" ? "gpt-5.6-sol" : "gemini-3.5-flash";
-}
 
 function providerInCooldown(provider: AiProvider): boolean {
   return (providerCooldownUntil.get(provider) || 0) > Date.now();
@@ -38,18 +60,20 @@ function recordProviderResult(provider: AiProvider, succeeded: boolean) {
   if (succeeded) providerCooldownUntil.delete(provider);
   else providerCooldownUntil.set(provider, Date.now() + PROVIDER_COOLDOWN_MS);
 }
+// envのAI_MODELは既定値の上書きにのみ使う（未設定・不正値ならCORE_MODEL）。
+// 以前はここが gpt-5.6-sol にフォールバックしており、意図せず最上位モデルを使っていた。
 function defaultAiModel(): AiModelId {
   const configured = process.env.AI_MODEL || process.env.OPENAI_MODEL;
-  return AI_MODELS.some((item) => item.id === configured) ? configured as AiModelId : "gpt-5.6-sol";
+  return AI_MODELS.some((item) => item.id === configured) ? configured as AiModelId : CORE_MODEL;
 }
 
 export function resolveAiModel(value?: string | null): AiModelId {
-  if (LOCKED_AI_MODEL) return LOCKED_AI_MODEL;
   return AI_MODELS.some((item) => item.id === value) ? value as AiModelId : defaultAiModel();
 }
 
+/** 表示・記録用の代表モデル（中核生成に使うもの）。実際の呼び出しはmodelForFeatureが決める */
 export function currentAiModel(): AiModelId {
-  return modelContext.getStore() || defaultAiModel();
+  return modelContext.getStore() || CORE_MODEL;
 }
 
 export function currentAiProvider(): AiProvider {
@@ -187,6 +211,7 @@ export async function callAI(prompt: string, opts: GenOpts = {}): Promise<string
   const primary = currentAiProvider();
   const fallback: AiProvider = primary === "openai" ? "gemini" : "openai";
   const feature = opts.feature || "unknown";
+  const primaryModel = modelForFeature(opts.feature);
   const invoke = async (provider: AiProvider, model: AiModelId) => {
     const startedAt = Date.now();
     try {
@@ -207,12 +232,12 @@ export async function callAI(prompt: string, opts: GenOpts = {}): Promise<string
 
   try {
     if (providers[primary] && !providerInCooldown(primary)) {
-      const text = await invoke(primary, currentAiModel());
+      const text = await invoke(primary, primary === "openai" ? primaryModel : geminiPeer(primaryModel));
       if (text) return text;
     }
     if (providers[fallback] && !providerInCooldown(fallback)) {
       console.warn(`[ai] switching to ${fallback} because ${primary} is temporarily unavailable`);
-      return invoke(fallback, modelForProvider(fallback));
+      return invoke(fallback, fallback === "gemini" ? geminiPeer(primaryModel) : primaryModel);
     }
     return null;
   } catch {

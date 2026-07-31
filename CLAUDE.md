@@ -34,7 +34,7 @@
 - **AI意味検索**（`server/smart-search.ts`・`/api/labs/smart`）：自然文→分野/キーワード解釈→研究室。GEMINI設定時はLLM、未設定時は辞書フォールバック。
 - **研究室ページ充実**（`server/enrich.ts`・`/api/labs/:id/enrich`・ADR-004）：①AI学生ガイド（選択中の許可済みAIモデルがキーワードから生成・「AI推定/本人未確認」明示）②公開論文のin-app埋め込み（OpenAlex・**機関一致 or 主分野一致&業績3件以上の高確度時のみ**表示＝誤同定防止・PM-05）。lazy＋キャッシュ（L1=メモリ／L2=Supabase `mishiru_api_cache`。ADR-009。`data/runtime/`はローカル開発専用）。
 - **生成AI**：`server/ai.ts`でOpenAI Responses API / Gemini GenerateContent API・許可モデルID・フォールバックを一元管理。APIキーはサーバー側だけで保持し、report/smart-search/enrich/lab-cardsが共用する。
-- **トークン設計（ADR-009）**：`callAI`を呼ぶときは必ず `feature`（計測ラベル）・`maxOutputTokens`（実測の3〜5倍）・`reasoningEffort` を指定する。未指定だと8000上限＋provider既定推論になり、抽出や書き換えのような軽い処理でも重い課金になる。AI生成物のキャッシュは `server/ai-cache.ts` 経由でSupabaseへ永続化する（`data/runtime/`への書き込みはVercelでは失敗する＝本番ではキャッシュが消える）。実測は `GET /api/admin/ai-usage`。
+- **トークン設計（ADR-009）**：`callAI`を呼ぶときは必ず `feature`（計測ラベル）・`maxOutputTokens`（実測の3〜5倍）・`reasoningEffort` を指定する。**`feature`はモデル選択も兼ねる**（`server/ai.ts` の `modelForFeature`：軽量5機能=Luna／中核5機能=Terra。未知ラベルは安全側のTerra）。ラベルを付け忘れると計測から漏れるだけでなく、割安なLunaにも乗らない。未指定だと8000上限＋provider既定推論になり、抽出や書き換えのような軽い処理でも重い課金になる。AI生成物のキャッシュは `server/ai-cache.ts` 経由でSupabaseへ永続化する（`data/runtime/`への書き込みはVercelでは失敗する＝本番ではキャッシュが消える）。実測は `GET /api/admin/ai-usage`。
 - **見つける＝研究室カードデッキ（ADR-005）**：`server/lab-cards.ts`・`/api/lab-cards`。実研究室から8枚/1回の選択中AIモデルによるバッチ生成。**AI生成物は7日TTLでサーバーキャッシュ**（enrichはSWR）。デッキは**週次共有ウィンドウ**（ジャンル別240件/週・週バケットシード）で全セッションがキャッシュを共有＝生成コスト上限。評価は`lab_actions`（冪等）でプロファイル/マッチングに統合。テーマカード100枚はマッチング語彙として存続。
 - **研究室ページの公式URL**：ヘッダー直下に常設（未登録時は「Webで探す」代替導線）。消さないこと。
 - **外部API制約(K)**：OpenAlexは日本語氏名を索引（romajiは不可）・キー不要・mailto礼儀プール。CiNii/KAKENはappID登録必須で未使用。論文の名寄せは同姓同名リスクが高く、確信が持てない時は出さない。
